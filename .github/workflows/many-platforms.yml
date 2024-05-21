@@ -52,11 +52,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       - run: uname -a
       - run: id
       - run: env | LC_ALL=C sort
@@ -90,11 +85,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       - uses: addnab/docker-run-action@v3
         with:
           image: centos:7
@@ -133,11 +123,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       - uses: addnab/docker-run-action@v3
         with:
           image: alpine:3
@@ -180,11 +165,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       - run: uname -a
       - run: id
       - run: env | LC_ALL=C sort
@@ -225,11 +205,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/vmactions/freebsd-vm
       - uses: vmactions/freebsd-vm@v1
         with:
@@ -271,11 +246,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/vmactions/netbsd-vm
       - uses: vmactions/netbsd-vm@v1
         with:
@@ -320,11 +290,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/vmactions/openbsd-vm
       - uses: vmactions/openbsd-vm@v1
         with:
@@ -371,11 +336,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/vmactions/solaris-vm
       - uses: vmactions/solaris-vm@v1
         with:
@@ -397,7 +357,6 @@ jobs:
             pwd
             ls -l
             : "The locale set by default, C.UTF-8, is not a valid locale on Solaris 11."
-            : "This causes a failure of the test-update-copyright.sh test."
             export LANG=en_US.UTF-8
             export CPPFLAGS="-I$HOME/include -Wall"
             export LDFLAGS="-L$HOME/lib"
@@ -426,11 +385,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/vmactions/omnios-vm
       - uses: vmactions/omnios-vm@v1
         with:
@@ -484,11 +438,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       # Doc: https://github.com/cygwin/cygwin-install-action
       - uses: cygwin/cygwin-install-action@v4
         with:
@@ -548,11 +497,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball-for-mingw
       # Doc: https://github.com/cygwin/cygwin-install-action
       - uses: cygwin/cygwin-install-action@v4
         with:
@@ -616,11 +560,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball-for-mingw
       # Doc: https://github.com/ilammy/msvc-dev-cmd
       - uses: ilammy/msvc-dev-cmd@v1
         with:
@@ -711,11 +650,6 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      # Download the artifact to $GITHUB_WORKSPACE.
-      # Doc: https://github.com/actions/download-artifact?tab=readme-ov-file#usage
-      - uses: actions/download-artifact@v4
-        with:
-          name: tarball
       - run: uname -a
       - run: id
       - run: env | LC_ALL=C sort
