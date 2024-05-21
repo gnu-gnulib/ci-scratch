@@ -445,11 +445,22 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
              - With iconv() implementations other than GNU libiconv and GNU
                libc, if we use iconv() in a big swoop, checking for an E2BIG
                return, we lose the number of irreversible conversions.  */
+          const char *inptr_before = inptr;
+          char *outptr_before = outptr;
           res = iconv_carefully (cd,
                                  &inptr, &insize,
                                  &outptr, &outsize,
                                  &incremented);
           fprintf (stderr, "mem_cd_iconveh_internal direct 2b iconv_carefully -> res=%d errno=%d\n", res, errno);
+          if (res == 0) {
+            fprintf (stderr, "  input bytes consumed: ");
+            for (const char *p = inptr_before; p < inptr; p++)
+              fprintf (stderr, "0x%02X ", (unsigned char) *p);
+            fprintf (stderr, "\n  output bytes produced: ");
+            for (char *q = outptr_before; q < outptr; q++)
+              fprintf (stderr, "0x%02X ", (unsigned char) *q);
+            fprintf (stderr, "\n");
+          }
           }
 
         length = outptr - result;
