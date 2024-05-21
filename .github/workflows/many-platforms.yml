@@ -96,7 +96,7 @@ jobs:
             pwd
             : "Install CentOS Linux packages"
             : "List of packages: http://mirror.centos.org/centos/7/os/x86_64/Packages/"
-            yum -y install make gcc gcc-c++
+            yum -y install m4 automake make gcc gcc-c++
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
@@ -134,7 +134,7 @@ jobs:
             pwd
             : "Install Alpine Linux packages"
             : "List of packages: https://pkgs.alpinelinux.org/packages"
-            apk add make gcc musl-dev g++
+            apk add m4 automake autoconf make gcc musl-dev g++
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
@@ -171,7 +171,7 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      # - run: brew install ...
+      - run: brew install m4 automake
       - run: |
           pwd
           wget -O macos-compile 'https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/macos-compile;hb=HEAD'
@@ -219,7 +219,7 @@ jobs:
             pwd
             : "Install FreeBSD packages"
             : "List of packages: https://ports.freebsd.org/cgi/ports.cgi"
-            pkg install -y libbacktrace
+            pkg install -y m4 automake libbacktrace
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
@@ -260,10 +260,7 @@ jobs:
             pwd
             : "Install NetBSD packages"
             : "List of packages: https://ftp.netbsd.org/pub/pkgsrc/current/pkgsrc/index-all.html"
-            : /usr/sbin/pkg_add ...
-            : "or"
-            : /usr/sbin/pkg_add pkgin
-            : pkgin install ...
+            /usr/sbin/pkg_add m4 automake autoconf
             ls -l
             export CPPFLAGS="-I/usr/pkg/include -Wall"
             export LDFLAGS="-L/usr/pkg/lib"
@@ -309,7 +306,12 @@ jobs:
             pwd
             : "Install OpenBSD packages"
             : "List of packages: https://cdn.openbsd.org/pub/OpenBSD/7.5/packages/amd64/"
-            pkg_add gmake
+            pkg_add m4 automake-1.16.5 autoconf-2.71 gmake
+            export PATH=/usr/local/bin:$PATH
+            : "The OpenBSD port of autoconf needs this. See <https://marc.info/?l=openbsd-misc&m=115868167816272&w=2>."
+            export AUTOCONF_VERSION=2.71
+            : "The OpenBSD port of automake needs this, if more than one version is installed."
+            export AUTOMAKE_VERSION=1.16
             ls -l
             export CPPFLAGS="-I/usr/local/include -Wall"
             export LDFLAGS="-L/usr/local/lib"
@@ -348,7 +350,7 @@ jobs:
           prepare: |
             : "Install Solaris packages"
             : "List of packages: http://pkg.oracle.com/solaris/release/en/index.shtml"
-            pkg install gcc gcc-c++
+            pkg install gnu-m4 automake autoconf gcc gcc-c++
           run: |
             set -x
             uname -a
@@ -394,6 +396,7 @@ jobs:
             : "Install Solaris packages"
             : "List of packages: https://pkg.omnios.org/r151048/core/en/index.shtml"
             pkg install \
+                developer/build/automake developer/build/autoconf \
                 developer/gcc13 developer/object-file system/header system/library/math \
                 developer/build/gnu-make
           run: |
@@ -444,7 +447,7 @@ jobs:
           platform: ${{ matrix.bitness == 32 && 'x86' || 'x86_64' }}
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: gcc-core make gcc-g++ libiconv-devel
+          packages: m4 automake gcc-core make gcc-g++ libiconv-devel
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
@@ -503,7 +506,7 @@ jobs:
           platform: x86_64
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: ${{ matrix.bitness == 32 && 'mingw64-i686-gcc-core mingw64-i686-headers mingw64-i686-runtime mingw64-i686-gcc-g++ mingw64-i686-win-iconv' || 'mingw64-x86_64-gcc-core mingw64-x86_64-headers mingw64-x86_64-runtime mingw64-x86_64-gcc-g++ mingw64-x86_64-win-iconv' }} make
+          packages: m4 automake ${{ matrix.bitness == 32 && 'mingw64-i686-gcc-core mingw64-i686-headers mingw64-i686-runtime mingw64-i686-gcc-g++ mingw64-i686-win-iconv' || 'mingw64-x86_64-gcc-core mingw64-x86_64-headers mingw64-x86_64-runtime mingw64-x86_64-gcc-g++ mingw64-x86_64-win-iconv' }} make
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
@@ -570,7 +573,7 @@ jobs:
           platform: x86_64
           # Install Cygwin packages.
           # List of packages: https://cygwin.com/packages/package_list.html
-          packages: wget make
+          packages: wget m4 automake make
       - name: cygcheck
         run: cygcheck -V
       - name: cygcheck
