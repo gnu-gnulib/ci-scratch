@@ -246,6 +246,7 @@ iconv_carefully_1 (iconv_t cd,
           break;
         }
     }
+  fprintf (stderr, "iconv_carefully_1 consumed %d bytes, produced %d bytes, res = %d\n", inptr - inptr_before, outptr - *outbuf, res);
 
   *inbuf = inptr;
   *inbytesleft = inptr_end - inptr;
