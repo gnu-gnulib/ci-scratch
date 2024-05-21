@@ -779,11 +779,11 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                   {
                     if (cd2 != (iconv_t)(-1))
                       {
-                      res2 = iconv_carefully (cd2,
+                      res2 = iconv_carefully_1/*!*/ (cd2,
                                               &in2ptr, &in2size,
                                               &out2ptr, &out2size,
                                               &incremented2);
-                      fprintf (stderr, "mem_cd_iconveh_internal indirect 6a iconv_carefully -> res=%d errno=%d\n", res2, errno);
+                      fprintf (stderr, "mem_cd_iconveh_internal indirect 6a iconv_carefully_1! -> res=%d errno=%d\n", res2, errno);
                       }
                     else
                       {
