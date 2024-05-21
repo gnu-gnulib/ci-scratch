@@ -63,9 +63,16 @@ main ()
   iconv_t cd_88591_to_88592 = iconv_open ("ISO-8859-2", "ISO-8859-1");
   iconv_t cd_88592_to_88591 = iconv_open ("ISO-8859-1", "ISO-8859-2");
   fprintf (stderr, "cd_88592_to_88591 details:\n");
-  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " transliterate = %d\n", x); }
-  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " discard_ilseq = %d\n", x); }
-  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " ilseq_invalid = %d\n", x); }
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " transliterate = %d\n", x); } // -> 0
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " discard_ilseq = %d\n", x); } // -> 0
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " ilseq_invalid = %d\n", x); } // -> 1
+  { int x = 1; iconvctl (cd_88592_to_88591, ICONV_SET_TRANSLITERATE, &x); }
+  { int x = 0; iconvctl (cd_88592_to_88591, ICONV_SET_TRANSLITERATE, &x); }
+  { int x = 0; iconvctl (cd_88592_to_88591, ICONV_SET_ILSEQ_INVALID, &x); }
+  { int x = 1; iconvctl (cd_88592_to_88591, ICONV_SET_ILSEQ_INVALID, &x); }
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " transliterate = %d\n", x); } // -> 0
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " discard_ilseq = %d\n", x); } // -> 0
+  { int x; iconvctl (cd_88592_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " ilseq_invalid = %d\n", x); } // -> 1
   iconv_t cd_ascii_to_utf8 = iconv_open ("UTF-8", "ASCII");
   iconv_t cd_88591_to_utf8 = iconv_open ("UTF-8", "ISO-8859-1");
   iconv_t cd_utf8_to_88591 = iconv_open ("ISO-8859-1", "UTF-8");
