@@ -402,6 +402,9 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
     }
   length = 0;
 
+  /* workaround for macOS 14 ? */
+  goto indirectly;
+
   /* First, try a direct conversion, and see whether a conversion error
      occurs at all.  */
   {
@@ -448,11 +451,11 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                return, we lose the number of irreversible conversions.  */
           const char *inptr_before = inptr;
           char *outptr_before = outptr;
-          res = iconv_carefully_1/*!*/ (cd,
+          res = iconv_carefully (cd,
                                  &inptr, &insize,
                                  &outptr, &outsize,
                                  &incremented);
-          fprintf (stderr, "mem_cd_iconveh_internal direct 2b iconv_carefully_1! -> res=%d errno=%d\n", res, errno);
+          fprintf (stderr, "mem_cd_iconveh_internal direct 2b iconv_carefully -> res=%d errno=%d\n", res, errno);
           if (res == 0) {
             fprintf (stderr, "  input bytes consumed: ");
             for (const char *p = inptr_before; p < inptr; p++)
