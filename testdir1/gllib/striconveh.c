@@ -21,6 +21,7 @@
 #include "striconveh.h"
 
 #include <errno.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -410,6 +411,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
 # if defined _LIBICONV_VERSION \
      || !(((__GLIBC__ == 2 && __GLIBC_MINOR__ <= 1) && !defined __UCLIBC__) \
           || defined __sun)
+    fprintf (stderr, "mem_cd_iconveh_internal direct 1\n");
     /* Set to the initial state.  */
     iconv (cd, NULL, NULL, NULL, NULL);
 # endif
@@ -433,8 +435,10 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                                      &inptr, &insize,
                                      &outptr, &outsize,
                                      &incremented);
+            fprintf (stderr, "mem_cd_iconveh_internal direct 2a iconv_carefully_1 -> res=%d errno=%d\n", res, errno);
           }
         else
+          {
           /* Use iconv_carefully instead of iconv here, because:
              - If TO_CODESET is UTF-8, we can do the error handling in this
                loop, no need for a second loop,
@@ -445,6 +449,8 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                                  &inptr, &insize,
                                  &outptr, &outsize,
                                  &incremented);
+          fprintf (stderr, "mem_cd_iconveh_internal direct 2b iconv_carefully -> res=%d errno=%d\n", res, errno);
+          }
 
         length = outptr - result;
         grow = (length + extra_alloc > allocated / 2);
@@ -456,6 +462,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
               break;
             else if (errno == EILSEQ && handler != iconveh_error)
               {
+                fprintf (stderr, "mem_cd_iconveh_internal direct 3 EILSEQ handling\n");
                 if (cd2 == (iconv_t)(-1))
                   {
                     /* TO_CODESET is UTF-8.  */
@@ -558,6 +565,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
       size_t res;
 
       res = iconv (cd, NULL, NULL, &outptr, &outsize);
+      fprintf (stderr, "mem_cd_iconveh_internal direct 9 res=%d\n", res);
       length = outptr - result;
       if (res == (size_t)(-1))
         {
@@ -624,6 +632,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
      || !(((__GLIBC__ == 2 && __GLIBC_MINOR__ <= 1) && !defined __UCLIBC__) \
           || defined __sun)
     /* Set to the initial state.  */
+    fprintf (stderr, "mem_cd_iconveh_internal indirect 1\n");
     if (cd1 != (iconv_t)(-1))
       iconv (cd1, NULL, NULL, NULL, NULL);
     if (cd2 != (iconv_t)(-1))
@@ -650,15 +659,21 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
             if (cd1 != (iconv_t)(-1))
               {
                 if (slowly)
+                  {
                   res1 = iconv_carefully_1 (cd1,
                                             &in1ptr, &in1size,
                                             &out1ptr, &out1size,
                                             &incremented1);
+                  fprintf (stderr, "mem_cd_iconveh_internal indirect 2a iconv_carefully_1 -> res=%d errno=%d\n", res1, errno);
+                  }
                 else
+                  {
                   res1 = iconv_carefully (cd1,
                                           &in1ptr, &in1size,
                                           &out1ptr, &out1size,
                                           &incremented1);
+                  fprintf (stderr, "mem_cd_iconveh_internal indirect 2b iconv_carefully -> res=%d errno=%d\n", res1, errno);
+                  }
               }
             else
               {
@@ -667,6 +682,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                                            &in1ptr, &in1size,
                                            &out1ptr, &out1size,
                                            &incremented1);
+                fprintf (stderr, "mem_cd_iconveh_internal indirect 2c iconv_carefully -> res=%d errno=%d\n", res1, errno);
               }
           }
         else if (do_final_flush1)
@@ -699,6 +715,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
         if (res1 == (size_t)(-1)
             && errno == EILSEQ && handler != iconveh_error)
           {
+            fprintf (stderr, "mem_cd_iconveh_internal indirect 3 EILSEQ handling\n");
             /* The input is invalid in FROM_CODESET.  Eat up one byte and
                emit a U+FFFD character or a question mark.  Room for this
                character was allocated at the end of utf8buf.  */
@@ -729,6 +746,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
             || utf8len > utf8bufsize / 2
             || (res1 == (size_t)(-1) && errno1 == E2BIG))
           {
+            fprintf (stderr, "mem_cd_iconveh_internal indirect 5\n");
             /* Conversion step 2: from UTF-8 to TO_CODESET.  */
             const char *in2ptr = utf8buf;
             size_t in2size = utf8len;
@@ -745,16 +763,22 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                 if (in2size > 0)
                   {
                     if (cd2 != (iconv_t)(-1))
+                      {
                       res2 = iconv_carefully (cd2,
                                               &in2ptr, &in2size,
                                               &out2ptr, &out2size,
                                               &incremented2);
+                      fprintf (stderr, "mem_cd_iconveh_internal indirect 6a iconv_carefully -> res=%d errno=%d\n", res2, errno);
+                      }
                     else
+                      {
                       /* TO_CODESET is UTF-8.  */
                       res2 = utf8conv_carefully (false,
                                                  &in2ptr, &in2size,
                                                  &out2ptr, &out2size,
                                                  &incremented2);
+                      fprintf (stderr, "mem_cd_iconveh_internal indirect 6b utf8conv_carefully -> res=%d errno=%d\n", res2, errno);
+                      }
                   }
                 else /* in1size == 0 && !do_final_flush1
                         && in2size == 0 && do_final_flush2 */
@@ -783,6 +807,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                       break;
                     else if (errno == EILSEQ && handler != iconveh_error)
                       {
+                        fprintf (stderr, "mem_cd_iconveh_internal indirect 7 EILSEQ handling\n");
                         /* Error handling can produce up to 10 bytes of UTF-8
                            output.  But TO_CODESET may be UCS-2, UTF-16 or
                            UCS-4, so use CD2 here as well.  */
@@ -854,6 +879,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                             res = iconv (cd2,
                                          (ICONV_CONST char **) &inptr, &insize,
                                          &out2ptr_try, &out2size_try);
+                            fprintf (stderr, "mem_cd_iconveh_internal indirect 8 EILSEQ handling res=%d errno=%d\n", res, errno);
                             if (handler == iconveh_replacement_character
                                 && (res == (size_t)(-1)
                                     ? errno == EILSEQ
@@ -878,6 +904,7 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                                 res = iconv (cd2,
                                              (ICONV_CONST char **) &inptr, &insize,
                                              &out2ptr, &out2size);
+                                fprintf (stderr, "mem_cd_iconveh_internal indirect 9 EILSEQ handling res=%d errno=%d\n", res, errno);
                               }
                             else
                               {
@@ -932,10 +959,13 @@ mem_cd_iconveh_internal (const char *src, size_t srclen,
                             out2ptr = result + length;
                             out2size = allocated - extra_alloc - length;
                             if (cd2 != (iconv_t)(-1))
+                              {
                               res = iconv (cd2,
                                            (ICONV_CONST char **) &inptr,
                                            &insize,
                                            &out2ptr, &out2size);
+                              fprintf (stderr, "mem_cd_iconveh_internal indirect 10 EILSEQ handling res=%d errno=%d\n", res, errno);
+                              }
                             else
                               {
                                 /* TO_CODESET is UTF-8.  */

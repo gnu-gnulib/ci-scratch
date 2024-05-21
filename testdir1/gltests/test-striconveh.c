@@ -240,6 +240,7 @@ main ()
           static const char input[] = "Rafa\263 Maszkowski"; /* Rafał Maszkowski */
           for (o = 0; o < 2; o++)
             {
+              fprintf (stderr, "test-striconveh.c before first failing test, indirect=%d h=%d o=%d\n", indirect, h, o);
               size_t *offsets = (o ? new_offsets (strlen (input)) : NULL);
               char *result = NULL;
               size_t length = 0;
