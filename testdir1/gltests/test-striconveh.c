@@ -78,6 +78,7 @@ main ()
   iconv_t cd_ascii_to_utf8 = iconv_open ("UTF-8", "ASCII");
   iconv_t cd_88591_to_utf8 = iconv_open ("UTF-8", "ISO-8859-1");
   iconv_t cd_utf8_to_88591 = iconv_open ("ISO-8859-1", "UTF-8");
+#if 0
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " cd_utf8_to_88591 transliterate = %d\n", x); } // -> 0
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " cd_utf8_to_88591 discard_ilseq = %d\n", x); } // -> 0
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " cd_utf8_to_88591 ilseq_invalid = %d\n", x); } // -> 1
@@ -87,6 +88,7 @@ main ()
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " cd_utf8_to_88591 transliterate = %d\n", x); } // ->
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " cd_utf8_to_88591 discard_ilseq = %d\n", x); } // ->
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " cd_utf8_to_88591 ilseq_invalid = %d\n", x); } // ->
+#endif
   iconv_t cd_88592_to_utf8 = iconv_open ("UTF-8", "ISO-8859-2");
   iconv_t cd_utf8_to_88592 = iconv_open ("ISO-8859-2", "UTF-8");
   iconv_t cd_utf7_to_utf8 = iconv_open ("UTF-8", "UTF-7");
