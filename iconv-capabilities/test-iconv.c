@@ -44,8 +44,13 @@ traced_iconv (iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size
   char *inbuf_after = *inbuf;
   char *outbuf_after = *outbuf;
   if (ret == (size_t)-1)
-    fprintf (stderr, "iconv() -> -1, errno=%d%s\n", errno,
-             errno == EINVAL ? "=EINVAL" : errno == EILSEQ ? "=EILSEQ" : errno == E2BIG ? "=E2BIG" : "");
+    {
+      if (errno == EINVAL || errno == EILSEQ || errno == E2BIG)
+        fprintf (stderr, "iconv() -> -1, errno=%s\n",
+                 errno == EINVAL ? "=EINVAL" : errno == EILSEQ ? "=EILSEQ" : errno == E2BIG ? "=E2BIG" : "");
+      else
+        fprintf (stderr, "iconv() -> -1, errno=%d\n", errno);
+    }
   else
     fprintf (stderr, "iconv() -> %d\n", (int) ret);
   fprintf (stderr, "input consumed: ");
