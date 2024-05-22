@@ -205,6 +205,7 @@ iconv_open ("ISO-8859-1//TRANSLIT//IGNORE", "ISO-8859-2") -> 0x556538cd6400
 iconv() -> 1
 input consumed:  0xB3
 output produced: 0x3F
+======= SUMMARY: translit=0 fails on unconvertible, translit=1 produces '?' and overrides ignore.
 
 libiconv-1.17:
 ======= Testing translit=0, ignore=0, ilseq_invalid=1
@@ -259,5 +260,6 @@ iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x55a46204a2a0
 iconv() -> 1
 input consumed:  0xB3
 output produced: 0x6C
+======= SUMMARY: translit=0 fails on unconvertible, translit=1 produces 'l' and overrides ignore.
 
 */

@@ -74,6 +74,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -111,6 +112,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -148,6 +150,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -190,6 +193,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -232,6 +236,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -272,6 +277,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -322,6 +328,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -370,6 +377,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -413,6 +421,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -471,6 +480,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -533,6 +543,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -631,6 +642,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
@@ -670,6 +682,7 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[123]
+            */build/test-*.log
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
