@@ -82,7 +82,7 @@ main ()
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " cd_utf8_to_88591 discard_ilseq = %d\n", x); } // -> 0
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_ILSEQ_INVALID, &x); fprintf (stderr, " cd_utf8_to_88591 ilseq_invalid = %d\n", x); } // -> 1
   //{ int x = 1; iconvctl (cd_utf8_to_88591, ICONV_SET_TRANSLITERATE, &x); } // no effect
-  { int x = 1; iconvctl (cd_utf8_to_88591, ICONV_SET_DISCARD_ILSEQ, &x); }
+  //{ int x = 1; iconvctl (cd_utf8_to_88591, ICONV_SET_DISCARD_ILSEQ, &x); } // no fixing effect
   //{ int x = 0; iconvctl (cd_utf8_to_88591, ICONV_SET_ILSEQ_INVALID, &x); } // no fixing effect
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_TRANSLITERATE, &x); fprintf (stderr, " cd_utf8_to_88591 transliterate = %d\n", x); } // ->
   { int x; iconvctl (cd_utf8_to_88591, ICONV_GET_DISCARD_ILSEQ, &x); fprintf (stderr, " cd_utf8_to_88591 discard_ilseq = %d\n", x); } // ->

@@ -47,7 +47,6 @@ jobs:
   # See https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration
   check-linux-gnu-ubuntu:
     name: make check on Ubuntu GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -80,7 +79,6 @@ jobs:
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -118,7 +116,6 @@ jobs:
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -198,7 +195,6 @@ jobs:
           overwrite: true
   check-freebsd:
     name: make check on FreeBSD
-    if: ${{ false }}
     # The FreeBSD runners sometimes get stuck.
     timeout-minutes: 15
     runs-on: ubuntu-22.04
@@ -241,7 +237,6 @@ jobs:
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -282,7 +277,6 @@ jobs:
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -333,7 +327,6 @@ jobs:
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -382,7 +375,6 @@ jobs:
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -426,7 +418,6 @@ jobs:
           overwrite: true
   check-cygwin:
     name: make check on Cygwin
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -485,7 +476,6 @@ jobs:
           overwrite: true
   check-mingw:
     name: make check on mingw
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -548,7 +538,6 @@ jobs:
           overwrite: true
   check-msvc:
     name: make check on MSVC
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -648,7 +637,6 @@ jobs:
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.

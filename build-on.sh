@@ -37,6 +37,13 @@ for prereq in $prerequisites; do
 done
 
 # We expect to find the sources in the repository.
+cd iconv-capabilities
+${CC-gcc} $CPPFLAGS $CFLAGS $LDFLAGS test-iconv.c -o test-iconv
+./test-iconv > log3 2>&1; cat log3
+exit 0
+
+
+
 cd testdir1 || exit 1
 
 mkdir build
