@@ -199,5 +199,20 @@ mingw:            translit=0 ignore=0 fails on unconvertible.
                   translit=1 produces 'l' without reporting unconverible, and overrides ignore.
 netbsd-10.0:      reports unconvertible through ret and maps it to '?'. translit=1 and ignore=1 are unsupported.
 solaris11-omnios: likewise
+solaris11:        always reports unconvertible. translit=0 maps it to '?', translit=1 maps it to 'l'.
 musl libc:        reports unconvertible through ret and maps it to '*'. translit=1 and ignore=1 are unsupported.
+
+So, with a simple iconv_open (not //TRANSLIT, no //IGNORE, no iconvctl afterwards) the results are:
+glibc:            fails on unconvertible.
+libiconv-1.17:    likewise
+freebsd-14.0:     likewise
+openbsd-7.5:      likewise
+Cygwin:           likewise
+macos11,12,13:    likewise
+mingw:            likewise
+netbsd-10.0:      reports unconvertible, maps it to '?'.
+solaris11-omnios: likewise
+solaris11:        likewise
+musl libc:        reports unconvertible, maps it to '*'.
+macos14:          never reports unconvertible, maps it to 'l'.
 */
