@@ -350,7 +350,7 @@ jobs:
           prepare: |
             : "Install Solaris packages"
             : "List of packages: http://pkg.oracle.com/solaris/release/en/index.shtml"
-            pkg install gnu-m4 automake autoconf gcc gcc-c++
+            pkg install gnu-m4 automake-116 autoconf gcc gcc-c++
           run: |
             set -x
             uname -a
@@ -464,6 +464,15 @@ jobs:
       # Convert the shell script, that the Windows 'git' port has checked out
       # with CR-LF newlines, back to Unix newlines.
       - run: sed -i -e 's/\r$//' build-on.sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/configure
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/compile
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
@@ -523,6 +532,15 @@ jobs:
       # Convert the shell script, that the Windows 'git' port has checked out
       # with CR-LF newlines, back to Unix newlines.
       - run: sed -i -e 's/\r$//' build-on.sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/configure
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/compile
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - name: Build in Cygwin
         run: |
           set -x
@@ -590,6 +608,15 @@ jobs:
       # Convert the shell script, that the Windows 'git' port has checked out
       # with CR-LF newlines, back to Unix newlines.
       - run: sed -i -e 's/\r$//' build-on.sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/configure
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/compile
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
+      - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - run: |
           wget -O ar-lib 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/ar-lib;hb=HEAD'
           wget -O compile 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/compile;hb=HEAD'

@@ -167,99 +167,15 @@ main ()
 }
 
 /*
-glibc:
-
-======= Testing translit=0, ignore=0, ilseq_invalid=1
-iconv_open ("ISO-8859-1", "UTF-8") -> 0x556538cd6400
-iconv() -> -1, errno=84=EILSEQ
-input consumed:
-output produced:
-iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x556538cd6400
-iconv() -> -1, errno=84=EILSEQ
-input consumed:
-output produced:
-======= Testing translit=0, ignore=1, ilseq_invalid=1
-iconv_open ("ISO-8859-1//IGNORE", "UTF-8") -> 0x556538cd6400
-iconv() -> -1, errno=84=EILSEQ
-input consumed:  0xC5 0x82
-output produced:
-iconv_open ("ISO-8859-1//IGNORE", "ISO-8859-2") -> 0x556538cd6400
-iconv() -> -1, errno=84=EILSEQ
-input consumed:  0xB3
-output produced:
-======= Testing translit=1, ignore=0, ilseq_invalid=1
-iconv_open ("ISO-8859-1//TRANSLIT", "UTF-8") -> 0x556538cd6400
-iconv() -> 1
-input consumed:  0xC5 0x82
-output produced: 0x3F
-iconv_open ("ISO-8859-1//TRANSLIT", "ISO-8859-2") -> 0x556538cd6400
-iconv() -> 1
-input consumed:  0xB3
-output produced: 0x3F
-======= Testing translit=1, ignore=1, ilseq_invalid=1
-iconv_open ("ISO-8859-1//TRANSLIT//IGNORE", "UTF-8") -> 0x556538cd6400
-iconv() -> 1
-input consumed:  0xC5 0x82
-output produced: 0x3F
-iconv_open ("ISO-8859-1//TRANSLIT//IGNORE", "ISO-8859-2") -> 0x556538cd6400
-iconv() -> 1
-input consumed:  0xB3
-output produced: 0x3F
-======= SUMMARY: translit=0 fails on unconvertible, translit=1 produces '?' and overrides ignore.
-
-libiconv-1.17:
-======= Testing translit=0, ignore=0, ilseq_invalid=1
-iconv_open ("ISO-8859-1", "UTF-8") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> -1, errno=84=EILSEQ
-input consumed:
-output produced:
-iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> -1, errno=84=EILSEQ
-input consumed:
-output produced:
-======= Testing translit=0, ignore=1, ilseq_invalid=1
-iconv_open ("ISO-8859-1", "UTF-8") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xC5 0x82
-output produced:
-iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xB3
-output produced:
-======= Testing translit=1, ignore=0, ilseq_invalid=1
-iconv_open ("ISO-8859-1", "UTF-8") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xC5 0x82
-output produced: 0x6C
-iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xB3
-output produced: 0x6C
-======= Testing translit=1, ignore=1, ilseq_invalid=1
-iconv_open ("ISO-8859-1", "UTF-8") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xC5 0x82
-output produced: 0x6C
-iconv_open ("ISO-8859-1", "ISO-8859-2") -> 0x55a46204a2a0
-  transliterate=0
-  discard_ilseq=0
-iconv() -> 1
-input consumed:  0xB3
-output produced: 0x6C
-======= SUMMARY: translit=0 fails on unconvertible, translit=1 produces 'l' and overrides ignore.
-
+glibc:            translit=0 fails on unconvertible, translit=1 produces '?' and overrides ignore.
+libiconv-1.17:    translit=0 fails on unconvertible, translit=1 produces 'l' and overrides ignore.
+freebsd-14.0:     likewise
+openbsd-7.5:      likewise
+macos11,12:       likewise
+macos13:          likewise. ICONV_SET_ILSEQ_INVALID is declared but unsupported.
+macos14:          never reports unconvertible, maps it to 'l'.
+                  ICONV_SET_TRANSLITERATE, ICONV_SET_DISCARD_ILSEQ, ICONV_SET_ILSEQ_INVALID all have no effect.
+netbsd-10.0:      reports unconvertible through ret and maps it to '?'. translit=1 and ignore=1 are unsupported.
+solaris11-omnios: likewise
+musl libc:        reports unconvertible through ret and maps it to '*'. translit=1 and ignore=1 are unsupported.
 */
