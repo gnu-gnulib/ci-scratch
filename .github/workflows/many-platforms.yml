@@ -100,7 +100,7 @@ jobs:
             ls -l
             export CPPFLAGS="-Wall"
             export CC="gcc -std=gnu99"
-            ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace automake-1.16.5'
+            ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -366,7 +366,7 @@ jobs:
             export LDFLAGS="-L$HOME/lib"
             export CC="gcc -m64"
             export CXX="gcc -m64"
-            ./build-on.sh 'testdir-all' '' 'make' "$HOME" 'libbacktrace automake-1.16.5'
+            ./build-on.sh 'testdir-all' '' 'make' "$HOME" 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}

@@ -43,6 +43,12 @@ cd iconv-capabilities || exit 1
 mkdir build
 cd build
 
+# Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
+sleep 1; touch aclocal.m4
+sleep 1; touch configure
+sleep 1; touch config.h.in
+sleep 1; touch `find . -name Makefile.in -type f`
+
 # Configure.
 CPPFLAGS="$CPPFLAGS -DCONTINUE_AFTER_ASSERT" \
 FORCE_UNSAFE_CONFIGURE=1 ../configure --config-cache --with-included-libunistring $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
