@@ -47,7 +47,7 @@ traced_iconv (iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size
     {
       if (errno == EINVAL || errno == EILSEQ || errno == E2BIG)
         fprintf (stderr, "iconv() -> -1, errno=%s\n",
-                 errno == EINVAL ? "=EINVAL" : errno == EILSEQ ? "=EILSEQ" : errno == E2BIG ? "=E2BIG" : "");
+                 errno == EINVAL ? "EINVAL" : errno == EILSEQ ? "EILSEQ" : errno == E2BIG ? "E2BIG" : "");
       else
         fprintf (stderr, "iconv() -> -1, errno=%d\n", errno);
     }
