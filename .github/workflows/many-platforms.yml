@@ -29,7 +29,7 @@
 #        exclude:
 #          - bitness: 64
 
-name: Produce tarball and make check
+name: Build and make check
 
 on:
   push:
@@ -350,7 +350,7 @@ jobs:
           prepare: |
             : "Install Solaris packages"
             : "List of packages: http://pkg.oracle.com/solaris/release/en/index.shtml"
-            pkg install gnu-m4 automake-116 autoconf gcc gcc-c++
+            pkg install gnu-m4 automake autoconf gcc gcc-c++
           run: |
             set -x
             uname -a

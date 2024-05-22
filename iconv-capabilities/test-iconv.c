@@ -63,6 +63,14 @@ traced_iconv (iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size
 #undef iconv
 #define iconv traced_iconv
 
+// Try without iconvctl this time.
+#undef ICONV_GET_TRANSLITERATE
+#undef ICONV_SET_TRANSLITERATE
+#undef ICONV_GET_DISCARD_ILSEQ
+#undef ICONV_SET_DISCARD_ILSEQ
+#undef ICONV_GET_ILSEQ_INVALID
+#undef ICONV_SET_ILSEQ_INVALID
+
 int
 main ()
 {
@@ -171,10 +179,13 @@ glibc:            translit=0 fails on unconvertible, translit=1 produces '?' and
 libiconv-1.17:    translit=0 fails on unconvertible, translit=1 produces 'l' and overrides ignore.
 freebsd-14.0:     likewise
 openbsd-7.5:      likewise
+Cygwin:           likewise
 macos11,12:       likewise
 macos13:          likewise. ICONV_SET_ILSEQ_INVALID is declared but unsupported.
 macos14:          never reports unconvertible, maps it to 'l'.
                   ICONV_SET_TRANSLITERATE, ICONV_SET_DISCARD_ILSEQ, ICONV_SET_ILSEQ_INVALID all have no effect.
+mingw:            translit=0 ignore=0 fails on unconvertible.
+                  translit=1 produces 'l' without reporting unconverible, and overrides ignore.
 netbsd-10.0:      reports unconvertible through ret and maps it to '?'. translit=1 and ignore=1 are unsupported.
 solaris11-omnios: likewise
 musl libc:        reports unconvertible through ret and maps it to '*'. translit=1 and ignore=1 are unsupported.
