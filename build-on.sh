@@ -40,14 +40,14 @@ done
 # We expect to find the sources in the repository.
 cd iconv-capabilities || exit 1
 
-mkdir build
-cd build
-
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
 sleep 1; touch configure
 sleep 1; touch config.h.in
 sleep 1; touch `find . -name Makefile.in -type f`
+
+mkdir build
+cd build
 
 # Configure.
 CPPFLAGS="$CPPFLAGS -DCONTINUE_AFTER_ASSERT" \
