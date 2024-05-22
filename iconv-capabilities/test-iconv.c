@@ -7,7 +7,7 @@ iconv_t
 traced_iconv_open (const char *tocode, const char *fromcode)
 {
   iconv_t cd = iconv_open (tocode, fromcode);
-  fprintf (stderr, "iconv_open (\"%s\", \"%s\") -> %p\n", tocode, fromcode, cd);
+  fprintf (stderr, "iconv_open (\"%s\", \"%s\") -> %s\n", tocode, fromcode, cd != (iconv_t)-1 ? "success" : "-1");
   if (cd != (iconv_t)-1)
     {
 #ifdef ICONV_GET_TRANSLITERATE
@@ -175,8 +175,12 @@ main ()
 }
 
 /*
-glibc:            translit=0 fails on unconvertible, translit=1 produces '?' and overrides ignore.
-libiconv-1.17:    translit=0 fails on unconvertible, translit=1 produces 'l' and overrides ignore.
+glibc:            translit=0 ignore=0 fails on unconvertible.
+                  translit=0 ignore=1 fails on unconvertible.
+                  translit=1 produces '?' and overrides ignore.
+libiconv-1.17:    translit=0 ignore=0 fails on unconvertible
+                  translit=0 ignore=1 reports unconvertible.
+                  translit=1 produces 'l' and overrides ignore.
 freebsd-14.0:     likewise
 openbsd-7.5:      likewise
 Cygwin:           likewise
