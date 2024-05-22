@@ -68,6 +68,7 @@ traced_iconv (iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size
 #undef iconv
 #define iconv traced_iconv
 
+#if 0 /* Experiment on macOS 14 */
 // Try without iconvctl this time.
 #undef ICONV_GET_TRANSLITERATE
 #undef ICONV_SET_TRANSLITERATE
@@ -75,6 +76,7 @@ traced_iconv (iconv_t cd, char **inbuf, size_t *inbytesleft, char **outbuf, size
 #undef ICONV_SET_DISCARD_ILSEQ
 #undef ICONV_GET_ILSEQ_INVALID
 #undef ICONV_SET_ILSEQ_INVALID
+#endif
 
 int
 main ()

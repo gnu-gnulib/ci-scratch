@@ -99,6 +99,7 @@ jobs:
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
+            export CC="gcc -std=gnu99"
             ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace automake-1.16.5'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
@@ -360,6 +361,7 @@ jobs:
             ls -l
             : "The locale set by default, C.UTF-8, is not a valid locale on Solaris 11."
             export LANG=en_US.UTF-8
+            export PATH="$HOME/bin:$PATH"
             export CPPFLAGS="-I$HOME/include -Wall"
             export LDFLAGS="-L$HOME/lib"
             export CC="gcc -m64"
