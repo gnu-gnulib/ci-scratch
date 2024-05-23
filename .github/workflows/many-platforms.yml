@@ -483,6 +483,7 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
@@ -569,6 +570,7 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
@@ -663,6 +665,7 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
       - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
