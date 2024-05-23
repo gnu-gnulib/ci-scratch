@@ -473,6 +473,25 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
@@ -541,6 +560,25 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           set -x
@@ -617,6 +655,25 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/configure
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir2/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir2/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
       - run: |
           wget -O ar-lib 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/ar-lib;hb=HEAD'
           wget -O compile 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/compile;hb=HEAD'
