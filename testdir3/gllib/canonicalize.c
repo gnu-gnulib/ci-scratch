@@ -55,11 +55,14 @@ static bool
 file_accessible (char const *file)
 {
 # if HAVE_FACCESSAT
-  return faccessat (AT_FDCWD, file, F_OK, AT_EACCESS) == 0;
+  int ret = faccessat (AT_FDCWD, file, F_OK, AT_EACCESS) == 0;
+  fprintf(stderr,"file_accessible (via faccessat) file=%s -> %d\n", file, ret);
 # else
   struct stat st;
-  return stat (file, &st) == 0 || errno == EOVERFLOW;
+  int ret = stat (file, &st) == 0 || errno == EOVERFLOW;
+  fprintf(stderr,"file_accessible (via stat) file=%s -> %d\n", file, ret);
 # endif
+  return ret;
 }
 
 /* True if concatenating END as a suffix to a file name means that the
@@ -325,6 +328,7 @@ canonicalize_filename_mode_stk (const char *name, canonicalize_mode_t can_mode,
                   buf = bufs->link.data;
                   idx_t bufsize = bufs->link.length;
                   n = readlink (rname, buf, bufsize - 1);
+fprintf(stderr,"canonicalize_filename_mode name=%s : readlink: rname=%s -> %d\n",name,rname,(int)n);
                   if (n < bufsize - 1)
                     break;
                   if (!scratch_buffer_grow (&bufs->link))
@@ -423,7 +427,10 @@ canonicalize_filename_mode_stk (const char *name, canonicalize_mode_t can_mode,
                       || (can_exist == CAN_ALL_BUT_LAST
                           && errno == ENOENT
                           && !end[strspn (end, SLASHES)])))
-            goto error;
+            {
+fprintf(stderr,"canonicalize_filename_mode name=%s : failing\n",name);
+              goto error;
+            }
         }
     }
   if (dest > rname + prefix_len + 1 && ISSLASH (dest[-1]))

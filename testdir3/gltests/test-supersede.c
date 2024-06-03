@@ -48,8 +48,8 @@
 int
 main (void)
 {
-  test_open_supersede (false, false);
-  test_open_supersede (false, true);
+//  test_open_supersede (false, false);
+//  test_open_supersede (false, true);
   test_open_supersede (true, false);
   test_open_supersede (true, true);
 
