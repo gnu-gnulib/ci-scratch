@@ -28134,6 +28134,7 @@ printf "%s\n" "#define GNULIB_TEST_READDIR 1" >>confdefs.h
 
 
 
+
   if test $ac_cv_func_readlink = no; then
     HAVE_READLINK=0
   else
@@ -28146,8 +28147,10 @@ else case e in #(
   e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
 /* end confdefs.h.  */
 #include <unistd.h>
-      /* Cause compilation failure if original declaration has wrong type.  */
-      ssize_t readlink (const char *, char *, size_t);
+             /* Cause compilation failure if original declaration has
+                wrong type.  */
+             ssize_t readlink (const char *, char *, size_t);
+
 int
 main (void)
 {
@@ -28155,6 +28158,7 @@ main (void)
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_compile "$LINENO"
 then :
@@ -28168,6 +28172,7 @@ esac
 fi
 { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_decl_readlink_works" >&5
 printf "%s\n" "$gl_cv_decl_readlink_works" >&6; }
+
             { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether readlink handles trailing slash correctly" >&5
 printf %s "checking whether readlink handles trailing slash correctly... " >&6; }
 if test ${gl_cv_func_readlink_trailing_slash+y}
@@ -28203,10 +28208,12 @@ int
 main (void)
 {
 char buf[20];
-      return readlink ("conftest.lnk2/", buf, sizeof buf) != -1;
+             return readlink ("conftest.lnk2/", buf, sizeof buf) != -1;
+
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_run "$LINENO"
 then :
@@ -28273,10 +28280,12 @@ int
 main (void)
 {
 char c;
-      return readlink ("conftest.link", &c, 1) != 1;
+             return readlink ("conftest.link", &c, 1) != 1;
+
   ;
   return 0;
 }
+
 _ACEOF
 if ac_fn_c_try_run "$LINENO"
 then :
@@ -28305,6 +28314,12 @@ printf "%s\n" "$gl_cv_func_readlink_truncate" >&6; }
 
 printf "%s\n" "#define READLINK_TRUNCATE_BUG 1" >>confdefs.h
 
+        REPLACE_READLINK=1
+        ;;
+    esac
+
+            case "$host_os" in
+      cygwin*)
         REPLACE_READLINK=1
         ;;
     esac
