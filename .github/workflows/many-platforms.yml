@@ -478,6 +478,29 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/configure
+      - run: sed -i -e 's/\r$//' testdir1/config.h.in
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-c-strcase.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir2/configure
       - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
@@ -497,6 +520,32 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir3/configure
+      - run: sed -i -e 's/\r$//' testdir3/config.h.in
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir3/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello4.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-getcwd.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-lseek.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
@@ -565,6 +614,29 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/configure
+      - run: sed -i -e 's/\r$//' testdir1/config.h.in
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-c-strcase.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir2/configure
       - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
@@ -584,6 +656,32 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir3/configure
+      - run: sed -i -e 's/\r$//' testdir3/config.h.in
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir3/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello4.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-getcwd.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-lseek.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           set -x
@@ -660,6 +758,29 @@ jobs:
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/install-sh
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/missing
       - run: sed -i -e 's/\r$//' iconv-capabilities/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/configure
+      - run: sed -i -e 's/\r$//' testdir1/config.h.in
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.rpath
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir1/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir1/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-c-strcase.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir1/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir2/configure
       - run: sed -i -e 's/\r$//' testdir2/config.h.in
       - run: sed -i -e 's/\r$//' testdir2/build-aux/compile
@@ -679,6 +800,32 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-select-out.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir2/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir3/configure
+      - run: sed -i -e 's/\r$//' testdir3/config.h.in
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir3/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir3/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello2.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello4.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftello.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftell.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-getcwd.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-lseek.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir3/gltests/test-xalloc-die.sh
       - run: |
           wget -O ar-lib 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/ar-lib;hb=HEAD'
           wget -O compile 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/compile;hb=HEAD'
