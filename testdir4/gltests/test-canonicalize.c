@@ -421,7 +421,7 @@ main (void)
     free (result4);
   }
 
-#if !(defined _WIN32 || defined __CYGWIN__)
+#if !(defined _WIN32 && !defined __CYGWIN__)
   /* Check a device file.  */
   {
     char *result1 = canonicalize_file_name ("/dev/null");
