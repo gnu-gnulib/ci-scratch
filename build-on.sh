@@ -38,7 +38,7 @@ for prereq in $prerequisites; do
 done
 
 # We expect to find the sources in the repository.
-cd testdir2 || exit 1
+cd testdir3 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
