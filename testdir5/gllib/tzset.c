@@ -22,6 +22,7 @@
 /* Specification.  */
 #include <time.h>
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #if defined _WIN32 && ! defined __CYGWIN__
@@ -83,6 +84,7 @@ rpl_tzset (void)
   /* On native Windows, tzset() is deprecated.  Use _tzset() instead.  See
      <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/posix-tzset>
      <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tzset>  */
+  printf("tzset.c: calling _tzset()\n"); fflush(stdout);
   _tzset ();
 #else
   tzset ();

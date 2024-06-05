@@ -222,7 +222,7 @@ tzalloc_test (void)
         }
 
       setting = tza->setting ? tza->setting : "UTC0";
-
+printf("tzalloc_test 1: i=%d setting=%s\n", i, setting); fflush(stdout);
       if (!localtime_rz (tz, &LT[i].t, &tm))
         {
           fail = 1;

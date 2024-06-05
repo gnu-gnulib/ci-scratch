@@ -193,7 +193,11 @@ static bool
 change_env (timezone_t tz)
 {
   if (setenv_TZ (tz->tz_is_set ? tz->abbrs : NULL) != 0)
-    return false;
+    {
+printf("change_env (set=%d, tz=%s) -> false\n", tz->tz_is_set, tz->abbrs); fflush(stdout);
+      return false;
+    }
+printf("change_env (set=%d, tz=%s) -> calling tzset\n", tz->tz_is_set, tz->abbrs); fflush(stdout);
   tzset ();
   return true;
 }
@@ -209,7 +213,10 @@ set_tz (timezone_t tz)
   if (env_tz
       ? tz->tz_is_set && strcmp (tz->abbrs, env_tz) == 0
       : !tz->tz_is_set)
-    return local_tz;
+    {
+printf("set_tz: doing nothing\n"); fflush(stdout);
+      return local_tz;
+    }
   else
     {
       timezone_t old_tz = tzalloc (env_tz);
@@ -233,7 +240,10 @@ static bool
 revert_tz (timezone_t tz)
 {
   if (tz == local_tz)
-    return true;
+    {
+printf("revert_tz: doing nothing\n"); fflush(stdout);
+      return true;
+    }
   else
     {
       int saved_errno = errno;
