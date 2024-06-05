@@ -216,7 +216,7 @@ __add_to_environ (const char *name, const char *value, const char *combined,
         }
 
       if (__environ != last_environ)
-        memcpy ((char *) new_environ, (char *) __environ,
+        memcpy ((char **) new_environ, (char **) __environ,
                 size * sizeof (char *));
 
       new_environ[size + 1] = NULL;
@@ -322,9 +322,7 @@ w_add_to_environ (const wchar_t *name, const wchar_t *value, const wchar_t *comb
 
       /* We allocated this space; we can extend it.  */
       new_environ =
-        (wchar_t **) (last_environ == NULL
-                   ? malloc ((size + 2) * sizeof (wchar_t *))
-                   : realloc (last_environ, (size + 2) * sizeof (wchar_t *)));
+        (wchar_t **) malloc ((size + 2) * sizeof (wchar_t *));
       if (new_environ == NULL)
         {
           /* It's easier to set errno to ENOMEM than to rely on the
@@ -357,13 +355,12 @@ w_add_to_environ (const wchar_t *name, const wchar_t *value, const wchar_t *comb
             }
         }
 
-      if (__environ != last_environ)
-        memcpy ((wchar_t *) new_environ, (wchar_t *) __environ,
-                size * sizeof (wchar_t *));
+      memcpy ((wchar_t **) new_environ, (wchar_t **) _wenviron,
+              size * sizeof (wchar_t *));
 
       new_environ[size + 1] = NULL;
 
-      last_environ = __environ = new_environ;
+      _wenviron = new_environ;
     }
   else if (replace)
     {

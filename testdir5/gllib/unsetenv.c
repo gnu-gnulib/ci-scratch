@@ -90,7 +90,7 @@ unsetenv (const char *name)
   mbstowcs (wname, name, sizeof (wname) / sizeof (wname[0]));
   wchar_t **wep = _wenviron;
   while (*wep != NULL)
-    if (!wcsncmp (*wep, name, len) && (*wep)[len] == L'=')
+    if (!wcsncmp (*wep, wname, len) && (*wep)[len] == L'=')
       {
         /* Found it.  Remove this pointer by moving later ones back.  */
         wchar_t **dp = wep;
