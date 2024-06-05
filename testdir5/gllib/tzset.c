@@ -59,6 +59,7 @@ rpl_tzset (void)
   const char *tz = getenv ("TZ");
   if (tz != NULL && strchr (tz, '/') != NULL)
     {
+      printf("tzset.c: rectifying TZ, was TZ=%s\n",tz); fflush(stdout);
       /* Neutralize it, in a way that is multithread-safe.
          (If we were to use _putenv ("TZ="), it would free the memory allocated
          for the environment variable "TZ", and thus other threads that are

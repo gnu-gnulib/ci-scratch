@@ -198,7 +198,9 @@ change_env (timezone_t tz)
 printf("change_env (set=%d, tz=%s) -> false\n", tz->tz_is_set, tz->abbrs); fflush(stdout);
       return false;
     }
-printf("change_env (set=%d, tz=%s) -> calling tzset\n", tz->tz_is_set, tz->abbrs); fflush(stdout);
+  const char *cTZ = getenv ("TZ");
+  const wchar_t *wTZ = _wgetenv(L"TZ");
+printf("change_env (set=%d, tz=%s) -> cTZ=|%s|, wTZ=|%ls| -> calling tzset\n", tz->tz_is_set, tz->abbrs, cTZ != NULL ? cTZ : "(null)", wTZ != NULL ? wTZ : L"(null)"); fflush(stdout);
   tzset ();
   return true;
 }
