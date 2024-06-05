@@ -567,7 +567,7 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir5/configure
-      - run: sed -i -e 's/\r$//' testdir5/config.in.h
+      - run: sed -i -e 's/\r$//' testdir5/config.h.in
       - run: sed -i -e 's/\r$//' testdir5/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.sub
@@ -746,7 +746,7 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir5/configure
-      - run: sed -i -e 's/\r$//' testdir5/config.in.h
+      - run: sed -i -e 's/\r$//' testdir5/config.h.in
       - run: sed -i -e 's/\r$//' testdir5/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.sub
@@ -933,7 +933,7 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir4/gltests/test-xalloc-die.sh
       - run: sed -i -e 's/\r$//' testdir5/configure
-      - run: sed -i -e 's/\r$//' testdir5/config.in.h
+      - run: sed -i -e 's/\r$//' testdir5/config.h.in
       - run: sed -i -e 's/\r$//' testdir5/build-aux/compile
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.guess
       - run: sed -i -e 's/\r$//' testdir5/build-aux/config.sub
