@@ -86,6 +86,7 @@ rpl_tzset (void)
      <https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tzset>  */
   printf("tzset.c: calling _tzset()\n"); fflush(stdout);
   _tzset ();
+  printf("tzset.c: -> _timezone = %d, _tzname[0] = |%s|, _tzname[1] = |%s|\n", _timezone, _tzname[0], _tzname[1]); fflush(stdout);
 #else
   tzset ();
 #endif

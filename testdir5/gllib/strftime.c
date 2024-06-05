@@ -89,6 +89,7 @@ extern char *tzname[];
 #include <limits.h>
 #include <stdckdint.h>
 #include <stddef.h>
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -936,6 +937,7 @@ __strftime_internal (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
   const char *format_end = NULL;
 #endif
 
+printf("strftime 1\n"); fflush(stdout);
   zone = NULL;
 #if HAVE_STRUCT_TM_TM_ZONE
   /* The POSIX test suite assumes that setting
@@ -1358,6 +1360,7 @@ __strftime_internal (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
               return 0; /* errno is set here */
             len = strftime_l (ubuf, sizeof ubuf, ufmt, tp, locale);
 # else
+printf("strftime calling system strftime on %02d:%02d:%02d\n", tp->tm_hour, tp->tm_min, tm->tm_sec); fflush(stdout);
             len = strftime (ubuf, sizeof ubuf, ufmt, tp);
 # endif
             if (len != 0)
@@ -2073,6 +2076,7 @@ __strftime_internal (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
   if (p && maxsize != 0)
     *p = L_('\0');
 #endif
+printf("strftime 9\n"); fflush(stdout);
 
   errno = saved_errno;
   return i;

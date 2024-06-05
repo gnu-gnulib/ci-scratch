@@ -220,6 +220,7 @@ printf("set_tz: doing nothing\n"); fflush(stdout);
     }
   else
     {
+printf("set_tz: real\n"); fflush(stdout);
       timezone_t old_tz = tzalloc (env_tz);
       if (!old_tz)
         return old_tz;
@@ -247,6 +248,7 @@ printf("revert_tz: doing nothing\n"); fflush(stdout);
     }
   else
     {
+printf("revert_tz: real\n"); fflush(stdout);
       int saved_errno = errno;
       bool ok = change_env (tz);
       if (!ok)
@@ -280,10 +282,12 @@ localtime_rz (timezone_t tz, time_t const *t, struct tm *tm)
     return gmtime_r (t, tm);
   else
     {
+printf("localtime_rz 1: set_tz\n"); fflush(stdout);
       timezone_t old_tz = set_tz (tz);
       if (old_tz)
         {
           bool abbr_saved = localtime_r (t, tm) && save_abbr (tz, tm);
+printf("localtime_rz 2: revert_tz\n"); fflush(stdout);
           if (revert_tz (old_tz) && abbr_saved)
             return tm;
         }
@@ -299,6 +303,7 @@ mktime_z (timezone_t tz, struct tm *tm)
     return timegm (tm);
   else
     {
+printf("mktime_z 1: set_tz\n"); fflush(stdout);
       timezone_t old_tz = set_tz (tz);
       if (old_tz)
         {
@@ -316,6 +321,7 @@ mktime_z (timezone_t tz, struct tm *tm)
 #if HAVE_STRUCT_TM_TM_ZONE || HAVE_TZNAME
           ok = ok && save_abbr (tz, &tm_1);
 #endif
+printf("mktime_z 2: revert_tz\n"); fflush(stdout);
           if (revert_tz (old_tz) && ok)
             {
               *tm = tm_1;
