@@ -411,7 +411,7 @@ setenv (const char *name, const char *value, int replace)
   wchar_t wname[100];
   mbstowcs (wname, name, sizeof (wname) / sizeof (wname[0]));
   wchar_t wvalue[100];
-  mbstowcs (wvalue, name, sizeof (wvalue) / sizeof (wvalue[0]));
+  mbstowcs (wvalue, value, sizeof (wvalue) / sizeof (wvalue[0]));
 
   if (w_add_to_environ (wname, wvalue, NULL, replace) < 0)
     return -1;
