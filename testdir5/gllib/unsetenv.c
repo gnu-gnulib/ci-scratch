@@ -30,6 +30,7 @@
 
 #include <string.h>
 #include <unistd.h>
+#include <wchar.h>
 
 #if !_LIBC
 # define __environ      environ
@@ -83,6 +84,25 @@ unsetenv (const char *name)
       }
     else
       ++ep;
+
+#if defined _WIN32
+  wchar_t wname[100];
+  mbstowcs (wname, name, sizeof (wname) / sizeof (wname[0]));
+  wchar_t **wep = _wenviron;
+  while (*wep != NULL)
+    if (!wcsncmp (*wep, name, len) && (*wep)[len] == L'=')
+      {
+        /* Found it.  Remove this pointer by moving later ones back.  */
+        wchar_t **dp = wep;
+
+        do
+          dp[0] = dp[1];
+        while (*dp++);
+        /* Continue the loop in case NAME appears again.  */
+      }
+    else
+      ++wep;
+#endif
 
   UNLOCK;
 

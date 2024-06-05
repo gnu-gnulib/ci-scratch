@@ -37,6 +37,7 @@
 #if _LIBC || HAVE_UNISTD_H
 # include <unistd.h>
 #endif
+#include <wchar.h>
 
 #if !_LIBC
 # include "malloca.h"
@@ -288,6 +289,116 @@ __add_to_environ (const char *name, const char *value, const char *combined,
   return 0;
 }
 
+#ifdef _WIN32
+
+static int
+w_add_to_environ (const wchar_t *name, const wchar_t *value, const wchar_t *combined,
+                  int replace)
+{
+  wchar_t **ep;
+  size_t size;
+  const size_t namelen = wcslen (name);
+  const size_t vallen = value != NULL ? wcslen (value) + 1 : 0;
+
+  LOCK;
+
+  /* We have to get the pointer now that we have the lock and not earlier
+     since another thread might have created a new environment.  */
+  ep = _wenviron;
+
+  size = 0;
+  if (ep != NULL)
+    {
+      for (; *ep != NULL; ++ep)
+        if (!wcsncmp (*ep, name, namelen) && (*ep)[namelen] == L'=')
+          break;
+        else
+          ++size;
+    }
+
+  if (ep == NULL || *ep == NULL)
+    {
+      wchar_t **new_environ;
+
+      /* We allocated this space; we can extend it.  */
+      new_environ =
+        (wchar_t **) (last_environ == NULL
+                   ? malloc ((size + 2) * sizeof (wchar_t *))
+                   : realloc (last_environ, (size + 2) * sizeof (wchar_t *)));
+      if (new_environ == NULL)
+        {
+          /* It's easier to set errno to ENOMEM than to rely on the
+             'malloc-posix' and 'realloc-posix' gnulib modules.  */
+          __set_errno (ENOMEM);
+          UNLOCK;
+          return -1;
+        }
+
+      /* If the whole entry is given add it.  */
+      if (combined != NULL)
+        /* We must not add the string to the search tree since it belongs
+           to the user.  */
+        new_environ[size] = (wchar_t *) combined;
+      else
+        {
+          /* See whether the value is already known.  */
+            {
+              new_environ[size] = (wchar_t *) malloc ((namelen + 1 + vallen) * sizeof (wchar_t));
+              if (new_environ[size] == NULL)
+                {
+                  __set_errno (ENOMEM);
+                  UNLOCK;
+                  return -1;
+                }
+
+              memcpy (new_environ[size], name, namelen * sizeof (wchar_t));
+              new_environ[size][namelen] = L'=';
+              memcpy (&new_environ[size][namelen + 1], value, vallen * sizeof (wchar_t));
+            }
+        }
+
+      if (__environ != last_environ)
+        memcpy ((wchar_t *) new_environ, (wchar_t *) __environ,
+                size * sizeof (wchar_t *));
+
+      new_environ[size + 1] = NULL;
+
+      last_environ = __environ = new_environ;
+    }
+  else if (replace)
+    {
+      wchar_t *np;
+
+      /* Use the user string if given.  */
+      if (combined != NULL)
+        np = (wchar_t *) combined;
+      else
+        {
+            {
+              np = (wchar_t *) malloc ((namelen + 1 + vallen) * sizeof (wchar_t));
+              if (np == NULL)
+                {
+                  __set_errno (ENOMEM);
+                  UNLOCK;
+                  return -1;
+                }
+
+              memcpy (np, name, namelen * sizeof (wchar_t));
+              np[namelen] = '=';
+              memcpy (&np[namelen + 1], value, vallen * sizeof (wchar_t));
+            }
+        }
+
+      *ep = np;
+    }
+
+  UNLOCK;
+
+  return 0;
+}
+
+#endif
+
 int
 setenv (const char *name, const char *value, int replace)
 {
@@ -297,7 +408,18 @@ setenv (const char *name, const char *value, int replace)
       return -1;
     }
 
-  return __add_to_environ (name, value, NULL, replace);
+  if (__add_to_environ (name, value, NULL, replace) < 0)
+    return -1;
+#if defined _WIN32
+  wchar_t wname[100];
+  mbstowcs (wname, name, sizeof (wname) / sizeof (wname[0]));
+  wchar_t wvalue[100];
+  mbstowcs (wvalue, name, sizeof (wvalue) / sizeof (wvalue[0]));
+
+  if (w_add_to_environ (wname, wvalue, NULL, replace) < 0)
+    return -1;
+#endif
+  return 0;
 }
 
 /* The 'clearenv' was planned to be added to POSIX.1 but probably
