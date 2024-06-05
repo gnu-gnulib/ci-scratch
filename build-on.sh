@@ -38,7 +38,13 @@ for prereq in $prerequisites; do
 done
 
 # We expect to find the sources in the repository.
-cd testdir4 || exit 1
+# testdir1: iconv problem on macOS 14.
+# iconv-capabilities: investigate iconv capabilities on macOS 14.
+# testdir2: testing poll.
+# testdir3: supersede, canonicalize, readlink problem on Cygwin 3.3.6.
+# testdir4: testing the workaround to that problem.
+# testdir5: nstrftime problem on MSVC.
+cd testdir5 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
