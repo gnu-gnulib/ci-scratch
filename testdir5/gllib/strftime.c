@@ -1360,7 +1360,7 @@ printf("strftime 1\n"); fflush(stdout);
               return 0; /* errno is set here */
             len = strftime_l (ubuf, sizeof ubuf, ufmt, tp, locale);
 # else
-printf("strftime calling system strftime on %02d:%02d:%02d\n", tp->tm_hour, tp->tm_min, tm->tm_sec); fflush(stdout);
+printf("strftime calling system strftime on %02d:%02d:%02d\n", tp->tm_hour, tp->tm_min, tp->tm_sec); fflush(stdout);
             len = strftime (ubuf, sizeof ubuf, ufmt, tp);
 # endif
             if (len != 0)
