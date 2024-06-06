@@ -947,6 +947,7 @@ printf("strftime 1\n"); fflush(stdout);
      This is bogus: though POSIX allows bad behavior like this,
      POSIX does not require it.  Do the right thing instead.  */
   zone = (const char *) tp->tm_zone;
+printf("strftime 2 zone=%s\n", zone != NULL ? zone : "(null)"); fflush(stdout);
 #endif
 #if HAVE_TZNAME
   if (!tz)
@@ -961,6 +962,7 @@ printf("strftime 1\n"); fflush(stdout);
       tzname_vec = tz->tzname_copy;
 # endif
     }
+printf("strftime 3 zone=%s\n", zone != NULL ? zone : "(null)"); fflush(stdout);
   /* The tzset() call might have changed the value.  */
   if (!(zone && *zone) && tp->tm_isdst >= 0)
     {
@@ -975,9 +977,11 @@ printf("strftime 1\n"); fflush(stdout);
 # endif
       zone = tzname_vec[tp->tm_isdst != 0];
     }
+printf("strftime 4 zone=%s\n", zone != NULL ? zone : "(null)"); fflush(stdout);
 #endif
   if (! zone)
     zone = "";
+printf("strftime 5 zone=%s\n", zone); fflush(stdout);
 
   if (hour12 > 12)
     hour12 -= 12;
