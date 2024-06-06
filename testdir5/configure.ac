@@ -57,6 +57,15 @@ gl_m4_base='glm4'
   AC_PROG_MKDIR_P
   AC_REQUIRE([gl_EXTERN_INLINE])
   AC_C_FLEXIBLE_ARRAY_MEMBER
+  gl_FUNC_FREE
+  gl_CONDITIONAL([GL_COND_OBJ_FREE], [test $REPLACE_FREE = 1])
+  AM_COND_IF([GL_COND_OBJ_FREE], [
+    gl_PREREQ_FREE
+  ])
+  gl_STDLIB_MODULE_INDICATOR([free-posix])
+  gl_INTTYPES_INCOMPLETE
+  gl_INTTYPES_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
   gl___INLINE
   gl_LIMITS_H
   gl_CONDITIONAL_HEADER([limits.h])
@@ -68,6 +77,11 @@ gl_m4_base='glm4'
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED],
                  [case "$host_os" in netbsd* | solaris*) true;; *) false;; esac])
+  AC_REQUIRE([gl_FUNC_MALLOC_POSIX])
+  if test $REPLACE_MALLOC_FOR_MALLOC_POSIX = 1; then
+    AC_LIBOBJ([malloc])
+  fi
+  gl_STDLIB_MODULE_INDICATOR([malloc-posix])
   gl_MALLOCA
   gl_FUNC_MKTIME
   if test $REPLACE_MKTIME = 1; then
@@ -108,6 +122,9 @@ gl_m4_base='glm4'
   gl_STDLIB_H
   gl_STDLIB_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_STRING_H
+  gl_STRING_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
   gl_SYS_TYPES_H
   gl_SYS_TYPES_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -144,6 +161,9 @@ gl_m4_base='glm4'
     gl_PREREQ_UNSETENV
   ])
   gl_STDLIB_MODULE_INDICATOR([unsetenv])
+  gl_WCHAR_H
+  gl_WCHAR_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
@@ -278,12 +298,6 @@ changequote([, ])dnl
   AC_PROG_MKDIR_P
   gl_CONDITIONAL([GL_COND_OBJ_FLOAT], [test $REPLACE_FLOAT_LDBL = 1])
   gl_CONDITIONAL([GL_COND_OBJ_ITOLD], [test $REPLACE_ITOLD = 1])
-  gl_FUNC_FREE
-  gl_CONDITIONAL([GL_COND_OBJ_FREE], [test $REPLACE_FREE = 1])
-  AM_COND_IF([GL_COND_OBJ_FREE], [
-    gl_PREREQ_FREE
-  ])
-  gl_STDLIB_MODULE_INDICATOR([free-posix])
   gl_FUNC_FSTAT
   gl_CONDITIONAL([GL_COND_OBJ_FSTAT], [test $REPLACE_FSTAT = 1])
   AM_COND_IF([GL_COND_OBJ_FSTAT], [
@@ -337,9 +351,6 @@ changequote([, ])dnl
   gl_ARPA_INET_MODULE_INDICATOR([inet_pton])
   AC_C_BIGENDIAN
   gl_INTTYPES_H
-  gl_INTTYPES_INCOMPLETE
-  gl_INTTYPES_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_FUNC_IOCTL
   gl_CONDITIONAL([GL_COND_OBJ_IOCTL],
                  [test $HAVE_IOCTL = 0 || test $REPLACE_IOCTL = 1])
@@ -393,11 +404,6 @@ changequote([, ])dnl
     AC_LIBOBJ([malloc])
   fi
   gl_STDLIB_MODULE_INDICATOR([malloc-gnu])
-  AC_REQUIRE([gl_FUNC_MALLOC_POSIX])
-  if test $REPLACE_MALLOC_FOR_MALLOC_POSIX = 1; then
-    AC_LIBOBJ([malloc])
-  fi
-  gl_STDLIB_MODULE_INDICATOR([malloc-posix])
   gl_MATH_H
   gl_MATH_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -654,9 +660,6 @@ changequote([, ])dnl
   gl_STRING_MODULE_INDICATOR([strerror_r])
   dnl For the modules argp, error, xstrerror.
   gl_MODULE_INDICATOR([strerror_r-posix])
-  gl_STRING_H
-  gl_STRING_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_FUNC_STRTOLL
   gl_CONDITIONAL([GL_COND_OBJ_STRTOLL],
                  [test $HAVE_STRTOLL = 0 || test $REPLACE_STRTOLL = 1])
@@ -705,9 +708,6 @@ changequote([, ])dnl
                  [test $HAVE_USLEEP = 0 || test $REPLACE_USLEEP = 1])
   gl_UNISTD_MODULE_INDICATOR([usleep])
   AC_C_VARARRAYS
-  gl_WCHAR_H
-  gl_WCHAR_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_COND],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])

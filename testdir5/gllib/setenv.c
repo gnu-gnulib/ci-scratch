@@ -37,13 +37,24 @@
 #if _LIBC || HAVE_UNISTD_H
 # include <unistd.h>
 #endif
-#include <wchar.h>
+
+#if defined _WIN32 && ! defined __CYGWIN__
+# define WIN32_LEAN_AND_MEAN
+# include <windows.h>
+#endif
 
 #if !_LIBC
 # include "malloca.h"
 #endif
 
+#if defined _WIN32 && ! defined __CYGWIN__
+/* Don't assume that UNICODE is not defined.  */
+# undef SetEnvironmentVariable
+# define SetEnvironmentVariable SetEnvironmentVariableA
+#endif
+
 #if _LIBC || !HAVE_SETENV
+#if !HAVE_DECL__PUTENV
 
 #if !_LIBC
 # define __environ      environ
@@ -216,8 +227,7 @@ __add_to_environ (const char *name, const char *value, const char *combined,
         }
 
       if (__environ != last_environ)
-        memcpy ((char **) new_environ, (char **) __environ,
-                size * sizeof (char *));
+        memcpy (new_environ, __environ, size * sizeof (char *));
 
       new_environ[size + 1] = NULL;
 
@@ -289,113 +299,6 @@ __add_to_environ (const char *name, const char *value, const char *combined,
   return 0;
 }
 
-#ifdef _WIN32
-
-static int
-w_add_to_environ (const wchar_t *name, const wchar_t *value, const wchar_t *combined,
-                  int replace)
-{
-  wchar_t **ep;
-  size_t size;
-  const size_t namelen = wcslen (name);
-  const size_t vallen = value != NULL ? wcslen (value) + 1 : 0;
-
-  LOCK;
-
-  /* We have to get the pointer now that we have the lock and not earlier
-     since another thread might have created a new environment.  */
-  ep = _wenviron;
-
-  size = 0;
-  if (ep != NULL)
-    {
-      for (; *ep != NULL; ++ep)
-        if (!wcsncmp (*ep, name, namelen) && (*ep)[namelen] == L'=')
-          break;
-        else
-          ++size;
-    }
-
-  if (ep == NULL || *ep == NULL)
-    {
-      wchar_t **new_environ;
-
-      /* We allocated this space; we can extend it.  */
-      new_environ =
-        (wchar_t **) malloc ((size + 2) * sizeof (wchar_t *));
-      if (new_environ == NULL)
-        {
-          /* It's easier to set errno to ENOMEM than to rely on the
-             'malloc-posix' and 'realloc-posix' gnulib modules.  */
-          __set_errno (ENOMEM);
-          UNLOCK;
-          return -1;
-        }
-
-      /* If the whole entry is given add it.  */
-      if (combined != NULL)
-        /* We must not add the string to the search tree since it belongs
-           to the user.  */
-        new_environ[size] = (wchar_t *) combined;
-      else
-        {
-          /* See whether the value is already known.  */
-            {
-              new_environ[size] = (wchar_t *) malloc ((namelen + 1 + vallen) * sizeof (wchar_t));
-              if (new_environ[size] == NULL)
-                {
-                  __set_errno (ENOMEM);
-                  UNLOCK;
-                  return -1;
-                }
-
-              memcpy (new_environ[size], name, namelen * sizeof (wchar_t));
-              new_environ[size][namelen] = L'=';
-              memcpy (&new_environ[size][namelen + 1], value, vallen * sizeof (wchar_t));
-            }
-        }
-
-      memcpy ((wchar_t **) new_environ, (wchar_t **) _wenviron,
-              size * sizeof (wchar_t *));
-
-      new_environ[size + 1] = NULL;
-
-      _wenviron = new_environ;
-    }
-  else if (replace)
-    {
-      wchar_t *np;
-
-      /* Use the user string if given.  */
-      if (combined != NULL)
-        np = (wchar_t *) combined;
-      else
-        {
-            {
-              np = (wchar_t *) malloc ((namelen + 1 + vallen) * sizeof (wchar_t));
-              if (np == NULL)
-                {
-                  __set_errno (ENOMEM);
-                  UNLOCK;
-                  return -1;
-                }
-
-              memcpy (np, name, namelen * sizeof (wchar_t));
-              np[namelen] = '=';
-              memcpy (&np[namelen + 1], value, vallen * sizeof (wchar_t));
-            }
-        }
-
-      *ep = np;
-    }
-
-  UNLOCK;
-
-  return 0;
-}
-
-#endif
-
 int
 setenv (const char *name, const char *value, int replace)
 {
@@ -405,18 +308,7 @@ setenv (const char *name, const char *value, int replace)
       return -1;
     }
 
-  if (__add_to_environ (name, value, NULL, replace) < 0)
-    return -1;
-#if defined _WIN32
-  wchar_t wname[100];
-  mbstowcs (wname, name, sizeof (wname) / sizeof (wname[0]));
-  wchar_t wvalue[100];
-  mbstowcs (wvalue, value, sizeof (wvalue) / sizeof (wvalue[0]));
-
-  if (w_add_to_environ (wname, wvalue, NULL, replace) < 0)
-    return -1;
-#endif
-  return 0;
+  return __add_to_environ (name, value, NULL, replace);
 }
 
 /* The 'clearenv' was planned to be added to POSIX.1 but probably
@@ -462,6 +354,84 @@ weak_alias (__setenv, setenv)
 weak_alias (__clearenv, clearenv)
 #endif
 
+#else /* HAVE_DECL__PUTENV */
+/* Native Windows */
+
+int
+setenv (const char *name, const char *value, int replace)
+{
+  if (name == NULL || *name == '\0' || strchr (name, '=') != NULL)
+    {
+      errno = EINVAL;
+      return -1;
+    }
+
+  /* The Microsoft documentation
+     <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/putenv-wputenv>
+     says:
+       "Don't change an environment entry directly: instead,
+        use _putenv or _wputenv to change it."
+     Note: Microsoft's _putenv updates not only the contents of _environ but
+     also the contents of _wenviron, so that both are in kept in sync.  */
+  const char *existing_value = getenv (name);
+  if (existing_value != NULL)
+    {
+      if (replace)
+        {
+          if (strcmp (existing_value, value) == 0)
+            /* No need to allocate memory.  */
+            return 0;
+        }
+      else
+        /* Keep the existing value.  */
+        return 0;
+    }
+  /* Allocate a new environment entry in the heap.  */
+  /* _putenv ("NAME=") unsets NAME, so if VALUE is the empty string, invoke
+     _putenv ("NAME= ") and fix up the result afterwards.  */
+  const char *value_ = (value[0] == '\0' ? " " : value);
+  size_t name_len = strlen (name);
+  size_t value_len = strlen (value_);
+  char *string = (char *) malloc (name_len + 1 + value_len + 1);
+  if (string == NULL)
+    return -1;
+  memcpy (string, name, name_len);
+  string[name_len] = '=';
+  memcpy (&string[name_len + 1], value_, value_len + 1);
+  /* Use _putenv.  */
+  if (_putenv (string) < 0)
+    return -1;
+  if (value[0] == '\0')
+    {
+      /* Fix up the result.  */
+      char *new_value = getenv (name);
+      if (new_value != NULL && new_value[0] == ' ' && new_value[1] == '\0')
+        new_value[0] = '\0';
+# if defined _WIN32 && ! defined __CYGWIN__
+      /* _putenv propagated "NAME= " into the subprocess environment;
+         fix that by calling SetEnvironmentVariable directly.  */
+      /* Documentation:
+         <https://learn.microsoft.com/en-us/windows/win32/api/winbase/nf-winbase-setenvironmentvariable>  */
+      if (!SetEnvironmentVariable (name, ""))
+        {
+          switch (GetLastError ())
+            {
+            case ERROR_NOT_ENOUGH_MEMORY:
+            case ERROR_OUTOFMEMORY:
+              errno = ENOMEM;
+              break;
+            default:
+              errno = EINVAL;
+              break;
+            }
+          return -1;
+        }
+# endif
+    }
+  return 0;
+}
+
+#endif /* HAVE_DECL__PUTENV */
 #endif /* _LIBC || !HAVE_SETENV */
 
 /* The rest of this file is called into use when replacing an existing
@@ -479,7 +449,7 @@ int
 rpl_setenv (const char *name, const char *value, int replace)
 {
   int result;
-  if (!name || !*name || strchr (name, '='))
+  if (name == NULL || *name == '\0' || strchr (name, '=') != NULL)
     {
       errno = EINVAL;
       return -1;

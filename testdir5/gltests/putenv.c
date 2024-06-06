@@ -64,59 +64,6 @@ __libc_lock_define_initialized (static, envlock)
 # define SetEnvironmentVariable SetEnvironmentVariableA
 #endif
 
-static int
-_unsetenv (const char *name)
-{
-  size_t len;
-#if !HAVE_DECL__PUTENV
-  char **ep;
-#endif
-
-  if (name == NULL || *name == '\0' || strchr (name, '=') != NULL)
-    {
-      __set_errno (EINVAL);
-      return -1;
-    }
-
-  len = strlen (name);
-
-#if HAVE_DECL__PUTENV
-  {
-    int putenv_result;
-    char *name_ = malloc (len + 2);
-    memcpy (name_, name, len);
-    name_[len] = '=';
-    name_[len + 1] = 0;
-    putenv_result = _putenv (name_);
-    free (name_);
-    return putenv_result;
-  }
-#else
-
-  LOCK;
-
-  ep = environ;
-  while (*ep != NULL)
-    if (!strncmp (*ep, name, len) && (*ep)[len] == '=')
-      {
-        /* Found it.  Remove this pointer by moving later ones back.  */
-        char **dp = ep;
-
-        do
-          dp[0] = dp[1];
-        while (*dp++);
-        /* Continue the loop in case NAME appears again.  */
-      }
-    else
-      ++ep;
-
-  UNLOCK;
-
-  return 0;
-#endif
-}
-
-
 /* Put STRING, which is of the form "NAME=VALUE", in the environment.
    If STRING contains no '=', then remove STRING from the environment.  */
 int
@@ -128,13 +75,21 @@ putenv (char *string)
   if (name_end == NULL)
     {
       /* Remove the variable from the environment.  */
-      return _unsetenv (string);
+      return unsetenv (string);
     }
 
-#if HAVE_DECL__PUTENV
-  /* Rely on _putenv to allocate the new environment.  If other
-     parts of the application use _putenv, the !HAVE_DECL__PUTENV code
-     would fight over who owns the environ vector, causing a crash.  */
+#if HAVE_DECL__PUTENV /* native Windows */
+  /* The Microsoft documentation
+     <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/putenv-wputenv>
+     says:
+       "Don't change an environment entry directly: instead,
+        use _putenv or _wputenv to change it."
+     Note: Microsoft's _putenv updates not only the contents of _environ but
+     also the contents of _wenviron, so that both are in kept in sync.
+
+     If we didn't follow this advice, our code and other parts of the
+     application (that use _putenv) would fight over who owns the environ vector
+     and thus cause a crash.  */
   if (name_end[1])
     return _putenv (string);
   else
