@@ -147,6 +147,7 @@ EXTRA_DIST += time_r.m4
 EXTRA_DIST += time_rz.m4
 EXTRA_DIST += timegm.m4
 EXTRA_DIST += tm_gmtoff.m4
+EXTRA_DIST += tzname.m4
 EXTRA_DIST += tzset.m4
 EXTRA_DIST += unistd_h.m4
 EXTRA_DIST += usleep.m4

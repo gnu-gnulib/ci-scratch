@@ -186,9 +186,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time.m4 \
 	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/time_r.m4 \
 	$(top_srcdir)/glm4/time_rz.m4 $(top_srcdir)/glm4/timegm.m4 \
-	$(top_srcdir)/glm4/tm_gmtoff.m4 $(top_srcdir)/glm4/tzset.m4 \
-	$(top_srcdir)/glm4/unistd_h.m4 $(top_srcdir)/glm4/usleep.m4 \
-	$(top_srcdir)/glm4/visibility.m4 \
+	$(top_srcdir)/glm4/tm_gmtoff.m4 $(top_srcdir)/glm4/tzname.m4 \
+	$(top_srcdir)/glm4/tzset.m4 $(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/visibility.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wchar_t.m4 \
 	$(top_srcdir)/glm4/wint_t.m4 $(top_srcdir)/glm4/xalloc.m4 \
@@ -784,6 +784,7 @@ GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TRUNCF = @GL_GNULIB_TRUNCF@
 GL_GNULIB_TRUNCL = @GL_GNULIB_TRUNCL@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
+GL_GNULIB_TZNAME = @GL_GNULIB_TZNAME@
 GL_GNULIB_TZSET = @GL_GNULIB_TZSET@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
 GL_GNULIB_UNISTD_H_NONBLOCKING = @GL_GNULIB_UNISTD_H_NONBLOCKING@

@@ -171,10 +171,10 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-thread_self$(EXEEXT) test-thread_create$(EXEEXT) \
 	test-time-h$(EXEEXT) test-time$(EXEEXT) test-gmtime_r$(EXEEXT) \
 	test-gmtime_r-mt$(EXEEXT) test-localtime_r$(EXEEXT) \
-	test-localtime_r-mt$(EXEEXT) test-unistd$(EXEEXT) \
-	test-unsetenv$(EXEEXT) test-usleep$(EXEEXT) \
-	test-verify$(EXEEXT) test-verify.sh test-wchar$(EXEEXT) \
-	test-xalloc-die.sh
+	test-localtime_r-mt$(EXEEXT) test-tzname$(EXEEXT) \
+	test-unistd$(EXEEXT) test-unsetenv$(EXEEXT) \
+	test-usleep$(EXEEXT) test-verify$(EXEEXT) test-verify.sh \
+	test-wchar$(EXEEXT) test-xalloc-die.sh
 XFAIL_TESTS =
 noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEXT) \
@@ -234,9 +234,9 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-thread_self$(EXEEXT) test-thread_create$(EXEEXT) \
 	test-time-h$(EXEEXT) test-time$(EXEEXT) test-gmtime_r$(EXEEXT) \
 	test-gmtime_r-mt$(EXEEXT) test-localtime_r$(EXEEXT) \
-	test-localtime_r-mt$(EXEEXT) test-unistd$(EXEEXT) \
-	test-unsetenv$(EXEEXT) test-usleep$(EXEEXT) \
-	test-verify$(EXEEXT) test-wchar$(EXEEXT) \
+	test-localtime_r-mt$(EXEEXT) test-tzname$(EXEEXT) \
+	test-unistd$(EXEEXT) test-unsetenv$(EXEEXT) \
+	test-usleep$(EXEEXT) test-verify$(EXEEXT) test-wchar$(EXEEXT) \
 	test-xalloc-die$(EXEEXT)
 EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @GL_COND_OBJ_ACCEPT_TRUE@am__append_1 = accept.c
@@ -408,9 +408,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time.m4 \
 	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/time_r.m4 \
 	$(top_srcdir)/glm4/time_rz.m4 $(top_srcdir)/glm4/timegm.m4 \
-	$(top_srcdir)/glm4/tm_gmtoff.m4 $(top_srcdir)/glm4/tzset.m4 \
-	$(top_srcdir)/glm4/unistd_h.m4 $(top_srcdir)/glm4/usleep.m4 \
-	$(top_srcdir)/glm4/visibility.m4 \
+	$(top_srcdir)/glm4/tm_gmtoff.m4 $(top_srcdir)/glm4/tzname.m4 \
+	$(top_srcdir)/glm4/tzset.m4 $(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/visibility.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wchar_t.m4 \
 	$(top_srcdir)/glm4/wint_t.m4 $(top_srcdir)/glm4/xalloc.m4 \
@@ -1140,6 +1140,11 @@ test_time_h_OBJECTS = test-time-h.$(OBJEXT)
 test_time_h_LDADD = $(LDADD)
 test_time_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_tzname_SOURCES = test-tzname.c
+test_tzname_OBJECTS = test-tzname.$(OBJEXT)
+test_tzname_LDADD = $(LDADD)
+test_tzname_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_unistd_SOURCES = test-unistd.c
 test_unistd_OBJECTS = test-unistd.$(OBJEXT)
 test_unistd_LDADD = $(LDADD)
@@ -1303,14 +1308,15 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-sys_types.Po ./$(DEPDIR)/test-sys_uio.Po \
 	./$(DEPDIR)/test-thread_create.Po \
 	./$(DEPDIR)/test-thread_self.Po ./$(DEPDIR)/test-time-h.Po \
-	./$(DEPDIR)/test-time.Po ./$(DEPDIR)/test-unistd.Po \
-	./$(DEPDIR)/test-unsetenv.Po ./$(DEPDIR)/test-usleep.Po \
-	./$(DEPDIR)/test-verify-try.Po ./$(DEPDIR)/test-verify.Po \
-	./$(DEPDIR)/test-wchar.Po ./$(DEPDIR)/test-xalloc-die.Po \
-	./$(DEPDIR)/time.Po ./$(DEPDIR)/usleep.Po \
-	./$(DEPDIR)/windows-cond.Po ./$(DEPDIR)/windows-mutex.Po \
-	./$(DEPDIR)/windows-once.Po ./$(DEPDIR)/windows-recmutex.Po \
-	./$(DEPDIR)/windows-rwlock.Po ./$(DEPDIR)/windows-thread.Po \
+	./$(DEPDIR)/test-time.Po ./$(DEPDIR)/test-tzname.Po \
+	./$(DEPDIR)/test-unistd.Po ./$(DEPDIR)/test-unsetenv.Po \
+	./$(DEPDIR)/test-usleep.Po ./$(DEPDIR)/test-verify-try.Po \
+	./$(DEPDIR)/test-verify.Po ./$(DEPDIR)/test-wchar.Po \
+	./$(DEPDIR)/test-xalloc-die.Po ./$(DEPDIR)/time.Po \
+	./$(DEPDIR)/usleep.Po ./$(DEPDIR)/windows-cond.Po \
+	./$(DEPDIR)/windows-mutex.Po ./$(DEPDIR)/windows-once.Po \
+	./$(DEPDIR)/windows-recmutex.Po ./$(DEPDIR)/windows-rwlock.Po \
+	./$(DEPDIR)/windows-thread.Po \
 	./$(DEPDIR)/windows-timedmutex.Po \
 	./$(DEPDIR)/windows-timedrecmutex.Po \
 	./$(DEPDIR)/windows-timedrwlock.Po ./$(DEPDIR)/windows-tls.Po \
@@ -1369,8 +1375,9 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-sys_select.c test-sys_socket.c test-sys_stat.c \
 	test-sys_time.c test-sys_types.c test-sys_uio.c \
 	test-thread_create.c test-thread_self.c test-time.c \
-	test-time-h.c test-unistd.c test-unsetenv.c test-usleep.c \
-	test-verify.c test-verify-try.c test-wchar.c test-xalloc-die.c
+	test-time-h.c test-tzname.c test-unistd.c test-unsetenv.c \
+	test-usleep.c test-verify.c test-verify-try.c test-wchar.c \
+	test-xalloc-die.c
 DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(EXTRA_libtests_a_SOURCES) test-accept.c test-alignasof.c \
 	test-alloca-opt.c test-arpa_inet.c test-assert.c \
@@ -1410,8 +1417,9 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	test-sys_select.c test-sys_socket.c test-sys_stat.c \
 	test-sys_time.c test-sys_types.c test-sys_uio.c \
 	test-thread_create.c test-thread_self.c test-time.c \
-	test-time-h.c test-unistd.c test-unsetenv.c test-usleep.c \
-	test-verify.c test-verify-try.c test-wchar.c test-xalloc-die.c
+	test-time-h.c test-tzname.c test-unistd.c test-unsetenv.c \
+	test-usleep.c test-verify.c test-verify-try.c test-wchar.c \
+	test-xalloc-die.c
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
 	install-data-recursive install-dvi-recursive \
@@ -2161,6 +2169,7 @@ GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TRUNCF = @GL_GNULIB_TRUNCF@
 GL_GNULIB_TRUNCL = @GL_GNULIB_TRUNCL@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
+GL_GNULIB_TZNAME = @GL_GNULIB_TZNAME@
 GL_GNULIB_TZSET = @GL_GNULIB_TZSET@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
 GL_GNULIB_UNISTD_H_NONBLOCKING = @GL_GNULIB_UNISTD_H_NONBLOCKING@
@@ -3341,8 +3350,8 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-thread_create.c macros.h test-time-h.c test-time.c \
 	signature.h macros.h test-gmtime_r.c test-gmtime_r-mt.c \
 	test-localtime_r.c test-localtime_r-mt.c macros.h \
-	test-unistd.c test-unsetenv.c signature.h macros.h \
-	test-usleep.c signature.h macros.h test-verify.c \
+	test-tzname.c test-unistd.c test-unsetenv.c signature.h \
+	macros.h test-usleep.c signature.h macros.h test-verify.c \
 	test-verify-try.c test-verify.sh test-wchar.c windows-cond.h \
 	windows-initguard.h windows-initguard.h windows-mutex.h \
 	windows-once.h windows-initguard.h windows-recmutex.h \
@@ -4058,6 +4067,10 @@ test-time-h$(EXEEXT): $(test_time_h_OBJECTS) $(test_time_h_DEPENDENCIES) $(EXTRA
 	@rm -f test-time-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_time_h_OBJECTS) $(test_time_h_LDADD) $(LIBS)
 
+test-tzname$(EXEEXT): $(test_tzname_OBJECTS) $(test_tzname_DEPENDENCIES) $(EXTRA_test_tzname_DEPENDENCIES) 
+	@rm -f test-tzname$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_tzname_OBJECTS) $(test_tzname_LDADD) $(LIBS)
+
 test-unistd$(EXEEXT): $(test_unistd_OBJECTS) $(test_unistd_DEPENDENCIES) $(EXTRA_test_unistd_DEPENDENCIES) 
 	@rm -f test-unistd$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_unistd_OBJECTS) $(test_unistd_LDADD) $(LIBS)
@@ -4303,6 +4316,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-thread_self.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-tzname.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unsetenv.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-usleep.Po@am__quote@ # am--include-marker
@@ -5500,6 +5514,13 @@ test-localtime_r-mt.log: test-localtime_r-mt$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-tzname.log: test-tzname$(EXEEXT)
+	@p='test-tzname$(EXEEXT)'; \
+	b='test-tzname'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-unistd.log: test-unistd$(EXEEXT)
 	@p='test-unistd$(EXEEXT)'; \
 	b='test-unistd'; \
@@ -5889,6 +5910,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-thread_self.Po
 	-rm -f ./$(DEPDIR)/test-time-h.Po
 	-rm -f ./$(DEPDIR)/test-time.Po
+	-rm -f ./$(DEPDIR)/test-tzname.Po
 	-rm -f ./$(DEPDIR)/test-unistd.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po
@@ -6168,6 +6190,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-thread_self.Po
 	-rm -f ./$(DEPDIR)/test-time-h.Po
 	-rm -f ./$(DEPDIR)/test-time.Po
+	-rm -f ./$(DEPDIR)/test-tzname.Po
 	-rm -f ./$(DEPDIR)/test-unistd.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po

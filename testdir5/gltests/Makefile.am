@@ -3009,6 +3009,14 @@ EXTRA_DIST += test-gmtime_r.c test-gmtime_r-mt.c test-localtime_r.c test-localti
 
 ## end   gnulib module time_r-tests
 
+## begin gnulib module tzname-tests
+
+TESTS += test-tzname
+noinst_PROGRAMS += test-tzname
+EXTRA_DIST += test-tzname.c
+
+## end   gnulib module tzname-tests
+
 ## begin gnulib module unistd-tests
 
 TESTS += test-unistd

@@ -148,6 +148,8 @@ gl_m4_base='glm4'
     gl_PREREQ_TIMEGM
   ])
   gl_TIME_MODULE_INDICATOR([timegm])
+  gl_TZNAME
+  gl_TIME_MODULE_INDICATOR([tzname])
   gl_FUNC_TZSET
   gl_CONDITIONAL([GL_COND_OBJ_TZSET], [test $REPLACE_TZSET = 1])
   gl_TIME_MODULE_INDICATOR([tzset])

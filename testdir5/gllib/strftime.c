@@ -27,7 +27,7 @@
 # define HAVE_STRUCT_ERA_ENTRY 1
 # define HAVE_TM_GMTOFF 1
 # define HAVE_STRUCT_TM_TM_ZONE 1
-# define HAVE_TZNAME 1
+# define HAVE_TZNAME_ARRAY 1
 # include "../locale/localeinfo.h"
 #else
 # include <libc-config.h>
@@ -59,10 +59,6 @@
 #endif
 #include <errno.h>
 #include <time.h>
-
-#if HAVE_TZNAME && !HAVE_DECL_TZNAME
-extern char *tzname[];
-#endif
 
 /* Do multibyte processing if multibyte encodings are supported, unless
    multibyte sequences are safe in formats.  Multibyte sequences are
@@ -926,7 +922,7 @@ __strftime_internal (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
 # define ampm (L_("AMPM") + 2 * (tp->tm_hour > 11))
 # define ap_len 2
 #endif
-#if HAVE_TZNAME
+#if HAVE_TZNAME_ARRAY
   char **tzname_vec = tzname;
 #endif
   const char *zone;
@@ -949,7 +945,7 @@ printf("strftime 1\n"); fflush(stdout);
   zone = (const char *) tp->tm_zone;
 printf("strftime 2 zone=%s\n", zone != NULL ? zone : "(null)"); fflush(stdout);
 #endif
-#if HAVE_TZNAME
+#if HAVE_TZNAME_ARRAY
   if (!tz)
     {
       if (! (zone && *zone))
@@ -1734,7 +1730,8 @@ printf("strftime calling system strftime on %02d:%02d:%02d\n", tp->tm_hour, tp->
 #elif USE_C_LOCALE && !HAVE_STRFTIME_L
           subfmt = L_("%I:%M:%S %p");
           goto subformat;
-#elif (defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ || (defined _WIN32 && !defined __CYGWIN__)
+#elif ((defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ \
+       || (defined _WIN32 && !defined __CYGWIN__))
           /* macOS, FreeBSD, native Windows strftime() may produce empty output
              for "%r".  */
           subfmt = L_("%I:%M:%S %p");

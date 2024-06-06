@@ -345,6 +345,9 @@
 /* Define to 1 when the gnulib module time_rz should be tested. */
 #undef GNULIB_TEST_TIME_RZ
 
+/* Define to 1 when the gnulib module tzname should be tested. */
+#undef GNULIB_TEST_TZNAME
+
 /* Define to 1 when the gnulib module tzset should be tested. */
 #undef GNULIB_TEST_TZSET
 
@@ -892,6 +895,10 @@
    'tzname'. */
 #undef HAVE_TZNAME
 
+/* Define to 1 if 'struct tm' does not have a field 'tm_zone' but instead
+   'tzname' is usable. */
+#undef HAVE_TZNAME_ARRAY
+
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
 
@@ -1111,6 +1118,9 @@
 
 /* Define to 1 on musl libc. */
 #undef MUSL_LIBC
+
+/* Define to 1 if tzname exists but needs to be declared. */
+#undef NEED_DECL_TZNAME
 
 /* Define if the compilation of mktime.c should define 'mktime_internal'. */
 #undef NEED_MKTIME_INTERNAL
