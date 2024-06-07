@@ -43,7 +43,6 @@ jobs:
   # See https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration
   check-linux-gnu-ubuntu:
     name: make check on Ubuntu GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -77,7 +76,6 @@ jobs:
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -117,7 +115,6 @@ jobs:
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -156,7 +153,6 @@ jobs:
           overwrite: true
   check-macos:
     name: make check on macOS
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -200,7 +196,6 @@ jobs:
           overwrite: true
   check-freebsd:
     name: make check on FreeBSD
-    if: ${{ false }}
     # The FreeBSD runners sometimes get stuck.
     timeout-minutes: 15
     runs-on: ubuntu-22.04
@@ -244,7 +239,6 @@ jobs:
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -289,7 +283,6 @@ jobs:
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -337,7 +330,6 @@ jobs:
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -388,7 +380,6 @@ jobs:
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -589,6 +580,83 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-setlocale2.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir6/configure
+      - run: sed -i -e 's/\r$//' testdir6/config.h.in
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir6/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalnum.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalpha.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isgraph.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32islower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32ispunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isspace.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isupper.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32tolower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-iswpunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbsinit.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
@@ -768,6 +836,83 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-setlocale2.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir6/configure
+      - run: sed -i -e 's/\r$//' testdir6/config.h.in
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir6/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalnum.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalpha.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isgraph.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32islower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32ispunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isspace.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isupper.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32tolower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-iswpunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbsinit.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-xalloc-die.sh
       - name: Build in Cygwin
         run: |
           set -x
@@ -955,6 +1100,83 @@ jobs:
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-setlocale2.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-verify.sh
       - run: sed -i -e 's/\r$//' testdir5/gltests/test-xalloc-die.sh
+      - run: sed -i -e 's/\r$//' testdir6/configure
+      - run: sed -i -e 's/\r$//' testdir6/config.h.in
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/compile
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.guess
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/config.sub
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/depcomp
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/install-sh
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/missing
+      - run: sed -i -e 's/\r$//' testdir6/build-aux/test-driver
+      - run: sed -i -e 's/\r$//' testdir6/gltests/init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-binary-io.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-btowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalnum.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isalpha.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isgraph.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32islower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32ispunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isspace.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32isupper.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32rtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-c32tolower.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-error.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-ftruncate.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-init.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-iswpunct.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtoc32-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbrtowc-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-mbsinit.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-perror.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-in.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-select-out.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale1.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-setlocale2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-verify.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-2.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-3.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-4.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-5.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-6.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-7.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-wcrtomb-w32-8.sh
+      - run: sed -i -e 's/\r$//' testdir6/gltests/test-xalloc-die.sh
       - run: |
           wget -O ar-lib 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/ar-lib;hb=HEAD'
           wget -O compile 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/compile;hb=HEAD'

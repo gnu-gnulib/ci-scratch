@@ -44,7 +44,8 @@ done
 # testdir3: supersede, canonicalize, readlink problem on Cygwin 3.3.6.
 # testdir4: testing the workaround to that problem.
 # testdir5: nstrftime problem on MSVC.
-cd testdir5 || exit 1
+# testdir6: GB18030 locale problem on Solaris 11 OmniOS.
+cd testdir6 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
