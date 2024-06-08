@@ -110,6 +110,9 @@
    whether the gnulib module strerror_r-posix shall be considered present. */
 #undef GNULIB_STRERROR_R_POSIX
 
+/* Define to 1 when the gnulib module abort-debug should be tested. */
+#undef GNULIB_TEST_ABORT_DEBUG
+
 /* Define to 1 when the gnulib module accept should be tested. */
 #undef GNULIB_TEST_ACCEPT
 
@@ -599,6 +602,9 @@
 /* Define to 1 if you have the <error.h> header file. */
 #undef HAVE_ERROR_H
 
+/* Define to 1 if you have the <execinfo.h> header file. */
+#undef HAVE_EXECINFO_H
+
 /* Define if the locale_t type contains insufficient information, as on
    OpenBSD. */
 #undef HAVE_FAKE_LOCALES
@@ -678,6 +684,9 @@
 
 /* Define if your <locale.h> file defines LC_MESSAGES. */
 #undef HAVE_LC_MESSAGES
+
+/* Define if you have the libbacktrace library. */
+#undef HAVE_LIBBACKTRACE
 
 /* Define to 1 if you have the <limits.h> header file. */
 #undef HAVE_LIMITS_H

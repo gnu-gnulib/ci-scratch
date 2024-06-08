@@ -49,6 +49,14 @@ libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES =
 
+## begin gnulib module abort-debug
+
+if GL_COND_OBJ_ABORT_DEBUG
+libgnu_a_SOURCES += abort-debug.c
+endif
+
+## end   gnulib module abort-debug
+
 ## begin gnulib module absolute-header
 
 # Use this preprocessor expression to decide whether #include_next works.
@@ -167,6 +175,30 @@ libgnu_a_SOURCES += c32tolower.c
 EXTRA_DIST += c32to-impl.h
 
 ## end   gnulib module c32tolower
+
+## begin gnulib module execinfo
+
+BUILT_SOURCES += $(EXECINFO_H)
+
+# We need the following in order to create <execinfo.h> when the system
+# doesn't have one that works.
+if GL_GENERATE_EXECINFO_H
+execinfo.h: execinfo.in.h $(top_builddir)/config.status
+	$(gl_V_at)$(SED_HEADER_TO_AT_t) $(srcdir)/execinfo.in.h
+	$(AM_V_at)mv $@-t $@
+else
+execinfo.h: $(top_builddir)/config.status
+	rm -f $@
+endif
+MOSTLYCLEANFILES += execinfo.h execinfo.h-t
+
+if GL_COND_OBJ_EXECINFO
+libgnu_a_SOURCES += execinfo.c
+endif
+
+EXTRA_DIST += execinfo.in.h
+
+## end   gnulib module execinfo
 
 ## begin gnulib module gen-header
 

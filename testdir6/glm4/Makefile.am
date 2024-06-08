@@ -3,6 +3,7 @@
 EXTRA_DIST =
 EXTRA_DIST += 00gnulib.m4
 EXTRA_DIST += __inline.m4
+EXTRA_DIST += abort-debug.m4
 EXTRA_DIST += absolute-header.m4
 EXTRA_DIST += alloca.m4
 EXTRA_DIST += arpa_inet_h.m4
@@ -21,6 +22,7 @@ EXTRA_DIST += environ.m4
 EXTRA_DIST += errno_h.m4
 EXTRA_DIST += error.m4
 EXTRA_DIST += error_h.m4
+EXTRA_DIST += execinfo.m4
 EXTRA_DIST += exponentd.m4
 EXTRA_DIST += exponentf.m4
 EXTRA_DIST += exponentl.m4

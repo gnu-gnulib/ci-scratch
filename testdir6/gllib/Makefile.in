@@ -115,24 +115,27 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@GL_COND_OBJ_C32RTOMB_TRUE@am__append_1 = c32rtomb.c
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_2 = iswpunct.c
-@GL_COND_OBJ_MBRTOWC_TRUE@am__append_3 = mbrtowc.c
-@GL_COND_OBJ_MBSINIT_TRUE@am__append_4 = mbsinit.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_5 = setlocale-lock.c
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_6 = unicase/tolower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_7 = unictype/ctype_alnum.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_8 = unictype/ctype_alpha.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_9 = unictype/ctype_graph.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_10 = unictype/ctype_lower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_11 = unictype/ctype_punct.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_12 = unictype/ctype_space.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_13 = unictype/ctype_upper.c
-@GL_COND_OBJ_WCRTOMB_TRUE@am__append_14 = wcrtomb.c
+@GL_COND_OBJ_ABORT_DEBUG_TRUE@am__append_1 = abort-debug.c
+@GL_COND_OBJ_C32RTOMB_TRUE@am__append_2 = c32rtomb.c
+@GL_COND_OBJ_EXECINFO_TRUE@am__append_3 = execinfo.c
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_4 = iswpunct.c
+@GL_COND_OBJ_MBRTOWC_TRUE@am__append_5 = mbrtowc.c
+@GL_COND_OBJ_MBSINIT_TRUE@am__append_6 = mbsinit.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_7 = setlocale-lock.c
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_8 = unicase/tolower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_9 = unictype/ctype_alnum.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_10 = unictype/ctype_alpha.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_11 = unictype/ctype_graph.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_12 = unictype/ctype_lower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_13 = unictype/ctype_punct.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_14 = unictype/ctype_space.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_15 = unictype/ctype_upper.c
+@GL_COND_OBJ_WCRTOMB_TRUE@am__append_16 = wcrtomb.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
+	$(top_srcdir)/glm4/abort-debug.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
 	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 $(top_srcdir)/glm4/btowc.m4 \
@@ -143,7 +146,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/dup2.m4 $(top_srcdir)/glm4/eealloc.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \
 	$(top_srcdir)/glm4/error.m4 $(top_srcdir)/glm4/error_h.m4 \
-	$(top_srcdir)/glm4/exponentd.m4 \
+	$(top_srcdir)/glm4/execinfo.m4 $(top_srcdir)/glm4/exponentd.m4 \
 	$(top_srcdir)/glm4/exponentf.m4 \
 	$(top_srcdir)/glm4/exponentl.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
@@ -260,42 +263,44 @@ am__v_AR_1 =
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
-am__libgnu_a_SOURCES_DIST = c32isalnum.c c32isalpha.c c32isgraph.c \
-	c32islower.c c32ispunct.c c32isspace.c c32isupper.c c32rtomb.c \
-	c32tolower.c hard-locale.c iswpunct.c localcharset.c mbrtowc.c \
-	mbsinit.c setlocale_null.c setlocale-lock.c \
-	setlocale_null-unlocked.c unicase/tolower.c \
+am__libgnu_a_SOURCES_DIST = abort-debug.c c32isalnum.c c32isalpha.c \
+	c32isgraph.c c32islower.c c32ispunct.c c32isspace.c \
+	c32isupper.c c32rtomb.c c32tolower.c execinfo.c hard-locale.c \
+	iswpunct.c localcharset.c mbrtowc.c mbsinit.c setlocale_null.c \
+	setlocale-lock.c setlocale_null-unlocked.c unicase/tolower.c \
 	unictype/ctype_alnum.c unictype/ctype_alpha.c \
 	unictype/ctype_graph.c unictype/ctype_lower.c \
 	unictype/ctype_punct.c unictype/ctype_space.c \
 	unictype/ctype_upper.c unistd.c wcrtomb.c wctype-h.c
-@GL_COND_OBJ_C32RTOMB_TRUE@am__objects_1 = c32rtomb.$(OBJEXT)
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_2 = iswpunct.$(OBJEXT)
-@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_3 = mbrtowc.$(OBJEXT)
-@GL_COND_OBJ_MBSINIT_TRUE@am__objects_4 = mbsinit.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_5 =  \
+@GL_COND_OBJ_ABORT_DEBUG_TRUE@am__objects_1 = abort-debug.$(OBJEXT)
+@GL_COND_OBJ_C32RTOMB_TRUE@am__objects_2 = c32rtomb.$(OBJEXT)
+@GL_COND_OBJ_EXECINFO_TRUE@am__objects_3 = execinfo.$(OBJEXT)
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_4 = iswpunct.$(OBJEXT)
+@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_5 = mbrtowc.$(OBJEXT)
+@GL_COND_OBJ_MBSINIT_TRUE@am__objects_6 = mbsinit.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_7 =  \
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@	setlocale-lock.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_6 = unicase/tolower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_7 = unictype/ctype_alnum.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_8 = unictype/ctype_alpha.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_9 = unictype/ctype_graph.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_10 = unictype/ctype_lower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_11 = unictype/ctype_punct.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_12 = unictype/ctype_space.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_13 = unictype/ctype_upper.$(OBJEXT)
-@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_14 = wcrtomb.$(OBJEXT)
-am_libgnu_a_OBJECTS = c32isalnum.$(OBJEXT) c32isalpha.$(OBJEXT) \
-	c32isgraph.$(OBJEXT) c32islower.$(OBJEXT) c32ispunct.$(OBJEXT) \
-	c32isspace.$(OBJEXT) c32isupper.$(OBJEXT) $(am__objects_1) \
-	c32tolower.$(OBJEXT) hard-locale.$(OBJEXT) $(am__objects_2) \
-	localcharset.$(OBJEXT) $(am__objects_3) $(am__objects_4) \
-	setlocale_null.$(OBJEXT) $(am__objects_5) \
-	setlocale_null-unlocked.$(OBJEXT) $(am__objects_6) \
-	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
-	$(am__objects_10) $(am__objects_11) $(am__objects_12) \
-	$(am__objects_13) unistd.$(OBJEXT) $(am__objects_14) \
-	wctype-h.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_8 = unicase/tolower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_9 = unictype/ctype_alnum.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_10 = unictype/ctype_alpha.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_11 = unictype/ctype_graph.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_12 = unictype/ctype_lower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_13 = unictype/ctype_punct.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_14 = unictype/ctype_space.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_15 = unictype/ctype_upper.$(OBJEXT)
+@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_16 = wcrtomb.$(OBJEXT)
+am_libgnu_a_OBJECTS = $(am__objects_1) c32isalnum.$(OBJEXT) \
+	c32isalpha.$(OBJEXT) c32isgraph.$(OBJEXT) c32islower.$(OBJEXT) \
+	c32ispunct.$(OBJEXT) c32isspace.$(OBJEXT) c32isupper.$(OBJEXT) \
+	$(am__objects_2) c32tolower.$(OBJEXT) $(am__objects_3) \
+	hard-locale.$(OBJEXT) $(am__objects_4) localcharset.$(OBJEXT) \
+	$(am__objects_5) $(am__objects_6) setlocale_null.$(OBJEXT) \
+	$(am__objects_7) setlocale_null-unlocked.$(OBJEXT) \
+	$(am__objects_8) $(am__objects_9) $(am__objects_10) \
+	$(am__objects_11) $(am__objects_12) $(am__objects_13) \
+	$(am__objects_14) $(am__objects_15) unistd.$(OBJEXT) \
+	$(am__objects_16) wctype-h.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -312,11 +317,12 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/c32isalnum.Po \
-	./$(DEPDIR)/c32isalpha.Po ./$(DEPDIR)/c32isgraph.Po \
-	./$(DEPDIR)/c32islower.Po ./$(DEPDIR)/c32ispunct.Po \
-	./$(DEPDIR)/c32isspace.Po ./$(DEPDIR)/c32isupper.Po \
-	./$(DEPDIR)/c32rtomb.Po ./$(DEPDIR)/c32tolower.Po \
+am__depfiles_remade = ./$(DEPDIR)/abort-debug.Po \
+	./$(DEPDIR)/c32isalnum.Po ./$(DEPDIR)/c32isalpha.Po \
+	./$(DEPDIR)/c32isgraph.Po ./$(DEPDIR)/c32islower.Po \
+	./$(DEPDIR)/c32ispunct.Po ./$(DEPDIR)/c32isspace.Po \
+	./$(DEPDIR)/c32isupper.Po ./$(DEPDIR)/c32rtomb.Po \
+	./$(DEPDIR)/c32tolower.Po ./$(DEPDIR)/execinfo.Po \
 	./$(DEPDIR)/hard-locale.Po ./$(DEPDIR)/iswpunct.Po \
 	./$(DEPDIR)/lc-charset-dispatch.Po ./$(DEPDIR)/localcharset.Po \
 	./$(DEPDIR)/mbrtowc.Po ./$(DEPDIR)/mbsinit.Po \
@@ -484,6 +490,7 @@ EOVERFLOW_HIDDEN = @EOVERFLOW_HIDDEN@
 EOVERFLOW_VALUE = @EOVERFLOW_VALUE@
 ERRNO_H = @ERRNO_H@
 ETAGS = @ETAGS@
+EXECINFO_H = @EXECINFO_H@
 EXEEXT = @EXEEXT@
 FLOAT_H = @FLOAT_H@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
@@ -1651,6 +1658,7 @@ LIBUNISTRING_UNICASE_H = @LIBUNISTRING_UNICASE_H@
 LIBUNISTRING_UNICTYPE_H = @LIBUNISTRING_UNICTYPE_H@
 LIBUNISTRING_UNINORM_H = @LIBUNISTRING_UNINORM_H@
 LIBUNISTRING_UNITYPES_H = @LIBUNISTRING_UNITYPES_H@
+LIB_EXECINFO = @LIB_EXECINFO@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
 LIB_NANOSLEEP = @LIB_NANOSLEEP@
@@ -2234,9 +2242,9 @@ noinst_LTLIBRARIES =
 pkgdata_DATA = 
 EXTRA_DIST = assert.in.h verify.h attribute.h c32is-impl.h \
 	c32is-impl.h c32is-impl.h c32is-impl.h c32is-impl.h \
-	c32is-impl.h c32is-impl.h c32to-impl.h hard-locale.h \
-	inttypes.in.h limits.in.h localcharset.h locale.in.h \
-	lc-charset-dispatch.c lc-charset-dispatch.h \
+	c32is-impl.h c32is-impl.h c32to-impl.h execinfo.in.h \
+	hard-locale.h inttypes.in.h limits.in.h localcharset.h \
+	locale.in.h lc-charset-dispatch.c lc-charset-dispatch.h \
 	mbrtowc-impl-utf8.h mbrtowc-impl.h mbtowc-lock.c mbtowc-lock.h \
 	windows-initguard.h setlocale_null.h windows-initguard.h \
 	setlocale_null.h _Noreturn.h arg-nonnull.h c++defs.h \
@@ -2251,21 +2259,21 @@ EXTRA_DIST = assert.in.h verify.h attribute.h c32is-impl.h \
 	unictype/ctype_space.h unictype/bitmap.h \
 	unictype/ctype_upper.h uninorm.in.h unistd.in.h unitypes.in.h \
 	wchar.in.h wctype.in.h
-BUILT_SOURCES = $(ASSERT_H) inttypes.h $(LIMITS_H) locale.h \
-	$(STDDEF_H) $(STDINT_H) stdlib.h sys/types.h uchar.h \
+BUILT_SOURCES = $(ASSERT_H) $(EXECINFO_H) inttypes.h $(LIMITS_H) \
+	locale.h $(STDDEF_H) $(STDINT_H) stdlib.h sys/types.h uchar.h \
 	$(LIBUNISTRING_UNICASE_H) $(LIBUNISTRING_UNICTYPE_H) \
 	$(LIBUNISTRING_UNINORM_H) unistd.h $(LIBUNISTRING_UNITYPES_H) \
 	wchar.h wctype.h
 SUFFIXES = 
-MOSTLYCLEANFILES = core *.stackdump assert.h assert.h-t inttypes.h \
-	inttypes.h-t limits.h limits.h-t locale.h locale.h-t stddef.h \
-	stddef.h-t stdint.h stdint.h-t stdlib.h stdlib.h-t1 \
-	stdlib.h-t2 stdlib.h-t3 sys/types.h sys/types.h-t uchar.h \
-	uchar.h-t unicase.h unicase.h-t unictype.h unictype.h-t1 \
-	unictype.h-t2 unictype.h-t3 unictype.h-t4 uninorm.h \
-	uninorm.h-t unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 \
-	unistd.h-t4 unitypes.h unitypes.h-t wchar.h wchar.h-t1 \
-	wchar.h-t2 wchar.h-t3 wctype.h wctype.h-t
+MOSTLYCLEANFILES = core *.stackdump assert.h assert.h-t execinfo.h \
+	execinfo.h-t inttypes.h inttypes.h-t limits.h limits.h-t \
+	locale.h locale.h-t stddef.h stddef.h-t stdint.h stdint.h-t \
+	stdlib.h stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 sys/types.h \
+	sys/types.h-t uchar.h uchar.h-t unicase.h unicase.h-t \
+	unictype.h unictype.h-t1 unictype.h-t2 unictype.h-t3 \
+	unictype.h-t4 uninorm.h uninorm.h-t unistd.h unistd.h-t1 \
+	unistd.h-t2 unistd.h-t3 unistd.h-t4 unitypes.h unitypes.h-t \
+	wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3 wctype.h wctype.h-t
 MOSTLYCLEANDIRS = 
 CLEANFILES = 
 DISTCLEANFILES = 
@@ -2273,14 +2281,15 @@ MAINTAINERCLEANFILES =
 # No GNU Make output.
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
-libgnu_a_SOURCES = c32isalnum.c c32isalpha.c c32isgraph.c c32islower.c \
-	c32ispunct.c c32isspace.c c32isupper.c $(am__append_1) \
-	c32tolower.c hard-locale.c $(am__append_2) localcharset.c \
-	$(am__append_3) $(am__append_4) setlocale_null.c \
-	$(am__append_5) setlocale_null-unlocked.c $(am__append_6) \
-	$(am__append_7) $(am__append_8) $(am__append_9) \
+libgnu_a_SOURCES = $(am__append_1) c32isalnum.c c32isalpha.c \
+	c32isgraph.c c32islower.c c32ispunct.c c32isspace.c \
+	c32isupper.c $(am__append_2) c32tolower.c $(am__append_3) \
+	hard-locale.c $(am__append_4) localcharset.c $(am__append_5) \
+	$(am__append_6) setlocale_null.c $(am__append_7) \
+	setlocale_null-unlocked.c $(am__append_8) $(am__append_9) \
 	$(am__append_10) $(am__append_11) $(am__append_12) \
-	$(am__append_13) unistd.c $(am__append_14) wctype-h.c
+	$(am__append_13) $(am__append_14) $(am__append_15) unistd.c \
+	$(am__append_16) wctype-h.c
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES = lc-charset-dispatch.c mbtowc-lock.c
@@ -2413,6 +2422,7 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/abort-debug.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32isalnum.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32isalpha.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32isgraph.Po@am__quote@ # am--include-marker
@@ -2422,6 +2432,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32isupper.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32rtomb.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c32tolower.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/execinfo.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hard-locale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iswpunct.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lc-charset-dispatch.Po@am__quote@ # am--include-marker
@@ -2699,6 +2710,7 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 	mostlyclean-am
 
 distclean: distclean-recursive
+	-rm -f ./$(DEPDIR)/abort-debug.Po
 	-rm -f ./$(DEPDIR)/c32isalnum.Po
 	-rm -f ./$(DEPDIR)/c32isalpha.Po
 	-rm -f ./$(DEPDIR)/c32isgraph.Po
@@ -2708,6 +2720,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/c32isupper.Po
 	-rm -f ./$(DEPDIR)/c32rtomb.Po
 	-rm -f ./$(DEPDIR)/c32tolower.Po
+	-rm -f ./$(DEPDIR)/execinfo.Po
 	-rm -f ./$(DEPDIR)/hard-locale.Po
 	-rm -f ./$(DEPDIR)/iswpunct.Po
 	-rm -f ./$(DEPDIR)/lc-charset-dispatch.Po
@@ -2774,6 +2787,7 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
+	-rm -f ./$(DEPDIR)/abort-debug.Po
 	-rm -f ./$(DEPDIR)/c32isalnum.Po
 	-rm -f ./$(DEPDIR)/c32isalpha.Po
 	-rm -f ./$(DEPDIR)/c32isgraph.Po
@@ -2783,6 +2797,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/c32isupper.Po
 	-rm -f ./$(DEPDIR)/c32rtomb.Po
 	-rm -f ./$(DEPDIR)/c32tolower.Po
+	-rm -f ./$(DEPDIR)/execinfo.Po
 	-rm -f ./$(DEPDIR)/hard-locale.Po
 	-rm -f ./$(DEPDIR)/iswpunct.Po
 	-rm -f ./$(DEPDIR)/lc-charset-dispatch.Po
@@ -2863,6 +2878,14 @@ uninstall-am: uninstall-pkgdataDATA
 @GL_GENERATE_ASSERT_H_TRUE@	$(AM_V_at)mv $@-t $@
 @GL_GENERATE_ASSERT_H_FALSE@assert.h: $(top_builddir)/config.status
 @GL_GENERATE_ASSERT_H_FALSE@	rm -f $@
+
+# We need the following in order to create <execinfo.h> when the system
+# doesn't have one that works.
+@GL_GENERATE_EXECINFO_H_TRUE@execinfo.h: execinfo.in.h $(top_builddir)/config.status
+@GL_GENERATE_EXECINFO_H_TRUE@	$(gl_V_at)$(SED_HEADER_TO_AT_t) $(srcdir)/execinfo.in.h
+@GL_GENERATE_EXECINFO_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_EXECINFO_H_FALSE@execinfo.h: $(top_builddir)/config.status
+@GL_GENERATE_EXECINFO_H_FALSE@	rm -f $@
 
 # We need the following in order to create <inttypes.h> when the system
 # doesn't have one that works with the given compiler.

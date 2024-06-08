@@ -627,6 +627,15 @@ EXTRA_DIST += test-error.sh test-error.c macros.h
 
 ## end   gnulib module error-tests
 
+## begin gnulib module execinfo-tests
+
+TESTS += test-execinfo
+noinst_PROGRAMS += test-execinfo
+test_execinfo_LDADD = $(LDADD) @LIB_EXECINFO@
+EXTRA_DIST += test-execinfo.c macros.h
+
+## end   gnulib module execinfo-tests
+
 ## begin gnulib module exitfail
 
 libtests_a_SOURCES += exitfail.c
@@ -2223,7 +2232,11 @@ endif
 
 ## begin gnulib module pthread_sigmask-tests
 
-TESTS += test-pthread_sigmask1 test-pthread_sigmask2
+# Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57214
+if !OS_IS_NETBSD
+TESTS += test-pthread_sigmask1
+endif
+TESTS += test-pthread_sigmask2
 noinst_PROGRAMS += test-pthread_sigmask1 test-pthread_sigmask2
 test_pthread_sigmask1_LDADD = $(LDADD) @PTHREAD_SIGMASK_LIB@
 test_pthread_sigmask2_LDADD = $(LDADD) @PTHREAD_SIGMASK_LIB@ @LIBMULTITHREAD@
@@ -2581,7 +2594,10 @@ endif
 
 ## begin gnulib module sigprocmask-tests
 
+# Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57213
+if !OS_IS_NETBSD
 TESTS += test-sigprocmask
+endif
 noinst_PROGRAMS += test-sigprocmask
 EXTRA_DIST += test-sigprocmask.c signature.h macros.h
 
@@ -3669,7 +3685,9 @@ endif
 
 ## begin gnulib module usleep-tests
 
+if !OS_IS_CYGWIN
 TESTS += test-usleep
+endif
 noinst_PROGRAMS += test-usleep
 EXTRA_DIST += test-usleep.c signature.h macros.h
 

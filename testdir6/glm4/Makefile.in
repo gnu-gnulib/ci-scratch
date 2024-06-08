@@ -93,6 +93,7 @@ subdir = glm4
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
+	$(top_srcdir)/glm4/abort-debug.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
 	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 $(top_srcdir)/glm4/btowc.m4 \
@@ -103,7 +104,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/dup2.m4 $(top_srcdir)/glm4/eealloc.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \
 	$(top_srcdir)/glm4/error.m4 $(top_srcdir)/glm4/error_h.m4 \
-	$(top_srcdir)/glm4/exponentd.m4 \
+	$(top_srcdir)/glm4/execinfo.m4 $(top_srcdir)/glm4/exponentd.m4 \
 	$(top_srcdir)/glm4/exponentf.m4 \
 	$(top_srcdir)/glm4/exponentl.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
@@ -274,6 +275,7 @@ EOVERFLOW_HIDDEN = @EOVERFLOW_HIDDEN@
 EOVERFLOW_VALUE = @EOVERFLOW_VALUE@
 ERRNO_H = @ERRNO_H@
 ETAGS = @ETAGS@
+EXECINFO_H = @EXECINFO_H@
 EXEEXT = @EXEEXT@
 FLOAT_H = @FLOAT_H@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
@@ -1441,6 +1443,7 @@ LIBUNISTRING_UNICASE_H = @LIBUNISTRING_UNICASE_H@
 LIBUNISTRING_UNICTYPE_H = @LIBUNISTRING_UNICTYPE_H@
 LIBUNISTRING_UNINORM_H = @LIBUNISTRING_UNINORM_H@
 LIBUNISTRING_UNITYPES_H = @LIBUNISTRING_UNITYPES_H@
+LIB_EXECINFO = @LIB_EXECINFO@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
 LIB_NANOSLEEP = @LIB_NANOSLEEP@
@@ -2016,15 +2019,16 @@ target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
-	arpa_inet_h.m4 assert_h.m4 btowc.m4 c-bool.m4 c32rtomb.m4 \
-	calloc.m4 close.m4 codeset.m4 ctype_h.m4 double-slash-root.m4 \
-	dup2.m4 eealloc.m4 environ.m4 errno_h.m4 error.m4 error_h.m4 \
-	exponentd.m4 exponentf.m4 exponentl.m4 extensions.m4 \
-	extern-inline.m4 fcntl-o.m4 fcntl.m4 fcntl_h.m4 fdopen.m4 \
-	flexmember.m4 float_h.m4 fpieee.m4 free.m4 fstat.m4 \
-	ftruncate.m4 getcwd.m4 getdtablesize.m4 getprogname.m4 \
-	gettimeofday.m4 gnulib-common.m4 include_next.m4 inet_pton.m4 \
+EXTRA_DIST = 00gnulib.m4 __inline.m4 abort-debug.m4 absolute-header.m4 \
+	alloca.m4 arpa_inet_h.m4 assert_h.m4 btowc.m4 c-bool.m4 \
+	c32rtomb.m4 calloc.m4 close.m4 codeset.m4 ctype_h.m4 \
+	double-slash-root.m4 dup2.m4 eealloc.m4 environ.m4 errno_h.m4 \
+	error.m4 error_h.m4 execinfo.m4 exponentd.m4 exponentf.m4 \
+	exponentl.m4 extensions.m4 extern-inline.m4 fcntl-o.m4 \
+	fcntl.m4 fcntl_h.m4 fdopen.m4 flexmember.m4 float_h.m4 \
+	fpieee.m4 free.m4 fstat.m4 ftruncate.m4 getcwd.m4 \
+	getdtablesize.m4 getprogname.m4 gettimeofday.m4 \
+	gnulib-common.m4 include_next.m4 inet_pton.m4 \
 	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
 	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 iswpunct.m4 \
 	langinfo_h.m4 largefile.m4 lcmessage.m4 libunistring-base.m4 \

@@ -130,41 +130,42 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-calloc-gnu$(EXEEXT) test-cloexec$(EXEEXT) \
 	test-close$(EXEEXT) test-connect$(EXEEXT) test-ctype$(EXEEXT) \
 	test-dup2$(EXEEXT) test-environ$(EXEEXT) test-errno$(EXEEXT) \
-	test-error.sh test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) \
-	test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) test-float$(EXEEXT) \
-	test-fputc$(EXEEXT) test-fread$(EXEEXT) test-free$(EXEEXT) \
-	test-fstat$(EXEEXT) test-ftruncate.sh test-fwrite$(EXEEXT) \
-	test-getcwd-lgpl$(EXEEXT) test-getdtablesize$(EXEEXT) \
-	test-getprogname$(EXEEXT) test-gettimeofday$(EXEEXT) \
-	test-hard-locale$(EXEEXT) test-ignore-value$(EXEEXT) \
-	test-inet_pton$(EXEEXT) test-intprops$(EXEEXT) \
-	test-inttypes$(EXEEXT) test-ioctl$(EXEEXT) \
-	test-isblank$(EXEEXT) test-isnand-nolibm$(EXEEXT) \
-	test-isnanf-nolibm$(EXEEXT) test-isnanl-nolibm$(EXEEXT) \
-	test-iswpunct.sh test-langinfo$(EXEEXT) \
-	test-largefile$(EXEEXT) test-limits-h$(EXEEXT) \
-	test-listen$(EXEEXT) test-locale$(EXEEXT) \
-	test-localename$(EXEEXT) test-rwlock1$(EXEEXT) \
-	test-lock$(EXEEXT) test-once1$(EXEEXT) test-once2$(EXEEXT) \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
-	test-malloca$(EXEEXT) test-math$(EXEEXT) test-mbrtoc32-1.sh \
-	test-mbrtoc32-2.sh test-mbrtoc32-3.sh test-mbrtoc32-4.sh \
-	test-mbrtoc32-5.sh test-mbrtoc32-w32-2.sh \
-	test-mbrtoc32-w32-3.sh test-mbrtoc32-w32-4.sh \
-	test-mbrtoc32-w32-5.sh test-mbrtoc32-w32-6.sh \
-	test-mbrtoc32-w32-7.sh test-mbrtoc32-w32-8.sh \
-	test-mbrtowc-1.sh test-mbrtowc-2.sh test-mbrtowc-3.sh \
-	test-mbrtowc-4.sh test-mbrtowc-5.sh test-mbrtowc-w32-2.sh \
-	test-mbrtowc-w32-3.sh test-mbrtowc-w32-4.sh \
-	test-mbrtowc-w32-5.sh test-mbrtowc-w32-6.sh \
-	test-mbrtowc-w32-7.sh test-mbrtowc-w32-8.sh test-mbsinit.sh \
-	test-nanosleep$(EXEEXT) test-netinet_in$(EXEEXT) \
-	test-open$(EXEEXT) test-pathmax$(EXEEXT) test-perror.sh \
-	test-perror2$(EXEEXT) test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
+	test-error.sh test-execinfo$(EXEEXT) test-fcntl-h$(EXEEXT) \
+	test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) \
+	test-float$(EXEEXT) test-fputc$(EXEEXT) test-fread$(EXEEXT) \
+	test-free$(EXEEXT) test-fstat$(EXEEXT) test-ftruncate.sh \
+	test-fwrite$(EXEEXT) test-getcwd-lgpl$(EXEEXT) \
+	test-getdtablesize$(EXEEXT) test-getprogname$(EXEEXT) \
+	test-gettimeofday$(EXEEXT) test-hard-locale$(EXEEXT) \
+	test-ignore-value$(EXEEXT) test-inet_pton$(EXEEXT) \
+	test-intprops$(EXEEXT) test-inttypes$(EXEEXT) \
+	test-ioctl$(EXEEXT) test-isblank$(EXEEXT) \
+	test-isnand-nolibm$(EXEEXT) test-isnanf-nolibm$(EXEEXT) \
+	test-isnanl-nolibm$(EXEEXT) test-iswpunct.sh \
+	test-langinfo$(EXEEXT) test-largefile$(EXEEXT) \
+	test-limits-h$(EXEEXT) test-listen$(EXEEXT) \
+	test-locale$(EXEEXT) test-localename$(EXEEXT) \
+	test-rwlock1$(EXEEXT) test-lock$(EXEEXT) test-once1$(EXEEXT) \
+	test-once2$(EXEEXT) test-lstat$(EXEEXT) \
+	test-malloc-gnu$(EXEEXT) test-malloca$(EXEEXT) \
+	test-math$(EXEEXT) test-mbrtoc32-1.sh test-mbrtoc32-2.sh \
+	test-mbrtoc32-3.sh test-mbrtoc32-4.sh test-mbrtoc32-5.sh \
+	test-mbrtoc32-w32-2.sh test-mbrtoc32-w32-3.sh \
+	test-mbrtoc32-w32-4.sh test-mbrtoc32-w32-5.sh \
+	test-mbrtoc32-w32-6.sh test-mbrtoc32-w32-7.sh \
+	test-mbrtoc32-w32-8.sh test-mbrtowc-1.sh test-mbrtowc-2.sh \
+	test-mbrtowc-3.sh test-mbrtowc-4.sh test-mbrtowc-5.sh \
+	test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh \
+	test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh \
+	test-mbrtowc-w32-6.sh test-mbrtowc-w32-7.sh \
+	test-mbrtowc-w32-8.sh test-mbsinit.sh test-nanosleep$(EXEEXT) \
+	test-netinet_in$(EXEEXT) test-open$(EXEEXT) \
+	test-pathmax$(EXEEXT) test-perror.sh test-perror2$(EXEEXT) \
+	test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
 	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
 	test-pthread-mutex$(EXEEXT) test-pthread-once1$(EXEEXT) \
 	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
-	test-pthread-thread$(EXEEXT) test-pthread_sigmask1$(EXEEXT) \
+	test-pthread-thread$(EXEEXT) $(am__EXEEXT_1) \
 	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
 	test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
@@ -176,9 +177,8 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-setlocale_null-mt-all$(EXEEXT) \
 	test-setlocale_null-unlocked$(EXEEXT) test-setlocale1.sh \
 	test-setlocale2.sh test-setsockopt$(EXEEXT) \
-	test-signal-h$(EXEEXT) test-signbit$(EXEEXT) \
-	test-sigprocmask$(EXEEXT) test-sleep$(EXEEXT) \
-	test-sockets$(EXEEXT) test-stat$(EXEEXT) \
+	test-signal-h$(EXEEXT) test-signbit$(EXEEXT) $(am__EXEEXT_2) \
+	test-sleep$(EXEEXT) test-sockets$(EXEEXT) test-stat$(EXEEXT) \
 	test-stat-time$(EXEEXT) test-stdbool$(EXEEXT) \
 	test-stdckdint$(EXEEXT) test-stddef$(EXEEXT) \
 	test-stdint$(EXEEXT) test-stdio$(EXEEXT) test-stdlib$(EXEEXT) \
@@ -194,13 +194,13 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-ctype_alpha$(EXEEXT) test-ctype_graph$(EXEEXT) \
 	test-ctype_lower$(EXEEXT) test-ctype_punct$(EXEEXT) \
 	test-ctype_space$(EXEEXT) test-ctype_upper$(EXEEXT) \
-	test-unistd$(EXEEXT) test-unsetenv$(EXEEXT) \
-	test-usleep$(EXEEXT) test-verify$(EXEEXT) test-verify.sh \
-	test-wchar$(EXEEXT) test-wcrtomb.sh test-wcrtomb-w32-2.sh \
-	test-wcrtomb-w32-3.sh test-wcrtomb-w32-4.sh \
-	test-wcrtomb-w32-5.sh test-wcrtomb-w32-6.sh \
-	test-wcrtomb-w32-7.sh test-wcrtomb-w32-8.sh \
-	test-wctype-h$(EXEEXT) test-xalloc-die.sh
+	test-unistd$(EXEEXT) test-unsetenv$(EXEEXT) $(am__EXEEXT_3) \
+	test-verify$(EXEEXT) test-verify.sh test-wchar$(EXEEXT) \
+	test-wcrtomb.sh test-wcrtomb-w32-2.sh test-wcrtomb-w32-3.sh \
+	test-wcrtomb-w32-4.sh test-wcrtomb-w32-5.sh \
+	test-wcrtomb-w32-6.sh test-wcrtomb-w32-7.sh \
+	test-wcrtomb-w32-8.sh test-wctype-h$(EXEEXT) \
+	test-xalloc-die.sh
 XFAIL_TESTS =
 noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-alloca-opt$(EXEEXT) test-arpa_inet$(EXEEXT) \
@@ -215,30 +215,30 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-cloexec$(EXEEXT) test-close$(EXEEXT) \
 	test-connect$(EXEEXT) test-ctype$(EXEEXT) test-dup2$(EXEEXT) \
 	test-environ$(EXEEXT) test-errno$(EXEEXT) test-error$(EXEEXT) \
-	test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) \
-	test-fgetc$(EXEEXT) test-float$(EXEEXT) test-fputc$(EXEEXT) \
-	test-fread$(EXEEXT) test-free$(EXEEXT) test-fstat$(EXEEXT) \
-	test-ftruncate$(EXEEXT) test-fwrite$(EXEEXT) \
-	test-getcwd-lgpl$(EXEEXT) test-getdtablesize$(EXEEXT) \
-	test-getprogname$(EXEEXT) test-gettimeofday$(EXEEXT) \
-	test-hard-locale$(EXEEXT) current-locale$(EXEEXT) \
-	test-ignore-value$(EXEEXT) test-inet_pton$(EXEEXT) \
-	test-intprops$(EXEEXT) test-inttypes$(EXEEXT) \
-	test-ioctl$(EXEEXT) test-isblank$(EXEEXT) \
-	test-isnand-nolibm$(EXEEXT) test-isnanf-nolibm$(EXEEXT) \
-	test-isnanl-nolibm$(EXEEXT) test-iswpunct$(EXEEXT) \
-	test-langinfo$(EXEEXT) test-largefile$(EXEEXT) \
-	test-limits-h$(EXEEXT) test-listen$(EXEEXT) \
-	test-localcharset$(EXEEXT) test-locale$(EXEEXT) \
-	test-localename$(EXEEXT) test-rwlock1$(EXEEXT) \
-	test-lock$(EXEEXT) test-once1$(EXEEXT) test-once2$(EXEEXT) \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
-	test-malloca$(EXEEXT) test-math$(EXEEXT) \
-	test-mbrtoc32$(EXEEXT) test-mbrtoc32-w32$(EXEEXT) \
-	test-mbrtowc$(EXEEXT) test-mbrtowc-w32$(EXEEXT) \
-	test-mbsinit$(EXEEXT) test-nanosleep$(EXEEXT) \
-	test-netinet_in$(EXEEXT) test-open$(EXEEXT) \
-	test-pathmax$(EXEEXT) test-perror$(EXEEXT) \
+	test-execinfo$(EXEEXT) test-fcntl-h$(EXEEXT) \
+	test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) \
+	test-float$(EXEEXT) test-fputc$(EXEEXT) test-fread$(EXEEXT) \
+	test-free$(EXEEXT) test-fstat$(EXEEXT) test-ftruncate$(EXEEXT) \
+	test-fwrite$(EXEEXT) test-getcwd-lgpl$(EXEEXT) \
+	test-getdtablesize$(EXEEXT) test-getprogname$(EXEEXT) \
+	test-gettimeofday$(EXEEXT) test-hard-locale$(EXEEXT) \
+	current-locale$(EXEEXT) test-ignore-value$(EXEEXT) \
+	test-inet_pton$(EXEEXT) test-intprops$(EXEEXT) \
+	test-inttypes$(EXEEXT) test-ioctl$(EXEEXT) \
+	test-isblank$(EXEEXT) test-isnand-nolibm$(EXEEXT) \
+	test-isnanf-nolibm$(EXEEXT) test-isnanl-nolibm$(EXEEXT) \
+	test-iswpunct$(EXEEXT) test-langinfo$(EXEEXT) \
+	test-largefile$(EXEEXT) test-limits-h$(EXEEXT) \
+	test-listen$(EXEEXT) test-localcharset$(EXEEXT) \
+	test-locale$(EXEEXT) test-localename$(EXEEXT) \
+	test-rwlock1$(EXEEXT) test-lock$(EXEEXT) test-once1$(EXEEXT) \
+	test-once2$(EXEEXT) test-lstat$(EXEEXT) \
+	test-malloc-gnu$(EXEEXT) test-malloca$(EXEEXT) \
+	test-math$(EXEEXT) test-mbrtoc32$(EXEEXT) \
+	test-mbrtoc32-w32$(EXEEXT) test-mbrtowc$(EXEEXT) \
+	test-mbrtowc-w32$(EXEEXT) test-mbsinit$(EXEEXT) \
+	test-nanosleep$(EXEEXT) test-netinet_in$(EXEEXT) \
+	test-open$(EXEEXT) test-pathmax$(EXEEXT) test-perror$(EXEEXT) \
 	test-perror2$(EXEEXT) test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
 	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
 	test-pthread-mutex$(EXEEXT) test-pthread-once1$(EXEEXT) \
@@ -319,45 +319,53 @@ EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_39 = pthread-thread.c
 @GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_40 = pthread_mutex_timedlock.c
 @GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_41 = pthread_sigmask.c
-@GL_COND_OBJ_PUTENV_TRUE@am__append_42 = putenv.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_43 = raise.c
-@GL_COND_OBJ_RANDOM_TRUE@am__append_44 = random.c
-@GL_COND_OBJ_RANDOM_R_TRUE@am__append_45 = random_r.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_46 = reallocarray.c
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_47 = sched_yield.c
-@GL_COND_OBJ_SELECT_TRUE@am__append_48 = select.c
-@GL_COND_OBJ_SETENV_TRUE@am__append_49 = setenv.c
-@GL_COND_OBJ_SETLOCALE_TRUE@am__append_50 = setlocale.c
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_51 = setsockopt.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_52 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_53 = sigprocmask.c
-@GL_COND_OBJ_SLEEP_TRUE@am__append_54 = sleep.c
-@GL_COND_OBJ_SOCKET_TRUE@am__append_55 = socket.c
-@GL_COND_OBJ_STAT_TRUE@am__append_56 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_57 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_58 = stdio-write.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_59 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_60 = strerror-override.c
-@GL_COND_OBJ_SYMLINK_TRUE@am__append_61 = symlink.c
-@GL_COND_OBJ_TIME_TRUE@am__append_62 = time.c
-@GL_COND_OBJ_UNSETENV_TRUE@am__append_63 = unsetenv.c
-@GL_COND_OBJ_USLEEP_TRUE@am__append_64 = usleep.c
-@GL_COND_OBJ_WCTOB_TRUE@am__append_65 = wctob.c
-@GL_COND_OBJ_WCTOMB_TRUE@am__append_66 = wctomb.c
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_67 = windows-cond.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_68 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_69 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_70 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_71 = windows-rwlock.c
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_72 = windows-thread.c
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_73 = windows-timedmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_74 = windows-timedrecmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_75 = windows-timedrwlock.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_76 = windows-tls.c
+
+# Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57214
+@OS_IS_NETBSD_FALSE@am__append_42 = test-pthread_sigmask1
+@GL_COND_OBJ_PUTENV_TRUE@am__append_43 = putenv.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_44 = raise.c
+@GL_COND_OBJ_RANDOM_TRUE@am__append_45 = random.c
+@GL_COND_OBJ_RANDOM_R_TRUE@am__append_46 = random_r.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_47 = reallocarray.c
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_48 = sched_yield.c
+@GL_COND_OBJ_SELECT_TRUE@am__append_49 = select.c
+@GL_COND_OBJ_SETENV_TRUE@am__append_50 = setenv.c
+@GL_COND_OBJ_SETLOCALE_TRUE@am__append_51 = setlocale.c
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_52 = setsockopt.c
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_53 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_54 = sigprocmask.c
+
+# Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57213
+@OS_IS_NETBSD_FALSE@am__append_55 = test-sigprocmask
+@GL_COND_OBJ_SLEEP_TRUE@am__append_56 = sleep.c
+@GL_COND_OBJ_SOCKET_TRUE@am__append_57 = socket.c
+@GL_COND_OBJ_STAT_TRUE@am__append_58 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_59 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_60 = stdio-write.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_61 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_62 = strerror-override.c
+@GL_COND_OBJ_SYMLINK_TRUE@am__append_63 = symlink.c
+@GL_COND_OBJ_TIME_TRUE@am__append_64 = time.c
+@GL_COND_OBJ_UNSETENV_TRUE@am__append_65 = unsetenv.c
+@GL_COND_OBJ_USLEEP_TRUE@am__append_66 = usleep.c
+@OS_IS_CYGWIN_FALSE@am__append_67 = test-usleep
+@GL_COND_OBJ_WCTOB_TRUE@am__append_68 = wctob.c
+@GL_COND_OBJ_WCTOMB_TRUE@am__append_69 = wctomb.c
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_70 = windows-cond.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_71 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_72 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_73 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_74 = windows-rwlock.c
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_75 = windows-thread.c
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_76 = windows-timedmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_77 = windows-timedrecmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_78 = windows-timedrwlock.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_79 = windows-tls.c
 subdir = gltests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
+	$(top_srcdir)/glm4/abort-debug.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
 	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 $(top_srcdir)/glm4/btowc.m4 \
@@ -368,7 +376,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/dup2.m4 $(top_srcdir)/glm4/eealloc.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \
 	$(top_srcdir)/glm4/error.m4 $(top_srcdir)/glm4/error_h.m4 \
-	$(top_srcdir)/glm4/exponentd.m4 \
+	$(top_srcdir)/glm4/execinfo.m4 $(top_srcdir)/glm4/exponentd.m4 \
 	$(top_srcdir)/glm4/exponentf.m4 \
 	$(top_srcdir)/glm4/exponentl.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
@@ -792,6 +800,9 @@ test_errno_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 test_error_SOURCES = test-error.c
 test_error_OBJECTS = test-error.$(OBJEXT)
 test_error_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
+test_execinfo_SOURCES = test-execinfo.c
+test_execinfo_OBJECTS = test-execinfo.$(OBJEXT)
+test_execinfo_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_fcntl_SOURCES = test-fcntl.c
 test_fcntl_OBJECTS = test-fcntl.$(OBJEXT)
 test_fcntl_LDADD = $(LDADD)
@@ -1412,12 +1423,13 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-connect.Po ./$(DEPDIR)/test-ctype.Po \
 	./$(DEPDIR)/test-dup2.Po ./$(DEPDIR)/test-environ.Po \
 	./$(DEPDIR)/test-errno.Po ./$(DEPDIR)/test-error.Po \
-	./$(DEPDIR)/test-fcntl-h.Po ./$(DEPDIR)/test-fcntl.Po \
-	./$(DEPDIR)/test-fdopen.Po ./$(DEPDIR)/test-fgetc.Po \
-	./$(DEPDIR)/test-float.Po ./$(DEPDIR)/test-fputc.Po \
-	./$(DEPDIR)/test-fread.Po ./$(DEPDIR)/test-free.Po \
-	./$(DEPDIR)/test-fstat.Po ./$(DEPDIR)/test-ftruncate.Po \
-	./$(DEPDIR)/test-fwrite.Po ./$(DEPDIR)/test-getcwd-lgpl.Po \
+	./$(DEPDIR)/test-execinfo.Po ./$(DEPDIR)/test-fcntl-h.Po \
+	./$(DEPDIR)/test-fcntl.Po ./$(DEPDIR)/test-fdopen.Po \
+	./$(DEPDIR)/test-fgetc.Po ./$(DEPDIR)/test-float.Po \
+	./$(DEPDIR)/test-fputc.Po ./$(DEPDIR)/test-fread.Po \
+	./$(DEPDIR)/test-free.Po ./$(DEPDIR)/test-fstat.Po \
+	./$(DEPDIR)/test-ftruncate.Po ./$(DEPDIR)/test-fwrite.Po \
+	./$(DEPDIR)/test-getcwd-lgpl.Po \
 	./$(DEPDIR)/test-getdtablesize.Po \
 	./$(DEPDIR)/test-getprogname.Po \
 	./$(DEPDIR)/test-gettimeofday.Po \
@@ -1527,13 +1539,13 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_ctype_graph_SOURCES) $(test_ctype_lower_SOURCES) \
 	$(test_ctype_punct_SOURCES) $(test_ctype_space_SOURCES) \
 	$(test_ctype_upper_SOURCES) test-dup2.c test-environ.c \
-	test-errno.c test-error.c test-fcntl.c test-fcntl-h.c \
-	test-fdopen.c test-fgetc.c test-float.c test-fputc.c \
-	test-fread.c test-free.c test-fstat.c test-ftruncate.c \
-	test-fwrite.c test-getcwd-lgpl.c test-getdtablesize.c \
-	test-getprogname.c test-gettimeofday.c test-hard-locale.c \
-	test-ignore-value.c test-inet_pton.c test-intprops.c \
-	test-inttypes.c test-ioctl.c test-isblank.c \
+	test-errno.c test-error.c test-execinfo.c test-fcntl.c \
+	test-fcntl-h.c test-fdopen.c test-fgetc.c test-float.c \
+	test-fputc.c test-fread.c test-free.c test-fstat.c \
+	test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
+	test-getdtablesize.c test-getprogname.c test-gettimeofday.c \
+	test-hard-locale.c test-ignore-value.c test-inet_pton.c \
+	test-intprops.c test-inttypes.c test-ioctl.c test-isblank.c \
 	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
 	test-iswpunct.c test-langinfo.c test-largefile.c \
 	test-limits-h.c test-listen.c test-localcharset.c \
@@ -1580,22 +1592,22 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(test_ctype_lower_SOURCES) $(test_ctype_punct_SOURCES) \
 	$(test_ctype_space_SOURCES) $(test_ctype_upper_SOURCES) \
 	test-dup2.c test-environ.c test-errno.c test-error.c \
-	test-fcntl.c test-fcntl-h.c test-fdopen.c test-fgetc.c \
-	test-float.c test-fputc.c test-fread.c test-free.c \
-	test-fstat.c test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
-	test-getdtablesize.c test-getprogname.c test-gettimeofday.c \
-	test-hard-locale.c test-ignore-value.c test-inet_pton.c \
-	test-intprops.c test-inttypes.c test-ioctl.c test-isblank.c \
-	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
-	test-iswpunct.c test-langinfo.c test-largefile.c \
-	test-limits-h.c test-listen.c test-localcharset.c \
-	test-locale.c test-localename.c test-lock.c test-lstat.c \
-	test-malloc-gnu.c test-malloca.c test-math.c test-mbrtoc32.c \
-	test-mbrtoc32-w32.c test-mbrtowc.c test-mbrtowc-w32.c \
-	test-mbsinit.c test-nanosleep.c test-netinet_in.c \
-	$(test_once1_SOURCES) $(test_once2_SOURCES) test-open.c \
-	test-pathmax.c test-perror.c test-perror2.c test-pipe.c \
-	test-pselect.c test-pthread.c test-pthread-cond.c \
+	test-execinfo.c test-fcntl.c test-fcntl-h.c test-fdopen.c \
+	test-fgetc.c test-float.c test-fputc.c test-fread.c \
+	test-free.c test-fstat.c test-ftruncate.c test-fwrite.c \
+	test-getcwd-lgpl.c test-getdtablesize.c test-getprogname.c \
+	test-gettimeofday.c test-hard-locale.c test-ignore-value.c \
+	test-inet_pton.c test-intprops.c test-inttypes.c test-ioctl.c \
+	test-isblank.c test-isnand-nolibm.c test-isnanf-nolibm.c \
+	test-isnanl-nolibm.c test-iswpunct.c test-langinfo.c \
+	test-largefile.c test-limits-h.c test-listen.c \
+	test-localcharset.c test-locale.c test-localename.c \
+	test-lock.c test-lstat.c test-malloc-gnu.c test-malloca.c \
+	test-math.c test-mbrtoc32.c test-mbrtoc32-w32.c test-mbrtowc.c \
+	test-mbrtowc-w32.c test-mbsinit.c test-nanosleep.c \
+	test-netinet_in.c $(test_once1_SOURCES) $(test_once2_SOURCES) \
+	test-open.c test-pathmax.c test-perror.c test-perror2.c \
+	test-pipe.c test-pselect.c test-pthread.c test-pthread-cond.c \
 	test-pthread-mutex.c test-pthread-once1.c test-pthread-once2.c \
 	test-pthread-rwlock.c test-pthread-thread.c \
 	test-pthread_sigmask1.c test-pthread_sigmask2.c test-putenv.c \
@@ -1842,6 +1854,9 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 AM_TESTSUITE_SUMMARY_HEADER = ' for $(PACKAGE_STRING)'
 RECHECK_LOGS = $(TEST_LOGS)
+@OS_IS_NETBSD_FALSE@am__EXEEXT_1 = test-pthread_sigmask1$(EXEEXT)
+@OS_IS_NETBSD_FALSE@am__EXEEXT_2 = test-sigprocmask$(EXEEXT)
+@OS_IS_CYGWIN_FALSE@am__EXEEXT_3 = test-usleep$(EXEEXT)
 TEST_SUITE_LOG = test-suite.log
 TEST_EXTENSIONS = @EXEEXT@ .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
@@ -1934,6 +1949,7 @@ EOVERFLOW_HIDDEN = @EOVERFLOW_HIDDEN@
 EOVERFLOW_VALUE = @EOVERFLOW_VALUE@
 ERRNO_H = @ERRNO_H@
 ETAGS = @ETAGS@
+EXECINFO_H = @EXECINFO_H@
 EXEEXT = @EXEEXT@
 FLOAT_H = @FLOAT_H@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
@@ -3101,6 +3117,7 @@ LIBUNISTRING_UNICASE_H = @LIBUNISTRING_UNICASE_H@
 LIBUNISTRING_UNICTYPE_H = @LIBUNISTRING_UNICTYPE_H@
 LIBUNISTRING_UNINORM_H = @LIBUNISTRING_UNINORM_H@
 LIBUNISTRING_UNITYPES_H = @LIBUNISTRING_UNITYPES_H@
+LIB_EXECINFO = @LIB_EXECINFO@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
 LIB_NANOSLEEP = @LIB_NANOSLEEP@
@@ -3737,21 +3754,21 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	macros.h w32sock.h test-connect.c signature.h macros.h \
 	ctype.in.h test-ctype.c test-dup2.c signature.h macros.h \
 	test-environ.c errno.in.h test-errno.c error.in.h \
-	test-error.sh test-error.c macros.h exitfail.h fcntl.in.h \
-	test-fcntl-h.c test-fcntl.c signature.h macros.h fd-hook.h \
-	test-fdopen.c signature.h macros.h test-fgetc.c signature.h \
-	macros.h filename.h flexmember.h float.in.h test-float.c \
-	macros.h fpucw.h test-fputc.c signature.h macros.h \
-	test-fread.c signature.h macros.h test-free.c macros.h \
-	stat-w32.c stat-w32.h test-fstat.c signature.h macros.h \
-	test-ftruncate.c test-ftruncate.sh signature.h macros.h \
-	test-fwrite.c signature.h macros.h test-getcwd-lgpl.c \
-	signature.h macros.h test-getdtablesize.c signature.h macros.h \
-	getprogname.h test-getprogname.c test-gettimeofday.c \
-	signature.h macros.h test-hard-locale.c locale.c ialloc.h \
-	ignore-value.h test-ignore-value.c test-inet_pton.c \
-	signature.h macros.h intprops-internal.h intprops.h \
-	test-intprops.c macros.h test-inttypes.c w32sock.h \
+	test-error.sh test-error.c macros.h test-execinfo.c macros.h \
+	exitfail.h fcntl.in.h test-fcntl-h.c test-fcntl.c signature.h \
+	macros.h fd-hook.h test-fdopen.c signature.h macros.h \
+	test-fgetc.c signature.h macros.h filename.h flexmember.h \
+	float.in.h test-float.c macros.h fpucw.h test-fputc.c \
+	signature.h macros.h test-fread.c signature.h macros.h \
+	test-free.c macros.h stat-w32.c stat-w32.h test-fstat.c \
+	signature.h macros.h test-ftruncate.c test-ftruncate.sh \
+	signature.h macros.h test-fwrite.c signature.h macros.h \
+	test-getcwd-lgpl.c signature.h macros.h test-getdtablesize.c \
+	signature.h macros.h getprogname.h test-getprogname.c \
+	test-gettimeofday.c signature.h macros.h test-hard-locale.c \
+	locale.c ialloc.h ignore-value.h test-ignore-value.c \
+	test-inet_pton.c signature.h macros.h intprops-internal.h \
+	intprops.h test-intprops.c macros.h test-inttypes.c w32sock.h \
 	test-ioctl.c signature.h macros.h test-isblank.c signature.h \
 	macros.h float+.h isnan.c isnand-nolibm.h isnand.c \
 	test-isnand-nolibm.c test-isnand.h minus-zero.h infinity.h \
@@ -3911,20 +3928,20 @@ libtests_a_SOURCES = $(am__append_1) basename-lgpl.c binary-io.h \
 	$(am__append_33) $(am__append_34) $(am__append_35) \
 	$(am__append_36) $(am__append_37) $(am__append_38) \
 	$(am__append_39) $(am__append_40) $(am__append_41) \
-	$(am__append_42) $(am__append_43) $(am__append_44) \
-	$(am__append_45) $(am__append_46) same-inode.h same-inode.c \
-	$(am__append_47) $(am__append_48) $(am__append_49) \
-	$(am__append_50) $(am__append_51) $(am__append_52) \
-	signed-nan.h signed-snan.h $(am__append_53) $(am__append_54) \
-	snan.h $(am__append_55) sockets.h sockets.c $(am__append_56) \
-	stat-time.c $(am__append_57) $(am__append_58) $(am__append_59) \
-	$(am__append_60) $(am__append_61) sys_socket.c \
+	$(am__append_43) $(am__append_44) $(am__append_45) \
+	$(am__append_46) $(am__append_47) same-inode.h same-inode.c \
+	$(am__append_48) $(am__append_49) $(am__append_50) \
+	$(am__append_51) $(am__append_52) $(am__append_53) \
+	signed-nan.h signed-snan.h $(am__append_54) $(am__append_56) \
+	snan.h $(am__append_57) sockets.h sockets.c $(am__append_58) \
+	stat-time.c $(am__append_59) $(am__append_60) $(am__append_61) \
+	$(am__append_62) $(am__append_63) sys_socket.c \
 	glthread/thread.h glthread/thread.c glthread/threadlib.c \
-	$(am__append_62) $(am__append_63) $(am__append_64) \
-	$(am__append_65) $(am__append_66) $(am__append_67) \
+	$(am__append_64) $(am__append_65) $(am__append_66) \
 	$(am__append_68) $(am__append_69) $(am__append_70) \
 	$(am__append_71) $(am__append_72) $(am__append_73) \
-	$(am__append_74) $(am__append_75) $(am__append_76) xmalloc.c \
+	$(am__append_74) $(am__append_75) $(am__append_76) \
+	$(am__append_77) $(am__append_78) $(am__append_79) xmalloc.c \
 	xalloc-die.c glthread/yield.h
 libtests_a_LIBADD = $(gltests_LIBOBJS) @ALLOCA@
 libtests_a_DEPENDENCIES = $(gltests_LIBOBJS) @ALLOCA@
@@ -3949,6 +3966,7 @@ test_c32rtomb_LDADD = $(LDADD) $(LIBUNISTRING) $(SETLOCALE_LIB) $(LIBC32CONV)
 test_c32tolower_LDADD = $(LDADD) $(SETLOCALE_LIB) $(MBRTOWC_LIB) $(LIBUNISTRING) $(LIBC32CONV)
 test_connect_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 test_error_LDADD = $(LDADD) $(LIBINTL)
+test_execinfo_LDADD = $(LDADD) @LIB_EXECINFO@
 
 # In 'sed', replace the pattern space with a "DO NOT EDIT" comment.
 SED_HEADER_NOEDIT = s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,
@@ -4271,6 +4289,10 @@ test-errno$(EXEEXT): $(test_errno_OBJECTS) $(test_errno_DEPENDENCIES) $(EXTRA_te
 test-error$(EXEEXT): $(test_error_OBJECTS) $(test_error_DEPENDENCIES) $(EXTRA_test_error_DEPENDENCIES) 
 	@rm -f test-error$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_error_OBJECTS) $(test_error_LDADD) $(LIBS)
+
+test-execinfo$(EXEEXT): $(test_execinfo_OBJECTS) $(test_execinfo_DEPENDENCIES) $(EXTRA_test_execinfo_DEPENDENCIES) 
+	@rm -f test-execinfo$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_execinfo_OBJECTS) $(test_execinfo_LDADD) $(LIBS)
 
 test-fcntl$(EXEEXT): $(test_fcntl_OBJECTS) $(test_fcntl_DEPENDENCIES) $(EXTRA_test_fcntl_DEPENDENCIES) 
 	@rm -f test-fcntl$(EXEEXT)
@@ -4899,6 +4921,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-environ.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-errno.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-error.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-execinfo.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fdopen.Po@am__quote@ # am--include-marker
@@ -5615,6 +5638,13 @@ test-errno.log: test-errno$(EXEEXT)
 test-error.sh.log: test-error.sh
 	@p='test-error.sh'; \
 	b='test-error.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-execinfo.log: test-execinfo$(EXEEXT)
+	@p='test-execinfo$(EXEEXT)'; \
+	b='test-execinfo'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -6960,6 +6990,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-environ.Po
 	-rm -f ./$(DEPDIR)/test-errno.Po
 	-rm -f ./$(DEPDIR)/test-error.Po
+	-rm -f ./$(DEPDIR)/test-execinfo.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl.Po
 	-rm -f ./$(DEPDIR)/test-fdopen.Po
@@ -7275,6 +7306,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-environ.Po
 	-rm -f ./$(DEPDIR)/test-errno.Po
 	-rm -f ./$(DEPDIR)/test-error.Po
+	-rm -f ./$(DEPDIR)/test-execinfo.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl.Po
 	-rm -f ./$(DEPDIR)/test-fdopen.Po
