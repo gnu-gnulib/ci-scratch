@@ -436,6 +436,7 @@ jobs:
       CYGWIN_NOWINPATH: 1
     steps:
       # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
       - uses: actions/checkout@v4
       # Doc: https://github.com/cygwin/cygwin-install-action
       - uses: cygwin/cygwin-install-action@v4
@@ -492,6 +493,7 @@ jobs:
       CYGWIN_NOWINPATH: 1
     steps:
       # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
       - uses: actions/checkout@v4
       # Doc: https://github.com/cygwin/cygwin-install-action
       - uses: cygwin/cygwin-install-action@v4
@@ -552,6 +554,7 @@ jobs:
       CYGWIN_NOWINPATH: 1
     steps:
       # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
       - uses: actions/checkout@v4
       # Doc: https://github.com/ilammy/msvc-dev-cmd
       - uses: ilammy/msvc-dev-cmd@v1
