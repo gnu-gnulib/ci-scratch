@@ -1,5 +1,5 @@
 # locale-zh.m4
-# serial 20
+# serial 19
 dnl Copyright (C) 2003, 2005-2024 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -94,16 +94,6 @@ int main ()
             && mbrtowc (&wc, "\066", 1, &state) == 1))
         return 1;
     }
-  /* Check whether wcrtomb accepts the wide characters returned by mbrtowc.
-     This excludes Solaris 11 OmniOS.  */
-  {
-    wchar_t wc;
-    mbstate_t state;
-    memset (&state, 0, sizeof (state));
-    if (!(mbrtowc (&wc, "\250\271", 2, &state) == 2
-          && wcrtomb (buf, wc, NULL) == 2 && memcmp (buf, "\250\271", 2) == 0))
-      return 1;
-  }
   return 0;
 #endif
 }

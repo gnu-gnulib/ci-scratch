@@ -155,7 +155,7 @@ int main ()
           char32_t c32 = (wchar_t) 0xBADFACE;
           memset (&state, '\0', sizeof (mbstate_t));
           if (mbrtoc32 (&c32, "\201\060\211\070", 4, &state) == 4
-              && c32rtomb (buf, wc, NULL) != 4)
+              && c32rtomb (buf, c32, NULL) != 4)
             result |= 1;
         }
     }
