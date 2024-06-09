@@ -10628,9 +10628,13 @@ then :
 else case e in #(
   e)
                         case "$host_os" in
-          # Guess no on Solaris.
+          # Guess no on Solaris derivatives.
           solaris*)
-            gl_cv_func_c32rtomb_sanitycheck="guessing no"
+            if test -f /etc/release && grep 'Oracle Solaris' /etc/release >/dev/null; then
+              gl_cv_func_c32rtomb_sanitycheck="guessing yes"
+            else
+              gl_cv_func_c32rtomb_sanitycheck="guessing no"
+            fi
             ;;
           # Guess yes otherwise.
           *)
@@ -10805,8 +10809,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:10808: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:10809: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:10812: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:10813: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -10832,7 +10836,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:10835: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:10839: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -11066,7 +11070,7 @@ fi
 
         fi
       fi
-      echo "$as_me:11069: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:11073: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -21124,8 +21128,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21127: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21128: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21131: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21132: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21151,7 +21155,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:21154: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21158: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -21385,7 +21389,7 @@ fi
 
         fi
       fi
-      echo "$as_me:21388: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21392: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -21634,8 +21638,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21637: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21638: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21641: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21642: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21661,7 +21665,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:21664: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21668: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -21895,7 +21899,7 @@ fi
 
         fi
       fi
-      echo "$as_me:21898: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21902: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }

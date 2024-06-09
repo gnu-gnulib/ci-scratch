@@ -114,9 +114,13 @@ AC_DEFUN([gl_C32RTOMB_SANITYCHECK],
         dnl is present.
 changequote(,)dnl
         case "$host_os" in
-          # Guess no on Solaris.
+          # Guess no on Solaris derivatives.
           solaris*)
-            gl_cv_func_c32rtomb_sanitycheck="guessing no"
+            if test -f /etc/release && grep 'Oracle Solaris' /etc/release >/dev/null; then
+              gl_cv_func_c32rtomb_sanitycheck="guessing yes"
+            else
+              gl_cv_func_c32rtomb_sanitycheck="guessing no"
+            fi
             ;;
           # Guess yes otherwise.
           *)
