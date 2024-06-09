@@ -26954,6 +26954,9 @@ printf "%s\n" "#define C32RTOMB_RETVAL_BUG 1" >>confdefs.h
 
          REPLACE_C32RTOMB=1 ;;
     esac
+    if test $HAVE_WORKING_C32RTOMB = 0; then
+      REPLACE_C32RTOMB=1
+    fi
   fi
 
 

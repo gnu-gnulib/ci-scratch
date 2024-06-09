@@ -58,6 +58,9 @@ int main ()
            [Define if the c32rtomb function has an incorrect return value.])
          REPLACE_C32RTOMB=1 ;;
     esac
+    if test $HAVE_WORKING_C32RTOMB = 0; then
+      REPLACE_C32RTOMB=1
+    fi
   fi
 ])
 
