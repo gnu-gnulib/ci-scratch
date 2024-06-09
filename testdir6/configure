@@ -2294,6 +2294,7 @@ EXECINFO_H
 LIB_EXECINFO
 GL_COND_OBJ_C32RTOMB_FALSE
 GL_COND_OBJ_C32RTOMB_TRUE
+HAVE_WORKING_C32RTOMB
 GL_GNULIB_MBSTOC32S
 GL_GNULIB_MBSRTOC32S
 GL_GNULIB_MBSNRTOC32S
@@ -10623,6 +10624,104 @@ printf "%s\n" "$gl_cv_func_c32rtomb" >&6; }
 
 
 
+
+
+
+     if test $GNULIBHEADERS_OVERRIDE_CHAR32_T = 1 || test $gl_cv_func_c32rtomb = no; then
+    HAVE_WORKING_C32RTOMB=0
+  else
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether c32rtomb works as well as wcrtomb" >&5
+printf %s "checking whether c32rtomb works as well as wcrtomb... " >&6; }
+if test ${gl_cv_func_c32rtomb_sanitycheck+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+                        case "$host_os" in
+          # Guess no on Solaris.
+          solaris*)
+            gl_cv_func_c32rtomb_sanitycheck="guessing no"
+            ;;
+          # Guess yes otherwise.
+          *)
+            gl_cv_func_c32rtomb_sanitycheck="guessing yes"
+            ;;
+        esac
+        if test $LOCALE_ZH_CN != none; then
+          if test "$cross_compiling" = yes
+then :
+  :
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <locale.h>
+#include <stdlib.h>
+#include <string.h>
+#include <wchar.h>
+#ifdef __HAIKU__
+ #include <stdint.h>
+#endif
+#include <uchar.h>
+int main ()
+{
+  int result = 0;
+  /* This fails on Solaris 11 OmniOS:
+     c32rtomb returns (size_t)-1.
+     wcrtomb returns 4 (correct).  */
+  if (strcmp ("$LOCALE_ZH_CN", "none") != 0
+      && setlocale (LC_ALL, "$LOCALE_ZH_CN") != NULL)
+    {
+      mbstate_t state;
+      wchar_t wc = (wchar_t) 0xBADFACE;
+      char buf[16];
+      memset (&state, '\0', sizeof (mbstate_t));
+      if (mbrtowc (&wc, "\201\060\211\070", 4, &state) == 4
+          && wcrtomb (buf, wc, NULL) == 4
+          && memcmp (buf, "\201\060\211\070", 4) == 0)
+        {
+          char32_t c32 = (wchar_t) 0xBADFACE;
+          memset (&state, '\0', sizeof (mbstate_t));
+          if (mbrtoc32 (&c32, "\201\060\211\070", 4, &state) == 4
+              && c32rtomb (buf, wc, NULL) != 4)
+            result |= 1;
+        }
+    }
+  return result;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_c32rtomb_sanitycheck=yes
+else case e in #(
+  e) gl_cv_func_c32rtomb_sanitycheck=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+        fi
+       ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_c32rtomb_sanitycheck" >&5
+printf "%s\n" "$gl_cv_func_c32rtomb_sanitycheck" >&6; }
+    case "$gl_cv_func_c32rtomb_sanitycheck" in
+      *yes)
+        HAVE_WORKING_C32RTOMB=1
+
+printf "%s\n" "#define HAVE_WORKING_C32RTOMB 1" >>confdefs.h
+
+        ;;
+      *) HAVE_WORKING_C32RTOMB=0 ;;
+    esac
+  fi
+
+
+
+
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether ctype.h defines __header_inline" >&5
 printf %s "checking whether ctype.h defines __header_inline... " >&6; }
 if test ${gl_cv_have___header_inline+y}
@@ -10716,8 +10815,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:10719: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:10720: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:10818: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:10819: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -10743,7 +10842,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:10746: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:10845: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -10977,7 +11076,7 @@ fi
 
         fi
       fi
-      echo "$as_me:10980: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:11079: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -21035,8 +21134,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21038: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21039: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21137: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21138: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21062,7 +21161,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:21065: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21164: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -21296,7 +21395,7 @@ fi
 
         fi
       fi
-      echo "$as_me:21299: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21398: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -21545,8 +21644,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21548: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21549: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21647: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21648: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21572,7 +21671,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:21575: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21674: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -21806,7 +21905,7 @@ fi
 
         fi
       fi
-      echo "$as_me:21809: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21908: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -26787,6 +26886,7 @@ printf "%s\n" "#define GNULIB_TEST_C32ISSPACE 1" >>confdefs.h
 
 
 printf "%s\n" "#define GNULIB_TEST_C32ISUPPER 1" >>confdefs.h
+
 
 
 
