@@ -34,45 +34,22 @@ static void
 check_character (const char *s, size_t n)
 {
   mbstate_t state;
-  char32_t uc;
+  char32_t wc;
   char buf[64];
   int iret;
   size_t ret;
 
   memset (&state, '\0', sizeof (mbstate_t));
-  uc = (char32_t) 0xBADFACE;
-  iret = mbrtoc32 (&uc, s, n, &state);
+  wc = (char32_t) 0xBADFACE;
+  iret = mbrtoc32 (&wc, s, n, &state);
   ASSERT (iret == n);
 
-  ret = c32rtomb (buf, uc, NULL);
-  if (ret != n) {
-    printf ("check_character input: n=%d ",(int)n);
-    size_t i;
-    for (i = 0; i < n; i++) printf (" 0x%02X", (unsigned char)s[i]);
-    printf ("  uc=0x%04X", (unsigned int) uc);
-    printf ("  c32rtomb -> %d", (int)ret);
-    if ((int)ret > 0) for (i = 0; i < n; i++) printf (" 0x%02X", buf[i]);
-    printf ("\n");
-
-    printf ("For comparison:\n");
-    wchar_t wc;
-    memset (&state, '\0', sizeof (mbstate_t));
-    iret = mbrtowc (&wc, s, n, &state);
-    ret = wcrtomb (buf, wc, NULL);
-    printf ("mbrtowc input: n=%d ",(int)n);
-    for (i = 0; i < n; i++) printf (" 0x%02X", (unsigned char)s[i]);
-    printf ("  wc=0x%04X", (unsigned int) wc);
-    printf ("  wcrtomb -> %d", (int)ret);
-    if ((int)ret > 0) for (i = 0; i < n; i++) printf (" 0x%02X", buf[i]);
-    printf ("\n");
-
-    fflush(stdout);
-  }
+  ret = c32rtomb (buf, wc, NULL);
   ASSERT (ret == n);
   ASSERT (memcmp (buf, s, n) == 0);
 
   /* Test special calling convention, passing a NULL pointer.  */
-  ret = c32rtomb (NULL, uc, NULL);
+  ret = c32rtomb (NULL, wc, NULL);
   ASSERT (ret == 1);
 }
 
