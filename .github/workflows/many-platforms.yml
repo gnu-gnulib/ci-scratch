@@ -53,7 +53,7 @@ jobs:
       - run: pwd
       # Install Ubuntu packages.
       # List of packages: https://packages.ubuntu.com/
-      # - run: sudo apt install ...
+      # - run: sudo apt update; sudo apt install ...
       - run: |
           pwd
           export CPPFLAGS="-Wall"
@@ -157,7 +157,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-11, macos-12, macos-13, macos-14]
+        os: [macos-12, macos-13, macos-14]
     runs-on: ${{ matrix.os }}
     steps:
       # This is needed because we run a script stored in this repository.
@@ -653,7 +653,7 @@ jobs:
       - run: pwd
       # Install Ubuntu packages.
       # List of packages: https://packages.ubuntu.com/
-      # - run: sudo apt install ...
+      # - run: sudo apt update; sudo apt install ...
       - run: |
           pwd
           export CPPFLAGS="-I$HOME/include -Wall"
