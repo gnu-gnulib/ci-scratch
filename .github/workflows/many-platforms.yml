@@ -213,17 +213,9 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      - run: brew install valgrind
+      # - run: brew install ...
       - run: |
           pwd
-          echo 1
-          ls -l /usr/local/bin || true
-          echo 2
-          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt
-          echo 3
-          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/valgrind
-          echo 4
-          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/valgrind/bin
           wget -O macos-compile 'https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/macos-compile;hb=HEAD'
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
