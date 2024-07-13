@@ -725,3 +725,83 @@ jobs:
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
+  check-clang-approach1:
+    name: make check with clang 18 downloaded
+    runs-on: ubuntu-22.04
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - uses: actions/checkout@v4
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: |
+          wget -O clang+llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+          tar xf clang+llvm.tar.xz
+          mv clang+llvm-*-x86_64-linux-gnu-ubuntu-18.04 clang+llvm
+      # Install Ubuntu packages.
+      # List of packages: https://packages.ubuntu.com/
+      # - run: sudo apt update; sudo apt install ...
+      - run: |
+          pwd
+          clangdir=`pwd`/clang+llvm
+          export CC="$clangdir/bin/clang -Wl,-rpath,$clangdir/lib"
+          export CXX="$clangdir/bin/clang++ -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -L/usr/lib/gcc/x86_64-linux-gnu/11 -Wl,-rpath,$clangdir/lib"
+          export CPPFLAGS="-Wall"
+          ./build-on.sh 'testdir-all' '' 'make' "$HOME" ''
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-linux-gnu-ubuntu
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 7
+          overwrite: true
+  check-clang-approach2:
+    name: make check with clang 18 docker
+    runs-on: ubuntu-22.04
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - uses: actions/checkout@v4
+      - uses: addnab/docker-run-action@v3
+        with:
+          image: tuxmake/clang-18:latest
+          options: -v ${{ github.workspace }}:/work
+          run: |
+            uname -a
+            id
+            env | LC_ALL=C sort
+            pwd
+            : "Install Ubuntu packages."
+            : "List of packages: https://packages.ubuntu.com/"
+            : "apt update; sudo apt install ..."
+            cd /work
+            ls -l
+            export CPPFLAGS="-Wall"
+            export CC=clang
+            export CXX=clang++
+            ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-linux-gnu-ubuntu
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 7
+          overwrite: true
