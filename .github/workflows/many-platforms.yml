@@ -736,12 +736,14 @@ jobs:
       - run: env | LC_ALL=C sort
       - run: pwd
       - run: |
+          date
           wget -O clang+llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
           tar xf clang+llvm.tar.xz
           mv clang+llvm-*-x86_64-linux-gnu-ubuntu-18.04 clang+llvm
+          date
       # Install Ubuntu packages.
       # List of packages: https://packages.ubuntu.com/
-      # - run: sudo apt update; sudo apt install ...
+      - run: sudo apt update; sudo apt install libtinfo5
       - run: |
           pwd
           clangdir=`pwd`/clang+llvm
