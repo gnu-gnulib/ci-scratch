@@ -727,6 +727,7 @@ jobs:
           overwrite: true
   check-clang-approach1:
     name: make check with clang 18 downloaded
+    # Takes 1 min. longer than check-newest-clang.
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -735,6 +736,7 @@ jobs:
       - run: id
       - run: env | LC_ALL=C sort
       - run: pwd
+      # Takes 5 seconds for the download (1 GB, 200 MB/sec) and 1:12 min to uncompress.
       - run: |
           date
           wget -O clang+llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
@@ -767,14 +769,15 @@ jobs:
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
-  check-clang-approach2:
-    name: make check with clang 18 docker
+  check-newest-clang:
+    name: make check with the newest clang release
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
       - uses: addnab/docker-run-action@v3
         with:
+          # A Docker container based on Debian 11.
           image: tuxmake/clang-18:latest
           options: -v ${{ github.workspace }}:/work
           run: |
@@ -784,7 +787,7 @@ jobs:
             pwd
             : "Install Ubuntu packages."
             : "List of packages: https://packages.ubuntu.com/"
-            : "apt update; sudo apt install ..."
+            : "apt update; apt install ..."
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
@@ -796,7 +799,7 @@ jobs:
       - if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: logs-clang-approach2
+          name: logs-newest-clang
           path: |
             libbacktrace/log[124]
             */build/config.cache
