@@ -787,7 +787,7 @@ jobs:
             pwd
             : "Install Ubuntu packages."
             : "List of packages: https://packages.ubuntu.com/"
-            : "apt update; apt install ..."
+            : "apt update; apt -y install ..."
             cd /work
             ls -l
             export CPPFLAGS="-Wall"
