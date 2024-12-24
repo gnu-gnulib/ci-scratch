@@ -45,11 +45,9 @@ done
 # testdir4: testing the workaround to that problem.
 # testdir5: nstrftime problem on MSVC.
 # testdir6: GB18030 locale problem on Solaris 11 OmniOS.
-cd testdir7 || exit 1
-
-/cygdrive/c/Strawberry/perl/bin/perl ../testdir7/x.pl
-
-exit 0
+# testdir7: an experiment with perl.
+# testdir8: access, euidaccess, sigaction problem on Cygwin 3.5.5.
+cd testdir8 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4

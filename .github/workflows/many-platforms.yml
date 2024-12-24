@@ -207,7 +207,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-12, macos-13, macos-14]
+        os: [macos-13, macos-14, macos-15]
     runs-on: ${{ matrix.os }}
     steps:
       # This is needed because we run a script stored in this repository.
@@ -400,7 +400,7 @@ jobs:
           prepare: |
             : "Install Solaris packages"
             : "List of packages: http://pkg.oracle.com/solaris/release/en/index.shtml"
-            pkg install gcc gcc-c++
+            pkg install gcc gcc-c++; ret=$?; test $ret = 0 || test $ret = 4
           run: |
             set -x
             uname -a
@@ -664,7 +664,7 @@ jobs:
           VCINSTALLDIR="${VSINSTALLDIR}"'\VC'
           PATH=`cygpath -u "${VCINSTALLDIR}"`/bin${pathelementsuffix}:"$PATH"
           INCLUDE="${VCINSTALLDIR}"'\include;'"${INCLUDE}"
-          LIB="${VCINSTALLDIR}"'\lib${libelementsuffix};'"${LIB}"
+          LIB="${VCINSTALLDIR}"'\lib'"${libelementsuffix};${LIB}"
           export INCLUDE LIB
           : "Possible values are _WIN32_WINNT_WINXP, _WIN32_WINNT_VISTA, _WIN32_WINNT_WIN7"
           win32_target=_WIN32_WINNT_WINXP
