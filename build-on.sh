@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2024 Free Software Foundation, Inc.
+# Copyright (C) 2024-2025 Free Software Foundation, Inc.
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -47,7 +47,8 @@ done
 # testdir6: GB18030 locale problem on Solaris 11 OmniOS.
 # testdir7: an experiment with perl.
 # testdir8: access, euidaccess, sigaction problem on Cygwin 3.5.5.
-cd testdir8 || exit 1
+# testdir9: sys_select-h.
+cd testdir9 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
