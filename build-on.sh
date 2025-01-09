@@ -48,7 +48,8 @@ done
 # testdir7: an experiment with perl.
 # testdir8: access, euidaccess, sigaction problem on Cygwin 3.5.5.
 # testdir9: sys_select-h.
-cd testdir9 || exit 1
+# testdir10: sys_socket-h.
+cd testdir10 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
