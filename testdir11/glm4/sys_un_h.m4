@@ -14,14 +14,20 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
   AC_REQUIRE([gl_SOCKET_FAMILY_UNIX])
 
   gl_PREREQ_SYS_SA_FAMILY
-  AC_CHECK_TYPES([sa_family_t],
-    [gl_cv_type_sys_un_sa_family_t=yes],
-    [gl_cv_type_sys_un_sa_family_t=no],
-    [
-#include <stddef.h>
-#include <string.h>
-#include <sys/un.h>
-])
+  AC_CACHE_CHECK([whether <sys/un.h> defines sa_family_t],
+    [gl_cv_type_sys_un_sa_family_t],
+    [AC_COMPILE_IFELSE(
+       [AC_LANG_PROGRAM([[
+          #include <stddef.h>
+          #include <string.h>
+          #include <sys/un.h>
+          ]], [[
+          sa_family_t f;
+          ]])
+       ],
+       [gl_cv_type_sys_un_sa_family_t=yes],
+       [gl_cv_type_sys_un_sa_family_t=no])
+    ])
   if test $gl_cv_type_sys_un_sa_family_t = yes; then
     HAVE_SA_FAMILY_T_IN_SYS_UN_H=1
   else

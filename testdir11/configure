@@ -8089,23 +8089,43 @@ fi
   fi
 
 
-  ac_fn_c_check_type "$LINENO" "sa_family_t" "ac_cv_type_sa_family_t" "
-#include <stddef.h>
-#include <string.h>
-#include <sys/un.h>
-
-"
-if test "x$ac_cv_type_sa_family_t" = xyes
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether <sys/un.h> defines sa_family_t" >&5
+printf %s "checking whether <sys/un.h> defines sa_family_t... " >&6; }
+if test ${gl_cv_type_sys_un_sa_family_t+y}
 then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
 
-printf "%s\n" "#define HAVE_SA_FAMILY_T 1" >>confdefs.h
+          #include <stddef.h>
+          #include <string.h>
+          #include <sys/un.h>
 
-gl_cv_type_sys_un_sa_family_t=yes
+int
+main (void)
+{
+
+          sa_family_t f;
+
+  ;
+  return 0;
+}
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_type_sys_un_sa_family_t=yes
 else case e in #(
   e) gl_cv_type_sys_un_sa_family_t=no ;;
 esac
 fi
-
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_type_sys_un_sa_family_t" >&5
+printf "%s\n" "$gl_cv_type_sys_un_sa_family_t" >&6; }
   if test $gl_cv_type_sys_un_sa_family_t = yes; then
     HAVE_SA_FAMILY_T_IN_SYS_UN_H=1
   else
