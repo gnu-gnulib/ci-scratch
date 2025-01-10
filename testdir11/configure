@@ -8048,6 +8048,9 @@ printf "%s\n" "#define HAVE_UNIXSOCKET 1" >>confdefs.h
                   *-gnu* | gnu*) GL_GENERATE_SYS_UN_H=true ;;
     esac
   fi
+  if test $HAVE_SA_FAMILY_T = 0; then
+    GL_GENERATE_SYS_UN_H=true
+  fi
 
   if $GL_GENERATE_SYS_UN_H; then
     ac_fn_c_check_header_compile "$LINENO" "sys/un.h" "ac_cv_header_sys_un_h" "$ac_includes_default"

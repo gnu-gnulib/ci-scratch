@@ -27,6 +27,9 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
       *-gnu* | gnu*) GL_GENERATE_SYS_UN_H=true ;;
     esac
   fi
+  if test $HAVE_SA_FAMILY_T = 0; then
+    GL_GENERATE_SYS_UN_H=true
+  fi
 
   if $GL_GENERATE_SYS_UN_H; then
     AC_CHECK_HEADERS([sys/un.h])
