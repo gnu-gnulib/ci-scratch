@@ -14,6 +14,20 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
   AC_REQUIRE([gl_SOCKET_FAMILY_UNIX])
 
   gl_PREREQ_SYS_SA_FAMILY
+  AC_CHECK_TYPES([sa_family_t],
+    [gl_cv_type_sys_un_sa_family_t=yes],
+    [gl_cv_type_sys_un_sa_family_t=no],
+    [
+#include <stddef.h>
+#include <string.h>
+#include <sys/un.h>
+])
+  if test $gl_cv_type_sys_un_sa_family_t = yes; then
+    HAVE_SA_FAMILY_T_IN_SYS_UN_H=1
+  else
+    HAVE_SA_FAMILY_T_IN_SYS_UN_H=0
+  fi
+  AC_SUBST([HAVE_SA_FAMILY_T_IN_SYS_UN_H])
 
   GL_GENERATE_SYS_UN_H=false
   if test $gl_cv_socket_unix = yes; then
@@ -29,7 +43,7 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
       *-gnu* | gnu*) GL_GENERATE_SYS_UN_H=true ;;
     esac
   fi
-  if test $HAVE_SA_FAMILY_T = 0; then
+  if test $HAVE_SA_FAMILY_T_IN_SYS_UN_H = 0; then
     GL_GENERATE_SYS_UN_H=true
   fi
 

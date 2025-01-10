@@ -1075,6 +1075,7 @@ HAVE_AFUNIX_H
 HAVE_SYS_UN_H
 NEXT_AS_FIRST_DIRECTIVE_SYS_UN_H
 NEXT_SYS_UN_H
+HAVE_SA_FAMILY_T_IN_SYS_UN_H
 HAVE_SYS_UIO_H
 NEXT_AS_FIRST_DIRECTIVE_SYS_UIO_H
 NEXT_SYS_UIO_H
@@ -8088,6 +8089,29 @@ fi
   fi
 
 
+  ac_fn_c_check_type "$LINENO" "sa_family_t" "ac_cv_type_sa_family_t" "
+#include <stddef.h>
+#include <string.h>
+#include <sys/un.h>
+
+"
+if test "x$ac_cv_type_sa_family_t" = xyes
+then :
+
+printf "%s\n" "#define HAVE_SA_FAMILY_T 1" >>confdefs.h
+
+gl_cv_type_sys_un_sa_family_t=yes
+else case e in #(
+  e) gl_cv_type_sys_un_sa_family_t=no ;;
+esac
+fi
+
+  if test $gl_cv_type_sys_un_sa_family_t = yes; then
+    HAVE_SA_FAMILY_T_IN_SYS_UN_H=1
+  else
+    HAVE_SA_FAMILY_T_IN_SYS_UN_H=0
+  fi
+
 
   GL_GENERATE_SYS_UN_H=false
   if test $gl_cv_socket_unix = yes; then
@@ -8099,7 +8123,7 @@ fi
                   *-gnu* | gnu*) GL_GENERATE_SYS_UN_H=true ;;
     esac
   fi
-  if test $HAVE_SA_FAMILY_T = 0; then
+  if test $HAVE_SA_FAMILY_T_IN_SYS_UN_H = 0; then
     GL_GENERATE_SYS_UN_H=true
   fi
 
