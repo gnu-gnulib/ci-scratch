@@ -60,16 +60,12 @@
 
 #endif
 
-#if !@HAVE_SA_FAMILY_T@
-# if !GNULIB_defined_sa_family_t
-/* On OS/2 kLIBC, sa_family_t is unsigned char unless TCPV40HDRS is defined. */
-#  if !defined __KLIBC__ || defined TCPV40HDRS
-typedef unsigned short  sa_family_t;
-#  else
-typedef unsigned char   sa_family_t;
-#  endif
-#  define GNULIB_defined_sa_family_t 1
-# endif
+#if defined __CYGWIN__
+
+/* A platform that has <sys/un.h> but which does not define the 'sa_family_t'
+   type.  */
+# include <sys/socket.h>
+
 #endif
 
 #endif /* _@GUARD_PREFIX@_SYS_UN_H */
