@@ -1201,12 +1201,12 @@ HAVE_EUIDACCESS
 HAVE_DUP3
 HAVE_COPY_FILE_RANGE
 HAVE_CHOWN
+HAVE_SA_FAMILY_T
 HAVE_WS2TCPIP_H
 HAVE_SYS_SOCKET_H
 NEXT_AS_FIRST_DIRECTIVE_SYS_SOCKET_H
 NEXT_SYS_SOCKET_H
 HAVE_ACCEPT4
-HAVE_SA_FAMILY_T
 HAVE_STRUCT_SOCKADDR_STORAGE_SS_FAMILY
 HAVE_STRUCT_SOCKADDR_STORAGE
 GL_GENERATE_ERRNO_H_FALSE
@@ -7160,7 +7160,6 @@ fi
   HAVE_STRUCT_SOCKADDR_STORAGE=1;
   HAVE_STRUCT_SOCKADDR_STORAGE_SS_FAMILY=1;
 
-  HAVE_SA_FAMILY_T=1;
   HAVE_ACCEPT4=1;
 
 
@@ -7511,6 +7510,11 @@ printf "%s\n" "$gl_cv_next_sys_socket_h" >&6; }
 
 
 
+  if test $ac_cv_type_struct_sockaddr_storage = no; then
+    HAVE_STRUCT_SOCKADDR_STORAGE=0
+  fi
+
+
   ac_fn_c_check_type "$LINENO" "struct sockaddr_storage" "ac_cv_type_struct_sockaddr_storage" "
   /* sys/types.h is not needed according to POSIX, but the
      sys/socket.h in i386-unknown-freebsd4.10 and
@@ -7552,12 +7556,13 @@ printf "%s\n" "#define HAVE_SA_FAMILY_T 1" >>confdefs.h
 
 fi
 
-  if test $ac_cv_type_struct_sockaddr_storage = no; then
-    HAVE_STRUCT_SOCKADDR_STORAGE=0
-  fi
-  if test $ac_cv_type_sa_family_t = no; then
+  if test $ac_cv_type_sa_family_t = yes; then
+    HAVE_SA_FAMILY_T=1
+  else
     HAVE_SA_FAMILY_T=0
   fi
+
+
   if test $ac_cv_type_struct_sockaddr_storage != no; then
     ac_fn_c_check_member "$LINENO" "struct sockaddr_storage" "ss_family" "ac_cv_member_struct_sockaddr_storage_ss_family" "#include <sys/types.h>
        #ifdef HAVE_SYS_SOCKET_H
@@ -8145,6 +8150,57 @@ printf "%s\n" "$gl_cv_next_sys_un_h" >&6; }
     else
       HAVE_AFUNIX_H=0
     fi
+
+
+
+
+  ac_fn_c_check_type "$LINENO" "struct sockaddr_storage" "ac_cv_type_struct_sockaddr_storage" "
+  /* sys/types.h is not needed according to POSIX, but the
+     sys/socket.h in i386-unknown-freebsd4.10 and
+     powerpc-apple-darwin5.5 required it. */
+#include <sys/types.h>
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_WS2TCPIP_H
+#include <ws2tcpip.h>
+#endif
+
+"
+if test "x$ac_cv_type_struct_sockaddr_storage" = xyes
+then :
+
+printf "%s\n" "#define HAVE_STRUCT_SOCKADDR_STORAGE 1" >>confdefs.h
+
+
+fi
+ac_fn_c_check_type "$LINENO" "sa_family_t" "ac_cv_type_sa_family_t" "
+  /* sys/types.h is not needed according to POSIX, but the
+     sys/socket.h in i386-unknown-freebsd4.10 and
+     powerpc-apple-darwin5.5 required it. */
+#include <sys/types.h>
+#ifdef HAVE_SYS_SOCKET_H
+#include <sys/socket.h>
+#endif
+#ifdef HAVE_WS2TCPIP_H
+#include <ws2tcpip.h>
+#endif
+
+"
+if test "x$ac_cv_type_sa_family_t" = xyes
+then :
+
+printf "%s\n" "#define HAVE_SA_FAMILY_T 1" >>confdefs.h
+
+
+fi
+
+  if test $ac_cv_type_sa_family_t = yes; then
+    HAVE_SA_FAMILY_T=1
+  else
+    HAVE_SA_FAMILY_T=0
+  fi
+
 
   fi
 

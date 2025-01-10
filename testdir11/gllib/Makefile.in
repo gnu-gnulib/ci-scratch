@@ -1516,6 +1516,7 @@ sys/uio.h: sys_uio.in.h $(top_builddir)/config.status
 @GL_GENERATE_SYS_UN_H_TRUE@	      -e 's|@''HAVE_SYS_UN_H''@|$(HAVE_SYS_UN_H)|g' \
 @GL_GENERATE_SYS_UN_H_TRUE@	      -e 's|@''HAVE_WINSOCK2_H''@|$(HAVE_WINSOCK2_H)|g' \
 @GL_GENERATE_SYS_UN_H_TRUE@	      -e 's|@''HAVE_AFUNIX_H''@|$(HAVE_AFUNIX_H)|g' \
+@GL_GENERATE_SYS_UN_H_TRUE@	      -e 's|@''HAVE_SA_FAMILY_T''@|$(HAVE_SA_FAMILY_T)|g' \
 @GL_GENERATE_SYS_UN_H_TRUE@	      $(srcdir)/sys_un.in.h > $@-t
 @GL_GENERATE_SYS_UN_H_TRUE@	$(AM_V_at)mv $@-t $@
 @GL_GENERATE_SYS_UN_H_FALSE@sys/un.h: $(top_builddir)/config.status

@@ -263,6 +263,7 @@ sys/un.h: sys_un.in.h $(top_builddir)/config.status
 	      -e 's|@''HAVE_SYS_UN_H''@|$(HAVE_SYS_UN_H)|g' \
 	      -e 's|@''HAVE_WINSOCK2_H''@|$(HAVE_WINSOCK2_H)|g' \
 	      -e 's|@''HAVE_AFUNIX_H''@|$(HAVE_AFUNIX_H)|g' \
+	      -e 's|@''HAVE_SA_FAMILY_T''@|$(HAVE_SA_FAMILY_T)|g' \
 	      $(srcdir)/sys_un.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 else

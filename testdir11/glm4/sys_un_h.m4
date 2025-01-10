@@ -1,5 +1,5 @@
 # sys_un_h.m4
-# serial 2
+# serial 3
 dnl Copyright 2024-2025 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -46,5 +46,7 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
       HAVE_AFUNIX_H=0
     fi
     AC_SUBST([HAVE_AFUNIX_H])
+
+    gl_PREREQ_SYS_SA_FAMILY
   fi
 ])
