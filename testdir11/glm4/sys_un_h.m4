@@ -13,6 +13,8 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
   dnl Check if UNIX domain sockets are supported.
   AC_REQUIRE([gl_SOCKET_FAMILY_UNIX])
 
+  gl_PREREQ_SYS_SA_FAMILY
+
   GL_GENERATE_SYS_UN_H=false
   if test $gl_cv_socket_unix = yes; then
     dnl Check if using a Windows version that supports AF_UNIX.
@@ -49,7 +51,5 @@ AC_DEFUN_ONCE([gl_SYS_UN_H],
       HAVE_AFUNIX_H=0
     fi
     AC_SUBST([HAVE_AFUNIX_H])
-
-    gl_PREREQ_SYS_SA_FAMILY
   fi
 ])
