@@ -1,0 +1,61 @@
+Making check in gllib
+make[1]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make  check-recursive
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[3]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[3]: Nothing to be done for 'check-am'.
+make[3]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[1]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+Making check in glm4
+make[1]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/glm4'
+make[1]: Nothing to be done for 'check'.
+make[1]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/glm4'
+Making check in gltests
+make[1]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make  check-recursive
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+Making check in .
+make[3]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+## ---------------------------------------------------------------------- ##
+## ---------------------------- Gnulib tests ---------------------------- ##
+## Please report test failures in this directory to <bug-gnulib@gnu.org>. ##
+## ---------------------------------------------------------------------- ##
+make  check-TESTS
+make[4]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[5]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+PASS: test-alignasof
+PASS: test-assert
+PASS: test-bool
+PASS: test-intprops
+PASS: test-inttypes-h
+PASS: test-limits-h
+PASS: test-stddef-h
+PASS: test-stdint-h
+PASS: test-stdlib-h
+PASS: test-sys_stat-h
+PASS: test-sys_types-h
+PASS: test-init.sh
+PASS: test-time-h
+PASS: test-unistd-h
+PASS: test-verify
+PASS: test-verify.sh
+PASS: test-wchar-h
+============================================================================
+Testsuite summary for dummy 0
+============================================================================
+# TOTAL: 17
+# PASS:  17
+# SKIP:  0
+# XFAIL: 0
+# FAIL:  0
+# XPASS: 0
+# ERROR: 0
+============================================================================
+make[5]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[4]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[3]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[1]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[1]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64'
+make[1]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64'

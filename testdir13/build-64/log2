@@ -1,0 +1,757 @@
+make  all-recursive
+make[1]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64'
+Making all in gllib
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDDEF_H''@|<stddef.h>|g' \
+      -e 's|@''NULLPTR_T_NEEDS_STDDEF''@|0|g' \
+      -e 's|@''STDDEF_NOT_IDEMPOTENT''@|0|g' \
+      -e 's|@''REPLACE_NULL''@|0|g' \
+      -e 's|@''HAVE_MAX_ALIGN_T''@|1|g' \
+      ../../gllib/stddef.in.h > stddef.h-t
+mv stddef.h-t stddef.h
+/arch/local/x86_64-linux/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_STAT_H''@|<sys/stat.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|0|g' \
+      -e 's|@''WINDOWS_STAT_TIMESPEC''@|0|g' \
+      -e 's/@''GNULIB_CHMOD''@/0/g' \
+      -e 's/@''GNULIB_FCHMODAT''@/0/g' \
+      -e 's/@''GNULIB_FSTAT''@/0/g' \
+      -e 's/@''GNULIB_FSTATAT''@/0/g' \
+      -e 's/@''GNULIB_FUTIMENS''@/0/g' \
+      -e 's/@''GNULIB_GETUMASK''@/0/g' \
+      -e 's/@''GNULIB_LCHMOD''@/0/g' \
+      -e 's/@''GNULIB_LSTAT''@/0/g' \
+      -e 's/@''GNULIB_MKDIR''@/0/g' \
+      -e 's/@''GNULIB_MKDIRAT''@/0/g' \
+      -e 's/@''GNULIB_MKFIFO''@/0/g' \
+      -e 's/@''GNULIB_MKFIFOAT''@/0/g' \
+      -e 's/@''GNULIB_MKNOD''@/0/g' \
+      -e 's/@''GNULIB_MKNODAT''@/0/g' \
+      -e 's/@''GNULIB_STAT''@/0/g' \
+      -e 's/@''GNULIB_UTIMENSAT''@/0/g' \
+      -e 's/@''GNULIB_OVERRIDES_STRUCT_STAT''@/0/g' \
+      -e 's/@''GNULIB_MDA_CHMOD''@/1/g' \
+      -e 's/@''GNULIB_MDA_MKDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_UMASK''@/1/g' \
+      -e 's|@''HAVE_FCHMODAT''@|1|g' \
+      -e 's|@''HAVE_FSTATAT''@|1|g' \
+      -e 's|@''HAVE_FUTIMENS''@|1|g' \
+      -e 's|@''HAVE_GETUMASK''@|1|g' \
+      -e 's|@''HAVE_LCHMOD''@|1|g' \
+      -e 's|@''HAVE_LSTAT''@|1|g' \
+      -e 's|@''HAVE_MKDIRAT''@|1|g' \
+      -e 's|@''HAVE_MKFIFO''@|1|g' \
+      -e 's|@''HAVE_MKFIFOAT''@|1|g' \
+      -e 's|@''HAVE_MKNOD''@|1|g' \
+      -e 's|@''HAVE_MKNODAT''@|1|g' \
+      -e 's|@''HAVE_UTIMENSAT''@|1|g' \
+      -e 's|@''REPLACE_CHMOD''@|0|g' \
+      -e 's|@''REPLACE_FCHMODAT''@|0|g' \
+      -e 's|@''REPLACE_FSTAT''@|0|g' \
+      -e 's|@''REPLACE_FSTATAT''@|0|g' \
+      -e 's|@''REPLACE_FUTIMENS''@|0|g' \
+      -e 's|@''REPLACE_LSTAT''@|0|g' \
+      -e 's|@''REPLACE_MKDIR''@|0|g' \
+      -e 's|@''REPLACE_MKFIFO''@|0|g' \
+      -e 's|@''REPLACE_MKFIFOAT''@|0|g' \
+      -e 's|@''REPLACE_MKNOD''@|0|g' \
+      -e 's|@''REPLACE_MKNODAT''@|0|g' \
+      -e 's|@''REPLACE_STAT''@|0|g' \
+      -e 's|@''REPLACE_UTIMENSAT''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gllib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gllib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gllib/warn-on-use.h' \
+      ../../gllib/sys_stat.in.h > sys/stat.h-t
+mv sys/stat.h-t sys/stat.h
+/arch/local/x86_64-linux/bin/mkdir -p 'sys'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_SYS_TYPES_H''@|<sys/types.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's|@''HAVE_OFF64_T''@|1|g' \
+      -e 's|@''WINDOWS_STAT_INODES''@|0|g' \
+      -e 's|@''HAVE_BLKSIZE_T''@|1|g' \
+      -e 's|@''HAVE_BLKCNT_T''@|1|g' \
+      ../../gllib/sys_types.in.h > sys/types.h-t
+mv sys/types.h-t sys/types.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_TIME_H''@|<time.h>|g' \
+      -e 's/@''GNULIB_CTIME''@/0/g' \
+      -e 's/@''GNULIB_LOCALTIME''@/0/g' \
+      -e 's/@''GNULIB_MKTIME''@/0/g' \
+      -e 's/@''GNULIB_NANOSLEEP''@/0/g' \
+      -e 's/@''GNULIB_STRFTIME''@/0/g' \
+      -e 's/@''GNULIB_STRPTIME''@/0/g' \
+      -e 's/@''GNULIB_TIME''@/0/g' \
+      -e 's/@''GNULIB_TIMEGM''@/0/g' \
+      -e 's/@''GNULIB_TIMESPEC_GET''@/0/g' \
+      -e 's/@''GNULIB_TIMESPEC_GETRES''@/0/g' \
+      -e 's/@''GNULIB_TIME_R''@/0/g' \
+      -e 's/@''GNULIB_TIME_RZ''@/0/g' \
+      -e 's/@''GNULIB_TZNAME''@/0/g' \
+      -e 's/@''GNULIB_TZSET''@/0/g' \
+      -e 's/@''GNULIB_MDA_TZSET''@/1/g' \
+      -e 's|@''HAVE_DECL_LOCALTIME_R''@|1|g' \
+      -e 's|@''HAVE_NANOSLEEP''@|1|g' \
+      -e 's|@''HAVE_STRPTIME''@|1|g' \
+      -e 's|@''HAVE_TIMEGM''@|1|g' \
+      -e 's|@''HAVE_TIMESPEC_GET''@|1|g' \
+      -e 's|@''HAVE_TIMESPEC_GETRES''@|1|g' \
+      -e 's|@''HAVE_TIMEZONE_T''@|0|g' \
+      -e 's|@''HAVE_TZALLOC''@|0|g' \
+      -e 's|@''REPLACE_CTIME''@|0|g' \
+      -e 's|@''REPLACE_GMTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME_R''@|0|g' \
+      -e 's|@''REPLACE_LOCALTIME_RZ''@|0|g' \
+      -e 's|@''REPLACE_MKTIME''@|0|g' \
+      -e 's|@''REPLACE_MKTIME_Z''@|0|g' \
+      -e 's|@''REPLACE_NANOSLEEP''@|0|g' \
+      -e 's|@''REPLACE_STRFTIME''@|0|g' \
+      -e 's|@''REPLACE_TIME''@|0|g' \
+      -e 's|@''REPLACE_TIMEGM''@|0|g' \
+      -e 's|@''REPLACE_TIMESPEC_GET''@|0|g' \
+      -e 's|@''REPLACE_TIMESPEC_GETRES''@|0|g' \
+      -e 's|@''REPLACE_TZSET''@|0|g' \
+      -e 's|@''PTHREAD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''SYS_TIME_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_STRUCT_TIMESPEC''@|1|g' \
+      -e 's|@''UNISTD_H_DEFINES_STRUCT_TIMESPEC''@|0|g' \
+      -e 's|@''TIME_H_DEFINES_TIME_UTC''@|1|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gllib/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gllib/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gllib/warn-on-use.h' \
+      ../../gllib/time.in.h > time.h-t
+mv time.h-t time.h
+make  all-recursive
+make[3]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[4]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gllib -I..  -DGNULIB_STRICT_CHECKING=1 -I/media/develdata/devel/inst-x86_64-64/include -Wall  -ggdb -MT dummy.o -MD -MP -MF .deps/dummy.Tpo -c -o dummy.o ../../gllib/dummy.c
+mv -f .deps/dummy.Tpo .deps/dummy.Po
+rm -f libgnu.a
+ar cr libgnu.a dummy.o 
+ranlib libgnu.a
+make[4]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[3]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gllib'
+Making all in glm4
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/glm4'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/glm4'
+Making all in gltests
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's/@''HAVE_INTTYPES_H''@/1/g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_INTTYPES_H''@|<inttypes.h>|g' \
+      -e 's/@''APPLE_UNIVERSAL_BUILD''@/0/g' \
+      -e 's/@''PRIPTR_PREFIX''@/"l"/g' \
+      -e 's/@''GNULIB_IMAXABS''@/0/g' \
+      -e 's/@''GNULIB_IMAXDIV''@/0/g' \
+      -e 's/@''GNULIB_STRTOIMAX''@/0/g' \
+      -e 's/@''GNULIB_STRTOUMAX''@/0/g' \
+      -e 's/@''HAVE_DECL_IMAXABS''@/1/g' \
+      -e 's/@''HAVE_DECL_IMAXDIV''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOIMAX''@/1/g' \
+      -e 's/@''HAVE_DECL_STRTOUMAX''@/1/g' \
+      -e 's/@''HAVE_IMAXDIV_T''@/1/g' \
+      -e 's/@''REPLACE_IMAXABS''@/0/g' \
+      -e 's/@''REPLACE_IMAXDIV''@/0/g' \
+      -e 's/@''REPLACE_STRTOIMAX''@/0/g' \
+      -e 's/@''REPLACE_STRTOUMAX''@/0/g' \
+      -e 's/@''INT32_MAX_LT_INTMAX_MAX''@/1/g' \
+      -e 's/@''INT64_MAX_EQ_LONG_MAX''@/1/g' \
+      -e 's/@''UINT32_MAX_LT_UINTMAX_MAX''@/1/g' \
+      -e 's/@''UINT64_MAX_EQ_ULONG_MAX''@/1/g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gltests/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gltests/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gltests/warn-on-use.h' \
+      ../../gltests/inttypes.in.h > inttypes.h-t
+mv inttypes.h-t inttypes.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_LIMITS_H''@|<limits.h>|g' \
+      ../../gltests/limits.in.h > limits.h-t
+mv limits.h-t limits.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_STDLIB_H''@|<stdlib.h>|g' \
+      -e 's/@''GNULIB__EXIT''@/0/g' \
+      -e 's/@''GNULIB_ABORT_DEBUG''@/0/g' \
+      -e 's/@''GNULIB_ALIGNED_ALLOC''@/0/g' \
+      -e 's/@''GNULIB_ATOLL''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_GNU''@/0/g' \
+      -e 's/@''GNULIB_CALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_CANONICALIZE_FILE_NAME''@/0/g' \
+      -e 's/@''GNULIB_FREE_POSIX''@/0/g' \
+      -e 's/@''GNULIB_GETLOADAVG''@/0/g' \
+      -e 's/@''GNULIB_GETPROGNAME''@/0/g' \
+      -e 's/@''GNULIB_GETSUBOPT''@/0/g' \
+      -e 's/@''GNULIB_GRANTPT''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_GNU''@/0/g' \
+      -e 's/@''GNULIB_MALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_MBSTOWCS''@/0/g' \
+      -e 's/@''GNULIB_MBTOWC''@/0/g' \
+      -e 's/@''GNULIB_MKDTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKOSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMP''@/0/g' \
+      -e 's/@''GNULIB_MKSTEMPS''@/0/g' \
+      -e 's/@''GNULIB_POSIX_MEMALIGN''@/0/g' \
+      -e 's/@''GNULIB_POSIX_OPENPT''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME''@/0/g' \
+      -e 's/@''GNULIB_PTSNAME_R''@/0/g' \
+      -e 's/@''GNULIB_PUTENV''@/0/g' \
+      -e 's/@''GNULIB_QSORT_R''@/0/g' \
+      -e 's/@''GNULIB_RAND''@/0/g' \
+      -e 's/@''GNULIB_RANDOM''@/0/g' \
+      -e 's/@''GNULIB_RANDOM_R''@/0/g' \
+      -e 's/@''GNULIB_REALLOC_POSIX''@/0/g' \
+      -e 's/@''GNULIB_REALLOCARRAY''@/0/g' \
+      -e 's/@''GNULIB_REALPATH''@/0/g' \
+      -e 's/@''GNULIB_RPMATCH''@/0/g' \
+      -e 's/@''GNULIB_SECURE_GETENV''@/0/g' \
+      -e 's/@''GNULIB_SETENV''@/0/g' \
+      -e 's/@''GNULIB_STACK_TRACE''@/0/g' \
+      -e 's/@''GNULIB_STRTOD''@/0/g' \
+      -e 's/@''GNULIB_STRTOF''@/0/g' \
+      -e 's/@''GNULIB_STRTOL''@/0/g' \
+      -e 's/@''GNULIB_STRTOLD''@/0/g' \
+      -e 's/@''GNULIB_STRTOLL''@/0/g' \
+      -e 's/@''GNULIB_STRTOUL''@/0/g' \
+      -e 's/@''GNULIB_STRTOULL''@/0/g' \
+      -e 's/@''GNULIB_SYSTEM_POSIX''@/0/g' \
+      -e 's/@''GNULIB_UNLOCKPT''@/0/g' \
+      -e 's/@''GNULIB_UNSETENV''@/0/g' \
+      -e 's/@''GNULIB_WCTOMB''@/0/g' \
+      -e 's/@''GNULIB_MDA_ECVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_FCVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_GCVT''@/1/g' \
+      -e 's/@''GNULIB_MDA_MKTEMP''@/1/g' \
+      -e 's/@''GNULIB_MDA_PUTENV''@/1/g' \
+      < ../../gltests/stdlib.in.h > stdlib.h-t1
+sed \
+      -e 's|@''HAVE__EXIT''@|1|g' \
+      -e 's|@''HAVE_ALIGNED_ALLOC''@|1|g' \
+      -e 's|@''HAVE_ATOLL''@|1|g' \
+      -e 's|@''HAVE_CANONICALIZE_FILE_NAME''@|1|g' \
+      -e 's|@''HAVE_DECL_ECVT''@|1|g' \
+      -e 's|@''HAVE_DECL_FCVT''@|1|g' \
+      -e 's|@''HAVE_DECL_GCVT''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOADAVG''@|1|g' \
+      -e 's|@''HAVE_DECL_PROGRAM_INVOCATION_NAME''@|1|g' \
+      -e 's|@''HAVE_GETPROGNAME''@|1|g' \
+      -e 's|@''HAVE_GETSUBOPT''@|1|g' \
+      -e 's|@''HAVE_GRANTPT''@|1|g' \
+      -e 's|@''HAVE_INITSTATE''@|1|g' \
+      -e 's|@''HAVE_DECL_INITSTATE''@|1|g' \
+      -e 's|@''HAVE_MBTOWC''@|1|g' \
+      -e 's|@''HAVE_MKDTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKOSTEMPS''@|1|g' \
+      -e 's|@''HAVE_MKSTEMP''@|1|g' \
+      -e 's|@''HAVE_MKSTEMPS''@|1|g' \
+      -e 's|@''HAVE_POSIX_MEMALIGN''@|1|g' \
+      -e 's|@''HAVE_POSIX_OPENPT''@|1|g' \
+      -e 's|@''HAVE_PTSNAME''@|1|g' \
+      -e 's|@''HAVE_PTSNAME_R''@|1|g' \
+      -e 's|@''HAVE_QSORT_R''@|1|g' \
+      -e 's|@''HAVE_RANDOM''@|1|g' \
+      -e 's|@''HAVE_RANDOM_H''@|1|g' \
+      -e 's|@''HAVE_RANDOM_R''@|1|g' \
+      -e 's|@''HAVE_REALLOCARRAY''@|1|g' \
+      -e 's|@''HAVE_REALPATH''@|1|g' \
+      -e 's|@''HAVE_RPMATCH''@|1|g' \
+      -e 's|@''HAVE_SECURE_GETENV''@|1|g' \
+      -e 's|@''HAVE_DECL_SETENV''@|1|g' \
+      -e 's|@''HAVE_SETSTATE''@|1|g' \
+      -e 's|@''HAVE_DECL_SETSTATE''@|1|g' \
+      -e 's|@''HAVE_STRTOD''@|1|g' \
+      -e 's|@''HAVE_STRTOF''@|1|g' \
+      -e 's|@''HAVE_STRTOL''@|1|g' \
+      -e 's|@''HAVE_STRTOLD''@|1|g' \
+      -e 's|@''HAVE_STRTOLL''@|1|g' \
+      -e 's|@''HAVE_STRTOUL''@|1|g' \
+      -e 's|@''HAVE_STRTOULL''@|1|g' \
+      -e 's|@''HAVE_STRUCT_RANDOM_DATA''@|1|g' \
+      -e 's|@''HAVE_SYS_LOADAVG_H''@|0|g' \
+      -e 's|@''HAVE_UNLOCKPT''@|1|g' \
+      -e 's|@''HAVE_DECL_UNSETENV''@|1|g' \
+      < stdlib.h-t1 > stdlib.h-t2
+sed \
+      -e 's|@''REPLACE__EXIT''@|0|g' \
+      -e 's|@''REPLACE_ABORT''@|0|g' \
+      -e 's|@''REPLACE_ALIGNED_ALLOC''@|0|g' \
+      -e 's|@''REPLACE_CALLOC_FOR_CALLOC_GNU''@|0|g' \
+      -e 's|@''REPLACE_CALLOC_FOR_CALLOC_POSIX''@|0|g' \
+      -e 's|@''REPLACE_CANONICALIZE_FILE_NAME''@|0|g' \
+      -e 's|@''REPLACE_FREE''@|0|g' \
+      -e 's|@''REPLACE_GETLOADAVG''@|0|g' \
+      -e 's|@''REPLACE_GETPROGNAME''@|0|g' \
+      -e 's|@''REPLACE_GETSUBOPT''@|0|g' \
+      -e 's|@''REPLACE_INITSTATE''@|0|g' \
+      -e 's|@''REPLACE_MALLOC_FOR_MALLOC_GNU''@|0|g' \
+      -e 's|@''REPLACE_MALLOC_FOR_MALLOC_POSIX''@|0|g' \
+      -e 's|@''REPLACE_MB_CUR_MAX''@|0|g' \
+      -e 's|@''REPLACE_MBSTOWCS''@|0|g' \
+      -e 's|@''REPLACE_MBTOWC''@|0|g' \
+      -e 's|@''REPLACE_MKOSTEMP''@|0|g' \
+      -e 's|@''REPLACE_MKOSTEMPS''@|0|g' \
+      -e 's|@''REPLACE_MKSTEMP''@|0|g' \
+      -e 's|@''REPLACE_POSIX_MEMALIGN''@|0|g' \
+      -e 's|@''REPLACE_POSIX_OPENPT''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME''@|0|g' \
+      -e 's|@''REPLACE_PTSNAME_R''@|0|g' \
+      -e 's|@''REPLACE_PUTENV''@|0|g' \
+      -e 's|@''REPLACE_QSORT_R''@|0|g' \
+      -e 's|@''REPLACE_RAND''@|0|g' \
+      -e 's|@''REPLACE_RANDOM''@|0|g' \
+      -e 's|@''REPLACE_RANDOM_R''@|0|g' \
+      -e 's|@''REPLACE_REALLOC_FOR_REALLOC_POSIX''@|0|g' \
+      -e 's|@''REPLACE_REALLOCARRAY''@|0|g' \
+      -e 's|@''REPLACE_REALPATH''@|0|g' \
+      -e 's|@''REPLACE_SETENV''@|0|g' \
+      -e 's|@''REPLACE_SETSTATE''@|0|g' \
+      -e 's|@''REPLACE_STRTOD''@|0|g' \
+      -e 's|@''REPLACE_STRTOF''@|0|g' \
+      -e 's|@''REPLACE_STRTOL''@|0|g' \
+      -e 's|@''REPLACE_STRTOLD''@|0|g' \
+      -e 's|@''REPLACE_STRTOLL''@|0|g' \
+      -e 's|@''REPLACE_STRTOUL''@|0|g' \
+      -e 's|@''REPLACE_STRTOULL''@|0|g' \
+      -e 's|@''REPLACE_UNSETENV''@|0|g' \
+      -e 's|@''REPLACE_WCTOMB''@|0|g' \
+      -e 's|@''CAN_PRINT_STACK_TRACE''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gltests/c++defs.h' \
+      -e '/definition of _Noreturn/r ../../gltests/_Noreturn.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gltests/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gltests/warn-on-use.h' \
+      < stdlib.h-t2 > stdlib.h-t3
+rm -f stdlib.h-t1 stdlib.h-t2
+mv stdlib.h-t3 stdlib.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''HAVE_UNISTD_H''@|1|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''NEXT_UNISTD_H''@|<unistd.h>|g' \
+      -e 's|@''WINDOWS_64_BIT_OFF_T''@|0|g' \
+      -e 's/@''GNULIB_ACCESS''@/0/g' \
+      -e 's/@''GNULIB_CHDIR''@/0/g' \
+      -e 's/@''GNULIB_CHOWN''@/0/g' \
+      -e 's/@''GNULIB_CLOSE''@/0/g' \
+      -e 's/@''GNULIB_COPY_FILE_RANGE''@/0/g' \
+      -e 's/@''GNULIB_DUP''@/0/g' \
+      -e 's/@''GNULIB_DUP2''@/0/g' \
+      -e 's/@''GNULIB_DUP3''@/0/g' \
+      -e 's/@''GNULIB_ENVIRON''@/0/g' \
+      -e 's/@''GNULIB_EUIDACCESS''@/0/g' \
+      -e 's/@''GNULIB_EXECL''@/0/g' \
+      -e 's/@''GNULIB_EXECLE''@/0/g' \
+      -e 's/@''GNULIB_EXECLP''@/0/g' \
+      -e 's/@''GNULIB_EXECV''@/0/g' \
+      -e 's/@''GNULIB_EXECVE''@/0/g' \
+      -e 's/@''GNULIB_EXECVP''@/0/g' \
+      -e 's/@''GNULIB_EXECVPE''@/0/g' \
+      -e 's/@''GNULIB_FACCESSAT''@/0/g' \
+      -e 's/@''GNULIB_FCHDIR''@/0/g' \
+      -e 's/@''GNULIB_FCHOWNAT''@/0/g' \
+      -e 's/@''GNULIB_FDATASYNC''@/0/g' \
+      -e 's/@''GNULIB_FSYNC''@/0/g' \
+      -e 's/@''GNULIB_FTRUNCATE''@/0/g' \
+      < ../../gltests/unistd.in.h > unistd.h-t1
+sed \
+      -e 's/@''GNULIB_GETCWD''@/0/g' \
+      -e 's/@''GNULIB_GETDOMAINNAME''@/0/g' \
+      -e 's/@''GNULIB_GETDTABLESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETENTROPY''@/0/g' \
+      -e 's/@''GNULIB_GETGROUPS''@/0/g' \
+      -e 's/@''GNULIB_GETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN''@/0/g' \
+      -e 's/@''GNULIB_GETLOGIN_R''@/0/g' \
+      -e 's/@''GNULIB_GETOPT_POSIX''@/0/g' \
+      -e 's/@''GNULIB_GETPAGESIZE''@/0/g' \
+      -e 's/@''GNULIB_GETPASS''@/0/g' \
+      -e 's/@''GNULIB_GETPASS_GNU''@/0/g' \
+      -e 's/@''GNULIB_GETUSERSHELL''@/0/g' \
+      -e 's/@''GNULIB_GROUP_MEMBER''@/0/g' \
+      -e 's/@''GNULIB_ISATTY''@/0/g' \
+      -e 's/@''GNULIB_LCHOWN''@/0/g' \
+      -e 's/@''GNULIB_LINK''@/0/g' \
+      -e 's/@''GNULIB_LINKAT''@/0/g' \
+      -e 's/@''GNULIB_LSEEK''@/0/g' \
+      -e 's/@''GNULIB_PIPE''@/0/g' \
+      -e 's/@''GNULIB_PIPE2''@/0/g' \
+      -e 's/@''GNULIB_PREAD''@/0/g' \
+      -e 's/@''GNULIB_PWRITE''@/0/g' \
+      -e 's/@''GNULIB_READ''@/0/g' \
+      -e 's/@''GNULIB_READLINK''@/0/g' \
+      -e 's/@''GNULIB_READLINKAT''@/0/g' \
+      -e 's/@''GNULIB_RMDIR''@/0/g' \
+      -e 's/@''GNULIB_SETHOSTNAME''@/0/g' \
+      -e 's/@''GNULIB_SLEEP''@/0/g' \
+      -e 's/@''GNULIB_SYMLINK''@/0/g' \
+      -e 's/@''GNULIB_SYMLINKAT''@/0/g' \
+      -e 's/@''GNULIB_TRUNCATE''@/0/g' \
+      -e 's/@''GNULIB_TTYNAME_R''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_GETOPT''@/00/g' \
+      -e 's/@''GNULIB_UNISTD_H_NONBLOCKING''@/0/g' \
+      -e 's/@''GNULIB_UNISTD_H_SIGPIPE''@/0/g' \
+      -e 's/@''GNULIB_UNLINK''@/0/g' \
+      -e 's/@''GNULIB_UNLINKAT''@/0/g' \
+      -e 's/@''GNULIB_USLEEP''@/0/g' \
+      -e 's/@''GNULIB_WRITE''@/0/g' \
+      -e 's/@''GNULIB_MDA_ACCESS''@/1/g' \
+      -e 's/@''GNULIB_MDA_CHDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_CLOSE''@/1/g' \
+      -e 's/@''GNULIB_MDA_DUP''@/1/g' \
+      -e 's/@''GNULIB_MDA_DUP2''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECL''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECLE''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECLP''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECV''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVE''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVP''@/1/g' \
+      -e 's/@''GNULIB_MDA_EXECVPE''@/1/g' \
+      -e 's/@''GNULIB_MDA_GETCWD''@/1/g' \
+      -e 's/@''GNULIB_MDA_GETPID''@/1/g' \
+      -e 's/@''GNULIB_MDA_ISATTY''@/1/g' \
+      -e 's/@''GNULIB_MDA_LSEEK''@/1/g' \
+      -e 's/@''GNULIB_MDA_READ''@/1/g' \
+      -e 's/@''GNULIB_MDA_RMDIR''@/1/g' \
+      -e 's/@''GNULIB_MDA_SWAB''@/1/g' \
+      -e 's/@''GNULIB_MDA_UNLINK''@/1/g' \
+      -e 's/@''GNULIB_MDA_WRITE''@/1/g' \
+      < unistd.h-t1 > unistd.h-t2
+sed \
+      -e 's|@''HAVE_CHOWN''@|1|g' \
+      -e 's|@''HAVE_COPY_FILE_RANGE''@|1|g' \
+      -e 's|@''HAVE_DUP3''@|1|g' \
+      -e 's|@''HAVE_EUIDACCESS''@|1|g' \
+      -e 's|@''HAVE_EXECVPE''@|1|g' \
+      -e 's|@''HAVE_FACCESSAT''@|1|g' \
+      -e 's|@''HAVE_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_FCHOWNAT''@|1|g' \
+      -e 's|@''HAVE_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_FSYNC''@|1|g' \
+      -e 's|@''HAVE_FTRUNCATE''@|1|g' \
+      -e 's|@''HAVE_GETDTABLESIZE''@|1|g' \
+      -e 's|@''HAVE_GETENTROPY''@|1|g' \
+      -e 's|@''HAVE_GETGROUPS''@|1|g' \
+      -e 's|@''HAVE_GETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_GETPASS''@|1|g' \
+      -e 's|@''HAVE_GROUP_MEMBER''@|1|g' \
+      -e 's|@''HAVE_LCHOWN''@|1|g' \
+      -e 's|@''HAVE_LINK''@|1|g' \
+      -e 's|@''HAVE_LINKAT''@|1|g' \
+      -e 's|@''HAVE_PIPE''@|1|g' \
+      -e 's|@''HAVE_PIPE2''@|1|g' \
+      -e 's|@''HAVE_PREAD''@|1|g' \
+      -e 's|@''HAVE_PWRITE''@|1|g' \
+      -e 's|@''HAVE_READLINK''@|1|g' \
+      -e 's|@''HAVE_READLINKAT''@|1|g' \
+      -e 's|@''HAVE_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_SLEEP''@|1|g' \
+      -e 's|@''HAVE_SYMLINK''@|1|g' \
+      -e 's|@''HAVE_SYMLINKAT''@|1|g' \
+      -e 's|@''HAVE_UNLINKAT''@|1|g' \
+      -e 's|@''HAVE_USLEEP''@|1|g' \
+      -e 's|@''HAVE_DECL_ENVIRON''@|1|g' \
+      -e 's|@''HAVE_DECL_EXECVPE''@|1|g' \
+      -e 's|@''HAVE_DECL_FCHDIR''@|1|g' \
+      -e 's|@''HAVE_DECL_FDATASYNC''@|1|g' \
+      -e 's|@''HAVE_DECL_GETDOMAINNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN''@|1|g' \
+      -e 's|@''HAVE_DECL_GETLOGIN_R''@|1|g' \
+      -e 's|@''HAVE_DECL_GETPAGESIZE''@|1|g' \
+      -e 's|@''HAVE_DECL_GETUSERSHELL''@|1|g' \
+      -e 's|@''HAVE_DECL_SETHOSTNAME''@|1|g' \
+      -e 's|@''HAVE_DECL_TRUNCATE''@|1|g' \
+      -e 's|@''HAVE_DECL_TTYNAME_R''@|1|g' \
+      -e 's|@''HAVE_OS_H''@|0|g' \
+      -e 's|@''HAVE_SYS_PARAM_H''@|0|g' \
+      < unistd.h-t2 > unistd.h-t3
+sed \
+      -e 's|@''REPLACE_ACCESS''@|0|g' \
+      -e 's|@''REPLACE_CHOWN''@|0|g' \
+      -e 's|@''REPLACE_CLOSE''@|0|g' \
+      -e 's|@''REPLACE_COPY_FILE_RANGE''@|0|g' \
+      -e 's|@''REPLACE_DUP''@|0|g' \
+      -e 's|@''REPLACE_DUP2''@|0|g' \
+      -e 's|@''REPLACE_DUP3''@|0|g' \
+      -e 's|@''REPLACE_EXECL''@|0|g' \
+      -e 's|@''REPLACE_EXECLE''@|0|g' \
+      -e 's|@''REPLACE_EXECLP''@|0|g' \
+      -e 's|@''REPLACE_EXECV''@|0|g' \
+      -e 's|@''REPLACE_EXECVE''@|0|g' \
+      -e 's|@''REPLACE_EXECVP''@|0|g' \
+      -e 's|@''REPLACE_EXECVPE''@|0|g' \
+      -e 's|@''REPLACE_FACCESSAT''@|0|g' \
+      -e 's|@''REPLACE_FCHDIR''@|0|g' \
+      -e 's|@''REPLACE_FCHOWNAT''@|0|g' \
+      -e 's|@''REPLACE_FDATASYNC''@|0|g' \
+      -e 's|@''REPLACE_FTRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_GETCWD''@|0|g' \
+      -e 's|@''REPLACE_GETDOMAINNAME''@|0|g' \
+      -e 's|@''REPLACE_GETDTABLESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETENTROPY''@|0|g' \
+      -e 's|@''REPLACE_GETLOGIN_R''@|0|g' \
+      -e 's|@''REPLACE_GETGROUPS''@|0|g' \
+      -e 's|@''REPLACE_GETPAGESIZE''@|0|g' \
+      -e 's|@''REPLACE_GETPASS''@|0|g' \
+      -e 's|@''REPLACE_GETPASS_FOR_GETPASS_GNU''@|0|g' \
+      -e 's|@''REPLACE_GETUSERSHELL''@|0|g' \
+      -e 's|@''REPLACE_ISATTY''@|0|g' \
+      -e 's|@''REPLACE_LCHOWN''@|0|g' \
+      -e 's|@''REPLACE_LINK''@|0|g' \
+      -e 's|@''REPLACE_LINKAT''@|0|g' \
+      -e 's|@''REPLACE_LSEEK''@|0|g' \
+      -e 's|@''REPLACE_PIPE2''@|0|g' \
+      -e 's|@''REPLACE_PREAD''@|0|g' \
+      -e 's|@''REPLACE_PWRITE''@|0|g' \
+      -e 's|@''REPLACE_READ''@|0|g' \
+      -e 's|@''REPLACE_READLINK''@|0|g' \
+      -e 's|@''REPLACE_READLINKAT''@|0|g' \
+      -e 's|@''REPLACE_RMDIR''@|0|g' \
+      -e 's|@''REPLACE_SETHOSTNAME''@|0|g' \
+      -e 's|@''REPLACE_SLEEP''@|0|g' \
+      -e 's|@''REPLACE_SYMLINK''@|0|g' \
+      -e 's|@''REPLACE_SYMLINKAT''@|0|g' \
+      -e 's|@''REPLACE_TRUNCATE''@|0|g' \
+      -e 's|@''REPLACE_TTYNAME_R''@|0|g' \
+      -e 's|@''REPLACE_UNLINK''@|0|g' \
+      -e 's|@''REPLACE_UNLINKAT''@|0|g' \
+      -e 's|@''REPLACE_USLEEP''@|0|g' \
+      -e 's|@''REPLACE_WRITE''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_SYS_RANDOM_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H''@|0|g' \
+      -e 's|@''UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gltests/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gltests/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gltests/warn-on-use.h' \
+      < unistd.h-t3 > unistd.h-t4
+rm -f unistd.h-t1 unistd.h-t2 unistd.h-t3
+mv unistd.h-t4 unistd.h
+sed -e 1h -e '1s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,' -e 1G \
+      -e 's|@''GUARD_PREFIX''@|GL|g' \
+      -e 's|@''INCLUDE_NEXT''@|include_next|g' \
+      -e 's|@''PRAGMA_SYSTEM_HEADER''@|#pragma GCC system_header|g' \
+      -e 's|@''PRAGMA_COLUMNS''@||g' \
+      -e 's|@''HAVE_FEATURES_H''@|1|g' \
+      -e 's|@''NEXT_WCHAR_H''@|<wchar.h>|g' \
+      -e 's|@''HAVE_WCHAR_H''@|1|g' \
+      -e 's/@''HAVE_CRTDEFS_H''@/0/g' \
+      -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/0/g' \
+      -e 's/@''GNULIB_BTOWC''@/0/g' \
+      -e 's/@''GNULIB_WCTOB''@/0/g' \
+      -e 's/@''GNULIB_MBSINIT''@/0/g' \
+      -e 's/@''GNULIB_MBSZERO''@/0/g' \
+      -e 's/@''GNULIB_MBRTOWC''@/0/g' \
+      -e 's/@''GNULIB_MBRLEN''@/0/g' \
+      -e 's/@''GNULIB_MBSRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_MBSNRTOWCS''@/0/g' \
+      -e 's/@''GNULIB_WCRTOMB''@/0/g' \
+      -e 's/@''GNULIB_WCSRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCSNRTOMBS''@/0/g' \
+      -e 's/@''GNULIB_WCWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WMEMCHR''@/0/g' \
+      -e 's/@''GNULIB_WMEMCMP''@/0/g' \
+      -e 's/@''GNULIB_WMEMCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMMOVE''@/0/g' \
+      -e 's/@''GNULIB_WMEMPCPY''@/0/g' \
+      -e 's/@''GNULIB_WMEMSET''@/0/g' \
+      -e 's/@''GNULIB_WCSLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSNLEN''@/0/g' \
+      -e 's/@''GNULIB_WCSCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCPNCPY''@/0/g' \
+      -e 's/@''GNULIB_WCSCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSNCAT''@/0/g' \
+      -e 's/@''GNULIB_WCSCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSNCASECMP''@/0/g' \
+      -e 's/@''GNULIB_WCSCOLL''@/0/g' \
+      -e 's/@''GNULIB_WCSXFRM''@/0/g' \
+      -e 's/@''GNULIB_WCSDUP''@/0/g' \
+      -e 's/@''GNULIB_WCSCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSRCHR''@/0/g' \
+      -e 's/@''GNULIB_WCSCSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSSPN''@/0/g' \
+      -e 's/@''GNULIB_WCSPBRK''@/0/g' \
+      -e 's/@''GNULIB_WCSSTR''@/0/g' \
+      -e 's/@''GNULIB_WCSTOK''@/0/g' \
+      -e 's/@''GNULIB_WCSWIDTH''@/0/g' \
+      -e 's/@''GNULIB_WCSFTIME''@/0/g' \
+      -e 's/@''GNULIB_WGETCWD''@/0/g' \
+      -e 's/@''GNULIB_MDA_WCSDUP''@/1/g' \
+      -e 's/@''GNULIB_FREE_POSIX''@/0/g' \
+      < ../../gltests/wchar.in.h > wchar.h-t1
+sed \
+      -e 's|@''HAVE_WINT_T''@|1|g' \
+      -e 's|@''HAVE_BTOWC''@|1|g' \
+      -e 's|@''HAVE_MBSINIT''@|1|g' \
+      -e 's|@''HAVE_MBRTOWC''@|1|g' \
+      -e 's|@''HAVE_MBRLEN''@|1|g' \
+      -e 's|@''HAVE_MBSRTOWCS''@|1|g' \
+      -e 's|@''HAVE_MBSNRTOWCS''@|1|g' \
+      -e 's|@''HAVE_WCRTOMB''@|1|g' \
+      -e 's|@''HAVE_WCSRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WCSNRTOMBS''@|1|g' \
+      -e 's|@''HAVE_WMEMCHR''@|1|g' \
+      -e 's|@''HAVE_WMEMCMP''@|1|g' \
+      -e 's|@''HAVE_WMEMCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMMOVE''@|1|g' \
+      -e 's|@''HAVE_WMEMPCPY''@|1|g' \
+      -e 's|@''HAVE_WMEMSET''@|1|g' \
+      -e 's|@''HAVE_WCSLEN''@|1|g' \
+      -e 's|@''HAVE_WCSNLEN''@|1|g' \
+      -e 's|@''HAVE_WCSCPY''@|1|g' \
+      -e 's|@''HAVE_WCPCPY''@|1|g' \
+      -e 's|@''HAVE_WCSNCPY''@|1|g' \
+      -e 's|@''HAVE_WCPNCPY''@|1|g' \
+      -e 's|@''HAVE_WCSCAT''@|1|g' \
+      -e 's|@''HAVE_WCSNCAT''@|1|g' \
+      -e 's|@''HAVE_WCSCMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCMP''@|1|g' \
+      -e 's|@''HAVE_WCSCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSNCASECMP''@|1|g' \
+      -e 's|@''HAVE_WCSCOLL''@|1|g' \
+      -e 's|@''HAVE_WCSXFRM''@|1|g' \
+      -e 's|@''HAVE_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_WCSCHR''@|1|g' \
+      -e 's|@''HAVE_WCSRCHR''@|1|g' \
+      -e 's|@''HAVE_WCSCSPN''@|1|g' \
+      -e 's|@''HAVE_WCSSPN''@|1|g' \
+      -e 's|@''HAVE_WCSPBRK''@|1|g' \
+      -e 's|@''HAVE_WCSSTR''@|1|g' \
+      -e 's|@''HAVE_WCSTOK''@|1|g' \
+      -e 's|@''HAVE_WCSWIDTH''@|1|g' \
+      -e 's|@''HAVE_WCSFTIME''@|1|g' \
+      -e 's|@''HAVE_DECL_WCTOB''@|1|g' \
+      -e 's|@''HAVE_DECL_WCSDUP''@|1|g' \
+      -e 's|@''HAVE_DECL_WCWIDTH''@|1|g' \
+      < wchar.h-t1 > wchar.h-t2
+sed \
+      -e 's|@''REPLACE_MBSTATE_T''@|0|g' \
+      -e 's|@''REPLACE_BTOWC''@|0|g' \
+      -e 's|@''REPLACE_WCTOB''@|0|g' \
+      -e 's|@''REPLACE_FREE''@|0|g' \
+      -e 's|@''REPLACE_MBSINIT''@|0|g' \
+      -e 's|@''REPLACE_MBRTOWC''@|0|g' \
+      -e 's|@''REPLACE_MBRLEN''@|0|g' \
+      -e 's|@''REPLACE_MBSRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_MBSNRTOWCS''@|0|g' \
+      -e 's|@''REPLACE_WCRTOMB''@|0|g' \
+      -e 's|@''REPLACE_WCSRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCSNRTOMBS''@|0|g' \
+      -e 's|@''REPLACE_WCWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSWIDTH''@|0|g' \
+      -e 's|@''REPLACE_WCSFTIME''@|0|g' \
+      -e 's|@''REPLACE_WCSCMP''@|0|g' \
+      -e 's|@''REPLACE_WCSNCAT''@|0|g' \
+      -e 's|@''REPLACE_WCSNCMP''@|0|g' \
+      -e 's|@''REPLACE_WCSSTR''@|0|g' \
+      -e 's|@''REPLACE_WCSTOK''@|0|g' \
+      -e 's|@''REPLACE_WMEMCMP''@|0|g' \
+      -e 's|@''REPLACE_WMEMPCPY''@|0|g' \
+      -e '/definitions of _GL_FUNCDECL_RPL/r ../../gltests/c++defs.h' \
+      -e '/definition of _GL_ARG_NONNULL/r ../../gltests/arg-nonnull.h' \
+      -e '/definition of _GL_WARN_ON_USE/r ../../gltests/warn-on-use.h' \
+      < wchar.h-t2 > wchar.h-t3
+rm -f wchar.h-t1 wchar.h-t2
+mv wchar.h-t3 wchar.h
+## ---------------------------------------------------- ##
+## ------------------- Gnulib tests ------------------- ##
+## You can ignore compiler warnings in this directory.  ##
+## ---------------------------------------------------- ##
+make  all-recursive
+make[3]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+Making all in .
+make[4]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-alignasof.o -MD -MP -MF .deps/test-alignasof.Tpo -c -o test-alignasof.o ../../gltests/test-alignasof.c
+mv -f .deps/test-alignasof.Tpo .deps/test-alignasof.Po
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT stdlib.o -MD -MP -MF .deps/stdlib.Tpo -c -o stdlib.o ../../gltests/stdlib.c
+mv -f .deps/stdlib.Tpo .deps/stdlib.Po
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT unistd.o -MD -MP -MF .deps/unistd.Tpo -c -o unistd.o ../../gltests/unistd.c
+mv -f .deps/unistd.Tpo .deps/unistd.Po
+rm -f libtests.a
+ar cr libtests.a stdlib.o unistd.o 
+ranlib libtests.a
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-alignasof test-alignasof.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-assert.o -MD -MP -MF .deps/test-assert.Tpo -c -o test-assert.o ../../gltests/test-assert.c
+mv -f .deps/test-assert.Tpo .deps/test-assert.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-assert test-assert.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-bool.o -MD -MP -MF .deps/test-bool.Tpo -c -o test-bool.o ../../gltests/test-bool.c
+mv -f .deps/test-bool.Tpo .deps/test-bool.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-bool test-bool.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-intprops.o -MD -MP -MF .deps/test-intprops.Tpo -c -o test-intprops.o ../../gltests/test-intprops.c
+mv -f .deps/test-intprops.Tpo .deps/test-intprops.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-intprops test-intprops.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-inttypes-h.o -MD -MP -MF .deps/test-inttypes-h.Tpo -c -o test-inttypes-h.o ../../gltests/test-inttypes-h.c
+mv -f .deps/test-inttypes-h.Tpo .deps/test-inttypes-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-inttypes-h test-inttypes-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-limits-h.o -MD -MP -MF .deps/test-limits-h.Tpo -c -o test-limits-h.o ../../gltests/test-limits-h.c
+mv -f .deps/test-limits-h.Tpo .deps/test-limits-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-limits-h test-limits-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-stddef-h.o -MD -MP -MF .deps/test-stddef-h.Tpo -c -o test-stddef-h.o ../../gltests/test-stddef-h.c
+mv -f .deps/test-stddef-h.Tpo .deps/test-stddef-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-stddef-h test-stddef-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-stdint-h.o -MD -MP -MF .deps/test-stdint-h.Tpo -c -o test-stdint-h.o ../../gltests/test-stdint-h.c
+mv -f .deps/test-stdint-h.Tpo .deps/test-stdint-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-stdint-h test-stdint-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-stdlib-h.o -MD -MP -MF .deps/test-stdlib-h.Tpo -c -o test-stdlib-h.o ../../gltests/test-stdlib-h.c
+mv -f .deps/test-stdlib-h.Tpo .deps/test-stdlib-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-stdlib-h test-stdlib-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-sys_stat-h.o -MD -MP -MF .deps/test-sys_stat-h.Tpo -c -o test-sys_stat-h.o ../../gltests/test-sys_stat-h.c
+mv -f .deps/test-sys_stat-h.Tpo .deps/test-sys_stat-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-sys_stat-h test-sys_stat-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-sys_types-h.o -MD -MP -MF .deps/test-sys_types-h.Tpo -c -o test-sys_types-h.o ../../gltests/test-sys_types-h.c
+mv -f .deps/test-sys_types-h.Tpo .deps/test-sys_types-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-sys_types-h test-sys_types-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-time-h.o -MD -MP -MF .deps/test-time-h.Tpo -c -o test-time-h.o ../../gltests/test-time-h.c
+mv -f .deps/test-time-h.Tpo .deps/test-time-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-time-h test-time-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-unistd-h.o -MD -MP -MF .deps/test-unistd-h.Tpo -c -o test-unistd-h.o ../../gltests/test-unistd-h.c
+mv -f .deps/test-unistd-h.Tpo .deps/test-unistd-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-unistd-h test-unistd-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-verify.o -MD -MP -MF .deps/test-verify.Tpo -c -o test-verify.o ../../gltests/test-verify.c
+mv -f .deps/test-verify.Tpo .deps/test-verify.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-verify test-verify.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+gcc -ftrapv -DHAVE_CONFIG_H -I. -I../../gltests -I..  -DGNULIB_STRICT_CHECKING=1 -DIN_GNULIB_TESTS=1 -I. -I../../gltests -I.. -I../../gltests/.. -I../gllib -I../../gltests/../gllib -I/media/develdata/devel/inst-x86_64-64/include -Wall  -Wno-error -ggdb -MT test-wchar-h.o -MD -MP -MF .deps/test-wchar-h.Tpo -c -o test-wchar-h.o ../../gltests/test-wchar-h.c
+mv -f .deps/test-wchar-h.Tpo .deps/test-wchar-h.Po
+gcc -ftrapv  -Wno-error -ggdb  -L/media/develdata/devel/inst-x86_64-64/lib -o test-wchar-h test-wchar-h.o libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a  
+make[4]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[3]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64/gltests'
+make[2]: Entering directory '/media/develdata/devel/GNULIB/testdir1/build-64'
+make[2]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64'
+make[1]: Leaving directory '/media/develdata/devel/GNULIB/testdir1/build-64'
