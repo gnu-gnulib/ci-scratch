@@ -1169,6 +1169,8 @@ NEXT_ASSERT_H
 gltests_WITNESS
 GL_CXXFLAG_ALLOW_WARNINGS
 GL_CFLAG_ALLOW_WARNINGS
+HAVE_BLKCNT_T
+HAVE_BLKSIZE_T
 WINDOWS_STAT_INODES
 HAVE_OFF64_T
 WINDOWS_64_BIT_OFF_T
@@ -6720,6 +6722,28 @@ printf "%s\n" "$gl_cv_next_sys_types_h" >&6; }
 
 
     WINDOWS_STAT_INODES=0
+
+
+
+    ac_fn_c_check_type "$LINENO" "blksize_t" "ac_cv_type_blksize_t" "$ac_includes_default"
+if test "x$ac_cv_type_blksize_t" = xyes
+then :
+  HAVE_BLKSIZE_T=1
+else case e in #(
+  e) HAVE_BLKSIZE_T=0 ;;
+esac
+fi
+
+
+
+    ac_fn_c_check_type "$LINENO" "blkcnt_t" "ac_cv_type_blkcnt_t" "$ac_includes_default"
+if test "x$ac_cv_type_blkcnt_t" = xyes
+then :
+  HAVE_BLKCNT_T=1
+else case e in #(
+  e) HAVE_BLKCNT_T=0 ;;
+esac
+fi
 
 
 
