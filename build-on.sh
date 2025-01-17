@@ -50,7 +50,8 @@ done
 # testdir9: sys_select-h.
 # testdir10: sys_socket-h.
 # testdir11: sys_un-h.
-cd testdir11 || exit 1
+# testdir12: sys_types-h.
+cd testdir12 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
