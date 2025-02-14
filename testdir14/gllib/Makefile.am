@@ -111,6 +111,8 @@ if GL_COND_OBJ_ISALNUM_L
 libgnu_a_SOURCES += isalnum_l.c
 endif
 
+EXTRA_DIST += is_l-impl.h
+
 ## end   gnulib module isalnum_l
 
 ## begin gnulib module locale-h

@@ -964,8 +964,8 @@ noinst_HEADERS =
 noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
-EXTRA_DIST = ctype.in.h locale.in.h arg-nonnull.h c++defs.h \
-	warn-on-use.h stddef.in.h
+EXTRA_DIST = ctype.in.h is_l-impl.h locale.in.h arg-nonnull.h \
+	c++defs.h warn-on-use.h stddef.in.h
 BUILT_SOURCES = ctype.h locale.h $(STDDEF_H)
 SUFFIXES = 
 MOSTLYCLEANFILES = core *.stackdump ctype.h ctype.h-t locale.h \

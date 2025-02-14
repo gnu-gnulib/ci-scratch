@@ -21,33 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#include <locale.h>
-
-int
-isalnum_l (int c, locale_t locale)
-{
-  struct gl_locale_category_t *plc =
-    &locale->category[gl_log2_lc_mask (LC_CTYPE)];
-  if (plc->is_c_locale)
-    /* Implementation for the "C" locale.  */
-    return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z')
-           || (c >= '0' && c <= '9');
-#if HAVE_WINDOWS_LOCALE_T
-  /* Documentation:
-     <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l>  */
-  return _isalnum_l (c, plc->system_locale);
-#else
-  /* Implementation for the global locale.  */
-  {
-    int ret;
-# if HAVE_WORKING_USELOCALE
-    locale_t saved_locale = uselocale (LC_GLOBAL_LOCALE);
-# endif
-    ret = isalnum (c);
-# if HAVE_WORKING_USELOCALE
-    uselocale (saved_locale);
-# endif
-    return ret;
-  }
-#endif
-}
+#define FUNC isalnum_l
+#define GLOBAL_FUNC isalnum
+#define C_FUNC(c) \
+  ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+/* Documentation:
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l>  */
+#define WINDOWS_FUNC _isalnum_l
+#include "is_l-impl.h"
