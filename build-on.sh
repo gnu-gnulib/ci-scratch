@@ -52,7 +52,8 @@ done
 # testdir11: sys_un-h.
 # testdir12: sys_types-h.
 # testdir13: sys_stat-h.
-cd testdir13 || exit 1
+# testdir14: isalnum_l.
+cd testdir14 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
