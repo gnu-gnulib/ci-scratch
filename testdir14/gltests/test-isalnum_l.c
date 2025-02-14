@@ -111,14 +111,15 @@ main ()
 
     freelocale (locale);
   }
+#if !MUSL_LIBC /* musl libc has no unibyte locales */
   {
-#if defined _WIN32 && !defined __CYGWIN__
+# if defined _WIN32 && !defined __CYGWIN__
     locale_t locale = newlocale (LC_ALL_MASK, "French_France.1252", NULL);
-#else
+# else
     locale_t locale = newlocale (LC_ALL_MASK, "fr_FR.ISO-8859-1", NULL);
     if (locale == NULL)
       locale = newlocale (LC_ALL_MASK, "fr_FR.ISO8859-1", NULL);
-#endif
+# endif
     if (locale != NULL)
       {
         test_single_locale_common (locale);
@@ -138,6 +139,7 @@ main ()
         freelocale (locale);
       }
   }
+#endif
 
   return test_exit_status;
 }

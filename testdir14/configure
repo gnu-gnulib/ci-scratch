@@ -1115,23 +1115,9 @@ HAVE__EXIT
 GL_GENERATE_STDINT_H_FALSE
 GL_GENERATE_STDINT_H_TRUE
 STDINT_H
-GL_GENERATE_STDDEF_H_FALSE
-GL_GENERATE_STDDEF_H_TRUE
-STDDEF_H
 GL_COND_OBJ_NEWLOCALE_FALSE
 GL_COND_OBJ_NEWLOCALE_TRUE
 INTL_MACOSX_LIBS
-NEXT_AS_FIRST_DIRECTIVE_LOCALE_H
-NEXT_LOCALE_H
-HAVE_WINDOWS_LOCALE_T
-HAVE_LOCALE_T
-HAVE_XLOCALE_H
-NEXT_AS_FIRST_DIRECTIVE_STDDEF_H
-NEXT_STDDEF_H
-HAVE_MAX_ALIGN_T
-REPLACE_NULL
-STDDEF_NOT_IDEMPOTENT
-NULLPTR_T_NEEDS_STDDEF
 GL_GENERATE_LIMITS_H_FALSE
 GL_GENERATE_LIMITS_H_TRUE
 LIMITS_H
@@ -1183,6 +1169,19 @@ HAVE_WCHAR_H
 GNULIBHEADERS_OVERRIDE_WINT_T
 NEXT_AS_FIRST_DIRECTIVE_LIMITS_H
 NEXT_LIMITS_H
+GL_COND_OBJ_FREELOCALE_FALSE
+GL_COND_OBJ_FREELOCALE_TRUE
+GL_GENERATE_ASSERT_H_FALSE
+GL_GENERATE_ASSERT_H_TRUE
+ASSERT_H
+NEXT_AS_FIRST_DIRECTIVE_ASSERT_H
+NEXT_ASSERT_H
+gltests_WITNESS
+GL_CXXFLAG_ALLOW_WARNINGS
+GL_CFLAG_ALLOW_WARNINGS
+GL_GENERATE_STDDEF_H_FALSE
+GL_GENERATE_STDDEF_H_TRUE
+STDDEF_H
 GL_GNULIB_LOCALENAME_UNSAFE
 GL_GNULIB_FREELOCALE
 GL_GNULIB_DUPLOCALE
@@ -1190,8 +1189,17 @@ GL_GNULIB_NEWLOCALE
 GL_GNULIB_SETLOCALE_NULL
 GL_GNULIB_SETLOCALE
 GL_GNULIB_LOCALECONV
-GL_COND_OBJ_FREELOCALE_FALSE
-GL_COND_OBJ_FREELOCALE_TRUE
+NEXT_AS_FIRST_DIRECTIVE_LOCALE_H
+NEXT_LOCALE_H
+HAVE_WINDOWS_LOCALE_T
+HAVE_LOCALE_T
+HAVE_XLOCALE_H
+NEXT_AS_FIRST_DIRECTIVE_STDDEF_H
+NEXT_STDDEF_H
+HAVE_MAX_ALIGN_T
+REPLACE_NULL
+STDDEF_NOT_IDEMPOTENT
+NULLPTR_T_NEEDS_STDDEF
 LOCALENAME_ENHANCE_LOCALE_FUNCS
 REPLACE_STRUCT_LCONV
 REPLACE_FREELOCALE
@@ -1202,14 +1210,6 @@ REPLACE_LOCALECONV
 HAVE_FREELOCALE
 HAVE_DUPLOCALE
 HAVE_NEWLOCALE
-GL_GENERATE_ASSERT_H_FALSE
-GL_GENERATE_ASSERT_H_TRUE
-ASSERT_H
-NEXT_AS_FIRST_DIRECTIVE_ASSERT_H
-NEXT_ASSERT_H
-gltests_WITNESS
-GL_CXXFLAG_ALLOW_WARNINGS
-GL_CFLAG_ALLOW_WARNINGS
 GL_COND_OBJ_ISALNUM_L_FALSE
 GL_COND_OBJ_ISALNUM_L_TRUE
 GL_GNULIB_ISBLANK
@@ -3280,9 +3280,9 @@ as_fn_append ac_header_c_list " sys/types.h sys_types_h HAVE_SYS_TYPES_H"
 as_fn_append ac_header_c_list " unistd.h unistd_h HAVE_UNISTD_H"
 as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
+as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_func_c_list " isalnum_l HAVE_ISALNUM_L"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
-as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
 as_fn_append ac_header_c_list " crtdefs.h crtdefs_h HAVE_CRTDEFS_H"
@@ -6516,6 +6516,7 @@ fi
 
 
 
+
     HAVE_ISALNUM_L=1;
   HAVE_ISBLANK=1;
 
@@ -7006,6 +7007,613 @@ printf "%s\n" "#define HAVE_WORKING_USELOCALE 1" >>confdefs.h
   esac
 
 
+    HAVE_NEWLOCALE=1;
+  HAVE_DUPLOCALE=1;
+  HAVE_FREELOCALE=1;
+  REPLACE_LOCALECONV=0;
+  REPLACE_SETLOCALE=0;
+  REPLACE_NEWLOCALE=0;
+  REPLACE_DUPLOCALE=0;
+  REPLACE_FREELOCALE=0;
+  REPLACE_STRUCT_LCONV=0;
+  LOCALENAME_ENHANCE_LOCALE_FUNCS=0;
+
+
+    NULLPTR_T_NEEDS_STDDEF=1;
+  STDDEF_NOT_IDEMPOTENT=0;
+  REPLACE_NULL=0;
+  HAVE_MAX_ALIGN_T=1;
+
+
+
+
+
+
+  GL_GENERATE_STDDEF_H=false
+
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for good max_align_t" >&5
+printf %s "checking for good max_align_t... " >&6; }
+if test ${gl_cv_type_max_align_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+/* On FreeBSD 12.0/x86, max_align_t defined by <stddef.h> has
+               the correct alignment with the default (wrong) definition of
+               _Alignof, but a wrong alignment as soon as we activate an
+               ISO C compliant _Alignof definition.  */
+            #if ((defined __GNUC__ && 4 <= __GNUC__) || defined __clang__) && !defined __cplusplus
+             #define _Alignof(type) __builtin_offsetof (struct { char __a; type __b; }, __b)
+            #endif
+            #include <stddef.h>
+            unsigned int s = sizeof (max_align_t);
+            #if defined __GNUC__ || defined __clang__ || defined __IBM__ALIGNOF__
+            int check1[2 * (__alignof__ (double) <= __alignof__ (max_align_t)) - 1];
+            int check2[2 * (__alignof__ (long double) <= __alignof__ (max_align_t)) - 1];
+            #endif
+            typedef struct { char a; max_align_t b; } max_helper;
+            typedef struct { char a; long b; } long_helper;
+            typedef struct { char a; double b; } double_helper;
+            typedef struct { char a; long double b; } long_double_helper;
+            int check3[2 * (offsetof (long_helper, b) <= offsetof (max_helper, b)) - 1];
+            int check4[2 * (offsetof (double_helper, b) <= offsetof (max_helper, b)) - 1];
+            int check5[2 * (offsetof (long_double_helper, b) <= offsetof (max_helper, b)) - 1];
+
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_type_max_align_t=yes
+else case e in #(
+  e) gl_cv_type_max_align_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_type_max_align_t" >&5
+printf "%s\n" "$gl_cv_type_max_align_t" >&6; }
+  if test $gl_cv_type_max_align_t = no; then
+    HAVE_MAX_ALIGN_T=0
+    GL_GENERATE_STDDEF_H=true
+  fi
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether NULL can be used in arbitrary expressions" >&5
+printf %s "checking whether NULL can be used in arbitrary expressions... " >&6; }
+if test ${gl_cv_decl_null_works+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <stddef.h>
+      int test[2 * (sizeof NULL == sizeof (void *)) -1];
+
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_decl_null_works=yes
+else case e in #(
+  e) gl_cv_decl_null_works=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_decl_null_works" >&5
+printf "%s\n" "$gl_cv_decl_null_works" >&6; }
+  if test $gl_cv_decl_null_works = no; then
+    REPLACE_NULL=1
+    GL_GENERATE_STDDEF_H=true
+  fi
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for unreachable" >&5
+printf %s "checking for unreachable... " >&6; }
+if test ${gl_cv_func_unreachable+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <stddef.h>
+
+int
+main (void)
+{
+unreachable ();
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gl_cv_func_unreachable=yes
+else case e in #(
+  e) gl_cv_func_unreachable=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_unreachable" >&5
+printf "%s\n" "$gl_cv_func_unreachable" >&6; }
+  if test $gl_cv_func_unreachable = no; then
+    GL_GENERATE_STDDEF_H=true
+  fi
+
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether nullptr_t needs <stddef.h>" >&5
+printf %s "checking whether nullptr_t needs <stddef.h>... " >&6; }
+if test ${gl_cv_nullptr_t_needs_stddef+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+nullptr_t x;
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_nullptr_t_needs_stddef=no
+else case e in #(
+  e) gl_cv_nullptr_t_needs_stddef=yes ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_nullptr_t_needs_stddef" >&5
+printf "%s\n" "$gl_cv_nullptr_t_needs_stddef" >&6; }
+  if test "$gl_cv_nullptr_t_needs_stddef" = no; then
+    NULLPTR_T_NEEDS_STDDEF=0
+    GL_GENERATE_STDDEF_H=true
+  fi
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for clean definition of __STDC_VERSION_STDDEF_H__" >&5
+printf %s "checking for clean definition of __STDC_VERSION_STDDEF_H__... " >&6; }
+if test ${gl_cv_clean_version_stddef+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+/* https://gcc.gnu.org/bugzilla/show_bug.cgi?id=114870 */
+            #include <stddef.h>
+            #undef __STDC_VERSION_STDDEF_H__
+            #include <time.h>
+            #ifdef __STDC_VERSION_STDDEF_H__
+            # error "<time.h> defines __STDC_VERSION_STDDEF_H__"
+            #endif
+
+_ACEOF
+if ac_fn_c_try_cpp "$LINENO"
+then :
+  gl_cv_clean_version_stddef=yes
+else case e in #(
+  e) gl_cv_clean_version_stddef=no ;;
+esac
+fi
+rm -f conftest.err conftest.i conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_clean_version_stddef" >&5
+printf "%s\n" "$gl_cv_clean_version_stddef" >&6; }
+  if test "$gl_cv_clean_version_stddef" = no; then
+    STDDEF_NOT_IDEMPOTENT=1
+    GL_GENERATE_STDDEF_H=true
+  fi
+
+  if $GL_GENERATE_STDDEF_H; then
+
+
+
+
+
+
+
+
+     if test $gl_cv_have_include_next = yes; then
+       gl_cv_next_stddef_h='<'stddef.h'>'
+     else
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <stddef.h>" >&5
+printf %s "checking absolute name of <stddef.h>... " >&6; }
+if test ${gl_cv_next_stddef_h+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+
+
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <stddef.h>
+_ACEOF
+                case "$host_os" in
+    aix*) gl_absname_cpp="$ac_cpp -C" ;;
+    *)    gl_absname_cpp="$ac_cpp" ;;
+  esac
+
+  case "$host_os" in
+    mingw* | windows*)
+                                          gl_dirsep_regex='[/\\]'
+      ;;
+    *)
+      gl_dirsep_regex='\/'
+      ;;
+  esac
+      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
+  gl_header_literal_regex=`echo 'stddef.h' \
+                           | sed -e "$gl_make_literal_regex_sed"`
+  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
+      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
+      s|^/[^/]|//&|
+      p
+      q
+    }'
+
+        gl_cv_absolute_stddef_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
+  sed -n "$gl_absolute_header_sed"`
+
+          gl_header=$gl_cv_absolute_stddef_h
+          gl_cv_next_stddef_h='"'$gl_header'"'
+
+          ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_stddef_h" >&5
+printf "%s\n" "$gl_cv_next_stddef_h" >&6; }
+     fi
+     NEXT_STDDEF_H=$gl_cv_next_stddef_h
+
+     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
+       gl_next_as_first_directive='<'stddef.h'>'
+     else
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
+       gl_next_as_first_directive=$gl_cv_next_stddef_h
+     fi
+     NEXT_AS_FIRST_DIRECTIVE_STDDEF_H=$gl_next_as_first_directive
+
+
+
+
+  fi
+
+
+
+
+        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines locale_t" >&5
+printf %s "checking whether locale.h defines locale_t... " >&6; }
+if test ${gl_cv_header_locale_has_locale_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+            locale_t x;
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_header_locale_has_locale_t=yes
+else case e in #(
+  e) gl_cv_header_locale_has_locale_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_locale_t" >&5
+printf "%s\n" "$gl_cv_header_locale_has_locale_t" >&6; }
+
+
+  if test $ac_cv_header_xlocale_h = yes; then
+    HAVE_XLOCALE_H=1
+    if test $gl_cv_header_locale_has_locale_t = yes; then
+      gl_cv_header_locale_h_needs_xlocale_h=no
+    else
+      gl_cv_header_locale_h_needs_xlocale_h=yes
+    fi
+    HAVE_LOCALE_T=1
+  else
+    HAVE_XLOCALE_H=0
+    gl_cv_header_locale_h_needs_xlocale_h=no
+    if test $gl_cv_header_locale_has_locale_t = yes; then
+      HAVE_LOCALE_T=1
+    else
+      HAVE_LOCALE_T=0
+    fi
+  fi
+
+
+
+
+
+
+
+
+
+
+
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines _locale_t" >&5
+printf %s "checking whether locale.h defines _locale_t... " >&6; }
+if test ${gl_cv_header_locale_has_windows_locale_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+            _locale_t x;
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_header_locale_has_windows_locale_t=yes
+else case e in #(
+  e) gl_cv_header_locale_has_windows_locale_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_windows_locale_t" >&5
+printf "%s\n" "$gl_cv_header_locale_has_windows_locale_t" >&6; }
+  if test $gl_cv_header_locale_has_windows_locale_t = yes; then
+    HAVE_WINDOWS_LOCALE_T=1
+
+printf "%s\n" "#define HAVE_WINDOWS_LOCALE_T 1" >>confdefs.h
+
+  else
+    HAVE_WINDOWS_LOCALE_T=0
+  fi
+
+
+
+  case "$host_os" in
+    solaris*)
+
+printf "%s\n" "#define _LCONV_C99 1" >>confdefs.h
+
+      ;;
+  esac
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h conforms to POSIX:2001" >&5
+printf %s "checking whether locale.h conforms to POSIX:2001... " >&6; }
+if test ${gl_cv_header_locale_h_posix2001+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+            int x = LC_MESSAGES;
+            int y = sizeof (((struct lconv *) 0)->decimal_point);
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_header_locale_h_posix2001=yes
+else case e in #(
+  e) gl_cv_header_locale_h_posix2001=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_h_posix2001" >&5
+printf "%s\n" "$gl_cv_header_locale_h_posix2001" >&6; }
+
+          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether struct lconv is properly defined" >&5
+printf %s "checking whether struct lconv is properly defined... " >&6; }
+if test ${gl_cv_sys_struct_lconv_ok+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+            struct lconv l;
+            int x = sizeof (l.decimal_point);
+            int y = sizeof (l.int_p_cs_precedes);
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_sys_struct_lconv_ok=yes
+else case e in #(
+  e) gl_cv_sys_struct_lconv_ok=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_sys_struct_lconv_ok" >&5
+printf "%s\n" "$gl_cv_sys_struct_lconv_ok" >&6; }
+  if test $gl_cv_sys_struct_lconv_ok = no; then
+            case "$host_os" in
+      windows*-msvc*)
+        ;;
+      mingw* | windows*)
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#ifdef _MSC_VER
+ Special
+#endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Special" >/dev/null 2>&1
+then :
+
+else case e in #(
+  e) REPLACE_STRUCT_LCONV=1 ;;
+esac
+fi
+rm -rf conftest*
+
+        ;;
+      *) REPLACE_STRUCT_LCONV=1 ;;
+    esac
+  fi
+
+
+
+
+
+
+
+
+
+     if test $gl_cv_have_include_next = yes; then
+       gl_cv_next_locale_h='<'locale.h'>'
+     else
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <locale.h>" >&5
+printf %s "checking absolute name of <locale.h>... " >&6; }
+if test ${gl_cv_next_locale_h+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+
+
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+_ACEOF
+                case "$host_os" in
+    aix*) gl_absname_cpp="$ac_cpp -C" ;;
+    *)    gl_absname_cpp="$ac_cpp" ;;
+  esac
+
+  case "$host_os" in
+    mingw* | windows*)
+                                          gl_dirsep_regex='[/\\]'
+      ;;
+    *)
+      gl_dirsep_regex='\/'
+      ;;
+  esac
+      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
+  gl_header_literal_regex=`echo 'locale.h' \
+                           | sed -e "$gl_make_literal_regex_sed"`
+  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
+      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
+      s|^/[^/]|//&|
+      p
+      q
+    }'
+
+        gl_cv_absolute_locale_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
+  sed -n "$gl_absolute_header_sed"`
+
+          gl_header=$gl_cv_absolute_locale_h
+          gl_cv_next_locale_h='"'$gl_header'"'
+
+          ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_locale_h" >&5
+printf "%s\n" "$gl_cv_next_locale_h" >&6; }
+     fi
+     NEXT_LOCALE_H=$gl_cv_next_locale_h
+
+     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
+       gl_next_as_first_directive='<'locale.h'>'
+     else
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
+       gl_next_as_first_directive=$gl_cv_next_locale_h
+     fi
+     NEXT_AS_FIRST_DIRECTIVE_LOCALE_H=$gl_next_as_first_directive
+
+
+
+
+
+
+
+
+
+
+
+  GL_GNULIB_LOCALECONV=0
+
+
+
+  GL_GNULIB_SETLOCALE=0
+
+
+
+  GL_GNULIB_SETLOCALE_NULL=0
+
+
+
+  GL_GNULIB_NEWLOCALE=0
+
+
+
+  GL_GNULIB_DUPLOCALE=0
+
+
+
+  GL_GNULIB_FREELOCALE=0
+
+
+
+  GL_GNULIB_LOCALENAME_UNSAFE=0
+
+
+
+
+
+
 
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for C compiler option to allow warnings" >&5
 printf %s "checking for C compiler option to allow warnings... " >&6; }
@@ -7084,49 +7692,6 @@ printf "%s\n" "$gl_cv_cxx_wallow" >&6; }
   else
     GL_CXXFLAG_ALLOW_WARNINGS=''
   fi
-
-
-
-
-    HAVE_NEWLOCALE=1;
-  HAVE_DUPLOCALE=1;
-  HAVE_FREELOCALE=1;
-  REPLACE_LOCALECONV=0;
-  REPLACE_SETLOCALE=0;
-  REPLACE_NEWLOCALE=0;
-  REPLACE_DUPLOCALE=0;
-  REPLACE_FREELOCALE=0;
-  REPLACE_STRUCT_LCONV=0;
-  LOCALENAME_ENHANCE_LOCALE_FUNCS=0;
-
-
-
-  GL_GNULIB_LOCALECONV=0
-
-
-
-  GL_GNULIB_SETLOCALE=0
-
-
-
-  GL_GNULIB_SETLOCALE_NULL=0
-
-
-
-  GL_GNULIB_NEWLOCALE=0
-
-
-
-  GL_GNULIB_DUPLOCALE=0
-
-
-
-  GL_GNULIB_FREELOCALE=0
-
-
-
-  GL_GNULIB_LOCALENAME_UNSAFE=0
-
 
 
 
@@ -8712,567 +9277,14 @@ printf "%s\n" "$gl_cv_test_UINT64_MAX_EQ_ULONG_MAX" >&6; }
 
 
 
-    NULLPTR_T_NEEDS_STDDEF=1;
-  STDDEF_NOT_IDEMPOTENT=0;
-  REPLACE_NULL=0;
-  HAVE_MAX_ALIGN_T=1;
-
-
-
-
-
-
-  GL_GENERATE_STDDEF_H=false
-
-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for good max_align_t" >&5
-printf %s "checking for good max_align_t... " >&6; }
-if test ${gl_cv_type_max_align_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-/* On FreeBSD 12.0/x86, max_align_t defined by <stddef.h> has
-               the correct alignment with the default (wrong) definition of
-               _Alignof, but a wrong alignment as soon as we activate an
-               ISO C compliant _Alignof definition.  */
-            #if ((defined __GNUC__ && 4 <= __GNUC__) || defined __clang__) && !defined __cplusplus
-             #define _Alignof(type) __builtin_offsetof (struct { char __a; type __b; }, __b)
-            #endif
-            #include <stddef.h>
-            unsigned int s = sizeof (max_align_t);
-            #if defined __GNUC__ || defined __clang__ || defined __IBM__ALIGNOF__
-            int check1[2 * (__alignof__ (double) <= __alignof__ (max_align_t)) - 1];
-            int check2[2 * (__alignof__ (long double) <= __alignof__ (max_align_t)) - 1];
-            #endif
-            typedef struct { char a; max_align_t b; } max_helper;
-            typedef struct { char a; long b; } long_helper;
-            typedef struct { char a; double b; } double_helper;
-            typedef struct { char a; long double b; } long_double_helper;
-            int check3[2 * (offsetof (long_helper, b) <= offsetof (max_helper, b)) - 1];
-            int check4[2 * (offsetof (double_helper, b) <= offsetof (max_helper, b)) - 1];
-            int check5[2 * (offsetof (long_double_helper, b) <= offsetof (max_helper, b)) - 1];
-
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_type_max_align_t=yes
-else case e in #(
-  e) gl_cv_type_max_align_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_type_max_align_t" >&5
-printf "%s\n" "$gl_cv_type_max_align_t" >&6; }
-  if test $gl_cv_type_max_align_t = no; then
-    HAVE_MAX_ALIGN_T=0
-    GL_GENERATE_STDDEF_H=true
-  fi
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether NULL can be used in arbitrary expressions" >&5
-printf %s "checking whether NULL can be used in arbitrary expressions... " >&6; }
-if test ${gl_cv_decl_null_works+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <stddef.h>
-      int test[2 * (sizeof NULL == sizeof (void *)) -1];
-
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_decl_null_works=yes
-else case e in #(
-  e) gl_cv_decl_null_works=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_decl_null_works" >&5
-printf "%s\n" "$gl_cv_decl_null_works" >&6; }
-  if test $gl_cv_decl_null_works = no; then
-    REPLACE_NULL=1
-    GL_GENERATE_STDDEF_H=true
-  fi
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for unreachable" >&5
-printf %s "checking for unreachable... " >&6; }
-if test ${gl_cv_func_unreachable+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <stddef.h>
-
-int
-main (void)
-{
-unreachable ();
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gl_cv_func_unreachable=yes
-else case e in #(
-  e) gl_cv_func_unreachable=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_unreachable" >&5
-printf "%s\n" "$gl_cv_func_unreachable" >&6; }
-  if test $gl_cv_func_unreachable = no; then
-    GL_GENERATE_STDDEF_H=true
-  fi
-
-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether nullptr_t needs <stddef.h>" >&5
-printf %s "checking whether nullptr_t needs <stddef.h>... " >&6; }
-if test ${gl_cv_nullptr_t_needs_stddef+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-nullptr_t x;
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_nullptr_t_needs_stddef=no
-else case e in #(
-  e) gl_cv_nullptr_t_needs_stddef=yes ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_nullptr_t_needs_stddef" >&5
-printf "%s\n" "$gl_cv_nullptr_t_needs_stddef" >&6; }
-  if test "$gl_cv_nullptr_t_needs_stddef" = no; then
-    NULLPTR_T_NEEDS_STDDEF=0
-    GL_GENERATE_STDDEF_H=true
-  fi
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for clean definition of __STDC_VERSION_STDDEF_H__" >&5
-printf %s "checking for clean definition of __STDC_VERSION_STDDEF_H__... " >&6; }
-if test ${gl_cv_clean_version_stddef+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-/* https://gcc.gnu.org/bugzilla/show_bug.cgi?id=114870 */
-            #include <stddef.h>
-            #undef __STDC_VERSION_STDDEF_H__
-            #include <time.h>
-            #ifdef __STDC_VERSION_STDDEF_H__
-            # error "<time.h> defines __STDC_VERSION_STDDEF_H__"
-            #endif
-
-_ACEOF
-if ac_fn_c_try_cpp "$LINENO"
-then :
-  gl_cv_clean_version_stddef=yes
-else case e in #(
-  e) gl_cv_clean_version_stddef=no ;;
-esac
-fi
-rm -f conftest.err conftest.i conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_clean_version_stddef" >&5
-printf "%s\n" "$gl_cv_clean_version_stddef" >&6; }
-  if test "$gl_cv_clean_version_stddef" = no; then
-    STDDEF_NOT_IDEMPOTENT=1
-    GL_GENERATE_STDDEF_H=true
-  fi
-
-  if $GL_GENERATE_STDDEF_H; then
-
-
-
-
-
-
-
-
-     if test $gl_cv_have_include_next = yes; then
-       gl_cv_next_stddef_h='<'stddef.h'>'
-     else
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <stddef.h>" >&5
-printf %s "checking absolute name of <stddef.h>... " >&6; }
-if test ${gl_cv_next_stddef_h+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)
-
-
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <stddef.h>
-_ACEOF
-                case "$host_os" in
-    aix*) gl_absname_cpp="$ac_cpp -C" ;;
-    *)    gl_absname_cpp="$ac_cpp" ;;
-  esac
 
   case "$host_os" in
-    mingw* | windows*)
-                                          gl_dirsep_regex='[/\\]'
-      ;;
-    *)
-      gl_dirsep_regex='\/'
-      ;;
-  esac
-      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
-  gl_header_literal_regex=`echo 'stddef.h' \
-                           | sed -e "$gl_make_literal_regex_sed"`
-  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
-      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
-      s|^/[^/]|//&|
-      p
-      q
-    }'
+    *-musl* | midipix*)
 
-        gl_cv_absolute_stddef_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
-  sed -n "$gl_absolute_header_sed"`
-
-          gl_header=$gl_cv_absolute_stddef_h
-          gl_cv_next_stddef_h='"'$gl_header'"'
-
-          ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_stddef_h" >&5
-printf "%s\n" "$gl_cv_next_stddef_h" >&6; }
-     fi
-     NEXT_STDDEF_H=$gl_cv_next_stddef_h
-
-     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
-       gl_next_as_first_directive='<'stddef.h'>'
-     else
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
-       gl_next_as_first_directive=$gl_cv_next_stddef_h
-     fi
-     NEXT_AS_FIRST_DIRECTIVE_STDDEF_H=$gl_next_as_first_directive
-
-
-
-
-  fi
-
-
-
-
-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines locale_t" >&5
-printf %s "checking whether locale.h defines locale_t... " >&6; }
-if test ${gl_cv_header_locale_has_locale_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-            locale_t x;
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_header_locale_has_locale_t=yes
-else case e in #(
-  e) gl_cv_header_locale_has_locale_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_locale_t" >&5
-printf "%s\n" "$gl_cv_header_locale_has_locale_t" >&6; }
-
-
-  if test $ac_cv_header_xlocale_h = yes; then
-    HAVE_XLOCALE_H=1
-    if test $gl_cv_header_locale_has_locale_t = yes; then
-      gl_cv_header_locale_h_needs_xlocale_h=no
-    else
-      gl_cv_header_locale_h_needs_xlocale_h=yes
-    fi
-    HAVE_LOCALE_T=1
-  else
-    HAVE_XLOCALE_H=0
-    gl_cv_header_locale_h_needs_xlocale_h=no
-    if test $gl_cv_header_locale_has_locale_t = yes; then
-      HAVE_LOCALE_T=1
-    else
-      HAVE_LOCALE_T=0
-    fi
-  fi
-
-
-
-
-
-
-
-
-
-
-
-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines _locale_t" >&5
-printf %s "checking whether locale.h defines _locale_t... " >&6; }
-if test ${gl_cv_header_locale_has_windows_locale_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-            _locale_t x;
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_header_locale_has_windows_locale_t=yes
-else case e in #(
-  e) gl_cv_header_locale_has_windows_locale_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_windows_locale_t" >&5
-printf "%s\n" "$gl_cv_header_locale_has_windows_locale_t" >&6; }
-  if test $gl_cv_header_locale_has_windows_locale_t = yes; then
-    HAVE_WINDOWS_LOCALE_T=1
-
-printf "%s\n" "#define HAVE_WINDOWS_LOCALE_T 1" >>confdefs.h
-
-  else
-    HAVE_WINDOWS_LOCALE_T=0
-  fi
-
-
-
-  case "$host_os" in
-    solaris*)
-
-printf "%s\n" "#define _LCONV_C99 1" >>confdefs.h
+printf "%s\n" "#define MUSL_LIBC 1" >>confdefs.h
 
       ;;
   esac
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h conforms to POSIX:2001" >&5
-printf %s "checking whether locale.h conforms to POSIX:2001... " >&6; }
-if test ${gl_cv_header_locale_h_posix2001+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-            int x = LC_MESSAGES;
-            int y = sizeof (((struct lconv *) 0)->decimal_point);
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_header_locale_h_posix2001=yes
-else case e in #(
-  e) gl_cv_header_locale_h_posix2001=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_h_posix2001" >&5
-printf "%s\n" "$gl_cv_header_locale_h_posix2001" >&6; }
-
-          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether struct lconv is properly defined" >&5
-printf %s "checking whether struct lconv is properly defined... " >&6; }
-if test ${gl_cv_sys_struct_lconv_ok+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-            struct lconv l;
-            int x = sizeof (l.decimal_point);
-            int y = sizeof (l.int_p_cs_precedes);
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_sys_struct_lconv_ok=yes
-else case e in #(
-  e) gl_cv_sys_struct_lconv_ok=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_sys_struct_lconv_ok" >&5
-printf "%s\n" "$gl_cv_sys_struct_lconv_ok" >&6; }
-  if test $gl_cv_sys_struct_lconv_ok = no; then
-            case "$host_os" in
-      windows*-msvc*)
-        ;;
-      mingw* | windows*)
-        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-#ifdef _MSC_VER
- Special
-#endif
-
-_ACEOF
-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-  $EGREP_TRADITIONAL "Special" >/dev/null 2>&1
-then :
-
-else case e in #(
-  e) REPLACE_STRUCT_LCONV=1 ;;
-esac
-fi
-rm -rf conftest*
-
-        ;;
-      *) REPLACE_STRUCT_LCONV=1 ;;
-    esac
-  fi
-
-
-
-
-
-
-
-
-
-     if test $gl_cv_have_include_next = yes; then
-       gl_cv_next_locale_h='<'locale.h'>'
-     else
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <locale.h>" >&5
-printf %s "checking absolute name of <locale.h>... " >&6; }
-if test ${gl_cv_next_locale_h+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)
-
-
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-_ACEOF
-                case "$host_os" in
-    aix*) gl_absname_cpp="$ac_cpp -C" ;;
-    *)    gl_absname_cpp="$ac_cpp" ;;
-  esac
-
-  case "$host_os" in
-    mingw* | windows*)
-                                          gl_dirsep_regex='[/\\]'
-      ;;
-    *)
-      gl_dirsep_regex='\/'
-      ;;
-  esac
-      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
-  gl_header_literal_regex=`echo 'locale.h' \
-                           | sed -e "$gl_make_literal_regex_sed"`
-  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
-      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
-      s|^/[^/]|//&|
-      p
-      q
-    }'
-
-        gl_cv_absolute_locale_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
-  sed -n "$gl_absolute_header_sed"`
-
-          gl_header=$gl_cv_absolute_locale_h
-          gl_cv_next_locale_h='"'$gl_header'"'
-
-          ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_locale_h" >&5
-printf "%s\n" "$gl_cv_next_locale_h" >&6; }
-     fi
-     NEXT_LOCALE_H=$gl_cv_next_locale_h
-
-     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
-       gl_next_as_first_directive='<'locale.h'>'
-     else
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
-       gl_next_as_first_directive=$gl_cv_next_locale_h
-     fi
-     NEXT_AS_FIRST_DIRECTIVE_LOCALE_H=$gl_next_as_first_directive
-
-
-
-
-
-
-
-
 
 
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFPreferencesCopyAppValue" >&5
@@ -9356,8 +9368,6 @@ printf "%s\n" "#define HAVE_CFLOCALECOPYPREFERREDLANGUAGES 1" >>confdefs.h
      || test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
                     INTL_MACOSX_LIBS="-Wl,-framework -Wl,CoreFoundation -Wl,-framework -Wl,CoreServices"
   fi
-
-
 
 
 
@@ -11306,6 +11316,44 @@ gl_m4_base='glm4'
   gl_source_base='gllib'
   gl_source_base_prefix=
 
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for bool, true, false" >&5
+printf %s "checking for bool, true, false... " >&6; }
+if test ${gl_cv_c_bool+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+          #if true == false
+           #error "true == false"
+          #endif
+          extern bool b;
+          bool b = true == false;
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_c_bool=yes
+else case e in #(
+  e) gl_cv_c_bool=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_c_bool" >&5
+printf "%s\n" "$gl_cv_c_bool" >&6; }
+  if test "$gl_cv_c_bool" = yes; then
+
+printf "%s\n" "#define HAVE_C_BOOL 1" >>confdefs.h
+
+  fi
+
+
+
+
+
+
 
 
 
@@ -11354,6 +11402,52 @@ printf "%s\n" "#define GNULIB_ISALNUM_L 1" >>confdefs.h
 
 
           GL_GNULIB_ISALNUM_L=1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  case "$GL_GENERATE_STDDEF_H" in
+    false) STDDEF_H='' ;;
+    true)
+                  if test -z "$STDDEF_H"; then
+        STDDEF_H="${gl_source_base_prefix}stddef.h"
+      fi
+      ;;
+    *) echo "*** GL_GENERATE_STDDEF_H is not set correctly" 1>&2; exit 1 ;;
+  esac
+
+
+     if $GL_GENERATE_STDDEF_H; then
+  GL_GENERATE_STDDEF_H_TRUE=
+  GL_GENERATE_STDDEF_H_FALSE='#'
+else
+  GL_GENERATE_STDDEF_H_TRUE='#'
+  GL_GENERATE_STDDEF_H_FALSE=
+fi
+:
+    if test -z "${GL_GENERATE_STDDEF_H_TRUE}" && test -z "${GL_GENERATE_STDDEF_H_FALSE}"; then
+    GL_GENERATE_STDDEF_H_TRUE='#'
+    GL_GENERATE_STDDEF_H_FALSE='#'
+  fi
+
+
 
 
 
@@ -11653,44 +11747,6 @@ fi
 
 
 
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for bool, true, false" >&5
-printf %s "checking for bool, true, false... " >&6; }
-if test ${gl_cv_c_bool+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-          #if true == false
-           #error "true == false"
-          #endif
-          extern bool b;
-          bool b = true == false;
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_c_bool=yes
-else case e in #(
-  e) gl_cv_c_bool=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_c_bool" >&5
-printf "%s\n" "$gl_cv_c_bool" >&6; }
-  if test "$gl_cv_c_bool" = yes; then
-
-printf "%s\n" "#define HAVE_C_BOOL 1" >>confdefs.h
-
-  fi
-
-
-
-
-
-
 
 
 
@@ -11824,6 +11880,7 @@ printf "%s\n" "#define GNULIB_TEST_FREELOCALE 1" >>confdefs.h
 
 
 
+
   case "$GL_GENERATE_LIMITS_H" in
     false) LIMITS_H='' ;;
     true)
@@ -11847,13 +11904,6 @@ fi
     GL_GENERATE_LIMITS_H_TRUE='#'
     GL_GENERATE_LIMITS_H_FALSE='#'
   fi
-
-
-
-
-
-
-
 
 
 
@@ -12151,45 +12201,6 @@ printf "%s\n" "$gl_cv_size_t_large" >&6; }
 printf "%s\n" "#define ssize_t $gl_def_ssize_t" >>confdefs.h
 
   fi
-
-
-
-
-
-
-
-
-
-
-
-  case "$GL_GENERATE_STDDEF_H" in
-    false) STDDEF_H='' ;;
-    true)
-                  if test -z "$STDDEF_H"; then
-        STDDEF_H="${gl_source_base_prefix}stddef.h"
-      fi
-      ;;
-    *) echo "*** GL_GENERATE_STDDEF_H is not set correctly" 1>&2; exit 1 ;;
-  esac
-
-
-     if $GL_GENERATE_STDDEF_H; then
-  GL_GENERATE_STDDEF_H_TRUE=
-  GL_GENERATE_STDDEF_H_FALSE='#'
-else
-  GL_GENERATE_STDDEF_H_TRUE='#'
-  GL_GENERATE_STDDEF_H_FALSE=
-fi
-:
-    if test -z "${GL_GENERATE_STDDEF_H_TRUE}" && test -z "${GL_GENERATE_STDDEF_H_FALSE}"; then
-    GL_GENERATE_STDDEF_H_TRUE='#'
-    GL_GENERATE_STDDEF_H_FALSE='#'
-  fi
-
-
-
-
-
 
 
 

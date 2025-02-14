@@ -272,6 +272,9 @@
 # define _GL_INLINE_HEADER_END
 #endif
 
+/* Define to 1 on musl libc. */
+#undef MUSL_LIBC
+
 /* Name of package */
 #undef PACKAGE
 

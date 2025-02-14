@@ -21,6 +21,7 @@ EXTRA_DIST += locale-en.m4
 EXTRA_DIST += locale_h.m4
 EXTRA_DIST += localename.m4
 EXTRA_DIST += multiarch.m4
+EXTRA_DIST += musl.m4
 EXTRA_DIST += newlocale.m4
 EXTRA_DIST += off64_t.m4
 EXTRA_DIST += off_t.m4

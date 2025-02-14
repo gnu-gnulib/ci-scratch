@@ -106,7 +106,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
-	$(top_srcdir)/glm4/multiarch.m4 \
+	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
 	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/ssize_t.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
@@ -817,7 +817,7 @@ EXTRA_DIST = 00gnulib.m4 absolute-header.m4 assert_h.m4 c-bool.m4 \
 	freelocale.m4 gnulib-common.m4 include_next.m4 \
 	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 isalnum_l.m4 \
 	limits-h.m4 locale-en.m4 locale_h.m4 localename.m4 \
-	multiarch.m4 newlocale.m4 off64_t.m4 off_t.m4 pid_t.m4 \
+	multiarch.m4 musl.m4 newlocale.m4 off64_t.m4 off_t.m4 pid_t.m4 \
 	ssize_t.m4 std-gnu11.m4 stdalign.m4 stddef_h.m4 stdint.m4 \
 	stdlib_h.m4 sys_types_h.m4 unistd_h.m4 warn-on-use.m4 \
 	wchar_h.m4 wint_t.m4 zzgnulib.m4

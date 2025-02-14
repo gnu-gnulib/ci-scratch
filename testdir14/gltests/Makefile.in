@@ -154,7 +154,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
-	$(top_srcdir)/glm4/multiarch.m4 \
+	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
 	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/ssize_t.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
@@ -1297,26 +1297,24 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	signature.h macros.h intprops-internal.h intprops.h \
 	test-intprops.c macros.h inttypes.in.h test-inttypes-h.c \
 	test-isalnum_l.c signature.h macros.h limits.in.h \
-	test-limits-h.c locale.in.h test-locale-h.c localename.h \
-	test-newlocale.c signature.h macros.h _Noreturn.h \
-	arg-nonnull.h c++defs.h warn-on-use.h stddef.in.h \
-	test-stddef-h.c stdint.in.h test-stdint-h.c stdlib.in.h \
-	test-stdlib-h.c test-sys_wait-h.h sys_types.in.h \
+	test-limits-h.c test-locale-h.c localename.h test-newlocale.c \
+	signature.h macros.h _Noreturn.h arg-nonnull.h c++defs.h \
+	warn-on-use.h test-stddef-h.c stdint.in.h test-stdint-h.c \
+	stdlib.in.h test-stdlib-h.c test-sys_wait-h.h sys_types.in.h \
 	test-sys_types-h.c init.sh test-init.sh unistd.in.h \
 	test-unistd-h.c verify.h test-verify.c test-verify-try.c \
 	test-verify.sh wchar.in.h test-wchar-h.c
-BUILT_SOURCES = $(ASSERT_H) inttypes.h $(LIMITS_H) locale.h \
-	$(STDDEF_H) $(STDINT_H) stdlib.h sys/types.h unistd.h wchar.h
+BUILT_SOURCES = $(ASSERT_H) inttypes.h $(LIMITS_H) $(STDINT_H) \
+	stdlib.h sys/types.h unistd.h wchar.h
 SUFFIXES = 
 
 # This test expects compilation of test-verify-try.c to fail, and
 # each time it fails, the makefile rule does not perform the usual
 #  "mv -f $name.Tpo $name.po, so tell make clean to remove that file.
 MOSTLYCLEANFILES = core *.stackdump assert.h assert.h-t inttypes.h \
-	inttypes.h-t limits.h limits.h-t locale.h locale.h-t stddef.h \
-	stddef.h-t stdint.h stdint.h-t stdlib.h stdlib.h-t1 \
-	stdlib.h-t2 stdlib.h-t3 sys/types.h sys/types.h-t unistd.h \
-	unistd.h-t1 unistd.h-t2 unistd.h-t3 unistd.h-t4 \
+	inttypes.h-t limits.h limits.h-t stdint.h stdint.h-t stdlib.h \
+	stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 sys/types.h sys/types.h-t \
+	unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 unistd.h-t4 \
 	.deps/test-verify-try.Tpo wchar.h wchar.h-t1 wchar.h-t2 \
 	wchar.h-t3
 MOSTLYCLEANDIRS = sys
@@ -2301,59 +2299,6 @@ inttypes.h: inttypes.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_U
 @GL_GENERATE_LIMITS_H_TRUE@	$(AM_V_at)mv $@-t $@
 @GL_GENERATE_LIMITS_H_FALSE@limits.h: $(top_builddir)/config.status
 @GL_GENERATE_LIMITS_H_FALSE@	rm -f $@
-
-# We need the following in order to create <locale.h> when the system
-# doesn't have one that provides all definitions.
-locale.h: locale.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
-	$(gl_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_LOCALE_H''@|$(NEXT_LOCALE_H)|g' \
-	      -e 's|@''HAVE_LOCALE_T''@|$(HAVE_LOCALE_T)|g' \
-	      -e 's|@''HAVE_WINDOWS_LOCALE_T''@|$(HAVE_WINDOWS_LOCALE_T)|g' \
-	      -e 's/@''GNULIB_LOCALECONV''@/$(GL_GNULIB_LOCALECONV)/g' \
-	      -e 's/@''GNULIB_SETLOCALE''@/$(GL_GNULIB_SETLOCALE)/g' \
-	      -e 's/@''GNULIB_SETLOCALE_NULL''@/$(GL_GNULIB_SETLOCALE_NULL)/g' \
-	      -e 's/@''GNULIB_NEWLOCALE''@/$(GL_GNULIB_NEWLOCALE)/g' \
-	      -e 's/@''GNULIB_DUPLOCALE''@/$(GL_GNULIB_DUPLOCALE)/g' \
-	      -e 's/@''GNULIB_FREELOCALE''@/$(GL_GNULIB_FREELOCALE)/g' \
-	      -e 's/@''GNULIB_LOCALENAME_UNSAFE''@/$(GL_GNULIB_LOCALENAME_UNSAFE)/g' \
-	      -e 's|@''HAVE_NEWLOCALE''@|$(HAVE_NEWLOCALE)|g' \
-	      -e 's|@''HAVE_DUPLOCALE''@|$(HAVE_DUPLOCALE)|g' \
-	      -e 's|@''HAVE_FREELOCALE''@|$(HAVE_FREELOCALE)|g' \
-	      -e 's|@''HAVE_XLOCALE_H''@|$(HAVE_XLOCALE_H)|g' \
-	      -e 's|@''REPLACE_LOCALECONV''@|$(REPLACE_LOCALECONV)|g' \
-	      -e 's|@''REPLACE_SETLOCALE''@|$(REPLACE_SETLOCALE)|g' \
-	      -e 's|@''REPLACE_NEWLOCALE''@|$(REPLACE_NEWLOCALE)|g' \
-	      -e 's|@''REPLACE_DUPLOCALE''@|$(REPLACE_DUPLOCALE)|g' \
-	      -e 's|@''REPLACE_FREELOCALE''@|$(REPLACE_FREELOCALE)|g' \
-	      -e 's|@''REPLACE_STRUCT_LCONV''@|$(REPLACE_STRUCT_LCONV)|g' \
-	      -e 's|@''LOCALENAME_ENHANCE_LOCALE_FUNCS''@|$(LOCALENAME_ENHANCE_LOCALE_FUNCS)|g' \
-	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
-	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
-	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
-	      $(srcdir)/locale.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-
-# We need the following in order to create <stddef.h> when the system
-# doesn't have one that works with the given compiler.
-@GL_GENERATE_STDDEF_H_TRUE@stddef.h: stddef.in.h $(top_builddir)/config.status
-@GL_GENERATE_STDDEF_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''NEXT_STDDEF_H''@|$(NEXT_STDDEF_H)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''NULLPTR_T_NEEDS_STDDEF''@|$(NULLPTR_T_NEEDS_STDDEF)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''STDDEF_NOT_IDEMPOTENT''@|$(STDDEF_NOT_IDEMPOTENT)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''REPLACE_NULL''@|$(REPLACE_NULL)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      -e 's|@''HAVE_MAX_ALIGN_T''@|$(HAVE_MAX_ALIGN_T)|g' \
-@GL_GENERATE_STDDEF_H_TRUE@	      $(srcdir)/stddef.in.h > $@-t
-@GL_GENERATE_STDDEF_H_TRUE@	$(AM_V_at)mv $@-t $@
-@GL_GENERATE_STDDEF_H_FALSE@stddef.h: $(top_builddir)/config.status
-@GL_GENERATE_STDDEF_H_FALSE@	rm -f $@
 
 # We need the following in order to create <stdint.h> when the system
 # doesn't have one that works with the given compiler.
