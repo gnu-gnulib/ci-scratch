@@ -65,8 +65,7 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          buf[0] = (unsigned char) c;
-          is = for_character (buf, 1);
+          is = isdigit_l ((unsigned char) c, locale);
           switch (c)
             {
             case '0': case '1': case '2': case '3': case '4':
