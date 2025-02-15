@@ -55,7 +55,7 @@
 #endif
 
 #if (@GNULIB_ISALNUM_L@ || @GNULIB_ISALPHA_L@ || @GNULIB_ISBLANK_L@ \
-     || @GNULIB_ISCNTRL_L@)
+     || @GNULIB_ISCNTRL_L@ || @GNULIB_ISDIGIT_L@)
 /* Get locale_t.  */
 # include <locale.h>
 #endif
