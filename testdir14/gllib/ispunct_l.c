@@ -24,7 +24,7 @@
 #define FUNC ispunct_l
 #define GLOBAL_FUNC ispunct
 #define C_FUNC(c) \
-  ((c >= 0x20 && c <= 0x7e) \
+  ((c >= 0x21 && c <= 0x7e) \
    && !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')))
 /* Documentation:
    <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l>  */
