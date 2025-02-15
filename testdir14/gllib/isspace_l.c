@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is a punctuation or symbol character.
+/* Test whether a single-byte character is white-space.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,12 +21,10 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC ispunct_l
-#define GLOBAL_FUNC ispunct
-#define C_FUNC(c) \
-  ((c >= 0x21 && c <= 0x7e) \
-   && !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')))
+#define FUNC isspace_l
+#define GLOBAL_FUNC isspace
+#define C_FUNC(c) (c == ' ' || (c >= 0x09 && c <= 0x0D))
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l>  */
-#define WINDOWS_FUNC _ispunct_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isspace-iswspace-isspace-l-iswspace-l>  */
+#define WINDOWS_FUNC _isspace_l
 #include "is_l-impl.h"

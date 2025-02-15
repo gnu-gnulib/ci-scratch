@@ -1,4 +1,4 @@
-/* Test of ispunct_l() function.
+/* Test of isspace_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (ispunct_l, int, (int, locale_t));
+SIGNATURE_CHECK (isspace_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,19 +32,25 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = ispunct_l (EOF, locale);
+  is = isspace_l (EOF, locale);
   ASSERT (is == 0);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
-     no explicit list of punctuation or symbol characters.  */
+     that
+       - in all locales, the white-space characters include the <space>,
+         <form-feed>, <newline>, <carriage-return>, <tab>, <vertical-tab>
+         characters,
+       - in the "POSIX" locale (which is usually the same as the "C" locale),
+         the white-space characters include only the ASCII <space>, <form-feed>,
+         <newline>, <carriage-return>, <tab>, <vertical-tab> characters.  */
   {
     int c;
 
     for (c = 0; c < 0x100; c++)
       switch (c)
         {
-        case '\t': case '\v': case '\f':
+        case '\f': case '\n': case '\r': case '\t': case '\v':
         case ' ': case '!': case '"': case '#': case '%':
         case '&': case '\'': case '(': case ')': case '*':
         case '+': case ',': case '-': case '.': case '/':
@@ -65,37 +71,12 @@ test_single_locale_common (locale_t locale)
         case 'p': case 'q': case 'r': case 's': case 't':
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
-          /* c is in the ISO C "basic character set".  */
-          is = ispunct_l ((unsigned char) c, locale);
+          /* c is in the ISO C "basic character set" or one of the explicitly
+             mentioned white-space characters.  */
+          is = isspace_l ((unsigned char) c, locale);
           switch (c)
             {
-            case ' ':
-            case '0': case '1': case '2': case '3': case '4':
-            case '5': case '6': case '7': case '8': case '9':
-            case 'A': case 'B': case 'C': case 'D': case 'E':
-            case 'F': case 'G': case 'H': case 'I': case 'J':
-            case 'K': case 'L': case 'M': case 'N': case 'O':
-            case 'P': case 'Q': case 'R': case 'S': case 'T':
-            case 'U': case 'V': case 'W': case 'X': case 'Y':
-            case 'Z':
-            case 'a': case 'b': case 'c': case 'd': case 'e':
-            case 'f': case 'g': case 'h': case 'i': case 'j':
-            case 'k': case 'l': case 'm': case 'n': case 'o':
-            case 'p': case 'q': case 'r': case 's': case 't':
-            case 'u': case 'v': case 'w': case 'x': case 'y':
-            case 'z':
-              /* c is an alphanumeric or space character.  */
-              ASSERT (is == 0);
-              break;
-            case '!': case '"': case '#': case '%':
-            case '&': case '\'': case '(': case ')': case '*':
-            case '+': case ',': case '-': case '.': case '/':
-            case ':': case ';': case '<': case '=': case '>':
-            case '?':
-            case '[': case '\\': case ']': case '^': case '_':
-            case '{': case '|': case '}': case '~':
-              /* These characters are usually expected to be punctuation or
-                 symbol characters.  */
+            case ' ': case '\f': case '\n': case '\r': case '\t': case '\v':
               ASSERT (is != 0);
               break;
             default:
@@ -134,21 +115,8 @@ main ()
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
         int is;
 
-      #if !(defined __FreeBSD__ || defined __DragonFly__)
-        /* U+00BF INVERTED QUESTION MARK */
-        is = ispunct_l ((unsigned char) '\277', locale);
-        ASSERT (is != 0);
-      #endif
-      #if !(defined __FreeBSD__ || defined __DragonFly__ || defined __sun)
-        /* U+00D7 MULTIPLICATION SIGN */
-        is = ispunct_l ((unsigned char) '\327', locale);
-        ASSERT (is != 0);
-      #endif
-        /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
-        is = ispunct_l ((unsigned char) '\330', locale);
-        ASSERT (is == 0);
-        /* U+00DF LATIN SMALL LETTER SHARP S */
-        is = ispunct_l ((unsigned char) '\337', locale);
+        /* U+00B7 MIDDLE DOT */
+        is = isspace_l ((unsigned char) '\267', locale);
         ASSERT (is == 0);
 
         freelocale (locale);
