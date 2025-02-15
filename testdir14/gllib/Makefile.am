@@ -78,6 +78,7 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's/@''GNULIB_ISCNTRL_L''@/$(GL_GNULIB_ISCNTRL_L)/g' \
 	      -e 's/@''GNULIB_ISDIGIT_L''@/$(GL_GNULIB_ISDIGIT_L)/g' \
 	      -e 's/@''GNULIB_ISGRAPH_L''@/$(GL_GNULIB_ISGRAPH_L)/g' \
+	      -e 's/@''GNULIB_ISLOWER_L''@/$(GL_GNULIB_ISLOWER_L)/g' \
 	      -e 's/@''HAVE_ISALNUM_L''@/$(HAVE_ISALNUM_L)/g' \
 	      -e 's/@''HAVE_ISALPHA_L''@/$(HAVE_ISALPHA_L)/g' \
 	      -e 's/@''HAVE_ISBLANK''@/$(HAVE_ISBLANK)/g' \
@@ -85,6 +86,7 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's/@''HAVE_ISCNTRL_L''@/$(HAVE_ISCNTRL_L)/g' \
 	      -e 's/@''HAVE_ISDIGIT_L''@/$(HAVE_ISDIGIT_L)/g' \
 	      -e 's/@''HAVE_ISGRAPH_L''@/$(HAVE_ISGRAPH_L)/g' \
+	      -e 's/@''HAVE_ISLOWER_L''@/$(HAVE_ISLOWER_L)/g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
 	      $(srcdir)/ctype.in.h > $@-t
@@ -115,15 +117,15 @@ gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
 
-## begin gnulib module isgraph_l
+## begin gnulib module islower_l
 
-if GL_COND_OBJ_ISGRAPH_L
-libgnu_a_SOURCES += isgraph_l.c
+if GL_COND_OBJ_ISLOWER_L
+libgnu_a_SOURCES += islower_l.c
 endif
 
 EXTRA_DIST += is_l-impl.h
 
-## end   gnulib module isgraph_l
+## end   gnulib module islower_l
 
 ## begin gnulib module locale-h
 

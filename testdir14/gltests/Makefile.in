@@ -119,7 +119,7 @@ TESTS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) test-assert$(EXEEXT) \
 	$(am__EXEEXT_2) test-bool$(EXEEXT) $(am__EXEEXT_3) \
 	test-ctype-h$(EXEEXT) test-freelocale$(EXEEXT) \
 	test-intprops$(EXEEXT) $(am__EXEEXT_4) \
-	test-inttypes-h$(EXEEXT) test-isgraph_l$(EXEEXT) \
+	test-inttypes-h$(EXEEXT) test-islower_l$(EXEEXT) \
 	$(am__EXEEXT_5) test-limits-h$(EXEEXT) $(am__EXEEXT_6) \
 	test-locale-h$(EXEEXT) test-newlocale$(EXEEXT) $(am__EXEEXT_7) \
 	test-stddef-h$(EXEEXT) $(am__EXEEXT_8) test-stdint-h$(EXEEXT) \
@@ -132,7 +132,7 @@ noinst_PROGRAMS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) \
 	test-assert$(EXEEXT) $(am__EXEEXT_2) test-bool$(EXEEXT) \
 	$(am__EXEEXT_3) test-ctype-h$(EXEEXT) test-freelocale$(EXEEXT) \
 	test-intprops$(EXEEXT) $(am__EXEEXT_4) \
-	test-inttypes-h$(EXEEXT) test-isgraph_l$(EXEEXT) \
+	test-inttypes-h$(EXEEXT) test-islower_l$(EXEEXT) \
 	$(am__EXEEXT_5) test-limits-h$(EXEEXT) $(am__EXEEXT_6) \
 	test-locale-h$(EXEEXT) test-newlocale$(EXEEXT) $(am__EXEEXT_7) \
 	test-stddef-h$(EXEEXT) $(am__EXEEXT_8) test-stdint-h$(EXEEXT) \
@@ -180,7 +180,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/isgraph_l.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/islower_l.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
@@ -299,10 +299,10 @@ test_inttypes_h_c___OBJECTS = $(am_test_inttypes_h_c___OBJECTS)
 test_inttypes_h_c___LDADD = $(LDADD)
 test_inttypes_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_isgraph_l_SOURCES = test-isgraph_l.c
-test_isgraph_l_OBJECTS = test-isgraph_l.$(OBJEXT)
-test_isgraph_l_LDADD = $(LDADD)
-test_isgraph_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+test_islower_l_SOURCES = test-islower_l.c
+test_islower_l_OBJECTS = test-islower_l.$(OBJEXT)
+test_islower_l_LDADD = $(LDADD)
+test_islower_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_limits_h_SOURCES = test-limits-h.c
 test_limits_h_OBJECTS = test-limits-h.$(OBJEXT)
@@ -448,7 +448,7 @@ am__depfiles_remade = ./$(DEPDIR)/freelocale.Po \
 	./$(DEPDIR)/test-freelocale.Po ./$(DEPDIR)/test-intprops.Po \
 	./$(DEPDIR)/test-inttypes-h-c++.Po \
 	./$(DEPDIR)/test-inttypes-h-c++2.Po \
-	./$(DEPDIR)/test-inttypes-h.Po ./$(DEPDIR)/test-isgraph_l.Po \
+	./$(DEPDIR)/test-inttypes-h.Po ./$(DEPDIR)/test-islower_l.Po \
 	./$(DEPDIR)/test-limits-h-c++.Po \
 	./$(DEPDIR)/test-limits-h-c++2.Po ./$(DEPDIR)/test-limits-h.Po \
 	./$(DEPDIR)/test-locale-h-c++.Po \
@@ -498,7 +498,7 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-bool.c $(test_bool_c___SOURCES) test-ctype-h.c \
 	$(test_ctype_h_c___SOURCES) test-freelocale.c test-intprops.c \
 	test-inttypes-h.c $(test_inttypes_h_c___SOURCES) \
-	test-isgraph_l.c test-limits-h.c $(test_limits_h_c___SOURCES) \
+	test-islower_l.c test-limits-h.c $(test_limits_h_c___SOURCES) \
 	test-locale-h.c $(test_locale_h_c___SOURCES) test-newlocale.c \
 	test-stddef-h.c $(test_stddef_h_c___SOURCES) test-stdint-h.c \
 	$(test_stdint_h_c___SOURCES) test-stdlib-h.c \
@@ -512,7 +512,7 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(am__test_bool_c___SOURCES_DIST) test-ctype-h.c \
 	$(am__test_ctype_h_c___SOURCES_DIST) test-freelocale.c \
 	test-intprops.c test-inttypes-h.c \
-	$(am__test_inttypes_h_c___SOURCES_DIST) test-isgraph_l.c \
+	$(am__test_inttypes_h_c___SOURCES_DIST) test-islower_l.c \
 	test-limits-h.c $(am__test_limits_h_c___SOURCES_DIST) \
 	test-locale-h.c $(am__test_locale_h_c___SOURCES_DIST) \
 	test-newlocale.c test-stddef-h.c \
@@ -902,6 +902,7 @@ GL_GNULIB_ISBLANK_L = @GL_GNULIB_ISBLANK_L@
 GL_GNULIB_ISCNTRL_L = @GL_GNULIB_ISCNTRL_L@
 GL_GNULIB_ISDIGIT_L = @GL_GNULIB_ISDIGIT_L@
 GL_GNULIB_ISGRAPH_L = @GL_GNULIB_ISGRAPH_L@
+GL_GNULIB_ISLOWER_L = @GL_GNULIB_ISLOWER_L@
 GL_GNULIB_LCHOWN = @GL_GNULIB_LCHOWN@
 GL_GNULIB_LINK = @GL_GNULIB_LINK@
 GL_GNULIB_LINKAT = @GL_GNULIB_LINKAT@
@@ -1114,6 +1115,7 @@ HAVE_ISBLANK_L = @HAVE_ISBLANK_L@
 HAVE_ISCNTRL_L = @HAVE_ISCNTRL_L@
 HAVE_ISDIGIT_L = @HAVE_ISDIGIT_L@
 HAVE_ISGRAPH_L = @HAVE_ISGRAPH_L@
+HAVE_ISLOWER_L = @HAVE_ISLOWER_L@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@
@@ -1499,7 +1501,7 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	test-ctype-h.c test-freelocale.c signature.h macros.h \
 	intprops-internal.h intprops.h test-intprops.c macros.h \
 	test-inttypes-h-c++.cc test-inttypes-h-c++2.cc signature.h \
-	inttypes.in.h test-inttypes-h.c test-isgraph_l.c signature.h \
+	inttypes.in.h test-inttypes-h.c test-islower_l.c signature.h \
 	macros.h limits.in.h test-limits-h-c++.cc \
 	test-limits-h-c++2.cc test-limits-h.c test-locale-h-c++.cc \
 	test-locale-h-c++2.cc signature.h test-locale-h.c localename.h \
@@ -1689,9 +1691,9 @@ test-inttypes-h-c++$(EXEEXT): $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c
 	@rm -f test-inttypes-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c___LDADD) $(LIBS)
 
-test-isgraph_l$(EXEEXT): $(test_isgraph_l_OBJECTS) $(test_isgraph_l_DEPENDENCIES) $(EXTRA_test_isgraph_l_DEPENDENCIES) 
-	@rm -f test-isgraph_l$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_isgraph_l_OBJECTS) $(test_isgraph_l_LDADD) $(LIBS)
+test-islower_l$(EXEEXT): $(test_islower_l_OBJECTS) $(test_islower_l_DEPENDENCIES) $(EXTRA_test_islower_l_DEPENDENCIES) 
+	@rm -f test-islower_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_islower_l_OBJECTS) $(test_islower_l_LDADD) $(LIBS)
 
 test-limits-h$(EXEEXT): $(test_limits_h_OBJECTS) $(test_limits_h_DEPENDENCIES) $(EXTRA_test_limits_h_DEPENDENCIES) 
 	@rm -f test-limits-h$(EXEEXT)
@@ -1794,7 +1796,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-isgraph_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-islower_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h.Po@am__quote@ # am--include-marker
@@ -2220,9 +2222,9 @@ test-inttypes-h.log: test-inttypes-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-isgraph_l.log: test-isgraph_l$(EXEEXT)
-	@p='test-isgraph_l$(EXEEXT)'; \
-	b='test-isgraph_l'; \
+test-islower_l.log: test-islower_l$(EXEEXT)
+	@p='test-islower_l$(EXEEXT)'; \
+	b='test-islower_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -2514,7 +2516,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
-	-rm -f ./$(DEPDIR)/test-isgraph_l.Po
+	-rm -f ./$(DEPDIR)/test-islower_l.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
@@ -2606,7 +2608,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
-	-rm -f ./$(DEPDIR)/test-isgraph_l.Po
+	-rm -f ./$(DEPDIR)/test-islower_l.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
