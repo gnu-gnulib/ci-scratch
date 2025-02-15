@@ -1,4 +1,4 @@
-/* Test of isblank_l() function.
+/* Test of iscntrl_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isblank_l, int, (int, locale_t));
+SIGNATURE_CHECK (iscntrl_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,30 +32,19 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = isblank_l (EOF, locale);
+  is = iscntrl_l (EOF, locale);
   ASSERT (is == 0);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
-     that
-       - in all locales, the blank characters include the <space> and <tab>
-         characters,
-       - in the "POSIX" locale (which is usually the same as the "C" locale),
-         the blank characters include only the ASCII <space> and <tab>
-         characters.  */
+     no explicit list of control characters.  */
   {
     int c;
 
     for (c = 0; c < 0x100; c++)
       switch (c)
         {
-        case '\t':
-        #if !(defined __FreeBSD__ || defined __NetBSD__)
-        case '\v':
-        #endif
-        #if !defined __NetBSD__
-        case '\f':
-        #endif
+        case '\t': case '\v': case '\f':
         case ' ': case '!': case '"': case '#': case '%':
         case '&': case '\'': case '(': case ')': case '*':
         case '+': case ',': case '-': case '.': case '/':
@@ -77,11 +66,16 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isblank_l ((unsigned char) c, locale);
-          if (c == '\t' || c == ' ')
-            ASSERT (is != 0);
-          else
-            ASSERT (is == 0);
+          is = iscntrl_l ((unsigned char) c, locale);
+          switch (c)
+            {
+            case '\t': case '\v': case '\f':
+              ASSERT (is != 0);
+              break;
+            default:
+              ASSERT (is == 0);
+              break;
+            }
           break;
         }
   }
@@ -114,13 +108,11 @@ main ()
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
         int is;
 
-      #if defined __GLIBC__
+        /* U+007F <control> */
+        is = iscntrl_l ((unsigned char) '\177', locale);
+        ASSERT (is != 0);
         /* U+00A0 NO-BREAK SPACE */
-        is = isblank_l ((unsigned char) '\240', locale);
-        ASSERT (is == 0);
-      #endif
-        /* U+00B7 MIDDLE DOT */
-        is = isblank_l ((unsigned char) '\267', locale);
+        is = iscntrl_l ((unsigned char) '\240', locale);
         ASSERT (is == 0);
 
         freelocale (locale);

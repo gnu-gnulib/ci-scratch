@@ -75,10 +75,12 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's/@''GNULIB_ISALPHA_L''@/$(GL_GNULIB_ISALPHA_L)/g' \
 	      -e 's/@''GNULIB_ISBLANK''@/$(GL_GNULIB_ISBLANK)/g' \
 	      -e 's/@''GNULIB_ISBLANK_L''@/$(GL_GNULIB_ISBLANK_L)/g' \
+	      -e 's/@''GNULIB_ISCNTRL_L''@/$(GL_GNULIB_ISCNTRL_L)/g' \
 	      -e 's/@''HAVE_ISALNUM_L''@/$(HAVE_ISALNUM_L)/g' \
 	      -e 's/@''HAVE_ISALPHA_L''@/$(HAVE_ISALPHA_L)/g' \
 	      -e 's/@''HAVE_ISBLANK''@/$(HAVE_ISBLANK)/g' \
 	      -e 's/@''HAVE_ISBLANK_L''@/$(HAVE_ISBLANK_L)/g' \
+	      -e 's/@''HAVE_ISCNTRL_L''@/$(HAVE_ISCNTRL_L)/g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
 	      $(srcdir)/ctype.in.h > $@-t
@@ -109,15 +111,15 @@ gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
 
-## begin gnulib module isblank_l
+## begin gnulib module iscntrl_l
 
-if GL_COND_OBJ_ISBLANK_L
-libgnu_a_SOURCES += isblank_l.c
+if GL_COND_OBJ_ISCNTRL_L
+libgnu_a_SOURCES += iscntrl_l.c
 endif
 
 EXTRA_DIST += is_l-impl.h
 
-## end   gnulib module isblank_l
+## end   gnulib module iscntrl_l
 
 ## begin gnulib module locale-h
 

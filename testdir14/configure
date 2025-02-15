@@ -1210,8 +1210,9 @@ REPLACE_LOCALECONV
 HAVE_FREELOCALE
 HAVE_DUPLOCALE
 HAVE_NEWLOCALE
-GL_COND_OBJ_ISBLANK_L_FALSE
-GL_COND_OBJ_ISBLANK_L_TRUE
+GL_COND_OBJ_ISCNTRL_L_FALSE
+GL_COND_OBJ_ISCNTRL_L_TRUE
+GL_GNULIB_ISCNTRL_L
 GL_GNULIB_ISBLANK_L
 GL_GNULIB_ISBLANK
 GL_GNULIB_ISALPHA_L
@@ -1222,6 +1223,7 @@ PRAGMA_COLUMNS
 PRAGMA_SYSTEM_HEADER
 INCLUDE_NEXT_AS_FIRST_DIRECTIVE
 INCLUDE_NEXT
+HAVE_ISCNTRL_L
 HAVE_ISBLANK_L
 HAVE_ISBLANK
 HAVE_ISALPHA_L
@@ -3340,7 +3342,7 @@ as_fn_append ac_header_c_list " unistd.h unistd_h HAVE_UNISTD_H"
 as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
-as_fn_append ac_func_c_list " isblank_l HAVE_ISBLANK_L"
+as_fn_append ac_func_c_list " iscntrl_l HAVE_ISCNTRL_L"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
@@ -7093,6 +7095,7 @@ fi
   HAVE_ISALPHA_L=1;
   HAVE_ISBLANK=1;
   HAVE_ISBLANK_L=1;
+  HAVE_ISCNTRL_L=1;
 
 
 
@@ -7315,6 +7318,10 @@ printf "%s\n" "$gl_cv_next_ctype_h" >&6; }
 
 
   GL_GNULIB_ISBLANK_L=0
+
+
+
+  GL_GNULIB_ISCNTRL_L=0
 
 
 
@@ -11949,29 +11956,29 @@ printf "%s\n" "#define HAVE_C_BOOL 1" >>confdefs.h
 
 
 
-  if test $ac_cv_func_isblank_l = no; then
-    HAVE_ISBLANK_L=0
+  if test $ac_cv_func_iscntrl_l = no; then
+    HAVE_ISCNTRL_L=0
   fi
 
 
 
 
-     if test $HAVE_ISBLANK_L = 0; then
-  GL_COND_OBJ_ISBLANK_L_TRUE=
-  GL_COND_OBJ_ISBLANK_L_FALSE='#'
+     if test $HAVE_ISCNTRL_L = 0; then
+  GL_COND_OBJ_ISCNTRL_L_TRUE=
+  GL_COND_OBJ_ISCNTRL_L_FALSE='#'
 else
-  GL_COND_OBJ_ISBLANK_L_TRUE='#'
-  GL_COND_OBJ_ISBLANK_L_FALSE=
+  GL_COND_OBJ_ISCNTRL_L_TRUE='#'
+  GL_COND_OBJ_ISCNTRL_L_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_ISBLANK_L_TRUE}" && test -z "${GL_COND_OBJ_ISBLANK_L_FALSE}"; then
-    GL_COND_OBJ_ISBLANK_L_TRUE='#'
-    GL_COND_OBJ_ISBLANK_L_FALSE='#'
+    if test -z "${GL_COND_OBJ_ISCNTRL_L_TRUE}" && test -z "${GL_COND_OBJ_ISCNTRL_L_FALSE}"; then
+    GL_COND_OBJ_ISCNTRL_L_TRUE='#'
+    GL_COND_OBJ_ISCNTRL_L_FALSE='#'
   fi
 
 
 
-printf "%s\n" "#define GNULIB_ISBLANK_L 1" >>confdefs.h
+printf "%s\n" "#define GNULIB_ISCNTRL_L 1" >>confdefs.h
 
 
 
@@ -11983,7 +11990,7 @@ printf "%s\n" "#define GNULIB_ISBLANK_L 1" >>confdefs.h
 
 
 
-          GL_GNULIB_ISBLANK_L=1
+          GL_GNULIB_ISCNTRL_L=1
 
 
 

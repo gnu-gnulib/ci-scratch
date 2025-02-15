@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is blank.
+/* Test whether a single-byte character is a control character.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,16 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isblank_l
-#define GLOBAL_FUNC isblank
+#define FUNC iscntrl_l
+#define GLOBAL_FUNC iscntrl
 #define C_FUNC(c) \
-  (c == ' ' || c == '\t')
+  ((c >= 0x00 && c <= 0x1f) || c == 0x7f)
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l>  */
-#if defined __MINGW32__
-/* mingw lacks _isblank_l.  */
-# define WINDOWS_FUNC(c,l) C_FUNC(c)
-#else
-# define WINDOWS_FUNC _isblank_l
-#endif
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/iscntrl-iswcntrl-iscntrl-l-iswcntrl-l>  */
+#define WINDOWS_FUNC _iscntrl_l
 #include "is_l-impl.h"
