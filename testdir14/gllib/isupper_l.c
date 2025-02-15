@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is white-space.
+/* Test whether a single-byte character is uppercase.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,10 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isspace_l
-#define GLOBAL_FUNC isspace
-#define C_FUNC(c) (c == ' ' || (c >= 0x09 && c <= 0x0D))
+#define FUNC isupper_l
+#define GLOBAL_FUNC isupper
+#define C_FUNC(c) \
+  (c >= 'A' && c <= 'Z')
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isspace-iswspace-isspace-l-iswspace-l>  */
-#define WINDOWS_FUNC _isspace_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l>  */
+#define WINDOWS_FUNC _isupper_l
 #include "is_l-impl.h"
