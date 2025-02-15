@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is lowercase.
+/* Test whether a single-byte character is printable.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC islower_l
-#define GLOBAL_FUNC islower
+#define FUNC isprint_l
+#define GLOBAL_FUNC isprint
 #define C_FUNC(c) \
-  (c >= 'a' && c <= 'z')
+  (c >= 0x20 && c <= 0x7e)
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/islower-iswlower-islower-l-iswlower-l>  */
-#define WINDOWS_FUNC _islower_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l>  */
+#define WINDOWS_FUNC _isprint_l
 #include "is_l-impl.h"

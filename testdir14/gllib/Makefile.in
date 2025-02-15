@@ -115,7 +115,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@GL_COND_OBJ_ISLOWER_L_TRUE@am__append_1 = islower_l.c
+@GL_COND_OBJ_ISPRINT_L_TRUE@am__append_1 = isprint_l.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -129,7 +129,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/islower_l.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/isprint_l.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
@@ -160,8 +160,8 @@ am__v_AR_1 =
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
-am__libgnu_a_SOURCES_DIST = islower_l.c dummy.c
-@GL_COND_OBJ_ISLOWER_L_TRUE@am__objects_1 = islower_l.$(OBJEXT)
+am__libgnu_a_SOURCES_DIST = isprint_l.c dummy.c
+@GL_COND_OBJ_ISPRINT_L_TRUE@am__objects_1 = isprint_l.$(OBJEXT)
 am_libgnu_a_OBJECTS = $(am__objects_1) dummy.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -179,7 +179,7 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/dummy.Po ./$(DEPDIR)/islower_l.Po
+am__depfiles_remade = ./$(DEPDIR)/dummy.Po ./$(DEPDIR)/isprint_l.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -391,6 +391,7 @@ GL_GNULIB_ISCNTRL_L = @GL_GNULIB_ISCNTRL_L@
 GL_GNULIB_ISDIGIT_L = @GL_GNULIB_ISDIGIT_L@
 GL_GNULIB_ISGRAPH_L = @GL_GNULIB_ISGRAPH_L@
 GL_GNULIB_ISLOWER_L = @GL_GNULIB_ISLOWER_L@
+GL_GNULIB_ISPRINT_L = @GL_GNULIB_ISPRINT_L@
 GL_GNULIB_LCHOWN = @GL_GNULIB_LCHOWN@
 GL_GNULIB_LINK = @GL_GNULIB_LINK@
 GL_GNULIB_LINKAT = @GL_GNULIB_LINKAT@
@@ -604,6 +605,7 @@ HAVE_ISCNTRL_L = @HAVE_ISCNTRL_L@
 HAVE_ISDIGIT_L = @HAVE_ISDIGIT_L@
 HAVE_ISGRAPH_L = @HAVE_ISGRAPH_L@
 HAVE_ISLOWER_L = @HAVE_ISLOWER_L@
+HAVE_ISPRINT_L = @HAVE_ISPRINT_L@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@
@@ -1093,7 +1095,7 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dummy.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/islower_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/isprint_l.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -1345,7 +1347,7 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 
 distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/dummy.Po
-	-rm -f ./$(DEPDIR)/islower_l.Po
+	-rm -f ./$(DEPDIR)/isprint_l.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-local distclean-tags
@@ -1392,7 +1394,7 @@ installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/dummy.Po
-	-rm -f ./$(DEPDIR)/islower_l.Po
+	-rm -f ./$(DEPDIR)/isprint_l.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic \
 	maintainer-clean-local
@@ -1451,6 +1453,7 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's/@''GNULIB_ISDIGIT_L''@/$(GL_GNULIB_ISDIGIT_L)/g' \
 	      -e 's/@''GNULIB_ISGRAPH_L''@/$(GL_GNULIB_ISGRAPH_L)/g' \
 	      -e 's/@''GNULIB_ISLOWER_L''@/$(GL_GNULIB_ISLOWER_L)/g' \
+	      -e 's/@''GNULIB_ISPRINT_L''@/$(GL_GNULIB_ISPRINT_L)/g' \
 	      -e 's/@''HAVE_ISALNUM_L''@/$(HAVE_ISALNUM_L)/g' \
 	      -e 's/@''HAVE_ISALPHA_L''@/$(HAVE_ISALPHA_L)/g' \
 	      -e 's/@''HAVE_ISBLANK''@/$(HAVE_ISBLANK)/g' \
@@ -1459,6 +1462,7 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's/@''HAVE_ISDIGIT_L''@/$(HAVE_ISDIGIT_L)/g' \
 	      -e 's/@''HAVE_ISGRAPH_L''@/$(HAVE_ISGRAPH_L)/g' \
 	      -e 's/@''HAVE_ISLOWER_L''@/$(HAVE_ISLOWER_L)/g' \
+	      -e 's/@''HAVE_ISPRINT_L''@/$(HAVE_ISPRINT_L)/g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
 	      $(srcdir)/ctype.in.h > $@-t
