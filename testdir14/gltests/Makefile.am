@@ -273,13 +273,13 @@ EXTRA_DIST += test-inttypes-h.c
 
 ## end   gnulib module inttypes-h-tests
 
-## begin gnulib module isalpha_l-tests
+## begin gnulib module isblank_l-tests
 
-TESTS += test-isalpha_l
-noinst_PROGRAMS += test-isalpha_l
-EXTRA_DIST += test-isalpha_l.c signature.h macros.h
+TESTS += test-isblank_l
+noinst_PROGRAMS += test-isblank_l
+EXTRA_DIST += test-isblank_l.c signature.h macros.h
 
-## end   gnulib module isalpha_l-tests
+## end   gnulib module isblank_l-tests
 
 ## begin gnulib module limits-h
 

@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is alphabetic.
+/* Test whether a single-byte character is blank.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isalpha_l
-#define GLOBAL_FUNC isalpha
+#define FUNC isblank_l
+#define GLOBAL_FUNC isblank
 #define C_FUNC(c) \
-  ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+  (c == ' ' || c == '\t')
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isalpha-iswalpha-isalpha-l-iswalpha-l>  */
-#define WINDOWS_FUNC _isalpha_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l>  */
+#define WINDOWS_FUNC _isblank_l
 #include "is_l-impl.h"

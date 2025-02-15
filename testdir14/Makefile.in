@@ -102,7 +102,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/isalpha_l.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/isblank_l.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
@@ -329,6 +329,7 @@ GL_GNULIB_ISALNUM_L = @GL_GNULIB_ISALNUM_L@
 GL_GNULIB_ISALPHA_L = @GL_GNULIB_ISALPHA_L@
 GL_GNULIB_ISATTY = @GL_GNULIB_ISATTY@
 GL_GNULIB_ISBLANK = @GL_GNULIB_ISBLANK@
+GL_GNULIB_ISBLANK_L = @GL_GNULIB_ISBLANK_L@
 GL_GNULIB_LCHOWN = @GL_GNULIB_LCHOWN@
 GL_GNULIB_LINK = @GL_GNULIB_LINK@
 GL_GNULIB_LINKAT = @GL_GNULIB_LINKAT@
@@ -537,6 +538,7 @@ HAVE_INTTYPES_H = @HAVE_INTTYPES_H@
 HAVE_ISALNUM_L = @HAVE_ISALNUM_L@
 HAVE_ISALPHA_L = @HAVE_ISALPHA_L@
 HAVE_ISBLANK = @HAVE_ISBLANK@
+HAVE_ISBLANK_L = @HAVE_ISBLANK_L@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@

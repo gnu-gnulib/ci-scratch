@@ -1,4 +1,4 @@
-/* Test of isalpha_l() function.
+/* Test of isblank_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isalpha_l, int, (int, locale_t));
+SIGNATURE_CHECK (isblank_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,17 +32,16 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = isalpha_l (EOF, locale);
+  is = isblank_l (EOF, locale);
   ASSERT (is == 0);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
      that
-       - in all locales, the alphabetic characters include the uppercase and
-         lowercase characters and, consequently, include the A ... Z and a ... z
-         characters.
+       - in all locales, the blank characters include the <space> and <tab>
+         characters,
        - in the "POSIX" locale (which is usually the same as the "C" locale),
-         the alphabetic characters include only the ASCII A ... Z and a ... z
+         the blank characters include only the ASCII <space> and <tab>
          characters.  */
   {
     int c;
@@ -50,7 +49,13 @@ test_single_locale_common (locale_t locale)
     for (c = 0; c < 0x100; c++)
       switch (c)
         {
-        case '\t': case '\v': case '\f':
+        case '\t':
+        #if !(defined __FreeBSD__ || defined __NetBSD__)
+        case '\v':
+        #endif
+        #if !defined __NetBSD__
+        case '\f':
+        #endif
         case ' ': case '!': case '"': case '#': case '%':
         case '&': case '\'': case '(': case ')': case '*':
         case '+': case ',': case '-': case '.': case '/':
@@ -72,27 +77,11 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isalpha_l ((unsigned char) c, locale);
-          switch (c)
-            {
-            case 'A': case 'B': case 'C': case 'D': case 'E':
-            case 'F': case 'G': case 'H': case 'I': case 'J':
-            case 'K': case 'L': case 'M': case 'N': case 'O':
-            case 'P': case 'Q': case 'R': case 'S': case 'T':
-            case 'U': case 'V': case 'W': case 'X': case 'Y':
-            case 'Z':
-            case 'a': case 'b': case 'c': case 'd': case 'e':
-            case 'f': case 'g': case 'h': case 'i': case 'j':
-            case 'k': case 'l': case 'm': case 'n': case 'o':
-            case 'p': case 'q': case 'r': case 's': case 't':
-            case 'u': case 'v': case 'w': case 'x': case 'y':
-            case 'z':
-              ASSERT (is != 0);
-              break;
-            default:
-              ASSERT (is == 0);
-              break;
-            }
+          is = isblank_l ((unsigned char) c, locale);
+          if (c == '\t' || c == ' ')
+            ASSERT (is != 0);
+          else
+            ASSERT (is == 0);
           break;
         }
   }
@@ -125,12 +114,14 @@ main ()
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
         int is;
 
-        /* U+00D7 MULTIPLICATION SIGN */
-        is = isalpha_l ((unsigned char) '\327', locale);
+      #if defined __GLIBC__
+        /* U+00A0 NO-BREAK SPACE */
+        is = isblank_l ((unsigned char) '\240', locale);
         ASSERT (is == 0);
-        /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
-        is = isalpha_l ((unsigned char) '\330', locale);
-        ASSERT (is != 0);
+      #endif
+        /* U+00B7 MIDDLE DOT */
+        is = isblank_l ((unsigned char) '\267', locale);
+        ASSERT (is == 0);
 
         freelocale (locale);
       }
