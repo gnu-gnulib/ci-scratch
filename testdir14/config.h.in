@@ -20,8 +20,8 @@
 #undef BITSIZEOF_WINT_T
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module isupper_l shall be considered present. */
-#undef GNULIB_ISUPPER_L
+   whether the gnulib module isxdigit_l shall be considered present. */
+#undef GNULIB_ISXDIGIT_L
 
 /* Define to 1 when the gnulib module freelocale should be tested. */
 #undef GNULIB_TEST_FREELOCALE
@@ -81,8 +81,8 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define to 1 if you have the 'isupper_l' function. */
-#undef HAVE_ISUPPER_L
+/* Define to 1 if you have the 'isxdigit_l' function. */
+#undef HAVE_ISXDIGIT_L
 
 /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
 #undef HAVE_LANGINFO_CODESET
@@ -147,9 +147,6 @@
 /* Define to 1 if the system has the type 'unsigned long long int'. */
 #undef HAVE_UNSIGNED_LONG_LONG_INT
 
-/* Define to 1 if you have the `uselocale' function. */
-#undef HAVE_USELOCALE
-
 /* Define to 1 if you have the <wchar.h> header file. */
 #undef HAVE_WCHAR_H
 
@@ -158,9 +155,6 @@
 
 /* Define if you have the 'wint_t' type. */
 #undef HAVE_WINT_T
-
-/* Define if the uselocale function exists and may safely be called. */
-#undef HAVE_WORKING_USELOCALE
 
 /* Define to 1 if you have the <xlocale.h> header file. */
 #undef HAVE_XLOCALE_H

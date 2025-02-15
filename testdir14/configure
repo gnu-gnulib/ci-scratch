@@ -1210,8 +1210,9 @@ REPLACE_LOCALECONV
 HAVE_FREELOCALE
 HAVE_DUPLOCALE
 HAVE_NEWLOCALE
-GL_COND_OBJ_ISUPPER_L_FALSE
-GL_COND_OBJ_ISUPPER_L_TRUE
+GL_COND_OBJ_ISXDIGIT_L_FALSE
+GL_COND_OBJ_ISXDIGIT_L_TRUE
+GL_GNULIB_ISXDIGIT_L
 GL_GNULIB_ISUPPER_L
 GL_GNULIB_ISSPACE_L
 GL_GNULIB_ISPUNCT_L
@@ -1230,6 +1231,7 @@ PRAGMA_COLUMNS
 PRAGMA_SYSTEM_HEADER
 INCLUDE_NEXT_AS_FIRST_DIRECTIVE
 INCLUDE_NEXT
+HAVE_ISXDIGIT_L
 HAVE_ISUPPER_L
 HAVE_ISSPACE_L
 HAVE_ISPUNCT_L
@@ -3356,7 +3358,7 @@ as_fn_append ac_header_c_list " unistd.h unistd_h HAVE_UNISTD_H"
 as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
-as_fn_append ac_func_c_list " isupper_l HAVE_ISUPPER_L"
+as_fn_append ac_func_c_list " isxdigit_l HAVE_ISXDIGIT_L"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
@@ -7117,6 +7119,7 @@ fi
   HAVE_ISPUNCT_L=1;
   HAVE_ISSPACE_L=1;
   HAVE_ISUPPER_L=1;
+  HAVE_ISXDIGIT_L=1;
 
 
 
@@ -7374,6 +7377,10 @@ printf "%s\n" "$gl_cv_next_ctype_h" >&6; }
 
 
 
+  GL_GNULIB_ISXDIGIT_L=0
+
+
+
 
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether ctype.h defines __header_inline" >&5
 printf %s "checking whether ctype.h defines __header_inline... " >&6; }
@@ -7422,228 +7429,6 @@ do
     ac_func=$ac_item
   fi
 done
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $CC options needed to detect all undeclared functions" >&5
-printf %s "checking for $CC options needed to detect all undeclared functions... " >&6; }
-if test ${ac_cv_c_undeclared_builtin_options+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_save_CFLAGS=$CFLAGS
-   ac_cv_c_undeclared_builtin_options='cannot detect'
-   for ac_arg in '' -fno-builtin; do
-     CFLAGS="$ac_save_CFLAGS $ac_arg"
-     # This test program should *not* compile successfully.
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-int
-main (void)
-{
-(void) strchr;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-
-else case e in #(
-  e) # This test program should compile successfully.
-        # No library function is consistently available on
-        # freestanding implementations, so test against a dummy
-        # declaration.  Include always-available headers on the
-        # off chance that they somehow elicit warnings.
-        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <float.h>
-#include <limits.h>
-#include <stdarg.h>
-#include <stddef.h>
-extern void ac_decl (int, char *);
-
-int
-main (void)
-{
-(void) ac_decl (0, (char *) 0);
-  (void) ac_decl;
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  if test x"$ac_arg" = x
-then :
-  ac_cv_c_undeclared_builtin_options='none needed'
-else case e in #(
-  e) ac_cv_c_undeclared_builtin_options=$ac_arg ;;
-esac
-fi
-          break
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-    done
-    CFLAGS=$ac_save_CFLAGS
-   ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_undeclared_builtin_options" >&5
-printf "%s\n" "$ac_cv_c_undeclared_builtin_options" >&6; }
-  case $ac_cv_c_undeclared_builtin_options in #(
-  'cannot detect') :
-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
-printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
-as_fn_error $? "cannot make $CC report undeclared builtins
-See 'config.log' for more details" "$LINENO" 5; } ;; #(
-  'none needed') :
-    ac_c_undeclared_builtin_options='' ;; #(
-  *) :
-    ac_c_undeclared_builtin_options=$ac_cv_c_undeclared_builtin_options ;;
-esac
-
-
-
-
-
-
-
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for uselocale" >&5
-printf %s "checking for uselocale... " >&6; }
-if test ${gl_cv_onwards_func_uselocale+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)
-  exec 9>&6 6>/dev/null
-
-       case "$host_os" in
-
-         linux*-android*)
-           ac_fn_check_decl "$LINENO" "uselocale" "ac_cv_have_decl_uselocale" "#include <locale.h>
-" "$ac_c_undeclared_builtin_options" "CFLAGS"
-if test "x$ac_cv_have_decl_uselocale" = xyes
-then :
-
-fi
-           if test $ac_cv_have_decl_uselocale = yes; then
-             ac_fn_c_check_func "$LINENO" "uselocale" "ac_cv_func_uselocale"
-if test "x$ac_cv_func_uselocale" = xyes
-then :
-
-fi
-
-             if test $ac_cv_func_uselocale = yes; then
-               gl_cv_onwards_func_uselocale=yes
-             else
-                                                            gl_cv_onwards_func_uselocale='future OS version'
-             fi
-           else
-             gl_cv_onwards_func_uselocale='future OS version'
-           fi
-           ;;
-
-
-         *)
-           ac_fn_c_check_func "$LINENO" "uselocale" "ac_cv_func_uselocale"
-if test "x$ac_cv_func_uselocale" = xyes
-then :
-
-fi
-
-           gl_cv_onwards_func_uselocale=$ac_cv_func_uselocale
-           ;;
-
-       esac
-
-  exec 6>&9 9>&-
-
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_uselocale" >&5
-printf "%s\n" "$gl_cv_onwards_func_uselocale" >&6; }
-
-  case "$gl_cv_onwards_func_uselocale" in
-    future*) ac_cv_func_uselocale=no ;;
-    *)       ac_cv_func_uselocale=$gl_cv_onwards_func_uselocale ;;
-  esac
-  if test $ac_cv_func_uselocale = yes; then
-
-printf "%s\n" "#define HAVE_USELOCALE 1" >>confdefs.h
-
-  fi
-
-
-
-          if test $ac_cv_func_uselocale = yes; then
-
-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether uselocale works" >&5
-printf %s "checking whether uselocale works... " >&6; }
-if test ${gt_cv_func_uselocale_works+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) if test "$cross_compiling" = yes
-then :
-  # Guess no on AIX and z/OS, yes otherwise.
-          case "$host_os" in
-            aix* | openedition*) gt_cv_func_uselocale_works="guessing no" ;;
-            *)                   gt_cv_func_uselocale_works="guessing yes" ;;
-          esac
-
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-#include <locale.h>
-#if HAVE_XLOCALE_H
-# include <xlocale.h>
-#endif
-locale_t loc1;
-int main ()
-{
-  uselocale (NULL);
-  setlocale (LC_ALL, "en_US.UTF-8");
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_run "$LINENO"
-then :
-  gt_cv_func_uselocale_works=yes
-else case e in #(
-  e) gt_cv_func_uselocale_works=no ;;
-esac
-fi
-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
-  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-
-       ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_uselocale_works" >&5
-printf "%s\n" "$gt_cv_func_uselocale_works" >&6; }
-  else
-    gt_cv_func_uselocale_works=no
-  fi
-  case "$gt_cv_func_uselocale_works" in
-    *yes)
-      gt_working_uselocale=yes
-
-printf "%s\n" "#define HAVE_WORKING_USELOCALE 1" >>confdefs.h
-
-      ;;
-    *)
-      gt_working_uselocale=no
-      ;;
-  esac
-
 
     HAVE_NEWLOCALE=1;
   HAVE_DUPLOCALE=1;
@@ -7933,6 +7718,7 @@ printf "%s\n" "$gl_cv_next_stddef_h" >&6; }
 
 
   fi
+
 
 
 
@@ -8331,6 +8117,89 @@ printf "%s\n" "$gl_cv_cxx_wallow" >&6; }
     GL_CXXFLAG_ALLOW_WARNINGS=''
   fi
 
+
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $CC options needed to detect all undeclared functions" >&5
+printf %s "checking for $CC options needed to detect all undeclared functions... " >&6; }
+if test ${ac_cv_c_undeclared_builtin_options+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_save_CFLAGS=$CFLAGS
+   ac_cv_c_undeclared_builtin_options='cannot detect'
+   for ac_arg in '' -fno-builtin; do
+     CFLAGS="$ac_save_CFLAGS $ac_arg"
+     # This test program should *not* compile successfully.
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+int
+main (void)
+{
+(void) strchr;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+
+else case e in #(
+  e) # This test program should compile successfully.
+        # No library function is consistently available on
+        # freestanding implementations, so test against a dummy
+        # declaration.  Include always-available headers on the
+        # off chance that they somehow elicit warnings.
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <float.h>
+#include <limits.h>
+#include <stdarg.h>
+#include <stddef.h>
+extern void ac_decl (int, char *);
+
+int
+main (void)
+{
+(void) ac_decl (0, (char *) 0);
+  (void) ac_decl;
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  if test x"$ac_arg" = x
+then :
+  ac_cv_c_undeclared_builtin_options='none needed'
+else case e in #(
+  e) ac_cv_c_undeclared_builtin_options=$ac_arg ;;
+esac
+fi
+          break
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+    done
+    CFLAGS=$ac_save_CFLAGS
+   ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_undeclared_builtin_options" >&5
+printf "%s\n" "$ac_cv_c_undeclared_builtin_options" >&6; }
+  case $ac_cv_c_undeclared_builtin_options in #(
+  'cannot detect') :
+    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
+printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
+as_fn_error $? "cannot make $CC report undeclared builtins
+See 'config.log' for more details" "$LINENO" 5; } ;; #(
+  'none needed') :
+    ac_c_undeclared_builtin_options='' ;; #(
+  *) :
+    ac_c_undeclared_builtin_options=$ac_cv_c_undeclared_builtin_options ;;
+esac
 
 
 
@@ -12005,29 +11874,27 @@ printf "%s\n" "#define HAVE_C_BOOL 1" >>confdefs.h
 
 
 
-  if test $ac_cv_func_isupper_l = no; then
-    HAVE_ISUPPER_L=0
+  if test $ac_cv_func_isxdigit_l = no; then
+    HAVE_ISXDIGIT_L=0
   fi
 
 
-
-
-     if test $HAVE_ISUPPER_L = 0; then
-  GL_COND_OBJ_ISUPPER_L_TRUE=
-  GL_COND_OBJ_ISUPPER_L_FALSE='#'
+     if test $HAVE_ISXDIGIT_L = 0; then
+  GL_COND_OBJ_ISXDIGIT_L_TRUE=
+  GL_COND_OBJ_ISXDIGIT_L_FALSE='#'
 else
-  GL_COND_OBJ_ISUPPER_L_TRUE='#'
-  GL_COND_OBJ_ISUPPER_L_FALSE=
+  GL_COND_OBJ_ISXDIGIT_L_TRUE='#'
+  GL_COND_OBJ_ISXDIGIT_L_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_ISUPPER_L_TRUE}" && test -z "${GL_COND_OBJ_ISUPPER_L_FALSE}"; then
-    GL_COND_OBJ_ISUPPER_L_TRUE='#'
-    GL_COND_OBJ_ISUPPER_L_FALSE='#'
+    if test -z "${GL_COND_OBJ_ISXDIGIT_L_TRUE}" && test -z "${GL_COND_OBJ_ISXDIGIT_L_FALSE}"; then
+    GL_COND_OBJ_ISXDIGIT_L_TRUE='#'
+    GL_COND_OBJ_ISXDIGIT_L_FALSE='#'
   fi
 
 
 
-printf "%s\n" "#define GNULIB_ISUPPER_L 1" >>confdefs.h
+printf "%s\n" "#define GNULIB_ISXDIGIT_L 1" >>confdefs.h
 
 
 
@@ -12039,7 +11906,7 @@ printf "%s\n" "#define GNULIB_ISUPPER_L 1" >>confdefs.h
 
 
 
-          GL_GNULIB_ISUPPER_L=1
+          GL_GNULIB_ISXDIGIT_L=1
 
 
 

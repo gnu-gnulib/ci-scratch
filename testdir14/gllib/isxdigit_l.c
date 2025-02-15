@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is uppercase.
+/* Test whether a single-byte character is a hexadecimal digit.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,17 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isupper_l
-#define GLOBAL_FUNC isupper
-#define C_FUNC(c) \
-  (c >= 'A' && c <= 'Z')
-/* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isupper-isupper-l-iswupper-iswupper-l>  */
-#define WINDOWS_FUNC _isupper_l
-#include "is_l-impl.h"
+int
+isxdigit_l (int c, _GL_UNUSED locale_t locale)
+{
+  /* For consistency with isxdigit(), which is not locale dependent
+     (see ISO C23 § 7.4.2.12).  */
+  return ((c >= '0' && c <= '9')
+#if 'A' == 0x41 && 'a' == 0x61
+          /* Optimization, assuming ASCII */
+          || ((c & ~0x20) >= 'A' && (c & ~0x20) <= 'F')
+#else
+          || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f')
+#endif
+         );
+}
