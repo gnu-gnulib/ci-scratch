@@ -102,7 +102,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/isprint_l.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ispunct_l.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
@@ -335,6 +335,7 @@ GL_GNULIB_ISDIGIT_L = @GL_GNULIB_ISDIGIT_L@
 GL_GNULIB_ISGRAPH_L = @GL_GNULIB_ISGRAPH_L@
 GL_GNULIB_ISLOWER_L = @GL_GNULIB_ISLOWER_L@
 GL_GNULIB_ISPRINT_L = @GL_GNULIB_ISPRINT_L@
+GL_GNULIB_ISPUNCT_L = @GL_GNULIB_ISPUNCT_L@
 GL_GNULIB_LCHOWN = @GL_GNULIB_LCHOWN@
 GL_GNULIB_LINK = @GL_GNULIB_LINK@
 GL_GNULIB_LINKAT = @GL_GNULIB_LINKAT@
@@ -549,6 +550,7 @@ HAVE_ISDIGIT_L = @HAVE_ISDIGIT_L@
 HAVE_ISGRAPH_L = @HAVE_ISGRAPH_L@
 HAVE_ISLOWER_L = @HAVE_ISLOWER_L@
 HAVE_ISPRINT_L = @HAVE_ISPRINT_L@
+HAVE_ISPUNCT_L = @HAVE_ISPUNCT_L@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@

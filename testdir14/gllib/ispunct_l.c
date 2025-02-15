@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is printable.
+/* Test whether a single-byte character is a punctuation or symbol character.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,12 +21,12 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isprint_l
-#define GLOBAL_FUNC isprint
+#define FUNC ispunct_l
+#define GLOBAL_FUNC ispunct
 #define C_FUNC(c) \
-  (c >= 0x20 && c <= 0x7e)
+  ((c >= 0x20 && c <= 0x7e) \
+   && !((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9')))
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l>
-   Note: _isprint_l ('\t', _) is true!  */
-#define WINDOWS_FUNC(c,l) (c != '\t' && _isprint_l (c, l))
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/ispunct-iswpunct-ispunct-l-iswpunct-l>  */
+#define WINDOWS_FUNC _ispunct_l
 #include "is_l-impl.h"

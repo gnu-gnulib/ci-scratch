@@ -20,8 +20,8 @@
 #undef BITSIZEOF_WINT_T
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module isprint_l shall be considered present. */
-#undef GNULIB_ISPRINT_L
+   whether the gnulib module ispunct_l shall be considered present. */
+#undef GNULIB_ISPUNCT_L
 
 /* Define to 1 when the gnulib module freelocale should be tested. */
 #undef GNULIB_TEST_FREELOCALE
@@ -81,8 +81,8 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define to 1 if you have the 'isprint_l' function. */
-#undef HAVE_ISPRINT_L
+/* Define to 1 if you have the 'ispunct_l' function. */
+#undef HAVE_ISPUNCT_L
 
 /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
 #undef HAVE_LANGINFO_CODESET

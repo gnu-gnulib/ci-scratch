@@ -1,4 +1,4 @@
-/* Test of isprint_l() function.
+/* Test of ispunct_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isprint_l, int, (int, locale_t));
+SIGNATURE_CHECK (ispunct_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,12 +32,12 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = isprint_l (EOF, locale);
+  is = ispunct_l (EOF, locale);
   ASSERT (is == 0);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
-     no explicit list of printable characters.  */
+     no explicit list of punctuation or symbol characters.  */
   {
     int c;
 
@@ -66,14 +66,40 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isprint_l ((unsigned char) c, locale);
+          is = ispunct_l ((unsigned char) c, locale);
           switch (c)
             {
-            case '\t': case '\v': case '\f':
+            case ' ':
+            case '0': case '1': case '2': case '3': case '4':
+            case '5': case '6': case '7': case '8': case '9':
+            case 'A': case 'B': case 'C': case 'D': case 'E':
+            case 'F': case 'G': case 'H': case 'I': case 'J':
+            case 'K': case 'L': case 'M': case 'N': case 'O':
+            case 'P': case 'Q': case 'R': case 'S': case 'T':
+            case 'U': case 'V': case 'W': case 'X': case 'Y':
+            case 'Z':
+            case 'a': case 'b': case 'c': case 'd': case 'e':
+            case 'f': case 'g': case 'h': case 'i': case 'j':
+            case 'k': case 'l': case 'm': case 'n': case 'o':
+            case 'p': case 'q': case 'r': case 's': case 't':
+            case 'u': case 'v': case 'w': case 'x': case 'y':
+            case 'z':
+              /* c is an alphanumeric or space character.  */
               ASSERT (is == 0);
               break;
-            default:
+            case '!': case '"': case '#': case '%':
+            case '&': case '\'': case '(': case ')': case '*':
+            case '+': case ',': case '-': case '.': case '/':
+            case ':': case ';': case '<': case '=': case '>':
+            case '?':
+            case '[': case '\\': case ']': case '^': case '_':
+            case '{': case '|': case '}': case '~':
+              /* These characters are usually expected to be punctuation or
+                 symbol characters.  */
               ASSERT (is != 0);
+              break;
+            default:
+              ASSERT (is == 0);
               break;
             }
           break;
@@ -108,19 +134,22 @@ main ()
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
         int is;
 
-        /* U+007F <control> */
-        is = isprint_l ((unsigned char) '\177', locale);
-        ASSERT (is == 0);
-      #if !(defined __FreeBSD__ || defined __DragonFly__ || defined __sgi || (defined _WIN32 && !defined __CYGWIN__))
-        /* U+00A0 NO-BREAK SPACE */
-        is = isprint_l ((unsigned char) '\240', locale);
-        ASSERT (is != 0);
-      #endif
       #if !(defined __FreeBSD__ || defined __DragonFly__)
-        /* U+00B8 CEDILLA */
-        is = isprint_l ((unsigned char) '\270', locale);
+        /* U+00BF INVERTED QUESTION MARK */
+        is = ispunct_l ((unsigned char) '\277', locale);
         ASSERT (is != 0);
       #endif
+      #if !(defined __FreeBSD__ || defined __DragonFly__ || defined __sun)
+        /* U+00D7 MULTIPLICATION SIGN */
+        is = ispunct_l ((unsigned char) '\327', locale);
+        ASSERT (is != 0);
+      #endif
+        /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
+        is = ispunct_l ((unsigned char) '\330', locale);
+        ASSERT (is == 0);
+        /* U+00DF LATIN SMALL LETTER SHARP S */
+        is = ispunct_l ((unsigned char) '\337', locale);
+        ASSERT (is == 0);
 
         freelocale (locale);
       }
