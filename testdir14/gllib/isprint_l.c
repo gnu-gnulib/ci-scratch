@@ -26,6 +26,7 @@
 #define C_FUNC(c) \
   (c >= 0x20 && c <= 0x7e)
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l>  */
-#define WINDOWS_FUNC _isprint_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isprint-iswprint-isprint-l-iswprint-l>
+   Note: _isprint_l ('\t', _) is true!  */
+#define WINDOWS_FUNC(c,l) (c != '\t' && _isprint_l (c, l))
 #include "is_l-impl.h"
