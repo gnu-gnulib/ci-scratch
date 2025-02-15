@@ -27,5 +27,10 @@
   (c == ' ' || c == '\t')
 /* Documentation:
    <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isblank-iswblank-isblank-l-iswblank-l>  */
-#define WINDOWS_FUNC _isblank_l
+#if defined __MINGW32__
+/* mingw lacks _isblank_l.  */
+# define WINDOWS_FUNC(c,l) C_FUNC(c)
+#else
+# define WINDOWS_FUNC _isblank_l
+#endif
 #include "is_l-impl.h"
