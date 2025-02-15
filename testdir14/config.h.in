@@ -20,8 +20,8 @@
 #undef BITSIZEOF_WINT_T
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module isalnum_l shall be considered present. */
-#undef GNULIB_ISALNUM_L
+   whether the gnulib module isalpha_l shall be considered present. */
+#undef GNULIB_ISALPHA_L
 
 /* Define to 1 when the gnulib module freelocale should be tested. */
 #undef GNULIB_TEST_FREELOCALE
@@ -81,8 +81,8 @@
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
 
-/* Define to 1 if you have the 'isalnum_l' function. */
-#undef HAVE_ISALNUM_L
+/* Define to 1 if you have the 'isalpha_l' function. */
+#undef HAVE_ISALPHA_L
 
 /* Define if you have <langinfo.h> and nl_langinfo(CODESET). */
 #undef HAVE_LANGINFO_CODESET
@@ -98,6 +98,9 @@
 
 /* Define to 1 if you have the `newlocale' function. */
 #undef HAVE_NEWLOCALE
+
+/* Define to 1 if you have the `nl_langinfo_l' function. */
+#undef HAVE_NL_LANGINFO_L
 
 /* Define to 1 if 'sig_atomic_t' is a signed integer type. */
 #undef HAVE_SIGNED_SIG_ATOMIC_T

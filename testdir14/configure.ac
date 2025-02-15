@@ -22,6 +22,7 @@ m4_pattern_allow([^gl_LTLIBOBJS$])dnl a variable
 gl_USE_SYSTEM_EXTENSIONS
 gl_PROG_AR_RANLIB
 
+gl_ANSI_CXX
 # This is actually already done in the pre-early phase.
 # gl_USE_SYSTEM_EXTENSIONS
 AC_USE_SYSTEM_EXTENSIONS
@@ -46,10 +47,10 @@ gl_m4_base='glm4'
   gl_CTYPE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
   AC_REQUIRE([gl_EXTERN_INLINE])
-  gl_FUNC_ISALNUM_L
-  gl_CONDITIONAL([GL_COND_OBJ_ISALNUM_L], [test $HAVE_ISALNUM_L = 0])
-  gl_MODULE_INDICATOR([isalnum_l])
-  gl_CTYPE_MODULE_INDICATOR([isalnum_l])
+  gl_FUNC_ISALPHA_L
+  gl_CONDITIONAL([GL_COND_OBJ_ISALPHA_L], [test $HAVE_ISALPHA_L = 0])
+  gl_MODULE_INDICATOR([isalpha_l])
+  gl_CTYPE_MODULE_INDICATOR([isalpha_l])
   gl_LOCALE_H
   gl_LOCALE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -150,11 +151,13 @@ changequote([, ])dnl
   gl_LOCALE_MODULE_INDICATOR([localename-environ])
   gl_MULTIARCH
   gl_FUNC_NEWLOCALE
-  gl_CONDITIONAL([GL_COND_OBJ_NEWLOCALE], [test $HAVE_LOCALE_T = 0])
+  gl_CONDITIONAL([GL_COND_OBJ_NEWLOCALE],
+                 [test $HAVE_LOCALE_T = 0 || { test $REPLACE_NEWLOCALE = 1 && test "$gt_localename_enhances_locale_funcs" != yes; }])
   AM_COND_IF([GL_COND_OBJ_NEWLOCALE], [
     gl_PREREQ_NEWLOCALE
   ])
   gl_LOCALE_MODULE_INDICATOR([newlocale])
+  gl_CHECK_FUNCS_ANDROID([nl_langinfo_l], [[#include <langinfo.h>]])
   gt_TYPE_SSIZE_T
   gl_STDINT_H
   gl_CONDITIONAL_HEADER([stdint.h])

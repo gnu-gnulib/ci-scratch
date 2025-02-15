@@ -3,6 +3,7 @@
 EXTRA_DIST =
 EXTRA_DIST += 00gnulib.m4
 EXTRA_DIST += absolute-header.m4
+EXTRA_DIST += ansi-c++.m4
 EXTRA_DIST += assert_h.m4
 EXTRA_DIST += c-bool.m4
 EXTRA_DIST += codeset.m4
@@ -15,7 +16,7 @@ EXTRA_DIST += include_next.m4
 EXTRA_DIST += intl-thread-locale.m4
 EXTRA_DIST += intlmacosx.m4
 EXTRA_DIST += inttypes.m4
-EXTRA_DIST += isalnum_l.m4
+EXTRA_DIST += isalpha_l.m4
 EXTRA_DIST += limits-h.m4
 EXTRA_DIST += locale-en.m4
 EXTRA_DIST += locale_h.m4

@@ -1,4 +1,4 @@
-/* Test of isalnum_l() function.
+/* Test of isalpha_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isalnum_l, int, (int, locale_t));
+SIGNATURE_CHECK (isalpha_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,18 +32,18 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = isalnum_l (EOF, locale);
+  is = isalpha_l (EOF, locale);
   ASSERT (is == 0);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
      that
-       - in all locales, the alphanumeric characters include the uppercase and
-         lowercase characters and digits and, consequently, include the A ... Z
-         and a ... z and 0 ... 9 characters.
+       - in all locales, the alphabetic characters include the uppercase and
+         lowercase characters and, consequently, include the A ... Z and a ... z
+         characters.
        - in the "POSIX" locale (which is usually the same as the "C" locale),
-         the alphanumeric characters include only the ASCII A ... Z and a ... z
-         and 0 ... 9 characters.  */
+         the alphabetic characters include only the ASCII A ... Z and a ... z
+         characters.  */
   {
     int c;
 
@@ -72,11 +72,9 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isalnum_l ((unsigned char) c, locale);
+          is = isalpha_l ((unsigned char) c, locale);
           switch (c)
             {
-            case '0': case '1': case '2': case '3': case '4':
-            case '5': case '6': case '7': case '8': case '9':
             case 'A': case 'B': case 'C': case 'D': case 'E':
             case 'F': case 'G': case 'H': case 'I': case 'J':
             case 'K': case 'L': case 'M': case 'N': case 'O':
@@ -128,13 +126,11 @@ main ()
         int is;
 
         /* U+00D7 MULTIPLICATION SIGN */
-        is = isalnum_l ((unsigned char) '\327', locale);
+        is = isalpha_l ((unsigned char) '\327', locale);
         ASSERT (is == 0);
-      #if !defined __NetBSD__
         /* U+00D8 LATIN CAPITAL LETTER O WITH STROKE */
-        is = isalnum_l ((unsigned char) '\330', locale);
+        is = isalpha_l ((unsigned char) '\330', locale);
         ASSERT (is != 0);
-      #endif
 
         freelocale (locale);
       }

@@ -103,6 +103,17 @@ EXTRA_DIST += assert.in.h verify.h
 
 ## end   gnulib module assert-h
 
+## begin gnulib module assert-h-c++-tests
+
+if ANSICXX
+TESTS += test-assert-h-c++
+noinst_PROGRAMS += test-assert-h-c++
+test_assert_h_c___SOURCES = test-assert-h-c++.cc test-assert-h-c++2.cc
+endif
+EXTRA_DIST += test-assert-h-c++.cc test-assert-h-c++2.cc
+
+## end   gnulib module assert-h-c++-tests
+
 ## begin gnulib module assert-h-tests
 
 TESTS += test-assert
@@ -111,6 +122,17 @@ EXTRA_DIST += test-assert.c
 
 ## end   gnulib module assert-h-tests
 
+## begin gnulib module bool-c++-tests
+
+if ANSICXX
+TESTS += test-bool-c++
+noinst_PROGRAMS += test-bool-c++
+test_bool_c___SOURCES = test-bool-c++.cc test-bool-c++2.cc
+endif
+EXTRA_DIST += test-bool-c++.cc test-bool-c++2.cc
+
+## end   gnulib module bool-c++-tests
+
 ## begin gnulib module bool-tests
 
 TESTS += test-bool
@@ -118,6 +140,17 @@ noinst_PROGRAMS += test-bool
 EXTRA_DIST += test-bool.c
 
 ## end   gnulib module bool-tests
+
+## begin gnulib module ctype-h-c++-tests
+
+if ANSICXX
+TESTS += test-ctype-h-c++
+noinst_PROGRAMS += test-ctype-h-c++
+test_ctype_h_c___SOURCES = test-ctype-h-c++.cc test-ctype-h-c++2.cc
+endif
+EXTRA_DIST += test-ctype-h-c++.cc test-ctype-h-c++2.cc signature.h
+
+## end   gnulib module ctype-h-c++-tests
 
 ## begin gnulib module ctype-h-tests
 
@@ -178,6 +211,17 @@ EXTRA_DIST += test-intprops.c macros.h
 
 ## end   gnulib module intprops-tests
 
+## begin gnulib module inttypes-h-c++-tests
+
+if ANSICXX
+TESTS += test-inttypes-h-c++
+noinst_PROGRAMS += test-inttypes-h-c++
+test_inttypes_h_c___SOURCES = test-inttypes-h-c++.cc test-inttypes-h-c++2.cc
+endif
+EXTRA_DIST += test-inttypes-h-c++.cc test-inttypes-h-c++2.cc signature.h
+
+## end   gnulib module inttypes-h-c++-tests
+
 ## begin gnulib module inttypes-h-incomplete
 
 BUILT_SOURCES += inttypes.h
@@ -229,13 +273,13 @@ EXTRA_DIST += test-inttypes-h.c
 
 ## end   gnulib module inttypes-h-tests
 
-## begin gnulib module isalnum_l-tests
+## begin gnulib module isalpha_l-tests
 
-TESTS += test-isalnum_l
-noinst_PROGRAMS += test-isalnum_l
-EXTRA_DIST += test-isalnum_l.c signature.h macros.h
+TESTS += test-isalpha_l
+noinst_PROGRAMS += test-isalpha_l
+EXTRA_DIST += test-isalpha_l.c signature.h macros.h
 
-## end   gnulib module isalnum_l-tests
+## end   gnulib module isalpha_l-tests
 
 ## begin gnulib module limits-h
 
@@ -263,6 +307,17 @@ EXTRA_DIST += limits.in.h
 
 ## end   gnulib module limits-h
 
+## begin gnulib module limits-h-c++-tests
+
+if ANSICXX
+TESTS += test-limits-h-c++
+noinst_PROGRAMS += test-limits-h-c++
+test_limits_h_c___SOURCES = test-limits-h-c++.cc test-limits-h-c++2.cc
+endif
+EXTRA_DIST += test-limits-h-c++.cc test-limits-h-c++2.cc
+
+## end   gnulib module limits-h-c++-tests
+
 ## begin gnulib module limits-h-tests
 
 TESTS += test-limits-h
@@ -270,6 +325,18 @@ noinst_PROGRAMS += test-limits-h
 EXTRA_DIST += test-limits-h.c
 
 ## end   gnulib module limits-h-tests
+
+## begin gnulib module locale-h-c++-tests
+
+if ANSICXX
+TESTS += test-locale-h-c++
+noinst_PROGRAMS += test-locale-h-c++
+test_locale_h_c___SOURCES = test-locale-h-c++.cc test-locale-h-c++2.cc
+test_locale_h_c___LDADD = $(LDADD) $(SETLOCALE_LIB)
+endif
+EXTRA_DIST += test-locale-h-c++.cc test-locale-h-c++2.cc signature.h
+
+## end   gnulib module locale-h-c++-tests
 
 ## begin gnulib module locale-h-tests
 
@@ -351,6 +418,17 @@ EXTRA_DIST += warn-on-use.h
 
 ## end   gnulib module snippet/warn-on-use
 
+## begin gnulib module stddef-h-c++-tests
+
+if ANSICXX
+TESTS += test-stddef-h-c++
+noinst_PROGRAMS += test-stddef-h-c++
+test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc
+endif
+EXTRA_DIST += test-stddef-h-c++.cc test-stddef-h-c++2.cc
+
+## end   gnulib module stddef-h-c++-tests
+
 ## begin gnulib module stddef-h-tests
 
 TESTS += test-stddef-h
@@ -406,6 +484,17 @@ MOSTLYCLEANFILES += stdint.h stdint.h-t
 EXTRA_DIST += stdint.in.h
 
 ## end   gnulib module stdint-h
+
+## begin gnulib module stdint-h-c++-tests
+
+if ANSICXX
+TESTS += test-stdint-h-c++
+noinst_PROGRAMS += test-stdint-h-c++
+test_stdint_h_c___SOURCES = test-stdint-h-c++.cc test-stdint-h-c++2.cc
+endif
+EXTRA_DIST += test-stdint-h-c++.cc test-stdint-h-c++2.cc
+
+## end   gnulib module stdint-h-c++-tests
 
 ## begin gnulib module stdint-h-tests
 
@@ -587,6 +676,18 @@ EXTRA_DIST += stdlib.in.h
 
 ## end   gnulib module stdlib-h
 
+## begin gnulib module stdlib-h-c++-tests
+
+if ANSICXX
+TESTS += test-stdlib-h-c++
+noinst_PROGRAMS += test-stdlib-h-c++
+test_stdlib_h_c___SOURCES = test-stdlib-h-c++.cc test-stdlib-h-c++2.cc
+test_stdlib_h_c___LDADD = $(LDADD) $(LIBINTL) $(GETLOADAVG_LIBS) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(GETRANDOM_LIB)
+endif
+EXTRA_DIST += test-stdlib-h-c++.cc test-stdlib-h-c++2.cc signature.h
+
+## end   gnulib module stdlib-h-c++-tests
+
 ## begin gnulib module stdlib-h-tests
 
 TESTS += test-stdlib-h
@@ -622,6 +723,17 @@ MOSTLYCLEANDIRS += sys
 EXTRA_DIST += sys_types.in.h
 
 ## end   gnulib module sys_types-h
+
+## begin gnulib module sys_types-h-c++-tests
+
+if ANSICXX
+TESTS += test-sys_types-h-c++
+noinst_PROGRAMS += test-sys_types-h-c++
+test_sys_types_h_c___SOURCES = test-sys_types-h-c++.cc
+endif
+EXTRA_DIST += test-sys_types-h-c++.cc
+
+## end   gnulib module sys_types-h-c++-tests
 
 ## begin gnulib module sys_types-h-tests
 
@@ -858,6 +970,18 @@ EXTRA_DIST += unistd.in.h
 
 ## end   gnulib module unistd-h
 
+## begin gnulib module unistd-h-c++-tests
+
+if ANSICXX
+TESTS += test-unistd-h-c++
+noinst_PROGRAMS += test-unistd-h-c++
+test_unistd_h_c___SOURCES = test-unistd-h-c++.cc
+test_unistd_h_c___LDADD = $(LDADD) $(LIBINTL) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(LIBSOCKET) $(GETLOGIN_LIB) $(GETRANDOM_LIB)
+endif
+EXTRA_DIST += test-unistd-h-c++.cc signature.h
+
+## end   gnulib module unistd-h-c++-tests
+
 ## begin gnulib module unistd-h-tests
 
 TESTS += test-unistd-h
@@ -1032,6 +1156,18 @@ MOSTLYCLEANFILES += wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3
 EXTRA_DIST += wchar.in.h
 
 ## end   gnulib module wchar-h
+
+## begin gnulib module wchar-h-c++-tests
+
+if ANSICXX
+TESTS += test-wchar-h-c++
+noinst_PROGRAMS += test-wchar-h-c++
+test_wchar_h_c___SOURCES = test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc
+test_wchar_h_c___LDADD = $(LDADD) $(LIBUNISTRING) $(LIBINTL) $(NANOSLEEP_LIB) $(EUIDACCESS_LIBGEN) $(LIBTHREAD)
+endif
+EXTRA_DIST += test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc signature.h
+
+## end   gnulib module wchar-h-c++-tests
 
 ## begin gnulib module wchar-h-tests
 

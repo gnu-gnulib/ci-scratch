@@ -22,10 +22,63 @@
 #include <locale.h>
 
 #include <errno.h>
-#include <stdlib.h>
-#include <string.h>
 
-#include "localename.h"
+#if HAVE_NEWLOCALE
+/* Only provide workarounds.  */
+
+# include <sys/types.h>
+# include <sys/stat.h>
+
+locale_t
+newlocale (int category_mask, const char *name, locale_t base)
+# undef newlocale
+{
+  if ((category_mask & ~LC_ALL_MASK) != 0)
+    {
+      errno = EINVAL;
+      return NULL;
+    }
+
+# if defined __NetBSD__
+  /* Work around a NetBSD bug: newlocale does not fail (unlike setlocale)
+     when NAME is an invalid locale name.  */
+  if (category_mask != 0)
+    {
+      /* Test whether NAME is valid.  */
+      if (!(strcmp (name, "C") == 0 || strcmp (name, "POSIX") == 0))
+        {
+          char *filename = (char *) malloc (18 + strlen (name) + 9 + 1);
+          if (filename == NULL)
+            {
+              errno = ENOMEM;
+              return NULL;
+            }
+          sprintf (filename, "/usr/share/locale/%s/LC_CTYPE", name);
+          struct stat statbuf;
+          if (stat (filename, &statbuf) < 0)
+            {
+              free (filename);
+              errno = ENOENT;
+              return NULL;
+            }
+          free (filename);
+        }
+    }
+# endif
+
+  if (category_mask != LC_ALL_MASK && base == NULL)
+    base = newlocale (LC_ALL_MASK, "C", NULL);
+
+  return newlocale (category_mask, name, base);
+}
+
+#else
+/* Implement from scratch.  */
+
+# include <stdlib.h>
+# include <string.h>
+
+# include "localename.h"
 
 locale_t
 newlocale (int category_mask, const char *name, locale_t base)
@@ -57,7 +110,7 @@ newlocale (int category_mask, const char *name, locale_t base)
   if (strcmp (name, "POSIX") == 0)
     name = "C";
 
-#if !HAVE_WINDOWS_LOCALE_T
+# if !HAVE_WINDOWS_LOCALE_T
   /* In this case, the only NAMEs that we support are "C" and (equivalently)
      "POSIX".  */
   if (category_mask != 0 && strcmp (name, "C") != 0)
@@ -65,7 +118,7 @@ newlocale (int category_mask, const char *name, locale_t base)
       errno = ENOENT;
       return NULL;
     }
-#endif
+# endif
 
   int i;
   int err;
@@ -111,15 +164,15 @@ newlocale (int category_mask, const char *name, locale_t base)
           if (strcmp (lcname, "C") == 0)
             {
               result->category[i].is_c_locale = true;
-#if HAVE_WINDOWS_LOCALE_T
+# if HAVE_WINDOWS_LOCALE_T
               /* Just to initialize it.  */
               result->category[i].system_locale = NULL;
-#endif
+# endif
             }
           else
             {
               result->category[i].is_c_locale = false;
-#if HAVE_WINDOWS_LOCALE_T
+# if HAVE_WINDOWS_LOCALE_T
               if (log2_lcmask == gl_log2_lc_mask (LC_MESSAGES))
                 result->category[i].system_locale = NULL;
               else
@@ -137,7 +190,7 @@ newlocale (int category_mask, const char *name, locale_t base)
                       goto fail_with_err;
                     }
                 }
-#endif
+# endif
             }
         }
       else
@@ -151,10 +204,10 @@ newlocale (int category_mask, const char *name, locale_t base)
                   goto fail_with_err;
                 }
               result->category[i].is_c_locale = true;
-#if HAVE_WINDOWS_LOCALE_T
+# if HAVE_WINDOWS_LOCALE_T
               /* Just to initialize it.  */
               result->category[i].system_locale = NULL;
-#endif
+# endif
             }
         }
     }
@@ -168,13 +221,13 @@ newlocale (int category_mask, const char *name, locale_t base)
           int log2_lcmask = gl_index_to_log2_lcmask (i);
           if ((category_mask & (1 << log2_lcmask)) != 0)
             {
-#if HAVE_WINDOWS_LOCALE_T
+# if HAVE_WINDOWS_LOCALE_T
               if (!(i == gl_log2_lcmask_to_index (gl_log2_lc_mask (LC_MESSAGES))
                     || base->category[i].is_c_locale))
                 /* Documentation:
                    <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/free-locale>  */
                 _free_locale (base->category[i].system_locale);
-#endif
+# endif
               free (base->category[i].name);
 
               base->category[i] = result->category[i];
@@ -188,13 +241,13 @@ newlocale (int category_mask, const char *name, locale_t base)
  fail_with_err:
   while (--i >= 0)
     {
-#if HAVE_WINDOWS_LOCALE_T
+# if HAVE_WINDOWS_LOCALE_T
       if (!(i == gl_log2_lcmask_to_index (gl_log2_lc_mask (LC_MESSAGES))
             || result->category[i].is_c_locale))
         /* Documentation:
            <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/free-locale>  */
         _free_locale (result->category[i].system_locale);
-#endif
+# endif
       free (result->category[i].name);
     }
   if (base == NULL)
@@ -202,3 +255,5 @@ newlocale (int category_mask, const char *name, locale_t base)
   errno = err;
   return NULL;
 }
+
+#endif

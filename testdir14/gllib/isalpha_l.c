@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is alphanumeric.
+/* Test whether a single-byte character is alphabetic.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC isalnum_l
-#define GLOBAL_FUNC isalnum
+#define FUNC isalpha_l
+#define GLOBAL_FUNC isalpha
 #define C_FUNC(c) \
-  ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z') || (c >= '0' && c <= '9'))
+  ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isalnum-iswalnum-isalnum-l-iswalnum-l>  */
-#define WINDOWS_FUNC _isalnum_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isalpha-iswalpha-isalpha-l-iswalpha-l>  */
+#define WINDOWS_FUNC _isalpha_l
 #include "is_l-impl.h"

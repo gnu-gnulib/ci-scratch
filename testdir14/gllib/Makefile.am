@@ -72,8 +72,10 @@ ctype.h: ctype.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
 	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
 	      -e 's|@''NEXT_CTYPE_H''@|$(NEXT_CTYPE_H)|g' \
 	      -e 's/@''GNULIB_ISALNUM_L''@/$(GL_GNULIB_ISALNUM_L)/g' \
+	      -e 's/@''GNULIB_ISALPHA_L''@/$(GL_GNULIB_ISALPHA_L)/g' \
 	      -e 's/@''GNULIB_ISBLANK''@/$(GL_GNULIB_ISBLANK)/g' \
 	      -e 's/@''HAVE_ISALNUM_L''@/$(HAVE_ISALNUM_L)/g' \
+	      -e 's/@''HAVE_ISALPHA_L''@/$(HAVE_ISALPHA_L)/g' \
 	      -e 's/@''HAVE_ISBLANK''@/$(HAVE_ISBLANK)/g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
@@ -105,15 +107,15 @@ gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
 
-## begin gnulib module isalnum_l
+## begin gnulib module isalpha_l
 
-if GL_COND_OBJ_ISALNUM_L
-libgnu_a_SOURCES += isalnum_l.c
+if GL_COND_OBJ_ISALPHA_L
+libgnu_a_SOURCES += isalpha_l.c
 endif
 
 EXTRA_DIST += is_l-impl.h
 
-## end   gnulib module isalnum_l
+## end   gnulib module isalpha_l
 
 ## begin gnulib module locale-h
 
