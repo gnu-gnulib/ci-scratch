@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is a control character.
+/* Test whether a single-byte character is a digit.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,10 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC iscntrl_l
-#define GLOBAL_FUNC iscntrl
-#define C_FUNC(c) \
-  ((c >= 0x00 && c <= 0x1f) || c == 0x7f)
-/* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/iscntrl-iswcntrl-iscntrl-l-iswcntrl-l>  */
-#define WINDOWS_FUNC _iscntrl_l
-#include "is_l-impl.h"
+int
+isdigit_l (int c, _GL_UNUSED locale_t locale)
+{
+  /* For consistency with isdigit(), which is not locale dependent
+     (see ISO C23 § 7.4.2.5).  */
+  return c >= '0' && c <= '9';
+}
