@@ -273,13 +273,13 @@ EXTRA_DIST += test-inttypes-h.c
 
 ## end   gnulib module inttypes-h-tests
 
-## begin gnulib module isdigit_l-tests
+## begin gnulib module isgraph_l-tests
 
-TESTS += test-isdigit_l
-noinst_PROGRAMS += test-isdigit_l
-EXTRA_DIST += test-isdigit_l.c signature.h macros.h
+TESTS += test-isgraph_l
+noinst_PROGRAMS += test-isgraph_l
+EXTRA_DIST += test-isgraph_l.c signature.h macros.h
 
-## end   gnulib module isdigit_l-tests
+## end   gnulib module isgraph_l-tests
 
 ## begin gnulib module limits-h
 

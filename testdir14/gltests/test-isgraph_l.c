@@ -1,4 +1,4 @@
-/* Test of isdigit_l() function.
+/* Test of isgraph_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isdigit_l, int, (int, locale_t));
+SIGNATURE_CHECK (isgraph_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,11 +32,12 @@ test_single_locale_common (locale_t locale)
   int is;
 
   /* Test EOF.  */
-  is = isdigit_l (EOF, locale);
+  is = isgraph_l (EOF, locale);
   ASSERT (is == 0);
 
-  /* ISO C 99 sections 7.25.2.1.5 and 5.2.1 specify that the decimal digits
-     include only the ASCII 0 ... 9 characters.  */
+  /* POSIX specifies in
+       <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
+     no explicit list of graphic characters.  */
   {
     int c;
 
@@ -65,15 +66,15 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isdigit_l ((unsigned char) c, locale);
+          is = isgraph_l ((unsigned char) c, locale);
           switch (c)
             {
-            case '0': case '1': case '2': case '3': case '4':
-            case '5': case '6': case '7': case '8': case '9':
-              ASSERT (is != 0);
+            case '\t': case '\v': case '\f':
+            case ' ':
+              ASSERT (is == 0);
               break;
             default:
-              ASSERT (is == 0);
+              ASSERT (is != 0);
               break;
             }
           break;
@@ -108,15 +109,19 @@ main ()
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
         int is;
 
-        /* U+00B2 SUPERSCRIPT TWO */
-        is = isdigit_l ((unsigned char) '\262', locale);
+        /* U+007F <control> */
+        is = isgraph_l ((unsigned char) '\177', locale);
         ASSERT (is == 0);
-        /* U+00B3 SUPERSCRIPT THREE */
-        is = isdigit_l ((unsigned char) '\263', locale);
-        ASSERT (is == 0);
-        /* U+00B9 SUPERSCRIPT ONE */
-        is = isdigit_l ((unsigned char) '\271', locale);
-        ASSERT (is == 0);
+      #if !((defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ || defined __DragonFly__ || defined __NetBSD__ || defined __sgi || defined __sun || defined __CYGWIN__ || (defined _WIN32 && !defined __CYGWIN__))
+        /* U+00A0 NO-BREAK SPACE */
+        is = isgraph_l ((unsigned char) '\240', locale);
+        ASSERT (is != 0);
+      #endif
+      #if !(defined __FreeBSD__ || defined __DragonFly__)
+        /* U+00B8 CEDILLA */
+        is = isgraph_l ((unsigned char) '\270', locale);
+        ASSERT (is != 0);
+      #endif
 
         freelocale (locale);
       }

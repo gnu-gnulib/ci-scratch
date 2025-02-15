@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is a digit.
+/* Test whether a single-byte character is graphic.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,10 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-int
-isdigit_l (int c, _GL_UNUSED locale_t locale)
-{
-  /* For consistency with isdigit(), which is not locale dependent
-     (see ISO C23 § 7.4.2.5).  */
-  return c >= '0' && c <= '9';
-}
+#define FUNC isgraph_l
+#define GLOBAL_FUNC isgraph
+#define C_FUNC(c) \
+  (c >= 0x21 && c <= 0x7e)
+/* Documentation:
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/isgraph-iswgraph-isgraph-l-iswgraph-l>  */
+#define WINDOWS_FUNC _isgraph_l
+#include "is_l-impl.h"
