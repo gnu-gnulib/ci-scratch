@@ -32,7 +32,7 @@ strcasecmp_l (const char *s1, const char *s2, locale_t locale)
     &locale->category[gl_log2_lc_mask (LC_CTYPE)];
   if (plc->is_c_locale)
     /* Implementation for the "C" locale.  */
-    return strcmp (s1, s2);
+    return c_strcasecmp (s1, s2);
 # if HAVE_WINDOWS_LOCALE_T
   /* Documentation:
      <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l>  */

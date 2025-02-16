@@ -58,6 +58,20 @@ HAVE_INCLUDE_NEXT = (__GNUC__ || __clang__ || 60000000 <= __DECC_VER)
 
 ## end   gnulib module absolute-header
 
+## begin gnulib module c-ctype
+
+libgnu_a_SOURCES += c-ctype.h c-ctype.c
+
+## end   gnulib module c-ctype
+
+## begin gnulib module c-strcasecmp
+
+libgnu_a_SOURCES += c-strcasecmp.c
+
+EXTRA_DIST += c-strcase.h
+
+## end   gnulib module c-strcasecmp
+
 ## begin gnulib module ctype-h
 
 BUILT_SOURCES += ctype.h
@@ -324,12 +338,6 @@ endif
 EXTRA_DIST += to_l-impl.h
 
 ## end   gnulib module tolower_l
-
-## begin gnulib module dummy
-
-libgnu_a_SOURCES += dummy.c
-
-## end   gnulib module dummy
 
 
 mostlyclean-local: mostlyclean-generic
