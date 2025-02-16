@@ -1,4 +1,4 @@
-/* Test whether a single-byte character is a hexadecimal digit.
+/* Test whether a single-byte character belongs to a specific character class.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -16,22 +16,36 @@
 
 /* Written by Bruno Haible <bruno@clisp.org>, 2025.  */
 
-#include <config.h>
-
-/* Specification.  */
-#include <ctype.h>
+#include <locale.h>
+#include <stdio.h>
 
 int
-isxdigit_l (int c, _GL_UNUSED locale_t locale)
+FUNC (int c, locale_t locale)
 {
-  /* For consistency with isxdigit(), which is not locale dependent
-     (see ISO C23 § 7.4.2.12).  */
-  return ((c >= '0' && c <= '9')
-#if 'A' == 0x41 && 'a' == 0x61
-          /* Optimization, assuming ASCII */
-          || ((c & ~0x20) >= 'A' && (c & ~0x20) <= 'F')
+  struct gl_locale_category_t *plc =
+    &locale->category[gl_log2_lc_mask (LC_CTYPE)];
+  if (plc->is_c_locale)
+    /* Implementation for the "C" locale.  */
+    return C_FUNC (c);
+#if HAVE_WINDOWS_LOCALE_T
+# ifdef __MINGW32__
+  /* mingw mistreats EOF.  */
+  if (c == EOF)
+    return c;
+# endif
+  return WINDOWS_FUNC (c, plc->system_locale);
 #else
-          || (c >= 'A' && c <= 'F') || (c >= 'a' && c <= 'f')
+  /* Implementation for the global locale.  */
+  {
+    int ret;
+# if HAVE_WORKING_USELOCALE
+    locale_t saved_locale = uselocale (LC_GLOBAL_LOCALE);
+# endif
+    ret = GLOBAL_FUNC (c);
+# if HAVE_WORKING_USELOCALE
+    uselocale (saved_locale);
+# endif
+    return ret;
+  }
 #endif
-         );
 }

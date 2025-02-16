@@ -100,11 +100,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/freelocale.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
+	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 \
-	$(top_srcdir)/glm4/isxdigit_l.m4 \
-	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
-	$(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/locale-en.m4 $(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
@@ -112,7 +111,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/tolower_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
 	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
@@ -428,6 +427,7 @@ GL_GNULIB_STRTOUMAX = @GL_GNULIB_STRTOUMAX@
 GL_GNULIB_SYMLINK = @GL_GNULIB_SYMLINK@
 GL_GNULIB_SYMLINKAT = @GL_GNULIB_SYMLINKAT@
 GL_GNULIB_SYSTEM_POSIX = @GL_GNULIB_SYSTEM_POSIX@
+GL_GNULIB_TOLOWER_L = @GL_GNULIB_TOLOWER_L@
 GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
@@ -617,6 +617,7 @@ HAVE_SYS_INTTYPES_H = @HAVE_SYS_INTTYPES_H@
 HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
 HAVE_SYS_TYPES_H = @HAVE_SYS_TYPES_H@
+HAVE_TOLOWER_L = @HAVE_TOLOWER_L@
 HAVE_UNISTD_H = @HAVE_UNISTD_H@
 HAVE_UNLINKAT = @HAVE_UNLINKAT@
 HAVE_UNLOCKPT = @HAVE_UNLOCKPT@

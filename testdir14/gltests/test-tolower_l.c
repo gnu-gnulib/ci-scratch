@@ -1,4 +1,4 @@
-/* Test of isxdigit_l() function.
+/* Test of tolower_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (isxdigit_l, int, (int, locale_t));
+SIGNATURE_CHECK (tolower_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -29,14 +29,22 @@ SIGNATURE_CHECK (isxdigit_l, int, (int, locale_t));
 static void
 test_single_locale_common (locale_t locale)
 {
-  int is;
+  int tc;
 
   /* Test EOF.  */
-  is = isxdigit_l (EOF, locale);
-  ASSERT (is == 0);
+  tc = tolower_l (EOF, locale);
+  ASSERT (tc == EOF);
 
-  /* ISO C 99 sections 7.25.2.1.12 and 6.4.4.1 specify that the hexadecimal
-     digits include only the ASCII 0 ... 9 A ... F a ... f characters.  */
+  /* POSIX specifies in
+       <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
+     that
+       - in all locales, the uppercase characters include the A ... Z
+         characters, and the corresponding characters a ... z (if not in a
+         Turkish locale) are lowercase,
+       - in the "POSIX" locale (which is usually the same as the "C" locale),
+         the uppercase characters include only the ASCII A ... Z characters,
+         and the corresponding characters a ... z are lowercase.
+   */
   {
     int c;
 
@@ -65,17 +73,19 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          is = isxdigit_l ((unsigned char) c, locale);
+          tc = tolower_l ((unsigned char) c, locale);
           switch (c)
             {
-            case '0': case '1': case '2': case '3': case '4':
-            case '5': case '6': case '7': case '8': case '9':
-            case 'A': case 'B': case 'C': case 'D': case 'E': case 'F':
-            case 'a': case 'b': case 'c': case 'd': case 'e': case 'f':
-              ASSERT (is != 0);
+            case 'A': case 'B': case 'C': case 'D': case 'E':
+            case 'F': case 'G': case 'H': case 'I': case 'J':
+            case 'K': case 'L': case 'M': case 'N': case 'O':
+            case 'P': case 'Q': case 'R': case 'S': case 'T':
+            case 'U': case 'V': case 'W': case 'X': case 'Y':
+            case 'Z':
+              ASSERT (tc == (unsigned char) c - 'A' + 'a');
               break;
             default:
-              ASSERT (is == 0);
+              ASSERT (tc == c);
               break;
             }
           break;
@@ -108,17 +118,26 @@ main ()
         test_single_locale_common (locale);
 
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
-        int is;
+        int tc;
 
         /* U+00B2 SUPERSCRIPT TWO */
-        is = isxdigit_l ((unsigned char) '\262', locale);
-        ASSERT (is == 0);
-        /* U+00B3 SUPERSCRIPT THREE */
-        is = isxdigit_l ((unsigned char) '\263', locale);
-        ASSERT (is == 0);
-        /* U+00B9 SUPERSCRIPT ONE */
-        is = isxdigit_l ((unsigned char) '\271', locale);
-        ASSERT (is == 0);
+        tc = tolower_l ((unsigned char) '\262', locale);
+        ASSERT (tc == (unsigned char) '\262');
+        /* U+00B5 MICRO SIGN */
+        tc = tolower_l ((unsigned char) '\265', locale);
+        ASSERT (tc == (unsigned char) '\265');
+        /* U+00C9 LATIN CAPITAL LETTER E WITH ACUTE */
+        tc = tolower_l ((unsigned char) '\311', locale);
+        ASSERT (tc == (unsigned char) '\351');
+        /* U+00DF LATIN SMALL LETTER SHARP S */
+        tc = tolower_l ((unsigned char) '\337', locale);
+        ASSERT (tc == (unsigned char) '\337');
+        /* U+00E9 LATIN SMALL LETTER E WITH ACUTE */
+        tc = tolower_l ((unsigned char) '\351', locale);
+        ASSERT (tc == (unsigned char) '\351');
+        /* U+00FF LATIN SMALL LETTER Y WITH DIAERESIS */
+        tc = tolower_l ((unsigned char) '\377', locale);
+        ASSERT (tc == (unsigned char) '\377');
 
         freelocale (locale);
       }

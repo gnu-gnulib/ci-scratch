@@ -47,10 +47,6 @@ gl_m4_base='glm4'
   gl_CTYPE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
   AC_REQUIRE([gl_EXTERN_INLINE])
-  gl_FUNC_ISXDIGIT_L
-  gl_CONDITIONAL([GL_COND_OBJ_ISXDIGIT_L], [test $HAVE_ISXDIGIT_L = 0])
-  gl_MODULE_INDICATOR([isxdigit_l])
-  gl_CTYPE_MODULE_INDICATOR([isxdigit_l])
   gl_LOCALE_H
   gl_LOCALE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -58,6 +54,10 @@ gl_m4_base='glm4'
   gl_STDDEF_H_REQUIRE_DEFAULTS
   gl_CONDITIONAL_HEADER([stddef.h])
   AC_PROG_MKDIR_P
+  gl_FUNC_TOLOWER_L
+  gl_CONDITIONAL([GL_COND_OBJ_TOLOWER_L], [test $HAVE_TOLOWER_L = 0])
+  gl_MODULE_INDICATOR([tolower_l])
+  gl_CTYPE_MODULE_INDICATOR([tolower_l])
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
@@ -142,7 +142,6 @@ changequote([, ])dnl
   gl_INTTYPES_INCOMPLETE
   gl_INTTYPES_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_MUSL_LIBC
   gl_LIMITS_H
   gl_CONDITIONAL_HEADER([limits.h])
   AC_PROG_MKDIR_P
@@ -171,6 +170,7 @@ changequote([, ])dnl
   gl_SYS_TYPES_H
   gl_SYS_TYPES_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_MUSL_LIBC
   gl_UNISTD_H
   gl_UNISTD_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P

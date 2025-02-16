@@ -119,27 +119,27 @@ TESTS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) test-assert$(EXEEXT) \
 	$(am__EXEEXT_2) test-bool$(EXEEXT) $(am__EXEEXT_3) \
 	test-ctype-h$(EXEEXT) test-freelocale$(EXEEXT) \
 	test-intprops$(EXEEXT) $(am__EXEEXT_4) \
-	test-inttypes-h$(EXEEXT) test-isxdigit_l$(EXEEXT) \
-	$(am__EXEEXT_5) test-limits-h$(EXEEXT) $(am__EXEEXT_6) \
-	test-locale-h$(EXEEXT) test-newlocale$(EXEEXT) $(am__EXEEXT_7) \
-	test-stddef-h$(EXEEXT) $(am__EXEEXT_8) test-stdint-h$(EXEEXT) \
-	$(am__EXEEXT_9) test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) test-init.sh $(am__EXEEXT_11) \
-	test-unistd-h$(EXEEXT) test-verify$(EXEEXT) test-verify.sh \
-	$(am__EXEEXT_12) test-wchar-h$(EXEEXT)
+	test-inttypes-h$(EXEEXT) $(am__EXEEXT_5) \
+	test-limits-h$(EXEEXT) $(am__EXEEXT_6) test-locale-h$(EXEEXT) \
+	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
+	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
+	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
+	test-sys_types-h$(EXEEXT) test-init.sh test-tolower_l$(EXEEXT) \
+	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
+	test-verify.sh $(am__EXEEXT_12) test-wchar-h$(EXEEXT)
 XFAIL_TESTS =
 noinst_PROGRAMS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) \
 	test-assert$(EXEEXT) $(am__EXEEXT_2) test-bool$(EXEEXT) \
 	$(am__EXEEXT_3) test-ctype-h$(EXEEXT) test-freelocale$(EXEEXT) \
 	test-intprops$(EXEEXT) $(am__EXEEXT_4) \
-	test-inttypes-h$(EXEEXT) test-isxdigit_l$(EXEEXT) \
-	$(am__EXEEXT_5) test-limits-h$(EXEEXT) $(am__EXEEXT_6) \
-	test-locale-h$(EXEEXT) test-newlocale$(EXEEXT) $(am__EXEEXT_7) \
-	test-stddef-h$(EXEEXT) $(am__EXEEXT_8) test-stdint-h$(EXEEXT) \
-	$(am__EXEEXT_9) test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) $(am__EXEEXT_11) \
-	test-unistd-h$(EXEEXT) test-verify$(EXEEXT) $(am__EXEEXT_12) \
-	test-wchar-h$(EXEEXT)
+	test-inttypes-h$(EXEEXT) $(am__EXEEXT_5) \
+	test-limits-h$(EXEEXT) $(am__EXEEXT_6) test-locale-h$(EXEEXT) \
+	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
+	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
+	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
+	test-sys_types-h$(EXEEXT) test-tolower_l$(EXEEXT) \
+	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
+	$(am__EXEEXT_12) test-wchar-h$(EXEEXT)
 EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @ANSICXX_TRUE@am__append_1 = test-assert-h-c++
 @ANSICXX_TRUE@am__append_2 = test-assert-h-c++
@@ -178,11 +178,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/freelocale.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
+	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 \
-	$(top_srcdir)/glm4/isxdigit_l.m4 \
-	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
-	$(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/locale-en.m4 $(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
@@ -190,7 +189,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/tolower_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
 	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
@@ -299,11 +298,6 @@ test_inttypes_h_c___OBJECTS = $(am_test_inttypes_h_c___OBJECTS)
 test_inttypes_h_c___LDADD = $(LDADD)
 test_inttypes_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_isxdigit_l_SOURCES = test-isxdigit_l.c
-test_isxdigit_l_OBJECTS = test-isxdigit_l.$(OBJEXT)
-test_isxdigit_l_LDADD = $(LDADD)
-test_isxdigit_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
-	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_limits_h_SOURCES = test-limits-h.c
 test_limits_h_OBJECTS = test-limits-h.$(OBJEXT)
 test_limits_h_LDADD = $(LDADD)
@@ -389,6 +383,11 @@ test_sys_types_h_c___OBJECTS = $(am_test_sys_types_h_c___OBJECTS)
 test_sys_types_h_c___LDADD = $(LDADD)
 test_sys_types_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_tolower_l_SOURCES = test-tolower_l.c
+test_tolower_l_OBJECTS = test-tolower_l.$(OBJEXT)
+test_tolower_l_LDADD = $(LDADD)
+test_tolower_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_unistd_h_SOURCES = test-unistd-h.c
 test_unistd_h_OBJECTS = test-unistd-h.$(OBJEXT)
 test_unistd_h_LDADD = $(LDADD)
@@ -448,7 +447,7 @@ am__depfiles_remade = ./$(DEPDIR)/freelocale.Po \
 	./$(DEPDIR)/test-freelocale.Po ./$(DEPDIR)/test-intprops.Po \
 	./$(DEPDIR)/test-inttypes-h-c++.Po \
 	./$(DEPDIR)/test-inttypes-h-c++2.Po \
-	./$(DEPDIR)/test-inttypes-h.Po ./$(DEPDIR)/test-isxdigit_l.Po \
+	./$(DEPDIR)/test-inttypes-h.Po \
 	./$(DEPDIR)/test-limits-h-c++.Po \
 	./$(DEPDIR)/test-limits-h-c++2.Po ./$(DEPDIR)/test-limits-h.Po \
 	./$(DEPDIR)/test-locale-h-c++.Po \
@@ -460,7 +459,7 @@ am__depfiles_remade = ./$(DEPDIR)/freelocale.Po \
 	./$(DEPDIR)/test-stdlib-h-c++.Po \
 	./$(DEPDIR)/test-stdlib-h-c++2.Po ./$(DEPDIR)/test-stdlib-h.Po \
 	./$(DEPDIR)/test-sys_types-h-c++.Po \
-	./$(DEPDIR)/test-sys_types-h.Po \
+	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-tolower_l.Po \
 	./$(DEPDIR)/test-unistd-h-c++.Po ./$(DEPDIR)/test-unistd-h.Po \
 	./$(DEPDIR)/test-verify-try.Po ./$(DEPDIR)/test-verify.Po \
 	./$(DEPDIR)/test-wchar-h-c++.Po \
@@ -498,28 +497,28 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-bool.c $(test_bool_c___SOURCES) test-ctype-h.c \
 	$(test_ctype_h_c___SOURCES) test-freelocale.c test-intprops.c \
 	test-inttypes-h.c $(test_inttypes_h_c___SOURCES) \
-	test-isxdigit_l.c test-limits-h.c $(test_limits_h_c___SOURCES) \
-	test-locale-h.c $(test_locale_h_c___SOURCES) test-newlocale.c \
-	test-stddef-h.c $(test_stddef_h_c___SOURCES) test-stdint-h.c \
+	test-limits-h.c $(test_limits_h_c___SOURCES) test-locale-h.c \
+	$(test_locale_h_c___SOURCES) test-newlocale.c test-stddef-h.c \
+	$(test_stddef_h_c___SOURCES) test-stdint-h.c \
 	$(test_stdint_h_c___SOURCES) test-stdlib-h.c \
 	$(test_stdlib_h_c___SOURCES) test-sys_types-h.c \
-	$(test_sys_types_h_c___SOURCES) test-unistd-h.c \
-	$(test_unistd_h_c___SOURCES) test-verify.c test-verify-try.c \
-	test-wchar-h.c $(test_wchar_h_c___SOURCES)
+	$(test_sys_types_h_c___SOURCES) test-tolower_l.c \
+	test-unistd-h.c $(test_unistd_h_c___SOURCES) test-verify.c \
+	test-verify-try.c test-wchar-h.c $(test_wchar_h_c___SOURCES)
 DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(EXTRA_libtests_a_SOURCES) test-alignasof.c test-assert.c \
 	$(am__test_assert_h_c___SOURCES_DIST) test-bool.c \
 	$(am__test_bool_c___SOURCES_DIST) test-ctype-h.c \
 	$(am__test_ctype_h_c___SOURCES_DIST) test-freelocale.c \
 	test-intprops.c test-inttypes-h.c \
-	$(am__test_inttypes_h_c___SOURCES_DIST) test-isxdigit_l.c \
-	test-limits-h.c $(am__test_limits_h_c___SOURCES_DIST) \
-	test-locale-h.c $(am__test_locale_h_c___SOURCES_DIST) \
-	test-newlocale.c test-stddef-h.c \
-	$(am__test_stddef_h_c___SOURCES_DIST) test-stdint-h.c \
-	$(am__test_stdint_h_c___SOURCES_DIST) test-stdlib-h.c \
-	$(am__test_stdlib_h_c___SOURCES_DIST) test-sys_types-h.c \
-	$(am__test_sys_types_h_c___SOURCES_DIST) test-unistd-h.c \
+	$(am__test_inttypes_h_c___SOURCES_DIST) test-limits-h.c \
+	$(am__test_limits_h_c___SOURCES_DIST) test-locale-h.c \
+	$(am__test_locale_h_c___SOURCES_DIST) test-newlocale.c \
+	test-stddef-h.c $(am__test_stddef_h_c___SOURCES_DIST) \
+	test-stdint-h.c $(am__test_stdint_h_c___SOURCES_DIST) \
+	test-stdlib-h.c $(am__test_stdlib_h_c___SOURCES_DIST) \
+	test-sys_types-h.c $(am__test_sys_types_h_c___SOURCES_DIST) \
+	test-tolower_l.c test-unistd-h.c \
 	$(am__test_unistd_h_c___SOURCES_DIST) test-verify.c \
 	test-verify-try.c test-wchar-h.c \
 	$(am__test_wchar_h_c___SOURCES_DIST)
@@ -997,6 +996,7 @@ GL_GNULIB_STRTOUMAX = @GL_GNULIB_STRTOUMAX@
 GL_GNULIB_SYMLINK = @GL_GNULIB_SYMLINK@
 GL_GNULIB_SYMLINKAT = @GL_GNULIB_SYMLINKAT@
 GL_GNULIB_SYSTEM_POSIX = @GL_GNULIB_SYSTEM_POSIX@
+GL_GNULIB_TOLOWER_L = @GL_GNULIB_TOLOWER_L@
 GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
@@ -1186,6 +1186,7 @@ HAVE_SYS_INTTYPES_H = @HAVE_SYS_INTTYPES_H@
 HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
 HAVE_SYS_TYPES_H = @HAVE_SYS_TYPES_H@
+HAVE_TOLOWER_L = @HAVE_TOLOWER_L@
 HAVE_UNISTD_H = @HAVE_UNISTD_H@
 HAVE_UNLINKAT = @HAVE_UNLINKAT@
 HAVE_UNLOCKPT = @HAVE_UNLOCKPT@
@@ -1511,22 +1512,22 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	test-ctype-h.c test-freelocale.c signature.h macros.h \
 	intprops-internal.h intprops.h test-intprops.c macros.h \
 	test-inttypes-h-c++.cc test-inttypes-h-c++2.cc signature.h \
-	inttypes.in.h test-inttypes-h.c test-isxdigit_l.c signature.h \
-	macros.h limits.in.h test-limits-h-c++.cc \
-	test-limits-h-c++2.cc test-limits-h.c test-locale-h-c++.cc \
-	test-locale-h-c++2.cc signature.h test-locale-h.c localename.h \
-	test-newlocale.c signature.h macros.h _Noreturn.h \
-	arg-nonnull.h c++defs.h warn-on-use.h test-stddef-h-c++.cc \
-	test-stddef-h-c++2.cc test-stddef-h.c stdint.in.h \
-	test-stdint-h-c++.cc test-stdint-h-c++2.cc test-stdint-h.c \
-	stdlib.in.h test-stdlib-h-c++.cc test-stdlib-h-c++2.cc \
-	signature.h test-stdlib-h.c test-sys_wait-h.h sys_types.in.h \
-	test-sys_types-h-c++.cc test-sys_types-h.c init.sh \
-	test-init.sh unistd.in.h test-unistd-h-c++.cc signature.h \
-	test-unistd-h.c verify.h test-verify.c test-verify-try.c \
-	test-verify.sh wchar.in.h test-wchar-h-c++.cc \
-	test-wchar-h-c++2.cc test-wchar-h-c++3.cc signature.h \
-	test-wchar-h.c
+	inttypes.in.h test-inttypes-h.c limits.in.h \
+	test-limits-h-c++.cc test-limits-h-c++2.cc test-limits-h.c \
+	test-locale-h-c++.cc test-locale-h-c++2.cc signature.h \
+	test-locale-h.c localename.h test-newlocale.c signature.h \
+	macros.h _Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h \
+	test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h.c \
+	stdint.in.h test-stdint-h-c++.cc test-stdint-h-c++2.cc \
+	test-stdint-h.c stdlib.in.h test-stdlib-h-c++.cc \
+	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
+	test-sys_wait-h.h sys_types.in.h test-sys_types-h-c++.cc \
+	test-sys_types-h.c init.sh test-init.sh test-tolower_l.c \
+	signature.h macros.h unistd.in.h test-unistd-h-c++.cc \
+	signature.h test-unistd-h.c verify.h test-verify.c \
+	test-verify-try.c test-verify.sh wchar.in.h \
+	test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc \
+	signature.h test-wchar-h.c
 BUILT_SOURCES = $(ASSERT_H) inttypes.h $(LIMITS_H) $(STDINT_H) \
 	stdlib.h sys/types.h unistd.h wchar.h
 SUFFIXES = 
@@ -1701,10 +1702,6 @@ test-inttypes-h-c++$(EXEEXT): $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c
 	@rm -f test-inttypes-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c___LDADD) $(LIBS)
 
-test-isxdigit_l$(EXEEXT): $(test_isxdigit_l_OBJECTS) $(test_isxdigit_l_DEPENDENCIES) $(EXTRA_test_isxdigit_l_DEPENDENCIES) 
-	@rm -f test-isxdigit_l$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_isxdigit_l_OBJECTS) $(test_isxdigit_l_LDADD) $(LIBS)
-
 test-limits-h$(EXEEXT): $(test_limits_h_OBJECTS) $(test_limits_h_DEPENDENCIES) $(EXTRA_test_limits_h_DEPENDENCIES) 
 	@rm -f test-limits-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_limits_h_OBJECTS) $(test_limits_h_LDADD) $(LIBS)
@@ -1757,6 +1754,10 @@ test-sys_types-h-c++$(EXEEXT): $(test_sys_types_h_c___OBJECTS) $(test_sys_types_
 	@rm -f test-sys_types-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_sys_types_h_c___OBJECTS) $(test_sys_types_h_c___LDADD) $(LIBS)
 
+test-tolower_l$(EXEEXT): $(test_tolower_l_OBJECTS) $(test_tolower_l_DEPENDENCIES) $(EXTRA_test_tolower_l_DEPENDENCIES) 
+	@rm -f test-tolower_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_tolower_l_OBJECTS) $(test_tolower_l_LDADD) $(LIBS)
+
 test-unistd-h$(EXEEXT): $(test_unistd_h_OBJECTS) $(test_unistd_h_DEPENDENCIES) $(EXTRA_test_unistd_h_DEPENDENCIES) 
 	@rm -f test-unistd-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_unistd_h_OBJECTS) $(test_unistd_h_LDADD) $(LIBS)
@@ -1806,7 +1807,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-isxdigit_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h.Po@am__quote@ # am--include-marker
@@ -1825,6 +1825,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-tolower_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-verify-try.Po@am__quote@ # am--include-marker
@@ -2232,13 +2233,6 @@ test-inttypes-h.log: test-inttypes-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-isxdigit_l.log: test-isxdigit_l$(EXEEXT)
-	@p='test-isxdigit_l$(EXEEXT)'; \
-	b='test-isxdigit_l'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-limits-h-c++.log: test-limits-h-c++$(EXEEXT)
 	@p='test-limits-h-c++$(EXEEXT)'; \
 	b='test-limits-h-c++'; \
@@ -2333,6 +2327,13 @@ test-sys_types-h.log: test-sys_types-h$(EXEEXT)
 test-init.sh.log: test-init.sh
 	@p='test-init.sh'; \
 	b='test-init.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-tolower_l.log: test-tolower_l$(EXEEXT)
+	@p='test-tolower_l$(EXEEXT)'; \
+	b='test-tolower_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -2526,7 +2527,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
-	-rm -f ./$(DEPDIR)/test-isxdigit_l.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
@@ -2545,6 +2545,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
+	-rm -f ./$(DEPDIR)/test-tolower_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
@@ -2618,7 +2619,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
-	-rm -f ./$(DEPDIR)/test-isxdigit_l.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
@@ -2637,6 +2637,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
+	-rm -f ./$(DEPDIR)/test-tolower_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po

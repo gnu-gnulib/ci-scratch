@@ -273,14 +273,6 @@ EXTRA_DIST += test-inttypes-h.c
 
 ## end   gnulib module inttypes-h-tests
 
-## begin gnulib module isxdigit_l-tests
-
-TESTS += test-isxdigit_l
-noinst_PROGRAMS += test-isxdigit_l
-EXTRA_DIST += test-isxdigit_l.c signature.h macros.h
-
-## end   gnulib module isxdigit_l-tests
-
 ## begin gnulib module limits-h
 
 BUILT_SOURCES += $(LIMITS_H)
@@ -750,6 +742,14 @@ EXTRA_DIST += init.sh
 EXTRA_DIST += test-init.sh
 
 ## end   gnulib module test-framework-sh-tests
+
+## begin gnulib module tolower_l-tests
+
+TESTS += test-tolower_l
+noinst_PROGRAMS += test-tolower_l
+EXTRA_DIST += test-tolower_l.c signature.h macros.h
+
+## end   gnulib module tolower_l-tests
 
 ## begin gnulib module unistd-h
 
