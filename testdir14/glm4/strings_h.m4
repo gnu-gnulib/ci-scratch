@@ -1,5 +1,5 @@
 # strings_h.m4
-# serial 11
+# serial 12
 dnl Copyright (C) 2007, 2009-2025 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -29,7 +29,7 @@ AC_DEFUN_ONCE([gl_STRINGS_H],
        <strings.h>.  */
     #include <sys/types.h>
     #include <strings.h>
-    ]], [ffs strcasecmp strcasecmp_l strncasecmp])
+    ]], [ffs strcasecmp strncasecmp])
 ])
 
 # gl_STRINGS_MODULE_INDICATOR([modulename])
@@ -51,7 +51,6 @@ AC_DEFUN([gl_STRINGS_H_REQUIRE_DEFAULTS],
   m4_defun(GL_MODULE_INDICATOR_PREFIX[_STRINGS_H_MODULE_INDICATOR_DEFAULTS], [
     gl_MODULE_INDICATOR_INIT_VARIABLE([GNULIB_FFS])
     gl_MODULE_INDICATOR_INIT_VARIABLE([GNULIB_STRCASECMP])
-    gl_MODULE_INDICATOR_INIT_VARIABLE([GNULIB_STRCASECMP_L])
     gl_MODULE_INDICATOR_INIT_VARIABLE([GNULIB_STRNCASECMP])
   ])
   m4_require(GL_MODULE_INDICATOR_PREFIX[_STRINGS_H_MODULE_INDICATOR_DEFAULTS])
@@ -63,6 +62,8 @@ AC_DEFUN([gl_STRINGS_H_DEFAULTS],
   dnl Assume proper GNU behavior unless another module says otherwise.
   HAVE_FFS=1;              AC_SUBST([HAVE_FFS])
   HAVE_STRCASECMP=1;       AC_SUBST([HAVE_STRCASECMP])
-  HAVE_STRCASECMP_L=1;     AC_SUBST([HAVE_STRCASECMP_L])
+  HAVE_STRNCASECMP=1;      AC_SUBST([HAVE_STRNCASECMP])
   HAVE_DECL_STRNCASECMP=1; AC_SUBST([HAVE_DECL_STRNCASECMP])
+  REPLACE_STRCASECMP=0;    AC_SUBST([REPLACE_STRCASECMP])
+  REPLACE_STRNCASECMP=0;   AC_SUBST([REPLACE_STRNCASECMP])
 ])

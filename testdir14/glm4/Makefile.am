@@ -32,6 +32,7 @@ EXTRA_DIST += stdalign.m4
 EXTRA_DIST += stddef_h.m4
 EXTRA_DIST += stdint.m4
 EXTRA_DIST += stdlib_h.m4
+EXTRA_DIST += strcasecmp.m4
 EXTRA_DIST += strcasecmp_l.m4
 EXTRA_DIST += strings_h.m4
 EXTRA_DIST += sys_types_h.m4

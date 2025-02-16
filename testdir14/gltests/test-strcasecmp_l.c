@@ -17,11 +17,11 @@
 #include <config.h>
 
 #include <strings.h>
+#include <locale.h>
 
 #include "signature.h"
 SIGNATURE_CHECK (strcasecmp_l, int, (const char *, const char *, locale_t));
 
-#include <locale.h>
 #include <stdio.h>
 
 #include "macros.h"

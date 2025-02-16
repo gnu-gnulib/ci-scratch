@@ -110,6 +110,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/ssize_t.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
+	$(top_srcdir)/glm4/strcasecmp.m4 \
 	$(top_srcdir)/glm4/strcasecmp_l.m4 \
 	$(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
@@ -330,7 +331,6 @@ GL_GNULIB_SETLOCALE_NULL = @GL_GNULIB_SETLOCALE_NULL@
 GL_GNULIB_SLEEP = @GL_GNULIB_SLEEP@
 GL_GNULIB_STACK_TRACE = @GL_GNULIB_STACK_TRACE@
 GL_GNULIB_STRCASECMP = @GL_GNULIB_STRCASECMP@
-GL_GNULIB_STRCASECMP_L = @GL_GNULIB_STRCASECMP_L@
 GL_GNULIB_STRNCASECMP = @GL_GNULIB_STRNCASECMP@
 GL_GNULIB_STRTOD = @GL_GNULIB_STRTOD@
 GL_GNULIB_STRTOF = @GL_GNULIB_STRTOF@
@@ -523,8 +523,8 @@ HAVE_SIGNED_WINT_T = @HAVE_SIGNED_WINT_T@
 HAVE_SLEEP = @HAVE_SLEEP@
 HAVE_STDINT_H = @HAVE_STDINT_H@
 HAVE_STRCASECMP = @HAVE_STRCASECMP@
-HAVE_STRCASECMP_L = @HAVE_STRCASECMP_L@
 HAVE_STRINGS_H = @HAVE_STRINGS_H@
+HAVE_STRNCASECMP = @HAVE_STRNCASECMP@
 HAVE_STRTOD = @HAVE_STRTOD@
 HAVE_STRTOF = @HAVE_STRTOF@
 HAVE_STRTOL = @HAVE_STRTOL@
@@ -735,6 +735,8 @@ REPLACE_SETHOSTNAME = @REPLACE_SETHOSTNAME@
 REPLACE_SETLOCALE = @REPLACE_SETLOCALE@
 REPLACE_SETSTATE = @REPLACE_SETSTATE@
 REPLACE_SLEEP = @REPLACE_SLEEP@
+REPLACE_STRCASECMP = @REPLACE_STRCASECMP@
+REPLACE_STRNCASECMP = @REPLACE_STRNCASECMP@
 REPLACE_STRTOD = @REPLACE_STRTOD@
 REPLACE_STRTOF = @REPLACE_STRTOF@
 REPLACE_STRTOIMAX = @REPLACE_STRTOIMAX@
@@ -862,8 +864,9 @@ EXTRA_DIST = 00gnulib.m4 absolute-header.m4 ansi-c++.m4 assert_h.m4 \
 	locale-en.m4 locale_h.m4 localename.m4 multiarch.m4 musl.m4 \
 	newlocale.m4 off64_t.m4 off_t.m4 pid_t.m4 ssize_t.m4 \
 	std-gnu11.m4 stdalign.m4 stddef_h.m4 stdint.m4 stdlib_h.m4 \
-	strcasecmp_l.m4 strings_h.m4 sys_types_h.m4 tolower_l.m4 \
-	unistd_h.m4 warn-on-use.m4 wchar_h.m4 wint_t.m4 zzgnulib.m4
+	strcasecmp.m4 strcasecmp_l.m4 strings_h.m4 sys_types_h.m4 \
+	tolower_l.m4 unistd_h.m4 warn-on-use.m4 wchar_h.m4 wint_t.m4 \
+	zzgnulib.m4
 all: all-am
 
 .SUFFIXES:
