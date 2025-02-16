@@ -123,10 +123,11 @@ TESTS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) test-assert$(EXEEXT) \
 	test-limits-h$(EXEEXT) $(am__EXEEXT_6) test-locale-h$(EXEEXT) \
 	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
 	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
-	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) test-init.sh test-toupper_l$(EXEEXT) \
-	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
-	test-verify.sh $(am__EXEEXT_12) test-wchar-h$(EXEEXT)
+	test-stdlib-h$(EXEEXT) test-strcasecmp_l$(EXEEXT) \
+	$(am__EXEEXT_10) test-strings-h$(EXEEXT) $(am__EXEEXT_11) \
+	test-sys_types-h$(EXEEXT) test-init.sh test-tolower_l$(EXEEXT) \
+	$(am__EXEEXT_12) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
+	test-verify.sh $(am__EXEEXT_13) test-wchar-h$(EXEEXT)
 XFAIL_TESTS =
 noinst_PROGRAMS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) \
 	test-assert$(EXEEXT) $(am__EXEEXT_2) test-bool$(EXEEXT) \
@@ -136,10 +137,11 @@ noinst_PROGRAMS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) \
 	test-limits-h$(EXEEXT) $(am__EXEEXT_6) test-locale-h$(EXEEXT) \
 	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
 	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
-	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) test-toupper_l$(EXEEXT) \
-	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
-	$(am__EXEEXT_12) test-wchar-h$(EXEEXT)
+	test-stdlib-h$(EXEEXT) test-strcasecmp_l$(EXEEXT) \
+	$(am__EXEEXT_10) test-strings-h$(EXEEXT) $(am__EXEEXT_11) \
+	test-sys_types-h$(EXEEXT) test-tolower_l$(EXEEXT) \
+	$(am__EXEEXT_12) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
+	$(am__EXEEXT_13) test-wchar-h$(EXEEXT)
 EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @ANSICXX_TRUE@am__append_1 = test-assert-h-c++
 @ANSICXX_TRUE@am__append_2 = test-assert-h-c++
@@ -161,12 +163,14 @@ EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @ANSICXX_TRUE@am__append_18 = test-stdint-h-c++
 @ANSICXX_TRUE@am__append_19 = test-stdlib-h-c++
 @ANSICXX_TRUE@am__append_20 = test-stdlib-h-c++
-@ANSICXX_TRUE@am__append_21 = test-sys_types-h-c++
-@ANSICXX_TRUE@am__append_22 = test-sys_types-h-c++
-@ANSICXX_TRUE@am__append_23 = test-unistd-h-c++
-@ANSICXX_TRUE@am__append_24 = test-unistd-h-c++
-@ANSICXX_TRUE@am__append_25 = test-wchar-h-c++
-@ANSICXX_TRUE@am__append_26 = test-wchar-h-c++
+@ANSICXX_TRUE@am__append_21 = test-strings-h-c++
+@ANSICXX_TRUE@am__append_22 = test-strings-h-c++
+@ANSICXX_TRUE@am__append_23 = test-sys_types-h-c++
+@ANSICXX_TRUE@am__append_24 = test-sys_types-h-c++
+@ANSICXX_TRUE@am__append_25 = test-unistd-h-c++
+@ANSICXX_TRUE@am__append_26 = test-unistd-h-c++
+@ANSICXX_TRUE@am__append_27 = test-wchar-h-c++
+@ANSICXX_TRUE@am__append_28 = test-wchar-h-c++
 subdir = gltests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -188,8 +192,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/ssize_t.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
+	$(top_srcdir)/glm4/strcasecmp_l.m4 \
+	$(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/toupper_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/tolower_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
 	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
@@ -210,9 +216,10 @@ CONFIG_CLEAN_VPATH_FILES =
 @ANSICXX_TRUE@am__EXEEXT_7 = test-stddef-h-c++$(EXEEXT)
 @ANSICXX_TRUE@am__EXEEXT_8 = test-stdint-h-c++$(EXEEXT)
 @ANSICXX_TRUE@am__EXEEXT_9 = test-stdlib-h-c++$(EXEEXT)
-@ANSICXX_TRUE@am__EXEEXT_10 = test-sys_types-h-c++$(EXEEXT)
-@ANSICXX_TRUE@am__EXEEXT_11 = test-unistd-h-c++$(EXEEXT)
-@ANSICXX_TRUE@am__EXEEXT_12 = test-wchar-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_10 = test-strings-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_11 = test-sys_types-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_12 = test-unistd-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_13 = test-wchar-h-c++$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 LIBRARIES = $(noinst_LIBRARIES)
 AM_V_AR = $(am__v_AR_@AM_V@)
@@ -371,6 +378,23 @@ am__test_stdlib_h_c___SOURCES_DIST = test-stdlib-h-c++.cc \
 @ANSICXX_TRUE@	test-stdlib-h-c++2.$(OBJEXT)
 test_stdlib_h_c___OBJECTS = $(am_test_stdlib_h_c___OBJECTS)
 @ANSICXX_TRUE@test_stdlib_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_strcasecmp_l_SOURCES = test-strcasecmp_l.c
+test_strcasecmp_l_OBJECTS = test-strcasecmp_l.$(OBJEXT)
+test_strcasecmp_l_LDADD = $(LDADD)
+test_strcasecmp_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_strings_h_SOURCES = test-strings-h.c
+test_strings_h_OBJECTS = test-strings-h.$(OBJEXT)
+test_strings_h_LDADD = $(LDADD)
+test_strings_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+am__test_strings_h_c___SOURCES_DIST = test-strings-h-c++.cc
+@ANSICXX_TRUE@am_test_strings_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-strings-h-c++.$(OBJEXT)
+test_strings_h_c___OBJECTS = $(am_test_strings_h_c___OBJECTS)
+test_strings_h_c___LDADD = $(LDADD)
+test_strings_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_sys_types_h_SOURCES = test-sys_types-h.c
 test_sys_types_h_OBJECTS = test-sys_types-h.$(OBJEXT)
 test_sys_types_h_LDADD = $(LDADD)
@@ -383,10 +407,10 @@ test_sys_types_h_c___OBJECTS = $(am_test_sys_types_h_c___OBJECTS)
 test_sys_types_h_c___LDADD = $(LDADD)
 test_sys_types_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_toupper_l_SOURCES = test-toupper_l.c
-test_toupper_l_OBJECTS = test-toupper_l.$(OBJEXT)
-test_toupper_l_LDADD = $(LDADD)
-test_toupper_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+test_tolower_l_SOURCES = test-tolower_l.c
+test_tolower_l_OBJECTS = test-tolower_l.$(OBJEXT)
+test_tolower_l_LDADD = $(LDADD)
+test_tolower_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_unistd_h_SOURCES = test-unistd-h.c
 test_unistd_h_OBJECTS = test-unistd-h.$(OBJEXT)
@@ -458,8 +482,11 @@ am__depfiles_remade = ./$(DEPDIR)/freelocale.Po \
 	./$(DEPDIR)/test-stdint-h-c++2.Po ./$(DEPDIR)/test-stdint-h.Po \
 	./$(DEPDIR)/test-stdlib-h-c++.Po \
 	./$(DEPDIR)/test-stdlib-h-c++2.Po ./$(DEPDIR)/test-stdlib-h.Po \
+	./$(DEPDIR)/test-strcasecmp_l.Po \
+	./$(DEPDIR)/test-strings-h-c++.Po \
+	./$(DEPDIR)/test-strings-h.Po \
 	./$(DEPDIR)/test-sys_types-h-c++.Po \
-	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-toupper_l.Po \
+	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-tolower_l.Po \
 	./$(DEPDIR)/test-unistd-h-c++.Po ./$(DEPDIR)/test-unistd-h.Po \
 	./$(DEPDIR)/test-verify-try.Po ./$(DEPDIR)/test-verify.Po \
 	./$(DEPDIR)/test-wchar-h-c++.Po \
@@ -501,10 +528,12 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_locale_h_c___SOURCES) test-newlocale.c test-stddef-h.c \
 	$(test_stddef_h_c___SOURCES) test-stdint-h.c \
 	$(test_stdint_h_c___SOURCES) test-stdlib-h.c \
-	$(test_stdlib_h_c___SOURCES) test-sys_types-h.c \
-	$(test_sys_types_h_c___SOURCES) test-toupper_l.c \
-	test-unistd-h.c $(test_unistd_h_c___SOURCES) test-verify.c \
-	test-verify-try.c test-wchar-h.c $(test_wchar_h_c___SOURCES)
+	$(test_stdlib_h_c___SOURCES) test-strcasecmp_l.c \
+	test-strings-h.c $(test_strings_h_c___SOURCES) \
+	test-sys_types-h.c $(test_sys_types_h_c___SOURCES) \
+	test-tolower_l.c test-unistd-h.c $(test_unistd_h_c___SOURCES) \
+	test-verify.c test-verify-try.c test-wchar-h.c \
+	$(test_wchar_h_c___SOURCES)
 DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(EXTRA_libtests_a_SOURCES) test-alignasof.c test-assert.c \
 	$(am__test_assert_h_c___SOURCES_DIST) test-bool.c \
@@ -517,10 +546,11 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	test-stddef-h.c $(am__test_stddef_h_c___SOURCES_DIST) \
 	test-stdint-h.c $(am__test_stdint_h_c___SOURCES_DIST) \
 	test-stdlib-h.c $(am__test_stdlib_h_c___SOURCES_DIST) \
-	test-sys_types-h.c $(am__test_sys_types_h_c___SOURCES_DIST) \
-	test-toupper_l.c test-unistd-h.c \
-	$(am__test_unistd_h_c___SOURCES_DIST) test-verify.c \
-	test-verify-try.c test-wchar-h.c \
+	test-strcasecmp_l.c test-strings-h.c \
+	$(am__test_strings_h_c___SOURCES_DIST) test-sys_types-h.c \
+	$(am__test_sys_types_h_c___SOURCES_DIST) test-tolower_l.c \
+	test-unistd-h.c $(am__test_unistd_h_c___SOURCES_DIST) \
+	test-verify.c test-verify-try.c test-wchar-h.c \
 	$(am__test_wchar_h_c___SOURCES_DIST)
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
@@ -869,6 +899,7 @@ GL_GNULIB_FACCESSAT = @GL_GNULIB_FACCESSAT@
 GL_GNULIB_FCHDIR = @GL_GNULIB_FCHDIR@
 GL_GNULIB_FCHOWNAT = @GL_GNULIB_FCHOWNAT@
 GL_GNULIB_FDATASYNC = @GL_GNULIB_FDATASYNC@
+GL_GNULIB_FFS = @GL_GNULIB_FFS@
 GL_GNULIB_FREELOCALE = @GL_GNULIB_FREELOCALE@
 GL_GNULIB_FREE_POSIX = @GL_GNULIB_FREE_POSIX@
 GL_GNULIB_FSYNC = @GL_GNULIB_FSYNC@
@@ -984,6 +1015,9 @@ GL_GNULIB_SETLOCALE = @GL_GNULIB_SETLOCALE@
 GL_GNULIB_SETLOCALE_NULL = @GL_GNULIB_SETLOCALE_NULL@
 GL_GNULIB_SLEEP = @GL_GNULIB_SLEEP@
 GL_GNULIB_STACK_TRACE = @GL_GNULIB_STACK_TRACE@
+GL_GNULIB_STRCASECMP = @GL_GNULIB_STRCASECMP@
+GL_GNULIB_STRCASECMP_L = @GL_GNULIB_STRCASECMP_L@
+GL_GNULIB_STRNCASECMP = @GL_GNULIB_STRNCASECMP@
 GL_GNULIB_STRTOD = @GL_GNULIB_STRTOD@
 GL_GNULIB_STRTOF = @GL_GNULIB_STRTOF@
 GL_GNULIB_STRTOIMAX = @GL_GNULIB_STRTOIMAX@
@@ -1078,6 +1112,7 @@ HAVE_DECL_PROGRAM_INVOCATION_NAME = @HAVE_DECL_PROGRAM_INVOCATION_NAME@
 HAVE_DECL_SETENV = @HAVE_DECL_SETENV@
 HAVE_DECL_SETHOSTNAME = @HAVE_DECL_SETHOSTNAME@
 HAVE_DECL_SETSTATE = @HAVE_DECL_SETSTATE@
+HAVE_DECL_STRNCASECMP = @HAVE_DECL_STRNCASECMP@
 HAVE_DECL_STRTOIMAX = @HAVE_DECL_STRTOIMAX@
 HAVE_DECL_STRTOUMAX = @HAVE_DECL_STRTOUMAX@
 HAVE_DECL_TRUNCATE = @HAVE_DECL_TRUNCATE@
@@ -1095,6 +1130,7 @@ HAVE_FCHDIR = @HAVE_FCHDIR@
 HAVE_FCHOWNAT = @HAVE_FCHOWNAT@
 HAVE_FDATASYNC = @HAVE_FDATASYNC@
 HAVE_FEATURES_H = @HAVE_FEATURES_H@
+HAVE_FFS = @HAVE_FFS@
 HAVE_FREELOCALE = @HAVE_FREELOCALE@
 HAVE_FSYNC = @HAVE_FSYNC@
 HAVE_FTRUNCATE = @HAVE_FTRUNCATE@
@@ -1172,6 +1208,9 @@ HAVE_SIGNED_WCHAR_T = @HAVE_SIGNED_WCHAR_T@
 HAVE_SIGNED_WINT_T = @HAVE_SIGNED_WINT_T@
 HAVE_SLEEP = @HAVE_SLEEP@
 HAVE_STDINT_H = @HAVE_STDINT_H@
+HAVE_STRCASECMP = @HAVE_STRCASECMP@
+HAVE_STRCASECMP_L = @HAVE_STRCASECMP_L@
+HAVE_STRINGS_H = @HAVE_STRINGS_H@
 HAVE_STRTOD = @HAVE_STRTOD@
 HAVE_STRTOF = @HAVE_STRTOF@
 HAVE_STRTOL = @HAVE_STRTOL@
@@ -1262,6 +1301,7 @@ NEXT_AS_FIRST_DIRECTIVE_LOCALE_H = @NEXT_AS_FIRST_DIRECTIVE_LOCALE_H@
 NEXT_AS_FIRST_DIRECTIVE_STDDEF_H = @NEXT_AS_FIRST_DIRECTIVE_STDDEF_H@
 NEXT_AS_FIRST_DIRECTIVE_STDINT_H = @NEXT_AS_FIRST_DIRECTIVE_STDINT_H@
 NEXT_AS_FIRST_DIRECTIVE_STDLIB_H = @NEXT_AS_FIRST_DIRECTIVE_STDLIB_H@
+NEXT_AS_FIRST_DIRECTIVE_STRINGS_H = @NEXT_AS_FIRST_DIRECTIVE_STRINGS_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H@
 NEXT_AS_FIRST_DIRECTIVE_UNISTD_H = @NEXT_AS_FIRST_DIRECTIVE_UNISTD_H@
 NEXT_AS_FIRST_DIRECTIVE_WCHAR_H = @NEXT_AS_FIRST_DIRECTIVE_WCHAR_H@
@@ -1272,6 +1312,7 @@ NEXT_LOCALE_H = @NEXT_LOCALE_H@
 NEXT_STDDEF_H = @NEXT_STDDEF_H@
 NEXT_STDINT_H = @NEXT_STDINT_H@
 NEXT_STDLIB_H = @NEXT_STDLIB_H@
+NEXT_STRINGS_H = @NEXT_STRINGS_H@
 NEXT_SYS_TYPES_H = @NEXT_SYS_TYPES_H@
 NEXT_UNISTD_H = @NEXT_UNISTD_H@
 NEXT_WCHAR_H = @NEXT_WCHAR_H@
@@ -1523,15 +1564,16 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	stdint.in.h test-stdint-h-c++.cc test-stdint-h-c++2.cc \
 	test-stdint-h.c stdlib.in.h test-stdlib-h-c++.cc \
 	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
-	test-sys_wait-h.h sys_types.in.h test-sys_types-h-c++.cc \
-	test-sys_types-h.c init.sh test-init.sh test-toupper_l.c \
-	signature.h macros.h unistd.in.h test-unistd-h-c++.cc \
-	signature.h test-unistd-h.c verify.h test-verify.c \
-	test-verify-try.c test-verify.sh wchar.in.h \
+	test-sys_wait-h.h test-strcasecmp_l.c signature.h macros.h \
+	test-strings-h-c++.cc signature.h test-strings-h.c \
+	test-sys_types-h-c++.cc test-sys_types-h.c init.sh \
+	test-init.sh test-tolower_l.c signature.h macros.h unistd.in.h \
+	test-unistd-h-c++.cc signature.h test-unistd-h.c verify.h \
+	test-verify.c test-verify-try.c test-verify.sh wchar.in.h \
 	test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc \
 	signature.h test-wchar-h.c
 BUILT_SOURCES = $(ASSERT_H) inttypes.h $(LIMITS_H) $(STDINT_H) \
-	stdlib.h sys/types.h unistd.h wchar.h
+	stdlib.h unistd.h wchar.h
 SUFFIXES = 
 
 # This test expects compilation of test-verify-try.c to fail, and
@@ -1539,11 +1581,10 @@ SUFFIXES =
 #  "mv -f $name.Tpo $name.po, so tell make clean to remove that file.
 MOSTLYCLEANFILES = core *.stackdump assert.h assert.h-t inttypes.h \
 	inttypes.h-t limits.h limits.h-t stdint.h stdint.h-t stdlib.h \
-	stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 sys/types.h sys/types.h-t \
-	unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 unistd.h-t4 \
-	.deps/test-verify-try.Tpo wchar.h wchar.h-t1 wchar.h-t2 \
-	wchar.h-t3
-MOSTLYCLEANDIRS = sys
+	stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 unistd.h unistd.h-t1 \
+	unistd.h-t2 unistd.h-t3 unistd.h-t4 .deps/test-verify-try.Tpo \
+	wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3
+MOSTLYCLEANDIRS = 
 CLEANFILES = 
 DISTCLEANFILES = 
 MAINTAINERCLEANFILES = 
@@ -1609,6 +1650,7 @@ WARN_ON_USE_H = $(srcdir)/warn-on-use.h
 @ANSICXX_TRUE@test_stdint_h_c___SOURCES = test-stdint-h-c++.cc test-stdint-h-c++2.cc
 @ANSICXX_TRUE@test_stdlib_h_c___SOURCES = test-stdlib-h-c++.cc test-stdlib-h-c++2.cc
 @ANSICXX_TRUE@test_stdlib_h_c___LDADD = $(LDADD) $(LIBINTL) $(GETLOADAVG_LIBS) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(GETRANDOM_LIB)
+@ANSICXX_TRUE@test_strings_h_c___SOURCES = test-strings-h-c++.cc
 @ANSICXX_TRUE@test_sys_types_h_c___SOURCES = test-sys_types-h-c++.cc
 @ANSICXX_TRUE@test_unistd_h_c___SOURCES = test-unistd-h-c++.cc
 @ANSICXX_TRUE@test_unistd_h_c___LDADD = $(LDADD) $(LIBINTL) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(LIBSOCKET) $(GETLOGIN_LIB) $(GETRANDOM_LIB)
@@ -1748,6 +1790,18 @@ test-stdlib-h-c++$(EXEEXT): $(test_stdlib_h_c___OBJECTS) $(test_stdlib_h_c___DEP
 	@rm -f test-stdlib-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_stdlib_h_c___OBJECTS) $(test_stdlib_h_c___LDADD) $(LIBS)
 
+test-strcasecmp_l$(EXEEXT): $(test_strcasecmp_l_OBJECTS) $(test_strcasecmp_l_DEPENDENCIES) $(EXTRA_test_strcasecmp_l_DEPENDENCIES) 
+	@rm -f test-strcasecmp_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_strcasecmp_l_OBJECTS) $(test_strcasecmp_l_LDADD) $(LIBS)
+
+test-strings-h$(EXEEXT): $(test_strings_h_OBJECTS) $(test_strings_h_DEPENDENCIES) $(EXTRA_test_strings_h_DEPENDENCIES) 
+	@rm -f test-strings-h$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_strings_h_OBJECTS) $(test_strings_h_LDADD) $(LIBS)
+
+test-strings-h-c++$(EXEEXT): $(test_strings_h_c___OBJECTS) $(test_strings_h_c___DEPENDENCIES) $(EXTRA_test_strings_h_c___DEPENDENCIES) 
+	@rm -f test-strings-h-c++$(EXEEXT)
+	$(AM_V_CXXLD)$(CXXLINK) $(test_strings_h_c___OBJECTS) $(test_strings_h_c___LDADD) $(LIBS)
+
 test-sys_types-h$(EXEEXT): $(test_sys_types_h_OBJECTS) $(test_sys_types_h_DEPENDENCIES) $(EXTRA_test_sys_types_h_DEPENDENCIES) 
 	@rm -f test-sys_types-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_sys_types_h_OBJECTS) $(test_sys_types_h_LDADD) $(LIBS)
@@ -1756,9 +1810,9 @@ test-sys_types-h-c++$(EXEEXT): $(test_sys_types_h_c___OBJECTS) $(test_sys_types_
 	@rm -f test-sys_types-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_sys_types_h_c___OBJECTS) $(test_sys_types_h_c___LDADD) $(LIBS)
 
-test-toupper_l$(EXEEXT): $(test_toupper_l_OBJECTS) $(test_toupper_l_DEPENDENCIES) $(EXTRA_test_toupper_l_DEPENDENCIES) 
-	@rm -f test-toupper_l$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_toupper_l_OBJECTS) $(test_toupper_l_LDADD) $(LIBS)
+test-tolower_l$(EXEEXT): $(test_tolower_l_OBJECTS) $(test_tolower_l_DEPENDENCIES) $(EXTRA_test_tolower_l_DEPENDENCIES) 
+	@rm -f test-tolower_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_tolower_l_OBJECTS) $(test_tolower_l_LDADD) $(LIBS)
 
 test-unistd-h$(EXEEXT): $(test_unistd_h_OBJECTS) $(test_unistd_h_DEPENDENCIES) $(EXTRA_test_unistd_h_DEPENDENCIES) 
 	@rm -f test-unistd-h$(EXEEXT)
@@ -1825,9 +1879,12 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strcasecmp_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strings-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strings-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-toupper_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-tolower_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-verify-try.Po@am__quote@ # am--include-marker
@@ -2312,6 +2369,27 @@ test-stdlib-h.log: test-stdlib-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-strcasecmp_l.log: test-strcasecmp_l$(EXEEXT)
+	@p='test-strcasecmp_l$(EXEEXT)'; \
+	b='test-strcasecmp_l'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-strings-h-c++.log: test-strings-h-c++$(EXEEXT)
+	@p='test-strings-h-c++$(EXEEXT)'; \
+	b='test-strings-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-strings-h.log: test-strings-h$(EXEEXT)
+	@p='test-strings-h$(EXEEXT)'; \
+	b='test-strings-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sys_types-h-c++.log: test-sys_types-h-c++$(EXEEXT)
 	@p='test-sys_types-h-c++$(EXEEXT)'; \
 	b='test-sys_types-h-c++'; \
@@ -2333,9 +2411,9 @@ test-init.sh.log: test-init.sh
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-toupper_l.log: test-toupper_l$(EXEEXT)
-	@p='test-toupper_l$(EXEEXT)'; \
-	b='test-toupper_l'; \
+test-tolower_l.log: test-tolower_l$(EXEEXT)
+	@p='test-tolower_l$(EXEEXT)'; \
+	b='test-tolower_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -2545,9 +2623,12 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
+	-rm -f ./$(DEPDIR)/test-strcasecmp_l.Po
+	-rm -f ./$(DEPDIR)/test-strings-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-strings-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
-	-rm -f ./$(DEPDIR)/test-toupper_l.Po
+	-rm -f ./$(DEPDIR)/test-tolower_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
@@ -2637,9 +2718,12 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
+	-rm -f ./$(DEPDIR)/test-strcasecmp_l.Po
+	-rm -f ./$(DEPDIR)/test-strings-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-strings-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
-	-rm -f ./$(DEPDIR)/test-toupper_l.Po
+	-rm -f ./$(DEPDIR)/test-tolower_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
@@ -2953,24 +3037,6 @@ stdlib.h: stdlib.in.h $(top_builddir)/config.status $(CXXDEFS_H) \
 	      < $@-t2 > $@-t3
 	$(AM_V_at)rm -f $@-t1 $@-t2
 	$(AM_V_at)mv $@-t3 $@
-
-# We need the following in order to create <sys/types.h> when the system
-# doesn't have one that works with the given compiler.
-sys/types.h: sys_types.in.h $(top_builddir)/config.status
-	$(AM_V_GEN)$(MKDIR_P) 'sys'
-	$(AM_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_SYS_TYPES_H''@|$(NEXT_SYS_TYPES_H)|g' \
-	      -e 's|@''WINDOWS_64_BIT_OFF_T''@|$(WINDOWS_64_BIT_OFF_T)|g' \
-	      -e 's|@''HAVE_OFF64_T''@|$(HAVE_OFF64_T)|g' \
-	      -e 's|@''WINDOWS_STAT_INODES''@|$(WINDOWS_STAT_INODES)|g' \
-	      -e 's|@''HAVE_BLKSIZE_T''@|$(HAVE_BLKSIZE_T)|g' \
-	      -e 's|@''HAVE_BLKCNT_T''@|$(HAVE_BLKCNT_T)|g' \
-	      $(srcdir)/sys_types.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
 
 # We need the following in order to create an empty placeholder for
 # <unistd.h> when the system doesn't have one.

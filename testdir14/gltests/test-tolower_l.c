@@ -1,4 +1,4 @@
-/* Test of toupper_l() function.
+/* Test of tolower_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -19,7 +19,7 @@
 #include <ctype.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (toupper_l, int, (int, locale_t));
+SIGNATURE_CHECK (tolower_l, int, (int, locale_t));
 
 #include <locale.h>
 #include <stdio.h>
@@ -32,18 +32,18 @@ test_single_locale_common (locale_t locale)
   int tc;
 
   /* Test EOF.  */
-  tc = toupper_l (EOF, locale);
+  tc = tolower_l (EOF, locale);
   ASSERT (tc == EOF);
 
   /* POSIX specifies in
        <https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap07.html>
      that
-       - in all locales, the lowercase characters include the a ... z
-         characters, and the corresponding characters A ... Z (if not in a
-         Turkish locale) are uppercase,
+       - in all locales, the uppercase characters include the A ... Z
+         characters, and the corresponding characters a ... z (if not in a
+         Turkish locale) are lowercase,
        - in the "POSIX" locale (which is usually the same as the "C" locale),
-         the lowercase characters include only the ASCII a ... z characters,
-         and the corresponding characters A ... Z are uppercase.
+         the uppercase characters include only the ASCII A ... Z characters,
+         and the corresponding characters a ... z are lowercase.
    */
   {
     int c;
@@ -73,16 +73,16 @@ test_single_locale_common (locale_t locale)
         case 'u': case 'v': case 'w': case 'x': case 'y':
         case 'z': case '{': case '|': case '}': case '~':
           /* c is in the ISO C "basic character set".  */
-          tc = toupper_l ((unsigned char) c, locale);
+          tc = tolower_l ((unsigned char) c, locale);
           switch (c)
             {
-            case 'a': case 'b': case 'c': case 'd': case 'e':
-            case 'f': case 'g': case 'h': case 'i': case 'j':
-            case 'k': case 'l': case 'm': case 'n': case 'o':
-            case 'p': case 'q': case 'r': case 's': case 't':
-            case 'u': case 'v': case 'w': case 'x': case 'y':
-            case 'z':
-              ASSERT (tc == (unsigned char) c - 'a' + 'A');
+            case 'A': case 'B': case 'C': case 'D': case 'E':
+            case 'F': case 'G': case 'H': case 'I': case 'J':
+            case 'K': case 'L': case 'M': case 'N': case 'O':
+            case 'P': case 'Q': case 'R': case 'S': case 'T':
+            case 'U': case 'V': case 'W': case 'X': case 'Y':
+            case 'Z':
+              ASSERT (tc == (unsigned char) c - 'A' + 'a');
               break;
             default:
               ASSERT (tc == c);
@@ -121,27 +121,23 @@ main ()
         int tc;
 
         /* U+00B2 SUPERSCRIPT TWO */
-        tc = toupper_l ((unsigned char) '\262', locale);
+        tc = tolower_l ((unsigned char) '\262', locale);
         ASSERT (tc == (unsigned char) '\262');
-      #if !(defined __GLIBC__ || (defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ || defined __NetBSD__ || defined __sun || defined __CYGWIN__ || (defined _WIN32 && !defined __CYGWIN__))
         /* U+00B5 MICRO SIGN */
-        tc = toupper_l ((unsigned char) '\265', locale);
+        tc = tolower_l ((unsigned char) '\265', locale);
         ASSERT (tc == (unsigned char) '\265');
-      #endif
         /* U+00C9 LATIN CAPITAL LETTER E WITH ACUTE */
-        tc = toupper_l ((unsigned char) '\311', locale);
-        ASSERT (tc == (unsigned char) '\311');
+        tc = tolower_l ((unsigned char) '\311', locale);
+        ASSERT (tc == (unsigned char) '\351');
         /* U+00DF LATIN SMALL LETTER SHARP S */
-        tc = toupper_l ((unsigned char) '\337', locale);
+        tc = tolower_l ((unsigned char) '\337', locale);
         ASSERT (tc == (unsigned char) '\337');
         /* U+00E9 LATIN SMALL LETTER E WITH ACUTE */
-        tc = toupper_l ((unsigned char) '\351', locale);
-        ASSERT (tc == (unsigned char) '\311');
-      #if !(defined __GLIBC__ || (defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ || defined __DragonFly__ || defined __NetBSD__ || defined __sun || defined __CYGWIN__ || (defined _WIN32 && !defined __CYGWIN__))
+        tc = tolower_l ((unsigned char) '\351', locale);
+        ASSERT (tc == (unsigned char) '\351');
         /* U+00FF LATIN SMALL LETTER Y WITH DIAERESIS */
-        tc = toupper_l ((unsigned char) '\377', locale);
+        tc = tolower_l ((unsigned char) '\377', locale);
         ASSERT (tc == (unsigned char) '\377');
-      #endif
 
         freelocale (locale);
       }

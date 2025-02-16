@@ -28,8 +28,8 @@ FUNC (int c, locale_t locale)
     /* Implementation for the "C" locale.  */
     return C_FUNC (c);
 #if HAVE_WINDOWS_LOCALE_T
-# ifdef __MINGW32__
-  /* mingw mistreats EOF.  */
+# ifndef _UCRT
+  /* The old MSVCRT mistreats EOF.  */
   if (c == EOF)
     return c;
 # endif

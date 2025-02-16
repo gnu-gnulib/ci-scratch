@@ -688,33 +688,32 @@ EXTRA_DIST += test-stdlib-h.c test-sys_wait-h.h
 
 ## end   gnulib module stdlib-h-tests
 
-## begin gnulib module sys_types-h
+## begin gnulib module strcasecmp_l-tests
 
-BUILT_SOURCES += sys/types.h
+TESTS += test-strcasecmp_l
+noinst_PROGRAMS += test-strcasecmp_l
+EXTRA_DIST += test-strcasecmp_l.c signature.h macros.h
 
-# We need the following in order to create <sys/types.h> when the system
-# doesn't have one that works with the given compiler.
-sys/types.h: sys_types.in.h $(top_builddir)/config.status
-	$(AM_V_GEN)$(MKDIR_P) '%reldir%/sys'
-	$(AM_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_SYS_TYPES_H''@|$(NEXT_SYS_TYPES_H)|g' \
-	      -e 's|@''WINDOWS_64_BIT_OFF_T''@|$(WINDOWS_64_BIT_OFF_T)|g' \
-	      -e 's|@''HAVE_OFF64_T''@|$(HAVE_OFF64_T)|g' \
-	      -e 's|@''WINDOWS_STAT_INODES''@|$(WINDOWS_STAT_INODES)|g' \
-	      -e 's|@''HAVE_BLKSIZE_T''@|$(HAVE_BLKSIZE_T)|g' \
-	      -e 's|@''HAVE_BLKCNT_T''@|$(HAVE_BLKCNT_T)|g' \
-	      $(srcdir)/sys_types.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-MOSTLYCLEANFILES += sys/types.h sys/types.h-t
-MOSTLYCLEANDIRS += sys
+## end   gnulib module strcasecmp_l-tests
 
-EXTRA_DIST += sys_types.in.h
+## begin gnulib module strings-h-c++-tests
 
-## end   gnulib module sys_types-h
+if ANSICXX
+TESTS += test-strings-h-c++
+noinst_PROGRAMS += test-strings-h-c++
+test_strings_h_c___SOURCES = test-strings-h-c++.cc
+endif
+EXTRA_DIST += test-strings-h-c++.cc signature.h
+
+## end   gnulib module strings-h-c++-tests
+
+## begin gnulib module strings-h-tests
+
+TESTS += test-strings-h
+noinst_PROGRAMS += test-strings-h
+EXTRA_DIST += test-strings-h.c
+
+## end   gnulib module strings-h-tests
 
 ## begin gnulib module sys_types-h-c++-tests
 
@@ -743,13 +742,13 @@ EXTRA_DIST += test-init.sh
 
 ## end   gnulib module test-framework-sh-tests
 
-## begin gnulib module toupper_l-tests
+## begin gnulib module tolower_l-tests
 
-TESTS += test-toupper_l
-noinst_PROGRAMS += test-toupper_l
-EXTRA_DIST += test-toupper_l.c signature.h macros.h
+TESTS += test-tolower_l
+noinst_PROGRAMS += test-tolower_l
+EXTRA_DIST += test-tolower_l.c signature.h macros.h
 
-## end   gnulib module toupper_l-tests
+## end   gnulib module tolower_l-tests
 
 ## begin gnulib module unistd-h
 

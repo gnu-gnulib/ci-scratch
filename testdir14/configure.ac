@@ -50,14 +50,26 @@ gl_m4_base='glm4'
   gl_LOCALE_H
   gl_LOCALE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gt_TYPE_SSIZE_T
   gl_STDDEF_H
   gl_STDDEF_H_REQUIRE_DEFAULTS
   gl_CONDITIONAL_HEADER([stddef.h])
   AC_PROG_MKDIR_P
-  gl_FUNC_TOUPPER_L
-  gl_CONDITIONAL([GL_COND_OBJ_TOUPPER_L], [test $HAVE_TOUPPER_L = 0])
-  gl_MODULE_INDICATOR([toupper_l])
-  gl_CTYPE_MODULE_INDICATOR([toupper_l])
+  gl_FUNC_STRCASECMP_L
+  gl_CONDITIONAL([GL_COND_OBJ_STRCASECMP_L], [test $HAVE_STRCASECMP_L = 0])
+  AM_COND_IF([GL_COND_OBJ_STRCASECMP_L], [
+    gl_PREREQ_STRCASECMP_L
+  ])
+  gl_STRINGS_H
+  gl_STRINGS_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_SYS_TYPES_H
+  gl_SYS_TYPES_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_FUNC_TOLOWER_L
+  gl_CONDITIONAL([GL_COND_OBJ_TOLOWER_L], [test $HAVE_TOLOWER_L = 0])
+  gl_MODULE_INDICATOR([tolower_l])
+  gl_CTYPE_MODULE_INDICATOR([tolower_l])
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
@@ -157,7 +169,6 @@ changequote([, ])dnl
   ])
   gl_LOCALE_MODULE_INDICATOR([newlocale])
   gl_CHECK_FUNCS_ANDROID([nl_langinfo_l], [[#include <langinfo.h>]])
-  gt_TYPE_SSIZE_T
   gl_STDINT_H
   gl_CONDITIONAL_HEADER([stdint.h])
   dnl Because of gl_REPLACE_LIMITS_H:
@@ -167,9 +178,7 @@ changequote([, ])dnl
   gl_STDLIB_H
   gl_STDLIB_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_SYS_TYPES_H
-  gl_SYS_TYPES_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
+  gl_MUSL_LIBC
   gl_MUSL_LIBC
   gl_UNISTD_H
   gl_UNISTD_H_REQUIRE_DEFAULTS

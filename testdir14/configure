@@ -959,13 +959,6 @@ HAVE_EUIDACCESS
 HAVE_DUP3
 HAVE_COPY_FILE_RANGE
 HAVE_CHOWN
-HAVE_BLKCNT_T
-HAVE_BLKSIZE_T
-WINDOWS_STAT_INODES
-HAVE_OFF64_T
-WINDOWS_64_BIT_OFF_T
-NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H
-NEXT_SYS_TYPES_H
 GL_GNULIB_MDA_PUTENV
 GL_GNULIB_MDA_MKTEMP
 GL_GNULIB_MDA_GCVT
@@ -1179,8 +1172,28 @@ NEXT_ASSERT_H
 gltests_WITNESS
 GL_CXXFLAG_ALLOW_WARNINGS
 GL_CFLAG_ALLOW_WARNINGS
-GL_COND_OBJ_TOUPPER_L_FALSE
-GL_COND_OBJ_TOUPPER_L_TRUE
+GL_COND_OBJ_TOLOWER_L_FALSE
+GL_COND_OBJ_TOLOWER_L_TRUE
+HAVE_BLKCNT_T
+HAVE_BLKSIZE_T
+WINDOWS_STAT_INODES
+HAVE_OFF64_T
+WINDOWS_64_BIT_OFF_T
+NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H
+NEXT_SYS_TYPES_H
+GL_GNULIB_STRNCASECMP
+GL_GNULIB_STRCASECMP_L
+GL_GNULIB_STRCASECMP
+GL_GNULIB_FFS
+HAVE_STRINGS_H
+NEXT_AS_FIRST_DIRECTIVE_STRINGS_H
+NEXT_STRINGS_H
+GL_COND_OBJ_STRCASECMP_L_FALSE
+GL_COND_OBJ_STRCASECMP_L_TRUE
+HAVE_DECL_STRNCASECMP
+HAVE_STRCASECMP_L
+HAVE_STRCASECMP
+HAVE_FFS
 GL_GENERATE_STDDEF_H_FALSE
 GL_GENERATE_STDDEF_H_TRUE
 STDDEF_H
@@ -2477,6 +2490,65 @@ fi
 
 } # ac_fn_c_try_run
 
+# ac_fn_c_check_type LINENO TYPE VAR INCLUDES
+# -------------------------------------------
+# Tests whether TYPE exists after having included INCLUDES, setting cache
+# variable VAR accordingly.
+ac_fn_c_check_type ()
+{
+  as_lineno=${as_lineno-"$1"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $2" >&5
+printf %s "checking for $2... " >&6; }
+if eval test \${$3+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) eval "$3=no"
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+$4
+int
+main (void)
+{
+if (sizeof ($2))
+	 return 0;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+$4
+int
+main (void)
+{
+if (sizeof (($2)))
+	    return 0;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+
+else case e in #(
+  e) eval "$3=yes" ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+eval ac_res=\$$3
+	       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+printf "%s\n" "$ac_res" >&6; }
+  eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
+
+} # ac_fn_c_check_type
+
 # ac_fn_c_compute_int LINENO EXPR VAR INCLUDES
 # --------------------------------------------
 # Tries to find the compile-time value of EXPR in a program that includes
@@ -2671,65 +2743,6 @@ rm -f conftest.val
   as_fn_set_status $ac_retval
 
 } # ac_fn_c_compute_int
-
-# ac_fn_c_check_type LINENO TYPE VAR INCLUDES
-# -------------------------------------------
-# Tests whether TYPE exists after having included INCLUDES, setting cache
-# variable VAR accordingly.
-ac_fn_c_check_type ()
-{
-  as_lineno=${as_lineno-"$1"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $2" >&5
-printf %s "checking for $2... " >&6; }
-if eval test \${$3+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) eval "$3=no"
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-$4
-int
-main (void)
-{
-if (sizeof ($2))
-	 return 0;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-$4
-int
-main (void)
-{
-if (sizeof (($2)))
-	    return 0;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-
-else case e in #(
-  e) eval "$3=yes" ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-eval ac_res=\$$3
-	       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
-printf "%s\n" "$ac_res" >&6; }
-  eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
-
-} # ac_fn_c_check_type
 ac_configure_args_raw=
 for ac_arg
 do
@@ -3363,7 +3376,8 @@ as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
-as_fn_append ac_func_c_list " toupper_l HAVE_TOUPPER_L"
+as_fn_append ac_func_c_list " strcasecmp_l HAVE_STRCASECMP_L"
+as_fn_append ac_func_c_list " tolower_l HAVE_TOLOWER_L"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
 as_fn_append ac_header_c_list " crtdefs.h crtdefs_h HAVE_CRTDEFS_H"
@@ -8038,6 +8052,12 @@ printf "%s\n" "$gl_cv_next_locale_h" >&6; }
 
 
 
+
+    HAVE_FFS=1;
+  HAVE_STRCASECMP=1;
+  HAVE_STRCASECMP_L=1;
+  HAVE_DECL_STRNCASECMP=1;
+
 ac_func=
 for ac_item in $ac_func_c_list
 do
@@ -8271,6 +8291,336 @@ printf "%s\n" "#define HAVE_WORKING_USELOCALE 1" >>confdefs.h
       gt_working_uselocale=no
       ;;
   esac
+
+
+
+
+
+
+
+
+
+
+
+
+
+     if test $gl_cv_have_include_next = yes; then
+       gl_cv_next_strings_h='<'strings.h'>'
+     else
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <strings.h>" >&5
+printf %s "checking absolute name of <strings.h>... " >&6; }
+if test ${gl_cv_next_strings_h+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+             if test $ac_cv_header_strings_h = yes; then
+
+
+
+
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <strings.h>
+_ACEOF
+                case "$host_os" in
+    aix*) gl_absname_cpp="$ac_cpp -C" ;;
+    *)    gl_absname_cpp="$ac_cpp" ;;
+  esac
+
+  case "$host_os" in
+    mingw* | windows*)
+                                          gl_dirsep_regex='[/\\]'
+      ;;
+    *)
+      gl_dirsep_regex='\/'
+      ;;
+  esac
+      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
+  gl_header_literal_regex=`echo 'strings.h' \
+                           | sed -e "$gl_make_literal_regex_sed"`
+  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
+      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
+      s|^/[^/]|//&|
+      p
+      q
+    }'
+
+        gl_cv_absolute_strings_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
+  sed -n "$gl_absolute_header_sed"`
+
+          gl_header=$gl_cv_absolute_strings_h
+          gl_cv_next_strings_h='"'$gl_header'"'
+          else
+               gl_cv_next_strings_h='<'strings.h'>'
+             fi
+
+          ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_strings_h" >&5
+printf "%s\n" "$gl_cv_next_strings_h" >&6; }
+     fi
+     NEXT_STRINGS_H=$gl_cv_next_strings_h
+
+     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
+       gl_next_as_first_directive='<'strings.h'>'
+     else
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
+       gl_next_as_first_directive=$gl_cv_next_strings_h
+     fi
+     NEXT_AS_FIRST_DIRECTIVE_STRINGS_H=$gl_next_as_first_directive
+
+
+
+
+  if test $ac_cv_header_strings_h = yes; then
+    HAVE_STRINGS_H=1
+  else
+    HAVE_STRINGS_H=0
+  fi
+
+
+
+
+
+
+
+
+  GL_GNULIB_FFS=0
+
+
+
+  GL_GNULIB_STRCASECMP=0
+
+
+
+  GL_GNULIB_STRCASECMP_L=0
+
+
+
+  GL_GNULIB_STRNCASECMP=0
+
+
+
+
+
+
+  ac_fn_c_check_type "$LINENO" "pid_t" "ac_cv_type_pid_t" "$ac_includes_default
+"
+if test "x$ac_cv_type_pid_t" = xyes
+then :
+
+else case e in #(
+  e)                                         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+          #if defined _WIN64 && !defined __CYGWIN__
+          LLP64
+          #endif
+
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  ac_pid_type='int'
+else case e in #(
+  e) ac_pid_type='__int64' ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+
+printf "%s\n" "#define pid_t $ac_pid_type" >>confdefs.h
+
+     ;;
+esac
+fi
+
+
+ac_fn_c_check_type "$LINENO" "mode_t" "ac_cv_type_mode_t" "$ac_includes_default"
+if test "x$ac_cv_type_mode_t" = xyes
+then :
+
+else case e in #(
+  e)
+printf "%s\n" "#define mode_t int" >>confdefs.h
+ ;;
+esac
+fi
+
+
+
+    WINDOWS_64_BIT_OFF_T=0
+
+
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for off64_t" >&5
+printf %s "checking for off64_t... " >&6; }
+if test ${gl_cv_off64_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <sys/types.h>
+int
+main (void)
+{
+int x = sizeof (off64_t *) + sizeof (off64_t);
+            return !x;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_off64_t=yes
+else case e in #(
+  e) gl_cv_off64_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_off64_t" >&5
+printf "%s\n" "$gl_cv_off64_t" >&6; }
+
+  if test $gl_cv_off64_t != no; then
+    HAVE_OFF64_T=1
+  else
+    HAVE_OFF64_T=0
+  fi
+
+
+
+
+
+
+printf "%s\n" "#define _USE_STD_STAT 1" >>confdefs.h
+
+
+
+
+
+
+
+
+
+
+     if test $gl_cv_have_include_next = yes; then
+       gl_cv_next_sys_types_h='<'sys/types.h'>'
+     else
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <sys/types.h>" >&5
+printf %s "checking absolute name of <sys/types.h>... " >&6; }
+if test ${gl_cv_next_sys_types_h+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+
+
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <sys/types.h>
+_ACEOF
+                case "$host_os" in
+    aix*) gl_absname_cpp="$ac_cpp -C" ;;
+    *)    gl_absname_cpp="$ac_cpp" ;;
+  esac
+
+  case "$host_os" in
+    mingw* | windows*)
+                                          gl_dirsep_regex='[/\\]'
+      ;;
+    *)
+      gl_dirsep_regex='\/'
+      ;;
+  esac
+      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
+  gl_header_literal_regex=`echo 'sys/types.h' \
+                           | sed -e "$gl_make_literal_regex_sed"`
+  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
+      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
+      s|^/[^/]|//&|
+      p
+      q
+    }'
+
+        gl_cv_absolute_sys_types_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
+  sed -n "$gl_absolute_header_sed"`
+
+          gl_header=$gl_cv_absolute_sys_types_h
+          gl_cv_next_sys_types_h='"'$gl_header'"'
+
+          ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_sys_types_h" >&5
+printf "%s\n" "$gl_cv_next_sys_types_h" >&6; }
+     fi
+     NEXT_SYS_TYPES_H=$gl_cv_next_sys_types_h
+
+     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
+       gl_next_as_first_directive='<'sys/types.h'>'
+     else
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
+       gl_next_as_first_directive=$gl_cv_next_sys_types_h
+     fi
+     NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H=$gl_next_as_first_directive
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    WINDOWS_STAT_INODES=0
+
+
+
+    ac_fn_c_check_type "$LINENO" "blksize_t" "ac_cv_type_blksize_t" "$ac_includes_default"
+if test "x$ac_cv_type_blksize_t" = xyes
+then :
+  HAVE_BLKSIZE_T=1
+else case e in #(
+  e) HAVE_BLKSIZE_T=0 ;;
+esac
+fi
+
+
+
+    ac_fn_c_check_type "$LINENO" "blkcnt_t" "ac_cv_type_blkcnt_t" "$ac_includes_default"
+if test "x$ac_cv_type_blkcnt_t" = xyes
+then :
+  HAVE_BLKCNT_T=1
+else case e in #(
+  e) HAVE_BLKCNT_T=0 ;;
+esac
+fi
+
+
+
+
+
 
 
 
@@ -10714,223 +11064,6 @@ esac
 
 
 
-
-  ac_fn_c_check_type "$LINENO" "pid_t" "ac_cv_type_pid_t" "$ac_includes_default
-"
-if test "x$ac_cv_type_pid_t" = xyes
-then :
-
-else case e in #(
-  e)                                         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-          #if defined _WIN64 && !defined __CYGWIN__
-          LLP64
-          #endif
-
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  ac_pid_type='int'
-else case e in #(
-  e) ac_pid_type='__int64' ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-
-printf "%s\n" "#define pid_t $ac_pid_type" >>confdefs.h
-
-     ;;
-esac
-fi
-
-
-ac_fn_c_check_type "$LINENO" "mode_t" "ac_cv_type_mode_t" "$ac_includes_default"
-if test "x$ac_cv_type_mode_t" = xyes
-then :
-
-else case e in #(
-  e)
-printf "%s\n" "#define mode_t int" >>confdefs.h
- ;;
-esac
-fi
-
-
-
-    WINDOWS_64_BIT_OFF_T=0
-
-
-
-
-
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for off64_t" >&5
-printf %s "checking for off64_t... " >&6; }
-if test ${gl_cv_off64_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sys/types.h>
-int
-main (void)
-{
-int x = sizeof (off64_t *) + sizeof (off64_t);
-            return !x;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_off64_t=yes
-else case e in #(
-  e) gl_cv_off64_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_off64_t" >&5
-printf "%s\n" "$gl_cv_off64_t" >&6; }
-
-  if test $gl_cv_off64_t != no; then
-    HAVE_OFF64_T=1
-  else
-    HAVE_OFF64_T=0
-  fi
-
-
-
-
-
-
-printf "%s\n" "#define _USE_STD_STAT 1" >>confdefs.h
-
-
-
-
-
-
-
-
-
-
-     if test $gl_cv_have_include_next = yes; then
-       gl_cv_next_sys_types_h='<'sys/types.h'>'
-     else
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <sys/types.h>" >&5
-printf %s "checking absolute name of <sys/types.h>... " >&6; }
-if test ${gl_cv_next_sys_types_h+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)
-
-
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sys/types.h>
-_ACEOF
-                case "$host_os" in
-    aix*) gl_absname_cpp="$ac_cpp -C" ;;
-    *)    gl_absname_cpp="$ac_cpp" ;;
-  esac
-
-  case "$host_os" in
-    mingw* | windows*)
-                                          gl_dirsep_regex='[/\\]'
-      ;;
-    *)
-      gl_dirsep_regex='\/'
-      ;;
-  esac
-      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
-  gl_header_literal_regex=`echo 'sys/types.h' \
-                           | sed -e "$gl_make_literal_regex_sed"`
-  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
-      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
-      s|^/[^/]|//&|
-      p
-      q
-    }'
-
-        gl_cv_absolute_sys_types_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
-  sed -n "$gl_absolute_header_sed"`
-
-          gl_header=$gl_cv_absolute_sys_types_h
-          gl_cv_next_sys_types_h='"'$gl_header'"'
-
-          ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_sys_types_h" >&5
-printf "%s\n" "$gl_cv_next_sys_types_h" >&6; }
-     fi
-     NEXT_SYS_TYPES_H=$gl_cv_next_sys_types_h
-
-     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
-       gl_next_as_first_directive='<'sys/types.h'>'
-     else
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
-       gl_next_as_first_directive=$gl_cv_next_sys_types_h
-     fi
-     NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H=$gl_next_as_first_directive
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    WINDOWS_STAT_INODES=0
-
-
-
-    ac_fn_c_check_type "$LINENO" "blksize_t" "ac_cv_type_blksize_t" "$ac_includes_default"
-if test "x$ac_cv_type_blksize_t" = xyes
-then :
-  HAVE_BLKSIZE_T=1
-else case e in #(
-  e) HAVE_BLKSIZE_T=0 ;;
-esac
-fi
-
-
-
-    ac_fn_c_check_type "$LINENO" "blkcnt_t" "ac_cv_type_blkcnt_t" "$ac_includes_default"
-if test "x$ac_cv_type_blkcnt_t" = xyes
-then :
-  HAVE_BLKCNT_T=1
-else case e in #(
-  e) HAVE_BLKCNT_T=0 ;;
-esac
-fi
-
-
-
-
-
-
-
   case "$host_os" in
     *-musl* | midipix*)
 
@@ -12028,6 +12161,79 @@ printf "%s\n" "#define HAVE_C_BOOL 1" >>confdefs.h
 
 
 
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ssize_t" >&5
+printf %s "checking for ssize_t... " >&6; }
+if test ${gl_cv_ssize_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <sys/types.h>
+int
+main (void)
+{
+int x = sizeof (ssize_t *) + sizeof (ssize_t);
+            return !x;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_ssize_t=yes
+else case e in #(
+  e) gl_cv_ssize_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_ssize_t" >&5
+printf "%s\n" "$gl_cv_ssize_t" >&6; }
+  if test $gl_cv_ssize_t = no; then
+            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether size_t is wider than 'long'" >&5
+printf %s "checking whether size_t is wider than 'long'... " >&6; }
+if test ${gl_cv_size_t_large+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <sys/types.h>
+              typedef int array [2 * (sizeof (size_t) > sizeof (long)) - 1];
+
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_size_t_large=yes
+else case e in #(
+  e) gl_cv_size_t_large=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_size_t_large" >&5
+printf "%s\n" "$gl_cv_size_t_large" >&6; }
+    if test $gl_cv_size_t_large = yes; then
+      gl_def_ssize_t='long long'
+    else
+      gl_def_ssize_t='long'
+    fi
+
+printf "%s\n" "#define ssize_t $gl_def_ssize_t" >>confdefs.h
+
+  fi
+
+
 
 
 
@@ -12072,29 +12278,75 @@ fi
 
 
 
-  if test $ac_cv_func_toupper_l = no; then
-    HAVE_TOUPPER_L=0
+  if test $ac_cv_func_strcasecmp_l = no; then
+    HAVE_STRCASECMP_L=0
   fi
 
 
-
-
-     if test $HAVE_TOUPPER_L = 0; then
-  GL_COND_OBJ_TOUPPER_L_TRUE=
-  GL_COND_OBJ_TOUPPER_L_FALSE='#'
+     if test $HAVE_STRCASECMP_L = 0; then
+  GL_COND_OBJ_STRCASECMP_L_TRUE=
+  GL_COND_OBJ_STRCASECMP_L_FALSE='#'
 else
-  GL_COND_OBJ_TOUPPER_L_TRUE='#'
-  GL_COND_OBJ_TOUPPER_L_FALSE=
+  GL_COND_OBJ_STRCASECMP_L_TRUE='#'
+  GL_COND_OBJ_STRCASECMP_L_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_TOUPPER_L_TRUE}" && test -z "${GL_COND_OBJ_TOUPPER_L_FALSE}"; then
-    GL_COND_OBJ_TOUPPER_L_TRUE='#'
-    GL_COND_OBJ_TOUPPER_L_FALSE='#'
+    if test -z "${GL_COND_OBJ_STRCASECMP_L_TRUE}" && test -z "${GL_COND_OBJ_STRCASECMP_L_FALSE}"; then
+    GL_COND_OBJ_STRCASECMP_L_TRUE='#'
+    GL_COND_OBJ_STRCASECMP_L_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_STRCASECMP_L_TRUE"; then :
+
+
+
+  :
+
+
+fi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  if test $ac_cv_func_tolower_l = no; then
+    HAVE_TOLOWER_L=0
   fi
 
 
 
-printf "%s\n" "#define GNULIB_TOUPPER_L 1" >>confdefs.h
+
+     if test $HAVE_TOLOWER_L = 0; then
+  GL_COND_OBJ_TOLOWER_L_TRUE=
+  GL_COND_OBJ_TOLOWER_L_FALSE='#'
+else
+  GL_COND_OBJ_TOLOWER_L_TRUE='#'
+  GL_COND_OBJ_TOLOWER_L_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_TOLOWER_L_TRUE}" && test -z "${GL_COND_OBJ_TOLOWER_L_FALSE}"; then
+    GL_COND_OBJ_TOLOWER_L_TRUE='#'
+    GL_COND_OBJ_TOLOWER_L_FALSE='#'
+  fi
+
+
+
+printf "%s\n" "#define GNULIB_TOLOWER_L 1" >>confdefs.h
 
 
 
@@ -12106,7 +12358,7 @@ printf "%s\n" "#define GNULIB_TOUPPER_L 1" >>confdefs.h
 
 
 
-          GL_GNULIB_TOUPPER_L=1
+          GL_GNULIB_TOLOWER_L=1
 
 
 
@@ -13016,79 +13268,6 @@ printf "%s\n" "#define HAVE_NL_LANGINFO_L 1" >>confdefs.h
 
 
 
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ssize_t" >&5
-printf %s "checking for ssize_t... " >&6; }
-if test ${gl_cv_ssize_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sys/types.h>
-int
-main (void)
-{
-int x = sizeof (ssize_t *) + sizeof (ssize_t);
-            return !x;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_ssize_t=yes
-else case e in #(
-  e) gl_cv_ssize_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_ssize_t" >&5
-printf "%s\n" "$gl_cv_ssize_t" >&6; }
-  if test $gl_cv_ssize_t = no; then
-            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether size_t is wider than 'long'" >&5
-printf %s "checking whether size_t is wider than 'long'... " >&6; }
-if test ${gl_cv_size_t_large+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sys/types.h>
-              typedef int array [2 * (sizeof (size_t) > sizeof (long)) - 1];
-
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_size_t_large=yes
-else case e in #(
-  e) gl_cv_size_t_large=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_size_t_large" >&5
-printf "%s\n" "$gl_cv_size_t_large" >&6; }
-    if test $gl_cv_size_t_large = yes; then
-      gl_def_ssize_t='long long'
-    else
-      gl_def_ssize_t='long'
-    fi
-
-printf "%s\n" "#define ssize_t $gl_def_ssize_t" >>confdefs.h
-
-  fi
-
-
 
 
 
@@ -13148,12 +13327,6 @@ fi
     GL_GENERATE_LIMITS_H_TRUE='#'
     GL_GENERATE_LIMITS_H_FALSE='#'
   fi
-
-
-
-
-
-
 
 
 
