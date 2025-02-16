@@ -94,8 +94,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
-	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/ansi-c++.m4 \
-	$(top_srcdir)/glm4/arpa_inet_h.m4 \
+	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
 	$(top_srcdir)/glm4/c-bool.m4 $(top_srcdir)/glm4/calloc.m4 \
@@ -259,10 +258,6 @@ CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CSCOPE = @CSCOPE@
 CTAGS = @CTAGS@
-CXX = @CXX@
-CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = @CXXFLAGS@
-CXX_CHOICE = @CXX_CHOICE@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -1834,7 +1829,6 @@ abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
 ac_ct_CC = @ac_ct_CC@
-ac_ct_CXX = @ac_ct_CXX@
 am__include = @am__include@
 am__leading_dot = @am__leading_dot@
 am__quote = @am__quote@
@@ -1897,42 +1891,41 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
-	ansi-c++.m4 arpa_inet_h.m4 assert_h.m4 build-to-host.m4 \
-	c-bool.m4 calloc.m4 close.m4 codeset.m4 ctype_h.m4 \
-	double-slash-root.m4 dup2.m4 environ.m4 errno_h.m4 error.m4 \
-	error_h.m4 exponentd.m4 exponentf.m4 exponentl.m4 \
-	extensions-aix.m4 extensions.m4 extern-inline.m4 fcntl-o.m4 \
-	fcntl.m4 fcntl_h.m4 fdopen.m4 flexmember.m4 float_h.m4 \
-	fpieee.m4 free.m4 freelocale.m4 fstat.m4 ftruncate.m4 \
-	getcwd.m4 getdtablesize.m4 getprogname.m4 gettimeofday.m4 \
-	gnulib-common.m4 gnulib-i18n.m4 include_next.m4 inet_pton.m4 \
-	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
-	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 langinfo_h.m4 \
-	largefile.m4 lcmessage.m4 limits-h.m4 locale-en.m4 \
-	locale-fr.m4 locale-ja.m4 locale-tr.m4 locale-zh.m4 \
-	locale_h.m4 localename.m4 lock.m4 lstat.m4 malloc.m4 \
-	malloca.m4 math_h.m4 minmax.m4 mode_t.m4 msvc-inval.m4 \
-	msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 nanosleep.m4 \
-	netinet_in_h.m4 newlocale.m4 off64_t.m4 off_t.m4 once.m4 \
-	open-cloexec.m4 open-slash.m4 open.m4 pathmax.m4 perror.m4 \
-	pid_t.m4 pipe.m4 pselect.m4 pthread-cond.m4 pthread-mutex.m4 \
-	pthread-once.m4 pthread-rwlock.m4 pthread-spin.m4 \
-	pthread-thread.m4 pthread_h.m4 pthread_mutex_timedlock.m4 \
-	pthread_rwlock_rdlock.m4 pthread_sigmask.m4 putenv.m4 raise.m4 \
-	random.m4 random_r.m4 realloc.m4 reallocarray.m4 sched_h.m4 \
-	sched_yield.m4 select.m4 semaphore.m4 setenv.m4 setlocale.m4 \
-	setlocale_null.m4 signal_h.m4 signalblocking.m4 signbit.m4 \
-	sleep.m4 snan.m4 socketlib.m4 sockets.m4 socklen.m4 \
-	sockpfaf.m4 ssize_t.m4 stat-time.m4 stat.m4 std-gnu11.m4 \
-	stdalign.m4 stddef_h.m4 stdint.m4 stdio_h.m4 stdlib_h.m4 \
-	stpcpy.m4 strcasecmp.m4 strerror.m4 strerror_r.m4 string_h.m4 \
-	strings_h.m4 strncasecmp_l.m4 symlink.m4 sys_cdefs_h.m4 \
-	sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 \
-	sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 thread.m4 \
-	threadlib.m4 time.m4 time_h.m4 tolower_l.m4 unistd_h.m4 \
-	usleep.m4 vararrays.m4 visibility.m4 warn-on-use.m4 wchar_h.m4 \
-	windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 \
-	zzgnulib.m4
+	arpa_inet_h.m4 assert_h.m4 build-to-host.m4 c-bool.m4 \
+	calloc.m4 close.m4 codeset.m4 ctype_h.m4 double-slash-root.m4 \
+	dup2.m4 environ.m4 errno_h.m4 error.m4 error_h.m4 exponentd.m4 \
+	exponentf.m4 exponentl.m4 extensions-aix.m4 extensions.m4 \
+	extern-inline.m4 fcntl-o.m4 fcntl.m4 fcntl_h.m4 fdopen.m4 \
+	flexmember.m4 float_h.m4 fpieee.m4 free.m4 freelocale.m4 \
+	fstat.m4 ftruncate.m4 getcwd.m4 getdtablesize.m4 \
+	getprogname.m4 gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
+	include_next.m4 inet_pton.m4 intl-thread-locale.m4 \
+	intlmacosx.m4 inttypes.m4 ioctl.m4 isblank.m4 isnand.m4 \
+	isnanf.m4 isnanl.m4 langinfo_h.m4 largefile.m4 lcmessage.m4 \
+	limits-h.m4 locale-en.m4 locale-fr.m4 locale-ja.m4 \
+	locale-tr.m4 locale-zh.m4 locale_h.m4 localename.m4 lock.m4 \
+	lstat.m4 malloc.m4 malloca.m4 math_h.m4 minmax.m4 mode_t.m4 \
+	msvc-inval.m4 msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 \
+	nanosleep.m4 netinet_in_h.m4 newlocale.m4 off64_t.m4 off_t.m4 \
+	once.m4 open-cloexec.m4 open-slash.m4 open.m4 pathmax.m4 \
+	perror.m4 pid_t.m4 pipe.m4 pselect.m4 pthread-cond.m4 \
+	pthread-mutex.m4 pthread-once.m4 pthread-rwlock.m4 \
+	pthread-spin.m4 pthread-thread.m4 pthread_h.m4 \
+	pthread_mutex_timedlock.m4 pthread_rwlock_rdlock.m4 \
+	pthread_sigmask.m4 putenv.m4 raise.m4 random.m4 random_r.m4 \
+	realloc.m4 reallocarray.m4 sched_h.m4 sched_yield.m4 select.m4 \
+	semaphore.m4 setenv.m4 setlocale.m4 setlocale_null.m4 \
+	signal_h.m4 signalblocking.m4 signbit.m4 sleep.m4 snan.m4 \
+	socketlib.m4 sockets.m4 socklen.m4 sockpfaf.m4 ssize_t.m4 \
+	stat-time.m4 stat.m4 std-gnu11.m4 stdalign.m4 stddef_h.m4 \
+	stdint.m4 stdio_h.m4 stdlib_h.m4 stpcpy.m4 strcasecmp.m4 \
+	strerror.m4 strerror_r.m4 string_h.m4 strings_h.m4 \
+	strncasecmp_l.m4 symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 \
+	sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 sys_time_h.m4 \
+	sys_types_h.m4 sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 \
+	time_h.m4 tolower_l.m4 unistd_h.m4 usleep.m4 vararrays.m4 \
+	visibility.m4 warn-on-use.m4 wchar_h.m4 windows-rc.m4 \
+	wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 zzgnulib.m4
 all: all-am
 
 .SUFFIXES:

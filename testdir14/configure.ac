@@ -22,7 +22,6 @@ m4_pattern_allow([^gl_LTLIBOBJS$])dnl a variable
 gl_USE_SYSTEM_EXTENSIONS
 gl_PROG_AR_RANLIB
 
-gl_ANSI_CXX
 # This is actually already done in the pre-early phase.
 # gl_USE_SYSTEM_EXTENSIONS
 gl_USE_AIX_EXTENSIONS

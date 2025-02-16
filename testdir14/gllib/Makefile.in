@@ -122,8 +122,7 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
-	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/ansi-c++.m4 \
-	$(top_srcdir)/glm4/arpa_inet_h.m4 \
+	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
 	$(top_srcdir)/glm4/c-bool.m4 $(top_srcdir)/glm4/calloc.m4 \
@@ -412,10 +411,6 @@ CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CSCOPE = @CSCOPE@
 CTAGS = @CTAGS@
-CXX = @CXX@
-CXXDEPMODE = @CXXDEPMODE@
-CXXFLAGS = @CXXFLAGS@
-CXX_CHOICE = @CXX_CHOICE@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
@@ -1987,7 +1982,6 @@ abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
 ac_ct_CC = @ac_ct_CC@
-ac_ct_CXX = @ac_ct_CXX@
 am__include = @am__include@
 am__leading_dot = @am__leading_dot@
 am__quote = @am__quote@

@@ -5,7 +5,6 @@ EXTRA_DIST += 00gnulib.m4
 EXTRA_DIST += __inline.m4
 EXTRA_DIST += absolute-header.m4
 EXTRA_DIST += alloca.m4
-EXTRA_DIST += ansi-c++.m4
 EXTRA_DIST += arpa_inet_h.m4
 EXTRA_DIST += assert_h.m4
 EXTRA_DIST += build-to-host.m4
