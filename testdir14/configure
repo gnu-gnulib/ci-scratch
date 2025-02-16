@@ -2324,19 +2324,22 @@ HAVE_OFF64_T
 WINDOWS_64_BIT_OFF_T
 NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H
 NEXT_SYS_TYPES_H
-HAVE_STRINGS_H
-NEXT_AS_FIRST_DIRECTIVE_STRINGS_H
-NEXT_STRINGS_H
+GL_COND_OBJ_STRNCASECMP_L_FALSE
+GL_COND_OBJ_STRNCASECMP_L_TRUE
+GL_GNULIB_STRNCASECMP_L
 GL_GNULIB_STRNCASECMP
 GL_GNULIB_STRCASECMP_L
 GL_GNULIB_STRCASECMP
 GL_GNULIB_FFS
-GL_COND_OBJ_STRCASECMP_L_FALSE
-GL_COND_OBJ_STRCASECMP_L_TRUE
+HAVE_STRINGS_H
+NEXT_AS_FIRST_DIRECTIVE_STRINGS_H
+NEXT_STRINGS_H
+REPLACE_STRNCASECMP_L
 REPLACE_STRNCASECMP
 REPLACE_STRCASECMP_L
 REPLACE_STRCASECMP
 HAVE_DECL_STRNCASECMP
+HAVE_STRNCASECMP_L
 HAVE_STRNCASECMP
 HAVE_STRCASECMP_L
 HAVE_STRCASECMP
@@ -4600,7 +4603,7 @@ as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
-as_fn_append ac_func_c_list " strcasecmp_l HAVE_STRCASECMP_L"
+as_fn_append ac_func_c_list " strncasecmp_l HAVE_STRNCASECMP_L"
 as_fn_append ac_func_c_list " tolower_l HAVE_TOLOWER_L"
 as_fn_append ac_header_c_list " sys/socket.h sys_socket_h HAVE_SYS_SOCKET_H"
 as_fn_append ac_header_c_list " arpa/inet.h arpa_inet_h HAVE_ARPA_INET_H"
@@ -9634,10 +9637,128 @@ printf "%s\n" "$gl_cv_next_locale_h" >&6; }
   HAVE_STRCASECMP=1;
   HAVE_STRCASECMP_L=1;
   HAVE_STRNCASECMP=1;
+  HAVE_STRNCASECMP_L=1;
   HAVE_DECL_STRNCASECMP=1;
   REPLACE_STRCASECMP=0;
   REPLACE_STRCASECMP_L=0;
   REPLACE_STRNCASECMP=0;
+  REPLACE_STRNCASECMP_L=0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+     if test $gl_cv_have_include_next = yes; then
+       gl_cv_next_strings_h='<'strings.h'>'
+     else
+       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <strings.h>" >&5
+printf %s "checking absolute name of <strings.h>... " >&6; }
+if test ${gl_cv_next_strings_h+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+             if test $ac_cv_header_strings_h = yes; then
+
+
+
+
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <strings.h>
+_ACEOF
+                case "$host_os" in
+    aix*) gl_absname_cpp="$ac_cpp -C" ;;
+    *)    gl_absname_cpp="$ac_cpp" ;;
+  esac
+
+  case "$host_os" in
+    mingw* | windows*)
+                                          gl_dirsep_regex='[/\\]'
+      ;;
+    *)
+      gl_dirsep_regex='\/'
+      ;;
+  esac
+      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
+  gl_header_literal_regex=`echo 'strings.h' \
+                           | sed -e "$gl_make_literal_regex_sed"`
+  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
+      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
+      s|^/[^/]|//&|
+      p
+      q
+    }'
+
+        gl_cv_absolute_strings_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
+  sed -n "$gl_absolute_header_sed"`
+
+          gl_header=$gl_cv_absolute_strings_h
+          gl_cv_next_strings_h='"'$gl_header'"'
+          else
+               gl_cv_next_strings_h='<'strings.h'>'
+             fi
+
+          ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_strings_h" >&5
+printf "%s\n" "$gl_cv_next_strings_h" >&6; }
+     fi
+     NEXT_STRINGS_H=$gl_cv_next_strings_h
+
+     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
+       gl_next_as_first_directive='<'strings.h'>'
+     else
+       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
+       gl_next_as_first_directive=$gl_cv_next_strings_h
+     fi
+     NEXT_AS_FIRST_DIRECTIVE_STRINGS_H=$gl_next_as_first_directive
+
+
+
+
+  if test $ac_cv_header_strings_h = yes; then
+    HAVE_STRINGS_H=1
+  else
+    HAVE_STRINGS_H=0
+  fi
+
+
+
+
+
+
+
+
+  GL_GNULIB_FFS=0
+
+
+
+  GL_GNULIB_STRCASECMP=0
+
+
+
+  GL_GNULIB_STRCASECMP_L=0
+
+
+
+  GL_GNULIB_STRNCASECMP=0
+
+
+
+  GL_GNULIB_STRNCASECMP_L=0
+
+
 
 ac_func=
 for ac_item in $ac_func_c_list
@@ -9872,118 +9993,6 @@ printf "%s\n" "#define HAVE_WORKING_USELOCALE 1" >>confdefs.h
       gt_working_uselocale=no
       ;;
   esac
-
-
-
-  GL_GNULIB_FFS=0
-
-
-
-  GL_GNULIB_STRCASECMP=0
-
-
-
-  GL_GNULIB_STRCASECMP_L=0
-
-
-
-  GL_GNULIB_STRNCASECMP=0
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     if test $gl_cv_have_include_next = yes; then
-       gl_cv_next_strings_h='<'strings.h'>'
-     else
-       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking absolute name of <strings.h>" >&5
-printf %s "checking absolute name of <strings.h>... " >&6; }
-if test ${gl_cv_next_strings_h+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)
-             if test $ac_cv_header_strings_h = yes; then
-
-
-
-
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <strings.h>
-_ACEOF
-                case "$host_os" in
-    aix*) gl_absname_cpp="$ac_cpp -C" ;;
-    *)    gl_absname_cpp="$ac_cpp" ;;
-  esac
-
-  case "$host_os" in
-    mingw* | windows*)
-                                          gl_dirsep_regex='[/\\]'
-      ;;
-    *)
-      gl_dirsep_regex='\/'
-      ;;
-  esac
-      gl_make_literal_regex_sed='s,[]$^\\.*/[],\\&,g'
-  gl_header_literal_regex=`echo 'strings.h' \
-                           | sed -e "$gl_make_literal_regex_sed"`
-  gl_absolute_header_sed="/${gl_dirsep_regex}${gl_header_literal_regex}/"'{
-      s/.*"\(.*'"${gl_dirsep_regex}${gl_header_literal_regex}"'\)".*/\1/
-      s|^/[^/]|//&|
-      p
-      q
-    }'
-
-        gl_cv_absolute_strings_h=`(eval "$gl_absname_cpp conftest.$ac_ext") 2>&5 |
-  sed -n "$gl_absolute_header_sed"`
-
-          gl_header=$gl_cv_absolute_strings_h
-          gl_cv_next_strings_h='"'$gl_header'"'
-          else
-               gl_cv_next_strings_h='<'strings.h'>'
-             fi
-
-          ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_next_strings_h" >&5
-printf "%s\n" "$gl_cv_next_strings_h" >&6; }
-     fi
-     NEXT_STRINGS_H=$gl_cv_next_strings_h
-
-     if test $gl_cv_have_include_next = yes || test $gl_cv_have_include_next = buggy; then
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include_next'
-       gl_next_as_first_directive='<'strings.h'>'
-     else
-       # INCLUDE_NEXT_AS_FIRST_DIRECTIVE='include'
-       gl_next_as_first_directive=$gl_cv_next_strings_h
-     fi
-     NEXT_AS_FIRST_DIRECTIVE_STRINGS_H=$gl_next_as_first_directive
-
-
-
-
-  if test $ac_cv_header_strings_h = yes; then
-    HAVE_STRINGS_H=1
-  else
-    HAVE_STRINGS_H=0
-  fi
-
-
-
-
-
 
 
 
@@ -18172,8 +18181,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:18175: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:18176: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:18184: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:18185: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -18199,7 +18208,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:18202: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:18211: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -18433,7 +18442,7 @@ fi
 
         fi
       fi
-      echo "$as_me:18436: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:18445: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -18682,8 +18691,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:18685: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:18686: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:18694: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:18695: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -18709,7 +18718,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:18712: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:18721: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -18943,7 +18952,7 @@ fi
 
         fi
       fi
-      echo "$as_me:18946: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:18955: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -21561,8 +21570,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21564: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21565: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21573: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21574: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21588,7 +21597,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:21591: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21600: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -21822,7 +21831,7 @@ fi
 
         fi
       fi
-      echo "$as_me:21825: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21834: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -25925,7 +25934,14 @@ fi
 
 
 
-  if test $ac_cv_func_strcasecmp_l = yes; then
+
+
+
+
+
+
+
+  if test $ac_cv_func_strncasecmp_l = yes; then
 
 
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether strcasecmp works" >&5
@@ -25990,27 +26006,27 @@ printf "%s\n" "$gl_cv_func_strcasecmp_works" >&6; }
 
     case "$gl_cv_func_strcasecmp_works" in
       *yes) ;;
-      *) REPLACE_STRCASECMP_L=1 ;;
+      *) REPLACE_STRNCASECMP_L=1 ;;
     esac
   else
-    HAVE_STRCASECMP_L=0
+    HAVE_STRNCASECMP_L=0
   fi
 
 
-     if test $HAVE_STRCASECMP_L = 0 || test $REPLACE_STRCASECMP_L = 1; then
-  GL_COND_OBJ_STRCASECMP_L_TRUE=
-  GL_COND_OBJ_STRCASECMP_L_FALSE='#'
+     if test $HAVE_STRNCASECMP_L = 0 || test $REPLACE_STRNCASECMP_L = 1; then
+  GL_COND_OBJ_STRNCASECMP_L_TRUE=
+  GL_COND_OBJ_STRNCASECMP_L_FALSE='#'
 else
-  GL_COND_OBJ_STRCASECMP_L_TRUE='#'
-  GL_COND_OBJ_STRCASECMP_L_FALSE=
+  GL_COND_OBJ_STRNCASECMP_L_TRUE='#'
+  GL_COND_OBJ_STRNCASECMP_L_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_STRCASECMP_L_TRUE}" && test -z "${GL_COND_OBJ_STRCASECMP_L_FALSE}"; then
-    GL_COND_OBJ_STRCASECMP_L_TRUE='#'
-    GL_COND_OBJ_STRCASECMP_L_FALSE='#'
+    if test -z "${GL_COND_OBJ_STRNCASECMP_L_TRUE}" && test -z "${GL_COND_OBJ_STRNCASECMP_L_FALSE}"; then
+    GL_COND_OBJ_STRNCASECMP_L_TRUE='#'
+    GL_COND_OBJ_STRNCASECMP_L_FALSE='#'
   fi
 
-  if test -z "$GL_COND_OBJ_STRCASECMP_L_TRUE"; then :
+  if test -z "$GL_COND_OBJ_STRNCASECMP_L_TRUE"; then :
 
 
 
@@ -26020,7 +26036,7 @@ fi
 fi
 
 
-printf "%s\n" "#define GNULIB_STRCASECMP_L 1" >>confdefs.h
+printf "%s\n" "#define GNULIB_STRNCASECMP_L 1" >>confdefs.h
 
 
 
@@ -26032,14 +26048,7 @@ printf "%s\n" "#define GNULIB_STRCASECMP_L 1" >>confdefs.h
 
 
 
-          GL_GNULIB_STRCASECMP_L=1
-
-
-
-
-
-
-
+          GL_GNULIB_STRNCASECMP_L=1
 
 
 
@@ -37815,7 +37824,6 @@ printf "%s\n" "#define GNULIB_TEST_STR_STARTSWITH 1" >>confdefs.h
 
 
 
-
   if test "$GL_GENERATE_ERRNO_H:$REPLACE_STRERROR_0" = false:0; then
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for working strerror function" >&5
 printf %s "checking for working strerror function... " >&6; }
@@ -38115,6 +38123,7 @@ printf "%s\n" "#define GNULIB_TEST_STRERROR_R 1" >>confdefs.h
 
 
 printf "%s\n" "#define GNULIB_STRERROR_R_POSIX $gl_module_indicator_condition" >>confdefs.h
+
 
 
 

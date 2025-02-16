@@ -320,15 +320,15 @@ EXTRA_DIST += test-c-ctype.c macros.h
 
 ## end   gnulib module c-ctype-tests
 
-## begin gnulib module c-strcasecmp-tests
+## begin gnulib module c-strncasecmp-tests
 
-TESTS += test-c-strcasecmp.sh
+TESTS += test-c-strncasecmp.sh
 TESTS_ENVIRONMENT += LOCALE_FR='@LOCALE_FR@' LOCALE_TR_UTF8='@LOCALE_TR_UTF8@'
-noinst_PROGRAMS += test-c-strcasecmp
-test_c_strcasecmp_LDADD = $(LDADD) $(SETLOCALE_LIB)
-EXTRA_DIST += test-c-strcasecmp.sh test-c-strcasecmp.c macros.h
+noinst_PROGRAMS += test-c-strncasecmp
+test_c_strncasecmp_LDADD = $(LDADD) $(SETLOCALE_LIB)
+EXTRA_DIST += test-c-strncasecmp.sh test-c-strncasecmp.c macros.h
 
-## end   gnulib module c-strcasecmp-tests
+## end   gnulib module c-strncasecmp-tests
 
 ## begin gnulib module calloc-gnu
 
@@ -3397,14 +3397,6 @@ EXTRA_DIST += test-str_startswith.c macros.h
 
 ## end   gnulib module str_startswith-tests
 
-## begin gnulib module strcasecmp_l-tests
-
-TESTS += test-strcasecmp_l
-noinst_PROGRAMS += test-strcasecmp_l
-EXTRA_DIST += test-strcasecmp_l.c signature.h macros.h
-
-## end   gnulib module strcasecmp_l-tests
-
 ## begin gnulib module strerror
 
 if GL_COND_OBJ_STRERROR
@@ -3609,6 +3601,14 @@ noinst_PROGRAMS += test-strings-h
 EXTRA_DIST += test-strings-h.c
 
 ## end   gnulib module strings-h-tests
+
+## begin gnulib module strncasecmp_l-tests
+
+TESTS += test-strncasecmp_l
+noinst_PROGRAMS += test-strncasecmp_l
+EXTRA_DIST += test-strncasecmp_l.c signature.h macros.h
+
+## end   gnulib module strncasecmp_l-tests
 
 ## begin gnulib module symlink
 

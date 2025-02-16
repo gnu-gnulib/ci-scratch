@@ -115,7 +115,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@GL_COND_OBJ_STRCASECMP_L_TRUE@am__append_1 = strcasecmp_l.c
+@GL_COND_OBJ_STRNCASECMP_L_TRUE@am__append_1 = strncasecmp_l.c
 @GL_COND_OBJ_TOLOWER_L_TRUE@am__append_2 = tolower_l.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
@@ -209,10 +209,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdio_h.m4 \
 	$(top_srcdir)/glm4/stdlib_h.m4 $(top_srcdir)/glm4/stpcpy.m4 \
 	$(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/strcasecmp_l.m4 \
 	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
+	$(top_srcdir)/glm4/strncasecmp_l.m4 \
 	$(top_srcdir)/glm4/symlink.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
@@ -248,11 +248,12 @@ am__v_AR_1 =
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
-am__libgnu_a_SOURCES_DIST = c-ctype.h c-ctype.c c-strcasecmp.c \
-	strcasecmp_l.c tolower_l.c
-@GL_COND_OBJ_STRCASECMP_L_TRUE@am__objects_1 = strcasecmp_l.$(OBJEXT)
+am__libgnu_a_SOURCES_DIST = c-ctype.h c-ctype.c c-strncasecmp.c \
+	strncasecmp_l.c tolower_l.c
+@GL_COND_OBJ_STRNCASECMP_L_TRUE@am__objects_1 =  \
+@GL_COND_OBJ_STRNCASECMP_L_TRUE@	strncasecmp_l.$(OBJEXT)
 @GL_COND_OBJ_TOLOWER_L_TRUE@am__objects_2 = tolower_l.$(OBJEXT)
-am_libgnu_a_OBJECTS = c-ctype.$(OBJEXT) c-strcasecmp.$(OBJEXT) \
+am_libgnu_a_OBJECTS = c-ctype.$(OBJEXT) c-strncasecmp.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
@@ -271,7 +272,7 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/c-ctype.Po \
-	./$(DEPDIR)/c-strcasecmp.Po ./$(DEPDIR)/strcasecmp_l.Po \
+	./$(DEPDIR)/c-strncasecmp.Po ./$(DEPDIR)/strncasecmp_l.Po \
 	./$(DEPDIR)/tolower_l.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -848,6 +849,7 @@ GL_GNULIB_STRERRORNAME_NP = @GL_GNULIB_STRERRORNAME_NP@
 GL_GNULIB_STRERROR_R = @GL_GNULIB_STRERROR_R@
 GL_GNULIB_STRFTIME = @GL_GNULIB_STRFTIME@
 GL_GNULIB_STRNCASECMP = @GL_GNULIB_STRNCASECMP@
+GL_GNULIB_STRNCASECMP_L = @GL_GNULIB_STRNCASECMP_L@
 GL_GNULIB_STRNCAT = @GL_GNULIB_STRNCAT@
 GL_GNULIB_STRNDUP = @GL_GNULIB_STRNDUP@
 GL_GNULIB_STRNLEN = @GL_GNULIB_STRNLEN@
@@ -1350,6 +1352,7 @@ HAVE_STRCHRNUL = @HAVE_STRCHRNUL@
 HAVE_STRERRORNAME_NP = @HAVE_STRERRORNAME_NP@
 HAVE_STRINGS_H = @HAVE_STRINGS_H@
 HAVE_STRNCASECMP = @HAVE_STRNCASECMP@
+HAVE_STRNCASECMP_L = @HAVE_STRNCASECMP_L@
 HAVE_STRPBRK = @HAVE_STRPBRK@
 HAVE_STRPTIME = @HAVE_STRPTIME@
 HAVE_STRSEP = @HAVE_STRSEP@
@@ -1877,6 +1880,7 @@ REPLACE_STRERRORNAME_NP = @REPLACE_STRERRORNAME_NP@
 REPLACE_STRERROR_R = @REPLACE_STRERROR_R@
 REPLACE_STRFTIME = @REPLACE_STRFTIME@
 REPLACE_STRNCASECMP = @REPLACE_STRNCASECMP@
+REPLACE_STRNCASECMP_L = @REPLACE_STRNCASECMP_L@
 REPLACE_STRNCAT = @REPLACE_STRNCAT@
 REPLACE_STRNDUP = @REPLACE_STRNDUP@
 REPLACE_STRNLEN = @REPLACE_STRNLEN@
@@ -2066,7 +2070,7 @@ MAINTAINERCLEANFILES =
 # No GNU Make output.
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
-libgnu_a_SOURCES = c-ctype.h c-ctype.c c-strcasecmp.c $(am__append_1) \
+libgnu_a_SOURCES = c-ctype.h c-ctype.c c-strncasecmp.c $(am__append_1) \
 	$(am__append_2)
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
@@ -2166,8 +2170,8 @@ distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c-ctype.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c-strcasecmp.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strcasecmp_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c-strncasecmp.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strncasecmp_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tolower_l.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
@@ -2420,8 +2424,8 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 
 distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/c-ctype.Po
-	-rm -f ./$(DEPDIR)/c-strcasecmp.Po
-	-rm -f ./$(DEPDIR)/strcasecmp_l.Po
+	-rm -f ./$(DEPDIR)/c-strncasecmp.Po
+	-rm -f ./$(DEPDIR)/strncasecmp_l.Po
 	-rm -f ./$(DEPDIR)/tolower_l.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
@@ -2469,8 +2473,8 @@ installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/c-ctype.Po
-	-rm -f ./$(DEPDIR)/c-strcasecmp.Po
-	-rm -f ./$(DEPDIR)/strcasecmp_l.Po
+	-rm -f ./$(DEPDIR)/c-strncasecmp.Po
+	-rm -f ./$(DEPDIR)/strncasecmp_l.Po
 	-rm -f ./$(DEPDIR)/tolower_l.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic \
@@ -2625,14 +2629,17 @@ strings.h: strings.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE
 	      -e 's/@''GNULIB_STRCASECMP''@/$(GL_GNULIB_STRCASECMP)/g' \
 	      -e 's/@''GNULIB_STRCASECMP_L''@/$(GL_GNULIB_STRCASECMP_L)/g' \
 	      -e 's/@''GNULIB_STRNCASECMP''@/$(GL_GNULIB_STRNCASECMP)/g' \
+	      -e 's/@''GNULIB_STRNCASECMP_L''@/$(GL_GNULIB_STRNCASECMP_L)/g' \
 	      -e 's|@''HAVE_FFS''@|$(HAVE_FFS)|g' \
 	      -e 's|@''HAVE_STRCASECMP''@|$(HAVE_STRCASECMP)|g' \
 	      -e 's|@''HAVE_STRCASECMP_L''@|$(HAVE_STRCASECMP_L)|g' \
 	      -e 's|@''HAVE_STRNCASECMP''@|$(HAVE_STRNCASECMP)|g' \
+	      -e 's|@''HAVE_STRNCASECMP_L''@|$(HAVE_STRNCASECMP_L)|g' \
 	      -e 's|@''HAVE_DECL_STRNCASECMP''@|$(HAVE_DECL_STRNCASECMP)|g' \
 	      -e 's|@''REPLACE_STRCASECMP''@|$(REPLACE_STRCASECMP)|g' \
 	      -e 's|@''REPLACE_STRCASECMP_L''@|$(REPLACE_STRCASECMP_L)|g' \
 	      -e 's|@''REPLACE_STRNCASECMP''@|$(REPLACE_STRNCASECMP)|g' \
+	      -e 's|@''REPLACE_STRNCASECMP_L''@|$(REPLACE_STRNCASECMP_L)|g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \

@@ -119,7 +119,7 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-alloca-opt$(EXEEXT) $(am__EXEEXT_1) \
 	test-arpa_inet-h$(EXEEXT) $(am__EXEEXT_2) test-assert$(EXEEXT) \
 	test-binary-io.sh test-bind$(EXEEXT) $(am__EXEEXT_3) \
-	test-bool$(EXEEXT) test-c-ctype$(EXEEXT) test-c-strcasecmp.sh \
+	test-bool$(EXEEXT) test-c-ctype$(EXEEXT) test-c-strncasecmp.sh \
 	test-calloc-gnu$(EXEEXT) test-calloc-posix$(EXEEXT) \
 	test-cloexec$(EXEEXT) test-close$(EXEEXT) \
 	test-connect$(EXEEXT) $(am__EXEEXT_4) test-ctype-h$(EXEEXT) \
@@ -173,10 +173,11 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-stddef-h$(EXEEXT) $(am__EXEEXT_21) test-stdint-h$(EXEEXT) \
 	$(am__EXEEXT_22) test-stdio-h$(EXEEXT) $(am__EXEEXT_23) \
 	test-stdlib-h$(EXEEXT) test-str_endswith$(EXEEXT) \
-	test-str_startswith$(EXEEXT) test-strcasecmp_l$(EXEEXT) \
-	test-strerror$(EXEEXT) test-strerror_r$(EXEEXT) \
-	$(am__EXEEXT_24) test-string-h$(EXEEXT) $(am__EXEEXT_25) \
-	test-strings-h$(EXEEXT) test-symlink$(EXEEXT) $(am__EXEEXT_26) \
+	test-str_startswith$(EXEEXT) test-strerror$(EXEEXT) \
+	test-strerror_r$(EXEEXT) $(am__EXEEXT_24) \
+	test-string-h$(EXEEXT) $(am__EXEEXT_25) \
+	test-strings-h$(EXEEXT) test-strncasecmp_l$(EXEEXT) \
+	test-symlink$(EXEEXT) $(am__EXEEXT_26) \
 	test-sys_ioctl-h$(EXEEXT) $(am__EXEEXT_27) \
 	test-sys_select-h$(EXEEXT) $(am__EXEEXT_28) \
 	test-sys_socket-h$(EXEEXT) $(am__EXEEXT_29) \
@@ -199,7 +200,7 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-arpa_inet-h$(EXEEXT) $(am__EXEEXT_2) test-assert$(EXEEXT) \
 	test-binary-io$(EXEEXT) test-bind$(EXEEXT) $(am__EXEEXT_3) \
 	test-bool$(EXEEXT) test-c-ctype$(EXEEXT) \
-	test-c-strcasecmp$(EXEEXT) test-calloc-gnu$(EXEEXT) \
+	test-c-strncasecmp$(EXEEXT) test-calloc-gnu$(EXEEXT) \
 	test-calloc-posix$(EXEEXT) test-cloexec$(EXEEXT) \
 	test-close$(EXEEXT) test-connect$(EXEEXT) $(am__EXEEXT_4) \
 	test-ctype-h$(EXEEXT) test-dup2$(EXEEXT) test-environ$(EXEEXT) \
@@ -254,10 +255,11 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-stddef-h$(EXEEXT) $(am__EXEEXT_21) test-stdint-h$(EXEEXT) \
 	$(am__EXEEXT_22) test-stdio-h$(EXEEXT) $(am__EXEEXT_23) \
 	test-stdlib-h$(EXEEXT) test-str_endswith$(EXEEXT) \
-	test-str_startswith$(EXEEXT) test-strcasecmp_l$(EXEEXT) \
-	test-strerror$(EXEEXT) test-strerror_r$(EXEEXT) \
-	$(am__EXEEXT_24) test-string-h$(EXEEXT) $(am__EXEEXT_25) \
-	test-strings-h$(EXEEXT) test-symlink$(EXEEXT) $(am__EXEEXT_26) \
+	test-str_startswith$(EXEEXT) test-strerror$(EXEEXT) \
+	test-strerror_r$(EXEEXT) $(am__EXEEXT_24) \
+	test-string-h$(EXEEXT) $(am__EXEEXT_25) \
+	test-strings-h$(EXEEXT) test-strncasecmp_l$(EXEEXT) \
+	test-symlink$(EXEEXT) $(am__EXEEXT_26) \
 	test-sys_ioctl-h$(EXEEXT) $(am__EXEEXT_27) \
 	test-sys_select-h$(EXEEXT) $(am__EXEEXT_28) \
 	test-sys_socket-h$(EXEEXT) $(am__EXEEXT_29) \
@@ -523,10 +525,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdio_h.m4 \
 	$(top_srcdir)/glm4/stdlib_h.m4 $(top_srcdir)/glm4/stpcpy.m4 \
 	$(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/strcasecmp_l.m4 \
 	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
+	$(top_srcdir)/glm4/strncasecmp_l.m4 \
 	$(top_srcdir)/glm4/symlink.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
@@ -828,9 +830,9 @@ test_c_ctype_SOURCES = test-c-ctype.c
 test_c_ctype_OBJECTS = test-c-ctype.$(OBJEXT)
 test_c_ctype_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
-test_c_strcasecmp_SOURCES = test-c-strcasecmp.c
-test_c_strcasecmp_OBJECTS = test-c-strcasecmp.$(OBJEXT)
-test_c_strcasecmp_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+test_c_strncasecmp_SOURCES = test-c-strncasecmp.c
+test_c_strncasecmp_OBJECTS = test-c-strncasecmp.$(OBJEXT)
+test_c_strncasecmp_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
 test_calloc_gnu_SOURCES = test-calloc-gnu.c
 test_calloc_gnu_OBJECTS = test-calloc-gnu.$(OBJEXT)
@@ -1446,11 +1448,6 @@ test_str_startswith_OBJECTS = test-str_startswith.$(OBJEXT)
 test_str_startswith_LDADD = $(LDADD)
 test_str_startswith_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_strcasecmp_l_SOURCES = test-strcasecmp_l.c
-test_strcasecmp_l_OBJECTS = test-strcasecmp_l.$(OBJEXT)
-test_strcasecmp_l_LDADD = $(LDADD)
-test_strcasecmp_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
-	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_strerror_SOURCES = test-strerror.c
 test_strerror_OBJECTS = test-strerror.$(OBJEXT)
 test_strerror_LDADD = $(LDADD)
@@ -1485,6 +1482,11 @@ am__test_strings_h_c___SOURCES_DIST = test-strings-h-c++.cc
 test_strings_h_c___OBJECTS = $(am_test_strings_h_c___OBJECTS)
 test_strings_h_c___LDADD = $(LDADD)
 test_strings_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_strncasecmp_l_SOURCES = test-strncasecmp_l.c
+test_strncasecmp_l_OBJECTS = test-strncasecmp_l.$(OBJEXT)
+test_strncasecmp_l_LDADD = $(LDADD)
+test_strncasecmp_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_symlink_SOURCES = test-symlink.c
 test_symlink_OBJECTS = test-symlink.$(OBJEXT)
@@ -1749,7 +1751,7 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-binary-io.Po ./$(DEPDIR)/test-bind.Po \
 	./$(DEPDIR)/test-bool-c++.Po ./$(DEPDIR)/test-bool-c++2.Po \
 	./$(DEPDIR)/test-bool.Po ./$(DEPDIR)/test-c-ctype.Po \
-	./$(DEPDIR)/test-c-strcasecmp.Po \
+	./$(DEPDIR)/test-c-strncasecmp.Po \
 	./$(DEPDIR)/test-calloc-gnu.Po \
 	./$(DEPDIR)/test-calloc-posix.Po ./$(DEPDIR)/test-cloexec.Po \
 	./$(DEPDIR)/test-close.Po ./$(DEPDIR)/test-connect.Po \
@@ -1837,12 +1839,12 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-stdlib-h-c++2.Po ./$(DEPDIR)/test-stdlib-h.Po \
 	./$(DEPDIR)/test-str_endswith.Po \
 	./$(DEPDIR)/test-str_startswith.Po \
-	./$(DEPDIR)/test-strcasecmp_l.Po ./$(DEPDIR)/test-strerror.Po \
-	./$(DEPDIR)/test-strerror_r.Po \
+	./$(DEPDIR)/test-strerror.Po ./$(DEPDIR)/test-strerror_r.Po \
 	./$(DEPDIR)/test-string-h-c++.Po \
 	./$(DEPDIR)/test-string-h-c++2.Po ./$(DEPDIR)/test-string-h.Po \
 	./$(DEPDIR)/test-strings-h-c++.Po \
-	./$(DEPDIR)/test-strings-h.Po ./$(DEPDIR)/test-symlink.Po \
+	./$(DEPDIR)/test-strings-h.Po \
+	./$(DEPDIR)/test-strncasecmp_l.Po ./$(DEPDIR)/test-symlink.Po \
 	./$(DEPDIR)/test-sys_ioctl-h-c++.Po \
 	./$(DEPDIR)/test-sys_ioctl-h.Po \
 	./$(DEPDIR)/test-sys_select-h-c++.Po \
@@ -1915,7 +1917,7 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-arpa_inet-h.c $(test_arpa_inet_h_c___SOURCES) \
 	test-assert.c $(test_assert_h_c___SOURCES) test-binary-io.c \
 	test-bind.c test-bool.c $(test_bool_c___SOURCES) \
-	test-c-ctype.c test-c-strcasecmp.c test-calloc-gnu.c \
+	test-c-ctype.c test-c-strncasecmp.c test-calloc-gnu.c \
 	test-calloc-posix.c test-cloexec.c test-close.c test-connect.c \
 	test-ctype-h.c $(test_ctype_h_c___SOURCES) test-dup2.c \
 	test-environ.c test-errno-h.c $(test_errno_h_c___SOURCES) \
@@ -1961,20 +1963,21 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_stdint_h_c___SOURCES) test-stdio-h.c \
 	$(test_stdio_h_c___SOURCES) test-stdlib-h.c \
 	$(test_stdlib_h_c___SOURCES) test-str_endswith.c \
-	test-str_startswith.c test-strcasecmp_l.c test-strerror.c \
-	test-strerror_r.c test-string-h.c $(test_string_h_c___SOURCES) \
-	test-strings-h.c $(test_strings_h_c___SOURCES) test-symlink.c \
-	test-sys_ioctl-h.c $(test_sys_ioctl_h_c___SOURCES) \
-	test-sys_select-h.c $(test_sys_select_h_c___SOURCES) \
-	test-sys_socket-h.c $(test_sys_socket_h_c___SOURCES) \
-	test-sys_stat-h.c $(test_sys_stat_h_c___SOURCES) \
-	test-sys_time-h.c $(test_sys_time_h_c___SOURCES) \
-	test-sys_types-h.c $(test_sys_types_h_c___SOURCES) \
-	test-sys_uio-h.c $(test_sys_uio_h_c___SOURCES) \
-	test-thread_create.c test-thread_self.c test-time.c \
-	test-time-h.c $(test_time_h_c___SOURCES) test-tolower_l.c \
-	test-unistd-h.c $(test_unistd_h_c___SOURCES) test-unsetenv.c \
-	test-usleep.c test-verify.c test-verify-try.c test-wchar-h.c \
+	test-str_startswith.c test-strerror.c test-strerror_r.c \
+	test-string-h.c $(test_string_h_c___SOURCES) test-strings-h.c \
+	$(test_strings_h_c___SOURCES) test-strncasecmp_l.c \
+	test-symlink.c test-sys_ioctl-h.c \
+	$(test_sys_ioctl_h_c___SOURCES) test-sys_select-h.c \
+	$(test_sys_select_h_c___SOURCES) test-sys_socket-h.c \
+	$(test_sys_socket_h_c___SOURCES) test-sys_stat-h.c \
+	$(test_sys_stat_h_c___SOURCES) test-sys_time-h.c \
+	$(test_sys_time_h_c___SOURCES) test-sys_types-h.c \
+	$(test_sys_types_h_c___SOURCES) test-sys_uio-h.c \
+	$(test_sys_uio_h_c___SOURCES) test-thread_create.c \
+	test-thread_self.c test-time.c test-time-h.c \
+	$(test_time_h_c___SOURCES) test-tolower_l.c test-unistd-h.c \
+	$(test_unistd_h_c___SOURCES) test-unsetenv.c test-usleep.c \
+	test-verify.c test-verify-try.c test-wchar-h.c \
 	$(test_wchar_h_c___SOURCES) test-windows-mutex-type.c \
 	test-windows-recmutex-type.c test-windows-timedmutex-type.c \
 	test-windows-timedrecmutex-type.c test-xalloc-die.c
@@ -1984,7 +1987,7 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(am__test_arpa_inet_h_c___SOURCES_DIST) test-assert.c \
 	$(am__test_assert_h_c___SOURCES_DIST) test-binary-io.c \
 	test-bind.c test-bool.c $(am__test_bool_c___SOURCES_DIST) \
-	test-c-ctype.c test-c-strcasecmp.c test-calloc-gnu.c \
+	test-c-ctype.c test-c-strncasecmp.c test-calloc-gnu.c \
 	test-calloc-posix.c test-cloexec.c test-close.c test-connect.c \
 	test-ctype-h.c $(am__test_ctype_h_c___SOURCES_DIST) \
 	test-dup2.c test-environ.c test-errno-h.c \
@@ -2032,24 +2035,24 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(am__test_stdint_h_c___SOURCES_DIST) test-stdio-h.c \
 	$(am__test_stdio_h_c___SOURCES_DIST) test-stdlib-h.c \
 	$(am__test_stdlib_h_c___SOURCES_DIST) test-str_endswith.c \
-	test-str_startswith.c test-strcasecmp_l.c test-strerror.c \
-	test-strerror_r.c test-string-h.c \
-	$(am__test_string_h_c___SOURCES_DIST) test-strings-h.c \
-	$(am__test_strings_h_c___SOURCES_DIST) test-symlink.c \
-	test-sys_ioctl-h.c $(am__test_sys_ioctl_h_c___SOURCES_DIST) \
-	test-sys_select-h.c $(am__test_sys_select_h_c___SOURCES_DIST) \
-	test-sys_socket-h.c $(am__test_sys_socket_h_c___SOURCES_DIST) \
-	test-sys_stat-h.c $(am__test_sys_stat_h_c___SOURCES_DIST) \
-	test-sys_time-h.c $(am__test_sys_time_h_c___SOURCES_DIST) \
-	test-sys_types-h.c $(am__test_sys_types_h_c___SOURCES_DIST) \
-	test-sys_uio-h.c $(am__test_sys_uio_h_c___SOURCES_DIST) \
-	test-thread_create.c test-thread_self.c test-time.c \
-	test-time-h.c $(am__test_time_h_c___SOURCES_DIST) \
-	test-tolower_l.c test-unistd-h.c \
-	$(am__test_unistd_h_c___SOURCES_DIST) test-unsetenv.c \
-	test-usleep.c test-verify.c test-verify-try.c test-wchar-h.c \
-	$(am__test_wchar_h_c___SOURCES_DIST) test-windows-mutex-type.c \
-	test-windows-recmutex-type.c test-windows-timedmutex-type.c \
+	test-str_startswith.c test-strerror.c test-strerror_r.c \
+	test-string-h.c $(am__test_string_h_c___SOURCES_DIST) \
+	test-strings-h.c $(am__test_strings_h_c___SOURCES_DIST) \
+	test-strncasecmp_l.c test-symlink.c test-sys_ioctl-h.c \
+	$(am__test_sys_ioctl_h_c___SOURCES_DIST) test-sys_select-h.c \
+	$(am__test_sys_select_h_c___SOURCES_DIST) test-sys_socket-h.c \
+	$(am__test_sys_socket_h_c___SOURCES_DIST) test-sys_stat-h.c \
+	$(am__test_sys_stat_h_c___SOURCES_DIST) test-sys_time-h.c \
+	$(am__test_sys_time_h_c___SOURCES_DIST) test-sys_types-h.c \
+	$(am__test_sys_types_h_c___SOURCES_DIST) test-sys_uio-h.c \
+	$(am__test_sys_uio_h_c___SOURCES_DIST) test-thread_create.c \
+	test-thread_self.c test-time.c test-time-h.c \
+	$(am__test_time_h_c___SOURCES_DIST) test-tolower_l.c \
+	test-unistd-h.c $(am__test_unistd_h_c___SOURCES_DIST) \
+	test-unsetenv.c test-usleep.c test-verify.c test-verify-try.c \
+	test-wchar-h.c $(am__test_wchar_h_c___SOURCES_DIST) \
+	test-windows-mutex-type.c test-windows-recmutex-type.c \
+	test-windows-timedmutex-type.c \
 	test-windows-timedrecmutex-type.c test-xalloc-die.c
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
@@ -2798,6 +2801,7 @@ GL_GNULIB_STRERRORNAME_NP = @GL_GNULIB_STRERRORNAME_NP@
 GL_GNULIB_STRERROR_R = @GL_GNULIB_STRERROR_R@
 GL_GNULIB_STRFTIME = @GL_GNULIB_STRFTIME@
 GL_GNULIB_STRNCASECMP = @GL_GNULIB_STRNCASECMP@
+GL_GNULIB_STRNCASECMP_L = @GL_GNULIB_STRNCASECMP_L@
 GL_GNULIB_STRNCAT = @GL_GNULIB_STRNCAT@
 GL_GNULIB_STRNDUP = @GL_GNULIB_STRNDUP@
 GL_GNULIB_STRNLEN = @GL_GNULIB_STRNLEN@
@@ -3300,6 +3304,7 @@ HAVE_STRCHRNUL = @HAVE_STRCHRNUL@
 HAVE_STRERRORNAME_NP = @HAVE_STRERRORNAME_NP@
 HAVE_STRINGS_H = @HAVE_STRINGS_H@
 HAVE_STRNCASECMP = @HAVE_STRNCASECMP@
+HAVE_STRNCASECMP_L = @HAVE_STRNCASECMP_L@
 HAVE_STRPBRK = @HAVE_STRPBRK@
 HAVE_STRPTIME = @HAVE_STRPTIME@
 HAVE_STRSEP = @HAVE_STRSEP@
@@ -3827,6 +3832,7 @@ REPLACE_STRERRORNAME_NP = @REPLACE_STRERRORNAME_NP@
 REPLACE_STRERROR_R = @REPLACE_STRERROR_R@
 REPLACE_STRFTIME = @REPLACE_STRFTIME@
 REPLACE_STRNCASECMP = @REPLACE_STRNCASECMP@
+REPLACE_STRNCASECMP_L = @REPLACE_STRNCASECMP_L@
 REPLACE_STRNCAT = @REPLACE_STRNCAT@
 REPLACE_STRNDUP = @REPLACE_STRNDUP@
 REPLACE_STRNLEN = @REPLACE_STRNLEN@
@@ -4013,7 +4019,7 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	attribute.h basename-lgpl.h test-binary-io.sh test-binary-io.c \
 	macros.h w32sock.h test-bind.c signature.h macros.h \
 	test-bool-c++.cc test-bool-c++2.cc test-bool.c test-c-ctype.c \
-	macros.h test-c-strcasecmp.sh test-c-strcasecmp.c macros.h \
+	macros.h test-c-strncasecmp.sh test-c-strncasecmp.c macros.h \
 	calloc.c test-calloc-gnu.c macros.h calloc.c \
 	test-calloc-posix.c macros.h cloexec.h test-cloexec.c macros.h \
 	test-close.c signature.h macros.h concat-filename.h w32sock.h \
@@ -4108,13 +4114,14 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-stdio-h.c macros.h stdlib.in.h test-stdlib-h-c++.cc \
 	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
 	test-sys_wait-h.h test-str_endswith.c macros.h \
-	test-str_startswith.c macros.h test-strcasecmp_l.c signature.h \
-	macros.h strerror-override.h test-strerror.c signature.h \
-	macros.h strerror_r.c test-strerror_r.c signature.h macros.h \
-	string.in.h test-string-h-c++.cc test-string-h-c++2.cc \
-	signature.h test-string-h.c test-strings-h-c++.cc signature.h \
-	test-strings-h.c test-symlink.h test-symlink.c signature.h \
-	macros.h sys_ioctl.in.h test-sys_ioctl-h-c++.cc signature.h \
+	test-str_startswith.c macros.h strerror-override.h \
+	test-strerror.c signature.h macros.h strerror_r.c \
+	test-strerror_r.c signature.h macros.h string.in.h \
+	test-string-h-c++.cc test-string-h-c++2.cc signature.h \
+	test-string-h.c test-strings-h-c++.cc signature.h \
+	test-strings-h.c test-strncasecmp_l.c signature.h macros.h \
+	test-symlink.h test-symlink.c signature.h macros.h \
+	sys_ioctl.in.h test-sys_ioctl-h-c++.cc signature.h \
 	test-sys_ioctl-h.c sys_select.in.h test-sys_select-h-c++.cc \
 	signature.h test-sys_select-h.c signature.h sys_socket.in.h \
 	test-sys_socket-h-c++.cc signature.h test-sys_socket-h.c \
@@ -4233,7 +4240,7 @@ test_accept_LDADD = $(LDADD) @LIBSOCKET@
 test_bind_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 @ANSICXX_TRUE@test_bool_c___SOURCES = test-bool-c++.cc test-bool-c++2.cc
 test_c_ctype_LDADD = $(LDADD) $(SETLOCALE_LIB)
-test_c_strcasecmp_LDADD = $(LDADD) $(SETLOCALE_LIB)
+test_c_strncasecmp_LDADD = $(LDADD) $(SETLOCALE_LIB)
 test_connect_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 @ANSICXX_TRUE@test_ctype_h_c___SOURCES = test-ctype-h-c++.cc test-ctype-h-c++2.cc
 @ANSICXX_TRUE@test_errno_h_c___SOURCES = test-errno-h-c++.cc test-errno-h-c++2.cc
@@ -4472,9 +4479,9 @@ test-c-ctype$(EXEEXT): $(test_c_ctype_OBJECTS) $(test_c_ctype_DEPENDENCIES) $(EX
 	@rm -f test-c-ctype$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_c_ctype_OBJECTS) $(test_c_ctype_LDADD) $(LIBS)
 
-test-c-strcasecmp$(EXEEXT): $(test_c_strcasecmp_OBJECTS) $(test_c_strcasecmp_DEPENDENCIES) $(EXTRA_test_c_strcasecmp_DEPENDENCIES) 
-	@rm -f test-c-strcasecmp$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_c_strcasecmp_OBJECTS) $(test_c_strcasecmp_LDADD) $(LIBS)
+test-c-strncasecmp$(EXEEXT): $(test_c_strncasecmp_OBJECTS) $(test_c_strncasecmp_DEPENDENCIES) $(EXTRA_test_c_strncasecmp_DEPENDENCIES) 
+	@rm -f test-c-strncasecmp$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_c_strncasecmp_OBJECTS) $(test_c_strncasecmp_LDADD) $(LIBS)
 
 test-calloc-gnu$(EXEEXT): $(test_calloc_gnu_OBJECTS) $(test_calloc_gnu_DEPENDENCIES) $(EXTRA_test_calloc_gnu_DEPENDENCIES) 
 	@rm -f test-calloc-gnu$(EXEEXT)
@@ -4972,10 +4979,6 @@ test-str_startswith$(EXEEXT): $(test_str_startswith_OBJECTS) $(test_str_startswi
 	@rm -f test-str_startswith$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_str_startswith_OBJECTS) $(test_str_startswith_LDADD) $(LIBS)
 
-test-strcasecmp_l$(EXEEXT): $(test_strcasecmp_l_OBJECTS) $(test_strcasecmp_l_DEPENDENCIES) $(EXTRA_test_strcasecmp_l_DEPENDENCIES) 
-	@rm -f test-strcasecmp_l$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_strcasecmp_l_OBJECTS) $(test_strcasecmp_l_LDADD) $(LIBS)
-
 test-strerror$(EXEEXT): $(test_strerror_OBJECTS) $(test_strerror_DEPENDENCIES) $(EXTRA_test_strerror_DEPENDENCIES) 
 	@rm -f test-strerror$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_strerror_OBJECTS) $(test_strerror_LDADD) $(LIBS)
@@ -4999,6 +5002,10 @@ test-strings-h$(EXEEXT): $(test_strings_h_OBJECTS) $(test_strings_h_DEPENDENCIES
 test-strings-h-c++$(EXEEXT): $(test_strings_h_c___OBJECTS) $(test_strings_h_c___DEPENDENCIES) $(EXTRA_test_strings_h_c___DEPENDENCIES) 
 	@rm -f test-strings-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_strings_h_c___OBJECTS) $(test_strings_h_c___LDADD) $(LIBS)
+
+test-strncasecmp_l$(EXEEXT): $(test_strncasecmp_l_OBJECTS) $(test_strncasecmp_l_DEPENDENCIES) $(EXTRA_test_strncasecmp_l_DEPENDENCIES) 
+	@rm -f test-strncasecmp_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_strncasecmp_l_OBJECTS) $(test_strncasecmp_l_LDADD) $(LIBS)
 
 test-symlink$(EXEEXT): $(test_symlink_OBJECTS) $(test_symlink_DEPENDENCIES) $(EXTRA_test_symlink_DEPENDENCIES) 
 	@rm -f test-symlink$(EXEEXT)
@@ -5252,7 +5259,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bool-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bool.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-c-ctype.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-c-strcasecmp.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-c-strncasecmp.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-calloc-gnu.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-calloc-posix.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-cloexec.Po@am__quote@ # am--include-marker
@@ -5388,7 +5395,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-str_endswith.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-str_startswith.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strcasecmp_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strerror.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strerror_r.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-string-h-c++.Po@am__quote@ # am--include-marker
@@ -5396,6 +5402,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-string-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strings-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strings-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strncasecmp_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-symlink.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_ioctl-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_ioctl-h.Po@am__quote@ # am--include-marker
@@ -5864,9 +5871,9 @@ test-c-ctype.log: test-c-ctype$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-c-strcasecmp.sh.log: test-c-strcasecmp.sh
-	@p='test-c-strcasecmp.sh'; \
-	b='test-c-strcasecmp.sh'; \
+test-c-strncasecmp.sh.log: test-c-strncasecmp.sh
+	@p='test-c-strncasecmp.sh'; \
+	b='test-c-strncasecmp.sh'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -6739,13 +6746,6 @@ test-str_startswith.log: test-str_startswith$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-strcasecmp_l.log: test-strcasecmp_l$(EXEEXT)
-	@p='test-strcasecmp_l$(EXEEXT)'; \
-	b='test-strcasecmp_l'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-strerror.log: test-strerror$(EXEEXT)
 	@p='test-strerror$(EXEEXT)'; \
 	b='test-strerror'; \
@@ -6784,6 +6784,13 @@ test-strings-h-c++.log: test-strings-h-c++$(EXEEXT)
 test-strings-h.log: test-strings-h$(EXEEXT)
 	@p='test-strings-h$(EXEEXT)'; \
 	b='test-strings-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-strncasecmp_l.log: test-strncasecmp_l$(EXEEXT)
+	@p='test-strncasecmp_l$(EXEEXT)'; \
+	b='test-strncasecmp_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -7272,7 +7279,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-bool-c++2.Po
 	-rm -f ./$(DEPDIR)/test-bool.Po
 	-rm -f ./$(DEPDIR)/test-c-ctype.Po
-	-rm -f ./$(DEPDIR)/test-c-strcasecmp.Po
+	-rm -f ./$(DEPDIR)/test-c-strncasecmp.Po
 	-rm -f ./$(DEPDIR)/test-calloc-gnu.Po
 	-rm -f ./$(DEPDIR)/test-calloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-cloexec.Po
@@ -7408,7 +7415,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-str_endswith.Po
 	-rm -f ./$(DEPDIR)/test-str_startswith.Po
-	-rm -f ./$(DEPDIR)/test-strcasecmp_l.Po
 	-rm -f ./$(DEPDIR)/test-strerror.Po
 	-rm -f ./$(DEPDIR)/test-strerror_r.Po
 	-rm -f ./$(DEPDIR)/test-string-h-c++.Po
@@ -7416,6 +7422,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-string-h.Po
 	-rm -f ./$(DEPDIR)/test-strings-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-strings-h.Po
+	-rm -f ./$(DEPDIR)/test-strncasecmp_l.Po
 	-rm -f ./$(DEPDIR)/test-symlink.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h.Po
@@ -7629,7 +7636,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-bool-c++2.Po
 	-rm -f ./$(DEPDIR)/test-bool.Po
 	-rm -f ./$(DEPDIR)/test-c-ctype.Po
-	-rm -f ./$(DEPDIR)/test-c-strcasecmp.Po
+	-rm -f ./$(DEPDIR)/test-c-strncasecmp.Po
 	-rm -f ./$(DEPDIR)/test-calloc-gnu.Po
 	-rm -f ./$(DEPDIR)/test-calloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-cloexec.Po
@@ -7765,7 +7772,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-str_endswith.Po
 	-rm -f ./$(DEPDIR)/test-str_startswith.Po
-	-rm -f ./$(DEPDIR)/test-strcasecmp_l.Po
 	-rm -f ./$(DEPDIR)/test-strerror.Po
 	-rm -f ./$(DEPDIR)/test-strerror_r.Po
 	-rm -f ./$(DEPDIR)/test-string-h-c++.Po
@@ -7773,6 +7779,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-string-h.Po
 	-rm -f ./$(DEPDIR)/test-strings-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-strings-h.Po
+	-rm -f ./$(DEPDIR)/test-strncasecmp_l.Po
 	-rm -f ./$(DEPDIR)/test-symlink.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h.Po

@@ -24,7 +24,7 @@
 #include <string.h>
 
 int
-strcasecmp_l (const char *s1, const char *s2, locale_t locale)
+strncasecmp_l (const char *s1, const char *s2, size_t n, locale_t locale)
 {
 #if GNULIB_defined_locale_t
 
@@ -32,11 +32,11 @@ strcasecmp_l (const char *s1, const char *s2, locale_t locale)
     &locale->category[gl_log2_lc_mask (LC_CTYPE)];
   if (plc->is_c_locale)
     /* Implementation for the "C" locale.  */
-    return c_strcasecmp (s1, s2);
+    return c_strncasecmp (s1, s2, n);
 # if HAVE_WINDOWS_LOCALE_T
   /* Documentation:
-     <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/stricmp-wcsicmp-mbsicmp-stricmp-l-wcsicmp-l-mbsicmp-l>  */
-  return _stricmp_l (s1, s2, plc->system_locale);
+     <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/strnicmp-wcsnicmp-mbsnicmp-strnicmp-l-wcsnicmp-l-mbsnicmp-l>  */
+  return _strnicmp_l (s1, s2, n, plc->system_locale);
 # else
   /* Implementation for the global locale.  */
   {
@@ -44,7 +44,7 @@ strcasecmp_l (const char *s1, const char *s2, locale_t locale)
 #  if HAVE_WORKING_USELOCALE
     locale_t saved_locale = uselocale (LC_GLOBAL_LOCALE);
 #  endif
-    ret = strcasecmp (s1, s2);
+    ret = strncasecmp (s1, s2, n);
 #  if HAVE_WORKING_USELOCALE
     uselocale (saved_locale);
 #  endif
@@ -56,15 +56,15 @@ strcasecmp_l (const char *s1, const char *s2, locale_t locale)
 
   unsigned char c1, c2;
 
-  if (s1 == s2)
+  if (s1 == s2 || n == 0)
     return 0;
 
   do
     {
-      c1 = tolower_l ((unsigned char) *s1, locale);
-      c2 = tolower_l ((unsigned char) *s2, locale);
+      c1 = tolower ((unsigned char) *s1);
+      c2 = tolower ((unsigned char) *s2);
 
-      if (c1 == '\0')
+      if (--n == 0 || c1 == '\0')
         break;
 
       ++s1;

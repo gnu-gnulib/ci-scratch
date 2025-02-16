@@ -152,16 +152,16 @@
 #undef GNULIB_STAT
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module strcasecmp_l shall be considered present. */
-#undef GNULIB_STRCASECMP_L
-
-/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module strerror shall be considered present. */
 #undef GNULIB_STRERROR
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module strerror_r-posix shall be considered present. */
 #undef GNULIB_STRERROR_R_POSIX
+
+/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
+   whether the gnulib module strncasecmp_l shall be considered present. */
+#undef GNULIB_STRNCASECMP_L
 
 /* Define to 1 when the gnulib module accept should be tested. */
 #undef GNULIB_TEST_ACCEPT
@@ -834,9 +834,6 @@
 /* Define to 1 if you have the `stpcpy' function. */
 #undef HAVE_STPCPY
 
-/* Define to 1 if you have the 'strcasecmp_l' function. */
-#undef HAVE_STRCASECMP_L
-
 /* Define to 1 if you have the `strerror_r' function. */
 #undef HAVE_STRERROR_R
 
@@ -845,6 +842,9 @@
 
 /* Define to 1 if you have the <string.h> header file. */
 #undef HAVE_STRING_H
+
+/* Define to 1 if you have the 'strncasecmp_l' function. */
+#undef HAVE_STRNCASECMP_L
 
 /* Define to 1 if the system has the type 'struct random_data'. */
 #undef HAVE_STRUCT_RANDOM_DATA

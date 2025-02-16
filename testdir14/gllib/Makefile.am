@@ -64,13 +64,13 @@ libgnu_a_SOURCES += c-ctype.h c-ctype.c
 
 ## end   gnulib module c-ctype
 
-## begin gnulib module c-strcasecmp
+## begin gnulib module c-strncasecmp
 
-libgnu_a_SOURCES += c-strcasecmp.c
+libgnu_a_SOURCES += c-strncasecmp.c
 
 EXTRA_DIST += c-strcase.h
 
-## end   gnulib module c-strcasecmp
+## end   gnulib module c-strncasecmp
 
 ## begin gnulib module ctype-h
 
@@ -256,14 +256,6 @@ EXTRA_DIST += stddef.in.h
 
 ## end   gnulib module stddef-h
 
-## begin gnulib module strcasecmp_l
-
-if GL_COND_OBJ_STRCASECMP_L
-libgnu_a_SOURCES += strcasecmp_l.c
-endif
-
-## end   gnulib module strcasecmp_l
-
 ## begin gnulib module strings-h
 
 BUILT_SOURCES += strings.h
@@ -282,14 +274,17 @@ strings.h: strings.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE
 	      -e 's/@''GNULIB_STRCASECMP''@/$(GL_GNULIB_STRCASECMP)/g' \
 	      -e 's/@''GNULIB_STRCASECMP_L''@/$(GL_GNULIB_STRCASECMP_L)/g' \
 	      -e 's/@''GNULIB_STRNCASECMP''@/$(GL_GNULIB_STRNCASECMP)/g' \
+	      -e 's/@''GNULIB_STRNCASECMP_L''@/$(GL_GNULIB_STRNCASECMP_L)/g' \
 	      -e 's|@''HAVE_FFS''@|$(HAVE_FFS)|g' \
 	      -e 's|@''HAVE_STRCASECMP''@|$(HAVE_STRCASECMP)|g' \
 	      -e 's|@''HAVE_STRCASECMP_L''@|$(HAVE_STRCASECMP_L)|g' \
 	      -e 's|@''HAVE_STRNCASECMP''@|$(HAVE_STRNCASECMP)|g' \
+	      -e 's|@''HAVE_STRNCASECMP_L''@|$(HAVE_STRNCASECMP_L)|g' \
 	      -e 's|@''HAVE_DECL_STRNCASECMP''@|$(HAVE_DECL_STRNCASECMP)|g' \
 	      -e 's|@''REPLACE_STRCASECMP''@|$(REPLACE_STRCASECMP)|g' \
 	      -e 's|@''REPLACE_STRCASECMP_L''@|$(REPLACE_STRCASECMP_L)|g' \
 	      -e 's|@''REPLACE_STRNCASECMP''@|$(REPLACE_STRNCASECMP)|g' \
+	      -e 's|@''REPLACE_STRNCASECMP_L''@|$(REPLACE_STRNCASECMP_L)|g' \
 	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
 	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
@@ -300,6 +295,14 @@ MOSTLYCLEANFILES += strings.h strings.h-t
 EXTRA_DIST += strings.in.h
 
 ## end   gnulib module strings-h
+
+## begin gnulib module strncasecmp_l
+
+if GL_COND_OBJ_STRNCASECMP_L
+libgnu_a_SOURCES += strncasecmp_l.c
+endif
+
+## end   gnulib module strncasecmp_l
 
 ## begin gnulib module sys_types-h
 

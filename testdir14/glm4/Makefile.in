@@ -181,10 +181,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdio_h.m4 \
 	$(top_srcdir)/glm4/stdlib_h.m4 $(top_srcdir)/glm4/stpcpy.m4 \
 	$(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/strcasecmp_l.m4 \
 	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
+	$(top_srcdir)/glm4/strncasecmp_l.m4 \
 	$(top_srcdir)/glm4/symlink.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
@@ -696,6 +696,7 @@ GL_GNULIB_STRERRORNAME_NP = @GL_GNULIB_STRERRORNAME_NP@
 GL_GNULIB_STRERROR_R = @GL_GNULIB_STRERROR_R@
 GL_GNULIB_STRFTIME = @GL_GNULIB_STRFTIME@
 GL_GNULIB_STRNCASECMP = @GL_GNULIB_STRNCASECMP@
+GL_GNULIB_STRNCASECMP_L = @GL_GNULIB_STRNCASECMP_L@
 GL_GNULIB_STRNCAT = @GL_GNULIB_STRNCAT@
 GL_GNULIB_STRNDUP = @GL_GNULIB_STRNDUP@
 GL_GNULIB_STRNLEN = @GL_GNULIB_STRNLEN@
@@ -1198,6 +1199,7 @@ HAVE_STRCHRNUL = @HAVE_STRCHRNUL@
 HAVE_STRERRORNAME_NP = @HAVE_STRERRORNAME_NP@
 HAVE_STRINGS_H = @HAVE_STRINGS_H@
 HAVE_STRNCASECMP = @HAVE_STRNCASECMP@
+HAVE_STRNCASECMP_L = @HAVE_STRNCASECMP_L@
 HAVE_STRPBRK = @HAVE_STRPBRK@
 HAVE_STRPTIME = @HAVE_STRPTIME@
 HAVE_STRSEP = @HAVE_STRSEP@
@@ -1725,6 +1727,7 @@ REPLACE_STRERRORNAME_NP = @REPLACE_STRERRORNAME_NP@
 REPLACE_STRERROR_R = @REPLACE_STRERROR_R@
 REPLACE_STRFTIME = @REPLACE_STRFTIME@
 REPLACE_STRNCASECMP = @REPLACE_STRNCASECMP@
+REPLACE_STRNCASECMP_L = @REPLACE_STRNCASECMP_L@
 REPLACE_STRNCAT = @REPLACE_STRNCAT@
 REPLACE_STRNDUP = @REPLACE_STRNDUP@
 REPLACE_STRNLEN = @REPLACE_STRNLEN@
@@ -1922,14 +1925,14 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	sleep.m4 snan.m4 socketlib.m4 sockets.m4 socklen.m4 \
 	sockpfaf.m4 ssize_t.m4 stat-time.m4 stat.m4 std-gnu11.m4 \
 	stdalign.m4 stddef_h.m4 stdint.m4 stdio_h.m4 stdlib_h.m4 \
-	stpcpy.m4 strcasecmp.m4 strcasecmp_l.m4 strerror.m4 \
-	strerror_r.m4 string_h.m4 strings_h.m4 symlink.m4 \
-	sys_cdefs_h.m4 sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 \
-	sys_stat_h.m4 sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 \
-	thread.m4 threadlib.m4 time.m4 time_h.m4 tolower_l.m4 \
-	unistd_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
-	warn-on-use.m4 wchar_h.m4 windows-rc.m4 wint_t.m4 xalloc.m4 \
-	xgetcwd.m4 yield.m4 zzgnulib.m4
+	stpcpy.m4 strcasecmp.m4 strerror.m4 strerror_r.m4 string_h.m4 \
+	strings_h.m4 strncasecmp_l.m4 symlink.m4 sys_cdefs_h.m4 \
+	sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 \
+	sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 thread.m4 \
+	threadlib.m4 time.m4 time_h.m4 tolower_l.m4 unistd_h.m4 \
+	usleep.m4 vararrays.m4 visibility.m4 warn-on-use.m4 wchar_h.m4 \
+	windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 \
+	zzgnulib.m4
 all: all-am
 
 .SUFFIXES:

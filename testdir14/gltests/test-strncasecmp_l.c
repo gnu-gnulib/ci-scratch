@@ -1,4 +1,4 @@
-/* Test of strcasecmp_l() function.
+/* Test of strncasecmp_l() function.
    Copyright (C) 2020-2025 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify
@@ -20,7 +20,7 @@
 #include <locale.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (strcasecmp_l, int, (const char *, const char *, locale_t));
+SIGNATURE_CHECK (strncasecmp_l, int, (const char *, const char *, size_t, locale_t));
 
 #include <stdio.h>
 
@@ -29,15 +29,15 @@ SIGNATURE_CHECK (strcasecmp_l, int, (const char *, const char *, locale_t));
 static void
 test_single_locale_common (locale_t locale)
 {
-  ASSERT (strcasecmp_l ("paragraph", "Paragraph", locale) == 0);
+  ASSERT (strncasecmp_l ("paragraph", "Paragraph", 9, locale) == 0);
 
-  ASSERT (strcasecmp_l ("paragrapH", "parAgRaph", locale) == 0);
+  ASSERT (strncasecmp_l ("paragrapH", "parAgRaph", 9, locale) == 0);
 
-  ASSERT (strcasecmp_l ("paragraph", "paraLyzed", locale) < 0);
-  ASSERT (strcasecmp_l ("paraLyzed", "paragraph", locale) > 0);
+  ASSERT (strncasecmp_l ("paragraph", "paraLyzed", 9, locale) < 0);
+  ASSERT (strncasecmp_l ("paraLyzed", "paragraph", 9, locale) > 0);
 
-  ASSERT (strcasecmp_l ("para", "paragraph", locale) < 0);
-  ASSERT (strcasecmp_l ("paragraph", "para", locale) > 0);
+  ASSERT (strncasecmp_l ("para", "paragraph", 9, locale) < 0);
+  ASSERT (strncasecmp_l ("paragraph", "para", 9, locale) > 0);
 }
 
 int
@@ -68,16 +68,16 @@ main ()
 
         /* U+00C9 LATIN CAPITAL LETTER E WITH ACUTE */
         /* U+00E9 LATIN SMALL LETTER E WITH ACUTE */
-        ASSERT (strcasecmp_l ("Fej\311r", "Fej\351r", locale) == 0);
-        ASSERT (strcasecmp_l ("Fej\351r", "Fej\311r", locale) == 0);
-        ASSERT (strcasecmp_l ("Fejer", "Fej\311r", locale) < 0);
-        ASSERT (strcasecmp_l ("Fej\311r", "Fejer", locale) > 0);
+        ASSERT (strncasecmp_l ("Fej\311r", "Fej\351r", 5, locale) == 0);
+        ASSERT (strncasecmp_l ("Fej\351r", "Fej\311r", 5, locale) == 0);
+        ASSERT (strncasecmp_l ("Fejer", "Fej\311r", 5, locale) < 0);
+        ASSERT (strncasecmp_l ("Fej\311r", "Fejer", 5, locale) > 0);
 
         /* Compare with U+00D7 MULTIPLICATION SIGN */
-        ASSERT (strcasecmp_l ("Fej\311r", "Fej\327", locale) > 0);
-        ASSERT (strcasecmp_l ("Fej\327", "Fej\311r", locale) < 0);
-        ASSERT (strcasecmp_l ("Fej\351r", "Fej\327", locale) > 0);
-        ASSERT (strcasecmp_l ("Fej\327", "Fej\351r", locale) < 0);
+        ASSERT (strncasecmp_l ("Fej\311r", "Fej\327", 5, locale) > 0);
+        ASSERT (strncasecmp_l ("Fej\327", "Fej\311r", 5, locale) < 0);
+        ASSERT (strncasecmp_l ("Fej\351r", "Fej\327", 5, locale) > 0);
+        ASSERT (strncasecmp_l ("Fej\327", "Fej\351r", 5, locale) < 0);
 
         freelocale (locale);
       }
