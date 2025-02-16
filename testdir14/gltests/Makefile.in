@@ -124,7 +124,7 @@ TESTS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) test-assert$(EXEEXT) \
 	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
 	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
 	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) test-init.sh test-tolower_l$(EXEEXT) \
+	test-sys_types-h$(EXEEXT) test-init.sh test-toupper_l$(EXEEXT) \
 	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
 	test-verify.sh $(am__EXEEXT_12) test-wchar-h$(EXEEXT)
 XFAIL_TESTS =
@@ -137,7 +137,7 @@ noinst_PROGRAMS = test-alignasof$(EXEEXT) $(am__EXEEXT_1) \
 	test-newlocale$(EXEEXT) $(am__EXEEXT_7) test-stddef-h$(EXEEXT) \
 	$(am__EXEEXT_8) test-stdint-h$(EXEEXT) $(am__EXEEXT_9) \
 	test-stdlib-h$(EXEEXT) $(am__EXEEXT_10) \
-	test-sys_types-h$(EXEEXT) test-tolower_l$(EXEEXT) \
+	test-sys_types-h$(EXEEXT) test-toupper_l$(EXEEXT) \
 	$(am__EXEEXT_11) test-unistd-h$(EXEEXT) test-verify$(EXEEXT) \
 	$(am__EXEEXT_12) test-wchar-h$(EXEEXT)
 EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
@@ -189,7 +189,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/tolower_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/toupper_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
 	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
@@ -383,10 +383,10 @@ test_sys_types_h_c___OBJECTS = $(am_test_sys_types_h_c___OBJECTS)
 test_sys_types_h_c___LDADD = $(LDADD)
 test_sys_types_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_tolower_l_SOURCES = test-tolower_l.c
-test_tolower_l_OBJECTS = test-tolower_l.$(OBJEXT)
-test_tolower_l_LDADD = $(LDADD)
-test_tolower_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+test_toupper_l_SOURCES = test-toupper_l.c
+test_toupper_l_OBJECTS = test-toupper_l.$(OBJEXT)
+test_toupper_l_LDADD = $(LDADD)
+test_toupper_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_unistd_h_SOURCES = test-unistd-h.c
 test_unistd_h_OBJECTS = test-unistd-h.$(OBJEXT)
@@ -459,7 +459,7 @@ am__depfiles_remade = ./$(DEPDIR)/freelocale.Po \
 	./$(DEPDIR)/test-stdlib-h-c++.Po \
 	./$(DEPDIR)/test-stdlib-h-c++2.Po ./$(DEPDIR)/test-stdlib-h.Po \
 	./$(DEPDIR)/test-sys_types-h-c++.Po \
-	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-tolower_l.Po \
+	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-toupper_l.Po \
 	./$(DEPDIR)/test-unistd-h-c++.Po ./$(DEPDIR)/test-unistd-h.Po \
 	./$(DEPDIR)/test-verify-try.Po ./$(DEPDIR)/test-verify.Po \
 	./$(DEPDIR)/test-wchar-h-c++.Po \
@@ -502,7 +502,7 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_stddef_h_c___SOURCES) test-stdint-h.c \
 	$(test_stdint_h_c___SOURCES) test-stdlib-h.c \
 	$(test_stdlib_h_c___SOURCES) test-sys_types-h.c \
-	$(test_sys_types_h_c___SOURCES) test-tolower_l.c \
+	$(test_sys_types_h_c___SOURCES) test-toupper_l.c \
 	test-unistd-h.c $(test_unistd_h_c___SOURCES) test-verify.c \
 	test-verify-try.c test-wchar-h.c $(test_wchar_h_c___SOURCES)
 DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
@@ -518,7 +518,7 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	test-stdint-h.c $(am__test_stdint_h_c___SOURCES_DIST) \
 	test-stdlib-h.c $(am__test_stdlib_h_c___SOURCES_DIST) \
 	test-sys_types-h.c $(am__test_sys_types_h_c___SOURCES_DIST) \
-	test-tolower_l.c test-unistd-h.c \
+	test-toupper_l.c test-unistd-h.c \
 	$(am__test_unistd_h_c___SOURCES_DIST) test-verify.c \
 	test-verify-try.c test-wchar-h.c \
 	$(am__test_wchar_h_c___SOURCES_DIST)
@@ -997,6 +997,7 @@ GL_GNULIB_SYMLINK = @GL_GNULIB_SYMLINK@
 GL_GNULIB_SYMLINKAT = @GL_GNULIB_SYMLINKAT@
 GL_GNULIB_SYSTEM_POSIX = @GL_GNULIB_SYSTEM_POSIX@
 GL_GNULIB_TOLOWER_L = @GL_GNULIB_TOLOWER_L@
+GL_GNULIB_TOUPPER_L = @GL_GNULIB_TOUPPER_L@
 GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
@@ -1187,6 +1188,7 @@ HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
 HAVE_SYS_TYPES_H = @HAVE_SYS_TYPES_H@
 HAVE_TOLOWER_L = @HAVE_TOLOWER_L@
+HAVE_TOUPPER_L = @HAVE_TOUPPER_L@
 HAVE_UNISTD_H = @HAVE_UNISTD_H@
 HAVE_UNLINKAT = @HAVE_UNLINKAT@
 HAVE_UNLOCKPT = @HAVE_UNLOCKPT@
@@ -1522,7 +1524,7 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	test-stdint-h.c stdlib.in.h test-stdlib-h-c++.cc \
 	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
 	test-sys_wait-h.h sys_types.in.h test-sys_types-h-c++.cc \
-	test-sys_types-h.c init.sh test-init.sh test-tolower_l.c \
+	test-sys_types-h.c init.sh test-init.sh test-toupper_l.c \
 	signature.h macros.h unistd.in.h test-unistd-h-c++.cc \
 	signature.h test-unistd-h.c verify.h test-verify.c \
 	test-verify-try.c test-verify.sh wchar.in.h \
@@ -1754,9 +1756,9 @@ test-sys_types-h-c++$(EXEEXT): $(test_sys_types_h_c___OBJECTS) $(test_sys_types_
 	@rm -f test-sys_types-h-c++$(EXEEXT)
 	$(AM_V_CXXLD)$(CXXLINK) $(test_sys_types_h_c___OBJECTS) $(test_sys_types_h_c___LDADD) $(LIBS)
 
-test-tolower_l$(EXEEXT): $(test_tolower_l_OBJECTS) $(test_tolower_l_DEPENDENCIES) $(EXTRA_test_tolower_l_DEPENDENCIES) 
-	@rm -f test-tolower_l$(EXEEXT)
-	$(AM_V_CCLD)$(LINK) $(test_tolower_l_OBJECTS) $(test_tolower_l_LDADD) $(LIBS)
+test-toupper_l$(EXEEXT): $(test_toupper_l_OBJECTS) $(test_toupper_l_DEPENDENCIES) $(EXTRA_test_toupper_l_DEPENDENCIES) 
+	@rm -f test-toupper_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_toupper_l_OBJECTS) $(test_toupper_l_LDADD) $(LIBS)
 
 test-unistd-h$(EXEEXT): $(test_unistd_h_OBJECTS) $(test_unistd_h_DEPENDENCIES) $(EXTRA_test_unistd_h_DEPENDENCIES) 
 	@rm -f test-unistd-h$(EXEEXT)
@@ -1825,7 +1827,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-tolower_l.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-toupper_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-verify-try.Po@am__quote@ # am--include-marker
@@ -2331,9 +2333,9 @@ test-init.sh.log: test-init.sh
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-tolower_l.log: test-tolower_l$(EXEEXT)
-	@p='test-tolower_l$(EXEEXT)'; \
-	b='test-tolower_l'; \
+test-toupper_l.log: test-toupper_l$(EXEEXT)
+	@p='test-toupper_l$(EXEEXT)'; \
+	b='test-toupper_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -2545,7 +2547,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
-	-rm -f ./$(DEPDIR)/test-tolower_l.Po
+	-rm -f ./$(DEPDIR)/test-toupper_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
@@ -2637,7 +2639,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
-	-rm -f ./$(DEPDIR)/test-tolower_l.Po
+	-rm -f ./$(DEPDIR)/test-toupper_l.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po

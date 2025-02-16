@@ -743,13 +743,13 @@ EXTRA_DIST += test-init.sh
 
 ## end   gnulib module test-framework-sh-tests
 
-## begin gnulib module tolower_l-tests
+## begin gnulib module toupper_l-tests
 
-TESTS += test-tolower_l
-noinst_PROGRAMS += test-tolower_l
-EXTRA_DIST += test-tolower_l.c signature.h macros.h
+TESTS += test-toupper_l
+noinst_PROGRAMS += test-toupper_l
+EXTRA_DIST += test-toupper_l.c signature.h macros.h
 
-## end   gnulib module tolower_l-tests
+## end   gnulib module toupper_l-tests
 
 ## begin gnulib module unistd-h
 

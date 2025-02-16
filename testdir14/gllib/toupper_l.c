@@ -1,4 +1,4 @@
-/* Mapping a single-byte character to lowercase.
+/* Mapping a single-byte character to uppercase.
    Copyright (C) 2025 Free Software Foundation, Inc.
 
    This file is free software: you can redistribute it and/or modify
@@ -21,11 +21,11 @@
 /* Specification.  */
 #include <ctype.h>
 
-#define FUNC tolower_l
-#define GLOBAL_FUNC tolower
+#define FUNC toupper_l
+#define GLOBAL_FUNC toupper
 #define C_FUNC(c) \
-  (c >= 'A' && c <= 'Z' ? c - 'A' + 'a' : c)
+  (c >= 'a' && c <= 'z' ? c - 'a' + 'A' : c)
 /* Documentation:
-   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/tolower-tolower-towlower-tolower-l-towlower-l>  */
-#define WINDOWS_FUNC _tolower_l
+   <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/toupper-toupper-towupper-toupper-l-towupper-l>  */
+#define WINDOWS_FUNC _toupper_l
 #include "to_l-impl.h"

@@ -111,7 +111,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
 	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/tolower_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/toupper_l.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
 	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
@@ -339,6 +339,7 @@ GL_GNULIB_SYMLINK = @GL_GNULIB_SYMLINK@
 GL_GNULIB_SYMLINKAT = @GL_GNULIB_SYMLINKAT@
 GL_GNULIB_SYSTEM_POSIX = @GL_GNULIB_SYSTEM_POSIX@
 GL_GNULIB_TOLOWER_L = @GL_GNULIB_TOLOWER_L@
+GL_GNULIB_TOUPPER_L = @GL_GNULIB_TOUPPER_L@
 GL_GNULIB_TRUNCATE = @GL_GNULIB_TRUNCATE@
 GL_GNULIB_TTYNAME_R = @GL_GNULIB_TTYNAME_R@
 GL_GNULIB_UNISTD_H_GETOPT = @GL_GNULIB_UNISTD_H_GETOPT@
@@ -529,6 +530,7 @@ HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
 HAVE_SYS_TYPES_H = @HAVE_SYS_TYPES_H@
 HAVE_TOLOWER_L = @HAVE_TOLOWER_L@
+HAVE_TOUPPER_L = @HAVE_TOUPPER_L@
 HAVE_UNISTD_H = @HAVE_UNISTD_H@
 HAVE_UNLINKAT = @HAVE_UNLINKAT@
 HAVE_UNLOCKPT = @HAVE_UNLOCKPT@
@@ -847,7 +849,7 @@ EXTRA_DIST = 00gnulib.m4 absolute-header.m4 ansi-c++.m4 assert_h.m4 \
 	locale-en.m4 locale_h.m4 localename.m4 multiarch.m4 musl.m4 \
 	newlocale.m4 off64_t.m4 off_t.m4 pid_t.m4 ssize_t.m4 \
 	std-gnu11.m4 stdalign.m4 stddef_h.m4 stdint.m4 stdlib_h.m4 \
-	sys_types_h.m4 tolower_l.m4 unistd_h.m4 warn-on-use.m4 \
+	sys_types_h.m4 toupper_l.m4 unistd_h.m4 warn-on-use.m4 \
 	wchar_h.m4 wint_t.m4 zzgnulib.m4
 all: all-am
 

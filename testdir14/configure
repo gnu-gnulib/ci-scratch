@@ -1179,8 +1179,8 @@ NEXT_ASSERT_H
 gltests_WITNESS
 GL_CXXFLAG_ALLOW_WARNINGS
 GL_CFLAG_ALLOW_WARNINGS
-GL_COND_OBJ_TOLOWER_L_FALSE
-GL_COND_OBJ_TOLOWER_L_TRUE
+GL_COND_OBJ_TOUPPER_L_FALSE
+GL_COND_OBJ_TOUPPER_L_TRUE
 GL_GENERATE_STDDEF_H_FALSE
 GL_GENERATE_STDDEF_H_TRUE
 STDDEF_H
@@ -1212,6 +1212,7 @@ REPLACE_LOCALECONV
 HAVE_FREELOCALE
 HAVE_DUPLOCALE
 HAVE_NEWLOCALE
+GL_GNULIB_TOUPPER_L
 GL_GNULIB_TOLOWER_L
 GL_GNULIB_ISXDIGIT_L
 GL_GNULIB_ISUPPER_L
@@ -1232,6 +1233,7 @@ PRAGMA_COLUMNS
 PRAGMA_SYSTEM_HEADER
 INCLUDE_NEXT_AS_FIRST_DIRECTIVE
 INCLUDE_NEXT
+HAVE_TOUPPER_L
 HAVE_TOLOWER_L
 HAVE_ISXDIGIT_L
 HAVE_ISUPPER_L
@@ -3361,7 +3363,7 @@ as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
-as_fn_append ac_func_c_list " tolower_l HAVE_TOLOWER_L"
+as_fn_append ac_func_c_list " toupper_l HAVE_TOUPPER_L"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
 as_fn_append ac_header_c_list " crtdefs.h crtdefs_h HAVE_CRTDEFS_H"
@@ -7123,6 +7125,7 @@ fi
   HAVE_ISUPPER_L=1;
   HAVE_ISXDIGIT_L=1;
   HAVE_TOLOWER_L=1;
+  HAVE_TOUPPER_L=1;
 
 
 
@@ -7385,6 +7388,10 @@ printf "%s\n" "$gl_cv_next_ctype_h" >&6; }
 
 
   GL_GNULIB_TOLOWER_L=0
+
+
+
+  GL_GNULIB_TOUPPER_L=0
 
 
 
@@ -12065,29 +12072,29 @@ fi
 
 
 
-  if test $ac_cv_func_tolower_l = no; then
-    HAVE_TOLOWER_L=0
+  if test $ac_cv_func_toupper_l = no; then
+    HAVE_TOUPPER_L=0
   fi
 
 
 
 
-     if test $HAVE_TOLOWER_L = 0; then
-  GL_COND_OBJ_TOLOWER_L_TRUE=
-  GL_COND_OBJ_TOLOWER_L_FALSE='#'
+     if test $HAVE_TOUPPER_L = 0; then
+  GL_COND_OBJ_TOUPPER_L_TRUE=
+  GL_COND_OBJ_TOUPPER_L_FALSE='#'
 else
-  GL_COND_OBJ_TOLOWER_L_TRUE='#'
-  GL_COND_OBJ_TOLOWER_L_FALSE=
+  GL_COND_OBJ_TOUPPER_L_TRUE='#'
+  GL_COND_OBJ_TOUPPER_L_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_TOLOWER_L_TRUE}" && test -z "${GL_COND_OBJ_TOLOWER_L_FALSE}"; then
-    GL_COND_OBJ_TOLOWER_L_TRUE='#'
-    GL_COND_OBJ_TOLOWER_L_FALSE='#'
+    if test -z "${GL_COND_OBJ_TOUPPER_L_TRUE}" && test -z "${GL_COND_OBJ_TOUPPER_L_FALSE}"; then
+    GL_COND_OBJ_TOUPPER_L_TRUE='#'
+    GL_COND_OBJ_TOUPPER_L_FALSE='#'
   fi
 
 
 
-printf "%s\n" "#define GNULIB_TOLOWER_L 1" >>confdefs.h
+printf "%s\n" "#define GNULIB_TOUPPER_L 1" >>confdefs.h
 
 
 
@@ -12099,7 +12106,7 @@ printf "%s\n" "#define GNULIB_TOLOWER_L 1" >>confdefs.h
 
 
 
-          GL_GNULIB_TOLOWER_L=1
+          GL_GNULIB_TOUPPER_L=1
 
 
 

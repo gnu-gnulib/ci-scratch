@@ -54,10 +54,10 @@ gl_m4_base='glm4'
   gl_STDDEF_H_REQUIRE_DEFAULTS
   gl_CONDITIONAL_HEADER([stddef.h])
   AC_PROG_MKDIR_P
-  gl_FUNC_TOLOWER_L
-  gl_CONDITIONAL([GL_COND_OBJ_TOLOWER_L], [test $HAVE_TOLOWER_L = 0])
-  gl_MODULE_INDICATOR([tolower_l])
-  gl_CTYPE_MODULE_INDICATOR([tolower_l])
+  gl_FUNC_TOUPPER_L
+  gl_CONDITIONAL([GL_COND_OBJ_TOUPPER_L], [test $HAVE_TOUPPER_L = 0])
+  gl_MODULE_INDICATOR([toupper_l])
+  gl_CTYPE_MODULE_INDICATOR([toupper_l])
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
