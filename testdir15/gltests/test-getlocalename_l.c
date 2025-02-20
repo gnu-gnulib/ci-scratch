@@ -338,6 +338,8 @@ main ()
     ASSERT (strcmp (ret, C_CANONICALIZED) == 0);
   }
 
+  /* Skip this part on OpenBSD <= 6.1.  */
+#if !(defined __OpenBSD__ && !HAVE_NEWLOCALE)
   if (setlocale (LC_ALL, LOCALE1) != NULL)
     {
       const char *ret;
@@ -360,6 +362,7 @@ main ()
       ret = getlocalename_l (LC_TIME, LC_GLOBAL_LOCALE);
       ASSERT (strcmp (ret, LOCALE1) == 0);
     }
+#endif
 
   return 0;
 }

@@ -13,10 +13,17 @@ AC_DEFUN([gl_FUNC_GETLOCALENAME_L_SIMPLE],
   dnl Persuade glibc <locale.h> to declare getlocalename_l().
   AC_REQUIRE([AC_USE_SYSTEM_EXTENSIONS])
 
+  AC_REQUIRE([gl_FUNC_SETLOCALE_NULL])
   AC_CHECK_FUNCS_ONCE([getlocalename_l])
-  if test $ac_cv_func_getlocalename_l = no; then
+  if test $ac_cv_func_getlocalename_l = yes; then
+    GETLOCALENAME_L_LIB=
+  else
     HAVE_GETLOCALENAME_L=0
+    GETLOCALENAME_L_LIB="$SETLOCALE_NULL_LIB"
   fi
+  dnl GETLOCALENAME_L_LIB is expected to be '-pthread' or '-lpthread' on AIX
+  dnl with gcc or xlc, and empty otherwise.
+  AC_SUBST([GETLOCALENAME_L_LIB])
 ])
 
 # Prerequisites of lib/getlocalename_l.c.

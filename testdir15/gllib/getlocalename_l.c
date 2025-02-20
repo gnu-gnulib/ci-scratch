@@ -453,7 +453,7 @@ getlocalename_l (int category, locale_t locale)
     {
 #if GNULIB_defined_locale_t
       struct gl_locale_category_t *plc =
-        &locale->category[gl_log2_lc_mask (LC_CTYPE)];
+        &locale->category[gl_log2_lcmask_to_index (gl_log2_lc_mask (category))];
       return plc->name;
 #elif __GLIBC__ >= 2 && !defined __UCLIBC__
       /* Work around an incorrect definition of the _NL_LOCALE_NAME macro in

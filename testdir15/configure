@@ -1979,8 +1979,6 @@ HAVE_VISIBILITY
 CFLAG_VISIBILITY
 GL_COND_OBJ_SETLOCALE_LOCK_FALSE
 GL_COND_OBJ_SETLOCALE_LOCK_TRUE
-LIB_SETLOCALE_NULL
-SETLOCALE_NULL_LIB
 GL_GNULIB_SCHED_YIELD
 HAVE_STRUCT_SCHED_PARAM
 HAVE_SCHED_H
@@ -2116,10 +2114,6 @@ LIBMULTITHREAD
 LTLIBTHREAD
 LIBTHREAD
 LIBSTDTHREAD
-LIB_SCHED_YIELD
-SCHED_YIELD_LIB
-LIBPMULTITHREAD
-LIBPTHREAD
 NEXT_AS_FIRST_DIRECTIVE_LOCALE_H
 NEXT_LOCALE_H
 HAVE_WINDOWS_LOCALE_T
@@ -2192,6 +2186,13 @@ HAVE_LOCALE_T
 HAVE_XLOCALE_H
 GL_COND_OBJ_GETLOCALENAME_L_FALSE
 GL_COND_OBJ_GETLOCALENAME_L_TRUE
+GETLOCALENAME_L_LIB
+LIB_SETLOCALE_NULL
+SETLOCALE_NULL_LIB
+LIB_SCHED_YIELD
+SCHED_YIELD_LIB
+LIBPMULTITHREAD
+LIBPTHREAD
 LOCALENAME_ENHANCE_LOCALE_FUNCS
 REPLACE_STRUCT_LCONV
 REPLACE_FREELOCALE
@@ -4504,11 +4505,11 @@ as_fn_append ac_header_c_list " wchar.h wchar_h HAVE_WCHAR_H"
 as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_H"
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_func_c_list " symlink HAVE_SYMLINK"
+as_fn_append ac_header_c_list " threads.h threads_h HAVE_THREADS_H"
 as_fn_append ac_func_c_list " getlocalename_l HAVE_GETLOCALENAME_L"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
 as_fn_append ac_header_c_list " langinfo.h langinfo_h HAVE_LANGINFO_H"
 as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
-as_fn_append ac_header_c_list " threads.h threads_h HAVE_THREADS_H"
 as_fn_append ac_header_c_list " pthread.h pthread_h HAVE_PTHREAD_H"
 as_fn_append ac_header_c_list " sys/time.h sys_time_h HAVE_SYS_TIME_H"
 as_fn_append ac_header_c_list " features.h features_h HAVE_FEATURES_H"
@@ -8972,6 +8973,708 @@ printf "%s\n" "$gl_cv_next_fcntl_h" >&6; }
 
 
 
+  if test -z "$gl_pthreadlib_body_done"; then
+    gl_pthread_api=no
+    LIBPTHREAD=
+    LIBPMULTITHREAD=
+    # On OSF/1, the compiler needs the flag -pthread or -D_REENTRANT so that
+    # it groks <pthread.h>. It's added above, in gl_ANYTHREADLIB_EARLY.
+    ac_fn_c_check_header_compile "$LINENO" "pthread.h" "ac_cv_header_pthread_h" "$ac_includes_default"
+if test "x$ac_cv_header_pthread_h" = xyes
+then :
+  gl_have_pthread_h=yes
+else case e in #(
+  e) gl_have_pthread_h=no ;;
+esac
+fi
+
+    if test "$gl_have_pthread_h" = yes; then
+      # Other possible tests:
+      #   -lpthreads (FSU threads, PCthreads)
+      #   -lgthreads
+      # Test whether both pthread_mutex_lock and pthread_mutexattr_init exist
+      # in libc. IRIX 6.5 has the first one in both libc and libpthread, but
+      # the second one only in libpthread, and lock.c needs it.
+      #
+      # If -pthread works, prefer it to -lpthread, since Ubuntu 14.04
+      # needs -pthread for some reason.  See:
+      # https://lists.gnu.org/r/bug-gnulib/2014-09/msg00023.html
+      saved_LIBS="$LIBS"
+      for gl_pthread in '' '-pthread'; do
+        LIBS="$LIBS $gl_pthread"
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <pthread.h>
+               pthread_mutex_t m;
+               pthread_mutexattr_t ma;
+
+int
+main (void)
+{
+pthread_mutex_lock (&m);
+               pthread_mutexattr_init (&ma);
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gl_pthread_api=yes
+           LIBPTHREAD=$gl_pthread
+           LIBPMULTITHREAD=$gl_pthread
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+        LIBS="$saved_LIBS"
+        test $gl_pthread_api = yes && break
+      done
+      echo "$as_me:9031: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:9032: LIBPTHREAD=$LIBPTHREAD" >&5
+
+      gl_pthread_in_glibc=no
+      # On Linux with glibc >= 2.34, libc contains the fully functional
+      # pthread functions.
+      case "$host_os" in
+        linux*)
+          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <features.h>
+             #ifdef __GNU_LIBRARY__
+              #if (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 34) || (__GLIBC__ > 2)
+               Lucky user
+              #endif
+             #endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Lucky user" >/dev/null 2>&1
+then :
+  gl_pthread_in_glibc=yes
+fi
+rm -rf conftest*
+
+          ;;
+      esac
+      echo "$as_me:9058: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+
+      # Test for libpthread by looking for pthread_kill. (Not pthread_self,
+      # since it is defined as a macro on OSF/1.)
+      if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"; then
+        # The program links fine without libpthread. But it may actually
+        # need to link with libpthread in order to create multiple threads.
+        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
+printf %s "checking for pthread_kill in -lpthread... " >&6; }
+if test ${ac_cv_lib_pthread_pthread_kill+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lpthread  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char pthread_kill (void);
+int
+main (void)
+{
+return pthread_kill ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_pthread_pthread_kill=yes
+else case e in #(
+  e) ac_cv_lib_pthread_pthread_kill=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
+printf "%s\n" "$ac_cv_lib_pthread_pthread_kill" >&6; }
+if test "x$ac_cv_lib_pthread_pthread_kill" = xyes
+then :
+  if test $gl_pthread_in_glibc = yes; then
+             LIBPMULTITHREAD=
+           else
+             LIBPMULTITHREAD=-lpthread
+             # On Solaris and HP-UX, most pthread functions exist also in libc.
+             # Therefore pthread_in_use() needs to actually try to create a
+             # thread: pthread_create from libc will fail, whereas
+             # pthread_create will actually create a thread.
+             # On Solaris 10 or newer, this test is no longer needed, because
+             # libc contains the fully functional pthread functions.
+             case "$host_os" in
+               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux*)
+
+printf "%s\n" "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
+
+             esac
+           fi
+
+else case e in #(
+  e)            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lthr" >&5
+printf %s "checking for pthread_kill in -lthr... " >&6; }
+if test ${ac_cv_lib_thr_pthread_kill+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lthr  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char pthread_kill (void);
+int
+main (void)
+{
+return pthread_kill ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_thr_pthread_kill=yes
+else case e in #(
+  e) ac_cv_lib_thr_pthread_kill=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_thr_pthread_kill" >&5
+printf "%s\n" "$ac_cv_lib_thr_pthread_kill" >&6; }
+if test "x$ac_cv_lib_thr_pthread_kill" = xyes
+then :
+  if test $gl_pthread_in_glibc = yes; then
+                LIBPMULTITHREAD=
+              else
+                LIBPMULTITHREAD=-lthr
+              fi
+
+fi
+
+           ;;
+esac
+fi
+
+      elif test $gl_pthread_api != yes; then
+        # Some library is needed. Try libpthread and libc_r.
+        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
+printf %s "checking for pthread_kill in -lpthread... " >&6; }
+if test ${ac_cv_lib_pthread_pthread_kill+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lpthread  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char pthread_kill (void);
+int
+main (void)
+{
+return pthread_kill ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_pthread_pthread_kill=yes
+else case e in #(
+  e) ac_cv_lib_pthread_pthread_kill=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
+printf "%s\n" "$ac_cv_lib_pthread_pthread_kill" >&6; }
+if test "x$ac_cv_lib_pthread_pthread_kill" = xyes
+then :
+  gl_pthread_api=yes
+           LIBPTHREAD=-lpthread
+           LIBPMULTITHREAD=-lpthread
+fi
+
+        if test $gl_pthread_api != yes; then
+          # For FreeBSD 4.
+          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lc_r" >&5
+printf %s "checking for pthread_kill in -lc_r... " >&6; }
+if test ${ac_cv_lib_c_r_pthread_kill+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lc_r  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char pthread_kill (void);
+int
+main (void)
+{
+return pthread_kill ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_c_r_pthread_kill=yes
+else case e in #(
+  e) ac_cv_lib_c_r_pthread_kill=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_c_r_pthread_kill" >&5
+printf "%s\n" "$ac_cv_lib_c_r_pthread_kill" >&6; }
+if test "x$ac_cv_lib_c_r_pthread_kill" = xyes
+then :
+  gl_pthread_api=yes
+             LIBPTHREAD=-lc_r
+             LIBPMULTITHREAD=-lc_r
+fi
+
+        fi
+      fi
+      echo "$as_me:9292: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+    fi
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
+printf %s "checking whether POSIX threads API is available... " >&6; }
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_pthread_api" >&5
+printf "%s\n" "$gl_pthread_api" >&6; }
+
+
+    if test $gl_pthread_api = yes; then
+
+printf "%s\n" "#define HAVE_PTHREAD_API 1" >>confdefs.h
+
+    fi
+
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <sched.h>
+int
+main (void)
+{
+sched_yield ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  SCHED_YIELD_LIB=
+
+else case e in #(
+  e)        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for sched_yield in -lrt" >&5
+printf %s "checking for sched_yield in -lrt... " >&6; }
+if test ${ac_cv_lib_rt_sched_yield+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lrt  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char sched_yield (void);
+int
+main (void)
+{
+return sched_yield ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_rt_sched_yield=yes
+else case e in #(
+  e) ac_cv_lib_rt_sched_yield=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_rt_sched_yield" >&5
+printf "%s\n" "$ac_cv_lib_rt_sched_yield" >&6; }
+if test "x$ac_cv_lib_rt_sched_yield" = xyes
+then :
+  SCHED_YIELD_LIB=-lrt
+else case e in #(
+  e)           { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for sched_yield in -lposix4" >&5
+printf %s "checking for sched_yield in -lposix4... " >&6; }
+if test ${ac_cv_lib_posix4_sched_yield+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_check_lib_save_LIBS=$LIBS
+LIBS="-lposix4  $LIBS"
+cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+/* Override any GCC internal prototype to avoid an error.
+   Use char because int might match the return type of a GCC
+   builtin and then its argument prototype would still apply.
+   The 'extern "C"' is for builds by C++ compilers;
+   although this is not generally supported in C code supporting it here
+   has little cost and some practical benefit (sr 110532).  */
+#ifdef __cplusplus
+extern "C"
+#endif
+char sched_yield (void);
+int
+main (void)
+{
+return sched_yield ();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  ac_cv_lib_posix4_sched_yield=yes
+else case e in #(
+  e) ac_cv_lib_posix4_sched_yield=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+LIBS=$ac_check_lib_save_LIBS ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_posix4_sched_yield" >&5
+printf "%s\n" "$ac_cv_lib_posix4_sched_yield" >&6; }
+if test "x$ac_cv_lib_posix4_sched_yield" = xyes
+then :
+  SCHED_YIELD_LIB=-lposix4
+fi
+ ;;
+esac
+fi
+
+       ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+
+        LIB_SCHED_YIELD="$SCHED_YIELD_LIB"
+
+
+    gl_pthreadlib_body_done=done
+  fi
+
+
+
+
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether setlocale (LC_ALL, NULL) is multithread-safe" >&5
+printf %s "checking whether setlocale (LC_ALL, NULL) is multithread-safe... " >&6; }
+if test ${gl_cv_func_setlocale_null_all_mtsafe+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+       # Guess no on musl libc, macOS, FreeBSD, NetBSD, OpenBSD, AIX, Haiku.
+       *-musl* | midipix* | darwin* | freebsd* | midnightbsd* | netbsd* | openbsd* | aix* | haiku*)
+         gl_cv_func_setlocale_null_all_mtsafe=no ;;
+       # Guess no on Cygwin < 3.4.6.
+       cygwin*)
+         cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#if defined __CYGWIN__
+ #include <cygwin/version.h>
+ #if CYGWIN_VERSION_DLL_COMBINED >= CYGWIN_VERSION_DLL_MAKE_COMBINED (3004, 6)
+  Lucky user
+ #endif
+#endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Lucky user" >/dev/null 2>&1
+then :
+  gl_cv_func_setlocale_null_all_mtsafe=yes
+else case e in #(
+  e) gl_cv_func_setlocale_null_all_mtsafe=no ;;
+esac
+fi
+rm -rf conftest*
+
+        ;;
+       # Guess yes on glibc, HP-UX, IRIX, Solaris, native Windows.
+       *-gnu* | gnu* | hpux* | irix* | solaris* | mingw* | windows*)
+         gl_cv_func_setlocale_null_all_mtsafe=yes ;;
+       # If we don't know, obey --enable-cross-guesses.
+       *)
+         gl_cv_func_setlocale_null_all_mtsafe="$gl_cross_guess_normal" ;;
+     esac
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_setlocale_null_all_mtsafe" >&5
+printf "%s\n" "$gl_cv_func_setlocale_null_all_mtsafe" >&6; }
+    case "$host_os" in
+    mingw* | windows*) ;;
+    *)
+      if test $gl_pthread_api = no && test $ac_cv_header_threads_h = no; then
+        gl_cv_func_setlocale_null_all_mtsafe="trivially yes"
+      fi
+      ;;
+  esac
+  case "$gl_cv_func_setlocale_null_all_mtsafe" in
+    *yes) SETLOCALE_NULL_ALL_MTSAFE=1 ;;
+    *)    SETLOCALE_NULL_ALL_MTSAFE=0 ;;
+  esac
+
+printf "%s\n" "#define SETLOCALE_NULL_ALL_MTSAFE $SETLOCALE_NULL_ALL_MTSAFE" >>confdefs.h
+
+
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether setlocale (category, NULL) is multithread-safe" >&5
+printf %s "checking whether setlocale (category, NULL) is multithread-safe... " >&6; }
+if test ${gl_cv_func_setlocale_null_one_mtsafe+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+       # Guess no on OpenBSD, AIX.
+       openbsd* | aix*)
+         gl_cv_func_setlocale_null_one_mtsafe=no ;;
+       # Guess yes on glibc, musl libc, macOS, FreeBSD, NetBSD, HP-UX, IRIX, Solaris, Haiku, Cygwin, native Windows.
+       *-gnu* | gnu* | *-musl* | midipix* | darwin* | freebsd* | midnightbsd* | netbsd* | hpux* | irix* | solaris* | haiku* | cygwin* | mingw* | windows*)
+         gl_cv_func_setlocale_null_one_mtsafe=yes ;;
+       # If we don't know, obey --enable-cross-guesses.
+       *)
+         gl_cv_func_setlocale_null_one_mtsafe="$gl_cross_guess_normal" ;;
+     esac
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_setlocale_null_one_mtsafe" >&5
+printf "%s\n" "$gl_cv_func_setlocale_null_one_mtsafe" >&6; }
+    case "$host_os" in
+    mingw* | windows*) ;;
+    *)
+      if test $gl_pthread_api = no && test $ac_cv_header_threads_h = no; then
+        gl_cv_func_setlocale_null_one_mtsafe="trivially yes"
+      fi
+      ;;
+  esac
+  case "$gl_cv_func_setlocale_null_one_mtsafe" in
+    *yes) SETLOCALE_NULL_ONE_MTSAFE=1 ;;
+    *)    SETLOCALE_NULL_ONE_MTSAFE=0 ;;
+  esac
+
+printf "%s\n" "#define SETLOCALE_NULL_ONE_MTSAFE $SETLOCALE_NULL_ONE_MTSAFE" >>confdefs.h
+
+
+    if test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0; then
+    case "$host_os" in
+      mingw* | windows*)
+        SETLOCALE_NULL_LIB=
+        ;;
+      *)
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether imported symbols can be declared weak" >&5
+printf %s "checking whether imported symbols can be declared weak... " >&6; }
+if test ${gl_cv_have_weak+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+       cygwin* | mingw* | windows*)
+                                             gl_cv_have_weak="guessing no"
+         ;;
+       *)
+         gl_cv_have_weak=no
+                  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+extern void xyzzy ();
+#pragma weak xyzzy
+int
+main (void)
+{
+xyzzy();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gl_cv_have_weak=maybe
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+         if test $gl_cv_have_weak = maybe; then
+                                 if test "$cross_compiling" = yes
+then :
+                              cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#ifdef __ELF__
+                 Extensible Linking Format
+                 #endif
+
+_ACEOF
+if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
+  $EGREP_TRADITIONAL "Extensible Linking Format" >/dev/null 2>&1
+then :
+  gl_cv_have_weak="guessing yes"
+else case e in #(
+  e) gl_cv_have_weak="guessing no" ;;
+esac
+fi
+rm -rf conftest*
+
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <stdio.h>
+#pragma weak fputs
+int main ()
+{
+  return (fputs == NULL);
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_have_weak=yes
+else case e in #(
+  e) gl_cv_have_weak=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+         fi
+         ;;
+     esac
+          case " $LDFLAGS " in
+       *" -static "*) gl_cv_have_weak=no ;;
+     esac
+                    case "$gl_cv_have_weak" in
+       *yes)
+         case "$host_os" in
+           freebsd* | dragonfly* | midnightbsd*)
+             : > conftest1.c
+             $CC $CPPFLAGS $CFLAGS $LDFLAGS -fPIC -shared -o libempty.so conftest1.c -lpthread >&5 2>&1
+             cat <<EOF > conftest2.c
+#include <pthread.h>
+#pragma weak pthread_mutexattr_gettype
+int main ()
+{
+  return (pthread_mutexattr_gettype != NULL);
+}
+EOF
+             $CC $CPPFLAGS $CFLAGS $LDFLAGS -o conftest conftest2.c libempty.so >&5 2>&1 \
+               || gl_cv_have_weak=no
+             rm -f conftest1.c libempty.so conftest2.c conftest
+             ;;
+         esac
+         ;;
+     esac
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_have_weak" >&5
+printf "%s\n" "$gl_cv_have_weak" >&6; }
+  case "$gl_cv_have_weak" in
+    *yes)
+
+printf "%s\n" "#define HAVE_WEAK_SYMBOLS 1" >>confdefs.h
+
+      ;;
+  esac
+
+        case "$gl_cv_have_weak" in
+          *yes) SETLOCALE_NULL_LIB= ;;
+          *)    SETLOCALE_NULL_LIB="$LIBPTHREAD" ;;
+        esac
+        ;;
+    esac
+  else
+    SETLOCALE_NULL_LIB=
+  fi
+
+    LIB_SETLOCALE_NULL="$SETLOCALE_NULL_LIB"
+
+
+
+
+
+
 
         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines locale_t" >&5
 printf %s "checking whether locale.h defines locale_t... " >&6; }
@@ -11284,7 +11987,6 @@ printf "%s\n" "$gl_cv_next_locale_h" >&6; }
 
 
 
-
   gl_threads_api=none
   LIBTHREAD=
   LTLIBTHREAD=
@@ -11475,8 +12177,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:11478: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:11479: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:12180: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:12181: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -11502,7 +12204,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:11505: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12207: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -11736,7 +12438,7 @@ fi
 
         fi
       fi
-      echo "$as_me:11739: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:12441: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -11985,8 +12687,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:11988: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:11989: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:12690: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:12691: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -12012,7 +12714,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:12015: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12717: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -12246,7 +12948,7 @@ fi
 
         fi
       fi
-      echo "$as_me:12249: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:12951: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -12680,467 +13382,6 @@ printf "%s\n" "$gl_threads_api" >&6; }
   REPLACE_PTHREAD_SPIN_TRYLOCK=0;
   REPLACE_PTHREAD_SPIN_UNLOCK=0;
   REPLACE_PTHREAD_SPIN_DESTROY=0;
-
-
-
-
-
-  if test -z "$gl_pthreadlib_body_done"; then
-    gl_pthread_api=no
-    LIBPTHREAD=
-    LIBPMULTITHREAD=
-    # On OSF/1, the compiler needs the flag -pthread or -D_REENTRANT so that
-    # it groks <pthread.h>. It's added above, in gl_ANYTHREADLIB_EARLY.
-    ac_fn_c_check_header_compile "$LINENO" "pthread.h" "ac_cv_header_pthread_h" "$ac_includes_default"
-if test "x$ac_cv_header_pthread_h" = xyes
-then :
-  gl_have_pthread_h=yes
-else case e in #(
-  e) gl_have_pthread_h=no ;;
-esac
-fi
-
-    if test "$gl_have_pthread_h" = yes; then
-      # Other possible tests:
-      #   -lpthreads (FSU threads, PCthreads)
-      #   -lgthreads
-      # Test whether both pthread_mutex_lock and pthread_mutexattr_init exist
-      # in libc. IRIX 6.5 has the first one in both libc and libpthread, but
-      # the second one only in libpthread, and lock.c needs it.
-      #
-      # If -pthread works, prefer it to -lpthread, since Ubuntu 14.04
-      # needs -pthread for some reason.  See:
-      # https://lists.gnu.org/r/bug-gnulib/2014-09/msg00023.html
-      saved_LIBS="$LIBS"
-      for gl_pthread in '' '-pthread'; do
-        LIBS="$LIBS $gl_pthread"
-        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <pthread.h>
-               pthread_mutex_t m;
-               pthread_mutexattr_t ma;
-
-int
-main (void)
-{
-pthread_mutex_lock (&m);
-               pthread_mutexattr_init (&ma);
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gl_pthread_api=yes
-           LIBPTHREAD=$gl_pthread
-           LIBPMULTITHREAD=$gl_pthread
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-        LIBS="$saved_LIBS"
-        test $gl_pthread_api = yes && break
-      done
-      echo "$as_me:12743: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:12744: LIBPTHREAD=$LIBPTHREAD" >&5
-
-      gl_pthread_in_glibc=no
-      # On Linux with glibc >= 2.34, libc contains the fully functional
-      # pthread functions.
-      case "$host_os" in
-        linux*)
-          cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <features.h>
-             #ifdef __GNU_LIBRARY__
-              #if (__GLIBC__ == 2 && __GLIBC_MINOR__ >= 34) || (__GLIBC__ > 2)
-               Lucky user
-              #endif
-             #endif
-
-_ACEOF
-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-  $EGREP_TRADITIONAL "Lucky user" >/dev/null 2>&1
-then :
-  gl_pthread_in_glibc=yes
-fi
-rm -rf conftest*
-
-          ;;
-      esac
-      echo "$as_me:12770: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
-
-      # Test for libpthread by looking for pthread_kill. (Not pthread_self,
-      # since it is defined as a macro on OSF/1.)
-      if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"; then
-        # The program links fine without libpthread. But it may actually
-        # need to link with libpthread in order to create multiple threads.
-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
-printf %s "checking for pthread_kill in -lpthread... " >&6; }
-if test ${ac_cv_lib_pthread_pthread_kill+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lpthread  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char pthread_kill (void);
-int
-main (void)
-{
-return pthread_kill ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_pthread_pthread_kill=yes
-else case e in #(
-  e) ac_cv_lib_pthread_pthread_kill=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
-printf "%s\n" "$ac_cv_lib_pthread_pthread_kill" >&6; }
-if test "x$ac_cv_lib_pthread_pthread_kill" = xyes
-then :
-  if test $gl_pthread_in_glibc = yes; then
-             LIBPMULTITHREAD=
-           else
-             LIBPMULTITHREAD=-lpthread
-             # On Solaris and HP-UX, most pthread functions exist also in libc.
-             # Therefore pthread_in_use() needs to actually try to create a
-             # thread: pthread_create from libc will fail, whereas
-             # pthread_create will actually create a thread.
-             # On Solaris 10 or newer, this test is no longer needed, because
-             # libc contains the fully functional pthread functions.
-             case "$host_os" in
-               solaris | solaris2.[1-9] | solaris2.[1-9].* | hpux*)
-
-printf "%s\n" "#define PTHREAD_IN_USE_DETECTION_HARD 1" >>confdefs.h
-
-             esac
-           fi
-
-else case e in #(
-  e)            { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lthr" >&5
-printf %s "checking for pthread_kill in -lthr... " >&6; }
-if test ${ac_cv_lib_thr_pthread_kill+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lthr  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char pthread_kill (void);
-int
-main (void)
-{
-return pthread_kill ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_thr_pthread_kill=yes
-else case e in #(
-  e) ac_cv_lib_thr_pthread_kill=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_thr_pthread_kill" >&5
-printf "%s\n" "$ac_cv_lib_thr_pthread_kill" >&6; }
-if test "x$ac_cv_lib_thr_pthread_kill" = xyes
-then :
-  if test $gl_pthread_in_glibc = yes; then
-                LIBPMULTITHREAD=
-              else
-                LIBPMULTITHREAD=-lthr
-              fi
-
-fi
-
-           ;;
-esac
-fi
-
-      elif test $gl_pthread_api != yes; then
-        # Some library is needed. Try libpthread and libc_r.
-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lpthread" >&5
-printf %s "checking for pthread_kill in -lpthread... " >&6; }
-if test ${ac_cv_lib_pthread_pthread_kill+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lpthread  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char pthread_kill (void);
-int
-main (void)
-{
-return pthread_kill ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_pthread_pthread_kill=yes
-else case e in #(
-  e) ac_cv_lib_pthread_pthread_kill=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_pthread_pthread_kill" >&5
-printf "%s\n" "$ac_cv_lib_pthread_pthread_kill" >&6; }
-if test "x$ac_cv_lib_pthread_pthread_kill" = xyes
-then :
-  gl_pthread_api=yes
-           LIBPTHREAD=-lpthread
-           LIBPMULTITHREAD=-lpthread
-fi
-
-        if test $gl_pthread_api != yes; then
-          # For FreeBSD 4.
-          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for pthread_kill in -lc_r" >&5
-printf %s "checking for pthread_kill in -lc_r... " >&6; }
-if test ${ac_cv_lib_c_r_pthread_kill+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lc_r  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char pthread_kill (void);
-int
-main (void)
-{
-return pthread_kill ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_c_r_pthread_kill=yes
-else case e in #(
-  e) ac_cv_lib_c_r_pthread_kill=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_c_r_pthread_kill" >&5
-printf "%s\n" "$ac_cv_lib_c_r_pthread_kill" >&6; }
-if test "x$ac_cv_lib_c_r_pthread_kill" = xyes
-then :
-  gl_pthread_api=yes
-             LIBPTHREAD=-lc_r
-             LIBPMULTITHREAD=-lc_r
-fi
-
-        fi
-      fi
-      echo "$as_me:13004: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
-    fi
-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
-printf %s "checking whether POSIX threads API is available... " >&6; }
-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_pthread_api" >&5
-printf "%s\n" "$gl_pthread_api" >&6; }
-
-
-    if test $gl_pthread_api = yes; then
-
-printf "%s\n" "#define HAVE_PTHREAD_API 1" >>confdefs.h
-
-    fi
-
-        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <sched.h>
-int
-main (void)
-{
-sched_yield ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  SCHED_YIELD_LIB=
-
-else case e in #(
-  e)        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for sched_yield in -lrt" >&5
-printf %s "checking for sched_yield in -lrt... " >&6; }
-if test ${ac_cv_lib_rt_sched_yield+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lrt  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char sched_yield (void);
-int
-main (void)
-{
-return sched_yield ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_rt_sched_yield=yes
-else case e in #(
-  e) ac_cv_lib_rt_sched_yield=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_rt_sched_yield" >&5
-printf "%s\n" "$ac_cv_lib_rt_sched_yield" >&6; }
-if test "x$ac_cv_lib_rt_sched_yield" = xyes
-then :
-  SCHED_YIELD_LIB=-lrt
-else case e in #(
-  e)           { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for sched_yield in -lposix4" >&5
-printf %s "checking for sched_yield in -lposix4... " >&6; }
-if test ${ac_cv_lib_posix4_sched_yield+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_check_lib_save_LIBS=$LIBS
-LIBS="-lposix4  $LIBS"
-cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-/* Override any GCC internal prototype to avoid an error.
-   Use char because int might match the return type of a GCC
-   builtin and then its argument prototype would still apply.
-   The 'extern "C"' is for builds by C++ compilers;
-   although this is not generally supported in C code supporting it here
-   has little cost and some practical benefit (sr 110532).  */
-#ifdef __cplusplus
-extern "C"
-#endif
-char sched_yield (void);
-int
-main (void)
-{
-return sched_yield ();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  ac_cv_lib_posix4_sched_yield=yes
-else case e in #(
-  e) ac_cv_lib_posix4_sched_yield=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-LIBS=$ac_check_lib_save_LIBS ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_posix4_sched_yield" >&5
-printf "%s\n" "$ac_cv_lib_posix4_sched_yield" >&6; }
-if test "x$ac_cv_lib_posix4_sched_yield" = xyes
-then :
-  SCHED_YIELD_LIB=-lposix4
-fi
- ;;
-esac
-fi
-
-       ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-
-        LIB_SCHED_YIELD="$SCHED_YIELD_LIB"
-
-
-    gl_pthreadlib_body_done=done
-  fi
-
 
 
 
@@ -23355,9 +23596,14 @@ printf "%s\n" "#define GNULIB_TEST_FREE_POSIX 1" >>confdefs.h
 
 
 
-  if test $ac_cv_func_getlocalename_l = no; then
+
+  if test $ac_cv_func_getlocalename_l = yes; then
+    GETLOCALENAME_L_LIB=
+  else
     HAVE_GETLOCALENAME_L=0
+    GETLOCALENAME_L_LIB="$SETLOCALE_NULL_LIB"
   fi
+
 
 
      if test $HAVE_GETLOCALENAME_L = 0; then

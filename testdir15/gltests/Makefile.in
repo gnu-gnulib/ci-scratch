@@ -699,9 +699,8 @@ test_free_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_freelocale_SOURCES = test-freelocale.c
 test_freelocale_OBJECTS = test-freelocale.$(OBJEXT)
-test_freelocale_LDADD = $(LDADD)
-test_freelocale_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
-	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_freelocale_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_1)
 test_fstat_SOURCES = test-fstat.c
 test_fstat_OBJECTS = test-fstat.$(OBJEXT)
 test_fstat_LDADD = $(LDADD)
@@ -728,9 +727,7 @@ test_getdtablesize_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_getlocalename_l_SOURCES = test-getlocalename_l.c
 test_getlocalename_l_OBJECTS = test-getlocalename_l.$(OBJEXT)
-test_getlocalename_l_LDADD = $(LDADD)
-test_getlocalename_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
-	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_getlocalename_l_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_getprogname_SOURCES = test-getprogname.c
 test_getprogname_OBJECTS = test-getprogname.$(OBJEXT)
 test_getprogname_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -843,9 +840,8 @@ test_netinet_in_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_newlocale_SOURCES = test-newlocale.c
 test_newlocale_OBJECTS = test-newlocale.$(OBJEXT)
-test_newlocale_LDADD = $(LDADD)
-test_newlocale_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
-	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_newlocale_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_1)
 am_test_once1_OBJECTS = test-once.$(OBJEXT)
 test_once1_OBJECTS = $(am_test_once1_OBJECTS)
 test_once1_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1753,6 +1749,7 @@ ERRNO_H = @ERRNO_H@
 ETAGS = @ETAGS@
 EXEEXT = @EXEEXT@
 FLOAT_H = @FLOAT_H@
+GETLOCALENAME_L_LIB = @GETLOCALENAME_L_LIB@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
 GL_CXXFLAG_ALLOW_WARNINGS = @GL_CXXFLAG_ALLOW_WARNINGS@
 GL_GNULIB_ABORT_DEBUG = @GL_GNULIB_ABORT_DEBUG@
@@ -3509,6 +3506,7 @@ test_bind_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 test_c_ctype_LDADD = $(LDADD) $(SETLOCALE_LIB)
 test_connect_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 test_error_LDADD = $(LDADD) $(LIBINTL)
+test_freelocale_LDADD = $(LDADD) $(GETLOCALENAME_L_LIB)
 
 # In 'sed', replace the pattern space with a "DO NOT EDIT" comment.
 SED_HEADER_NOEDIT = s,.*,/* DO NOT EDIT! GENERATED AUTOMATICALLY! */,
@@ -3526,6 +3524,7 @@ SED_HEADER_TO_AT_t = $(SED_HEADER_STDOUT) -n -e 'w $@-t'
 # is its recipe's first line if and only if @NMD@ lines are absent.
 gl_V_at = $(AM_V_GEN)
 test_getcwd_lgpl_LDADD = $(LDADD) $(LIBINTL)
+test_getlocalename_l_LDADD = $(LDADD) @GETLOCALENAME_L_LIB@
 test_getprogname_LDADD = $(LDADD)
 test_gettext_h_LDADD = $(LDADD) $(LIBINTL)
 test_inet_pton_LDADD = $(LDADD) @INET_PTON_LIB@
@@ -3533,6 +3532,7 @@ test_listen_LDADD = $(LDADD) @LIBSOCKET@
 test_rwlock1_LDADD = $(LDADD) @LIBMULTITHREAD@ @YIELD_LIB@
 test_lock_LDADD = $(LDADD) @LIBMULTITHREAD@ @YIELD_LIB@ @LIB_SEMAPHORE@
 test_nanosleep_LDADD = $(LDADD) $(NANOSLEEP_LIB)
+test_newlocale_LDADD = $(LDADD) $(GETLOCALENAME_L_LIB)
 test_once1_SOURCES = test-once.c
 test_once1_LDADD = $(LDADD) @LIBTHREAD@
 test_once2_SOURCES = test-once.c

@@ -709,6 +709,7 @@ endif
 
 TESTS += test-freelocale
 noinst_PROGRAMS += test-freelocale
+test_freelocale_LDADD = $(LDADD) $(GETLOCALENAME_L_LIB)
 EXTRA_DIST += test-freelocale.c signature.h macros.h
 
 ## end   gnulib module freelocale-tests
@@ -814,6 +815,7 @@ EXTRA_DIST += test-getdtablesize.c signature.h macros.h
 
 TESTS += test-getlocalename_l
 noinst_PROGRAMS += test-getlocalename_l
+test_getlocalename_l_LDADD = $(LDADD) @GETLOCALENAME_L_LIB@
 EXTRA_DIST += test-getlocalename_l.c signature.h macros.h
 
 ## end   gnulib module getlocalename_l-simple-tests
@@ -1628,6 +1630,7 @@ endif
 
 TESTS += test-newlocale
 noinst_PROGRAMS += test-newlocale
+test_newlocale_LDADD = $(LDADD) $(GETLOCALENAME_L_LIB)
 EXTRA_DIST += test-newlocale.c signature.h macros.h
 
 ## end   gnulib module newlocale-tests
