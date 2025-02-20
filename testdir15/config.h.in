@@ -262,6 +262,9 @@
 /* Define to 1 when the gnulib module localename-environ should be tested. */
 #undef GNULIB_TEST_LOCALENAME_ENVIRON
 
+/* Define to 1 when the gnulib module localename-unsafe should be tested. */
+#undef GNULIB_TEST_LOCALENAME_UNSAFE
+
 /* Define to 1 when the gnulib module lstat should be tested. */
 #undef GNULIB_TEST_LSTAT
 
@@ -350,6 +353,12 @@
 /* Define to 1 when the gnulib module select should be tested. */
 #undef GNULIB_TEST_SELECT
 
+/* Define to 1 when the gnulib module setenv should be tested. */
+#undef GNULIB_TEST_SETENV
+
+/* Define to 1 when the gnulib module setlocale should be tested. */
+#undef GNULIB_TEST_SETLOCALE
+
 /* Define to 1 when the gnulib module setlocale_null should be tested. */
 #undef GNULIB_TEST_SETLOCALE_NULL
 
@@ -379,6 +388,9 @@
 
 /* Define to 1 when the gnulib module strerror_r should be tested. */
 #undef GNULIB_TEST_STRERROR_R
+
+/* Define to 1 when the gnulib module str_endswith should be tested. */
+#undef GNULIB_TEST_STR_ENDSWITH
 
 /* Define to 1 when the gnulib module str_startswith should be tested. */
 #undef GNULIB_TEST_STR_STARTSWITH
@@ -531,6 +543,10 @@
    */
 #undef HAVE_DECL_PUTW
 
+/* Define to 1 if you have the declaration of 'setenv', and to 0 if you don't.
+   */
+#undef HAVE_DECL_SETENV
+
 /* Define to 1 if you have the declaration of 'setstate', and to 0 if you
    don't. */
 #undef HAVE_DECL_SETSTATE
@@ -645,6 +661,9 @@
 /* Define to 1 if you have the <langinfo.h> header file. */
 #undef HAVE_LANGINFO_H
 
+/* Define if your <locale.h> file defines LC_MESSAGES. */
+#undef HAVE_LC_MESSAGES
+
 /* Define to 1 if you have the <limits.h> header file. */
 #undef HAVE_LIMITS_H
 
@@ -757,11 +776,17 @@
 /* Define to 1 if you have the <sdkddkver.h> header file. */
 #undef HAVE_SDKDDKVER_H
 
+/* Define to 1 if you have the <search.h> header file. */
+#undef HAVE_SEARCH_H
+
 /* Define to 1 if you have the <semaphore.h> header file. */
 #undef HAVE_SEMAPHORE_H
 
 /* Define to 1 if you have the 'setdtablesize' function. */
 #undef HAVE_SETDTABLESIZE
+
+/* Define to 1 if you have the 'setenv' function. */
+#undef HAVE_SETENV
 
 /* Define to 1 if you have the `setstate' function. */
 #undef HAVE_SETSTATE
@@ -894,6 +919,9 @@
 
 /* Define to 1 if you have the <threads.h> header file. */
 #undef HAVE_THREADS_H
+
+/* Define to 1 if you have the `tsearch' function. */
+#undef HAVE_TSEARCH
 
 /* Define to 1 if you have the <unistd.h> header file. */
 #undef HAVE_UNISTD_H
@@ -1117,6 +1145,12 @@
 
 /* Define to 1 if realloc should abort upon undefined behaviour. */
 #undef NEED_SANITIZED_REALLOC
+
+/* Define to 1 to enable general improvements of setlocale. */
+#undef NEED_SETLOCALE_IMPROVED
+
+/* Define to 1 to enable a multithread-safety fix of setlocale. */
+#undef NEED_SETLOCALE_MTSAFE
 
 /* Define to 1 if open() fails to recognize a trailing slash. */
 #undef OPEN_TRAILING_SLASH_BUG

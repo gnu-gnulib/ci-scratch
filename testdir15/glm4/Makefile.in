@@ -128,8 +128,12 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ioctl.m4 \
 	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isnand.m4 \
 	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
-	$(top_srcdir)/glm4/largefile.m4 $(top_srcdir)/glm4/limits-h.m4 \
-	$(top_srcdir)/glm4/locale-en.m4 $(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/largefile.m4 \
+	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/locale-en.m4 \
+	$(top_srcdir)/glm4/locale-fr.m4 \
+	$(top_srcdir)/glm4/locale-ja.m4 \
+	$(top_srcdir)/glm4/locale-zh.m4 $(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
 	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
@@ -162,6 +166,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/sched_h.m4 \
 	$(top_srcdir)/glm4/sched_yield.m4 $(top_srcdir)/glm4/select.m4 \
 	$(top_srcdir)/glm4/semaphore.m4 $(top_srcdir)/glm4/setenv.m4 \
+	$(top_srcdir)/glm4/setlocale.m4 \
 	$(top_srcdir)/glm4/setlocale_null.m4 \
 	$(top_srcdir)/glm4/signal_h.m4 \
 	$(top_srcdir)/glm4/signalblocking.m4 \
@@ -188,10 +193,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/visibility.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
-	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wint_t.m4 \
-	$(top_srcdir)/glm4/xalloc.m4 $(top_srcdir)/glm4/xgetcwd.m4 \
-	$(top_srcdir)/glm4/yield.m4 $(top_srcdir)/glm4/zzgnulib.m4 \
-	$(top_srcdir)/configure.ac
+	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/windows-rc.m4 \
+	$(top_srcdir)/glm4/wint_t.m4 $(top_srcdir)/glm4/xalloc.m4 \
+	$(top_srcdir)/glm4/xgetcwd.m4 $(top_srcdir)/glm4/yield.m4 \
+	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(am__DIST_COMMON)
@@ -1276,6 +1281,10 @@ INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INT32_MAX_LT_INTMAX_MAX = @INT32_MAX_LT_INTMAX_MAX@
 INT64_MAX_EQ_LONG_MAX = @INT64_MAX_EQ_LONG_MAX@
 INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
+LC_COLLATE_IMPLEMENTED = @LC_COLLATE_IMPLEMENTED@
+LC_MONETARY_IMPLEMENTED = @LC_MONETARY_IMPLEMENTED@
+LC_NUMERIC_IMPLEMENTED = @LC_NUMERIC_IMPLEMENTED@
+LC_TIME_IMPLEMENTED = @LC_TIME_IMPLEMENTED@
 LDFLAGS = @LDFLAGS@
 LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
 LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
@@ -1295,10 +1304,15 @@ LIB_PTHREAD_SIGMASK = @LIB_PTHREAD_SIGMASK@
 LIB_SCHED_YIELD = @LIB_SCHED_YIELD@
 LIB_SELECT = @LIB_SELECT@
 LIB_SEMAPHORE = @LIB_SEMAPHORE@
+LIB_SETLOCALE = @LIB_SETLOCALE@
 LIB_SETLOCALE_NULL = @LIB_SETLOCALE_NULL@
 LIMITS_H = @LIMITS_H@
 LOCALENAME_ENHANCE_LOCALE_FUNCS = @LOCALENAME_ENHANCE_LOCALE_FUNCS@
 LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
+LOCALE_FR = @LOCALE_FR@
+LOCALE_FR_UTF8 = @LOCALE_FR_UTF8@
+LOCALE_JA = @LOCALE_JA@
+LOCALE_ZH_CN = @LOCALE_ZH_CN@
 LTLIBINTL = @LTLIBINTL@
 LTLIBMULTITHREAD = @LTLIBMULTITHREAD@
 LTLIBOBJS = @LTLIBOBJS@
@@ -1749,6 +1763,7 @@ REPLACE_WRITE = @REPLACE_WRITE@
 REPLACE__EXIT = @REPLACE__EXIT@
 SCHED_YIELD_LIB = @SCHED_YIELD_LIB@
 SELECT_LIB = @SELECT_LIB@
+SETLOCALE_LIB = @SETLOCALE_LIB@
 SETLOCALE_NULL_LIB = @SETLOCALE_NULL_LIB@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
@@ -1777,6 +1792,7 @@ WINDOWS_64_BIT_OFF_T = @WINDOWS_64_BIT_OFF_T@
 WINDOWS_64_BIT_ST_SIZE = @WINDOWS_64_BIT_ST_SIZE@
 WINDOWS_STAT_INODES = @WINDOWS_STAT_INODES@
 WINDOWS_STAT_TIMESPEC = @WINDOWS_STAT_TIMESPEC@
+WINDRES = @WINDRES@
 WINT_T_SUFFIX = @WINT_T_SUFFIX@
 YIELD_LIB = @YIELD_LIB@
 abs_builddir = @abs_builddir@
@@ -1857,7 +1873,8 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	gnulib-common.m4 gnulib-i18n.m4 include_next.m4 inet_pton.m4 \
 	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
 	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 largefile.m4 \
-	limits-h.m4 locale-en.m4 locale_h.m4 localename.m4 lock.m4 \
+	lcmessage.m4 limits-h.m4 locale-en.m4 locale-fr.m4 \
+	locale-ja.m4 locale-zh.m4 locale_h.m4 localename.m4 lock.m4 \
 	lstat.m4 malloc.m4 malloca.m4 math_h.m4 minmax.m4 mode_t.m4 \
 	msvc-inval.m4 msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 \
 	nanosleep.m4 netinet_in_h.m4 newlocale.m4 off64_t.m4 off_t.m4 \
@@ -1868,17 +1885,18 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	pthread_mutex_timedlock.m4 pthread_rwlock_rdlock.m4 \
 	pthread_sigmask.m4 putenv.m4 raise.m4 random.m4 random_r.m4 \
 	realloc.m4 reallocarray.m4 sched_h.m4 sched_yield.m4 select.m4 \
-	semaphore.m4 setenv.m4 setlocale_null.m4 signal_h.m4 \
-	signalblocking.m4 signbit.m4 sleep.m4 snan.m4 socketlib.m4 \
-	sockets.m4 socklen.m4 sockpfaf.m4 ssize_t.m4 stat-time.m4 \
-	stat.m4 std-gnu11.m4 stdalign.m4 stddef_h.m4 stdint.m4 \
-	stdio_h.m4 stdlib_h.m4 stpcpy.m4 strerror.m4 strerror_r.m4 \
-	string_h.m4 symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 \
-	sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 sys_time_h.m4 \
-	sys_types_h.m4 sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 \
-	time_h.m4 unistd_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
-	warn-on-use.m4 wchar_h.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 \
-	yield.m4 zzgnulib.m4
+	semaphore.m4 setenv.m4 setlocale.m4 setlocale_null.m4 \
+	signal_h.m4 signalblocking.m4 signbit.m4 sleep.m4 snan.m4 \
+	socketlib.m4 sockets.m4 socklen.m4 sockpfaf.m4 ssize_t.m4 \
+	stat-time.m4 stat.m4 std-gnu11.m4 stdalign.m4 stddef_h.m4 \
+	stdint.m4 stdio_h.m4 stdlib_h.m4 stpcpy.m4 strerror.m4 \
+	strerror_r.m4 string_h.m4 symlink.m4 sys_cdefs_h.m4 \
+	sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 \
+	sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 thread.m4 \
+	threadlib.m4 time.m4 time_h.m4 unistd_h.m4 usleep.m4 \
+	vararrays.m4 visibility.m4 warn-on-use.m4 wchar_h.m4 \
+	windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 \
+	zzgnulib.m4
 all: all-am
 
 .SUFFIXES:

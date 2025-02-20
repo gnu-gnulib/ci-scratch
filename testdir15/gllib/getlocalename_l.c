@@ -636,7 +636,12 @@ getlocalename_l (int category, locale_t locale)
   else
     {
       /* Query the global locale.  */
-      const char *name = setlocale_null (category);
+      const char *name;
+#if LC_MESSAGES == 1729
+      name = setlocale (category, NULL);
+#else
+      name = setlocale_null (category);
+#endif
       if (name != NULL)
         /* Return the result as a string of indefinite extent.
            This is required because POSIX says that

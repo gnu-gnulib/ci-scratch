@@ -815,7 +815,7 @@ EXTRA_DIST += test-getdtablesize.c signature.h macros.h
 
 TESTS += test-getlocalename_l
 noinst_PROGRAMS += test-getlocalename_l
-test_getlocalename_l_LDADD = $(LDADD) @GETLOCALENAME_L_LIB@
+test_getlocalename_l_LDADD = $(LDADD) @GETLOCALENAME_L_LIB@ $(SETLOCALE_LIB)
 EXTRA_DIST += test-getlocalename_l.c signature.h macros.h
 
 ## end   gnulib module getlocalename_l-simple-tests
@@ -1079,13 +1079,23 @@ EXTRA_DIST += test-locale-h.c
 
 ## end   gnulib module locale-h-tests
 
-## begin gnulib module localename-environ
+## begin gnulib module localename-tests
 
-libtests_a_SOURCES += localename-environ.c
+TESTS += test-localename
+noinst_PROGRAMS += test-localename
+test_localename_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@ $(LIBTHREAD)
 
-EXTRA_DIST += localename.h
+if OS_IS_NATIVE_WINDOWS
+TESTS += test-localename-w32utf8.sh
+noinst_PROGRAMS += test-localename-w32utf8
+test_localename_w32utf8_LDADD = $(LDADD) test-localename-windows-utf8.res $(SETLOCALE_LIB)
+test-localename-windows-utf8.res : $(srcdir)/windows-utf8.rc
+	$(WINDRES) -i $(srcdir)/windows-utf8.rc -o test-localename-windows-utf8.res --output-format=coff
+MOSTLYCLEANFILES += test-localename-windows-utf8.res
+endif
+EXTRA_DIST += test-localename.c test-localename-w32utf8.sh test-localename-w32utf8.c windows-utf8.rc windows-utf8.manifest macros.h
 
-## end   gnulib module localename-environ
+## end   gnulib module localename-tests
 
 ## begin gnulib module lock-tests
 
@@ -1985,6 +1995,22 @@ EXTRA_DIST += macros.h signature.h test-select.c test-select.h test-select-fd.c 
 
 ## end   gnulib module select-tests
 
+## begin gnulib module setenv
+
+if GL_COND_OBJ_SETENV
+libtests_a_SOURCES += setenv.c
+endif
+
+## end   gnulib module setenv
+
+## begin gnulib module setenv-tests
+
+TESTS += test-setenv
+noinst_PROGRAMS += test-setenv
+EXTRA_DIST += test-setenv.c signature.h macros.h
+
+## end   gnulib module setenv-tests
+
 ## begin gnulib module setlocale-null-tests
 
 TESTS += \
@@ -2009,6 +2035,31 @@ noinst_PROGRAMS += test-setlocale_null-unlocked
 EXTRA_DIST += test-setlocale_null-unlocked.c
 
 ## end   gnulib module setlocale-null-unlocked-tests
+
+## begin gnulib module setlocale-tests
+
+TESTS += test-setlocale1.sh test-setlocale2.sh test-setlocale-w32
+TESTS_ENVIRONMENT += \
+  LOCALE_FR='@LOCALE_FR@' \
+  LOCALE_FR_UTF8='@LOCALE_FR_UTF8@' \
+  LOCALE_JA='@LOCALE_JA@' \
+  LOCALE_ZH_CN='@LOCALE_ZH_CN@'
+noinst_PROGRAMS += test-setlocale1 test-setlocale2 test-setlocale-w32
+test_setlocale1_LDADD = $(LDADD) @SETLOCALE_LIB@
+test_setlocale2_LDADD = $(LDADD) @SETLOCALE_LIB@
+test_setlocale_w32_LDADD = $(LDADD) @SETLOCALE_LIB@
+
+if OS_IS_NATIVE_WINDOWS
+TESTS += test-setlocale-w32utf8.sh
+noinst_PROGRAMS += test-setlocale-w32utf8
+test_setlocale_w32utf8_LDADD = $(LDADD) test-setlocale-windows-utf8.res $(SETLOCALE_LIB)
+test-setlocale-windows-utf8.res : $(srcdir)/windows-utf8.rc
+	$(WINDRES) -i $(srcdir)/windows-utf8.rc -o test-setlocale-windows-utf8.res --output-format=coff
+MOSTLYCLEANFILES += test-setlocale-windows-utf8.res
+endif
+EXTRA_DIST += test-setlocale1.sh test-setlocale1.c test-setlocale2.sh test-setlocale2.c test-setlocale-w32.c test-setlocale-w32utf8.sh test-setlocale-w32utf8.c windows-utf8.rc windows-utf8.manifest signature.h macros.h
+
+## end   gnulib module setlocale-tests
 
 ## begin gnulib module setsockopt
 
@@ -2494,6 +2545,20 @@ libtests_a_SOURCES += stpcpy.c
 endif
 
 ## end   gnulib module stpcpy
+
+## begin gnulib module str_endswith
+
+libtests_a_SOURCES += str_endswith.c
+
+## end   gnulib module str_endswith
+
+## begin gnulib module str_endswith-tests
+
+TESTS += test-str_endswith
+noinst_PROGRAMS += test-str_endswith
+EXTRA_DIST += test-str_endswith.c macros.h
+
+## end   gnulib module str_endswith-tests
 
 ## begin gnulib module str_startswith
 
