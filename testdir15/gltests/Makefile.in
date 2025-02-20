@@ -125,9 +125,10 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-environ$(EXEEXT) test-errno-h$(EXEEXT) test-error.sh \
 	test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) \
 	test-fgetc$(EXEEXT) test-float-h$(EXEEXT) test-fputc$(EXEEXT) \
-	test-fread$(EXEEXT) test-free$(EXEEXT) test-fstat$(EXEEXT) \
-	test-ftruncate.sh test-fwrite$(EXEEXT) \
-	test-getcwd-lgpl$(EXEEXT) test-getdtablesize$(EXEEXT) \
+	test-fread$(EXEEXT) test-free$(EXEEXT) \
+	test-freelocale$(EXEEXT) test-fstat$(EXEEXT) test-ftruncate.sh \
+	test-fwrite$(EXEEXT) test-getcwd-lgpl$(EXEEXT) \
+	test-getdtablesize$(EXEEXT) test-getlocalename_l$(EXEEXT) \
 	test-getprogname$(EXEEXT) test-gettext-h$(EXEEXT) \
 	test-gettimeofday$(EXEEXT) test-ignore-value$(EXEEXT) \
 	test-inet_pton$(EXEEXT) test-intprops$(EXEEXT) \
@@ -140,15 +141,16 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-malloc-gnu$(EXEEXT) test-malloc-posix$(EXEEXT) \
 	test-malloca$(EXEEXT) test-math-h$(EXEEXT) \
 	test-nanosleep$(EXEEXT) test-netinet_in-h$(EXEEXT) \
-	test-once1$(EXEEXT) test-once2$(EXEEXT) test-open$(EXEEXT) \
-	test-pathmax$(EXEEXT) test-perror.sh test-perror2$(EXEEXT) \
-	test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
-	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
-	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
-	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
-	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
-	$(am__EXEEXT_1) test-pthread_sigmask2$(EXEEXT) \
-	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
+	test-newlocale$(EXEEXT) test-once1$(EXEEXT) \
+	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
+	test-perror.sh test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
+	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
+	test-pthread$(EXEEXT) test-pthread-mutex$(EXEEXT) \
+	test-pthread-mutex-type$(EXEEXT) test-pthread-once1$(EXEEXT) \
+	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
+	test-pthread-thread$(EXEEXT) $(am__EXEEXT_1) \
+	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
+	test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
 	test-sched-h$(EXEEXT) test-select$(EXEEXT) test-select-in.sh \
@@ -187,9 +189,10 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-error$(EXEEXT) test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) \
 	test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) test-float-h$(EXEEXT) \
 	test-fputc$(EXEEXT) test-fread$(EXEEXT) test-free$(EXEEXT) \
-	test-fstat$(EXEEXT) test-ftruncate$(EXEEXT) \
-	test-fwrite$(EXEEXT) test-getcwd-lgpl$(EXEEXT) \
-	test-getdtablesize$(EXEEXT) test-getprogname$(EXEEXT) \
+	test-freelocale$(EXEEXT) test-fstat$(EXEEXT) \
+	test-ftruncate$(EXEEXT) test-fwrite$(EXEEXT) \
+	test-getcwd-lgpl$(EXEEXT) test-getdtablesize$(EXEEXT) \
+	test-getlocalename_l$(EXEEXT) test-getprogname$(EXEEXT) \
 	test-gettext-h$(EXEEXT) test-gettimeofday$(EXEEXT) \
 	test-ignore-value$(EXEEXT) test-inet_pton$(EXEEXT) \
 	test-intprops$(EXEEXT) test-inttypes-h$(EXEEXT) \
@@ -202,15 +205,16 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-malloc-gnu$(EXEEXT) test-malloc-posix$(EXEEXT) \
 	test-malloca$(EXEEXT) test-math-h$(EXEEXT) \
 	test-nanosleep$(EXEEXT) test-netinet_in-h$(EXEEXT) \
-	test-once1$(EXEEXT) test-once2$(EXEEXT) test-open$(EXEEXT) \
-	test-pathmax$(EXEEXT) test-perror$(EXEEXT) \
-	test-perror2$(EXEEXT) test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
-	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
-	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
-	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
-	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
-	test-pthread_sigmask1$(EXEEXT) test-pthread_sigmask2$(EXEEXT) \
-	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
+	test-newlocale$(EXEEXT) test-once1$(EXEEXT) \
+	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
+	test-perror$(EXEEXT) test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
+	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
+	test-pthread$(EXEEXT) test-pthread-mutex$(EXEEXT) \
+	test-pthread-mutex-type$(EXEEXT) test-pthread-once1$(EXEEXT) \
+	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
+	test-pthread-thread$(EXEEXT) test-pthread_sigmask1$(EXEEXT) \
+	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
+	test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
 	test-sched-h$(EXEEXT) test-select$(EXEEXT) \
@@ -251,66 +255,68 @@ EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @GL_COND_OBJ_FDOPEN_TRUE@am__append_8 = fdopen.c
 @GL_COND_OBJ_FLOAT_TRUE@am__append_9 = float.c
 @GL_COND_OBJ_ITOLD_TRUE@am__append_10 = itold.c
-@GL_COND_OBJ_FSTAT_TRUE@am__append_11 = fstat.c
-@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_12 = ftruncate.c
-@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_13 = getcwd-lgpl.c
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_14 = getdtablesize.c
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_15 = getprogname.c
-@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_16 = gettimeofday.c
-@GL_COND_OBJ_INET_PTON_TRUE@am__append_17 = inet_pton.c
-@GL_COND_OBJ_IOCTL_TRUE@am__append_18 = ioctl.c
-@GL_COND_OBJ_ISBLANK_TRUE@am__append_19 = isblank.c
-@GL_COND_OBJ_LISTEN_TRUE@am__append_20 = listen.c
-@GL_COND_OBJ_LSTAT_TRUE@am__append_21 = lstat.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_22 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_23 = msvc-nothrow.c
-@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_24 = nanosleep.c
-@GL_COND_OBJ_OPEN_TRUE@am__append_25 = open.c
-@GL_COND_OBJ_PERROR_TRUE@am__append_26 = perror.c
-@GL_COND_OBJ_PIPE_TRUE@am__append_27 = pipe.c
-@GL_COND_OBJ_PSELECT_TRUE@am__append_28 = pselect.c
-@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_29 = pthread-cond.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_30 = pthread-mutex.c
-@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_31 = pthread-rwlock.c
-@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_32 = pthread-thread.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_33 = pthread_mutex_timedlock.c
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_34 = pthread_sigmask.c
+@GL_COND_OBJ_FREELOCALE_TRUE@am__append_11 = freelocale.c
+@GL_COND_OBJ_FSTAT_TRUE@am__append_12 = fstat.c
+@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_13 = ftruncate.c
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_14 = getcwd-lgpl.c
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_15 = getdtablesize.c
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_16 = getprogname.c
+@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_17 = gettimeofday.c
+@GL_COND_OBJ_INET_PTON_TRUE@am__append_18 = inet_pton.c
+@GL_COND_OBJ_IOCTL_TRUE@am__append_19 = ioctl.c
+@GL_COND_OBJ_ISBLANK_TRUE@am__append_20 = isblank.c
+@GL_COND_OBJ_LISTEN_TRUE@am__append_21 = listen.c
+@GL_COND_OBJ_LSTAT_TRUE@am__append_22 = lstat.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_23 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_24 = msvc-nothrow.c
+@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_25 = nanosleep.c
+@GL_COND_OBJ_NEWLOCALE_TRUE@am__append_26 = newlocale.c
+@GL_COND_OBJ_OPEN_TRUE@am__append_27 = open.c
+@GL_COND_OBJ_PERROR_TRUE@am__append_28 = perror.c
+@GL_COND_OBJ_PIPE_TRUE@am__append_29 = pipe.c
+@GL_COND_OBJ_PSELECT_TRUE@am__append_30 = pselect.c
+@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_31 = pthread-cond.c
+@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_32 = pthread-mutex.c
+@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_33 = pthread-rwlock.c
+@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_34 = pthread-thread.c
+@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_35 = pthread_mutex_timedlock.c
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_36 = pthread_sigmask.c
 
 # Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57214
-@OS_IS_NETBSD_FALSE@am__append_35 = test-pthread_sigmask1
-@GL_COND_OBJ_PUTENV_TRUE@am__append_36 = putenv.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_37 = raise.c
-@GL_COND_OBJ_RANDOM_TRUE@am__append_38 = random.c
-@GL_COND_OBJ_RANDOM_R_TRUE@am__append_39 = random_r.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_40 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_41 = reallocarray.c
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_42 = sched_yield.c
-@GL_COND_OBJ_SELECT_TRUE@am__append_43 = select.c
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_44 = setsockopt.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_45 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_46 = sigprocmask.c
+@OS_IS_NETBSD_FALSE@am__append_37 = test-pthread_sigmask1
+@GL_COND_OBJ_PUTENV_TRUE@am__append_38 = putenv.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_39 = raise.c
+@GL_COND_OBJ_RANDOM_TRUE@am__append_40 = random.c
+@GL_COND_OBJ_RANDOM_R_TRUE@am__append_41 = random_r.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_42 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_43 = reallocarray.c
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_44 = sched_yield.c
+@GL_COND_OBJ_SELECT_TRUE@am__append_45 = select.c
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_46 = setsockopt.c
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_47 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_48 = sigprocmask.c
 
 # Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57213
-@OS_IS_NETBSD_FALSE@am__append_47 = test-sigprocmask
-@GL_COND_OBJ_SLEEP_TRUE@am__append_48 = sleep.c
-@GL_COND_OBJ_SOCKET_TRUE@am__append_49 = socket.c
-@GL_COND_OBJ_STAT_TRUE@am__append_50 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_51 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_52 = stdio-write.c
-@GL_COND_OBJ_STPCPY_TRUE@am__append_53 = stpcpy.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_54 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_55 = strerror-override.c
-@GL_COND_OBJ_SYMLINK_TRUE@am__append_56 = symlink.c
-@GL_COND_OBJ_TIME_TRUE@am__append_57 = time.c
-@GL_COND_OBJ_UNSETENV_TRUE@am__append_58 = unsetenv.c
-@GL_COND_OBJ_USLEEP_TRUE@am__append_59 = usleep.c
-@OS_IS_CYGWIN_FALSE@am__append_60 = test-usleep
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_61 = windows-cond.c
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_62 = windows-thread.c
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_63 = windows-timedmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_64 = windows-timedrecmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_65 = windows-timedrwlock.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_66 = windows-tls.c
+@OS_IS_NETBSD_FALSE@am__append_49 = test-sigprocmask
+@GL_COND_OBJ_SLEEP_TRUE@am__append_50 = sleep.c
+@GL_COND_OBJ_SOCKET_TRUE@am__append_51 = socket.c
+@GL_COND_OBJ_STAT_TRUE@am__append_52 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_53 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_54 = stdio-write.c
+@GL_COND_OBJ_STPCPY_TRUE@am__append_55 = stpcpy.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_56 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_57 = strerror-override.c
+@GL_COND_OBJ_SYMLINK_TRUE@am__append_58 = symlink.c
+@GL_COND_OBJ_TIME_TRUE@am__append_59 = time.c
+@GL_COND_OBJ_UNSETENV_TRUE@am__append_60 = unsetenv.c
+@GL_COND_OBJ_USLEEP_TRUE@am__append_61 = usleep.c
+@OS_IS_CYGWIN_FALSE@am__append_62 = test-usleep
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_63 = windows-cond.c
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_64 = windows-thread.c
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_65 = windows-timedmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_66 = windows-timedrecmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_67 = windows-timedrwlock.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_68 = windows-tls.c
 subdir = gltests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -335,8 +341,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/ftruncate.m4 \
-	$(top_srcdir)/glm4/getcwd.m4 \
+	$(top_srcdir)/glm4/freelocale.m4 $(top_srcdir)/glm4/fstat.m4 \
+	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/getcwd.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
 	$(top_srcdir)/glm4/getprogname.m4 \
@@ -344,12 +350,15 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
-	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inttypes.m4 \
-	$(top_srcdir)/glm4/ioctl.m4 $(top_srcdir)/glm4/isblank.m4 \
-	$(top_srcdir)/glm4/isnand.m4 $(top_srcdir)/glm4/isnanf.m4 \
-	$(top_srcdir)/glm4/isnanl.m4 $(top_srcdir)/glm4/largefile.m4 \
-	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
-	$(top_srcdir)/glm4/locale_h.m4 $(top_srcdir)/glm4/lock.m4 \
+	$(top_srcdir)/glm4/inet_pton.m4 \
+	$(top_srcdir)/glm4/intl-thread-locale.m4 \
+	$(top_srcdir)/glm4/intlmacosx.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ioctl.m4 \
+	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isnand.m4 \
+	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
+	$(top_srcdir)/glm4/largefile.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/locale-en.m4 $(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
 	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
 	$(top_srcdir)/glm4/minmax.m4 $(top_srcdir)/glm4/mode_t.m4 \
@@ -358,8 +367,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
-	$(top_srcdir)/glm4/off64_t.m4 $(top_srcdir)/glm4/off_t.m4 \
-	$(top_srcdir)/glm4/once.m4 $(top_srcdir)/glm4/open-cloexec.m4 \
+	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
+	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/once.m4 \
+	$(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
 	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/perror.m4 \
 	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pselect.m4 \
@@ -430,12 +440,13 @@ am__DEPENDENCIES_1 =
 am__libtests_a_SOURCES_DIST = accept.c arpa_inet.c basename-lgpl.c \
 	binary-io.h binary-io.c bind.c c-ctype.h c-ctype.c cloexec.c \
 	close.c concat-filename.c connect.c dup2.c error.c exitfail.c \
-	fcntl.c fd-hook.c fdopen.c float.c itold.c fstat.c ftruncate.c \
-	getcwd-lgpl.c getdtablesize.c getprogname.c gettext.h \
-	gettimeofday.c ialloc.c idx.h inet_pton.c ioctl.c isblank.c \
-	listen.c lstat.c malloca.c math.c minmax.h msvc-inval.c \
-	msvc-nothrow.c nan.h nanosleep.c open.c perror.c pipe.c \
-	pselect.c pthread-cond.c pthread-mutex.c pthread-rwlock.c \
+	fcntl.c fd-hook.c fdopen.c float.c itold.c freelocale.c \
+	fstat.c ftruncate.c getcwd-lgpl.c getdtablesize.c \
+	getprogname.c gettext.h gettimeofday.c ialloc.c idx.h \
+	inet_pton.c ioctl.c isblank.c listen.c localename-environ.c \
+	lstat.c malloca.c math.c minmax.h msvc-inval.c msvc-nothrow.c \
+	nan.h nanosleep.c newlocale.c open.c perror.c pipe.c pselect.c \
+	pthread-cond.c pthread-mutex.c pthread-rwlock.c \
 	pthread-thread.c pthread_mutex_timedlock.c pthread_sigmask.c \
 	putenv.c raise.c random.c random_r.c realloc.c reallocarray.c \
 	same-inode.h same-inode.c sched_yield.c select.c setsockopt.c \
@@ -458,73 +469,75 @@ am__libtests_a_SOURCES_DIST = accept.c arpa_inet.c basename-lgpl.c \
 @GL_COND_OBJ_FDOPEN_TRUE@am__objects_8 = fdopen.$(OBJEXT)
 @GL_COND_OBJ_FLOAT_TRUE@am__objects_9 = float.$(OBJEXT)
 @GL_COND_OBJ_ITOLD_TRUE@am__objects_10 = itold.$(OBJEXT)
-@GL_COND_OBJ_FSTAT_TRUE@am__objects_11 = fstat.$(OBJEXT)
-@GL_COND_OBJ_FTRUNCATE_TRUE@am__objects_12 = ftruncate.$(OBJEXT)
-@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_13 = getcwd-lgpl.$(OBJEXT)
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_14 =  \
+@GL_COND_OBJ_FREELOCALE_TRUE@am__objects_11 = freelocale.$(OBJEXT)
+@GL_COND_OBJ_FSTAT_TRUE@am__objects_12 = fstat.$(OBJEXT)
+@GL_COND_OBJ_FTRUNCATE_TRUE@am__objects_13 = ftruncate.$(OBJEXT)
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_14 = getcwd-lgpl.$(OBJEXT)
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_15 =  \
 @GL_COND_OBJ_GETDTABLESIZE_TRUE@	getdtablesize.$(OBJEXT)
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_15 = getprogname.$(OBJEXT)
-@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__objects_16 =  \
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_16 = getprogname.$(OBJEXT)
+@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__objects_17 =  \
 @GL_COND_OBJ_GETTIMEOFDAY_TRUE@	gettimeofday.$(OBJEXT)
-@GL_COND_OBJ_INET_PTON_TRUE@am__objects_17 = inet_pton.$(OBJEXT)
-@GL_COND_OBJ_IOCTL_TRUE@am__objects_18 = ioctl.$(OBJEXT)
-@GL_COND_OBJ_ISBLANK_TRUE@am__objects_19 = isblank.$(OBJEXT)
-@GL_COND_OBJ_LISTEN_TRUE@am__objects_20 = listen.$(OBJEXT)
-@GL_COND_OBJ_LSTAT_TRUE@am__objects_21 = lstat.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_22 = msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_23 =  \
+@GL_COND_OBJ_INET_PTON_TRUE@am__objects_18 = inet_pton.$(OBJEXT)
+@GL_COND_OBJ_IOCTL_TRUE@am__objects_19 = ioctl.$(OBJEXT)
+@GL_COND_OBJ_ISBLANK_TRUE@am__objects_20 = isblank.$(OBJEXT)
+@GL_COND_OBJ_LISTEN_TRUE@am__objects_21 = listen.$(OBJEXT)
+@GL_COND_OBJ_LSTAT_TRUE@am__objects_22 = lstat.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_23 = msvc-inval.$(OBJEXT)
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_24 =  \
 @GL_COND_OBJ_MSVC_NOTHROW_TRUE@	msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_NANOSLEEP_TRUE@am__objects_24 = nanosleep.$(OBJEXT)
-@GL_COND_OBJ_OPEN_TRUE@am__objects_25 = open.$(OBJEXT)
-@GL_COND_OBJ_PERROR_TRUE@am__objects_26 = perror.$(OBJEXT)
-@GL_COND_OBJ_PIPE_TRUE@am__objects_27 = pipe.$(OBJEXT)
-@GL_COND_OBJ_PSELECT_TRUE@am__objects_28 = pselect.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_COND_TRUE@am__objects_29 =  \
+@GL_COND_OBJ_NANOSLEEP_TRUE@am__objects_25 = nanosleep.$(OBJEXT)
+@GL_COND_OBJ_NEWLOCALE_TRUE@am__objects_26 = newlocale.$(OBJEXT)
+@GL_COND_OBJ_OPEN_TRUE@am__objects_27 = open.$(OBJEXT)
+@GL_COND_OBJ_PERROR_TRUE@am__objects_28 = perror.$(OBJEXT)
+@GL_COND_OBJ_PIPE_TRUE@am__objects_29 = pipe.$(OBJEXT)
+@GL_COND_OBJ_PSELECT_TRUE@am__objects_30 = pselect.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_COND_TRUE@am__objects_31 =  \
 @GL_COND_OBJ_PTHREAD_COND_TRUE@	pthread-cond.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__objects_30 =  \
+@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__objects_32 =  \
 @GL_COND_OBJ_PTHREAD_MUTEX_TRUE@	pthread-mutex.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__objects_31 =  \
+@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__objects_33 =  \
 @GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@	pthread-rwlock.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__objects_32 =  \
+@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__objects_34 =  \
 @GL_COND_OBJ_PTHREAD_THREAD_TRUE@	pthread-thread.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__objects_33 = pthread_mutex_timedlock.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_34 =  \
+@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__objects_35 = pthread_mutex_timedlock.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_36 =  \
 @GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@	pthread_sigmask.$(OBJEXT)
-@GL_COND_OBJ_PUTENV_TRUE@am__objects_35 = putenv.$(OBJEXT)
-@GL_COND_OBJ_RAISE_TRUE@am__objects_36 = raise.$(OBJEXT)
-@GL_COND_OBJ_RANDOM_TRUE@am__objects_37 = random.$(OBJEXT)
-@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_38 = random_r.$(OBJEXT)
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_39 = realloc.$(OBJEXT)
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_40 =  \
+@GL_COND_OBJ_PUTENV_TRUE@am__objects_37 = putenv.$(OBJEXT)
+@GL_COND_OBJ_RAISE_TRUE@am__objects_38 = raise.$(OBJEXT)
+@GL_COND_OBJ_RANDOM_TRUE@am__objects_39 = random.$(OBJEXT)
+@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_40 = random_r.$(OBJEXT)
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_41 = realloc.$(OBJEXT)
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_42 =  \
 @GL_COND_OBJ_REALLOCARRAY_TRUE@	reallocarray.$(OBJEXT)
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__objects_41 = sched_yield.$(OBJEXT)
-@GL_COND_OBJ_SELECT_TRUE@am__objects_42 = select.$(OBJEXT)
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__objects_43 = setsockopt.$(OBJEXT)
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_44 = signbitf.$(OBJEXT) \
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__objects_43 = sched_yield.$(OBJEXT)
+@GL_COND_OBJ_SELECT_TRUE@am__objects_44 = select.$(OBJEXT)
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__objects_45 = setsockopt.$(OBJEXT)
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_46 = signbitf.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitd.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitl.$(OBJEXT)
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_45 = sigprocmask.$(OBJEXT)
-@GL_COND_OBJ_SLEEP_TRUE@am__objects_46 = sleep.$(OBJEXT)
-@GL_COND_OBJ_SOCKET_TRUE@am__objects_47 = socket.$(OBJEXT)
-@GL_COND_OBJ_STAT_TRUE@am__objects_48 = stat.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_49 = stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_50 = stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STPCPY_TRUE@am__objects_51 = stpcpy.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_TRUE@am__objects_52 = strerror.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_53 = strerror-override.$(OBJEXT)
-@GL_COND_OBJ_SYMLINK_TRUE@am__objects_54 = symlink.$(OBJEXT)
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_47 = sigprocmask.$(OBJEXT)
+@GL_COND_OBJ_SLEEP_TRUE@am__objects_48 = sleep.$(OBJEXT)
+@GL_COND_OBJ_SOCKET_TRUE@am__objects_49 = socket.$(OBJEXT)
+@GL_COND_OBJ_STAT_TRUE@am__objects_50 = stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_51 = stdio-read.$(OBJEXT)
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_52 = stdio-write.$(OBJEXT)
+@GL_COND_OBJ_STPCPY_TRUE@am__objects_53 = stpcpy.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_TRUE@am__objects_54 = strerror.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_55 = strerror-override.$(OBJEXT)
+@GL_COND_OBJ_SYMLINK_TRUE@am__objects_56 = symlink.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@GL_COND_OBJ_TIME_TRUE@am__objects_55 = time.$(OBJEXT)
-@GL_COND_OBJ_UNSETENV_TRUE@am__objects_56 = unsetenv.$(OBJEXT)
-@GL_COND_OBJ_USLEEP_TRUE@am__objects_57 = usleep.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_58 =  \
+@GL_COND_OBJ_TIME_TRUE@am__objects_57 = time.$(OBJEXT)
+@GL_COND_OBJ_UNSETENV_TRUE@am__objects_58 = unsetenv.$(OBJEXT)
+@GL_COND_OBJ_USLEEP_TRUE@am__objects_59 = usleep.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_60 =  \
 @GL_COND_OBJ_WINDOWS_COND_TRUE@	windows-cond.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__objects_59 =  \
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__objects_61 =  \
 @GL_COND_OBJ_WINDOWS_THREAD_TRUE@	windows-thread.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__objects_60 = windows-timedmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__objects_61 = windows-timedrecmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_62 = windows-timedrwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_63 = windows-tls.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__objects_62 = windows-timedmutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__objects_63 = windows-timedrecmutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_64 = windows-timedrwlock.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_65 = windows-tls.$(OBJEXT)
 am_libtests_a_OBJECTS = $(am__objects_1) arpa_inet.$(OBJEXT) \
 	basename-lgpl.$(OBJEXT) binary-io.$(OBJEXT) $(am__objects_2) \
 	c-ctype.$(OBJEXT) cloexec.$(OBJEXT) $(am__objects_3) \
@@ -533,26 +546,27 @@ am_libtests_a_OBJECTS = $(am__objects_1) arpa_inet.$(OBJEXT) \
 	fd-hook.$(OBJEXT) $(am__objects_8) $(am__objects_9) \
 	$(am__objects_10) $(am__objects_11) $(am__objects_12) \
 	$(am__objects_13) $(am__objects_14) $(am__objects_15) \
-	$(am__objects_16) ialloc.$(OBJEXT) $(am__objects_17) \
+	$(am__objects_16) $(am__objects_17) ialloc.$(OBJEXT) \
 	$(am__objects_18) $(am__objects_19) $(am__objects_20) \
-	$(am__objects_21) malloca.$(OBJEXT) math.$(OBJEXT) \
-	$(am__objects_22) $(am__objects_23) $(am__objects_24) \
-	$(am__objects_25) $(am__objects_26) $(am__objects_27) \
-	$(am__objects_28) $(am__objects_29) $(am__objects_30) \
-	$(am__objects_31) $(am__objects_32) $(am__objects_33) \
-	$(am__objects_34) $(am__objects_35) $(am__objects_36) \
-	$(am__objects_37) $(am__objects_38) $(am__objects_39) \
-	$(am__objects_40) same-inode.$(OBJEXT) $(am__objects_41) \
-	$(am__objects_42) $(am__objects_43) $(am__objects_44) \
-	$(am__objects_45) $(am__objects_46) $(am__objects_47) \
-	sockets.$(OBJEXT) $(am__objects_48) stat-time.$(OBJEXT) \
-	$(am__objects_49) $(am__objects_50) $(am__objects_51) \
-	str_startswith.$(OBJEXT) $(am__objects_52) $(am__objects_53) \
-	$(am__objects_54) sys_socket.$(OBJEXT) \
-	glthread/thread.$(OBJEXT) $(am__objects_55) $(am__objects_56) \
-	$(am__objects_57) $(am__objects_58) $(am__objects_59) \
-	$(am__objects_60) $(am__objects_61) $(am__objects_62) \
-	$(am__objects_63) xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT) \
+	$(am__objects_21) localename-environ.$(OBJEXT) \
+	$(am__objects_22) malloca.$(OBJEXT) math.$(OBJEXT) \
+	$(am__objects_23) $(am__objects_24) $(am__objects_25) \
+	$(am__objects_26) $(am__objects_27) $(am__objects_28) \
+	$(am__objects_29) $(am__objects_30) $(am__objects_31) \
+	$(am__objects_32) $(am__objects_33) $(am__objects_34) \
+	$(am__objects_35) $(am__objects_36) $(am__objects_37) \
+	$(am__objects_38) $(am__objects_39) $(am__objects_40) \
+	$(am__objects_41) $(am__objects_42) same-inode.$(OBJEXT) \
+	$(am__objects_43) $(am__objects_44) $(am__objects_45) \
+	$(am__objects_46) $(am__objects_47) $(am__objects_48) \
+	$(am__objects_49) sockets.$(OBJEXT) $(am__objects_50) \
+	stat-time.$(OBJEXT) $(am__objects_51) $(am__objects_52) \
+	$(am__objects_53) str_startswith.$(OBJEXT) $(am__objects_54) \
+	$(am__objects_55) $(am__objects_56) sys_socket.$(OBJEXT) \
+	glthread/thread.$(OBJEXT) $(am__objects_57) $(am__objects_58) \
+	$(am__objects_59) $(am__objects_60) $(am__objects_61) \
+	$(am__objects_62) $(am__objects_63) $(am__objects_64) \
+	$(am__objects_65) xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT) \
 	xconcat-filename.$(OBJEXT) xgetcwd.$(OBJEXT)
 libtests_a_OBJECTS = $(am_libtests_a_OBJECTS)
 test_accept_SOURCES = test-accept.c
@@ -683,6 +697,11 @@ test_free_OBJECTS = test-free.$(OBJEXT)
 test_free_LDADD = $(LDADD)
 test_free_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_freelocale_SOURCES = test-freelocale.c
+test_freelocale_OBJECTS = test-freelocale.$(OBJEXT)
+test_freelocale_LDADD = $(LDADD)
+test_freelocale_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_fstat_SOURCES = test-fstat.c
 test_fstat_OBJECTS = test-fstat.$(OBJEXT)
 test_fstat_LDADD = $(LDADD)
@@ -706,6 +725,11 @@ test_getdtablesize_SOURCES = test-getdtablesize.c
 test_getdtablesize_OBJECTS = test-getdtablesize.$(OBJEXT)
 test_getdtablesize_LDADD = $(LDADD)
 test_getdtablesize_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_getlocalename_l_SOURCES = test-getlocalename_l.c
+test_getlocalename_l_OBJECTS = test-getlocalename_l.$(OBJEXT)
+test_getlocalename_l_LDADD = $(LDADD)
+test_getlocalename_l_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_getprogname_SOURCES = test-getprogname.c
 test_getprogname_OBJECTS = test-getprogname.$(OBJEXT)
@@ -817,6 +841,11 @@ test_netinet_in_h_OBJECTS = test-netinet_in-h.$(OBJEXT)
 test_netinet_in_h_LDADD = $(LDADD)
 test_netinet_in_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_newlocale_SOURCES = test-newlocale.c
+test_newlocale_OBJECTS = test-newlocale.$(OBJEXT)
+test_newlocale_LDADD = $(LDADD)
+test_newlocale_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 am_test_once1_OBJECTS = test-once.$(OBJEXT)
 test_once1_OBJECTS = $(am_test_once1_OBJECTS)
 test_once1_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1173,19 +1202,21 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/dup2.Po ./$(DEPDIR)/error.Po \
 	./$(DEPDIR)/exitfail.Po ./$(DEPDIR)/fcntl.Po \
 	./$(DEPDIR)/fd-hook.Po ./$(DEPDIR)/fdopen.Po \
-	./$(DEPDIR)/float.Po ./$(DEPDIR)/fstat.Po \
-	./$(DEPDIR)/ftruncate.Po ./$(DEPDIR)/getcwd-lgpl.Po \
-	./$(DEPDIR)/getdtablesize.Po ./$(DEPDIR)/getprogname.Po \
-	./$(DEPDIR)/gettimeofday.Po ./$(DEPDIR)/ialloc.Po \
-	./$(DEPDIR)/inet_pton.Po ./$(DEPDIR)/ioctl.Po \
-	./$(DEPDIR)/isblank.Po ./$(DEPDIR)/isnan.Po \
-	./$(DEPDIR)/isnand.Po ./$(DEPDIR)/isnanf.Po \
-	./$(DEPDIR)/isnanl.Po ./$(DEPDIR)/itold.Po \
-	./$(DEPDIR)/listen.Po ./$(DEPDIR)/lstat.Po \
+	./$(DEPDIR)/float.Po ./$(DEPDIR)/freelocale.Po \
+	./$(DEPDIR)/fstat.Po ./$(DEPDIR)/ftruncate.Po \
+	./$(DEPDIR)/getcwd-lgpl.Po ./$(DEPDIR)/getdtablesize.Po \
+	./$(DEPDIR)/getprogname.Po ./$(DEPDIR)/gettimeofday.Po \
+	./$(DEPDIR)/ialloc.Po ./$(DEPDIR)/inet_pton.Po \
+	./$(DEPDIR)/ioctl.Po ./$(DEPDIR)/isblank.Po \
+	./$(DEPDIR)/isnan.Po ./$(DEPDIR)/isnand.Po \
+	./$(DEPDIR)/isnanf.Po ./$(DEPDIR)/isnanl.Po \
+	./$(DEPDIR)/itold.Po ./$(DEPDIR)/listen.Po \
+	./$(DEPDIR)/localename-environ.Po ./$(DEPDIR)/lstat.Po \
 	./$(DEPDIR)/malloc.Po ./$(DEPDIR)/malloca.Po \
 	./$(DEPDIR)/math.Po ./$(DEPDIR)/msvc-inval.Po \
 	./$(DEPDIR)/msvc-nothrow.Po ./$(DEPDIR)/nanosleep.Po \
-	./$(DEPDIR)/open.Po ./$(DEPDIR)/perror.Po ./$(DEPDIR)/pipe.Po \
+	./$(DEPDIR)/newlocale.Po ./$(DEPDIR)/open.Po \
+	./$(DEPDIR)/perror.Po ./$(DEPDIR)/pipe.Po \
 	./$(DEPDIR)/pselect.Po ./$(DEPDIR)/pthread-cond.Po \
 	./$(DEPDIR)/pthread-mutex.Po ./$(DEPDIR)/pthread-rwlock.Po \
 	./$(DEPDIR)/pthread-thread.Po \
@@ -1218,10 +1249,11 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-fcntl.Po ./$(DEPDIR)/test-fdopen.Po \
 	./$(DEPDIR)/test-fgetc.Po ./$(DEPDIR)/test-float-h.Po \
 	./$(DEPDIR)/test-fputc.Po ./$(DEPDIR)/test-fread.Po \
-	./$(DEPDIR)/test-free.Po ./$(DEPDIR)/test-fstat.Po \
-	./$(DEPDIR)/test-ftruncate.Po ./$(DEPDIR)/test-fwrite.Po \
-	./$(DEPDIR)/test-getcwd-lgpl.Po \
+	./$(DEPDIR)/test-free.Po ./$(DEPDIR)/test-freelocale.Po \
+	./$(DEPDIR)/test-fstat.Po ./$(DEPDIR)/test-ftruncate.Po \
+	./$(DEPDIR)/test-fwrite.Po ./$(DEPDIR)/test-getcwd-lgpl.Po \
 	./$(DEPDIR)/test-getdtablesize.Po \
+	./$(DEPDIR)/test-getlocalename_l.Po \
 	./$(DEPDIR)/test-getprogname.Po ./$(DEPDIR)/test-gettext-h.Po \
 	./$(DEPDIR)/test-gettimeofday.Po \
 	./$(DEPDIR)/test-ignore-value.Po ./$(DEPDIR)/test-inet_pton.Po \
@@ -1236,11 +1268,11 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-malloc-gnu.Po \
 	./$(DEPDIR)/test-malloc-posix.Po ./$(DEPDIR)/test-malloca.Po \
 	./$(DEPDIR)/test-math-h.Po ./$(DEPDIR)/test-nanosleep.Po \
-	./$(DEPDIR)/test-netinet_in-h.Po ./$(DEPDIR)/test-once.Po \
-	./$(DEPDIR)/test-open.Po ./$(DEPDIR)/test-pathmax.Po \
-	./$(DEPDIR)/test-perror.Po ./$(DEPDIR)/test-perror2.Po \
-	./$(DEPDIR)/test-pipe.Po ./$(DEPDIR)/test-pselect.Po \
-	./$(DEPDIR)/test-pthread-cond.Po \
+	./$(DEPDIR)/test-netinet_in-h.Po ./$(DEPDIR)/test-newlocale.Po \
+	./$(DEPDIR)/test-once.Po ./$(DEPDIR)/test-open.Po \
+	./$(DEPDIR)/test-pathmax.Po ./$(DEPDIR)/test-perror.Po \
+	./$(DEPDIR)/test-perror2.Po ./$(DEPDIR)/test-pipe.Po \
+	./$(DEPDIR)/test-pselect.Po ./$(DEPDIR)/test-pthread-cond.Po \
 	./$(DEPDIR)/test-pthread-mutex-type.Po \
 	./$(DEPDIR)/test-pthread-mutex.Po \
 	./$(DEPDIR)/test-pthread-once1.Po \
@@ -1314,16 +1346,16 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-ctype-h.c test-dup2.c test-environ.c test-errno-h.c \
 	test-error.c test-fcntl.c test-fcntl-h.c test-fdopen.c \
 	test-fgetc.c test-float-h.c test-fputc.c test-fread.c \
-	test-free.c test-fstat.c test-ftruncate.c test-fwrite.c \
-	test-getcwd-lgpl.c test-getdtablesize.c test-getprogname.c \
-	test-gettext-h.c test-gettimeofday.c test-ignore-value.c \
-	test-inet_pton.c test-intprops.c test-inttypes-h.c \
-	test-ioctl.c test-isblank.c test-isnand-nolibm.c \
-	test-isnanf-nolibm.c test-isnanl-nolibm.c test-largefile.c \
-	test-limits-h.c test-listen.c test-locale-h.c test-lock.c \
-	test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-free.c test-freelocale.c test-fstat.c test-ftruncate.c \
+	test-fwrite.c test-getcwd-lgpl.c test-getdtablesize.c \
+	test-getlocalename_l.c test-getprogname.c test-gettext-h.c \
+	test-gettimeofday.c test-ignore-value.c test-inet_pton.c \
+	test-intprops.c test-inttypes-h.c test-ioctl.c test-isblank.c \
+	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
+	test-largefile.c test-limits-h.c test-listen.c test-locale-h.c \
+	test-lock.c test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
 	test-malloca.c test-math-h.c test-nanosleep.c \
-	test-netinet_in-h.c $(test_once1_SOURCES) \
+	test-netinet_in-h.c test-newlocale.c $(test_once1_SOURCES) \
 	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
 	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
 	test-pthread-cond.c test-pthread-mutex.c \
@@ -1358,16 +1390,17 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	test-close.c test-connect.c test-ctype-h.c test-dup2.c \
 	test-environ.c test-errno-h.c test-error.c test-fcntl.c \
 	test-fcntl-h.c test-fdopen.c test-fgetc.c test-float-h.c \
-	test-fputc.c test-fread.c test-free.c test-fstat.c \
-	test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
-	test-getdtablesize.c test-getprogname.c test-gettext-h.c \
-	test-gettimeofday.c test-ignore-value.c test-inet_pton.c \
-	test-intprops.c test-inttypes-h.c test-ioctl.c test-isblank.c \
-	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
-	test-largefile.c test-limits-h.c test-listen.c test-locale-h.c \
-	test-lock.c test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-fputc.c test-fread.c test-free.c test-freelocale.c \
+	test-fstat.c test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
+	test-getdtablesize.c test-getlocalename_l.c test-getprogname.c \
+	test-gettext-h.c test-gettimeofday.c test-ignore-value.c \
+	test-inet_pton.c test-intprops.c test-inttypes-h.c \
+	test-ioctl.c test-isblank.c test-isnand-nolibm.c \
+	test-isnanf-nolibm.c test-isnanl-nolibm.c test-largefile.c \
+	test-limits-h.c test-listen.c test-locale-h.c test-lock.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
 	test-malloca.c test-math-h.c test-nanosleep.c \
-	test-netinet_in-h.c $(test_once1_SOURCES) \
+	test-netinet_in-h.c test-newlocale.c $(test_once1_SOURCES) \
 	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
 	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
 	test-pthread-cond.c test-pthread-mutex.c \
@@ -2730,6 +2763,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INT32_MAX_LT_INTMAX_MAX = @INT32_MAX_LT_INTMAX_MAX@
 INT64_MAX_EQ_LONG_MAX = @INT64_MAX_EQ_LONG_MAX@
+INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
 LDFLAGS = @LDFLAGS@
 LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
 LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
@@ -3323,48 +3357,51 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	signature.h macros.h filename.h float.in.h test-float-h.c \
 	macros.h fpucw.h test-fputc.c signature.h macros.h \
 	test-fread.c signature.h macros.h test-free.c macros.h \
-	stat-w32.c stat-w32.h test-fstat.c signature.h macros.h \
-	test-ftruncate.c test-ftruncate.sh signature.h macros.h \
-	test-fwrite.c signature.h macros.h test-getcwd-lgpl.c \
-	signature.h macros.h test-getdtablesize.c signature.h macros.h \
-	getprogname.h test-getprogname.c test-gettext-h.c \
-	test-gettimeofday.c signature.h macros.h ialloc.h \
-	ignore-value.h test-ignore-value.c test-inet_pton.c \
-	signature.h macros.h intprops-internal.h intprops.h \
-	test-intprops.c macros.h test-inttypes-h.c w32sock.h \
-	test-ioctl.c signature.h macros.h test-isblank.c signature.h \
-	macros.h float+.h isnan.c isnand-nolibm.h isnand.c \
-	test-isnand-nolibm.c test-isnand.h minus-zero.h infinity.h \
-	macros.h float+.h isnan.c isnanf-nolibm.h isnanf.c \
-	test-isnanf-nolibm.c test-isnanf.h minus-zero.h infinity.h \
-	macros.h float+.h isnan.c isnanl-nolibm.h isnanl.c \
-	test-isnanl-nolibm.c test-isnanl.h minus-zero.h infinity.h \
-	macros.h test-largefile.c cdefs.h libc-config.h \
-	test-limits-h.c w32sock.h test-listen.c signature.h macros.h \
-	test-locale-h.c test-rwlock1.c test-lock.c atomic-int-gnulib.h \
-	macros.h test-lstat.h test-lstat.c signature.h macros.h \
-	malloc.c test-malloc-gnu.c macros.h malloc.c \
-	test-malloc-posix.c macros.h malloca.h test-malloca.c \
-	math.in.h test-math-h.c macros.h msvc-inval.h msvc-nothrow.h \
-	test-nanosleep.c signature.h macros.h netinet_in.in.h \
-	test-netinet_in-h.c test-once.c macros.h test-open.h \
-	test-open.c signature.h macros.h pathmax.h test-pathmax.c \
-	macros.h signature.h test-perror.c test-perror2.c \
-	test-perror.sh test-pipe.c signature.h macros.h test-pselect.c \
-	test-select.h macros.h signature.h test-pthread-cond.c \
-	virtualbox.h macros.h test-pthread.c test-pthread-mutex.c \
-	test-pthread-mutex-type.c atomic-int-posix.h macros.h \
-	test-pthread-once1.c test-pthread-once2.c macros.h \
-	test-pthread-rwlock.c atomic-int-posix.h macros.h \
-	test-pthread-thread.c macros.h test-pthread_sigmask1.c \
-	test-pthread_sigmask2.c signature.h virtualbox.h macros.h \
-	test-putenv.c macros.h signature.h test-raise.c signature.h \
-	macros.h test-random.c test-random-mt.c signature.h macros.h \
-	test-random_r.c signature.h macros.h test-realloc-posix.c \
-	macros.h test-reallocarray.c signature.h macros.h \
-	test-sched-h.c macros.h signature.h test-select.c \
-	test-select.h test-select-fd.c test-select-in.sh \
-	test-select-out.sh test-select-stdin.c test-setlocale_null.c \
+	test-freelocale.c signature.h macros.h stat-w32.c stat-w32.h \
+	test-fstat.c signature.h macros.h test-ftruncate.c \
+	test-ftruncate.sh signature.h macros.h test-fwrite.c \
+	signature.h macros.h test-getcwd-lgpl.c signature.h macros.h \
+	test-getdtablesize.c signature.h macros.h \
+	test-getlocalename_l.c signature.h macros.h getprogname.h \
+	test-getprogname.c test-gettext-h.c test-gettimeofday.c \
+	signature.h macros.h ialloc.h ignore-value.h \
+	test-ignore-value.c test-inet_pton.c signature.h macros.h \
+	intprops-internal.h intprops.h test-intprops.c macros.h \
+	test-inttypes-h.c w32sock.h test-ioctl.c signature.h macros.h \
+	test-isblank.c signature.h macros.h float+.h isnan.c \
+	isnand-nolibm.h isnand.c test-isnand-nolibm.c test-isnand.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanf-nolibm.h isnanf.c test-isnanf-nolibm.c test-isnanf.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanl-nolibm.h isnanl.c test-isnanl-nolibm.c test-isnanl.h \
+	minus-zero.h infinity.h macros.h test-largefile.c cdefs.h \
+	libc-config.h test-limits-h.c w32sock.h test-listen.c \
+	signature.h macros.h test-locale-h.c localename.h \
+	test-rwlock1.c test-lock.c atomic-int-gnulib.h macros.h \
+	test-lstat.h test-lstat.c signature.h macros.h malloc.c \
+	test-malloc-gnu.c macros.h malloc.c test-malloc-posix.c \
+	macros.h malloca.h test-malloca.c math.in.h test-math-h.c \
+	macros.h msvc-inval.h msvc-nothrow.h test-nanosleep.c \
+	signature.h macros.h netinet_in.in.h test-netinet_in-h.c \
+	test-newlocale.c signature.h macros.h test-once.c macros.h \
+	test-open.h test-open.c signature.h macros.h pathmax.h \
+	test-pathmax.c macros.h signature.h test-perror.c \
+	test-perror2.c test-perror.sh test-pipe.c signature.h macros.h \
+	test-pselect.c test-select.h macros.h signature.h \
+	test-pthread-cond.c virtualbox.h macros.h test-pthread.c \
+	test-pthread-mutex.c test-pthread-mutex-type.c \
+	atomic-int-posix.h macros.h test-pthread-once1.c \
+	test-pthread-once2.c macros.h test-pthread-rwlock.c \
+	atomic-int-posix.h macros.h test-pthread-thread.c macros.h \
+	test-pthread_sigmask1.c test-pthread_sigmask2.c signature.h \
+	virtualbox.h macros.h test-putenv.c macros.h signature.h \
+	test-raise.c signature.h macros.h test-random.c \
+	test-random-mt.c signature.h macros.h test-random_r.c \
+	signature.h macros.h test-realloc-posix.c macros.h \
+	test-reallocarray.c signature.h macros.h test-sched-h.c \
+	macros.h signature.h test-select.c test-select.h \
+	test-select-fd.c test-select-in.sh test-select-out.sh \
+	test-select-stdin.c test-setlocale_null.c \
 	test-setlocale_null-mt-one.c test-setlocale_null-mt-all.c \
 	test-setlocale_null-unlocked.c w32sock.h test-setsockopt.c \
 	signature.h macros.h signal.in.h test-signal-h.c float+.h \
@@ -3437,27 +3474,29 @@ libtests_a_SOURCES = $(am__append_1) arpa_inet.c basename-lgpl.c \
 	$(am__append_5) $(am__append_6) exitfail.c $(am__append_7) \
 	fd-hook.c $(am__append_8) $(am__append_9) $(am__append_10) \
 	$(am__append_11) $(am__append_12) $(am__append_13) \
-	$(am__append_14) $(am__append_15) gettext.h $(am__append_16) \
-	ialloc.c idx.h $(am__append_17) $(am__append_18) \
-	$(am__append_19) $(am__append_20) $(am__append_21) malloca.c \
-	math.c minmax.h $(am__append_22) $(am__append_23) nan.h \
-	$(am__append_24) $(am__append_25) $(am__append_26) \
-	$(am__append_27) $(am__append_28) $(am__append_29) \
-	$(am__append_30) $(am__append_31) $(am__append_32) \
-	$(am__append_33) $(am__append_34) $(am__append_36) \
-	$(am__append_37) $(am__append_38) $(am__append_39) \
-	$(am__append_40) $(am__append_41) same-inode.h same-inode.c \
-	$(am__append_42) $(am__append_43) $(am__append_44) \
-	$(am__append_45) signed-nan.h signed-snan.h $(am__append_46) \
-	$(am__append_48) snan.h $(am__append_49) sockets.h sockets.c \
-	$(am__append_50) stat-time.c $(am__append_51) $(am__append_52) \
-	$(am__append_53) str_startswith.c $(am__append_54) \
-	$(am__append_55) $(am__append_56) sys_socket.c \
-	glthread/thread.h glthread/thread.c $(am__append_57) \
-	$(am__append_58) $(am__append_59) $(am__append_61) \
-	$(am__append_62) $(am__append_63) $(am__append_64) \
-	$(am__append_65) $(am__append_66) xmalloc.c xalloc-die.c \
-	xconcat-filename.c xgetcwd.c glthread/yield.h
+	$(am__append_14) $(am__append_15) $(am__append_16) gettext.h \
+	$(am__append_17) ialloc.c idx.h $(am__append_18) \
+	$(am__append_19) $(am__append_20) $(am__append_21) \
+	localename-environ.c $(am__append_22) malloca.c math.c \
+	minmax.h $(am__append_23) $(am__append_24) nan.h \
+	$(am__append_25) $(am__append_26) $(am__append_27) \
+	$(am__append_28) $(am__append_29) $(am__append_30) \
+	$(am__append_31) $(am__append_32) $(am__append_33) \
+	$(am__append_34) $(am__append_35) $(am__append_36) \
+	$(am__append_38) $(am__append_39) $(am__append_40) \
+	$(am__append_41) $(am__append_42) $(am__append_43) \
+	same-inode.h same-inode.c $(am__append_44) $(am__append_45) \
+	$(am__append_46) $(am__append_47) signed-nan.h signed-snan.h \
+	$(am__append_48) $(am__append_50) snan.h $(am__append_51) \
+	sockets.h sockets.c $(am__append_52) stat-time.c \
+	$(am__append_53) $(am__append_54) $(am__append_55) \
+	str_startswith.c $(am__append_56) $(am__append_57) \
+	$(am__append_58) sys_socket.c glthread/thread.h \
+	glthread/thread.c $(am__append_59) $(am__append_60) \
+	$(am__append_61) $(am__append_63) $(am__append_64) \
+	$(am__append_65) $(am__append_66) $(am__append_67) \
+	$(am__append_68) xmalloc.c xalloc-die.c xconcat-filename.c \
+	xgetcwd.c glthread/yield.h
 libtests_a_LIBADD = $(gltests_LIBOBJS) @ALLOCA@
 libtests_a_DEPENDENCIES = $(gltests_LIBOBJS) @ALLOCA@
 EXTRA_libtests_a_SOURCES = alloca.c calloc.c calloc.c stat-w32.c \
@@ -3706,6 +3745,10 @@ test-free$(EXEEXT): $(test_free_OBJECTS) $(test_free_DEPENDENCIES) $(EXTRA_test_
 	@rm -f test-free$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_free_OBJECTS) $(test_free_LDADD) $(LIBS)
 
+test-freelocale$(EXEEXT): $(test_freelocale_OBJECTS) $(test_freelocale_DEPENDENCIES) $(EXTRA_test_freelocale_DEPENDENCIES) 
+	@rm -f test-freelocale$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_freelocale_OBJECTS) $(test_freelocale_LDADD) $(LIBS)
+
 test-fstat$(EXEEXT): $(test_fstat_OBJECTS) $(test_fstat_DEPENDENCIES) $(EXTRA_test_fstat_DEPENDENCIES) 
 	@rm -f test-fstat$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_fstat_OBJECTS) $(test_fstat_LDADD) $(LIBS)
@@ -3725,6 +3768,10 @@ test-getcwd-lgpl$(EXEEXT): $(test_getcwd_lgpl_OBJECTS) $(test_getcwd_lgpl_DEPEND
 test-getdtablesize$(EXEEXT): $(test_getdtablesize_OBJECTS) $(test_getdtablesize_DEPENDENCIES) $(EXTRA_test_getdtablesize_DEPENDENCIES) 
 	@rm -f test-getdtablesize$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_getdtablesize_OBJECTS) $(test_getdtablesize_LDADD) $(LIBS)
+
+test-getlocalename_l$(EXEEXT): $(test_getlocalename_l_OBJECTS) $(test_getlocalename_l_DEPENDENCIES) $(EXTRA_test_getlocalename_l_DEPENDENCIES) 
+	@rm -f test-getlocalename_l$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_getlocalename_l_OBJECTS) $(test_getlocalename_l_LDADD) $(LIBS)
 
 test-getprogname$(EXEEXT): $(test_getprogname_OBJECTS) $(test_getprogname_DEPENDENCIES) $(EXTRA_test_getprogname_DEPENDENCIES) 
 	@rm -f test-getprogname$(EXEEXT)
@@ -3821,6 +3868,10 @@ test-nanosleep$(EXEEXT): $(test_nanosleep_OBJECTS) $(test_nanosleep_DEPENDENCIES
 test-netinet_in-h$(EXEEXT): $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_DEPENDENCIES) $(EXTRA_test_netinet_in_h_DEPENDENCIES) 
 	@rm -f test-netinet_in-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_LDADD) $(LIBS)
+
+test-newlocale$(EXEEXT): $(test_newlocale_OBJECTS) $(test_newlocale_DEPENDENCIES) $(EXTRA_test_newlocale_DEPENDENCIES) 
+	@rm -f test-newlocale$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_newlocale_OBJECTS) $(test_newlocale_LDADD) $(LIBS)
 
 test-once1$(EXEEXT): $(test_once1_OBJECTS) $(test_once1_DEPENDENCIES) $(EXTRA_test_once1_DEPENDENCIES) 
 	@rm -f test-once1$(EXEEXT)
@@ -4144,6 +4195,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fd-hook.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdopen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/float.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/freelocale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fstat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ftruncate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getcwd-lgpl.Po@am__quote@ # am--include-marker
@@ -4160,6 +4212,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/isnanl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/itold.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/listen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-environ.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lstat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloca.Po@am__quote@ # am--include-marker
@@ -4167,6 +4220,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvc-inval.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvc-nothrow.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nanosleep.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/newlocale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/perror.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pipe.Po@am__quote@ # am--include-marker
@@ -4233,11 +4287,13 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fputc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fread.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-free.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-freelocale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fstat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ftruncate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fwrite.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-getcwd-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-getdtablesize.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-getlocalename_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-getprogname.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-gettext-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-gettimeofday.Po@am__quote@ # am--include-marker
@@ -4262,6 +4318,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-math-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-nanosleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netinet_in-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-newlocale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-once.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-open.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pathmax.Po@am__quote@ # am--include-marker
@@ -4847,6 +4904,13 @@ test-free.log: test-free$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-freelocale.log: test-freelocale$(EXEEXT)
+	@p='test-freelocale$(EXEEXT)'; \
+	b='test-freelocale'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-fstat.log: test-fstat$(EXEEXT)
 	@p='test-fstat$(EXEEXT)'; \
 	b='test-fstat'; \
@@ -4878,6 +4942,13 @@ test-getcwd-lgpl.log: test-getcwd-lgpl$(EXEEXT)
 test-getdtablesize.log: test-getdtablesize$(EXEEXT)
 	@p='test-getdtablesize$(EXEEXT)'; \
 	b='test-getdtablesize'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-getlocalename_l.log: test-getlocalename_l$(EXEEXT)
+	@p='test-getlocalename_l$(EXEEXT)'; \
+	b='test-getlocalename_l'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5053,6 +5124,13 @@ test-nanosleep.log: test-nanosleep$(EXEEXT)
 test-netinet_in-h.log: test-netinet_in-h$(EXEEXT)
 	@p='test-netinet_in-h$(EXEEXT)'; \
 	b='test-netinet_in-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-newlocale.log: test-newlocale$(EXEEXT)
+	@p='test-newlocale$(EXEEXT)'; \
+	b='test-newlocale'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5724,6 +5802,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/fd-hook.Po
 	-rm -f ./$(DEPDIR)/fdopen.Po
 	-rm -f ./$(DEPDIR)/float.Po
+	-rm -f ./$(DEPDIR)/freelocale.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
 	-rm -f ./$(DEPDIR)/ftruncate.Po
 	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
@@ -5740,6 +5819,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/isnanl.Po
 	-rm -f ./$(DEPDIR)/itold.Po
 	-rm -f ./$(DEPDIR)/listen.Po
+	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -5747,6 +5827,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/msvc-inval.Po
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/nanosleep.Po
+	-rm -f ./$(DEPDIR)/newlocale.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/perror.Po
 	-rm -f ./$(DEPDIR)/pipe.Po
@@ -5813,11 +5894,13 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-fputc.Po
 	-rm -f ./$(DEPDIR)/test-fread.Po
 	-rm -f ./$(DEPDIR)/test-free.Po
+	-rm -f ./$(DEPDIR)/test-freelocale.Po
 	-rm -f ./$(DEPDIR)/test-fstat.Po
 	-rm -f ./$(DEPDIR)/test-ftruncate.Po
 	-rm -f ./$(DEPDIR)/test-fwrite.Po
 	-rm -f ./$(DEPDIR)/test-getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/test-getdtablesize.Po
+	-rm -f ./$(DEPDIR)/test-getlocalename_l.Po
 	-rm -f ./$(DEPDIR)/test-getprogname.Po
 	-rm -f ./$(DEPDIR)/test-gettext-h.Po
 	-rm -f ./$(DEPDIR)/test-gettimeofday.Po
@@ -5842,6 +5925,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-math-h.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
+	-rm -f ./$(DEPDIR)/test-newlocale.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
 	-rm -f ./$(DEPDIR)/test-pathmax.Po
@@ -5993,6 +6077,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/fd-hook.Po
 	-rm -f ./$(DEPDIR)/fdopen.Po
 	-rm -f ./$(DEPDIR)/float.Po
+	-rm -f ./$(DEPDIR)/freelocale.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
 	-rm -f ./$(DEPDIR)/ftruncate.Po
 	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
@@ -6009,6 +6094,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/isnanl.Po
 	-rm -f ./$(DEPDIR)/itold.Po
 	-rm -f ./$(DEPDIR)/listen.Po
+	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -6016,6 +6102,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/msvc-inval.Po
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/nanosleep.Po
+	-rm -f ./$(DEPDIR)/newlocale.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/perror.Po
 	-rm -f ./$(DEPDIR)/pipe.Po
@@ -6082,11 +6169,13 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-fputc.Po
 	-rm -f ./$(DEPDIR)/test-fread.Po
 	-rm -f ./$(DEPDIR)/test-free.Po
+	-rm -f ./$(DEPDIR)/test-freelocale.Po
 	-rm -f ./$(DEPDIR)/test-fstat.Po
 	-rm -f ./$(DEPDIR)/test-ftruncate.Po
 	-rm -f ./$(DEPDIR)/test-fwrite.Po
 	-rm -f ./$(DEPDIR)/test-getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/test-getdtablesize.Po
+	-rm -f ./$(DEPDIR)/test-getlocalename_l.Po
 	-rm -f ./$(DEPDIR)/test-getprogname.Po
 	-rm -f ./$(DEPDIR)/test-gettext-h.Po
 	-rm -f ./$(DEPDIR)/test-gettimeofday.Po
@@ -6111,6 +6200,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-math-h.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
+	-rm -f ./$(DEPDIR)/test-newlocale.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
 	-rm -f ./$(DEPDIR)/test-pathmax.Po

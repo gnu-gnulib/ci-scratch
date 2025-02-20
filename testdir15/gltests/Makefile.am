@@ -697,6 +697,22 @@ EXTRA_DIST += test-free.c macros.h
 
 ## end   gnulib module free-posix-tests
 
+## begin gnulib module freelocale
+
+if GL_COND_OBJ_FREELOCALE
+libtests_a_SOURCES += freelocale.c
+endif
+
+## end   gnulib module freelocale
+
+## begin gnulib module freelocale-tests
+
+TESTS += test-freelocale
+noinst_PROGRAMS += test-freelocale
+EXTRA_DIST += test-freelocale.c signature.h macros.h
+
+## end   gnulib module freelocale-tests
+
 ## begin gnulib module fstat
 
 if GL_COND_OBJ_FSTAT
@@ -793,6 +809,14 @@ noinst_PROGRAMS += test-getdtablesize
 EXTRA_DIST += test-getdtablesize.c signature.h macros.h
 
 ## end   gnulib module getdtablesize-tests
+
+## begin gnulib module getlocalename_l-simple-tests
+
+TESTS += test-getlocalename_l
+noinst_PROGRAMS += test-getlocalename_l
+EXTRA_DIST += test-getlocalename_l.c signature.h macros.h
+
+## end   gnulib module getlocalename_l-simple-tests
 
 ## begin gnulib module getprogname
 
@@ -1052,6 +1076,14 @@ noinst_PROGRAMS += test-locale-h
 EXTRA_DIST += test-locale-h.c
 
 ## end   gnulib module locale-h-tests
+
+## begin gnulib module localename-environ
+
+libtests_a_SOURCES += localename-environ.c
+
+EXTRA_DIST += localename.h
+
+## end   gnulib module localename-environ
 
 ## begin gnulib module lock-tests
 
@@ -1583,6 +1615,22 @@ noinst_PROGRAMS += test-netinet_in-h
 EXTRA_DIST += test-netinet_in-h.c
 
 ## end   gnulib module netinet_in-h-tests
+
+## begin gnulib module newlocale
+
+if GL_COND_OBJ_NEWLOCALE
+libtests_a_SOURCES += newlocale.c
+endif
+
+## end   gnulib module newlocale
+
+## begin gnulib module newlocale-tests
+
+TESTS += test-newlocale
+noinst_PROGRAMS += test-newlocale
+EXTRA_DIST += test-newlocale.c signature.h macros.h
+
+## end   gnulib module newlocale-tests
 
 ## begin gnulib module once-tests
 

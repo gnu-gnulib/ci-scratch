@@ -96,7 +96,7 @@ get_locale_t_name (int category, locale_t locale)
       for (p = locale_hash_table[slot]; p != NULL; p = p->next)
         if (p->locale == locale)
           {
-            name = p->names.category_name[category];
+            name = p->names.category_name[category - LCMIN];
             break;
           }
       gl_rwlock_unlock (locale_lock);
@@ -129,21 +129,22 @@ newlocale (int category_mask, const char *name, locale_t base)
        & ~category_mask) == 0)
     {
       /* Use name, ignore base.  */
-      int category;
+      int i;
 
       name = struniq (name);
-      for (category = 0; category < 6; category++)
-        names.category_name[category] = name;
+      for (i = 0; i < 6; i++)
+        names.category_name[i] = name;
     }
   else
     {
       /* Use base, possibly also name.  */
       if (base == NULL)
         {
-          int category;
+          int i;
 
-          for (category = 0; category < 6; category++)
+          for (i = 0; i < 6; i++)
             {
+              int category = i + LCMIN;
               int mask;
 
               switch (category)
@@ -169,16 +170,17 @@ newlocale (int category_mask, const char *name, locale_t base)
                 default:
                   abort ();
                 }
-              names.category_name[category] =
+              names.category_name[i] =
                 ((mask & category_mask) != 0 ? name : "C");
             }
         }
       else if (base == LC_GLOBAL_LOCALE)
         {
-          int category;
+          int i;
 
-          for (category = 0; category < 6; category++)
+          for (i = 0; i < 6; i++)
             {
+              int category = i + LCMIN;
               int mask;
 
               switch (category)
@@ -204,7 +206,7 @@ newlocale (int category_mask, const char *name, locale_t base)
                 default:
                   abort ();
                 }
-              names.category_name[category] =
+              names.category_name[i] =
                 ((mask & category_mask) != 0
                  ? name
                  : get_locale_t_name (category, LC_GLOBAL_LOCALE));
@@ -215,7 +217,6 @@ newlocale (int category_mask, const char *name, locale_t base)
           /* Look up the names of base in the hash table.  Like multiple calls
              of get_locale_t_name, but locking only once.  */
           struct locale_hash_node *p;
-          int category;
 
           /* Lock while looking up the hash node.  */
           gl_rwlock_rdlock (locale_lock);
@@ -225,8 +226,10 @@ newlocale (int category_mask, const char *name, locale_t base)
             if (p->locale == base)
               break;
 
-          for (category = 0; category < 6; category++)
+          int i;
+          for (i = 0; i < 6; i++)
             {
+              int category = i + LCMIN;
               int mask;
 
               switch (category)
@@ -252,10 +255,10 @@ newlocale (int category_mask, const char *name, locale_t base)
                 default:
                   abort ();
                 }
-              names.category_name[category] =
+              names.category_name[i] =
                 ((mask & category_mask) != 0
                  ? name
-                 : (p != NULL ? p->names.category_name[category] : ""));
+                 : (p != NULL ? p->names.category_name[i] : ""));
             }
 
           gl_rwlock_unlock (locale_lock);
@@ -337,11 +340,14 @@ duplocale (locale_t locale)
   node->locale = result;
   if (locale == LC_GLOBAL_LOCALE)
     {
-      int category;
+      int i;
 
-      for (category = 0; category < 6; category++)
-        node->names.category_name[category] =
-          get_locale_t_name (category, LC_GLOBAL_LOCALE);
+      for (i = 0; i < 6; i++)
+        {
+          int category = i + LCMIN;
+          node->names.category_name[i] =
+            get_locale_t_name (category, LC_GLOBAL_LOCALE);
+        }
 
       /* Lock before inserting the new node.  */
       gl_rwlock_wrlock (locale_lock);
@@ -365,10 +371,10 @@ duplocale (locale_t locale)
           /* This can happen if the application uses the original
              newlocale()/duplocale() functions instead of the overridden
              ones.  */
-          int category;
+          int i;
 
-          for (category = 0; category < 6; category++)
-            node->names.category_name[category] = "";
+          for (i = 0; i < 6; i++)
+            node->names.category_name[i] = "";
         }
     }
 
@@ -464,7 +470,7 @@ getlocalename_l (int category, locale_t locale)
       /* musl libc */
       return nl_langinfo_l (NL_LOCALE_NAME (category), locale);
 #elif (defined __FreeBSD__ || defined __DragonFly__) || (defined __APPLE__ && defined __MACH__)
-      /* FreeBSD, Mac OS X */
+      /* FreeBSD >= 9.1, Mac OS X */
       int mask;
 
       switch (category)
@@ -491,6 +497,15 @@ getlocalename_l (int category, locale_t locale)
           return "";
         }
       return querylocale (mask, locale);
+#elif defined __NetBSD__
+      /* NetBSD >= 7.0 */
+      #define _LOCALENAME_LEN_MAX 33
+      struct _locale {
+        void *cache;
+        char query[_LOCALENAME_LEN_MAX * 6];
+        const char *part_name[7];
+      };
+      return ((struct _locale *) locale)->part_name[category];
 #elif defined __sun
 # if HAVE_SOLARIS114_LOCALES
       /* Solaris >= 11.4.  */
@@ -508,8 +523,6 @@ getlocalename_l (int category, locale_t locale)
           default: /* We shouldn't get here.  */
             return "";
           }
-# elif HAVE_NAMELESS_LOCALES
-      return get_locale_t_name (category, locale);
 # else
       /* Solaris 11 OpenIndiana.
          For the internal structure of locale objects, see
@@ -527,10 +540,16 @@ getlocalename_l (int category, locale_t locale)
           return "";
         }
 # endif
-#elif defined _AIX && HAVE_NAMELESS_LOCALES
+#elif HAVE_NAMELESS_LOCALES
+      /* OpenBSD >= 6.2, AIX >= 7.1 */
       return get_locale_t_name (category, locale);
+#elif defined __OpenBSD__ && HAVE_FAKE_LOCALES
+      /* OpenBSD >= 6.2 has only fake locales.  */
+      if (locale == (locale_t) 2)
+        return "C.UTF-8";
+      return "C";
 #elif defined __CYGWIN__
-      /* Cygwin < 2.6 lacks uselocale and thread-local locales altogether.
+      /* Cygwin >= 2.6.
          Cygwin <= 2.6.1 lacks NL_LOCALE_NAME, requiring peeking inside
          an opaque struct.  */
 # ifdef NL_LOCALE_NAME
@@ -605,7 +624,11 @@ getlocalename_l (int category, locale_t locale)
         /* It's the "C" or "POSIX" locale.  */
         return "C";
 #elif defined __ANDROID__
-      return MB_CUR_MAX == 4 ? "C.UTF-8" : "C";
+      /* Android API level >= 21 */
+      struct __locale_t {
+        size_t mb_cur_max;
+      };
+      return ((struct __locale_t *) locale)->mb_cur_max == 4 ? "C.UTF-8" : "C";
 #else
  #error "Please port gnulib getlocalename_l.c to your platform! Report this to bug-gnulib."
 #endif

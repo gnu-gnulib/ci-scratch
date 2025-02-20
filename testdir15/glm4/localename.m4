@@ -1,30 +1,18 @@
-# getlocalename_l.m4
-# serial 1
-dnl Copyright (C) 2025 Free Software Foundation, Inc.
+# localename.m4
+# serial 13
+dnl Copyright (C) 2007, 2009-2025 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
 dnl with or without modifications, as long as this notice is preserved.
 dnl This file is offered as-is, without any warranty.
 
-AC_DEFUN([gl_FUNC_GETLOCALENAME_L_SIMPLE],
-[
-  AC_REQUIRE([gl_LOCALE_H_DEFAULTS])
-
-  dnl Persuade glibc <locale.h> to declare getlocalename_l().
-  AC_REQUIRE([AC_USE_SYSTEM_EXTENSIONS])
-
-  AC_CHECK_FUNCS_ONCE([getlocalename_l])
-  if test $ac_cv_func_getlocalename_l = no; then
-    HAVE_GETLOCALENAME_L=0
-  fi
-])
-
-# Prerequisites of lib/getlocalename_l.c.
-AC_DEFUN([gl_PREREQ_GETLOCALENAME_L_SIMPLE],
+AC_DEFUN([gl_LOCALENAME_UNSAFE],
 [
   AC_REQUIRE([gl_LOCALE_H_DEFAULTS])
   AC_REQUIRE([gl_LOCALE_T])
+  AC_REQUIRE([gt_LC_MESSAGES])
   AC_REQUIRE([gt_INTL_THREAD_LOCALE_NAME])
+  AC_REQUIRE([gt_INTL_MACOSX])
   AC_CHECK_HEADERS_ONCE([langinfo.h])
   if test $HAVE_LOCALE_T = 1; then
     gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
@@ -66,4 +54,15 @@ AC_DEFUN([gl_PREREQ_GETLOCALENAME_L_SIMPLE],
     REPLACE_DUPLOCALE=1
     REPLACE_FREELOCALE=1
   fi
+])
+
+AC_DEFUN([gl_LOCALENAME_UNSAFE_LIMITED],
+[
+  AC_REQUIRE([gt_LC_MESSAGES])
+  AC_REQUIRE([gt_INTL_THREAD_LOCALE_NAME])
+])
+
+AC_DEFUN([gl_LOCALENAME_ENVIRON],
+[
+  AC_REQUIRE([gt_INTL_MACOSX])
 ])

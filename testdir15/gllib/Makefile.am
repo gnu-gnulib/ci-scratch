@@ -133,12 +133,10 @@ gl_V_at = $(AM_V_GEN)
 ## begin gnulib module getlocalename_l-simple
 
 if GL_COND_OBJ_GETLOCALENAME_L
-libgnu_a_SOURCES += getlocalename_l.c
+libgnu_a_SOURCES += getlocalename_l.c localename-table.c
 endif
 
-EXTRA_DIST += localename-table.c localename-table.h struniq.h
-
-EXTRA_libgnu_a_SOURCES += localename-table.c
+EXTRA_DIST += localename-table.h struniq.h
 
 ## end   gnulib module getlocalename_l-simple
 

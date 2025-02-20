@@ -116,7 +116,7 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 @GL_COND_OBJ_FREE_TRUE@am__append_1 = free.c
-@GL_COND_OBJ_GETLOCALENAME_L_TRUE@am__append_2 = getlocalename_l.c
+@GL_COND_OBJ_GETLOCALENAME_L_TRUE@am__append_2 = getlocalename_l.c localename-table.c
 @GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_3 = pthread-once.c
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_4 = setlocale-lock.c
 @GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_5 = windows-mutex.c
@@ -147,8 +147,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/ftruncate.m4 \
-	$(top_srcdir)/glm4/getcwd.m4 \
+	$(top_srcdir)/glm4/freelocale.m4 $(top_srcdir)/glm4/fstat.m4 \
+	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/getcwd.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
 	$(top_srcdir)/glm4/getprogname.m4 \
@@ -156,12 +156,15 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
-	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inttypes.m4 \
-	$(top_srcdir)/glm4/ioctl.m4 $(top_srcdir)/glm4/isblank.m4 \
-	$(top_srcdir)/glm4/isnand.m4 $(top_srcdir)/glm4/isnanf.m4 \
-	$(top_srcdir)/glm4/isnanl.m4 $(top_srcdir)/glm4/largefile.m4 \
-	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/locale-en.m4 \
-	$(top_srcdir)/glm4/locale_h.m4 $(top_srcdir)/glm4/lock.m4 \
+	$(top_srcdir)/glm4/inet_pton.m4 \
+	$(top_srcdir)/glm4/intl-thread-locale.m4 \
+	$(top_srcdir)/glm4/intlmacosx.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ioctl.m4 \
+	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isnand.m4 \
+	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
+	$(top_srcdir)/glm4/largefile.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/locale-en.m4 $(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
 	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
 	$(top_srcdir)/glm4/minmax.m4 $(top_srcdir)/glm4/mode_t.m4 \
@@ -170,8 +173,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
-	$(top_srcdir)/glm4/off64_t.m4 $(top_srcdir)/glm4/off_t.m4 \
-	$(top_srcdir)/glm4/once.m4 $(top_srcdir)/glm4/open-cloexec.m4 \
+	$(top_srcdir)/glm4/newlocale.m4 $(top_srcdir)/glm4/off64_t.m4 \
+	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/once.m4 \
+	$(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
 	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/perror.m4 \
 	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pselect.m4 \
@@ -239,14 +243,16 @@ am__v_AR_1 =
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
-am__libgnu_a_SOURCES_DIST = free.c getlocalename_l.c glthread/lock.h \
-	glthread/lock.c glthread/once.h glthread/once.c pthread-once.c \
+am__libgnu_a_SOURCES_DIST = free.c getlocalename_l.c \
+	localename-table.c glthread/lock.h glthread/lock.c \
+	glthread/once.h glthread/once.c pthread-once.c \
 	setlocale_null.c setlocale-lock.c setlocale_null-unlocked.c \
 	stdlib.c glthread/threadlib.c unistd.c windows-mutex.c \
 	windows-once.c windows-recmutex.c windows-rwlock.c
 @GL_COND_OBJ_FREE_TRUE@am__objects_1 = free.$(OBJEXT)
 @GL_COND_OBJ_GETLOCALENAME_L_TRUE@am__objects_2 =  \
-@GL_COND_OBJ_GETLOCALENAME_L_TRUE@	getlocalename_l.$(OBJEXT)
+@GL_COND_OBJ_GETLOCALENAME_L_TRUE@	getlocalename_l.$(OBJEXT) \
+@GL_COND_OBJ_GETLOCALENAME_L_TRUE@	localename-table.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
 @GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_3 = pthread-once.$(OBJEXT)
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_4 =  \
@@ -1453,6 +1459,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INT32_MAX_LT_INTMAX_MAX = @INT32_MAX_LT_INTMAX_MAX@
 INT64_MAX_EQ_LONG_MAX = @INT64_MAX_EQ_LONG_MAX@
+INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
 LDFLAGS = @LDFLAGS@
 LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
 LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
@@ -2028,15 +2035,15 @@ noinst_HEADERS =
 noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
-EXTRA_DIST = fcntl.in.h flexmember.h localename-table.c \
-	localename-table.h struniq.h inttypes.in.h limits.in.h \
-	locale.in.h pthread.in.h sched.in.h setlocale_null.h \
-	windows-initguard.h setlocale_null.h _Noreturn.h arg-nonnull.h \
-	c++defs.h warn-on-use.h stddef.in.h stdint.in.h stdlib.in.h \
-	string.in.h sys_types.in.h thread-optim.h time.in.h \
-	unistd.in.h wchar.in.h windows-initguard.h windows-mutex.h \
-	windows-once.h windows-initguard.h windows-recmutex.h \
-	windows-initguard.h windows-rwlock.h
+EXTRA_DIST = fcntl.in.h flexmember.h localename-table.h struniq.h \
+	inttypes.in.h limits.in.h locale.in.h pthread.in.h sched.in.h \
+	setlocale_null.h windows-initguard.h setlocale_null.h \
+	_Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h stddef.in.h \
+	stdint.in.h stdlib.in.h string.in.h sys_types.in.h \
+	thread-optim.h time.in.h unistd.in.h wchar.in.h \
+	windows-initguard.h windows-mutex.h windows-once.h \
+	windows-initguard.h windows-recmutex.h windows-initguard.h \
+	windows-rwlock.h
 BUILT_SOURCES = fcntl.h inttypes.h $(LIMITS_H) locale.h pthread.h \
 	sched.h $(STDDEF_H) $(STDINT_H) stdlib.h string.h sys/types.h \
 	time.h unistd.h wchar.h
@@ -2064,7 +2071,7 @@ libgnu_a_SOURCES = $(am__append_1) $(am__append_2) glthread/lock.h \
 	$(am__append_8)
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
-EXTRA_libgnu_a_SOURCES = localename-table.c
+EXTRA_libgnu_a_SOURCES = 
 
 # Use this preprocessor expression to decide whether #include_next works.
 # Do not rely on a 'configure'-time test for this, since the expression

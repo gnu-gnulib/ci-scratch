@@ -821,6 +821,8 @@ GL_COND_OBJ_PERROR_FALSE
 GL_COND_OBJ_PERROR_TRUE
 GL_COND_OBJ_OPEN_FALSE
 GL_COND_OBJ_OPEN_TRUE
+GL_COND_OBJ_NEWLOCALE_FALSE
+GL_COND_OBJ_NEWLOCALE_TRUE
 GL_GENERATE_NETINET_IN_H_FALSE
 GL_GENERATE_NETINET_IN_H_TRUE
 NETINET_IN_H
@@ -1163,6 +1165,7 @@ HAVE_ACOSF
 GL_COND_OBJ_LSTAT_FALSE
 GL_COND_OBJ_LSTAT_TRUE
 LIB_SEMAPHORE
+INTL_MACOSX_LIBS
 GL_COND_OBJ_LISTEN_FALSE
 GL_COND_OBJ_LISTEN_TRUE
 HAVE_SAME_LONG_DOUBLE_AS_DOUBLE
@@ -1248,6 +1251,8 @@ HAVE_GETUMASK
 HAVE_FUTIMENS
 HAVE_FSTATAT
 HAVE_FCHMODAT
+GL_COND_OBJ_FREELOCALE_FALSE
+GL_COND_OBJ_FREELOCALE_TRUE
 GL_COND_OBJ_ITOLD_FALSE
 GL_COND_OBJ_ITOLD_TRUE
 GL_COND_OBJ_FLOAT_FALSE
@@ -2118,8 +2123,6 @@ LIBPTHREAD
 NEXT_AS_FIRST_DIRECTIVE_LOCALE_H
 NEXT_LOCALE_H
 HAVE_WINDOWS_LOCALE_T
-HAVE_LOCALE_T
-HAVE_XLOCALE_H
 NEXT_AS_FIRST_DIRECTIVE_STDDEF_H
 NEXT_STDDEF_H
 HAVE_MAX_ALIGN_T
@@ -2185,6 +2188,8 @@ GL_GNULIB_NEWLOCALE
 GL_GNULIB_SETLOCALE_NULL
 GL_GNULIB_SETLOCALE
 GL_GNULIB_LOCALECONV
+HAVE_LOCALE_T
+HAVE_XLOCALE_H
 GL_COND_OBJ_GETLOCALENAME_L_FALSE
 GL_COND_OBJ_GETLOCALENAME_L_TRUE
 LOCALENAME_ENHANCE_LOCALE_FUNCS
@@ -3550,6 +3555,65 @@ printf "%s\n" "$ac_res" >&6; }
 
 } # ac_fn_c_check_type
 
+# ac_fn_check_decl LINENO SYMBOL VAR INCLUDES EXTRA-OPTIONS FLAG-VAR
+# ------------------------------------------------------------------
+# Tests whether SYMBOL is declared in INCLUDES, setting cache variable VAR
+# accordingly. Pass EXTRA-OPTIONS to the compiler, using FLAG-VAR.
+ac_fn_check_decl ()
+{
+  ac_saved_ac_compile="$ac_compile"
+  if test -n "$ac_compile_for_check_decl"; then
+    ac_compile="$ac_compile_for_check_decl"
+  fi
+  as_lineno=${as_lineno-"$1"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
+  as_decl_name=`echo $2|sed 's/ *(.*//'`
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $as_decl_name is declared" >&5
+printf %s "checking whether $as_decl_name is declared... " >&6; }
+if eval test \${$3+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) as_decl_use=`echo $2|sed -e 's/(/((/' -e 's/)/) 0&/' -e 's/,/) 0& (/g'`
+  eval ac_save_FLAGS=\$$6
+  as_fn_append $6 " $5"
+  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+$4
+int
+main (void)
+{
+#ifndef $as_decl_name
+#ifdef __cplusplus
+  (void) $as_decl_use;
+#else
+  (void) $as_decl_name;
+#endif
+#endif
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  eval "$3=yes"
+else case e in #(
+  e) eval "$3=no" ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+  eval $6=\$ac_save_FLAGS
+ ;;
+esac
+fi
+eval ac_res=\$$3
+	       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
+printf "%s\n" "$ac_res" >&6; }
+  eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
+  ac_compile="$ac_saved_ac_compile"
+
+} # ac_fn_check_decl
+
 # ac_fn_c_compute_int LINENO EXPR VAR INCLUDES
 # --------------------------------------------
 # Tries to find the compile-time value of EXPR in a program that includes
@@ -3744,65 +3808,6 @@ rm -f conftest.val
   as_fn_set_status $ac_retval
 
 } # ac_fn_c_compute_int
-
-# ac_fn_check_decl LINENO SYMBOL VAR INCLUDES EXTRA-OPTIONS FLAG-VAR
-# ------------------------------------------------------------------
-# Tests whether SYMBOL is declared in INCLUDES, setting cache variable VAR
-# accordingly. Pass EXTRA-OPTIONS to the compiler, using FLAG-VAR.
-ac_fn_check_decl ()
-{
-  ac_saved_ac_compile="$ac_compile"
-  if test -n "$ac_compile_for_check_decl"; then
-    ac_compile="$ac_compile_for_check_decl"
-  fi
-  as_lineno=${as_lineno-"$1"} as_lineno_stack=as_lineno_stack=$as_lineno_stack
-  as_decl_name=`echo $2|sed 's/ *(.*//'`
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether $as_decl_name is declared" >&5
-printf %s "checking whether $as_decl_name is declared... " >&6; }
-if eval test \${$3+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) as_decl_use=`echo $2|sed -e 's/(/((/' -e 's/)/) 0&/' -e 's/,/) 0& (/g'`
-  eval ac_save_FLAGS=\$$6
-  as_fn_append $6 " $5"
-  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-$4
-int
-main (void)
-{
-#ifndef $as_decl_name
-#ifdef __cplusplus
-  (void) $as_decl_use;
-#else
-  (void) $as_decl_name;
-#endif
-#endif
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  eval "$3=yes"
-else case e in #(
-  e) eval "$3=no" ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-  eval $6=\$ac_save_FLAGS
- ;;
-esac
-fi
-eval ac_res=\$$3
-	       { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_res" >&5
-printf "%s\n" "$ac_res" >&6; }
-  eval $as_lineno_stack; ${as_lineno_stack:+:} unset as_lineno
-  ac_compile="$ac_saved_ac_compile"
-
-} # ac_fn_check_decl
 
 # ac_fn_c_check_member LINENO AGGR MEMBER VAR INCLUDES
 # ----------------------------------------------------
@@ -4500,8 +4505,9 @@ as_fn_append ac_header_c_list " minix/config.h minix_config_h HAVE_MINIX_CONFIG_
 as_fn_append ac_header_c_list " stdbool.h stdbool_h HAVE_STDBOOL_H"
 as_fn_append ac_func_c_list " symlink HAVE_SYMLINK"
 as_fn_append ac_func_c_list " getlocalename_l HAVE_GETLOCALENAME_L"
-as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " xlocale.h xlocale_h HAVE_XLOCALE_H"
+as_fn_append ac_header_c_list " langinfo.h langinfo_h HAVE_LANGINFO_H"
+as_fn_append ac_header_c_list " limits.h limits_h HAVE_LIMITS_H"
 as_fn_append ac_header_c_list " threads.h threads_h HAVE_THREADS_H"
 as_fn_append ac_header_c_list " pthread.h pthread_h HAVE_PTHREAD_H"
 as_fn_append ac_header_c_list " sys/time.h sys_time_h HAVE_SYS_TIME_H"
@@ -8965,6 +8971,478 @@ printf "%s\n" "$gl_cv_next_fcntl_h" >&6; }
 
 
 
+
+
+        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines locale_t" >&5
+printf %s "checking whether locale.h defines locale_t... " >&6; }
+if test ${gl_cv_header_locale_has_locale_t+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+            locale_t x;
+int
+main (void)
+{
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_header_locale_has_locale_t=yes
+else case e in #(
+  e) gl_cv_header_locale_has_locale_t=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_locale_t" >&5
+printf "%s\n" "$gl_cv_header_locale_has_locale_t" >&6; }
+
+
+  if test $ac_cv_header_xlocale_h = yes; then
+    HAVE_XLOCALE_H=1
+    if test $gl_cv_header_locale_has_locale_t = yes; then
+      gl_cv_header_locale_h_needs_xlocale_h=no
+    else
+      gl_cv_header_locale_h_needs_xlocale_h=yes
+    fi
+    HAVE_LOCALE_T=1
+  else
+    HAVE_XLOCALE_H=0
+    gl_cv_header_locale_h_needs_xlocale_h=no
+    if test $gl_cv_header_locale_has_locale_t = yes; then
+      HAVE_LOCALE_T=1
+    else
+      HAVE_LOCALE_T=0
+    fi
+  fi
+
+
+
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $CC options needed to detect all undeclared functions" >&5
+printf %s "checking for $CC options needed to detect all undeclared functions... " >&6; }
+if test ${ac_cv_c_undeclared_builtin_options+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) ac_save_CFLAGS=$CFLAGS
+   ac_cv_c_undeclared_builtin_options='cannot detect'
+   for ac_arg in '' -fno-builtin; do
+     CFLAGS="$ac_save_CFLAGS $ac_arg"
+     # This test program should *not* compile successfully.
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+int
+main (void)
+{
+(void) strchr;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+
+else case e in #(
+  e) # This test program should compile successfully.
+        # No library function is consistently available on
+        # freestanding implementations, so test against a dummy
+        # declaration.  Include always-available headers on the
+        # off chance that they somehow elicit warnings.
+        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <float.h>
+#include <limits.h>
+#include <stdarg.h>
+#include <stddef.h>
+extern void ac_decl (int, char *);
+
+int
+main (void)
+{
+(void) ac_decl (0, (char *) 0);
+  (void) ac_decl;
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  if test x"$ac_arg" = x
+then :
+  ac_cv_c_undeclared_builtin_options='none needed'
+else case e in #(
+  e) ac_cv_c_undeclared_builtin_options=$ac_arg ;;
+esac
+fi
+          break
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+    done
+    CFLAGS=$ac_save_CFLAGS
+   ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_undeclared_builtin_options" >&5
+printf "%s\n" "$ac_cv_c_undeclared_builtin_options" >&6; }
+  case $ac_cv_c_undeclared_builtin_options in #(
+  'cannot detect') :
+    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
+printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
+as_fn_error $? "cannot make $CC report undeclared builtins
+See 'config.log' for more details" "$LINENO" 5; } ;; #(
+  'none needed') :
+    ac_c_undeclared_builtin_options='' ;; #(
+  *) :
+    ac_c_undeclared_builtin_options=$ac_cv_c_undeclared_builtin_options ;;
+esac
+
+
+
+
+
+
+
+
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for uselocale" >&5
+printf %s "checking for uselocale... " >&6; }
+if test ${gl_cv_onwards_func_uselocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "uselocale" "ac_cv_have_decl_uselocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_uselocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_uselocale = yes; then
+             ac_fn_c_check_func "$LINENO" "uselocale" "ac_cv_func_uselocale"
+if test "x$ac_cv_func_uselocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_uselocale = yes; then
+               gl_cv_onwards_func_uselocale=yes
+             else
+                                                            gl_cv_onwards_func_uselocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_uselocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "uselocale" "ac_cv_func_uselocale"
+if test "x$ac_cv_func_uselocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_uselocale=$ac_cv_func_uselocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_uselocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_uselocale" >&6; }
+
+  case "$gl_cv_onwards_func_uselocale" in
+    future*) ac_cv_func_uselocale=no ;;
+    *)       ac_cv_func_uselocale=$gl_cv_onwards_func_uselocale ;;
+  esac
+  if test $ac_cv_func_uselocale = yes; then
+
+printf "%s\n" "#define HAVE_USELOCALE 1" >>confdefs.h
+
+  fi
+
+
+
+          if test $ac_cv_func_uselocale = yes; then
+
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether uselocale works" >&5
+printf %s "checking whether uselocale works... " >&6; }
+if test ${gt_cv_func_uselocale_works+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) if test "$cross_compiling" = yes
+then :
+  # Guess no on AIX and z/OS, yes otherwise.
+          case "$host_os" in
+            aix* | openedition*) gt_cv_func_uselocale_works="guessing no" ;;
+            *)                   gt_cv_func_uselocale_works="guessing yes" ;;
+          esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <locale.h>
+#if HAVE_XLOCALE_H
+# include <xlocale.h>
+#endif
+locale_t loc1;
+int main ()
+{
+  uselocale (NULL);
+  setlocale (LC_ALL, "en_US.UTF-8");
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gt_cv_func_uselocale_works=yes
+else case e in #(
+  e) gt_cv_func_uselocale_works=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+       ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_uselocale_works" >&5
+printf "%s\n" "$gt_cv_func_uselocale_works" >&6; }
+  else
+    gt_cv_func_uselocale_works=no
+  fi
+  case "$gt_cv_func_uselocale_works" in
+    *yes)
+      gt_working_uselocale=yes
+
+printf "%s\n" "#define HAVE_WORKING_USELOCALE 1" >>confdefs.h
+
+      ;;
+    *)
+      gt_working_uselocale=no
+      ;;
+  esac
+
+
+                                case "$gt_cv_func_uselocale_works" in
+    *yes)
+
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for fake locale system (OpenBSD)" >&5
+printf %s "checking for fake locale system (OpenBSD)... " >&6; }
+if test ${gt_cv_locale_fake+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) if test "$cross_compiling" = yes
+then :
+              case "$host_os" in
+              openbsd*) gt_cv_locale_fake="guessing yes" ;;
+              *)        gt_cv_locale_fake="guessing no" ;;
+            esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <locale.h>
+#if HAVE_XLOCALE_H
+# include <xlocale.h>
+#endif
+int main ()
+{
+  locale_t loc1, loc2;
+  if (setlocale (LC_ALL, "de_DE.UTF-8") == NULL) return 1;
+  if (setlocale (LC_ALL, "fr_FR.UTF-8") == NULL) return 1;
+  loc1 = newlocale (LC_ALL_MASK, "de_DE.UTF-8", (locale_t)0);
+  loc2 = newlocale (LC_ALL_MASK, "fr_FR.UTF-8", (locale_t)0);
+  return !(loc1 == loc2);
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gt_cv_locale_fake=yes
+else case e in #(
+  e) gt_cv_locale_fake=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+         ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_locale_fake" >&5
+printf "%s\n" "$gt_cv_locale_fake" >&6; }
+      ;;
+    *) gt_cv_locale_fake=no ;;
+  esac
+  case "$gt_cv_locale_fake" in
+    *yes)
+      gt_fake_locales=yes
+
+printf "%s\n" "#define HAVE_FAKE_LOCALES 1" >>confdefs.h
+
+      ;;
+    *)
+      gt_fake_locales=no
+      ;;
+  esac
+
+    case "$gt_cv_func_uselocale_works" in
+    *yes)
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for Solaris 11.4 locale system" >&5
+printf %s "checking for Solaris 11.4 locale system... " >&6; }
+if test ${gt_cv_locale_solaris114+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+           solaris*)
+                                                                                           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+                  #include <locale.h>
+                  struct _LC_locale_t *x;
+                  locale_t y;
+
+int
+main (void)
+{
+*y = x;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gt_cv_locale_solaris114=yes
+else case e in #(
+  e) gt_cv_locale_solaris114=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+             ;;
+           *) gt_cv_locale_solaris114=no ;;
+         esac
+         ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_locale_solaris114" >&5
+printf "%s\n" "$gt_cv_locale_solaris114" >&6; }
+      ;;
+    *) gt_cv_locale_solaris114=no ;;
+  esac
+  if test $gt_cv_locale_solaris114 = yes; then
+
+printf "%s\n" "#define HAVE_SOLARIS114_LOCALES 1" >>confdefs.h
+
+  fi
+
+                gt_nameless_locales=$gt_fake_locales
+  case "$host_os" in
+        aix*)
+      gt_nameless_locales=yes
+                  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for AIX locales with LC_MESSAGES name" >&5
+printf %s "checking for AIX locales with LC_MESSAGES name... " >&6; }
+if test ${gt_cv_locale_aix72+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+              #include <locale.h>
+              /* Include <sys/localedef.h>, which defines __locale_t.  */
+              #include <stdlib.h>
+              locale_t x;
+
+int
+main (void)
+{
+return ((__locale_t) x)->locale_name[0];
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gt_cv_locale_aix72=yes
+else case e in #(
+  e) gt_cv_locale_aix72=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+         ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_locale_aix72" >&5
+printf "%s\n" "$gt_cv_locale_aix72" >&6; }
+      if test $gt_cv_locale_aix72 = yes; then
+
+printf "%s\n" "#define HAVE_AIX72_LOCALES 1" >>confdefs.h
+
+      fi
+      ;;
+  esac
+  if test $gt_nameless_locales = yes; then
+
+printf "%s\n" "#define HAVE_NAMELESS_LOCALES 1" >>confdefs.h
+
+  fi
+
+              if test $gt_working_uselocale = yes && test $gt_fake_locales = no; then
+    gt_good_uselocale=yes
+
+printf "%s\n" "#define HAVE_GOOD_USELOCALE 1" >>confdefs.h
+
+  else
+    gt_good_uselocale=no
+  fi
+
+            if test $gt_working_uselocale = yes && test $gt_nameless_locales = yes; then
+    gt_localename_enhances_locale_funcs=yes
+    LOCALENAME_ENHANCE_LOCALE_FUNCS=1
+
+printf "%s\n" "#define LOCALENAME_ENHANCE_LOCALE_FUNCS 1" >>confdefs.h
+
+  else
+    gt_localename_enhances_locale_funcs=no
+  fi
+
+
+
+
   GL_GNULIB_LOCALECONV=0
 
 
@@ -10579,63 +11057,6 @@ printf "%s\n" "$gl_cv_next_stddef_h" >&6; }
 
 
 
-        { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether locale.h defines locale_t" >&5
-printf %s "checking whether locale.h defines locale_t... " >&6; }
-if test ${gl_cv_header_locale_has_locale_t+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-            locale_t x;
-int
-main (void)
-{
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  gl_cv_header_locale_has_locale_t=yes
-else case e in #(
-  e) gl_cv_header_locale_has_locale_t=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_header_locale_has_locale_t" >&5
-printf "%s\n" "$gl_cv_header_locale_has_locale_t" >&6; }
-
-
-  if test $ac_cv_header_xlocale_h = yes; then
-    HAVE_XLOCALE_H=1
-    if test $gl_cv_header_locale_has_locale_t = yes; then
-      gl_cv_header_locale_h_needs_xlocale_h=no
-    else
-      gl_cv_header_locale_h_needs_xlocale_h=yes
-    fi
-    HAVE_LOCALE_T=1
-  else
-    HAVE_XLOCALE_H=0
-    gl_cv_header_locale_h_needs_xlocale_h=no
-    if test $gl_cv_header_locale_has_locale_t = yes; then
-      HAVE_LOCALE_T=1
-    else
-      HAVE_LOCALE_T=0
-    fi
-  fi
-
-
-
-
-
-
-
 
 
 
@@ -10862,89 +11283,6 @@ printf "%s\n" "$gl_cv_next_locale_h" >&6; }
 
 
 
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for $CC options needed to detect all undeclared functions" >&5
-printf %s "checking for $CC options needed to detect all undeclared functions... " >&6; }
-if test ${ac_cv_c_undeclared_builtin_options+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) ac_save_CFLAGS=$CFLAGS
-   ac_cv_c_undeclared_builtin_options='cannot detect'
-   for ac_arg in '' -fno-builtin; do
-     CFLAGS="$ac_save_CFLAGS $ac_arg"
-     # This test program should *not* compile successfully.
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-int
-main (void)
-{
-(void) strchr;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-
-else case e in #(
-  e) # This test program should compile successfully.
-        # No library function is consistently available on
-        # freestanding implementations, so test against a dummy
-        # declaration.  Include always-available headers on the
-        # off chance that they somehow elicit warnings.
-        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <float.h>
-#include <limits.h>
-#include <stdarg.h>
-#include <stddef.h>
-extern void ac_decl (int, char *);
-
-int
-main (void)
-{
-(void) ac_decl (0, (char *) 0);
-  (void) ac_decl;
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_compile "$LINENO"
-then :
-  if test x"$ac_arg" = x
-then :
-  ac_cv_c_undeclared_builtin_options='none needed'
-else case e in #(
-  e) ac_cv_c_undeclared_builtin_options=$ac_arg ;;
-esac
-fi
-          break
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
-    done
-    CFLAGS=$ac_save_CFLAGS
-   ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $ac_cv_c_undeclared_builtin_options" >&5
-printf "%s\n" "$ac_cv_c_undeclared_builtin_options" >&6; }
-  case $ac_cv_c_undeclared_builtin_options in #(
-  'cannot detect') :
-    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
-printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
-as_fn_error $? "cannot make $CC report undeclared builtins
-See 'config.log' for more details" "$LINENO" 5; } ;; #(
-  'none needed') :
-    ac_c_undeclared_builtin_options='' ;; #(
-  *) :
-    ac_c_undeclared_builtin_options=$ac_cv_c_undeclared_builtin_options ;;
-esac
-
 
 
   gl_threads_api=none
@@ -11137,8 +11475,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:11140: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:11141: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:11478: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:11479: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -11164,7 +11502,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:11167: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:11505: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -11398,7 +11736,7 @@ fi
 
         fi
       fi
-      echo "$as_me:11401: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:11739: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -11647,8 +11985,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:11650: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:11651: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:11988: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:11989: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -11674,7 +12012,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:11677: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12015: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -11908,7 +12246,7 @@ fi
 
         fi
       fi
-      echo "$as_me:11911: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:12249: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -12402,8 +12740,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:12405: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:12406: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:12743: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:12744: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -12429,7 +12767,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:12432: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12770: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -12663,7 +13001,7 @@ fi
 
         fi
       fi
-      echo "$as_me:12666: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:13004: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -19825,6 +20163,90 @@ printf "%s\n" "#define LDBL_EXPBIT0_BIT $bit" >>confdefs.h
   esac
 
 
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFPreferencesCopyAppValue" >&5
+printf %s "checking for CFPreferencesCopyAppValue... " >&6; }
+if test ${gt_cv_func_CFPreferencesCopyAppValue+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) gt_saved_LIBS="$LIBS"
+     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <CoreFoundation/CFPreferences.h>
+int
+main (void)
+{
+CFPreferencesCopyAppValue(NULL, NULL)
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_func_CFPreferencesCopyAppValue=yes
+else case e in #(
+  e) gt_cv_func_CFPreferencesCopyAppValue=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     LIBS="$gt_saved_LIBS" ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFPreferencesCopyAppValue" >&5
+printf "%s\n" "$gt_cv_func_CFPreferencesCopyAppValue" >&6; }
+  if test $gt_cv_func_CFPreferencesCopyAppValue = yes; then
+
+printf "%s\n" "#define HAVE_CFPREFERENCESCOPYAPPVALUE 1" >>confdefs.h
+
+  fi
+                    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFLocaleCopyPreferredLanguages" >&5
+printf %s "checking for CFLocaleCopyPreferredLanguages... " >&6; }
+if test ${gt_cv_func_CFLocaleCopyPreferredLanguages+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) gt_saved_LIBS="$LIBS"
+     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <CoreFoundation/CFLocale.h>
+int
+main (void)
+{
+CFLocaleCopyPreferredLanguages();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_func_CFLocaleCopyPreferredLanguages=yes
+else case e in #(
+  e) gt_cv_func_CFLocaleCopyPreferredLanguages=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     LIBS="$gt_saved_LIBS" ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFLocaleCopyPreferredLanguages" >&5
+printf "%s\n" "$gt_cv_func_CFLocaleCopyPreferredLanguages" >&6; }
+  if test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
+
+printf "%s\n" "#define HAVE_CFLOCALECOPYPREFERREDLANGUAGES 1" >>confdefs.h
+
+  fi
+  INTL_MACOSX_LIBS=
+  if test $gt_cv_func_CFPreferencesCopyAppValue = yes \
+     || test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
+                    INTL_MACOSX_LIBS="-Wl,-framework -Wl,CoreFoundation -Wl,-framework -Wl,CoreServices"
+  fi
+
+
+
 ac_fn_check_decl "$LINENO" "alarm" "ac_cv_have_decl_alarm" "$ac_includes_default" "$ac_c_undeclared_builtin_options" "CFLAGS"
 if test "x$ac_cv_have_decl_alarm" = xyes
 then :
@@ -22951,6 +23373,258 @@ fi
     GL_COND_OBJ_GETLOCALENAME_L_FALSE='#'
   fi
 
+  if test -z "$GL_COND_OBJ_GETLOCALENAME_L_TRUE"; then :
+
+
+
+
+
+
+  if test $HAVE_LOCALE_T = 1; then
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for newlocale" >&5
+printf %s "checking for newlocale... " >&6; }
+if test ${gl_cv_onwards_func_newlocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "newlocale" "ac_cv_have_decl_newlocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_newlocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_newlocale = yes; then
+             ac_fn_c_check_func "$LINENO" "newlocale" "ac_cv_func_newlocale"
+if test "x$ac_cv_func_newlocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_newlocale = yes; then
+               gl_cv_onwards_func_newlocale=yes
+             else
+                                                            gl_cv_onwards_func_newlocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_newlocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "newlocale" "ac_cv_func_newlocale"
+if test "x$ac_cv_func_newlocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_newlocale=$ac_cv_func_newlocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_newlocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_newlocale" >&6; }
+
+  case "$gl_cv_onwards_func_newlocale" in
+    future*) ac_cv_func_newlocale=no ;;
+    *)       ac_cv_func_newlocale=$gl_cv_onwards_func_newlocale ;;
+  esac
+  if test $ac_cv_func_newlocale = yes; then
+
+printf "%s\n" "#define HAVE_NEWLOCALE 1" >>confdefs.h
+
+  fi
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for duplocale" >&5
+printf %s "checking for duplocale... " >&6; }
+if test ${gl_cv_onwards_func_duplocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "duplocale" "ac_cv_have_decl_duplocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_duplocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_duplocale = yes; then
+             ac_fn_c_check_func "$LINENO" "duplocale" "ac_cv_func_duplocale"
+if test "x$ac_cv_func_duplocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_duplocale = yes; then
+               gl_cv_onwards_func_duplocale=yes
+             else
+                                                            gl_cv_onwards_func_duplocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_duplocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "duplocale" "ac_cv_func_duplocale"
+if test "x$ac_cv_func_duplocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_duplocale=$ac_cv_func_duplocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_duplocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_duplocale" >&6; }
+
+  case "$gl_cv_onwards_func_duplocale" in
+    future*) ac_cv_func_duplocale=no ;;
+    *)       ac_cv_func_duplocale=$gl_cv_onwards_func_duplocale ;;
+  esac
+  if test $ac_cv_func_duplocale = yes; then
+
+printf "%s\n" "#define HAVE_DUPLOCALE 1" >>confdefs.h
+
+  fi
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for freelocale" >&5
+printf %s "checking for freelocale... " >&6; }
+if test ${gl_cv_onwards_func_freelocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "freelocale" "ac_cv_have_decl_freelocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_freelocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_freelocale = yes; then
+             ac_fn_c_check_func "$LINENO" "freelocale" "ac_cv_func_freelocale"
+if test "x$ac_cv_func_freelocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_freelocale = yes; then
+               gl_cv_onwards_func_freelocale=yes
+             else
+                                                            gl_cv_onwards_func_freelocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_freelocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "freelocale" "ac_cv_func_freelocale"
+if test "x$ac_cv_func_freelocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_freelocale=$ac_cv_func_freelocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_freelocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_freelocale" >&6; }
+
+  case "$gl_cv_onwards_func_freelocale" in
+    future*) ac_cv_func_freelocale=no ;;
+    *)       ac_cv_func_freelocale=$gl_cv_onwards_func_freelocale ;;
+  esac
+  if test $ac_cv_func_freelocale = yes; then
+
+printf "%s\n" "#define HAVE_FREELOCALE 1" >>confdefs.h
+
+  fi
+
+
+    gl_func_newlocale="$ac_cv_func_newlocale"
+    gl_func_duplocale="$ac_cv_func_duplocale"
+    gl_func_freelocale="$ac_cv_func_freelocale"
+  else
+            gl_cv_onwards_func_newlocale='future OS version'
+    gl_cv_onwards_func_duplocale='future OS version'
+    gl_cv_onwards_func_freelocale='future OS version'
+    gl_func_newlocale=no
+    gl_func_duplocale=no
+    gl_func_freelocale=no
+  fi
+  if test $gl_func_newlocale != yes; then
+    HAVE_NEWLOCALE=0
+    case "$gl_cv_onwards_func_newlocale" in
+      future*) REPLACE_NEWLOCALE=1 ;;
+    esac
+  fi
+  if test $gl_func_duplocale != yes; then
+    HAVE_DUPLOCALE=0
+    case "$gl_cv_onwards_func_duplocale" in
+      future*) REPLACE_DUPLOCALE=1 ;;
+    esac
+  fi
+  if test $gl_func_freelocale != yes; then
+    HAVE_FREELOCALE=0
+    case "$gl_cv_onwards_func_freelocale" in
+      future*) REPLACE_FREELOCALE=1 ;;
+    esac
+  fi
+  if test $gt_localename_enhances_locale_funcs = yes; then
+    REPLACE_NEWLOCALE=1
+    REPLACE_DUPLOCALE=1
+    REPLACE_FREELOCALE=1
+  fi
+
+
+fi
 
 
 printf "%s\n" "#define GNULIB_GETLOCALENAME_L 1" >>confdefs.h
@@ -25869,6 +26543,137 @@ fi
 
 
 
+  if test $HAVE_LOCALE_T = 1; then
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for freelocale" >&5
+printf %s "checking for freelocale... " >&6; }
+if test ${gl_cv_onwards_func_freelocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "freelocale" "ac_cv_have_decl_freelocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_freelocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_freelocale = yes; then
+             ac_fn_c_check_func "$LINENO" "freelocale" "ac_cv_func_freelocale"
+if test "x$ac_cv_func_freelocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_freelocale = yes; then
+               gl_cv_onwards_func_freelocale=yes
+             else
+                                                            gl_cv_onwards_func_freelocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_freelocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "freelocale" "ac_cv_func_freelocale"
+if test "x$ac_cv_func_freelocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_freelocale=$ac_cv_func_freelocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_freelocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_freelocale" >&6; }
+
+  case "$gl_cv_onwards_func_freelocale" in
+    future*) ac_cv_func_freelocale=no ;;
+    *)       ac_cv_func_freelocale=$gl_cv_onwards_func_freelocale ;;
+  esac
+  if test $ac_cv_func_freelocale = yes; then
+
+printf "%s\n" "#define HAVE_FREELOCALE 1" >>confdefs.h
+
+  fi
+
+
+    gl_func_freelocale="$ac_cv_func_freelocale"
+  else
+            gl_cv_onwards_func_freelocale='future OS version'
+    gl_func_freelocale=no
+  fi
+  if test $gl_func_freelocale != yes; then
+    HAVE_FREELOCALE=0
+    case "$gl_cv_onwards_func_freelocale" in
+      future*) REPLACE_FREELOCALE=1 ;;
+    esac
+  fi
+
+
+     if test $HAVE_LOCALE_T = 0; then
+  GL_COND_OBJ_FREELOCALE_TRUE=
+  GL_COND_OBJ_FREELOCALE_FALSE='#'
+else
+  GL_COND_OBJ_FREELOCALE_TRUE='#'
+  GL_COND_OBJ_FREELOCALE_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_FREELOCALE_TRUE}" && test -z "${GL_COND_OBJ_FREELOCALE_FALSE}"; then
+    GL_COND_OBJ_FREELOCALE_TRUE='#'
+    GL_COND_OBJ_FREELOCALE_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_FREELOCALE_TRUE"; then :
+
+
+  :
+
+
+fi
+
+
+
+
+
+
+
+
+
+    if test "$GL_GNULIB_FREELOCALE" != 1; then
+        if test "$GL_GNULIB_FREELOCALE" = 0; then
+      GL_GNULIB_FREELOCALE=$gl_module_indicator_condition
+    else
+      GL_GNULIB_FREELOCALE="($GL_GNULIB_FREELOCALE || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_FREELOCALE 1" >>confdefs.h
+
+
+
+
+
+
 
   case "$host_os" in
     darwin* | mingw* | windows* | solaris*)
@@ -27923,6 +28728,34 @@ printf "%s\n" "#define HAVE_NEWLOCALE 1" >>confdefs.h
 
 
 
+
+
+
+
+
+    if test "$GL_GNULIB_LOCALENAME_ENVIRON" != 1; then
+        if test "$GL_GNULIB_LOCALENAME_ENVIRON" = 0; then
+      GL_GNULIB_LOCALENAME_ENVIRON=$gl_module_indicator_condition
+    else
+      GL_GNULIB_LOCALENAME_ENVIRON="($GL_GNULIB_LOCALENAME_ENVIRON || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_LOCALENAME_ENVIRON 1" >>confdefs.h
+
+
+
+
+
+
+
+
+
+
   if test $ac_cv_func_lstat = yes; then
 
     case $host_os,$gl_cv_func_lstat_dereferences_slashed_symlink in
@@ -28547,6 +29380,345 @@ fi
 
 
 
+
+
+
+
+
+  if test $HAVE_LOCALE_T = 1; then
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for newlocale" >&5
+printf %s "checking for newlocale... " >&6; }
+if test ${gl_cv_onwards_func_newlocale+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "newlocale" "ac_cv_have_decl_newlocale" "#include <locale.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_newlocale" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_newlocale = yes; then
+             ac_fn_c_check_func "$LINENO" "newlocale" "ac_cv_func_newlocale"
+if test "x$ac_cv_func_newlocale" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_newlocale = yes; then
+               gl_cv_onwards_func_newlocale=yes
+             else
+                                                            gl_cv_onwards_func_newlocale='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_newlocale='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "newlocale" "ac_cv_func_newlocale"
+if test "x$ac_cv_func_newlocale" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_newlocale=$ac_cv_func_newlocale
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_newlocale" >&5
+printf "%s\n" "$gl_cv_onwards_func_newlocale" >&6; }
+
+  case "$gl_cv_onwards_func_newlocale" in
+    future*) ac_cv_func_newlocale=no ;;
+    *)       ac_cv_func_newlocale=$gl_cv_onwards_func_newlocale ;;
+  esac
+  if test $ac_cv_func_newlocale = yes; then
+
+printf "%s\n" "#define HAVE_NEWLOCALE 1" >>confdefs.h
+
+  fi
+
+
+    gl_func_newlocale="$ac_cv_func_newlocale"
+  else
+            gl_cv_onwards_func_newlocale='future OS version'
+    gl_func_newlocale=no
+  fi
+  if test $gl_func_newlocale = yes; then
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for nl_langinfo_l" >&5
+printf %s "checking for nl_langinfo_l... " >&6; }
+if test ${gl_cv_onwards_func_nl_langinfo_l+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "nl_langinfo_l" "ac_cv_have_decl_nl_langinfo_l" "#include <langinfo.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_nl_langinfo_l" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_nl_langinfo_l = yes; then
+             ac_fn_c_check_func "$LINENO" "nl_langinfo_l" "ac_cv_func_nl_langinfo_l"
+if test "x$ac_cv_func_nl_langinfo_l" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_nl_langinfo_l = yes; then
+               gl_cv_onwards_func_nl_langinfo_l=yes
+             else
+                                                            gl_cv_onwards_func_nl_langinfo_l='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_nl_langinfo_l='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "nl_langinfo_l" "ac_cv_func_nl_langinfo_l"
+if test "x$ac_cv_func_nl_langinfo_l" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_nl_langinfo_l=$ac_cv_func_nl_langinfo_l
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_nl_langinfo_l" >&5
+printf "%s\n" "$gl_cv_onwards_func_nl_langinfo_l" >&6; }
+
+  case "$gl_cv_onwards_func_nl_langinfo_l" in
+    future*) ac_cv_func_nl_langinfo_l=no ;;
+    *)       ac_cv_func_nl_langinfo_l=$gl_cv_onwards_func_nl_langinfo_l ;;
+  esac
+  if test $ac_cv_func_nl_langinfo_l = yes; then
+
+printf "%s\n" "#define HAVE_NL_LANGINFO_L 1" >>confdefs.h
+
+  fi
+
+
+    if test $ac_cv_func_nl_langinfo_l = yes; then
+
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether newlocale with a null base works" >&5
+printf %s "checking whether newlocale with a null base works... " >&6; }
+if test ${gl_cv_func_newlocale_works+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)                   case "$host_os" in
+           darwin* | netbsd* | solaris*)
+             gl_cv_func_newlocale_works="guessing no" ;;
+           *)
+             gl_cv_func_newlocale_works="guessing yes" ;;
+         esac
+         if test "$cross_compiling" = yes
+then :
+  { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
+printf "%s\n" "$as_me: error: in '$ac_pwd':" >&2;}
+as_fn_error $? "cannot run test program while cross compiling
+See 'config.log' for more details" "$LINENO" 5; }
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <locale.h>
+#if HAVE_XLOCALE_H
+# include <xlocale.h>
+#endif
+#include <langinfo.h>
+int main ()
+{
+  locale_t l1 = newlocale (LC_TIME_MASK, "en_US.UTF-8", NULL);
+  if (l1 != NULL)
+    {
+      if (setlocale (LC_ALL, "fr_FR.UTF-8") != NULL)
+        {
+          locale_t l1a = newlocale (LC_TIME_MASK, "en_US.UTF-8", NULL);
+          const char *radixchar1a = nl_langinfo_l (RADIXCHAR, l1a);
+          return (*radixchar1a != '.');
+        }
+    }
+  return 2;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_newlocale_works=yes
+else case e in #(
+  e) if test $? = 1; then
+              gl_cv_func_newlocale_works=no
+            fi
+            ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+         ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_newlocale_works" >&5
+printf "%s\n" "$gl_cv_func_newlocale_works" >&6; }
+      case "$gl_cv_func_newlocale_works" in
+        *yes) ;;
+        *) REPLACE_NEWLOCALE=1 ;;
+      esac
+    fi
+  else
+    HAVE_NEWLOCALE=0
+    case "$gl_cv_onwards_func_newlocale" in
+      future*) REPLACE_NEWLOCALE=1 ;;
+    esac
+  fi
+
+
+     if test $HAVE_LOCALE_T = 0 || { test $REPLACE_NEWLOCALE = 1 && test "$gt_localename_enhances_locale_funcs" != yes; }; then
+  GL_COND_OBJ_NEWLOCALE_TRUE=
+  GL_COND_OBJ_NEWLOCALE_FALSE='#'
+else
+  GL_COND_OBJ_NEWLOCALE_TRUE='#'
+  GL_COND_OBJ_NEWLOCALE_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_NEWLOCALE_TRUE}" && test -z "${GL_COND_OBJ_NEWLOCALE_FALSE}"; then
+    GL_COND_OBJ_NEWLOCALE_TRUE='#'
+    GL_COND_OBJ_NEWLOCALE_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_NEWLOCALE_TRUE"; then :
+
+
+  :
+
+
+fi
+
+
+
+
+
+
+
+
+
+    if test "$GL_GNULIB_NEWLOCALE" != 1; then
+        if test "$GL_GNULIB_NEWLOCALE" = 0; then
+      GL_GNULIB_NEWLOCALE=$gl_module_indicator_condition
+    else
+      GL_GNULIB_NEWLOCALE="($GL_GNULIB_NEWLOCALE || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_NEWLOCALE 1" >>confdefs.h
+
+
+
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for nl_langinfo_l" >&5
+printf %s "checking for nl_langinfo_l... " >&6; }
+if test ${gl_cv_onwards_func_nl_langinfo_l+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "nl_langinfo_l" "ac_cv_have_decl_nl_langinfo_l" "#include <langinfo.h>
+" "$ac_c_undeclared_builtin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_nl_langinfo_l" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_nl_langinfo_l = yes; then
+             ac_fn_c_check_func "$LINENO" "nl_langinfo_l" "ac_cv_func_nl_langinfo_l"
+if test "x$ac_cv_func_nl_langinfo_l" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_nl_langinfo_l = yes; then
+               gl_cv_onwards_func_nl_langinfo_l=yes
+             else
+                                                            gl_cv_onwards_func_nl_langinfo_l='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_nl_langinfo_l='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "nl_langinfo_l" "ac_cv_func_nl_langinfo_l"
+if test "x$ac_cv_func_nl_langinfo_l" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_nl_langinfo_l=$ac_cv_func_nl_langinfo_l
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_nl_langinfo_l" >&5
+printf "%s\n" "$gl_cv_onwards_func_nl_langinfo_l" >&6; }
+
+  case "$gl_cv_onwards_func_nl_langinfo_l" in
+    future*) ac_cv_func_nl_langinfo_l=no ;;
+    *)       ac_cv_func_nl_langinfo_l=$gl_cv_onwards_func_nl_langinfo_l ;;
+  esac
+  if test $ac_cv_func_nl_langinfo_l = yes; then
+
+printf "%s\n" "#define HAVE_NL_LANGINFO_L 1" >>confdefs.h
+
+  fi
 
 
 

@@ -61,6 +61,9 @@ gl_m4_base='glm4'
   gl_STDLIB_MODULE_INDICATOR([free-posix])
   gl_FUNC_GETLOCALENAME_L_SIMPLE
   gl_CONDITIONAL([GL_COND_OBJ_GETLOCALENAME_L], [test $HAVE_GETLOCALENAME_L = 0])
+  AM_COND_IF([GL_COND_OBJ_GETLOCALENAME_L], [
+    gl_PREREQ_GETLOCALENAME_L_SIMPLE
+  ])
   gl_MODULE_INDICATOR([getlocalename_l])
   gl_LOCALE_MODULE_INDICATOR([getlocalename_l])
   gl_INTTYPES_INCOMPLETE
@@ -286,6 +289,12 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_ITOLD], [test $REPLACE_ITOLD = 1])
   dnl Prerequisites of lib/float.c.
   AC_REQUIRE([gl_BIGENDIAN])
+  gl_FUNC_FREELOCALE
+  gl_CONDITIONAL([GL_COND_OBJ_FREELOCALE], [test $HAVE_LOCALE_T = 0])
+  AM_COND_IF([GL_COND_OBJ_FREELOCALE], [
+    gl_PREREQ_FREELOCALE
+  ])
+  gl_LOCALE_MODULE_INDICATOR([freelocale])
   gl_FUNC_FSTAT
   gl_CONDITIONAL([GL_COND_OBJ_FSTAT], [test $REPLACE_FSTAT = 1])
   AM_COND_IF([GL_COND_OBJ_FSTAT], [
@@ -374,6 +383,8 @@ changequote([, ])dnl
   gl_SYS_SOCKET_MODULE_INDICATOR([listen])
   gl_MODULE_INDICATOR([listen])
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
+  gl_LOCALENAME_ENVIRON
+  gl_LOCALE_MODULE_INDICATOR([localename-environ])
   AC_CHECK_HEADERS_ONCE([semaphore.h])
   AC_CHECK_DECLS_ONCE([alarm])
   AC_REQUIRE([gl_SEMAPHORE])
@@ -414,6 +425,14 @@ changequote([, ])dnl
   gl_HEADER_NETINET_IN
   gl_CONDITIONAL_HEADER([netinet/in.h])
   AC_PROG_MKDIR_P
+  gl_FUNC_NEWLOCALE
+  gl_CONDITIONAL([GL_COND_OBJ_NEWLOCALE],
+                 [test $HAVE_LOCALE_T = 0 || { test $REPLACE_NEWLOCALE = 1 && test "$gt_localename_enhances_locale_funcs" != yes; }])
+  AM_COND_IF([GL_COND_OBJ_NEWLOCALE], [
+    gl_PREREQ_NEWLOCALE
+  ])
+  gl_LOCALE_MODULE_INDICATOR([newlocale])
+  gl_CHECK_FUNCS_ANDROID([nl_langinfo_l], [[#include <langinfo.h>]])
   gl_FUNC_OPEN
   gl_CONDITIONAL([GL_COND_OBJ_OPEN], [test $REPLACE_OPEN = 1])
   AM_COND_IF([GL_COND_OBJ_OPEN], [
