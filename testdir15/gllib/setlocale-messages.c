@@ -19,6 +19,9 @@
 /* Specification.  */
 #include "setlocale-messages.h"
 
+#include <stddef.h>
+#include <string.h>
+
 /* The system does not store an LC_MESSAGES locale category.  Do it here.  */
 static char lc_messages_name[64] = "C";
 
