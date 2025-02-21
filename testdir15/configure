@@ -761,6 +761,10 @@ LC_NUMERIC_IMPLEMENTED
 LC_COLLATE_IMPLEMENTED
 LOCALE_FR_UTF8
 LOCALE_FR
+GL_COND_OBJ_SETLOCALE_FALSE
+GL_COND_OBJ_SETLOCALE_TRUE
+LIB_SETLOCALE
+SETLOCALE_LIB
 GL_COND_OBJ_SETENV_FALSE
 GL_COND_OBJ_SETENV_TRUE
 GL_COND_OBJ_SELECT_FALSE
@@ -1175,7 +1179,10 @@ HAVE_ACOSF
 GL_COND_OBJ_LSTAT_FALSE
 GL_COND_OBJ_LSTAT_TRUE
 LIB_SEMAPHORE
+GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE
+GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE
 WINDRES
+INTL_MACOSX_LIBS
 GL_COND_OBJ_LISTEN_FALSE
 GL_COND_OBJ_LISTEN_TRUE
 HAVE_SAME_LONG_DOUBLE_AS_DOUBLE
@@ -1989,10 +1996,8 @@ HAVE_VISIBILITY
 CFLAG_VISIBILITY
 GL_COND_OBJ_SETLOCALE_LOCK_FALSE
 GL_COND_OBJ_SETLOCALE_LOCK_TRUE
-GL_COND_OBJ_SETLOCALE_FALSE
-GL_COND_OBJ_SETLOCALE_TRUE
-LIB_SETLOCALE
-SETLOCALE_LIB
+GL_COND_OBJ_SETLOCALE_MESSAGES_FALSE
+GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE
 GL_GNULIB_SCHED_YIELD
 HAVE_STRUCT_SCHED_PARAM
 HAVE_SCHED_H
@@ -2128,9 +2133,6 @@ LIBMULTITHREAD
 LTLIBTHREAD
 LIBTHREAD
 LIBSTDTHREAD
-GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE
-GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE
-INTL_MACOSX_LIBS
 NEXT_AS_FIRST_DIRECTIVE_LOCALE_H
 NEXT_LOCALE_H
 HAVE_WINDOWS_LOCALE_T
@@ -9046,8 +9048,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:9049: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:9050: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:9051: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:9052: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -9073,7 +9075,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:9076: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:9078: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -9307,7 +9309,7 @@ fi
 
         fi
       fi
-      echo "$as_me:9310: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:9312: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -12004,137 +12006,6 @@ printf "%s\n" "$gl_cv_next_locale_h" >&6; }
 
 
 
-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFPreferencesCopyAppValue" >&5
-printf %s "checking for CFPreferencesCopyAppValue... " >&6; }
-if test ${gt_cv_func_CFPreferencesCopyAppValue+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) gt_saved_LIBS="$LIBS"
-     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <CoreFoundation/CFPreferences.h>
-int
-main (void)
-{
-CFPreferencesCopyAppValue(NULL, NULL)
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gt_cv_func_CFPreferencesCopyAppValue=yes
-else case e in #(
-  e) gt_cv_func_CFPreferencesCopyAppValue=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-     LIBS="$gt_saved_LIBS" ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFPreferencesCopyAppValue" >&5
-printf "%s\n" "$gt_cv_func_CFPreferencesCopyAppValue" >&6; }
-  if test $gt_cv_func_CFPreferencesCopyAppValue = yes; then
-
-printf "%s\n" "#define HAVE_CFPREFERENCESCOPYAPPVALUE 1" >>confdefs.h
-
-  fi
-                    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFLocaleCopyPreferredLanguages" >&5
-printf %s "checking for CFLocaleCopyPreferredLanguages... " >&6; }
-if test ${gt_cv_func_CFLocaleCopyPreferredLanguages+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) gt_saved_LIBS="$LIBS"
-     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
-     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <CoreFoundation/CFLocale.h>
-int
-main (void)
-{
-CFLocaleCopyPreferredLanguages();
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gt_cv_func_CFLocaleCopyPreferredLanguages=yes
-else case e in #(
-  e) gt_cv_func_CFLocaleCopyPreferredLanguages=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-     LIBS="$gt_saved_LIBS" ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFLocaleCopyPreferredLanguages" >&5
-printf "%s\n" "$gt_cv_func_CFLocaleCopyPreferredLanguages" >&6; }
-  if test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
-
-printf "%s\n" "#define HAVE_CFLOCALECOPYPREFERREDLANGUAGES 1" >>confdefs.h
-
-  fi
-  INTL_MACOSX_LIBS=
-  if test $gt_cv_func_CFPreferencesCopyAppValue = yes \
-     || test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
-                    INTL_MACOSX_LIBS="-Wl,-framework -Wl,CoreFoundation -Wl,-framework -Wl,CoreServices"
-  fi
-
-
-
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for LC_MESSAGES" >&5
-printf %s "checking for LC_MESSAGES... " >&6; }
-if test ${gt_cv_val_LC_MESSAGES+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-int
-main (void)
-{
-return LC_MESSAGES
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gt_cv_val_LC_MESSAGES=yes
-else case e in #(
-  e) gt_cv_val_LC_MESSAGES=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_val_LC_MESSAGES" >&5
-printf "%s\n" "$gt_cv_val_LC_MESSAGES" >&6; }
-  if test $gt_cv_val_LC_MESSAGES = yes; then
-
-printf "%s\n" "#define HAVE_LC_MESSAGES 1" >>confdefs.h
-
-  fi
-
-
-
-  case "$host_os" in
-    *-musl* | midipix*)
-
-printf "%s\n" "#define MUSL_LIBC 1" >>confdefs.h
-
-      ;;
-  esac
-
-
 
   gl_threads_api=none
   LIBTHREAD=
@@ -12326,8 +12197,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:12329: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:12330: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:12200: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:12201: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -12353,7 +12224,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:12356: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12227: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -12587,7 +12458,7 @@ fi
 
         fi
       fi
-      echo "$as_me:12590: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:12461: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -12836,8 +12707,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:12839: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:12840: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:12710: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:12711: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -12863,7 +12734,7 @@ rm -rf conftest*
 
           ;;
       esac
-      echo "$as_me:12866: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:12737: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -13097,7 +12968,7 @@ fi
 
         fi
       fi
-      echo "$as_me:13100: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:12971: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
     fi
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
 printf %s "checking whether POSIX threads API is available... " >&6; }
@@ -20553,6 +20424,100 @@ printf "%s\n" "#define LDBL_EXPBIT0_BIT $bit" >>confdefs.h
   esac
 
 
+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFPreferencesCopyAppValue" >&5
+printf %s "checking for CFPreferencesCopyAppValue... " >&6; }
+if test ${gt_cv_func_CFPreferencesCopyAppValue+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) gt_saved_LIBS="$LIBS"
+     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <CoreFoundation/CFPreferences.h>
+int
+main (void)
+{
+CFPreferencesCopyAppValue(NULL, NULL)
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_func_CFPreferencesCopyAppValue=yes
+else case e in #(
+  e) gt_cv_func_CFPreferencesCopyAppValue=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     LIBS="$gt_saved_LIBS" ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFPreferencesCopyAppValue" >&5
+printf "%s\n" "$gt_cv_func_CFPreferencesCopyAppValue" >&6; }
+  if test $gt_cv_func_CFPreferencesCopyAppValue = yes; then
+
+printf "%s\n" "#define HAVE_CFPREFERENCESCOPYAPPVALUE 1" >>confdefs.h
+
+  fi
+                    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for CFLocaleCopyPreferredLanguages" >&5
+printf %s "checking for CFLocaleCopyPreferredLanguages... " >&6; }
+if test ${gt_cv_func_CFLocaleCopyPreferredLanguages+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) gt_saved_LIBS="$LIBS"
+     LIBS="$LIBS -Wl,-framework -Wl,CoreFoundation"
+     cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <CoreFoundation/CFLocale.h>
+int
+main (void)
+{
+CFLocaleCopyPreferredLanguages();
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_func_CFLocaleCopyPreferredLanguages=yes
+else case e in #(
+  e) gt_cv_func_CFLocaleCopyPreferredLanguages=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     LIBS="$gt_saved_LIBS" ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_func_CFLocaleCopyPreferredLanguages" >&5
+printf "%s\n" "$gt_cv_func_CFLocaleCopyPreferredLanguages" >&6; }
+  if test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
+
+printf "%s\n" "#define HAVE_CFLOCALECOPYPREFERREDLANGUAGES 1" >>confdefs.h
+
+  fi
+  INTL_MACOSX_LIBS=
+  if test $gt_cv_func_CFPreferencesCopyAppValue = yes \
+     || test $gt_cv_func_CFLocaleCopyPreferredLanguages = yes; then
+                    INTL_MACOSX_LIBS="-Wl,-framework -Wl,CoreFoundation -Wl,-framework -Wl,CoreServices"
+  fi
+
+
+
+
+  case "$host_os" in
+    *-musl* | midipix*)
+
+printf "%s\n" "#define MUSL_LIBC 1" >>confdefs.h
+
+      ;;
+  esac
+
+
 
   case "$host_os" in
     mingw* | windows*)
@@ -20662,6 +20627,43 @@ fi
 
       ;;
   esac
+
+
+  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for LC_MESSAGES" >&5
+printf %s "checking for LC_MESSAGES... " >&6; }
+if test ${gt_cv_val_LC_MESSAGES+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+int
+main (void)
+{
+return LC_MESSAGES
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_val_LC_MESSAGES=yes
+else case e in #(
+  e) gt_cv_val_LC_MESSAGES=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gt_cv_val_LC_MESSAGES" >&5
+printf "%s\n" "$gt_cv_val_LC_MESSAGES" >&6; }
+  if test $gt_cv_val_LC_MESSAGES = yes; then
+
+printf "%s\n" "#define HAVE_LC_MESSAGES 1" >>confdefs.h
+
+  fi
 
 
 ac_fn_check_decl "$LINENO" "alarm" "ac_cv_have_decl_alarm" "$ac_includes_default" "$ac_c_undeclared_builtin_options" "CFLAGS"
@@ -24850,71 +24852,6 @@ fi
 
 
 
-
-
-
-
-
-
-
-
-
-
-          GL_GNULIB_LOCALENAME_ENVIRON=1
-
-
-
-
-
-printf "%s\n" "#define GNULIB_TEST_LOCALENAME_ENVIRON 1" >>confdefs.h
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-          GL_GNULIB_LOCALENAME_UNSAFE=1
-
-
-
-
-
-printf "%s\n" "#define GNULIB_TEST_LOCALENAME_UNSAFE 1" >>confdefs.h
-
-
-
-
-
-
-
-
-
-     if case "$host_os" in netbsd* | solaris*) true;; *) false;; esac; then
-  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE=
-  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE='#'
-else
-  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE='#'
-  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE=
-fi
-:
-    if test -z "${GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE}" && test -z "${GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE}"; then
-    GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE='#'
-    GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE='#'
-  fi
-
-
-
   if test "$gl_threads_api" = posix; then
     # OSF/1 4.0 and Mac OS X 10.1 lack the pthread_rwlock_t type and the
     # pthread_rwlock_* functions.
@@ -25386,130 +25323,18 @@ printf "%s\n" "#define GNULIB_TEST_PTHREAD_ONCE 1" >>confdefs.h
 
 
 
-
-
-
-    NEED_SETLOCALE_IMPROVED=0
-  case "$host_os" in
-            mingw* | windows*) NEED_SETLOCALE_IMPROVED=1 ;;
-            cygwin*)
-      case `uname -r` in
-        1.5.*) NEED_SETLOCALE_IMPROVED=1 ;;
-      esac
-      ;;
-        *)
-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether setlocale supports the C locale" >&5
-printf %s "checking whether setlocale supports the C locale... " >&6; }
-if test ${gl_cv_func_setlocale_works+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) if test "$cross_compiling" = yes
-then :
-  case "$host_os" in
-                               # Guess no on Android.
-              linux*-android*) gl_cv_func_setlocale_works="guessing no";;
-                               # Guess yes otherwise.
-              *)               gl_cv_func_setlocale_works="guessing yes";;
-            esac
-
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-#include <locale.h>
-int main ()
-{
-  return setlocale (LC_ALL, "C") == NULL;
-}
-_ACEOF
-if ac_fn_c_try_run "$LINENO"
-then :
-  gl_cv_func_setlocale_works=yes
-else case e in #(
-  e) gl_cv_func_setlocale_works=no ;;
-esac
-fi
-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
-  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-
-         ;;
-esac
-fi
-{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_setlocale_works" >&5
-printf "%s\n" "$gl_cv_func_setlocale_works" >&6; }
-      case "$gl_cv_func_setlocale_works" in
-        *yes) ;;
-        *) NEED_SETLOCALE_IMPROVED=1 ;;
-      esac
-      ;;
-  esac
-
-printf "%s\n" "#define NEED_SETLOCALE_IMPROVED $NEED_SETLOCALE_IMPROVED" >>confdefs.h
-
-
-    NEED_SETLOCALE_MTSAFE=0
-  if test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0; then
-    NEED_SETLOCALE_MTSAFE=1
-  fi
-
-printf "%s\n" "#define NEED_SETLOCALE_MTSAFE $NEED_SETLOCALE_MTSAFE" >>confdefs.h
-
-
-  if test $NEED_SETLOCALE_IMPROVED = 1 || test $NEED_SETLOCALE_MTSAFE = 1; then
-    REPLACE_SETLOCALE=1
-  fi
-
-  if test $NEED_SETLOCALE_MTSAFE = 1; then
-    SETLOCALE_LIB="$SETLOCALE_NULL_LIB"
-  else
-    SETLOCALE_LIB=
-  fi
-
-    LIB_SETLOCALE="$SETLOCALE_LIB"
-
-
-
-     if test $REPLACE_SETLOCALE = 1; then
-  GL_COND_OBJ_SETLOCALE_TRUE=
-  GL_COND_OBJ_SETLOCALE_FALSE='#'
+     if case "$host_os" in mingw* | windows*) true;; *) false;; esac; then
+  GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE=
+  GL_COND_OBJ_SETLOCALE_MESSAGES_FALSE='#'
 else
-  GL_COND_OBJ_SETLOCALE_TRUE='#'
-  GL_COND_OBJ_SETLOCALE_FALSE=
+  GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE='#'
+  GL_COND_OBJ_SETLOCALE_MESSAGES_FALSE=
 fi
 :
-    if test -z "${GL_COND_OBJ_SETLOCALE_TRUE}" && test -z "${GL_COND_OBJ_SETLOCALE_FALSE}"; then
-    GL_COND_OBJ_SETLOCALE_TRUE='#'
-    GL_COND_OBJ_SETLOCALE_FALSE='#'
+    if test -z "${GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE}" && test -z "${GL_COND_OBJ_SETLOCALE_MESSAGES_FALSE}"; then
+    GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE='#'
+    GL_COND_OBJ_SETLOCALE_MESSAGES_FALSE='#'
   fi
-
-  if test -z "$GL_COND_OBJ_SETLOCALE_TRUE"; then :
-
-
-        :
-
-
-fi
-
-
-
-
-
-
-
-
-
-          GL_GNULIB_SETLOCALE=1
-
-
-
-
-
-printf "%s\n" "#define GNULIB_TEST_SETLOCALE 1" >>confdefs.h
-
-
 
 
 
@@ -30066,6 +29891,34 @@ printf "%s\n" "#define HAVE_NEWLOCALE 1" >>confdefs.h
 
 
 
+
+
+
+
+
+
+
+
+
+
+    if test "$GL_GNULIB_LOCALENAME_ENVIRON" != 1; then
+        if test "$GL_GNULIB_LOCALENAME_ENVIRON" = 0; then
+      GL_GNULIB_LOCALENAME_ENVIRON=$gl_module_indicator_condition
+    else
+      GL_GNULIB_LOCALENAME_ENVIRON="($GL_GNULIB_LOCALENAME_ENVIRON || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_LOCALENAME_ENVIRON 1" >>confdefs.h
+
+
+
+
+
   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for newlocale" >&5
 printf %s "checking for newlocale... " >&6; }
 if test ${gl_cv_onwards_func_newlocale+y}
@@ -30134,6 +29987,55 @@ printf "%s\n" "#define HAVE_NEWLOCALE 1" >>confdefs.h
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    if test "$GL_GNULIB_LOCALENAME_UNSAFE" != 1; then
+        if test "$GL_GNULIB_LOCALENAME_UNSAFE" = 0; then
+      GL_GNULIB_LOCALENAME_UNSAFE=$gl_module_indicator_condition
+    else
+      GL_GNULIB_LOCALENAME_UNSAFE="($GL_GNULIB_LOCALENAME_UNSAFE || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_LOCALENAME_UNSAFE 1" >>confdefs.h
+
+
+
+
+
+
+
+
+
+     if case "$host_os" in netbsd* | solaris*) true;; *) false;; esac; then
+  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE=
+  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE='#'
+else
+  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE='#'
+  GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE}" && test -z "${GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE}"; then
+    GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE='#'
+    GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE='#'
+  fi
 
 
 
@@ -34125,6 +34027,139 @@ fi
 
 
 printf "%s\n" "#define GNULIB_TEST_SETENV 1" >>confdefs.h
+
+
+
+
+
+
+
+
+    NEED_SETLOCALE_IMPROVED=0
+  case "$host_os" in
+            mingw* | windows*) NEED_SETLOCALE_IMPROVED=1 ;;
+            cygwin*)
+      case `uname -r` in
+        1.5.*) NEED_SETLOCALE_IMPROVED=1 ;;
+      esac
+      ;;
+        *)
+      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether setlocale supports the C locale" >&5
+printf %s "checking whether setlocale supports the C locale... " >&6; }
+if test ${gl_cv_func_setlocale_works+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) if test "$cross_compiling" = yes
+then :
+  case "$host_os" in
+                               # Guess no on Android.
+              linux*-android*) gl_cv_func_setlocale_works="guessing no";;
+                               # Guess yes otherwise.
+              *)               gl_cv_func_setlocale_works="guessing yes";;
+            esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <locale.h>
+int main ()
+{
+  return setlocale (LC_ALL, "C") == NULL;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_setlocale_works=yes
+else case e in #(
+  e) gl_cv_func_setlocale_works=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+         ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_setlocale_works" >&5
+printf "%s\n" "$gl_cv_func_setlocale_works" >&6; }
+      case "$gl_cv_func_setlocale_works" in
+        *yes) ;;
+        *) NEED_SETLOCALE_IMPROVED=1 ;;
+      esac
+      ;;
+  esac
+
+printf "%s\n" "#define NEED_SETLOCALE_IMPROVED $NEED_SETLOCALE_IMPROVED" >>confdefs.h
+
+
+    NEED_SETLOCALE_MTSAFE=0
+  if test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0; then
+    NEED_SETLOCALE_MTSAFE=1
+  fi
+
+printf "%s\n" "#define NEED_SETLOCALE_MTSAFE $NEED_SETLOCALE_MTSAFE" >>confdefs.h
+
+
+  if test $NEED_SETLOCALE_IMPROVED = 1 || test $NEED_SETLOCALE_MTSAFE = 1; then
+    REPLACE_SETLOCALE=1
+  fi
+
+  if test $NEED_SETLOCALE_MTSAFE = 1; then
+    SETLOCALE_LIB="$SETLOCALE_NULL_LIB"
+  else
+    SETLOCALE_LIB=
+  fi
+
+    LIB_SETLOCALE="$SETLOCALE_LIB"
+
+
+
+     if test $REPLACE_SETLOCALE = 1; then
+  GL_COND_OBJ_SETLOCALE_TRUE=
+  GL_COND_OBJ_SETLOCALE_FALSE='#'
+else
+  GL_COND_OBJ_SETLOCALE_TRUE='#'
+  GL_COND_OBJ_SETLOCALE_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_SETLOCALE_TRUE}" && test -z "${GL_COND_OBJ_SETLOCALE_FALSE}"; then
+    GL_COND_OBJ_SETLOCALE_TRUE='#'
+    GL_COND_OBJ_SETLOCALE_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_SETLOCALE_TRUE"; then :
+
+
+        :
+
+
+fi
+
+
+
+
+
+
+
+
+
+    if test "$GL_GNULIB_SETLOCALE" != 1; then
+        if test "$GL_GNULIB_SETLOCALE" = 0; then
+      GL_GNULIB_SETLOCALE=$gl_module_indicator_condition
+    else
+      GL_GNULIB_SETLOCALE="($GL_GNULIB_SETLOCALE || $gl_module_indicator_condition)"
+    fi
+  fi
+
+
+
+
+
+printf "%s\n" "#define GNULIB_TEST_SETLOCALE 1" >>confdefs.h
 
 
 

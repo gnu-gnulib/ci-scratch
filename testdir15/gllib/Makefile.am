@@ -255,42 +255,6 @@ EXTRA_DIST += locale.in.h
 
 ## end   gnulib module locale-h
 
-## begin gnulib module localename
-
-libgnu_a_SOURCES += localename.c
-
-EXTRA_DIST += localename.h struniq.h
-
-## end   gnulib module localename
-
-## begin gnulib module localename-environ
-
-libgnu_a_SOURCES += localename-environ.c
-
-EXTRA_DIST += localename.h
-
-## end   gnulib module localename-environ
-
-## begin gnulib module localename-unsafe
-
-if !GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED
-libgnu_a_SOURCES += localename-unsafe.c
-endif
-
-EXTRA_DIST += localename.h
-
-## end   gnulib module localename-unsafe
-
-## begin gnulib module localename-unsafe-limited
-
-if GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED
-libgnu_a_SOURCES += localename-unsafe.c
-endif
-
-EXTRA_DIST += localename.h
-
-## end   gnulib module localename-unsafe-limited
-
 ## begin gnulib module lock
 
 libgnu_a_SOURCES += glthread/lock.h glthread/lock.c
@@ -489,13 +453,15 @@ EXTRA_DIST += sched.in.h
 
 ## end   gnulib module sched-h
 
-## begin gnulib module setlocale
+## begin gnulib module setlocale-messages
 
-if GL_COND_OBJ_SETLOCALE
-libgnu_a_SOURCES += setlocale.c
+if GL_COND_OBJ_SETLOCALE_MESSAGES
+libgnu_a_SOURCES += setlocale-messages.c
 endif
 
-## end   gnulib module setlocale
+EXTRA_DIST += setlocale-messages.h
+
+## end   gnulib module setlocale-messages
 
 ## begin gnulib module setlocale-null
 

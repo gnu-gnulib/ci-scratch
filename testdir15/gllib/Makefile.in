@@ -117,15 +117,13 @@ build_triplet = @build@
 host_triplet = @host@
 @GL_COND_OBJ_FREE_TRUE@am__append_1 = free.c
 @GL_COND_OBJ_GETLOCALENAME_L_TRUE@am__append_2 = getlocalename_l.c localename-table.c
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__append_3 = localename-unsafe.c
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__append_4 = localename-unsafe.c
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_5 = pthread-once.c
-@GL_COND_OBJ_SETLOCALE_TRUE@am__append_6 = setlocale.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_7 = setlocale-lock.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_8 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_9 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_10 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_11 = windows-rwlock.c
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_3 = pthread-once.c
+@GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE@am__append_4 = setlocale-messages.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_5 = setlocale-lock.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_6 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_7 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_8 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_9 = windows-rwlock.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -252,38 +250,35 @@ libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
 am__libgnu_a_SOURCES_DIST = free.c getlocalename_l.c \
-	localename-table.c localename.c localename-environ.c \
-	localename-unsafe.c glthread/lock.h glthread/lock.c \
-	glthread/once.h glthread/once.c pthread-once.c setlocale.c \
-	setlocale_null.c setlocale-lock.c setlocale_null-unlocked.c \
-	stdlib.c glthread/threadlib.c unistd.c windows-mutex.c \
-	windows-once.c windows-recmutex.c windows-rwlock.c
+	localename-table.c glthread/lock.h glthread/lock.c \
+	glthread/once.h glthread/once.c pthread-once.c \
+	setlocale-messages.c setlocale_null.c setlocale-lock.c \
+	setlocale_null-unlocked.c stdlib.c glthread/threadlib.c \
+	unistd.c windows-mutex.c windows-once.c windows-recmutex.c \
+	windows-rwlock.c
 @GL_COND_OBJ_FREE_TRUE@am__objects_1 = free.$(OBJEXT)
 @GL_COND_OBJ_GETLOCALENAME_L_TRUE@am__objects_2 =  \
 @GL_COND_OBJ_GETLOCALENAME_L_TRUE@	getlocalename_l.$(OBJEXT) \
 @GL_COND_OBJ_GETLOCALENAME_L_TRUE@	localename-table.$(OBJEXT)
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__objects_3 = localename-unsafe.$(OBJEXT)
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__objects_4 = localename-unsafe.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_5 = pthread-once.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_TRUE@am__objects_6 = setlocale.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_7 =  \
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_3 = pthread-once.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_MESSAGES_TRUE@am__objects_4 = setlocale-messages.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_5 =  \
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@	setlocale-lock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_8 =  \
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_6 =  \
 @GL_COND_OBJ_WINDOWS_MUTEX_TRUE@	windows-mutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_9 = windows-once.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_10 =  \
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_7 = windows-once.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_8 =  \
 @GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@	windows-recmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_11 =  \
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_9 =  \
 @GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@	windows-rwlock.$(OBJEXT)
 am_libgnu_a_OBJECTS = $(am__objects_1) $(am__objects_2) \
-	localename.$(OBJEXT) localename-environ.$(OBJEXT) \
-	$(am__objects_3) $(am__objects_4) glthread/lock.$(OBJEXT) \
-	glthread/once.$(OBJEXT) $(am__objects_5) $(am__objects_6) \
-	setlocale_null.$(OBJEXT) $(am__objects_7) \
-	setlocale_null-unlocked.$(OBJEXT) stdlib.$(OBJEXT) \
-	glthread/threadlib.$(OBJEXT) unistd.$(OBJEXT) $(am__objects_8) \
-	$(am__objects_9) $(am__objects_10) $(am__objects_11)
+	glthread/lock.$(OBJEXT) glthread/once.$(OBJEXT) \
+	$(am__objects_3) $(am__objects_4) setlocale_null.$(OBJEXT) \
+	$(am__objects_5) setlocale_null-unlocked.$(OBJEXT) \
+	stdlib.$(OBJEXT) glthread/threadlib.$(OBJEXT) unistd.$(OBJEXT) \
+	$(am__objects_6) $(am__objects_7) $(am__objects_8) \
+	$(am__objects_9)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -301,12 +296,9 @@ DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/free.Po \
-	./$(DEPDIR)/getlocalename_l.Po \
-	./$(DEPDIR)/localename-environ.Po \
-	./$(DEPDIR)/localename-table.Po \
-	./$(DEPDIR)/localename-unsafe.Po ./$(DEPDIR)/localename.Po \
+	./$(DEPDIR)/getlocalename_l.Po ./$(DEPDIR)/localename-table.Po \
 	./$(DEPDIR)/pthread-once.Po ./$(DEPDIR)/setlocale-lock.Po \
-	./$(DEPDIR)/setlocale.Po \
+	./$(DEPDIR)/setlocale-messages.Po \
 	./$(DEPDIR)/setlocale_null-unlocked.Po \
 	./$(DEPDIR)/setlocale_null.Po ./$(DEPDIR)/stdlib.Po \
 	./$(DEPDIR)/unistd.Po ./$(DEPDIR)/windows-mutex.Po \
@@ -2066,12 +2058,11 @@ noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
 EXTRA_DIST = fcntl.in.h flexmember.h localename-table.h struniq.h \
-	inttypes.in.h limits.in.h locale.in.h localename.h struniq.h \
-	localename.h localename.h localename.h pthread.in.h sched.in.h \
-	setlocale_null.h windows-initguard.h setlocale_null.h \
-	_Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h stddef.in.h \
-	stdint.in.h stdlib.in.h string.in.h sys_types.in.h \
-	thread-optim.h time.in.h unistd.in.h wchar.in.h \
+	inttypes.in.h limits.in.h locale.in.h pthread.in.h sched.in.h \
+	setlocale-messages.h setlocale_null.h windows-initguard.h \
+	setlocale_null.h _Noreturn.h arg-nonnull.h c++defs.h \
+	warn-on-use.h stddef.in.h stdint.in.h stdlib.in.h string.in.h \
+	sys_types.in.h thread-optim.h time.in.h unistd.in.h wchar.in.h \
 	windows-initguard.h windows-mutex.h windows-once.h \
 	windows-initguard.h windows-recmutex.h windows-initguard.h \
 	windows-rwlock.h
@@ -2094,13 +2085,12 @@ MAINTAINERCLEANFILES =
 # No GNU Make output.
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
-libgnu_a_SOURCES = $(am__append_1) $(am__append_2) localename.c \
-	localename-environ.c $(am__append_3) $(am__append_4) \
-	glthread/lock.h glthread/lock.c glthread/once.h \
-	glthread/once.c $(am__append_5) $(am__append_6) \
-	setlocale_null.c $(am__append_7) setlocale_null-unlocked.c \
-	stdlib.c glthread/threadlib.c unistd.c $(am__append_8) \
-	$(am__append_9) $(am__append_10) $(am__append_11)
+libgnu_a_SOURCES = $(am__append_1) $(am__append_2) glthread/lock.h \
+	glthread/lock.c glthread/once.h glthread/once.c \
+	$(am__append_3) $(am__append_4) setlocale_null.c \
+	$(am__append_5) setlocale_null-unlocked.c stdlib.c \
+	glthread/threadlib.c unistd.c $(am__append_6) $(am__append_7) \
+	$(am__append_8) $(am__append_9)
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES = 
@@ -2218,13 +2208,10 @@ distclean-compile:
 
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/free.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getlocalename_l.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-environ.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-table.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-unsafe.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pthread-once.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/setlocale-lock.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/setlocale.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/setlocale-messages.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/setlocale_null-unlocked.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/setlocale_null.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdlib.Po@am__quote@ # am--include-marker
@@ -2492,13 +2479,10 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l.Po
-	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/localename-table.Po
-	-rm -f ./$(DEPDIR)/localename-unsafe.Po
-	-rm -f ./$(DEPDIR)/localename.Po
 	-rm -f ./$(DEPDIR)/pthread-once.Po
 	-rm -f ./$(DEPDIR)/setlocale-lock.Po
-	-rm -f ./$(DEPDIR)/setlocale.Po
+	-rm -f ./$(DEPDIR)/setlocale-messages.Po
 	-rm -f ./$(DEPDIR)/setlocale_null-unlocked.Po
 	-rm -f ./$(DEPDIR)/setlocale_null.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
@@ -2557,13 +2541,10 @@ installcheck-am:
 maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l.Po
-	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/localename-table.Po
-	-rm -f ./$(DEPDIR)/localename-unsafe.Po
-	-rm -f ./$(DEPDIR)/localename.Po
 	-rm -f ./$(DEPDIR)/pthread-once.Po
 	-rm -f ./$(DEPDIR)/setlocale-lock.Po
-	-rm -f ./$(DEPDIR)/setlocale.Po
+	-rm -f ./$(DEPDIR)/setlocale-messages.Po
 	-rm -f ./$(DEPDIR)/setlocale_null-unlocked.Po
 	-rm -f ./$(DEPDIR)/setlocale_null.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po

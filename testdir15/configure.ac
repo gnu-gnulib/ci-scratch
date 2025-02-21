@@ -75,15 +75,6 @@ gl_m4_base='glm4'
   gl_LOCALE_H
   gl_LOCALE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_LOCALENAME_ENVIRON
-  gl_LOCALE_MODULE_INDICATOR([localename-environ])
-  gl_LOCALENAME_UNSAFE
-  gl_LOCALE_MODULE_INDICATOR([localename-unsafe])
-  gl_MUSL_LIBC
-  gl_LOCALENAME_UNSAFE_LIMITED
-  AC_REQUIRE([AC_CANONICAL_HOST])
-  gl_CONDITIONAL([GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED],
-                 [case "$host_os" in netbsd* | solaris*) true;; *) false;; esac])
   gl_LOCK
   gl_MODULE_INDICATOR([lock])
   gl_MULTIARCH
@@ -98,12 +89,9 @@ gl_m4_base='glm4'
   gl_SCHED_H
   gl_SCHED_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_FUNC_SETLOCALE
-  gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE], [test $REPLACE_SETLOCALE = 1])
-  AM_COND_IF([GL_COND_OBJ_SETLOCALE], [
-    gl_PREREQ_SETLOCALE
-  ])
-  gl_LOCALE_MODULE_INDICATOR([setlocale])
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE_MESSAGES],
+                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   gl_FUNC_SETLOCALE_NULL
   gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE_LOCK],
                  [test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0])
@@ -398,9 +386,18 @@ changequote([, ])dnl
   gl_SYS_SOCKET_MODULE_INDICATOR([listen])
   gl_MODULE_INDICATOR([listen])
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
+  gl_LOCALENAME_ENVIRON
+  gl_LOCALE_MODULE_INDICATOR([localename-environ])
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
   gl_MUSL_LIBC
   gl_WINDOWS_RC
+  gl_LOCALENAME_UNSAFE
+  gl_LOCALE_MODULE_INDICATOR([localename-unsafe])
+  gl_MUSL_LIBC
+  gl_LOCALENAME_UNSAFE_LIMITED
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  gl_CONDITIONAL([GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED],
+                 [case "$host_os" in netbsd* | solaris*) true;; *) false;; esac])
   AC_CHECK_HEADERS_ONCE([semaphore.h])
   AC_CHECK_DECLS_ONCE([alarm])
   AC_REQUIRE([gl_SEMAPHORE])
@@ -555,6 +552,12 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_SETENV],
                  [test $HAVE_SETENV = 0 || test $REPLACE_SETENV = 1])
   gl_STDLIB_MODULE_INDICATOR([setenv])
+  gl_FUNC_SETLOCALE
+  gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE], [test $REPLACE_SETLOCALE = 1])
+  AM_COND_IF([GL_COND_OBJ_SETLOCALE], [
+    gl_PREREQ_SETLOCALE
+  ])
+  gl_LOCALE_MODULE_INDICATOR([setlocale])
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
   gt_LOCALE_JA

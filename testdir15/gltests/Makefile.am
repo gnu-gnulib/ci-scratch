@@ -1079,6 +1079,22 @@ EXTRA_DIST += test-locale-h.c
 
 ## end   gnulib module locale-h-tests
 
+## begin gnulib module localename
+
+libtests_a_SOURCES += localename.c
+
+EXTRA_DIST += localename.h struniq.h
+
+## end   gnulib module localename
+
+## begin gnulib module localename-environ
+
+libtests_a_SOURCES += localename-environ.c
+
+EXTRA_DIST += localename.h
+
+## end   gnulib module localename-environ
+
 ## begin gnulib module localename-tests
 
 TESTS += test-localename
@@ -1096,6 +1112,26 @@ endif
 EXTRA_DIST += test-localename.c test-localename-w32utf8.sh test-localename-w32utf8.c windows-utf8.rc windows-utf8.manifest macros.h
 
 ## end   gnulib module localename-tests
+
+## begin gnulib module localename-unsafe
+
+if !GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED
+libtests_a_SOURCES += localename-unsafe.c
+endif
+
+EXTRA_DIST += localename.h
+
+## end   gnulib module localename-unsafe
+
+## begin gnulib module localename-unsafe-limited
+
+if GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED
+libtests_a_SOURCES += localename-unsafe.c
+endif
+
+EXTRA_DIST += localename.h
+
+## end   gnulib module localename-unsafe-limited
 
 ## begin gnulib module lock-tests
 
@@ -2010,6 +2046,14 @@ noinst_PROGRAMS += test-setenv
 EXTRA_DIST += test-setenv.c signature.h macros.h
 
 ## end   gnulib module setenv-tests
+
+## begin gnulib module setlocale
+
+if GL_COND_OBJ_SETLOCALE
+libtests_a_SOURCES += setlocale.c
+endif
+
+## end   gnulib module setlocale
 
 ## begin gnulib module setlocale-null-tests
 
