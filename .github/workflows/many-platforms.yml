@@ -780,6 +780,7 @@ jobs:
           options: -v ${{ github.workspace }}:/work
           run: |
             uname -a
+            cat /etc/os-release
             id
             env | LC_ALL=C sort
             pwd
