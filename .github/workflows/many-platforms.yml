@@ -775,8 +775,8 @@ jobs:
       - uses: actions/checkout@v4
       - uses: addnab/docker-run-action@v3
         with:
-          # A Docker container based on Debian 11.
-          image: tuxmake/clang-18:latest
+          # A Docker container based on Debian 12.
+          image: tuxmake/clang-20:latest
           options: -v ${{ github.workspace }}:/work
           run: |
             uname -a
