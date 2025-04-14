@@ -634,8 +634,8 @@ jobs:
       - run: echo "$PATH"
       - run: ls -l /usr/bin
       - run: |
-          wget -O ar-lib 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/ar-lib;hb=HEAD'
-          wget -O compile 'https://git.savannah.gnu.org/gitweb/?p=automake.git;a=blob_plain;f=lib/compile;hb=HEAD'
+          wget -O ar-lib "${gnulib_url_prefix}build-aux/ar-lib"
+          wget -O compile "${gnulib_url_prefix}build-aux/compile"
           chmod a+x ar-lib compile
       - name: Build in Cygwin
         env:
