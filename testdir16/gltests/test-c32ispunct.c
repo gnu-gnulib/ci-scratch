@@ -177,7 +177,7 @@ main (int argc, char *argv[])
           is = for_character ("\217\242\304", 3);
           ASSERT (is != 0);
         #endif
-        #if !(defined __FreeBSD__ || defined __DragonFly__)
+        #if !((defined __APPLE__ && defined __MACH__) || defined __FreeBSD__ || defined __DragonFly__)
           /* U+00D7 MULTIPLICATION SIGN */
           is = for_character ("\241\337", 2);
           ASSERT (is != 0);
