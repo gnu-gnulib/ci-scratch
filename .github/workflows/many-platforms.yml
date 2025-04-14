@@ -36,6 +36,12 @@ on:
 # Variables.
 env:
   package: gnulib
+  # URL suitable for 'git clone'
+  #gnulib_url: https://git.savannah.gnu.org/git/gnulib.git
+  gnulib_url: https://github.com/coreutils/gnulib.git
+  # URL prefix suitable for downloading individual files through 'wget'
+  #gnulib_url_prefix: https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;hb=HEAD;f=
+  gnulib_url_prefix: https://raw.githubusercontent.com/coreutils/gnulib/refs/heads/master/
 
 jobs:
   # We can run max. 20 "make check" jobs in parallel, max. 5 of them being on macOS.
@@ -215,7 +221,7 @@ jobs:
       # - run: brew install ...
       - run: |
           pwd
-          wget -O macos-compile 'https://git.savannah.gnu.org/gitweb/?p=gnulib.git;a=blob_plain;f=build-aux/macos-compile;hb=HEAD'
+          wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
           export LDFLAGS="-L$HOME/lib"
