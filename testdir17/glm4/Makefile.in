@@ -71,10 +71,6 @@ am__make_dryrun = (target_option=n; $(am__make_running_with_option))
 am__make_keepgoing = (target_option=k; $(am__make_running_with_option))
 am__rm_f = rm -f $(am__rm_f_notfound)
 am__rm_rf = rm -rf $(am__rm_f_notfound)
-pkgdatadir = $(datadir)/@PACKAGE@
-pkgincludedir = $(includedir)/@PACKAGE@
-pkglibdir = $(libdir)/@PACKAGE@
-pkglibexecdir = $(libexecdir)/@PACKAGE@
 am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd
 install_sh_DATA = $(install_sh) -c -m 644
 install_sh_PROGRAM = $(install_sh) -c
@@ -94,70 +90,126 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
-	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
-	$(top_srcdir)/glm4/assert_h.m4 $(top_srcdir)/glm4/btowc.m4 \
+	$(top_srcdir)/glm4/access.m4 $(top_srcdir)/glm4/alloca.m4 \
+	$(top_srcdir)/glm4/arpa_inet_h.m4 \
+	$(top_srcdir)/glm4/asm-underscore.m4 \
+	$(top_srcdir)/glm4/assert.m4 $(top_srcdir)/glm4/assert_h.m4 \
+	$(top_srcdir)/glm4/atomic-cas.m4 \
+	$(top_srcdir)/glm4/autobuild.m4 $(top_srcdir)/glm4/btowc.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
-	$(top_srcdir)/glm4/c-bool.m4 $(top_srcdir)/glm4/c32rtomb.m4 \
-	$(top_srcdir)/glm4/calloc.m4 $(top_srcdir)/glm4/close.m4 \
-	$(top_srcdir)/glm4/codeset.m4 $(top_srcdir)/glm4/ctype_h.m4 \
+	$(top_srcdir)/glm4/builtin-expect.m4 \
+	$(top_srcdir)/glm4/c-bool.m4 $(top_srcdir)/glm4/c-stack.m4 \
+	$(top_srcdir)/glm4/c32rtomb.m4 $(top_srcdir)/glm4/calloc.m4 \
+	$(top_srcdir)/glm4/canonicalize.m4 \
+	$(top_srcdir)/glm4/chdir-long.m4 \
+	$(top_srcdir)/glm4/clock_time.m4 $(top_srcdir)/glm4/close.m4 \
+	$(top_srcdir)/glm4/closedir.m4 $(top_srcdir)/glm4/codeset.m4 \
+	$(top_srcdir)/glm4/configmake.m4 $(top_srcdir)/glm4/creat.m4 \
+	$(top_srcdir)/glm4/ctype_h.m4 $(top_srcdir)/glm4/d-ino.m4 \
+	$(top_srcdir)/glm4/dirent_h.m4 $(top_srcdir)/glm4/dirfd.m4 \
 	$(top_srcdir)/glm4/double-slash-root.m4 \
-	$(top_srcdir)/glm4/dup2.m4 $(top_srcdir)/glm4/environ.m4 \
+	$(top_srcdir)/glm4/dup.m4 $(top_srcdir)/glm4/dup2.m4 \
+	$(top_srcdir)/glm4/eaccess.m4 $(top_srcdir)/glm4/environ.m4 \
 	$(top_srcdir)/glm4/errno_h.m4 $(top_srcdir)/glm4/error.m4 \
-	$(top_srcdir)/glm4/error_h.m4 $(top_srcdir)/glm4/exponentd.m4 \
+	$(top_srcdir)/glm4/error_h.m4 $(top_srcdir)/glm4/execute.m4 \
+	$(top_srcdir)/glm4/exponentd.m4 \
 	$(top_srcdir)/glm4/exponentf.m4 \
 	$(top_srcdir)/glm4/exponentl.m4 \
 	$(top_srcdir)/glm4/extensions-aix.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
 	$(top_srcdir)/glm4/extern-inline.m4 \
+	$(top_srcdir)/glm4/fatal-signal.m4 \
+	$(top_srcdir)/glm4/fchdir.m4 $(top_srcdir)/glm4/fclose.m4 \
 	$(top_srcdir)/glm4/fcntl-o.m4 $(top_srcdir)/glm4/fcntl.m4 \
 	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
+	$(top_srcdir)/glm4/fdopendir.m4 $(top_srcdir)/glm4/fflush.m4 \
+	$(top_srcdir)/glm4/filenamecat.m4 \
+	$(top_srcdir)/glm4/findprog-in.m4 \
+	$(top_srcdir)/glm4/findprog.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
-	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/ftruncate.m4 \
+	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpending.m4 \
+	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/fpurge.m4 \
+	$(top_srcdir)/glm4/freadahead.m4 \
+	$(top_srcdir)/glm4/freading.m4 $(top_srcdir)/glm4/free.m4 \
+	$(top_srcdir)/glm4/freopen.m4 $(top_srcdir)/glm4/frexp.m4 \
+	$(top_srcdir)/glm4/frexpl.m4 $(top_srcdir)/glm4/fseek.m4 \
+	$(top_srcdir)/glm4/fseeko.m4 $(top_srcdir)/glm4/fseterr.m4 \
+	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/fstatat.m4 \
+	$(top_srcdir)/glm4/ftell.m4 $(top_srcdir)/glm4/ftello.m4 \
+	$(top_srcdir)/glm4/ftruncate.m4 \
+	$(top_srcdir)/glm4/getcwd-abort-bug.m4 \
+	$(top_srcdir)/glm4/getcwd-path-max.m4 \
 	$(top_srcdir)/glm4/getcwd.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
+	$(top_srcdir)/glm4/getopt.m4 $(top_srcdir)/glm4/getpagesize.m4 \
 	$(top_srcdir)/glm4/getprogname.m4 \
+	$(top_srcdir)/glm4/getrandom.m4 \
 	$(top_srcdir)/glm4/gettimeofday.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 \
+	$(top_srcdir)/glm4/host-cpu-c-abi.m4 \
+	$(top_srcdir)/glm4/iconv.m4 $(top_srcdir)/glm4/iconv_h.m4 \
+	$(top_srcdir)/glm4/iconv_open.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
-	$(top_srcdir)/glm4/inet_pton.m4 \
+	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inline.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
-	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ioctl.m4 \
+	$(top_srcdir)/glm4/intmax_t.m4 $(top_srcdir)/glm4/inttostr.m4 \
+	$(top_srcdir)/glm4/inttypes.m4 \
+	$(top_srcdir)/glm4/inttypes_h.m4 $(top_srcdir)/glm4/ioctl.m4 \
 	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isnand.m4 \
 	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
-	$(top_srcdir)/glm4/iswblank.m4 $(top_srcdir)/glm4/iswdigit.m4 \
-	$(top_srcdir)/glm4/iswpunct.m4 $(top_srcdir)/glm4/iswxdigit.m4 \
+	$(top_srcdir)/glm4/iswblank.m4 $(top_srcdir)/glm4/iswctype.m4 \
+	$(top_srcdir)/glm4/iswdigit.m4 $(top_srcdir)/glm4/iswpunct.m4 \
+	$(top_srcdir)/glm4/iswxdigit.m4 \
+	$(top_srcdir)/glm4/langinfo_h.m4 \
 	$(top_srcdir)/glm4/largefile.m4 \
-	$(top_srcdir)/glm4/lcmessage.m4 \
+	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/ldexp.m4 \
+	$(top_srcdir)/glm4/ldexpl.m4 $(top_srcdir)/glm4/lib-ld.m4 \
+	$(top_srcdir)/glm4/lib-link.m4 \
+	$(top_srcdir)/glm4/lib-prefix.m4 \
+	$(top_srcdir)/glm4/libsigsegv.m4 \
 	$(top_srcdir)/glm4/libunistring-base.m4 \
-	$(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/limits-h.m4 $(top_srcdir)/glm4/link.m4 \
 	$(top_srcdir)/glm4/localcharset.m4 \
 	$(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale-fr.m4 \
 	$(top_srcdir)/glm4/locale-ja.m4 \
+	$(top_srcdir)/glm4/locale-tr.m4 \
 	$(top_srcdir)/glm4/locale-zh.m4 $(top_srcdir)/glm4/locale_h.m4 \
+	$(top_srcdir)/glm4/localeconv.m4 \
 	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
-	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
-	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
-	$(top_srcdir)/glm4/mbchar.m4 $(top_srcdir)/glm4/mbiter.m4 \
-	$(top_srcdir)/glm4/mbrtoc32.m4 $(top_srcdir)/glm4/mbrtowc.m4 \
-	$(top_srcdir)/glm4/mbsinit.m4 $(top_srcdir)/glm4/mbstate_t.m4 \
+	$(top_srcdir)/glm4/lseek.m4 $(top_srcdir)/glm4/lstat.m4 \
+	$(top_srcdir)/glm4/malloc.m4 $(top_srcdir)/glm4/malloca.m4 \
+	$(top_srcdir)/glm4/math_h.m4 $(top_srcdir)/glm4/mbchar.m4 \
+	$(top_srcdir)/glm4/mbiter.m4 $(top_srcdir)/glm4/mbrtoc32.m4 \
+	$(top_srcdir)/glm4/mbrtowc.m4 $(top_srcdir)/glm4/mbsinit.m4 \
+	$(top_srcdir)/glm4/mbslen.m4 $(top_srcdir)/glm4/mbstate_t.m4 \
 	$(top_srcdir)/glm4/mbtowc.m4 $(top_srcdir)/glm4/memchr.m4 \
-	$(top_srcdir)/glm4/mempcpy.m4 $(top_srcdir)/glm4/minmax.m4 \
+	$(top_srcdir)/glm4/mempcpy.m4 $(top_srcdir)/glm4/memrchr.m4 \
+	$(top_srcdir)/glm4/memset_explicit.m4 \
+	$(top_srcdir)/glm4/minmax.m4 $(top_srcdir)/glm4/mkdir.m4 \
+	$(top_srcdir)/glm4/mkdtemp.m4 $(top_srcdir)/glm4/mkstemp.m4 \
 	$(top_srcdir)/glm4/mmap-anon.m4 $(top_srcdir)/glm4/mode_t.m4 \
 	$(top_srcdir)/glm4/msvc-inval.m4 \
 	$(top_srcdir)/glm4/msvc-nothrow.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
+	$(top_srcdir)/glm4/nl_langinfo.m4 \
+	$(top_srcdir)/glm4/nocrash.m4 $(top_srcdir)/glm4/obstack.m4 \
 	$(top_srcdir)/glm4/off64_t.m4 $(top_srcdir)/glm4/off_t.m4 \
 	$(top_srcdir)/glm4/once.m4 $(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
+	$(top_srcdir)/glm4/openat.m4 $(top_srcdir)/glm4/opendir.m4 \
 	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/perror.m4 \
-	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pselect.m4 \
+	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pipe2.m4 \
+	$(top_srcdir)/glm4/posix_spawn.m4 \
+	$(top_srcdir)/glm4/posix_spawn_faction_addchdir.m4 \
+	$(top_srcdir)/glm4/printf-frexp.m4 \
+	$(top_srcdir)/glm4/printf-frexpl.m4 \
+	$(top_srcdir)/glm4/printf.m4 $(top_srcdir)/glm4/pselect.m4 \
 	$(top_srcdir)/glm4/pthread-cond.m4 \
 	$(top_srcdir)/glm4/pthread-mutex.m4 \
 	$(top_srcdir)/glm4/pthread-once.m4 \
@@ -168,48 +220,82 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/pthread_mutex_timedlock.m4 \
 	$(top_srcdir)/glm4/pthread_rwlock_rdlock.m4 \
 	$(top_srcdir)/glm4/pthread_sigmask.m4 \
-	$(top_srcdir)/glm4/putenv.m4 $(top_srcdir)/glm4/raise.m4 \
-	$(top_srcdir)/glm4/random.m4 $(top_srcdir)/glm4/random_r.m4 \
-	$(top_srcdir)/glm4/realloc.m4 \
-	$(top_srcdir)/glm4/reallocarray.m4 \
+	$(top_srcdir)/glm4/putenv.m4 $(top_srcdir)/glm4/quotearg.m4 \
+	$(top_srcdir)/glm4/raise.m4 $(top_srcdir)/glm4/random.m4 \
+	$(top_srcdir)/glm4/random_r.m4 $(top_srcdir)/glm4/rawmemchr.m4 \
+	$(top_srcdir)/glm4/read-file.m4 $(top_srcdir)/glm4/readdir.m4 \
+	$(top_srcdir)/glm4/readlink.m4 $(top_srcdir)/glm4/realloc.m4 \
+	$(top_srcdir)/glm4/reallocarray.m4 $(top_srcdir)/glm4/regex.m4 \
+	$(top_srcdir)/glm4/rename.m4 $(top_srcdir)/glm4/rewinddir.m4 \
+	$(top_srcdir)/glm4/rmdir.m4 $(top_srcdir)/glm4/save-cwd.m4 \
 	$(top_srcdir)/glm4/sched_h.m4 \
-	$(top_srcdir)/glm4/sched_yield.m4 $(top_srcdir)/glm4/select.m4 \
-	$(top_srcdir)/glm4/semaphore.m4 $(top_srcdir)/glm4/setenv.m4 \
-	$(top_srcdir)/glm4/setlocale.m4 \
+	$(top_srcdir)/glm4/sched_yield.m4 \
+	$(top_srcdir)/glm4/secure_getenv.m4 \
+	$(top_srcdir)/glm4/select.m4 $(top_srcdir)/glm4/semaphore.m4 \
+	$(top_srcdir)/glm4/setenv.m4 $(top_srcdir)/glm4/setlocale.m4 \
 	$(top_srcdir)/glm4/setlocale_null.m4 \
+	$(top_srcdir)/glm4/sh-filename.m4 \
+	$(top_srcdir)/glm4/sig_atomic_t.m4 \
+	$(top_srcdir)/glm4/sigaction.m4 \
+	$(top_srcdir)/glm4/sigaltstack.m4 \
 	$(top_srcdir)/glm4/signal_h.m4 \
 	$(top_srcdir)/glm4/signalblocking.m4 \
-	$(top_srcdir)/glm4/signbit.m4 $(top_srcdir)/glm4/sleep.m4 \
-	$(top_srcdir)/glm4/snan.m4 $(top_srcdir)/glm4/socketlib.m4 \
+	$(top_srcdir)/glm4/signbit.m4 $(top_srcdir)/glm4/sigpipe.m4 \
+	$(top_srcdir)/glm4/sigsegv.m4 $(top_srcdir)/glm4/size_max.m4 \
+	$(top_srcdir)/glm4/sleep.m4 $(top_srcdir)/glm4/snan.m4 \
+	$(top_srcdir)/glm4/snprintf.m4 $(top_srcdir)/glm4/socketlib.m4 \
 	$(top_srcdir)/glm4/sockets.m4 $(top_srcdir)/glm4/socklen.m4 \
-	$(top_srcdir)/glm4/sockpfaf.m4 $(top_srcdir)/glm4/ssize_t.m4 \
+	$(top_srcdir)/glm4/sockpfaf.m4 $(top_srcdir)/glm4/sparcv8+.m4 \
+	$(top_srcdir)/glm4/spawn-pipe.m4 $(top_srcdir)/glm4/spawn_h.m4 \
+	$(top_srcdir)/glm4/ssize_t.m4 \
+	$(top_srcdir)/glm4/stack-direction.m4 \
 	$(top_srcdir)/glm4/stat-time.m4 $(top_srcdir)/glm4/stat.m4 \
-	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stddef_h.m4 \
-	$(top_srcdir)/glm4/stdint.m4 $(top_srcdir)/glm4/stdio_h.m4 \
+	$(top_srcdir)/glm4/stdalign.m4 $(top_srcdir)/glm4/stdarg.m4 \
+	$(top_srcdir)/glm4/stddef_h.m4 $(top_srcdir)/glm4/stdint.m4 \
+	$(top_srcdir)/glm4/stdint_h.m4 $(top_srcdir)/glm4/stdio_h.m4 \
 	$(top_srcdir)/glm4/stdlib_h.m4 $(top_srcdir)/glm4/stpcpy.m4 \
+	$(top_srcdir)/glm4/strchrnul.m4 $(top_srcdir)/glm4/strdup.m4 \
 	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
-	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/symlink.m4 \
+	$(top_srcdir)/glm4/strerrorname_np.m4 \
+	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strnlen.m4 \
+	$(top_srcdir)/glm4/strsignal.m4 $(top_srcdir)/glm4/strstr.m4 \
+	$(top_srcdir)/glm4/strtod.m4 $(top_srcdir)/glm4/symlink.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
+	$(top_srcdir)/glm4/sys_random_h.m4 \
 	$(top_srcdir)/glm4/sys_select_h.m4 \
 	$(top_srcdir)/glm4/sys_socket_h.m4 \
 	$(top_srcdir)/glm4/sys_stat_h.m4 \
 	$(top_srcdir)/glm4/sys_time_h.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
-	$(top_srcdir)/glm4/sys_uio_h.m4 $(top_srcdir)/glm4/thread.m4 \
+	$(top_srcdir)/glm4/sys_uio_h.m4 \
+	$(top_srcdir)/glm4/sys_wait_h.m4 \
+	$(top_srcdir)/glm4/tempname.m4 $(top_srcdir)/glm4/thread.m4 \
 	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time.m4 \
-	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/uchar_h.m4 \
-	$(top_srcdir)/glm4/unicase_h.m4 \
+	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/tls.m4 \
+	$(top_srcdir)/glm4/tmpdir.m4 $(top_srcdir)/glm4/uchar_h.m4 \
+	$(top_srcdir)/glm4/ungetc.m4 $(top_srcdir)/glm4/unicase_h.m4 \
 	$(top_srcdir)/glm4/unictype_h.m4 \
-	$(top_srcdir)/glm4/uninorm_h.m4 $(top_srcdir)/glm4/unistd_h.m4 \
-	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/visibility.m4 \
+	$(top_srcdir)/glm4/uninorm_h.m4 \
+	$(top_srcdir)/glm4/unistd-safer.m4 \
+	$(top_srcdir)/glm4/unistd_h.m4 \
+	$(top_srcdir)/glm4/unlocked-io.m4 $(top_srcdir)/glm4/usleep.m4 \
+	$(top_srcdir)/glm4/vasnprintf.m4 \
+	$(top_srcdir)/glm4/vasprintf-posix.m4 \
+	$(top_srcdir)/glm4/vasprintf.m4 \
+	$(top_srcdir)/glm4/version-etc.m4 \
+	$(top_srcdir)/glm4/visibility.m4 \
+	$(top_srcdir)/glm4/wait-process.m4 \
+	$(top_srcdir)/glm4/waitpid.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wcrtomb.m4 \
 	$(top_srcdir)/glm4/wctob.m4 $(top_srcdir)/glm4/wctomb.m4 \
-	$(top_srcdir)/glm4/wctype_h.m4 $(top_srcdir)/glm4/wcwidth.m4 \
-	$(top_srcdir)/glm4/windows-rc.m4 $(top_srcdir)/glm4/wint_t.m4 \
+	$(top_srcdir)/glm4/wctype.m4 $(top_srcdir)/glm4/wctype_h.m4 \
+	$(top_srcdir)/glm4/wcwidth.m4 $(top_srcdir)/glm4/windows-rc.m4 \
+	$(top_srcdir)/glm4/wint_t.m4 $(top_srcdir)/glm4/write.m4 \
 	$(top_srcdir)/glm4/xalloc.m4 $(top_srcdir)/glm4/xgetcwd.m4 \
+	$(top_srcdir)/glm4/xsize.m4 $(top_srcdir)/glm4/xvasprintf.m4 \
 	$(top_srcdir)/glm4/yield.m4 $(top_srcdir)/glm4/zzgnulib.m4 \
 	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
@@ -241,6 +327,10 @@ am__can_run_installinfo = \
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/Makefile.in
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+pkgdatadir = @pkgdatadir@
+pkgincludedir = @pkgincludedir@
+pkglibdir = @pkglibdir@
+pkglibexecdir = @pkglibexecdir@
 ACLOCAL = @ACLOCAL@
 ALLOCA = @ALLOCA@
 ALLOCA_H = @ALLOCA_H@
@@ -249,6 +339,7 @@ AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@
 APPLE_UNIVERSAL_BUILD = @APPLE_UNIVERSAL_BUILD@
 AR = @AR@
 ARFLAGS = @ARFLAGS@
+ASM_SYMBOL_PREFIX = @ASM_SYMBOL_PREFIX@
 ASSERT_H = @ASSERT_H@
 AUTOCONF = @AUTOCONF@
 AUTOHEADER = @AUTOHEADER@
@@ -264,6 +355,8 @@ CC = @CC@
 CCDEPMODE = @CCDEPMODE@
 CFLAGS = @CFLAGS@
 CFLAG_VISIBILITY = @CFLAG_VISIBILITY@
+CLOCK_TIME_LIB = @CLOCK_TIME_LIB@
+CONFIG_INCLUDE = @CONFIG_INCLUDE@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CSCOPE = @CSCOPE@
@@ -273,9 +366,11 @@ CXX_HAS_UCHAR_TYPES = @CXX_HAS_UCHAR_TYPES@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
 DEPDIR = @DEPDIR@
+DIR_HAS_FD_MEMBER = @DIR_HAS_FD_MEMBER@
 ECHO_C = @ECHO_C@
 ECHO_N = @ECHO_N@
 ECHO_T = @ECHO_T@
+EGREP = @EGREP@
 EMULTIHOP_HIDDEN = @EMULTIHOP_HIDDEN@
 EMULTIHOP_VALUE = @EMULTIHOP_VALUE@
 ENOLINK_HIDDEN = @ENOLINK_HIDDEN@
@@ -287,6 +382,9 @@ ETAGS = @ETAGS@
 EXEEXT = @EXEEXT@
 FLOAT_H = @FLOAT_H@
 GETLOCALENAME_L_LIB = @GETLOCALENAME_L_LIB@
+GETOPT_CDEFS_H = @GETOPT_CDEFS_H@
+GETOPT_H = @GETOPT_H@
+GETRANDOM_LIB = @GETRANDOM_LIB@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
 GL_CXXFLAG_ALLOW_WARNINGS = @GL_CXXFLAG_ALLOW_WARNINGS@
 GL_GNULIB_ABORT_DEBUG = @GL_GNULIB_ABORT_DEBUG@
@@ -296,6 +394,7 @@ GL_GNULIB_ACCESS = @GL_GNULIB_ACCESS@
 GL_GNULIB_ACOSF = @GL_GNULIB_ACOSF@
 GL_GNULIB_ACOSL = @GL_GNULIB_ACOSL@
 GL_GNULIB_ALIGNED_ALLOC = @GL_GNULIB_ALIGNED_ALLOC@
+GL_GNULIB_ALPHASORT = @GL_GNULIB_ALPHASORT@
 GL_GNULIB_ASINF = @GL_GNULIB_ASINF@
 GL_GNULIB_ASINL = @GL_GNULIB_ASINL@
 GL_GNULIB_ATAN2F = @GL_GNULIB_ATAN2F@
@@ -343,6 +442,7 @@ GL_GNULIB_CHDIR = @GL_GNULIB_CHDIR@
 GL_GNULIB_CHMOD = @GL_GNULIB_CHMOD@
 GL_GNULIB_CHOWN = @GL_GNULIB_CHOWN@
 GL_GNULIB_CLOSE = @GL_GNULIB_CLOSE@
+GL_GNULIB_CLOSEDIR = @GL_GNULIB_CLOSEDIR@
 GL_GNULIB_CONNECT = @GL_GNULIB_CONNECT@
 GL_GNULIB_COPYSIGN = @GL_GNULIB_COPYSIGN@
 GL_GNULIB_COPYSIGNF = @GL_GNULIB_COPYSIGNF@
@@ -353,6 +453,7 @@ GL_GNULIB_COSHF = @GL_GNULIB_COSHF@
 GL_GNULIB_COSL = @GL_GNULIB_COSL@
 GL_GNULIB_CREAT = @GL_GNULIB_CREAT@
 GL_GNULIB_CTIME = @GL_GNULIB_CTIME@
+GL_GNULIB_DIRFD = @GL_GNULIB_DIRFD@
 GL_GNULIB_DPRINTF = @GL_GNULIB_DPRINTF@
 GL_GNULIB_DUP = @GL_GNULIB_DUP@
 GL_GNULIB_DUP2 = @GL_GNULIB_DUP2@
@@ -387,6 +488,7 @@ GL_GNULIB_FCLOSE = @GL_GNULIB_FCLOSE@
 GL_GNULIB_FCNTL = @GL_GNULIB_FCNTL@
 GL_GNULIB_FDATASYNC = @GL_GNULIB_FDATASYNC@
 GL_GNULIB_FDOPEN = @GL_GNULIB_FDOPEN@
+GL_GNULIB_FDOPENDIR = @GL_GNULIB_FDOPENDIR@
 GL_GNULIB_FFLUSH = @GL_GNULIB_FFLUSH@
 GL_GNULIB_FFSL = @GL_GNULIB_FFSL@
 GL_GNULIB_FFSLL = @GL_GNULIB_FFSLL@
@@ -451,6 +553,7 @@ GL_GNULIB_GETPAYLOADF = @GL_GNULIB_GETPAYLOADF@
 GL_GNULIB_GETPAYLOADL = @GL_GNULIB_GETPAYLOADL@
 GL_GNULIB_GETPEERNAME = @GL_GNULIB_GETPEERNAME@
 GL_GNULIB_GETPROGNAME = @GL_GNULIB_GETPROGNAME@
+GL_GNULIB_GETRANDOM = @GL_GNULIB_GETRANDOM@
 GL_GNULIB_GETSOCKNAME = @GL_GNULIB_GETSOCKNAME@
 GL_GNULIB_GETSOCKOPT = @GL_GNULIB_GETSOCKOPT@
 GL_GNULIB_GETSUBOPT = @GL_GNULIB_GETSUBOPT@
@@ -462,6 +565,7 @@ GL_GNULIB_GROUP_MEMBER = @GL_GNULIB_GROUP_MEMBER@
 GL_GNULIB_HYPOT = @GL_GNULIB_HYPOT@
 GL_GNULIB_HYPOTF = @GL_GNULIB_HYPOTF@
 GL_GNULIB_HYPOTL = @GL_GNULIB_HYPOTL@
+GL_GNULIB_ICONV = @GL_GNULIB_ICONV@
 GL_GNULIB_ILOGB = @GL_GNULIB_ILOGB@
 GL_GNULIB_ILOGBF = @GL_GNULIB_ILOGBF@
 GL_GNULIB_ILOGBL = @GL_GNULIB_ILOGBL@
@@ -626,12 +730,14 @@ GL_GNULIB_MODFF = @GL_GNULIB_MODFF@
 GL_GNULIB_MODFL = @GL_GNULIB_MODFL@
 GL_GNULIB_NANOSLEEP = @GL_GNULIB_NANOSLEEP@
 GL_GNULIB_NEWLOCALE = @GL_GNULIB_NEWLOCALE@
+GL_GNULIB_NL_LANGINFO = @GL_GNULIB_NL_LANGINFO@
 GL_GNULIB_NONBLOCKING = @GL_GNULIB_NONBLOCKING@
 GL_GNULIB_OBSTACK_PRINTF = @GL_GNULIB_OBSTACK_PRINTF@
 GL_GNULIB_OBSTACK_PRINTF_POSIX = @GL_GNULIB_OBSTACK_PRINTF_POSIX@
 GL_GNULIB_OBSTACK_ZPRINTF = @GL_GNULIB_OBSTACK_ZPRINTF@
 GL_GNULIB_OPEN = @GL_GNULIB_OPEN@
 GL_GNULIB_OPENAT = @GL_GNULIB_OPENAT@
+GL_GNULIB_OPENDIR = @GL_GNULIB_OPENDIR@
 GL_GNULIB_OVERRIDES_STRUCT_STAT = @GL_GNULIB_OVERRIDES_STRUCT_STAT@
 GL_GNULIB_PCLOSE = @GL_GNULIB_PCLOSE@
 GL_GNULIB_PERROR = @GL_GNULIB_PERROR@
@@ -640,6 +746,29 @@ GL_GNULIB_PIPE2 = @GL_GNULIB_PIPE2@
 GL_GNULIB_POPEN = @GL_GNULIB_POPEN@
 GL_GNULIB_POSIX_MEMALIGN = @GL_GNULIB_POSIX_MEMALIGN@
 GL_GNULIB_POSIX_OPENPT = @GL_GNULIB_POSIX_OPENPT@
+GL_GNULIB_POSIX_SPAWN = @GL_GNULIB_POSIX_SPAWN@
+GL_GNULIB_POSIX_SPAWNATTR_DESTROY = @GL_GNULIB_POSIX_SPAWNATTR_DESTROY@
+GL_GNULIB_POSIX_SPAWNATTR_GETFLAGS = @GL_GNULIB_POSIX_SPAWNATTR_GETFLAGS@
+GL_GNULIB_POSIX_SPAWNATTR_GETPGROUP = @GL_GNULIB_POSIX_SPAWNATTR_GETPGROUP@
+GL_GNULIB_POSIX_SPAWNATTR_GETSCHEDPARAM = @GL_GNULIB_POSIX_SPAWNATTR_GETSCHEDPARAM@
+GL_GNULIB_POSIX_SPAWNATTR_GETSCHEDPOLICY = @GL_GNULIB_POSIX_SPAWNATTR_GETSCHEDPOLICY@
+GL_GNULIB_POSIX_SPAWNATTR_GETSIGDEFAULT = @GL_GNULIB_POSIX_SPAWNATTR_GETSIGDEFAULT@
+GL_GNULIB_POSIX_SPAWNATTR_GETSIGMASK = @GL_GNULIB_POSIX_SPAWNATTR_GETSIGMASK@
+GL_GNULIB_POSIX_SPAWNATTR_INIT = @GL_GNULIB_POSIX_SPAWNATTR_INIT@
+GL_GNULIB_POSIX_SPAWNATTR_SETFLAGS = @GL_GNULIB_POSIX_SPAWNATTR_SETFLAGS@
+GL_GNULIB_POSIX_SPAWNATTR_SETPGROUP = @GL_GNULIB_POSIX_SPAWNATTR_SETPGROUP@
+GL_GNULIB_POSIX_SPAWNATTR_SETSCHEDPARAM = @GL_GNULIB_POSIX_SPAWNATTR_SETSCHEDPARAM@
+GL_GNULIB_POSIX_SPAWNATTR_SETSCHEDPOLICY = @GL_GNULIB_POSIX_SPAWNATTR_SETSCHEDPOLICY@
+GL_GNULIB_POSIX_SPAWNATTR_SETSIGDEFAULT = @GL_GNULIB_POSIX_SPAWNATTR_SETSIGDEFAULT@
+GL_GNULIB_POSIX_SPAWNATTR_SETSIGMASK = @GL_GNULIB_POSIX_SPAWNATTR_SETSIGMASK@
+GL_GNULIB_POSIX_SPAWNP = @GL_GNULIB_POSIX_SPAWNP@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2 = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_DESTROY = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_DESTROY@
+GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_INIT = @GL_GNULIB_POSIX_SPAWN_FILE_ACTIONS_INIT@
 GL_GNULIB_POWF = @GL_GNULIB_POWF@
 GL_GNULIB_PREAD = @GL_GNULIB_PREAD@
 GL_GNULIB_PRINTF = @GL_GNULIB_PRINTF@
@@ -668,6 +797,7 @@ GL_GNULIB_RANDOM = @GL_GNULIB_RANDOM@
 GL_GNULIB_RANDOM_R = @GL_GNULIB_RANDOM_R@
 GL_GNULIB_RAWMEMCHR = @GL_GNULIB_RAWMEMCHR@
 GL_GNULIB_READ = @GL_GNULIB_READ@
+GL_GNULIB_READDIR = @GL_GNULIB_READDIR@
 GL_GNULIB_READLINK = @GL_GNULIB_READLINK@
 GL_GNULIB_READLINKAT = @GL_GNULIB_READLINKAT@
 GL_GNULIB_REALLOCARRAY = @GL_GNULIB_REALLOCARRAY@
@@ -681,6 +811,7 @@ GL_GNULIB_REMAINDERL = @GL_GNULIB_REMAINDERL@
 GL_GNULIB_REMOVE = @GL_GNULIB_REMOVE@
 GL_GNULIB_RENAME = @GL_GNULIB_RENAME@
 GL_GNULIB_RENAMEAT = @GL_GNULIB_RENAMEAT@
+GL_GNULIB_REWINDDIR = @GL_GNULIB_REWINDDIR@
 GL_GNULIB_RINT = @GL_GNULIB_RINT@
 GL_GNULIB_RINTF = @GL_GNULIB_RINTF@
 GL_GNULIB_RINTL = @GL_GNULIB_RINTL@
@@ -689,6 +820,7 @@ GL_GNULIB_ROUND = @GL_GNULIB_ROUND@
 GL_GNULIB_ROUNDF = @GL_GNULIB_ROUNDF@
 GL_GNULIB_ROUNDL = @GL_GNULIB_ROUNDL@
 GL_GNULIB_RPMATCH = @GL_GNULIB_RPMATCH@
+GL_GNULIB_SCANDIR = @GL_GNULIB_SCANDIR@
 GL_GNULIB_SCANF = @GL_GNULIB_SCANF@
 GL_GNULIB_SCHED_YIELD = @GL_GNULIB_SCHED_YIELD@
 GL_GNULIB_SECURE_GETENV = @GL_GNULIB_SECURE_GETENV@
@@ -956,6 +1088,7 @@ GL_GNULIB_VSNZPRINTF = @GL_GNULIB_VSNZPRINTF@
 GL_GNULIB_VSPRINTF_POSIX = @GL_GNULIB_VSPRINTF_POSIX@
 GL_GNULIB_VSZPRINTF = @GL_GNULIB_VSZPRINTF@
 GL_GNULIB_VZPRINTF = @GL_GNULIB_VZPRINTF@
+GL_GNULIB_WAITPID = @GL_GNULIB_WAITPID@
 GL_GNULIB_WCPCPY = @GL_GNULIB_WCPCPY@
 GL_GNULIB_WCPNCPY = @GL_GNULIB_WCPNCPY@
 GL_GNULIB_WCRTOMB = @GL_GNULIB_WCRTOMB@
@@ -1005,12 +1138,14 @@ GNULIBHEADERS_OVERRIDE_WINT_T = @GNULIBHEADERS_OVERRIDE_WINT_T@
 GNULIB_LOCALEDIR = @GNULIB_LOCALEDIR@
 GNULIB_LOCALEDIR_c = @GNULIB_LOCALEDIR_c@
 GNULIB_LOCALEDIR_c_make = @GNULIB_LOCALEDIR_c_make@
+GREP = @GREP@
 HARD_LOCALE_LIB = @HARD_LOCALE_LIB@
 HAVE_ACCEPT4 = @HAVE_ACCEPT4@
 HAVE_ACOSF = @HAVE_ACOSF@
 HAVE_ACOSL = @HAVE_ACOSL@
 HAVE_ALIGNED_ALLOC = @HAVE_ALIGNED_ALLOC@
 HAVE_ALLOCA_H = @HAVE_ALLOCA_H@
+HAVE_ALPHASORT = @HAVE_ALPHASORT@
 HAVE_ARPA_INET_H = @HAVE_ARPA_INET_H@
 HAVE_ASINF = @HAVE_ASINF@
 HAVE_ASINL = @HAVE_ASINL@
@@ -1028,6 +1163,7 @@ HAVE_CBRT = @HAVE_CBRT@
 HAVE_CBRTF = @HAVE_CBRTF@
 HAVE_CBRTL = @HAVE_CBRTL@
 HAVE_CHOWN = @HAVE_CHOWN@
+HAVE_CLOSEDIR = @HAVE_CLOSEDIR@
 HAVE_COPYSIGN = @HAVE_COPYSIGN@
 HAVE_COPYSIGNL = @HAVE_COPYSIGNL@
 HAVE_COPY_FILE_RANGE = @HAVE_COPY_FILE_RANGE@
@@ -1044,6 +1180,7 @@ HAVE_DECL_CEILF = @HAVE_DECL_CEILF@
 HAVE_DECL_CEILL = @HAVE_DECL_CEILL@
 HAVE_DECL_COPYSIGNF = @HAVE_DECL_COPYSIGNF@
 HAVE_DECL_COSL = @HAVE_DECL_COSL@
+HAVE_DECL_DIRFD = @HAVE_DECL_DIRFD@
 HAVE_DECL_ECVT = @HAVE_DECL_ECVT@
 HAVE_DECL_ENVIRON = @HAVE_DECL_ENVIRON@
 HAVE_DECL_EXECVPE = @HAVE_DECL_EXECVPE@
@@ -1056,6 +1193,7 @@ HAVE_DECL_FCHDIR = @HAVE_DECL_FCHDIR@
 HAVE_DECL_FCLOSEALL = @HAVE_DECL_FCLOSEALL@
 HAVE_DECL_FCVT = @HAVE_DECL_FCVT@
 HAVE_DECL_FDATASYNC = @HAVE_DECL_FDATASYNC@
+HAVE_DECL_FDOPENDIR = @HAVE_DECL_FDOPENDIR@
 HAVE_DECL_FLOORF = @HAVE_DECL_FLOORF@
 HAVE_DECL_FLOORL = @HAVE_DECL_FLOORL@
 HAVE_DECL_FPURGE = @HAVE_DECL_FPURGE@
@@ -1125,6 +1263,7 @@ HAVE_DECL_VSNPRINTF = @HAVE_DECL_VSNPRINTF@
 HAVE_DECL_WCSDUP = @HAVE_DECL_WCSDUP@
 HAVE_DECL_WCTOB = @HAVE_DECL_WCTOB@
 HAVE_DECL_WCWIDTH = @HAVE_DECL_WCWIDTH@
+HAVE_DIRENT_H = @HAVE_DIRENT_H@
 HAVE_DPRINTF = @HAVE_DPRINTF@
 HAVE_DUP3 = @HAVE_DUP3@
 HAVE_DUPLOCALE = @HAVE_DUPLOCALE@
@@ -1146,6 +1285,7 @@ HAVE_FCHMODAT = @HAVE_FCHMODAT@
 HAVE_FCHOWNAT = @HAVE_FCHOWNAT@
 HAVE_FCNTL = @HAVE_FCNTL@
 HAVE_FDATASYNC = @HAVE_FDATASYNC@
+HAVE_FDOPENDIR = @HAVE_FDOPENDIR@
 HAVE_FEATURES_H = @HAVE_FEATURES_H@
 HAVE_FFSL = @HAVE_FFSL@
 HAVE_FFSLL = @HAVE_FFSLL@
@@ -1168,12 +1308,14 @@ HAVE_GETGROUPS = @HAVE_GETGROUPS@
 HAVE_GETHOSTNAME = @HAVE_GETHOSTNAME@
 HAVE_GETLOCALENAME_L = @HAVE_GETLOCALENAME_L@
 HAVE_GETLOGIN = @HAVE_GETLOGIN@
+HAVE_GETOPT_H = @HAVE_GETOPT_H@
 HAVE_GETPAGESIZE = @HAVE_GETPAGESIZE@
 HAVE_GETPASS = @HAVE_GETPASS@
 HAVE_GETPAYLOAD = @HAVE_GETPAYLOAD@
 HAVE_GETPAYLOADF = @HAVE_GETPAYLOADF@
 HAVE_GETPAYLOADL = @HAVE_GETPAYLOADL@
 HAVE_GETPROGNAME = @HAVE_GETPROGNAME@
+HAVE_GETRANDOM = @HAVE_GETRANDOM@
 HAVE_GETSUBOPT = @HAVE_GETSUBOPT@
 HAVE_GETTIMEOFDAY = @HAVE_GETTIMEOFDAY@
 HAVE_GETUMASK = @HAVE_GETUMASK@
@@ -1207,9 +1349,17 @@ HAVE_ISUPPER_L = @HAVE_ISUPPER_L@
 HAVE_ISWBLANK = @HAVE_ISWBLANK@
 HAVE_ISWCNTRL = @HAVE_ISWCNTRL@
 HAVE_ISXDIGIT_L = @HAVE_ISXDIGIT_L@
+HAVE_LANGINFO_ABALTMON = @HAVE_LANGINFO_ABALTMON@
+HAVE_LANGINFO_ALTMON = @HAVE_LANGINFO_ALTMON@
+HAVE_LANGINFO_CODESET = @HAVE_LANGINFO_CODESET@
+HAVE_LANGINFO_ERA = @HAVE_LANGINFO_ERA@
+HAVE_LANGINFO_H = @HAVE_LANGINFO_H@
+HAVE_LANGINFO_T_FMT_AMPM = @HAVE_LANGINFO_T_FMT_AMPM@
+HAVE_LANGINFO_YESEXPR = @HAVE_LANGINFO_YESEXPR@
 HAVE_LCHMOD = @HAVE_LCHMOD@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LDEXPF = @HAVE_LDEXPF@
+HAVE_LIBSIGSEGV = @HAVE_LIBSIGSEGV@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@
 HAVE_LOCALE_T = @HAVE_LOCALE_T@
@@ -1254,8 +1404,10 @@ HAVE_MSVC_INVALID_PARAMETER_HANDLER = @HAVE_MSVC_INVALID_PARAMETER_HANDLER@
 HAVE_NANOSLEEP = @HAVE_NANOSLEEP@
 HAVE_NETINET_IN_H = @HAVE_NETINET_IN_H@
 HAVE_NEWLOCALE = @HAVE_NEWLOCALE@
+HAVE_NL_LANGINFO = @HAVE_NL_LANGINFO@
 HAVE_OFF64_T = @HAVE_OFF64_T@
 HAVE_OPENAT = @HAVE_OPENAT@
+HAVE_OPENDIR = @HAVE_OPENDIR@
 HAVE_OS_H = @HAVE_OS_H@
 HAVE_PCLOSE = @HAVE_PCLOSE@
 HAVE_PIPE = @HAVE_PIPE@
@@ -1264,6 +1416,11 @@ HAVE_POPEN = @HAVE_POPEN@
 HAVE_POSIX_MEMALIGN = @HAVE_POSIX_MEMALIGN@
 HAVE_POSIX_OPENPT = @HAVE_POSIX_OPENPT@
 HAVE_POSIX_SIGNALBLOCKING = @HAVE_POSIX_SIGNALBLOCKING@
+HAVE_POSIX_SPAWN = @HAVE_POSIX_SPAWN@
+HAVE_POSIX_SPAWNATTR_T = @HAVE_POSIX_SPAWNATTR_T@
+HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR = @HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR@
+HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR = @HAVE_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR@
+HAVE_POSIX_SPAWN_FILE_ACTIONS_T = @HAVE_POSIX_SPAWN_FILE_ACTIONS_T@
 HAVE_POWF = @HAVE_POWF@
 HAVE_PREAD = @HAVE_PREAD@
 HAVE_PSELECT = @HAVE_PSELECT@
@@ -1335,6 +1492,7 @@ HAVE_RANDOM = @HAVE_RANDOM@
 HAVE_RANDOM_H = @HAVE_RANDOM_H@
 HAVE_RANDOM_R = @HAVE_RANDOM_R@
 HAVE_RAWMEMCHR = @HAVE_RAWMEMCHR@
+HAVE_READDIR = @HAVE_READDIR@
 HAVE_READLINK = @HAVE_READLINK@
 HAVE_READLINKAT = @HAVE_READLINKAT@
 HAVE_REALLOCARRAY = @HAVE_REALLOCARRAY@
@@ -1342,11 +1500,13 @@ HAVE_REALPATH = @HAVE_REALPATH@
 HAVE_REMAINDER = @HAVE_REMAINDER@
 HAVE_REMAINDERF = @HAVE_REMAINDERF@
 HAVE_RENAMEAT = @HAVE_RENAMEAT@
+HAVE_REWINDDIR = @HAVE_REWINDDIR@
 HAVE_RINT = @HAVE_RINT@
 HAVE_RINTL = @HAVE_RINTL@
 HAVE_RPMATCH = @HAVE_RPMATCH@
 HAVE_SAME_LONG_DOUBLE_AS_DOUBLE = @HAVE_SAME_LONG_DOUBLE_AS_DOUBLE@
 HAVE_SA_FAMILY_T = @HAVE_SA_FAMILY_T@
+HAVE_SCANDIR = @HAVE_SCANDIR@
 HAVE_SCHED_H = @HAVE_SCHED_H@
 HAVE_SCHED_YIELD = @HAVE_SCHED_YIELD@
 HAVE_SECURE_GETENV = @HAVE_SECURE_GETENV@
@@ -1373,6 +1533,7 @@ HAVE_SINF = @HAVE_SINF@
 HAVE_SINHF = @HAVE_SINHF@
 HAVE_SINL = @HAVE_SINL@
 HAVE_SLEEP = @HAVE_SLEEP@
+HAVE_SPAWN_H = @HAVE_SPAWN_H@
 HAVE_SQRTF = @HAVE_SQRTF@
 HAVE_SQRTL = @HAVE_SQRTL@
 HAVE_STDINT_H = @HAVE_STDINT_H@
@@ -1408,6 +1569,7 @@ HAVE_SYS_INTTYPES_H = @HAVE_SYS_INTTYPES_H@
 HAVE_SYS_IOCTL_H = @HAVE_SYS_IOCTL_H@
 HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
+HAVE_SYS_RANDOM_H = @HAVE_SYS_RANDOM_H@
 HAVE_SYS_SELECT_H = @HAVE_SYS_SELECT_H@
 HAVE_SYS_SOCKET_H = @HAVE_SYS_SOCKET_H@
 HAVE_SYS_TIME_H = @HAVE_SYS_TIME_H@
@@ -1485,6 +1647,10 @@ HAVE_WORKING_MBRTOC32 = @HAVE_WORKING_MBRTOC32@
 HAVE_WS2TCPIP_H = @HAVE_WS2TCPIP_H@
 HAVE_XLOCALE_H = @HAVE_XLOCALE_H@
 HAVE__EXIT = @HAVE__EXIT@
+HOST_CPU = @HOST_CPU@
+HOST_CPU_C_ABI = @HOST_CPU_C_ABI@
+ICONV_CONST = @ICONV_CONST@
+ICONV_H = @ICONV_H@
 INCLUDE_NEXT = @INCLUDE_NEXT@
 INCLUDE_NEXT_AS_FIRST_DIRECTIVE = @INCLUDE_NEXT_AS_FIRST_DIRECTIVE@
 INET_PTON_LIB = @INET_PTON_LIB@
@@ -1501,14 +1667,18 @@ LC_MONETARY_IMPLEMENTED = @LC_MONETARY_IMPLEMENTED@
 LC_NUMERIC_IMPLEMENTED = @LC_NUMERIC_IMPLEMENTED@
 LC_TIME_IMPLEMENTED = @LC_TIME_IMPLEMENTED@
 LDFLAGS = @LDFLAGS@
+LIBCSTACK = @LIBCSTACK@
 LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
 LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
+LIBICONV = @LIBICONV@
 LIBINTL = @LIBINTL@
 LIBMULTITHREAD = @LIBMULTITHREAD@
 LIBOBJS = @LIBOBJS@
 LIBPMULTITHREAD = @LIBPMULTITHREAD@
 LIBPTHREAD = @LIBPTHREAD@
 LIBS = @LIBS@
+LIBSIGSEGV = @LIBSIGSEGV@
+LIBSIGSEGV_PREFIX = @LIBSIGSEGV_PREFIX@
 LIBSOCKET = @LIBSOCKET@
 LIBSTDTHREAD = @LIBSTDTHREAD@
 LIBTESTS_LIBDEPS = @LIBTESTS_LIBDEPS@
@@ -1516,11 +1686,16 @@ LIBTHREAD = @LIBTHREAD@
 LIBUNISTRING_UNICASE_H = @LIBUNISTRING_UNICASE_H@
 LIBUNISTRING_UNICTYPE_H = @LIBUNISTRING_UNICTYPE_H@
 LIBUNISTRING_UNINORM_H = @LIBUNISTRING_UNINORM_H@
+LIBUNISTRING_UNISTR_H = @LIBUNISTRING_UNISTR_H@
 LIBUNISTRING_UNITYPES_H = @LIBUNISTRING_UNITYPES_H@
 LIBUNISTRING_UNIWIDTH_H = @LIBUNISTRING_UNIWIDTH_H@
+LIB_CLOCK_GETTIME = @LIB_CLOCK_GETTIME@
+LIB_GETRANDOM = @LIB_GETRANDOM@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
 LIB_NANOSLEEP = @LIB_NANOSLEEP@
+LIB_NL_LANGINFO = @LIB_NL_LANGINFO@
+LIB_POSIX_SPAWN = @LIB_POSIX_SPAWN@
 LIB_PTHREAD = @LIB_PTHREAD@
 LIB_PTHREAD_SIGMASK = @LIB_PTHREAD_SIGMASK@
 LIB_SCHED_YIELD = @LIB_SCHED_YIELD@
@@ -1535,10 +1710,14 @@ LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
 LOCALE_FR = @LOCALE_FR@
 LOCALE_FR_UTF8 = @LOCALE_FR_UTF8@
 LOCALE_JA = @LOCALE_JA@
+LOCALE_TR_UTF8 = @LOCALE_TR_UTF8@
 LOCALE_ZH_CN = @LOCALE_ZH_CN@
+LTLIBCSTACK = @LTLIBCSTACK@
+LTLIBICONV = @LTLIBICONV@
 LTLIBINTL = @LTLIBINTL@
 LTLIBMULTITHREAD = @LTLIBMULTITHREAD@
 LTLIBOBJS = @LTLIBOBJS@
+LTLIBSIGSEGV = @LTLIBSIGSEGV@
 LTLIBTHREAD = @LTLIBTHREAD@
 MAKEINFO = @MAKEINFO@
 MBRTOWC_LIB = @MBRTOWC_LIB@
@@ -1550,11 +1729,15 @@ NEXT_ASSERT_H = @NEXT_ASSERT_H@
 NEXT_AS_FIRST_DIRECTIVE_ARPA_INET_H = @NEXT_AS_FIRST_DIRECTIVE_ARPA_INET_H@
 NEXT_AS_FIRST_DIRECTIVE_ASSERT_H = @NEXT_AS_FIRST_DIRECTIVE_ASSERT_H@
 NEXT_AS_FIRST_DIRECTIVE_CTYPE_H = @NEXT_AS_FIRST_DIRECTIVE_CTYPE_H@
+NEXT_AS_FIRST_DIRECTIVE_DIRENT_H = @NEXT_AS_FIRST_DIRECTIVE_DIRENT_H@
 NEXT_AS_FIRST_DIRECTIVE_ERRNO_H = @NEXT_AS_FIRST_DIRECTIVE_ERRNO_H@
 NEXT_AS_FIRST_DIRECTIVE_ERROR_H = @NEXT_AS_FIRST_DIRECTIVE_ERROR_H@
 NEXT_AS_FIRST_DIRECTIVE_FCNTL_H = @NEXT_AS_FIRST_DIRECTIVE_FCNTL_H@
 NEXT_AS_FIRST_DIRECTIVE_FLOAT_H = @NEXT_AS_FIRST_DIRECTIVE_FLOAT_H@
+NEXT_AS_FIRST_DIRECTIVE_GETOPT_H = @NEXT_AS_FIRST_DIRECTIVE_GETOPT_H@
+NEXT_AS_FIRST_DIRECTIVE_ICONV_H = @NEXT_AS_FIRST_DIRECTIVE_ICONV_H@
 NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H = @NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H@
+NEXT_AS_FIRST_DIRECTIVE_LANGINFO_H = @NEXT_AS_FIRST_DIRECTIVE_LANGINFO_H@
 NEXT_AS_FIRST_DIRECTIVE_LIMITS_H = @NEXT_AS_FIRST_DIRECTIVE_LIMITS_H@
 NEXT_AS_FIRST_DIRECTIVE_LOCALE_H = @NEXT_AS_FIRST_DIRECTIVE_LOCALE_H@
 NEXT_AS_FIRST_DIRECTIVE_MATH_H = @NEXT_AS_FIRST_DIRECTIVE_MATH_H@
@@ -1562,29 +1745,37 @@ NEXT_AS_FIRST_DIRECTIVE_NETINET_IN_H = @NEXT_AS_FIRST_DIRECTIVE_NETINET_IN_H@
 NEXT_AS_FIRST_DIRECTIVE_PTHREAD_H = @NEXT_AS_FIRST_DIRECTIVE_PTHREAD_H@
 NEXT_AS_FIRST_DIRECTIVE_SCHED_H = @NEXT_AS_FIRST_DIRECTIVE_SCHED_H@
 NEXT_AS_FIRST_DIRECTIVE_SIGNAL_H = @NEXT_AS_FIRST_DIRECTIVE_SIGNAL_H@
+NEXT_AS_FIRST_DIRECTIVE_SPAWN_H = @NEXT_AS_FIRST_DIRECTIVE_SPAWN_H@
+NEXT_AS_FIRST_DIRECTIVE_STDARG_H = @NEXT_AS_FIRST_DIRECTIVE_STDARG_H@
 NEXT_AS_FIRST_DIRECTIVE_STDDEF_H = @NEXT_AS_FIRST_DIRECTIVE_STDDEF_H@
 NEXT_AS_FIRST_DIRECTIVE_STDINT_H = @NEXT_AS_FIRST_DIRECTIVE_STDINT_H@
 NEXT_AS_FIRST_DIRECTIVE_STDIO_H = @NEXT_AS_FIRST_DIRECTIVE_STDIO_H@
 NEXT_AS_FIRST_DIRECTIVE_STDLIB_H = @NEXT_AS_FIRST_DIRECTIVE_STDLIB_H@
 NEXT_AS_FIRST_DIRECTIVE_STRING_H = @NEXT_AS_FIRST_DIRECTIVE_STRING_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_IOCTL_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_IOCTL_H@
+NEXT_AS_FIRST_DIRECTIVE_SYS_RANDOM_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_RANDOM_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_SELECT_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_SELECT_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_SOCKET_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_SOCKET_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_STAT_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_STAT_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_TIME_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_TIME_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_TYPES_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_UIO_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_UIO_H@
+NEXT_AS_FIRST_DIRECTIVE_SYS_WAIT_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_WAIT_H@
 NEXT_AS_FIRST_DIRECTIVE_TIME_H = @NEXT_AS_FIRST_DIRECTIVE_TIME_H@
 NEXT_AS_FIRST_DIRECTIVE_UCHAR_H = @NEXT_AS_FIRST_DIRECTIVE_UCHAR_H@
 NEXT_AS_FIRST_DIRECTIVE_UNISTD_H = @NEXT_AS_FIRST_DIRECTIVE_UNISTD_H@
 NEXT_AS_FIRST_DIRECTIVE_WCHAR_H = @NEXT_AS_FIRST_DIRECTIVE_WCHAR_H@
 NEXT_AS_FIRST_DIRECTIVE_WCTYPE_H = @NEXT_AS_FIRST_DIRECTIVE_WCTYPE_H@
 NEXT_CTYPE_H = @NEXT_CTYPE_H@
+NEXT_DIRENT_H = @NEXT_DIRENT_H@
 NEXT_ERRNO_H = @NEXT_ERRNO_H@
 NEXT_ERROR_H = @NEXT_ERROR_H@
 NEXT_FCNTL_H = @NEXT_FCNTL_H@
 NEXT_FLOAT_H = @NEXT_FLOAT_H@
+NEXT_GETOPT_H = @NEXT_GETOPT_H@
+NEXT_ICONV_H = @NEXT_ICONV_H@
 NEXT_INTTYPES_H = @NEXT_INTTYPES_H@
+NEXT_LANGINFO_H = @NEXT_LANGINFO_H@
 NEXT_LIMITS_H = @NEXT_LIMITS_H@
 NEXT_LOCALE_H = @NEXT_LOCALE_H@
 NEXT_MATH_H = @NEXT_MATH_H@
@@ -1592,18 +1783,22 @@ NEXT_NETINET_IN_H = @NEXT_NETINET_IN_H@
 NEXT_PTHREAD_H = @NEXT_PTHREAD_H@
 NEXT_SCHED_H = @NEXT_SCHED_H@
 NEXT_SIGNAL_H = @NEXT_SIGNAL_H@
+NEXT_SPAWN_H = @NEXT_SPAWN_H@
+NEXT_STDARG_H = @NEXT_STDARG_H@
 NEXT_STDDEF_H = @NEXT_STDDEF_H@
 NEXT_STDINT_H = @NEXT_STDINT_H@
 NEXT_STDIO_H = @NEXT_STDIO_H@
 NEXT_STDLIB_H = @NEXT_STDLIB_H@
 NEXT_STRING_H = @NEXT_STRING_H@
 NEXT_SYS_IOCTL_H = @NEXT_SYS_IOCTL_H@
+NEXT_SYS_RANDOM_H = @NEXT_SYS_RANDOM_H@
 NEXT_SYS_SELECT_H = @NEXT_SYS_SELECT_H@
 NEXT_SYS_SOCKET_H = @NEXT_SYS_SOCKET_H@
 NEXT_SYS_STAT_H = @NEXT_SYS_STAT_H@
 NEXT_SYS_TIME_H = @NEXT_SYS_TIME_H@
 NEXT_SYS_TYPES_H = @NEXT_SYS_TYPES_H@
 NEXT_SYS_UIO_H = @NEXT_SYS_UIO_H@
+NEXT_SYS_WAIT_H = @NEXT_SYS_WAIT_H@
 NEXT_TIME_H = @NEXT_TIME_H@
 NEXT_UCHAR_H = @NEXT_UCHAR_H@
 NEXT_UNISTD_H = @NEXT_UNISTD_H@
@@ -1611,6 +1806,7 @@ NEXT_WCHAR_H = @NEXT_WCHAR_H@
 NEXT_WCTYPE_H = @NEXT_WCTYPE_H@
 NULLPTR_T_NEEDS_STDDEF = @NULLPTR_T_NEEDS_STDDEF@
 OBJEXT = @OBJEXT@
+OBSTACK_H = @OBSTACK_H@
 PACKAGE = @PACKAGE@
 PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@
 PACKAGE_NAME = @PACKAGE_NAME@
@@ -1619,6 +1815,7 @@ PACKAGE_TARNAME = @PACKAGE_TARNAME@
 PACKAGE_URL = @PACKAGE_URL@
 PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
+POSIX_SPAWN_LIB = @POSIX_SPAWN_LIB@
 PRAGMA_COLUMNS = @PRAGMA_COLUMNS@
 PRAGMA_SYSTEM_HEADER = @PRAGMA_SYSTEM_HEADER@
 PRIPTR_PREFIX = @PRIPTR_PREFIX@
@@ -1646,11 +1843,13 @@ REPLACE_CEILL = @REPLACE_CEILL@
 REPLACE_CHMOD = @REPLACE_CHMOD@
 REPLACE_CHOWN = @REPLACE_CHOWN@
 REPLACE_CLOSE = @REPLACE_CLOSE@
+REPLACE_CLOSEDIR = @REPLACE_CLOSEDIR@
 REPLACE_COPY_FILE_RANGE = @REPLACE_COPY_FILE_RANGE@
 REPLACE_COSF = @REPLACE_COSF@
 REPLACE_COSHF = @REPLACE_COSHF@
 REPLACE_CREAT = @REPLACE_CREAT@
 REPLACE_CTIME = @REPLACE_CTIME@
+REPLACE_DIRFD = @REPLACE_DIRFD@
 REPLACE_DPRINTF = @REPLACE_DPRINTF@
 REPLACE_DUP = @REPLACE_DUP@
 REPLACE_DUP2 = @REPLACE_DUP2@
@@ -1681,6 +1880,7 @@ REPLACE_FCLOSE = @REPLACE_FCLOSE@
 REPLACE_FCNTL = @REPLACE_FCNTL@
 REPLACE_FDATASYNC = @REPLACE_FDATASYNC@
 REPLACE_FDOPEN = @REPLACE_FDOPEN@
+REPLACE_FDOPENDIR = @REPLACE_FDOPENDIR@
 REPLACE_FFLUSH = @REPLACE_FFLUSH@
 REPLACE_FFSLL = @REPLACE_FFSLL@
 REPLACE_FLOOR = @REPLACE_FLOOR@
@@ -1728,6 +1928,7 @@ REPLACE_GETPAYLOAD = @REPLACE_GETPAYLOAD@
 REPLACE_GETPAYLOADF = @REPLACE_GETPAYLOADF@
 REPLACE_GETPAYLOADL = @REPLACE_GETPAYLOADL@
 REPLACE_GETPROGNAME = @REPLACE_GETPROGNAME@
+REPLACE_GETRANDOM = @REPLACE_GETRANDOM@
 REPLACE_GETSUBOPT = @REPLACE_GETSUBOPT@
 REPLACE_GETTIMEOFDAY = @REPLACE_GETTIMEOFDAY@
 REPLACE_GETUSERSHELL = @REPLACE_GETUSERSHELL@
@@ -1736,6 +1937,9 @@ REPLACE_HUGE_VAL = @REPLACE_HUGE_VAL@
 REPLACE_HYPOT = @REPLACE_HYPOT@
 REPLACE_HYPOTF = @REPLACE_HYPOTF@
 REPLACE_HYPOTL = @REPLACE_HYPOTL@
+REPLACE_ICONV = @REPLACE_ICONV@
+REPLACE_ICONV_OPEN = @REPLACE_ICONV_OPEN@
+REPLACE_ICONV_UTF = @REPLACE_ICONV_UTF@
 REPLACE_ILOGB = @REPLACE_ILOGB@
 REPLACE_ILOGBF = @REPLACE_ILOGBF@
 REPLACE_ILOGBL = @REPLACE_ILOGBL@
@@ -1814,15 +2018,24 @@ REPLACE_MODFL = @REPLACE_MODFL@
 REPLACE_NAN = @REPLACE_NAN@
 REPLACE_NANOSLEEP = @REPLACE_NANOSLEEP@
 REPLACE_NEWLOCALE = @REPLACE_NEWLOCALE@
+REPLACE_NL_LANGINFO = @REPLACE_NL_LANGINFO@
 REPLACE_NULL = @REPLACE_NULL@
+REPLACE_OBSTACK = @REPLACE_OBSTACK@
 REPLACE_OBSTACK_PRINTF = @REPLACE_OBSTACK_PRINTF@
 REPLACE_OPEN = @REPLACE_OPEN@
 REPLACE_OPENAT = @REPLACE_OPENAT@
+REPLACE_OPENDIR = @REPLACE_OPENDIR@
 REPLACE_PERROR = @REPLACE_PERROR@
 REPLACE_PIPE2 = @REPLACE_PIPE2@
 REPLACE_POPEN = @REPLACE_POPEN@
 REPLACE_POSIX_MEMALIGN = @REPLACE_POSIX_MEMALIGN@
 REPLACE_POSIX_OPENPT = @REPLACE_POSIX_OPENPT@
+REPLACE_POSIX_SPAWN = @REPLACE_POSIX_SPAWN@
+REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR = @REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCHDIR@
+REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE = @REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDCLOSE@
+REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2 = @REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDDUP2@
+REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR = @REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDFCHDIR@
+REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN = @REPLACE_POSIX_SPAWN_FILE_ACTIONS_ADDOPEN@
 REPLACE_PREAD = @REPLACE_PREAD@
 REPLACE_PRINTF = @REPLACE_PRINTF@
 REPLACE_PSELECT = @REPLACE_PSELECT@
@@ -1888,6 +2101,7 @@ REPLACE_RAND = @REPLACE_RAND@
 REPLACE_RANDOM = @REPLACE_RANDOM@
 REPLACE_RANDOM_R = @REPLACE_RANDOM_R@
 REPLACE_READ = @REPLACE_READ@
+REPLACE_READDIR = @REPLACE_READDIR@
 REPLACE_READLINK = @REPLACE_READLINK@
 REPLACE_READLINKAT = @REPLACE_READLINKAT@
 REPLACE_REALLOCARRAY = @REPLACE_REALLOCARRAY@
@@ -1899,6 +2113,7 @@ REPLACE_REMAINDERL = @REPLACE_REMAINDERL@
 REPLACE_REMOVE = @REPLACE_REMOVE@
 REPLACE_RENAME = @REPLACE_RENAME@
 REPLACE_RENAMEAT = @REPLACE_RENAMEAT@
+REPLACE_REWINDDIR = @REPLACE_REWINDDIR@
 REPLACE_RINTL = @REPLACE_RINTL@
 REPLACE_RMDIR = @REPLACE_RMDIR@
 REPLACE_ROUND = @REPLACE_ROUND@
@@ -2003,14 +2218,18 @@ REPLACE_WMEMPCPY = @REPLACE_WMEMPCPY@
 REPLACE_WRITE = @REPLACE_WRITE@
 REPLACE__EXIT = @REPLACE__EXIT@
 SCHED_YIELD_LIB = @SCHED_YIELD_LIB@
+SED = @SED@
 SELECT_LIB = @SELECT_LIB@
 SETLOCALE_LIB = @SETLOCALE_LIB@
 SETLOCALE_NULL_LIB = @SETLOCALE_NULL_LIB@
 SET_MAKE = @SET_MAKE@
 SHELL = @SHELL@
+SIGSEGV_H = @SIGSEGV_H@
 SIG_ATOMIC_T_SUFFIX = @SIG_ATOMIC_T_SUFFIX@
 SIZE_T_SUFFIX = @SIZE_T_SUFFIX@
+SMALL_PTRDIFF_T = @SMALL_PTRDIFF_T@
 SMALL_WCHAR_T = @SMALL_WCHAR_T@
+STDARG_H = @STDARG_H@
 STDCKDINT_H = @STDCKDINT_H@
 STDDEF_H = @STDDEF_H@
 STDDEF_NOT_IDEMPOTENT = @STDDEF_NOT_IDEMPOTENT@
@@ -2037,6 +2256,7 @@ WINDOWS_STAT_TIMESPEC = @WINDOWS_STAT_TIMESPEC@
 WINDRES = @WINDRES@
 WINT_T_SUFFIX = @WINT_T_SUFFIX@
 YIELD_LIB = @YIELD_LIB@
+abs_aux_dir = @abs_aux_dir@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
@@ -2050,6 +2270,8 @@ am__tar = @am__tar@
 am__untar = @am__untar@
 am__xargs_n = @am__xargs_n@
 bindir = @bindir@
+bindir_c = @bindir_c@
+bindir_c_make = @bindir_c_make@
 build = @build@
 build_alias = @build_alias@
 build_cpu = @build_cpu@
@@ -2057,10 +2279,20 @@ build_os = @build_os@
 build_vendor = @build_vendor@
 builddir = @builddir@
 datadir = @datadir@
+datadir_c = @datadir_c@
+datadir_c_make = @datadir_c_make@
 datarootdir = @datarootdir@
+datarootdir_c = @datarootdir_c@
+datarootdir_c_make = @datarootdir_c_make@
 docdir = @docdir@
+docdir_c = @docdir_c@
+docdir_c_make = @docdir_c_make@
 dvidir = @dvidir@
+dvidir_c = @dvidir_c@
+dvidir_c_make = @dvidir_c_make@
 exec_prefix = @exec_prefix@
+exec_prefix_c = @exec_prefix_c@
+exec_prefix_c_make = @exec_prefix_c_make@
 gl_LIBOBJDEPS = @gl_LIBOBJDEPS@
 gl_LIBOBJS = @gl_LIBOBJS@
 gl_LTLIBOBJS = @gl_LTLIBOBJS@
@@ -2080,70 +2312,143 @@ host_cpu = @host_cpu@
 host_os = @host_os@
 host_vendor = @host_vendor@
 htmldir = @htmldir@
+htmldir_c = @htmldir_c@
+htmldir_c_make = @htmldir_c_make@
 includedir = @includedir@
+includedir_c = @includedir_c@
+includedir_c_make = @includedir_c_make@
 infodir = @infodir@
+infodir_c = @infodir_c@
+infodir_c_make = @infodir_c_make@
 install_sh = @install_sh@
 libdir = @libdir@
+libdir_c = @libdir_c@
+libdir_c_make = @libdir_c_make@
 libexecdir = @libexecdir@
+libexecdir_c = @libexecdir_c@
+libexecdir_c_make = @libexecdir_c_make@
+lispdir = @lispdir@
+lispdir_c = @lispdir_c@
+lispdir_c_make = @lispdir_c_make@
 localedir = @localedir@
+localedir_c = @localedir_c@
+localedir_c_make = @localedir_c_make@
 localstatedir = @localstatedir@
+localstatedir_c = @localstatedir_c@
+localstatedir_c_make = @localstatedir_c_make@
 mandir = @mandir@
+mandir_c = @mandir_c@
+mandir_c_make = @mandir_c_make@
 mkdir_p = @mkdir_p@
 oldincludedir = @oldincludedir@
+oldincludedir_c = @oldincludedir_c@
+oldincludedir_c_make = @oldincludedir_c_make@
 pdfdir = @pdfdir@
+pdfdir_c = @pdfdir_c@
+pdfdir_c_make = @pdfdir_c_make@
+pkgdatadir_c = @pkgdatadir_c@
+pkgdatadir_c_make = @pkgdatadir_c_make@
+pkgincludedir_c = @pkgincludedir_c@
+pkgincludedir_c_make = @pkgincludedir_c_make@
+pkglibdir_c = @pkglibdir_c@
+pkglibdir_c_make = @pkglibdir_c_make@
+pkglibexecdir_c = @pkglibexecdir_c@
+pkglibexecdir_c_make = @pkglibexecdir_c_make@
 prefix = @prefix@
+prefix_c = @prefix_c@
+prefix_c_make = @prefix_c_make@
 program_transform_name = @program_transform_name@
 psdir = @psdir@
+psdir_c = @psdir_c@
+psdir_c_make = @psdir_c_make@
 runstatedir = @runstatedir@
+runstatedir_c = @runstatedir_c@
+runstatedir_c_make = @runstatedir_c_make@
 sbindir = @sbindir@
+sbindir_c = @sbindir_c@
+sbindir_c_make = @sbindir_c_make@
 sharedstatedir = @sharedstatedir@
+sharedstatedir_c = @sharedstatedir_c@
+sharedstatedir_c_make = @sharedstatedir_c_make@
 srcdir = @srcdir@
 sysconfdir = @sysconfdir@
+sysconfdir_c = @sysconfdir_c@
+sysconfdir_c_make = @sysconfdir_c_make@
 target_alias = @target_alias@
 top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
-EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
-	arpa_inet_h.m4 assert_h.m4 btowc.m4 build-to-host.m4 c-bool.m4 \
-	c32rtomb.m4 calloc.m4 close.m4 codeset.m4 ctype_h.m4 \
-	double-slash-root.m4 dup2.m4 environ.m4 errno_h.m4 error.m4 \
-	error_h.m4 exponentd.m4 exponentf.m4 exponentl.m4 \
-	extensions-aix.m4 extensions.m4 extern-inline.m4 fcntl-o.m4 \
-	fcntl.m4 fcntl_h.m4 fdopen.m4 flexmember.m4 float_h.m4 \
-	fpieee.m4 free.m4 fstat.m4 ftruncate.m4 getcwd.m4 \
-	getdtablesize.m4 getlocalename_l.m4 getprogname.m4 \
-	gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
-	include_next.m4 inet_pton.m4 intl-thread-locale.m4 \
-	intlmacosx.m4 inttypes.m4 ioctl.m4 isblank.m4 isnand.m4 \
-	isnanf.m4 isnanl.m4 iswblank.m4 iswdigit.m4 iswpunct.m4 \
-	iswxdigit.m4 largefile.m4 lcmessage.m4 libunistring-base.m4 \
-	limits-h.m4 localcharset.m4 locale-en.m4 locale-fr.m4 \
-	locale-ja.m4 locale-zh.m4 locale_h.m4 localename.m4 lock.m4 \
-	lstat.m4 malloc.m4 malloca.m4 math_h.m4 mbchar.m4 mbiter.m4 \
-	mbrtoc32.m4 mbrtowc.m4 mbsinit.m4 mbstate_t.m4 mbtowc.m4 \
-	memchr.m4 mempcpy.m4 minmax.m4 mmap-anon.m4 mode_t.m4 \
-	msvc-inval.m4 msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 \
-	nanosleep.m4 netinet_in_h.m4 off64_t.m4 off_t.m4 once.m4 \
-	open-cloexec.m4 open-slash.m4 open.m4 pathmax.m4 perror.m4 \
-	pid_t.m4 pipe.m4 pselect.m4 pthread-cond.m4 pthread-mutex.m4 \
-	pthread-once.m4 pthread-rwlock.m4 pthread-spin.m4 \
-	pthread-thread.m4 pthread_h.m4 pthread_mutex_timedlock.m4 \
-	pthread_rwlock_rdlock.m4 pthread_sigmask.m4 putenv.m4 raise.m4 \
-	random.m4 random_r.m4 realloc.m4 reallocarray.m4 sched_h.m4 \
-	sched_yield.m4 select.m4 semaphore.m4 setenv.m4 setlocale.m4 \
-	setlocale_null.m4 signal_h.m4 signalblocking.m4 signbit.m4 \
-	sleep.m4 snan.m4 socketlib.m4 sockets.m4 socklen.m4 \
-	sockpfaf.m4 ssize_t.m4 stat-time.m4 stat.m4 std-gnu11.m4 \
-	stdalign.m4 stddef_h.m4 stdint.m4 stdio_h.m4 stdlib_h.m4 \
-	stpcpy.m4 strerror.m4 strerror_r.m4 string_h.m4 symlink.m4 \
-	sys_cdefs_h.m4 sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 \
-	sys_stat_h.m4 sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 \
-	thread.m4 threadlib.m4 time.m4 time_h.m4 uchar_h.m4 \
-	unicase_h.m4 unictype_h.m4 uninorm_h.m4 unistd_h.m4 usleep.m4 \
-	vararrays.m4 visibility.m4 warn-on-use.m4 wchar_h.m4 \
-	wcrtomb.m4 wctob.m4 wctomb.m4 wctype_h.m4 wcwidth.m4 \
-	windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 \
-	zzgnulib.m4
+EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 access.m4 \
+	alloca.m4 arpa_inet_h.m4 asm-underscore.m4 assert.m4 \
+	assert_h.m4 atomic-cas.m4 autobuild.m4 btowc.m4 \
+	build-to-host.m4 builtin-expect.m4 c-bool.m4 c-stack.m4 \
+	c32rtomb.m4 calloc.m4 canonicalize.m4 chdir-long.m4 \
+	clock_time.m4 close.m4 closedir.m4 codeset.m4 configmake.m4 \
+	creat.m4 ctype_h.m4 d-ino.m4 dirent_h.m4 dirfd.m4 \
+	double-slash-root.m4 dup.m4 dup2.m4 eaccess.m4 environ.m4 \
+	errno_h.m4 error.m4 error_h.m4 execute.m4 exponentd.m4 \
+	exponentf.m4 exponentl.m4 extensions-aix.m4 extensions.m4 \
+	extern-inline.m4 fatal-signal.m4 fchdir.m4 fclose.m4 \
+	fcntl-o.m4 fcntl.m4 fcntl_h.m4 fdopen.m4 fdopendir.m4 \
+	fflush.m4 filenamecat.m4 findprog-in.m4 findprog.m4 \
+	flexmember.m4 float_h.m4 fopen.m4 fpending.m4 fpieee.m4 \
+	fpurge.m4 freadahead.m4 freading.m4 free.m4 freopen.m4 \
+	frexp.m4 frexpl.m4 fseek.m4 fseeko.m4 fseterr.m4 fstat.m4 \
+	fstatat.m4 ftell.m4 ftello.m4 ftruncate.m4 getcwd-abort-bug.m4 \
+	getcwd-path-max.m4 getcwd.m4 getdtablesize.m4 \
+	getlocalename_l.m4 getopt.m4 getpagesize.m4 getprogname.m4 \
+	getrandom.m4 gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
+	host-cpu-c-abi.m4 iconv.m4 iconv_h.m4 iconv_open.m4 \
+	include_next.m4 inet_pton.m4 init-package-version.m4 inline.m4 \
+	intl-thread-locale.m4 intlmacosx.m4 intmax_t.m4 inttostr.m4 \
+	inttypes.m4 inttypes_h.m4 ioctl.m4 isblank.m4 isnand.m4 \
+	isnanf.m4 isnanl.m4 iswblank.m4 iswctype.m4 iswdigit.m4 \
+	iswpunct.m4 iswxdigit.m4 langinfo_h.m4 largefile.m4 \
+	lcmessage.m4 ldexp.m4 ldexpl.m4 lib-ld.m4 lib-link.m4 \
+	lib-prefix.m4 libsigsegv.m4 libunistring-base.m4 limits-h.m4 \
+	link.m4 localcharset.m4 locale-en.m4 locale-fr.m4 locale-ja.m4 \
+	locale-tr.m4 locale-zh.m4 locale_h.m4 localeconv.m4 \
+	localename.m4 lock.m4 lseek.m4 lstat.m4 malloc.m4 malloca.m4 \
+	manywarnings-c++.m4 manywarnings.m4 math_h.m4 mbchar.m4 \
+	mbiter.m4 mbrtoc32.m4 mbrtowc.m4 mbsinit.m4 mbslen.m4 \
+	mbstate_t.m4 mbtowc.m4 memchr.m4 mempcpy.m4 memrchr.m4 \
+	memset_explicit.m4 minmax.m4 mkdir.m4 mkdtemp.m4 mkstemp.m4 \
+	mmap-anon.m4 mode_t.m4 msvc-inval.m4 msvc-nothrow.m4 \
+	multiarch.m4 musl.m4 nan-mips.m4 nanosleep.m4 netinet_in_h.m4 \
+	nl_langinfo.m4 nocrash.m4 obstack.m4 off64_t.m4 off_t.m4 \
+	once.m4 open-cloexec.m4 open-slash.m4 open.m4 openat.m4 \
+	opendir.m4 pathmax.m4 perror.m4 pid_t.m4 pipe.m4 pipe2.m4 \
+	posix_spawn.m4 posix_spawn_faction_addchdir.m4 printf-frexp.m4 \
+	printf-frexpl.m4 printf.m4 pselect.m4 pthread-cond.m4 \
+	pthread-mutex.m4 pthread-once.m4 pthread-rwlock.m4 \
+	pthread-spin.m4 pthread-thread.m4 pthread_h.m4 \
+	pthread_mutex_timedlock.m4 pthread_rwlock_rdlock.m4 \
+	pthread_sigmask.m4 putenv.m4 quotearg.m4 raise.m4 random.m4 \
+	random_r.m4 rawmemchr.m4 read-file.m4 readdir.m4 readlink.m4 \
+	realloc.m4 reallocarray.m4 regex.m4 rename.m4 rewinddir.m4 \
+	rmdir.m4 save-cwd.m4 sched_h.m4 sched_yield.m4 \
+	secure_getenv.m4 select.m4 semaphore.m4 setenv.m4 setlocale.m4 \
+	setlocale_null.m4 sh-filename.m4 sig_atomic_t.m4 sigaction.m4 \
+	sigaltstack.m4 signal_h.m4 signalblocking.m4 signbit.m4 \
+	sigpipe.m4 sigsegv.m4 size_max.m4 sleep.m4 snan.m4 snprintf.m4 \
+	socketlib.m4 sockets.m4 socklen.m4 sockpfaf.m4 sparcv8+.m4 \
+	spawn-pipe.m4 spawn_h.m4 ssize_t.m4 stack-direction.m4 \
+	stat-time.m4 stat.m4 std-gnu11.m4 stdalign.m4 stdarg.m4 \
+	stddef_h.m4 stdint.m4 stdint_h.m4 stdio_h.m4 stdlib_h.m4 \
+	stpcpy.m4 strchrnul.m4 strdup.m4 strerror.m4 strerror_r.m4 \
+	strerrorname_np.m4 string_h.m4 strnlen.m4 strsignal.m4 \
+	strstr.m4 strtod.m4 symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 \
+	sys_random_h.m4 sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 \
+	sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 sys_wait_h.m4 \
+	tempname.m4 thread.m4 threadlib.m4 time.m4 time_h.m4 tls.m4 \
+	tmpdir.m4 uchar_h.m4 ungetc.m4 unicase_h.m4 unictype_h.m4 \
+	uninorm_h.m4 unistd-safer.m4 unistd_h.m4 unlocked-io.m4 \
+	usleep.m4 vararrays.m4 vasnprintf.m4 vasprintf-posix.m4 \
+	vasprintf.m4 version-etc.m4 visibility.m4 wait-process.m4 \
+	waitpid.m4 warn-on-use.m4 warnings.m4 wchar_h.m4 wcrtomb.m4 \
+	wctob.m4 wctomb.m4 wctype.m4 wctype_h.m4 wcwidth.m4 \
+	windows-rc.m4 wint_t.m4 write.m4 xalloc.m4 xgetcwd.m4 xsize.m4 \
+	xvasprintf.m4 yield.m4 zzgnulib.m4
 all: all-am
 
 .SUFFIXES:
