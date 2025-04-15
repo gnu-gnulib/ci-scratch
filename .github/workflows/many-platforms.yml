@@ -815,3 +815,37 @@ jobs:
             */build/gltests/test-*.log
           retention-days: 7
           overwrite: true
+  # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
+  check-cross:
+    name: make check with a cross-compiler
+    runs-on: ubuntu-22.04
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - uses: actions/checkout@v4
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      # Install Ubuntu packages.
+      # List of packages: https://packages.ubuntu.com/
+      - run: sudo apt update; sudo apt install g++-riscv64-linux-gnu
+      - run: |
+          pwd
+          export CPPFLAGS="-Wall"
+          export CC="riscv64-linux-gnu-gcc"
+          export CXX="riscv64-linux-gnu-g++"
+          ./build-on.sh 'testdir-all' '--host=riscv64-linux-gnu' 'make' "$HOME" ''
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-cross
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[12]
+          retention-days: 7
+          overwrite: true

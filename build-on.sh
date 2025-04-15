@@ -73,7 +73,9 @@ FORCE_UNSAFE_CONFIGURE=1 ../configure --config-cache --with-included-libunistrin
 # Build.
 $make > log2 2>&1; rc=$?; cat log2; test $rc = 0 || exit 1
 
-# Run the tests.
-$make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+if ! $cross_compiling; then
+  # Run the tests.
+  $make check > log3 2>&1; rc=$?; cat log3; test $rc = 0 || exit 1
+fi
 
 cd ..
