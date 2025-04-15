@@ -55,7 +55,8 @@ done
 # testdir14: isalnum_l.
 # testdir15: getlocalename_l.
 # testdir16: c32isalnum c32isalpha c32isgraph c32islower c32isprint c32ispunct c32isspace c32isupper c32tolower c32toupper.
-cd testdir16 || exit 1
+# testdir17: trim.
+cd testdir17 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
