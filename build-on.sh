@@ -26,6 +26,11 @@ prerequisites="$5"
 
 set -x
 
+case "$configure_options" in
+  --host=riscv*) cross_compiling=true ;;
+  *)             cross_compiling=false ;;
+esac
+
 # Build and install the prerequisites.
 for prereq in $prerequisites; do
   tar xfz $prereq.tar.gz
