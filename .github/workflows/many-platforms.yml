@@ -231,17 +231,13 @@ jobs:
           ls -ld ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
           ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
           ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc/lib
+          gm2 -print-file-name=libm2pim.la
           gm2 -print-file-name=libm2pim.a
           gm2 -print-file-name=libm2pim.dylib
           gm2 -print-file-name=current/libm2pim.a
           gm2 -print-file-name=current/libm2pim.dylib
-          gcc -print-file-name=libm2pim.a
-          gcc -print-file-name=libm2pim.dylib
-          gcc -print-file-name=current/libm2pim.a
-          gcc -print-file-name=current/libm2pim.dylib
-          gcc -print-file-name=libgcc_s.dylib
-          gcc -print-file-name=libstdc++.a
-          g++ -print-file-name=libstdc++.a
+          gm2 -print-file-name=m2/m2pim/libm2pim.dylib
+          echo $(libm2=`gm2 -print-file-name=libm2pim.la`; if test "$libm2" != 'libm2pim.la'; then echo "$libm2"; else libm2=`gm2 -print-file-name=libm2pim.dylib`; if test "$libm2" != 'libm2pim.dylib'; then echo "$libm2"; else libm2=`gm2 -print-file-name=m2/m2pim/libm2pim.dylib`; if test "$libm2" != 'm2/m2pim/libm2pim.dylib'; then echo "$libm2"; fi; fi; fi)
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
