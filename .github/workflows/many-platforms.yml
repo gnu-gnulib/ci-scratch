@@ -228,6 +228,9 @@ jobs:
           type gm2
           which -a gm2
           find ${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
+          ls -ld ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc/lib
           gm2 -print-file-name=libm2pim.a
           gm2 -print-file-name=libm2pim.dylib
           gm2 -print-file-name=current/libm2pim.a
