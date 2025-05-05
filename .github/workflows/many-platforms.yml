@@ -228,6 +228,17 @@ jobs:
           type gm2
           which -a gm2
           find ${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
+          gm2 -print-file-name=libm2pim.a
+          gm2 -print-file-name=libm2pim.dylib
+          gm2 -print-file-name=current/libm2pim.a
+          gm2 -print-file-name=current/libm2pim.dylib
+          gcc -print-file-name=libm2pim.a
+          gcc -print-file-name=libm2pim.dylib
+          gcc -print-file-name=current/libm2pim.a
+          gcc -print-file-name=current/libm2pim.dylib
+          gcc -print-file-name=libgcc_s.dylib
+          gcc -print-file-name=libstdc++.a
+          g++ -print-file-name=libstdc++.a
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
