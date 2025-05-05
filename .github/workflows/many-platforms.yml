@@ -227,6 +227,7 @@ jobs:
           pwd
           type gm2
           which -a gm2
+          find ${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
