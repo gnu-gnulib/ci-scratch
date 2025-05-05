@@ -62,7 +62,8 @@ done
 # testdir16: c32isalnum c32isalpha c32isgraph c32islower c32isprint c32ispunct c32isspace c32isupper c32tolower c32toupper.
 # testdir17: trim.
 # testdir18: vc-mtime.
-cd testdir18 || exit 1
+# testdir19: gettext-runtime
+cd testdir19 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch aclocal.m4
