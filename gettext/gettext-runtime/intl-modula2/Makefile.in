@@ -2295,11 +2295,24 @@ libintl_m2_la_SOURCES = Libintl.mod LibintlFromC.def
 @BUILD_MODULA2_TRUE@LTV_CURRENT = 0
 @BUILD_MODULA2_TRUE@LTV_REVISION = 0
 @BUILD_MODULA2_TRUE@LTV_AGE = 0
+
+# How to build libintl_m2.la.
+# Finding the gm2 libm2pim is hairy:
+# - In GCC builds from source, the .la files are present and work.
+# - In distros, either libm2pim.so may work, or m2/m2pim/libm2pim.so, depending
+#   on the distro's packaging.
 @BUILD_MODULA2_TRUE@libintl_m2_la_LDFLAGS = \
 @BUILD_MODULA2_TRUE@  -no-undefined \
 @BUILD_MODULA2_TRUE@  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
 @BUILD_MODULA2_TRUE@  -rpath $(libdir) \
-@BUILD_MODULA2_TRUE@  $(LIBM2PIM_OPTIONS)
+@BUILD_MODULA2_TRUE@  $$(libm2=`$(M2C) -print-file-name=libm2pim.la`; \
+@BUILD_MODULA2_TRUE@     if test "$$libm2" != 'libm2pim.la'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
+@BUILD_MODULA2_TRUE@       libm2=`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`; \
+@BUILD_MODULA2_TRUE@       if test "$$libm2" != 'libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
+@BUILD_MODULA2_TRUE@         libm2=`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`; \
+@BUILD_MODULA2_TRUE@         if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; fi; \
+@BUILD_MODULA2_TRUE@       fi; \
+@BUILD_MODULA2_TRUE@     fi)
 
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -2632,20 +2645,6 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local \
 
 @BUILD_MODULA2_TRUE@Libintl.lo: Libintl.def $(srcdir)/Libintl.mod $(srcdir)/LibintlFromC.def
 @BUILD_MODULA2_TRUE@	$(AM_V_CC)$(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=compile $(M2C) $(AM_M2FLAGS) $(M2FLAGS) -c -o $@ $(srcdir)/Libintl.mod
-
-# How to build libintl_m2.la.
-# Finding the gm2 libm2pim is hairy:
-# - In GCC builds from source, the .la files are present and work.
-# - In distros, either libm2pim.so may work, or m2/m2pim/libm2pim.so, depending
-#   on the distro's packaging.
-@BUILD_MODULA2_TRUE@LIBM2PIM_OPTIONS != libm2=`$(M2C) -print-file-name=libm2pim.la`; \
-@BUILD_MODULA2_TRUE@                    if test "$$libm2" != 'libm2pim.la'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
-@BUILD_MODULA2_TRUE@                      libm2=`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`; \
-@BUILD_MODULA2_TRUE@                      if test "$$libm2" != 'libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
-@BUILD_MODULA2_TRUE@                        libm2=`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`; \
-@BUILD_MODULA2_TRUE@                        if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; fi; \
-@BUILD_MODULA2_TRUE@                      fi; \
-@BUILD_MODULA2_TRUE@                    fi
 
 @BUILD_MODULA2_TRUE@libintl_m2.la: Libintl.lo
 @BUILD_MODULA2_TRUE@	echo "File list: "; find $${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort

@@ -65,19 +65,18 @@ LTV_AGE=0
 # - In GCC builds from source, the .la files are present and work.
 # - In distros, either libm2pim.so may work, or m2/m2pim/libm2pim.so, depending
 #   on the distro's packaging.
-LIBM2PIM_OPTIONS != libm2=`$(M2C) -print-file-name=libm2pim.la`; \
-                    if test "$$libm2" != 'libm2pim.la'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
-                      libm2=`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`; \
-                      if test "$$libm2" != 'libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
-                        libm2=`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`; \
-                        if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; fi; \
-                      fi; \
-                    fi
 libintl_m2_la_LDFLAGS = \
   -no-undefined \
   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
   -rpath $(libdir) \
-  $(LIBM2PIM_OPTIONS)
+  $$(libm2=`$(M2C) -print-file-name=libm2pim.la`; \
+     if test "$$libm2" != 'libm2pim.la'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
+       libm2=`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`; \
+       if test "$$libm2" != 'libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; else \
+         libm2=`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`; \
+         if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo '-L'`dirname "$$libm2"` -lm2pim; fi; \
+       fi; \
+     fi)
 
 libintl_m2.la: Libintl.lo
 	echo "File list: "; find $${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
