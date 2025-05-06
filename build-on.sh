@@ -63,13 +63,15 @@ done
 # testdir17: trim.
 # testdir18: vc-mtime.
 # testdir19: gettext-runtime
-cd testdir19 || exit 1
+cd gettext || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
-sleep 1; touch aclocal.m4
-sleep 1; touch configure
-sleep 1; touch config.h.in
+sleep 1; touch `find . -name aclocal.m4 -type f`
+sleep 1; touch `find . -name configure -type f`
+sleep 1; touch `find . -name config.h.in -type f`
 sleep 1; touch `find . -name Makefile.in -type f`
+
+cd gettext-runtime || exit 1
 
 mkdir build
 cd build
