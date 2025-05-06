@@ -80,6 +80,14 @@ libintl_m2_la_LDFLAGS = \
   -rpath $(libdir)
 
 libintl_m2.la: Libintl.lo
+	echo "File list: "; find $${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
+	echo "ls1: "; ls -ld $${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+	echo "ls2: "; ls -l $${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+	echo "ls3: "; ls -l $${HOMEBREW_PREFIX-/usr/local}/opt/gcc/lib
+	echo "M2C = $(M2C)"
+	echo "$(M2C) -print-file-name=libm2pim.la -> "`$(M2C) -print-file-name=libm2pim.la`
+	echo "$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT) -> "`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`
+	echo "$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT) -> "`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`
 	echo "LIBM2PIM = $(LIBM2PIM)"
 	echo "libintl_m2_la_LDFLAGS = $(libintl_m2_la_LDFLAGS)"
 	echo $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)

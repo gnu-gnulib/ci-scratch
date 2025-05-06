@@ -2648,6 +2648,14 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local \
 @BUILD_MODULA2_TRUE@            fi
 
 @BUILD_MODULA2_TRUE@libintl_m2.la: Libintl.lo
+@BUILD_MODULA2_TRUE@	echo "File list: "; find $${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
+@BUILD_MODULA2_TRUE@	echo "ls1: "; ls -ld $${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+@BUILD_MODULA2_TRUE@	echo "ls2: "; ls -l $${HOMEBREW_PREFIX-/usr/local}/opt/gcc
+@BUILD_MODULA2_TRUE@	echo "ls3: "; ls -l $${HOMEBREW_PREFIX-/usr/local}/opt/gcc/lib
+@BUILD_MODULA2_TRUE@	echo "M2C = $(M2C)"
+@BUILD_MODULA2_TRUE@	echo "$(M2C) -print-file-name=libm2pim.la -> "`$(M2C) -print-file-name=libm2pim.la`
+@BUILD_MODULA2_TRUE@	echo "$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT) -> "`$(M2C) -print-file-name=libm2pim.$(M2SHLIBEXT)`
+@BUILD_MODULA2_TRUE@	echo "$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT) -> "`$(M2C) -print-file-name=m2/m2pim/libm2pim.$(M2SHLIBEXT)`
 @BUILD_MODULA2_TRUE@	echo "LIBM2PIM = $(LIBM2PIM)"
 @BUILD_MODULA2_TRUE@	echo "libintl_m2_la_LDFLAGS = $(libintl_m2_la_LDFLAGS)"
 @BUILD_MODULA2_TRUE@	echo $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)
