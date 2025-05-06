@@ -2371,8 +2371,8 @@ clean-libLTLIBRARIES:
 	echo rm -f $${locs}; \
 	$(am__rm_f) $${locs}
 
-libintl_m2.la: $(libintl_m2_la_OBJECTS) $(libintl_m2_la_DEPENDENCIES) $(EXTRA_libintl_m2_la_DEPENDENCIES) 
-	$(AM_V_CCLD)$(libintl_m2_la_LINK) $(am_libintl_m2_la_rpath) $(libintl_m2_la_OBJECTS) $(libintl_m2_la_LIBADD) $(LIBS)
+@BUILD_MODULA2_FALSE@libintl_m2.la: $(libintl_m2_la_OBJECTS) $(libintl_m2_la_DEPENDENCIES) $(EXTRA_libintl_m2_la_DEPENDENCIES) 
+@BUILD_MODULA2_FALSE@	$(AM_V_CCLD)$(libintl_m2_la_LINK) $(am_libintl_m2_la_rpath) $(libintl_m2_la_OBJECTS) $(libintl_m2_la_LIBADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
@@ -2646,6 +2646,12 @@ uninstall-am: uninstall-libLTLIBRARIES uninstall-local \
 @BUILD_MODULA2_TRUE@                if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo "$$libm2"; fi; \
 @BUILD_MODULA2_TRUE@              fi; \
 @BUILD_MODULA2_TRUE@            fi
+
+@BUILD_MODULA2_TRUE@libintl_m2.la: Libintl.lo
+@BUILD_MODULA2_TRUE@	echo "LIBM2PIM = $(LIBM2PIM)"
+@BUILD_MODULA2_TRUE@	echo "libintl_m2_la_LDFLAGS = $(libintl_m2_la_LDFLAGS)"
+@BUILD_MODULA2_TRUE@	echo $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)
+@BUILD_MODULA2_TRUE@	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)
 
 # Installation of libintl_m2.la.
 

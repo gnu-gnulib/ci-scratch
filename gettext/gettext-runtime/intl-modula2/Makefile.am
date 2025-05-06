@@ -79,6 +79,12 @@ libintl_m2_la_LDFLAGS = \
   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
   -rpath $(libdir)
 
+libintl_m2.la: Libintl.lo
+	echo "LIBM2PIM = $(LIBM2PIM)"
+	echo "libintl_m2_la_LDFLAGS = $(libintl_m2_la_LDFLAGS)"
+	echo $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)
+	$(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(libintl_m2_la_LDFLAGS) $(LDFLAGS) -o $@ -rpath $(libdir) $(libintl_m2_la_LIBADD) $(LIBS)
+
 # Installation of libintl_m2.la.
 
 install-exec-local: install-exec-libintl
