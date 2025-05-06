@@ -73,7 +73,9 @@ LIBM2PIM != libm2=`$(M2C) -print-file-name=libm2pim.la`; \
                 if test "$$libm2" != 'm2/m2pim/libm2pim.$(M2SHLIBEXT)'; then echo "$$libm2"; fi; \
               fi; \
             fi
-libintl_m2_la_LIBADD += $(LIBM2PIM)
+L_LIBM2PIM != if test -n '$(LIBM2PIM)'; then echo "-L"`dirname '$(LIBM2PIM)'`; fi
+l_LIBM2PIM != if test -n '$(LIBM2PIM)'; then echo '-lm2pim'; fi
+libintl_m2_la_LIBADD += $(L_LIBM2PIM) $(l_LIBM2PIM)
 libintl_m2_la_LDFLAGS = \
   -no-undefined \
   -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
