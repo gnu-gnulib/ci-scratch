@@ -82,7 +82,6 @@ jobs:
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -124,7 +123,6 @@ jobs:
           overwrite: true
   check-linux-gnu-alma:
     name: make check on AlmaLinux GNU/Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -168,7 +166,6 @@ jobs:
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -225,19 +222,6 @@ jobs:
       # - run: brew install ...
       - run: |
           pwd
-          type gm2
-          which -a gm2
-          find ${HOMEBREW_PREFIX-/usr/local} -name 'libm2*' | sort
-          ls -ld ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
-          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc
-          ls -l ${HOMEBREW_PREFIX-/usr/local}/opt/gcc/lib
-          gm2 -print-file-name=libm2pim.la
-          gm2 -print-file-name=libm2pim.a
-          gm2 -print-file-name=libm2pim.dylib
-          gm2 -print-file-name=current/libm2pim.a
-          gm2 -print-file-name=current/libm2pim.dylib
-          gm2 -print-file-name=m2/m2pim/libm2pim.dylib
-          echo $(libm2=`gm2 -print-file-name=libm2pim.la`; if test "$libm2" != 'libm2pim.la'; then echo "$libm2"; else libm2=`gm2 -print-file-name=libm2pim.dylib`; if test "$libm2" != 'libm2pim.dylib'; then echo "$libm2"; else libm2=`gm2 -print-file-name=m2/m2pim/libm2pim.dylib`; if test "$libm2" != 'm2/m2pim/libm2pim.dylib'; then echo "$libm2"; fi; fi; fi)
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
           chmod a+x macos-compile
           export CPPFLAGS="-I$HOME/include -Wall"
@@ -263,7 +247,6 @@ jobs:
           overwrite: true
   check-freebsd:
     name: make check on FreeBSD
-    if: ${{ false }}
     # The FreeBSD runners sometimes get stuck.
     timeout-minutes: 15
     runs-on: ubuntu-22.04
@@ -307,7 +290,6 @@ jobs:
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -352,7 +334,6 @@ jobs:
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -400,7 +381,6 @@ jobs:
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -451,7 +431,6 @@ jobs:
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -495,7 +474,6 @@ jobs:
           overwrite: true
   check-cygwin:
     name: make check on Cygwin
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -554,7 +532,6 @@ jobs:
           overwrite: true
   check-mingw:
     name: make check on mingw
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -617,7 +594,6 @@ jobs:
           overwrite: true
   check-msvc:
     name: make check on MSVC
-    if: ${{ false }}
     # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
     strategy:
       fail-fast: false
@@ -717,7 +693,6 @@ jobs:
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -757,7 +732,6 @@ jobs:
           overwrite: true
   check-clang-approach1:
     name: make check with clang 18 downloaded
-    if: ${{ false }}
     # Takes 1 min. longer than check-newest-clang.
     runs-on: ubuntu-22.04
     steps:
@@ -802,7 +776,6 @@ jobs:
           overwrite: true
   check-newest-clang:
     name: make check with the newest clang release
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -846,7 +819,6 @@ jobs:
   # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
   check-cross:
     name: make check with a cross-compiler
-    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
