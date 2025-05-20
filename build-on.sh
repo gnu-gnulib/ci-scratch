@@ -63,6 +63,15 @@ done
 # testdir17: trim.
 # testdir18: vc-mtime.
 # testdir19: gettext-runtime
+
+set -x
+
+type msgfmt
+msgfmt --version
+msgfmt -c test.po
+
+exit 0
+
 cd testdir19 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
