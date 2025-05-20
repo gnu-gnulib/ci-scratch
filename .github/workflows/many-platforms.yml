@@ -222,7 +222,7 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      - run: brew install gettext
+      - run: brew install --force --verbose gettext
       - run: |
           pwd
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
