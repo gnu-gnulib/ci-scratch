@@ -66,6 +66,15 @@ done
 
 set -x
 
+wget https://ftp.gnu.org/gnu/gettext/gettext-0.25.tar.gz
+prefix=`pwd`/inst
+tar xfz gettext-0.25.tar.gz
+cd gettext-0.25
+./configure --prefix=$prefix 2>&1 | tee log1
+make 2>&1 | tee log2
+make install 2>&1 | tee log4
+cd ..
+PATH=$prefix/bin:$PATH
 type msgfmt
 msgfmt --version
 msgfmt -c test.po
