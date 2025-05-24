@@ -63,24 +63,6 @@ done
 # testdir17: trim.
 # testdir18: vc-mtime.
 # testdir19: gettext-runtime
-
-set -x
-
-wget https://ftp.gnu.org/gnu/gettext/gettext-0.25.tar.gz
-prefix=`pwd`/inst
-tar xfz gettext-0.25.tar.gz
-cd gettext-0.25
-env am_cv_func_iconv_works=yes ./configure --prefix=$prefix 2>&1 | tee log1
-make 2>&1 | tee log2
-make install 2>&1 | tee log4
-cd ..
-PATH=$prefix/bin:$PATH
-type msgfmt
-msgfmt --version
-msgfmt -c test.po
-
-exit 0
-
 cd testdir19 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.

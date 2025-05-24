@@ -1,3 +1,0 @@
-msgid ""
-msgstr ""
-"Project-Id-Version: pspp-2.0.1\n"
