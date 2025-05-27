@@ -103,7 +103,6 @@ EOF
       GL_GENERATE_STDDEF_H=true
     fi
   fi
-  GL_GENERATE_STDDEF_H=true        # XXX
 
   dnl https://gcc.gnu.org/bugzilla/show_bug.cgi?id=114869
   AC_CACHE_CHECK([whether nullptr_t needs <stddef.h>],

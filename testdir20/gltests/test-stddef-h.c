@@ -28,9 +28,11 @@ size_t c = 2;
 max_align_t mat;
 #endif
 
+#if !(defined __cplusplus && defined _MSC_VER)
 /* Check that NULL can be passed through varargs as a pointer type,
    per POSIX 2008.  */
 static_assert (sizeof NULL == sizeof (void *));
+#endif
 
 /* Check that offsetof produces integer constants with correct type.  */
 struct d

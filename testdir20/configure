@@ -7361,7 +7361,6 @@ printf "%s\n" "$gl_cv_cxx_func_unreachable" >&6; }
       GL_GENERATE_STDDEF_H=true
     fi
   fi
-  GL_GENERATE_STDDEF_H=true        # XXX
 
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking whether nullptr_t needs <stddef.h>" >&5
 printf %s "checking whether nullptr_t needs <stddef.h>... " >&6; }
