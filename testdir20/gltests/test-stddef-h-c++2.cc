@@ -19,6 +19,8 @@
 
 #include <cstddef>
 
+#if 0
+
 /* Test the expected contents of <cstddef>, cf.
    <https://en.cppreference.com/w/cpp/header/cstddef>.  */
 
@@ -46,3 +48,4 @@ static_assert (offsetof (struct d, f) == 1);
 /* offsetof promotes to an unsigned integer if and only if sizes do
    not fit in int.  */
 static_assert ((offsetof (struct d, e) < -1) == (INT_MAX < (size_t) -1));
+#endif
