@@ -188,38 +188,59 @@ typedef union
 #endif
 
 /* ISO C 23 § 7.21.1 The unreachable macro  */
-#ifndef unreachable
 
 /* Code borrowed from verify.h.  */
-# ifndef _GL_HAS_BUILTIN_UNREACHABLE
-#  if defined __clang_major__ && __clang_major__ < 5
-#   define _GL_HAS_BUILTIN_UNREACHABLE 0
-#  elif 4 < __GNUC__ + (5 <= __GNUC_MINOR__) && !defined __clang__
-#   define _GL_HAS_BUILTIN_UNREACHABLE 1
-#  elif defined __has_builtin
-#   define _GL_HAS_BUILTIN_UNREACHABLE __has_builtin (__builtin_unreachable)
-#  else
-#   define _GL_HAS_BUILTIN_UNREACHABLE 0
-#  endif
-# endif
-
-# if _GL_HAS_BUILTIN_UNREACHABLE
-#  define unreachable() __builtin_unreachable ()
-# elif 1200 <= _MSC_VER
-#  define unreachable() __assume (0)
+#ifndef _GL_HAS_BUILTIN_UNREACHABLE
+# if defined __clang_major__ && __clang_major__ < 5
+#  define _GL_HAS_BUILTIN_UNREACHABLE 0
+# elif 4 < __GNUC__ + (5 <= __GNUC_MINOR__) && !defined __clang__
+#  define _GL_HAS_BUILTIN_UNREACHABLE 1
+# elif defined __has_builtin
+#  define _GL_HAS_BUILTIN_UNREACHABLE __has_builtin (__builtin_unreachable)
 # else
+#  define _GL_HAS_BUILTIN_UNREACHABLE 0
+# endif
+#endif
+
+#if _GL_HAS_BUILTIN_UNREACHABLE
+# define _gl_unreachable() __builtin_unreachable ()
+#elif 1200 <= _MSC_VER
+# define _gl_unreachable() __assume (0)
+#else
 /* Declare abort(), without including <stdlib.h>.  */
 extern
-#  if defined __cplusplus
+# if defined __cplusplus
 "C"
-#  endif
+# endif
 _Noreturn
 void abort (void)
-#  if defined __cplusplus && (__GLIBC__ >= 2)
+# if defined __cplusplus && (__GLIBC__ >= 2)
 _GL_ATTRIBUTE_NOTHROW
-#  endif
+# endif
 ;
-#  define unreachable() abort ()
+# define _gl_unreachable() abort ()
+#endif
+
+#ifndef __cplusplus
+/* In C, define unreachable as a macro.  */
+
+# ifndef unreachable
+#  define unreachable() _gl_unreachable ()
+# endif
+
+#else
+/* In C++, define unreachable as an inline function.  */
+
+# include <utility>
+
+# if defined __cpp_lib_unreachable /* C++23 or newer */
+
+using std::unreachable;
+
+# else
+
+inline void unreachable () { _gl_unreachable (); }
+
 # endif
 
 #endif

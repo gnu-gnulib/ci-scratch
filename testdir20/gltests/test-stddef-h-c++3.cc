@@ -14,7 +14,31 @@
    You should have received a copy of the GNU General Public License
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
-/* Written by Bruno Haible <bruno@clisp.org>, 2019.  */
+#include <config.h>
 
-#define GNULIB_NAMESPACE gnulib
-#include "test-stddef-h.c"
+/* Define unreachable.  */
+#include <stddef.h>
+/* Define std::unreachable (in C++23 or newer).  */
+#include <utility>
+
+void
+test_cxx_unreachable_1 ()
+{
+  if (2 < 1)
+    unreachable ();
+#if defined __cpp_lib_unreachable
+  if (3 < 1)
+    std::unreachable ();
+#endif
+}
+
+#if defined __cpp_lib_unreachable
+using std::unreachable;
+
+void
+test_cxx_unreachable_2 ()
+{
+  if (3 < 1)
+    unreachable ();
+}
+#endif

@@ -293,10 +293,11 @@ test_stddef_h_LDADD = $(LDADD)
 test_stddef_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 am__test_stddef_h_c___SOURCES_DIST = test-stddef-h-c++.cc \
-	test-stddef-h-c++2.cc
+	test-stddef-h-c++2.cc test-stddef-h-c++3.cc
 @ANSICXX_TRUE@am_test_stddef_h_c___OBJECTS =  \
 @ANSICXX_TRUE@	test-stddef-h-c++.$(OBJEXT) \
-@ANSICXX_TRUE@	test-stddef-h-c++2.$(OBJEXT)
+@ANSICXX_TRUE@	test-stddef-h-c++2.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stddef-h-c++3.$(OBJEXT)
 test_stddef_h_c___OBJECTS = $(am_test_stddef_h_c___OBJECTS)
 test_stddef_h_c___LDADD = $(LDADD)
 test_stddef_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
@@ -399,7 +400,8 @@ am__depfiles_remade = ./$(DEPDIR)/stdlib.Po \
 	./$(DEPDIR)/test-limits-h-c++.Po \
 	./$(DEPDIR)/test-limits-h-c++2.Po ./$(DEPDIR)/test-limits-h.Po \
 	./$(DEPDIR)/test-stddef-h-c++.Po \
-	./$(DEPDIR)/test-stddef-h-c++2.Po ./$(DEPDIR)/test-stddef-h.Po \
+	./$(DEPDIR)/test-stddef-h-c++2.Po \
+	./$(DEPDIR)/test-stddef-h-c++3.Po ./$(DEPDIR)/test-stddef-h.Po \
 	./$(DEPDIR)/test-stdint-h-c++.Po \
 	./$(DEPDIR)/test-stdint-h-c++2.Po ./$(DEPDIR)/test-stdint-h.Po \
 	./$(DEPDIR)/test-stdlib-h-c++.Po \
@@ -1419,16 +1421,17 @@ EXTRA_DIST = test-alignasof.c macros.h assert.in.h verify.h \
 	inttypes.in.h test-inttypes-h.c limits.in.h \
 	test-limits-h-c++.cc test-limits-h-c++2.cc test-limits-h.c \
 	_Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h \
-	test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h.c \
-	stdint.in.h test-stdint-h-c++.cc test-stdint-h-c++2.cc \
-	test-stdint-h.c stdlib.in.h test-stdlib-h-c++.cc \
-	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
-	test-sys_wait-h.h sys_types.in.h test-sys_types-h-c++.cc \
-	test-sys_types-h.c init.sh test-init.sh unistd.in.h \
-	test-unistd-h-c++.cc signature.h test-unistd-h.c verify.h \
-	test-verify.c test-verify-try.c test-verify.sh wchar.in.h \
-	test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc \
-	signature.h test-wchar-h.c
+	test-stddef-h-c++.cc test-stddef-h-c++2.cc \
+	test-stddef-h-c++3.cc test-stddef-h.c stdint.in.h \
+	test-stdint-h-c++.cc test-stdint-h-c++2.cc test-stdint-h.c \
+	stdlib.in.h test-stdlib-h-c++.cc test-stdlib-h-c++2.cc \
+	signature.h test-stdlib-h.c test-sys_wait-h.h sys_types.in.h \
+	test-sys_types-h-c++.cc test-sys_types-h.c init.sh \
+	test-init.sh unistd.in.h test-unistd-h-c++.cc signature.h \
+	test-unistd-h.c verify.h test-verify.c test-verify-try.c \
+	test-verify.sh wchar.in.h test-wchar-h-c++.cc \
+	test-wchar-h-c++2.cc test-wchar-h-c++3.cc signature.h \
+	test-wchar-h.c
 BUILT_SOURCES = $(ASSERT_H) fcntl.h inttypes.h $(LIMITS_H) $(STDINT_H) \
 	stdlib.h sys/types.h unistd.h wchar.h
 SUFFIXES = 
@@ -1502,7 +1505,7 @@ CXXDEFS_H = $(srcdir)/c++defs.h
 # gnulib Makefile snippets, it must be present in all makefiles that
 # need it. This is ensured by the applicability 'all' defined above.
 WARN_ON_USE_H = $(srcdir)/warn-on-use.h
-@ANSICXX_TRUE@test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc
+@ANSICXX_TRUE@test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h-c++3.cc
 @ANSICXX_TRUE@test_stdint_h_c___SOURCES = test-stdint-h-c++.cc test-stdint-h-c++2.cc
 @ANSICXX_TRUE@test_stdlib_h_c___SOURCES = test-stdlib-h-c++.cc test-stdlib-h-c++2.cc
 @ANSICXX_TRUE@test_stdlib_h_c___LDADD = $(LDADD) $(LIBINTL) $(GETLOADAVG_LIBS) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(GETRANDOM_LIB)
@@ -1686,6 +1689,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++3.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdint-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdint-h-c++2.Po@am__quote@ # am--include-marker
@@ -2361,6 +2365,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h-c++2.Po
@@ -2443,6 +2448,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h-c++2.Po

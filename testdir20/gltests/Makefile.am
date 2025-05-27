@@ -393,9 +393,9 @@ EXTRA_DIST += warn-on-use.h
 if ANSICXX
 TESTS += test-stddef-h-c++
 noinst_PROGRAMS += test-stddef-h-c++
-test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc
+test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h-c++3.cc
 endif
-EXTRA_DIST += test-stddef-h-c++.cc test-stddef-h-c++2.cc
+EXTRA_DIST += test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h-c++3.cc
 
 ## end   gnulib module stddef-h-c++-tests
 
