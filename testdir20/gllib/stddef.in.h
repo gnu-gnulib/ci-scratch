@@ -231,9 +231,11 @@ _GL_ATTRIBUTE_NOTHROW
 #else
 /* In C++, define unreachable as an inline function.  */
 
+#ifndef _MSC_VER
 extern "C++" { /* needed for Cygwin */
 # include <utility>
 }
+#endif
 
 # if defined __cpp_lib_unreachable /* C++23 or newer */
 
