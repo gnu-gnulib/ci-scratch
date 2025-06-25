@@ -25804,6 +25804,88 @@ printf "%s\n" "#define GNULIB_MSVC_NOTHROW 1" >>confdefs.h
 
 
 
+  ac_ext=c
+ac_cpp='$CPP $CPPFLAGS'
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for C nullptr" >&5
+printf %s "checking for C nullptr... " >&6; }
+if test ${gl_cv_c_nullptr+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+int *p = nullptr;
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_c_nullptr=yes
+           # Work around <https://gcc.gnu.org/bugzilla/show_bug.cgi?id=114780>.
+           gl_saved_CFLAGS=$CFLAGS
+           CFLAGS="$CFLAGS -Wall -Werror"
+           cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+void f (char const *, ...) __attribute__ ((sentinel));
+int
+main (void)
+{
+f ("", nullptr);
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+void f (char const *, ...) __attribute__ ((sentinel));
+int
+main (void)
+{
+f ("", (void *) 0);
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_c_nullptr='not as a sentinel'
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
+           CFLAGS=$gl_saved_CFLAGS
+else case e in #(
+  e) gl_cv_c_nullptr=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gl_cv_c_nullptr" >&5
+printf "%s\n" "$gl_cv_c_nullptr" >&6; }
+      gl_c_nullptr=$gl_cv_c_nullptr
+      ac_ext=c
+ac_cpp='$CPP $CPPFLAGS'
+ac_compile='$CC -c $CFLAGS $CPPFLAGS conftest.$ac_ext >&5'
+ac_link='$CC -o conftest$ac_exeext $CFLAGS $CPPFLAGS $LDFLAGS conftest.$ac_ext $LIBS >&5'
+ac_compiler_gnu=$ac_cv_c_compiler_gnu
+
+  if test "$gl_c_nullptr" = yes; then
+
+printf "%s\n" "#define HAVE_C_NULLPTR 1" >>confdefs.h
+
+  fi
+
+
+
+
 
   if test $ac_cv_header_obstack_h = yes; then
     HAVE_OBSTACK=1

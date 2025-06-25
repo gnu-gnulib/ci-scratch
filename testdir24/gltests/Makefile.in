@@ -142,16 +142,16 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-malloca$(EXEEXT) test-math-h$(EXEEXT) \
 	test-memchr$(EXEEXT) test-memchr2$(EXEEXT) \
 	test-mkfifo$(EXEEXT) test-nanosleep$(EXEEXT) \
-	test-netinet_in-h$(EXEEXT) test-once1$(EXEEXT) \
-	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
-	test-perror.sh test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
-	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
-	test-pthread$(EXEEXT) test-pthread-mutex$(EXEEXT) \
-	test-pthread-mutex-type$(EXEEXT) test-pthread-once1$(EXEEXT) \
-	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
-	test-pthread-thread$(EXEEXT) $(am__EXEEXT_1) \
-	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
-	test-raise$(EXEEXT) test-random$(EXEEXT) \
+	test-netinet_in-h$(EXEEXT) test-nullptr$(EXEEXT) \
+	test-once1$(EXEEXT) test-once2$(EXEEXT) test-open$(EXEEXT) \
+	test-pathmax$(EXEEXT) test-perror.sh test-perror2$(EXEEXT) \
+	test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
+	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
+	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
+	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
+	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
+	$(am__EXEEXT_1) test-pthread_sigmask2$(EXEEXT) \
+	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
 	test-sched-h$(EXEEXT) test-select$(EXEEXT) test-select-in.sh \
@@ -203,16 +203,16 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-malloca$(EXEEXT) test-math-h$(EXEEXT) \
 	test-memchr$(EXEEXT) test-memchr2$(EXEEXT) \
 	test-mkfifo$(EXEEXT) test-nanosleep$(EXEEXT) \
-	test-netinet_in-h$(EXEEXT) test-once1$(EXEEXT) \
-	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
-	test-perror$(EXEEXT) test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
-	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
-	test-pthread$(EXEEXT) test-pthread-mutex$(EXEEXT) \
-	test-pthread-mutex-type$(EXEEXT) test-pthread-once1$(EXEEXT) \
-	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
-	test-pthread-thread$(EXEEXT) test-pthread_sigmask1$(EXEEXT) \
-	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
-	test-raise$(EXEEXT) test-random$(EXEEXT) \
+	test-netinet_in-h$(EXEEXT) test-nullptr$(EXEEXT) \
+	test-once1$(EXEEXT) test-once2$(EXEEXT) test-open$(EXEEXT) \
+	test-pathmax$(EXEEXT) test-perror$(EXEEXT) \
+	test-perror2$(EXEEXT) test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
+	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
+	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
+	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
+	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
+	test-pthread_sigmask1$(EXEEXT) test-pthread_sigmask2$(EXEEXT) \
+	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
 	test-sched-h$(EXEEXT) test-select$(EXEEXT) \
@@ -345,9 +345,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
-	$(top_srcdir)/glm4/obstack.m4 $(top_srcdir)/glm4/off64_t.m4 \
-	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/once.m4 \
-	$(top_srcdir)/glm4/open-cloexec.m4 \
+	$(top_srcdir)/glm4/nullptr.m4 $(top_srcdir)/glm4/obstack.m4 \
+	$(top_srcdir)/glm4/off64_t.m4 $(top_srcdir)/glm4/off_t.m4 \
+	$(top_srcdir)/glm4/once.m4 $(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
 	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/perror.m4 \
 	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pselect.m4 \
@@ -810,6 +810,11 @@ test_netinet_in_h_OBJECTS = test-netinet_in-h.$(OBJEXT)
 test_netinet_in_h_LDADD = $(LDADD)
 test_netinet_in_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_nullptr_SOURCES = test-nullptr.c
+test_nullptr_OBJECTS = test-nullptr.$(OBJEXT)
+test_nullptr_LDADD = $(LDADD)
+test_nullptr_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 am_test_once1_OBJECTS = test-once.$(OBJEXT)
 test_once1_OBJECTS = $(am_test_once1_OBJECTS)
 test_once1_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1198,10 +1203,11 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-math-h.Po ./$(DEPDIR)/test-memchr.Po \
 	./$(DEPDIR)/test-memchr2.Po ./$(DEPDIR)/test-mkfifo.Po \
 	./$(DEPDIR)/test-nanosleep.Po ./$(DEPDIR)/test-netinet_in-h.Po \
-	./$(DEPDIR)/test-once.Po ./$(DEPDIR)/test-open.Po \
-	./$(DEPDIR)/test-pathmax.Po ./$(DEPDIR)/test-perror.Po \
-	./$(DEPDIR)/test-perror2.Po ./$(DEPDIR)/test-pipe.Po \
-	./$(DEPDIR)/test-pselect.Po ./$(DEPDIR)/test-pthread-cond.Po \
+	./$(DEPDIR)/test-nullptr.Po ./$(DEPDIR)/test-once.Po \
+	./$(DEPDIR)/test-open.Po ./$(DEPDIR)/test-pathmax.Po \
+	./$(DEPDIR)/test-perror.Po ./$(DEPDIR)/test-perror2.Po \
+	./$(DEPDIR)/test-pipe.Po ./$(DEPDIR)/test-pselect.Po \
+	./$(DEPDIR)/test-pthread-cond.Po \
 	./$(DEPDIR)/test-pthread-mutex-type.Po \
 	./$(DEPDIR)/test-pthread-mutex.Po \
 	./$(DEPDIR)/test-pthread-once1.Po \
@@ -1283,9 +1289,9 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-lock.c test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
 	test-malloca.c test-math-h.c test-memchr.c test-memchr2.c \
 	test-mkfifo.c test-nanosleep.c test-netinet_in-h.c \
-	$(test_once1_SOURCES) $(test_once2_SOURCES) test-open.c \
-	test-pathmax.c test-perror.c test-perror2.c test-pipe.c \
-	test-pselect.c test-pthread.c test-pthread-cond.c \
+	test-nullptr.c $(test_once1_SOURCES) $(test_once2_SOURCES) \
+	test-open.c test-pathmax.c test-perror.c test-perror2.c \
+	test-pipe.c test-pselect.c test-pthread.c test-pthread-cond.c \
 	test-pthread-mutex.c test-pthread-mutex-type.c \
 	test-pthread-once1.c test-pthread-once2.c \
 	test-pthread-rwlock.c test-pthread-thread.c \
@@ -1325,7 +1331,7 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	test-locale-h.c test-lock.c test-lstat.c test-malloc-gnu.c \
 	test-malloc-posix.c test-malloca.c test-math-h.c test-memchr.c \
 	test-memchr2.c test-mkfifo.c test-nanosleep.c \
-	test-netinet_in-h.c $(test_once1_SOURCES) \
+	test-netinet_in-h.c test-nullptr.c $(test_once1_SOURCES) \
 	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
 	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
 	test-pthread-cond.c test-pthread-mutex.c \
@@ -3310,21 +3316,22 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	signature.h macros.h test-memchr2.c zerosize-ptr.h macros.h \
 	test-mkfifo.h test-mkfifo.c signature.h macros.h \
 	test-nanosleep.c signature.h macros.h netinet_in.in.h \
-	test-netinet_in-h.c test-once.c macros.h test-open.h \
-	test-open.c signature.h macros.h test-pathmax.c macros.h \
-	signature.h test-perror.c test-perror2.c test-perror.sh \
-	test-pipe.c signature.h macros.h test-pselect.c test-select.h \
-	macros.h signature.h test-pthread-cond.c virtualbox.h macros.h \
-	pthread.in.h test-pthread.c test-pthread-mutex.c \
-	test-pthread-mutex-type.c atomic-int-posix.h macros.h \
-	test-pthread-once1.c test-pthread-once2.c macros.h \
-	test-pthread-rwlock.c atomic-int-posix.h macros.h \
-	test-pthread-thread.c macros.h test-pthread_sigmask1.c \
-	test-pthread_sigmask2.c signature.h virtualbox.h macros.h \
-	test-putenv.c macros.h signature.h test-raise.c signature.h \
-	macros.h test-random.c test-random-mt.c signature.h macros.h \
-	test-random_r.c signature.h macros.h test-realloc-posix.c \
-	macros.h test-reallocarray.c signature.h macros.h sched.in.h \
+	test-netinet_in-h.c test-nullptr.c macros.h test-once.c \
+	macros.h test-open.h test-open.c signature.h macros.h \
+	test-pathmax.c macros.h signature.h test-perror.c \
+	test-perror2.c test-perror.sh test-pipe.c signature.h macros.h \
+	test-pselect.c test-select.h macros.h signature.h \
+	test-pthread-cond.c virtualbox.h macros.h pthread.in.h \
+	test-pthread.c test-pthread-mutex.c test-pthread-mutex-type.c \
+	atomic-int-posix.h macros.h test-pthread-once1.c \
+	test-pthread-once2.c macros.h test-pthread-rwlock.c \
+	atomic-int-posix.h macros.h test-pthread-thread.c macros.h \
+	test-pthread_sigmask1.c test-pthread_sigmask2.c signature.h \
+	virtualbox.h macros.h test-putenv.c macros.h signature.h \
+	test-raise.c signature.h macros.h test-random.c \
+	test-random-mt.c signature.h macros.h test-random_r.c \
+	signature.h macros.h test-realloc-posix.c macros.h \
+	test-reallocarray.c signature.h macros.h sched.in.h \
 	test-sched-h.c macros.h signature.h test-select.c \
 	test-select.h test-select-fd.c test-select-in.sh \
 	test-select-out.sh test-select-stdin.c w32sock.h \
@@ -3797,6 +3804,10 @@ test-netinet_in-h$(EXEEXT): $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_DEP
 	@rm -f test-netinet_in-h$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_LDADD) $(LIBS)
 
+test-nullptr$(EXEEXT): $(test_nullptr_OBJECTS) $(test_nullptr_DEPENDENCIES) $(EXTRA_test_nullptr_DEPENDENCIES) 
+	@rm -f test-nullptr$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_nullptr_OBJECTS) $(test_nullptr_LDADD) $(LIBS)
+
 test-once1$(EXEEXT): $(test_once1_OBJECTS) $(test_once1_DEPENDENCIES) $(EXTRA_test_once1_DEPENDENCIES) 
 	@rm -f test-once1$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_once1_OBJECTS) $(test_once1_LDADD) $(LIBS)
@@ -4200,6 +4211,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-mkfifo.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-nanosleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netinet_in-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-nullptr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-once.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-open.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pathmax.Po@am__quote@ # am--include-marker
@@ -5024,6 +5036,13 @@ test-netinet_in-h.log: test-netinet_in-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-nullptr.log: test-nullptr$(EXEEXT)
+	@p='test-nullptr$(EXEEXT)'; \
+	b='test-nullptr'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-once1.log: test-once1$(EXEEXT)
 	@p='test-once1$(EXEEXT)'; \
 	b='test-once1'; \
@@ -5761,6 +5780,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-mkfifo.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
+	-rm -f ./$(DEPDIR)/test-nullptr.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
 	-rm -f ./$(DEPDIR)/test-pathmax.Po
@@ -6010,6 +6030,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-mkfifo.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
+	-rm -f ./$(DEPDIR)/test-nullptr.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
 	-rm -f ./$(DEPDIR)/test-pathmax.Po

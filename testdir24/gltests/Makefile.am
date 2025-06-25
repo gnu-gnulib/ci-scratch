@@ -1360,6 +1360,14 @@ EXTRA_DIST += test-netinet_in-h.c
 
 ## end   gnulib module netinet_in-h-tests
 
+## begin gnulib module nullptr-tests
+
+TESTS += test-nullptr
+noinst_PROGRAMS += test-nullptr
+EXTRA_DIST += test-nullptr.c macros.h
+
+## end   gnulib module nullptr-tests
+
 ## begin gnulib module once
 
 libtests_a_SOURCES += glthread/once.h glthread/once.c

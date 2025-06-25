@@ -70,6 +70,7 @@ EXTRA_DIST += musl.m4
 EXTRA_DIST += nan-mips.m4
 EXTRA_DIST += nanosleep.m4
 EXTRA_DIST += netinet_in_h.m4
+EXTRA_DIST += nullptr.m4
 EXTRA_DIST += obstack.m4
 EXTRA_DIST += off64_t.m4
 EXTRA_DIST += off_t.m4

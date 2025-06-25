@@ -136,9 +136,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
-	$(top_srcdir)/glm4/obstack.m4 $(top_srcdir)/glm4/off64_t.m4 \
-	$(top_srcdir)/glm4/off_t.m4 $(top_srcdir)/glm4/once.m4 \
-	$(top_srcdir)/glm4/open-cloexec.m4 \
+	$(top_srcdir)/glm4/nullptr.m4 $(top_srcdir)/glm4/obstack.m4 \
+	$(top_srcdir)/glm4/off64_t.m4 $(top_srcdir)/glm4/off_t.m4 \
+	$(top_srcdir)/glm4/once.m4 $(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
 	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/perror.m4 \
 	$(top_srcdir)/glm4/pipe.m4 $(top_srcdir)/glm4/pselect.m4 \

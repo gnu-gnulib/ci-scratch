@@ -172,6 +172,7 @@ gl_m4_base='glm4'
                  [test $HAVE_MSVC_INVALID_PARAMETER_HANDLER = 1])
   gl_MODULE_INDICATOR([msvc-nothrow])
   gl_MULTIARCH
+  gl_NULLPTR
   gl_FUNC_OBSTACK
   gl_CONDITIONAL_HEADER([obstack.h])
   gl_CONDITIONAL([GL_COND_OBJ_OBSTACK],

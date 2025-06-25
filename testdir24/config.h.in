@@ -445,6 +445,9 @@
 /* Define to 1 if bool, true and false work as per C2023. */
 #undef HAVE_C_BOOL
 
+/* Define to 1 if C nullptr is known to work. */
+#undef HAVE_C_NULLPTR
+
 /* Define to 1 if the static_assert keyword works. */
 #undef HAVE_C_STATIC_ASSERT
 
@@ -2480,6 +2483,22 @@
 # endif
 # if !true
 #  define true (!false)
+# endif
+#endif
+
+#if defined __cplusplus && HAVE_CXX_NULLPTR < 0
+# include <stddef.h>
+# undef/**/nullptr
+#endif
+#ifndef nullptr
+# if !defined __cplusplus && !defined HAVE_C_NULLPTR
+#  define nullptr ((void *) 0)
+# elif defined __cplusplus && HAVE_CXX_NULLPTR <= 0
+#  if 3 <= __GNUG__
+#   define nullptr __null
+#  else
+#   define nullptr 0L
+#  endif
 # endif
 #endif
 
