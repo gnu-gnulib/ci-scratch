@@ -184,6 +184,8 @@ jobs:
             apk add make gcc musl-dev g++ musl-locales
             cd /work
             ls -l
+            ls -l /usr/share/i18n/locales/musl/de_DE.UTF-8
+            apk list -I
             export CPPFLAGS="-Wall"
             ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
