@@ -82,9 +82,15 @@ gl_m4_base='glm4'
   gl_LIMITS_H
   gl_CONDITIONAL_HEADER([limits.h])
   AC_PROG_MKDIR_P
+  gl_LOCALCHARSET
+  dnl For backward compatibility. Some packages still use this.
+  LOCALCHARSET_TESTS_ENVIRONMENT=
+  AC_SUBST([LOCALCHARSET_TESTS_ENVIRONMENT])
   gl_LOCALE_H
   gl_LOCALE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_LOCALENAME_ENVIRON
+  gl_LOCALE_MODULE_INDICATOR([localename-environ])
   gl_LOCALENAME_UNSAFE_LIMITED
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED],
@@ -182,6 +188,9 @@ gl_m4_base='glm4'
   gl_WCHAR_H
   gl_WCHAR_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_MUTEX],
+                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
@@ -427,9 +436,8 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_LISTEN], [test "$ac_cv_header_winsock2_h" = yes])
   gl_SYS_SOCKET_MODULE_INDICATOR([listen])
   gl_MODULE_INDICATOR([listen])
+  gl_WINDOWS_RC
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
-  gl_LOCALENAME_ENVIRON
-  gl_LOCALE_MODULE_INDICATOR([localename-environ])
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
   gl_MUSL_LIBC
   gl_WINDOWS_RC
@@ -819,9 +827,6 @@ changequote([, ])dnl
   AC_C_VARARRAYS
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_COND],
-                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
-  AC_REQUIRE([AC_CANONICAL_HOST])
-  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_MUTEX],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_ONCE],

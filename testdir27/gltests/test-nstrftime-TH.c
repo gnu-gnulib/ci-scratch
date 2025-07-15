@@ -22,10 +22,18 @@
 #include "strftime.h"
 
 #include <locale.h>
+#include <stdio.h>
 #include <string.h>
 #include <time.h>
 
+#include "localcharset.h"
 #include "macros.h"
+
+#if defined _WIN32 && !defined __CYGWIN__
+# define LOCALE "Thai_Thailand.65001"
+#else
+# define LOCALE "th_TH.UTF-8"
+#endif
 
 #define DECLARE_TM(variable, greg_year, greg_month, greg_day) \
   struct tm variable =                          \
@@ -42,14 +50,24 @@
 int
 main ()
 {
-  if (setlocale (LC_ALL, "th_TH.UTF-8") == NULL)
+  setenv ("LC_ALL", LOCALE, 1);
+  if (setlocale (LC_ALL, "") == NULL
+      || strcmp (setlocale (LC_ALL, NULL), "C") == 0
+      || strcmp (locale_charset (), "UTF-8") != 0)
     {
       fprintf (stderr, "Skipping test: Unicode locale for Thailand is not installed\n");
       return 77;
     }
 
+#if defined __OpenBSD__ || defined _AIX || defined __ANDROID__
+  fprintf (stderr, "Skipping test: determining the locale name is not worth it on this platform\n");
+  return 77;
+#else
+
   char buf[100];
   size_t ret;
+  /* Native Windows does not support dates before 1970-01-01.  */
+# if !(defined _WIN32 && !defined __CYGWIN__)
   {
     DECLARE_TM (tm, 1939, 6, 23);
 
@@ -86,6 +104,7 @@ main ()
     ASSERT (ret > 0);
     ASSERT (strcmp (buf, "28/12/2512") == 0);
   }
+# endif
   {
     DECLARE_TM (tm, 2025, 3, 1);
 
@@ -106,4 +125,5 @@ main ()
   }
 
   return test_exit_status;
+#endif
 }

@@ -327,6 +327,14 @@ EXTRA_DIST += limits.in.h
 
 ## end   gnulib module limits-h
 
+## begin gnulib module localcharset
+
+libgnu_a_SOURCES += localcharset.c
+
+EXTRA_DIST += localcharset.h
+
+## end   gnulib module localcharset
+
 ## begin gnulib module locale-h
 
 BUILT_SOURCES += locale.h
@@ -374,6 +382,14 @@ MOSTLYCLEANFILES += locale.h locale.h-t
 EXTRA_DIST += locale.in.h
 
 ## end   gnulib module locale-h
+
+## begin gnulib module localename-environ
+
+libgnu_a_SOURCES += localename-environ.c
+
+EXTRA_DIST += localename.h
+
+## end   gnulib module localename-environ
 
 ## begin gnulib module localename-unsafe-limited
 
@@ -1422,6 +1438,16 @@ MOSTLYCLEANFILES += wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3
 EXTRA_DIST += wchar.in.h
 
 ## end   gnulib module wchar-h
+
+## begin gnulib module windows-mutex
+
+if GL_COND_OBJ_WINDOWS_MUTEX
+libgnu_a_SOURCES += windows-mutex.c
+endif
+
+EXTRA_DIST += windows-initguard.h windows-mutex.h
+
+## end   gnulib module windows-mutex
 
 ## begin gnulib module xalloc-oversized
 

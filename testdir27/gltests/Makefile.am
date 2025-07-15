@@ -986,6 +986,23 @@ EXTRA_DIST += test-listen.c signature.h macros.h
 
 ## end   gnulib module listen-tests
 
+## begin gnulib module localcharset-tests
+
+noinst_PROGRAMS += test-localcharset
+test_localcharset_LDADD = $(LDADD) $(SETLOCALE_LIB)
+
+if OS_IS_NATIVE_WINDOWS
+TESTS += test-localcharset-w32utf8.sh
+noinst_PROGRAMS += test-localcharset-w32utf8
+test_localcharset_w32utf8_LDADD = $(LDADD) test-localcharset-windows-utf8.res $(SETLOCALE_LIB)
+test-localcharset-windows-utf8.res : $(srcdir)/windows-utf8.rc
+	$(WINDRES) -i $(srcdir)/windows-utf8.rc -o test-localcharset-windows-utf8.res --output-format=coff
+MOSTLYCLEANFILES += test-localcharset-windows-utf8.res
+endif
+EXTRA_DIST += test-localcharset.c test-localcharset-w32utf8.sh test-localcharset-w32utf8.c windows-utf8.rc windows-utf8.manifest
+
+## end   gnulib module localcharset-tests
+
 ## begin gnulib module locale-h-tests
 
 TESTS += test-locale-h
@@ -1001,14 +1018,6 @@ libtests_a_SOURCES += localename.c
 EXTRA_DIST += localename.h struniq.h
 
 ## end   gnulib module localename
-
-## begin gnulib module localename-environ
-
-libtests_a_SOURCES += localename-environ.c
-
-EXTRA_DIST += localename.h
-
-## end   gnulib module localename-environ
 
 ## begin gnulib module localename-tests
 
@@ -1592,11 +1601,11 @@ noinst_PROGRAMS += \
   test-nstrftime-TH \
   test-nstrftime-IR \
   test-nstrftime-ET
-test_nstrftime_LDADD = $(LDADD) $(SETLOCALE_LIB)
-test_nstrftime_DE_LDADD = $(LDADD) $(SETLOCALE_LIB)
-test_nstrftime_TH_LDADD = $(LDADD) $(SETLOCALE_LIB)
-test_nstrftime_IR_LDADD = $(LDADD) $(SETLOCALE_LIB)
-test_nstrftime_ET_LDADD = $(LDADD) $(SETLOCALE_LIB)
+test_nstrftime_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@
+test_nstrftime_DE_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@
+test_nstrftime_TH_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@
+test_nstrftime_IR_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@
+test_nstrftime_ET_LDADD = $(LDADD) $(SETLOCALE_LIB) @INTL_MACOSX_LIBS@
 EXTRA_DIST += test-nstrftime-1.sh test-nstrftime-2.sh test-nstrftime.c test-nstrftime.h test-nstrftime-DE.c test-nstrftime-TH.c test-nstrftime-IR.c test-nstrftime-ET.c macros.h
 
 ## end   gnulib module nstrftime-tests
@@ -3275,16 +3284,6 @@ endif
 EXTRA_DIST += windows-cond.h windows-initguard.h
 
 ## end   gnulib module windows-cond
-
-## begin gnulib module windows-mutex
-
-if GL_COND_OBJ_WINDOWS_MUTEX
-libtests_a_SOURCES += windows-mutex.c
-endif
-
-EXTRA_DIST += windows-initguard.h windows-mutex.h
-
-## end   gnulib module windows-mutex
 
 ## begin gnulib module windows-mutex-tests
 

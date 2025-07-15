@@ -65,13 +65,18 @@
 
 /* Whether to include support for non-Gregorian calendars (outside of the scope
    of ISO C, POSIX, and glibc).  This matters only in non-C locales.
-   The default is to include it; you can override this via
-   AC_DEFINE([SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME], [false]) and then
-   you may be able to omit Gnulib's localename module and its dependencies.  */
+   The default is to include it, except on platforms where retrieving the locale
+   name drags in too many dependencies
+   (LOCALENAME_ENHANCE_LOCALE_FUNCS || !SETLOCALE_NULL_ONE_MTSAFE).
+   You can override this via
+   AC_DEFINE([SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME], [false])
+   and if you do that you may be able to omit Gnulib's localename module and its
+   dependencies.  */
 #ifndef SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME
 # define SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME true
 #endif
-#if defined _LIBC || HAVE_ONLY_C_LOCALE || USE_C_LOCALE
+#if defined _LIBC || (HAVE_ONLY_C_LOCALE || USE_C_LOCALE) \
+    || (defined __OpenBSD__ || defined _AIX || defined __ANDROID__)
 # undef SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME
 # define SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME false
 #endif
@@ -173,6 +178,7 @@ enum pad_style
 
 #if SUPPORT_NON_GREG_CALENDARS_IN_STRFTIME
 /* Support for non-Gregorian calendars.  */
+# include "localcharset.h"
 # include "localename.h"
 # include "calendars.h"
 # define CAL_ARGS(x,y) x, y,
@@ -1109,7 +1115,7 @@ my_strftime (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
   /* Recognize whether to use a non-Gregorian calendar.  */
   const struct calendar *cal = NULL;
   struct calendar_date caldate;
-  if (MB_CUR_MAX > 1)
+  if (strcmp (locale_charset (), "UTF-8") == 0)
     {
       const char *loc = gl_locale_name_unsafe (LC_TIME, "LC_TIME");
       if (strlen (loc) >= 5 && !(loc[5] >= 'A' && loc[5] <= 'Z'))

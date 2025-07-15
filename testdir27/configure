@@ -664,8 +664,6 @@ GL_COND_OBJ_WINDOWS_RECMUTEX_FALSE
 GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE
 GL_COND_OBJ_WINDOWS_ONCE_FALSE
 GL_COND_OBJ_WINDOWS_ONCE_TRUE
-GL_COND_OBJ_WINDOWS_MUTEX_FALSE
-GL_COND_OBJ_WINDOWS_MUTEX_TRUE
 GL_COND_OBJ_WINDOWS_COND_FALSE
 GL_COND_OBJ_WINDOWS_COND_TRUE
 GL_COND_OBJ_USLEEP_FALSE
@@ -1632,6 +1630,8 @@ HAVE_STRUCT_SOCKADDR_STORAGE
 gltests_WITNESS
 GL_CXXFLAG_ALLOW_WARNINGS
 GL_CFLAG_ALLOW_WARNINGS
+GL_COND_OBJ_WINDOWS_MUTEX_FALSE
+GL_COND_OBJ_WINDOWS_MUTEX_TRUE
 GL_GNULIB_MDA_WCSDUP
 GL_GNULIB_WGETCWD
 GL_GNULIB_WCSFTIME
@@ -1956,6 +1956,7 @@ HAVE_MAX_ALIGN_T
 REPLACE_NULL
 STDDEF_NOT_IDEMPOTENT
 NULLPTR_T_NEEDS_STDDEF
+LOCALCHARSET_TESTS_ENVIRONMENT
 GL_GENERATE_LIMITS_H_FALSE
 GL_GENERATE_LIMITS_H_TRUE
 LIMITS_H
@@ -10519,8 +10520,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:10522: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:10523: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:10523: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:10524: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -10549,7 +10550,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:10552: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:10553: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -10802,7 +10803,7 @@ fi
 fi
 
 fi
-      echo "$as_me:10805: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:10806: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -13103,6 +13104,44 @@ printf '%s\n' "$gl_cv_next_inttypes_h" >&6; }
 
 
 
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for nl_langinfo and CODESET" >&5
+printf %s "checking for nl_langinfo and CODESET... " >&6; }
+if test ${am_cv_langinfo_codeset+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <langinfo.h>
+int
+main (void)
+{
+char* cs = nl_langinfo(CODESET); return !cs;
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  am_cv_langinfo_codeset=yes
+else case e in #(
+  e) am_cv_langinfo_codeset=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext
+     ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $am_cv_langinfo_codeset" >&5
+printf '%s\n' "$am_cv_langinfo_codeset" >&6; }
+  if test $am_cv_langinfo_codeset = yes; then
+
+printf '%s\n' "#define HAVE_LANGINFO_CODESET 1" >>confdefs.h
+
+  fi
+
+
     NULLPTR_T_NEEDS_STDDEF=1;
   STDDEF_NOT_IDEMPOTENT=0;
   REPLACE_NULL=0;
@@ -13655,43 +13694,6 @@ printf '%s\n' "$gl_cv_next_locale_h" >&6; }
 
 
 
-  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for LC_MESSAGES" >&5
-printf %s "checking for LC_MESSAGES... " >&6; }
-if test ${gt_cv_val_LC_MESSAGES+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <locale.h>
-int
-main (void)
-{
-return LC_MESSAGES
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  gt_cv_val_LC_MESSAGES=yes
-else case e in #(
-  e) gt_cv_val_LC_MESSAGES=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext ;;
-esac
-fi
-{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gt_cv_val_LC_MESSAGES" >&5
-printf '%s\n' "$gt_cv_val_LC_MESSAGES" >&6; }
-  if test $gt_cv_val_LC_MESSAGES = yes; then
-
-printf '%s\n' "#define HAVE_LC_MESSAGES 1" >>confdefs.h
-
-  fi
-
-
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for CFPreferencesCopyAppValue" >&5
 printf %s "checking for CFPreferencesCopyAppValue... " >&6; }
 if test ${gt_cv_func_CFPreferencesCopyAppValue+y}
@@ -13774,6 +13776,43 @@ printf '%s\n' "#define HAVE_CFLOCALECOPYPREFERREDLANGUAGES 1" >>confdefs.h
                     INTL_MACOSX_LIBS="-Wl,-framework -Wl,CoreFoundation -Wl,-framework -Wl,CoreServices"
   fi
 
+
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for LC_MESSAGES" >&5
+printf %s "checking for LC_MESSAGES... " >&6; }
+if test ${gt_cv_val_LC_MESSAGES+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <locale.h>
+int
+main (void)
+{
+return LC_MESSAGES
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_link "$LINENO"
+then :
+  gt_cv_val_LC_MESSAGES=yes
+else case e in #(
+  e) gt_cv_val_LC_MESSAGES=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam \
+    conftest$ac_exeext conftest.$ac_ext ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gt_cv_val_LC_MESSAGES" >&5
+printf '%s\n' "$gt_cv_val_LC_MESSAGES" >&6; }
+  if test $gt_cv_val_LC_MESSAGES = yes; then
+
+printf '%s\n' "#define HAVE_LC_MESSAGES 1" >>confdefs.h
+
+  fi
 
 
 
@@ -14802,44 +14841,6 @@ printf '%s\n' "$gl_cv_header_cxx_stdckdint_h_works" >&6; }
   fi
 
 
-
-
-  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for nl_langinfo and CODESET" >&5
-printf %s "checking for nl_langinfo and CODESET... " >&6; }
-if test ${am_cv_langinfo_codeset+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <langinfo.h>
-int
-main (void)
-{
-char* cs = nl_langinfo(CODESET); return !cs;
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_link "$LINENO"
-then :
-  am_cv_langinfo_codeset=yes
-else case e in #(
-  e) am_cv_langinfo_codeset=no ;;
-esac
-fi
-rm -f core conftest.err conftest.$ac_objext conftest.beam \
-    conftest$ac_exeext conftest.$ac_ext
-     ;;
-esac
-fi
-{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $am_cv_langinfo_codeset" >&5
-printf '%s\n' "$am_cv_langinfo_codeset" >&6; }
-  if test $am_cv_langinfo_codeset = yes; then
-
-printf '%s\n' "#define HAVE_LANGINFO_CODESET 1" >>confdefs.h
-
-  fi
 
 
 
@@ -21749,8 +21750,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21752: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21753: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21753: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21754: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21779,7 +21780,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:21782: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21783: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -22032,7 +22033,7 @@ fi
 fi
 
 fi
-      echo "$as_me:22035: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:22036: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -22328,8 +22329,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:22331: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:22332: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:22332: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:22333: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -22358,7 +22359,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:22361: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:22362: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill. (Not pthread_self,
       # since it is defined as a macro on OSF/1.)
@@ -22611,7 +22612,7 @@ fi
 fi
 
 fi
-      echo "$as_me:22614: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:22615: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -27275,7 +27276,34 @@ fi
 
 
 
+    LOCALCHARSET_TESTS_ENVIRONMENT=
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          GL_GNULIB_LOCALENAME_ENVIRON=1
+
+
+
+
+
+printf '%s\n' "#define GNULIB_TEST_LOCALENAME_ENVIRON 1" >>confdefs.h
 
 
 
@@ -28662,6 +28690,21 @@ printf '%s\n' "#define GNULIB_TEST_UNSETENV 1" >>confdefs.h
 
 
 
+
+
+
+     if case "$host_os" in mingw* | windows*) true;; *) false;; esac; then
+  GL_COND_OBJ_WINDOWS_MUTEX_TRUE=
+  GL_COND_OBJ_WINDOWS_MUTEX_FALSE='#'
+else
+  GL_COND_OBJ_WINDOWS_MUTEX_TRUE='#'
+  GL_COND_OBJ_WINDOWS_MUTEX_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_WINDOWS_MUTEX_TRUE}" && test -z "${GL_COND_OBJ_WINDOWS_MUTEX_FALSE}"; then
+    GL_COND_OBJ_WINDOWS_MUTEX_TRUE='#'
+    GL_COND_OBJ_WINDOWS_MUTEX_FALSE='#'
+  fi
 
 
 
@@ -32396,6 +32439,7 @@ printf '%s\n' "#define GNULIB_LISTEN $gl_module_indicator_condition" >>confdefs.
 
 
 
+
   { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for newlocale" >&5
 printf %s "checking for newlocale... " >&6; }
 if test ${gl_cv_onwards_func_newlocale+y}
@@ -32461,34 +32505,6 @@ printf '%s\n' "$gl_cv_onwards_func_newlocale" >&6; }
 printf '%s\n' "#define HAVE_NEWLOCALE 1" >>confdefs.h
 
   fi
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    if test "$GL_GNULIB_LOCALENAME_ENVIRON" != 1; then
-        if test "$GL_GNULIB_LOCALENAME_ENVIRON" = 0; then
-      GL_GNULIB_LOCALENAME_ENVIRON=$gl_module_indicator_condition
-    else
-      GL_GNULIB_LOCALENAME_ENVIRON="($GL_GNULIB_LOCALENAME_ENVIRON || $gl_module_indicator_condition)"
-    fi
-  fi
-
-
-
-
-
-printf '%s\n' "#define GNULIB_TEST_LOCALENAME_ENVIRON 1" >>confdefs.h
-
 
 
 
@@ -40708,21 +40724,6 @@ fi
     if test -z "${GL_COND_OBJ_WINDOWS_COND_TRUE}" && test -z "${GL_COND_OBJ_WINDOWS_COND_FALSE}"; then
     GL_COND_OBJ_WINDOWS_COND_TRUE='#'
     GL_COND_OBJ_WINDOWS_COND_FALSE='#'
-  fi
-
-
-
-     if case "$host_os" in mingw* | windows*) true;; *) false;; esac; then
-  GL_COND_OBJ_WINDOWS_MUTEX_TRUE=
-  GL_COND_OBJ_WINDOWS_MUTEX_FALSE='#'
-else
-  GL_COND_OBJ_WINDOWS_MUTEX_TRUE='#'
-  GL_COND_OBJ_WINDOWS_MUTEX_FALSE=
-fi
-:
-    if test -z "${GL_COND_OBJ_WINDOWS_MUTEX_TRUE}" && test -z "${GL_COND_OBJ_WINDOWS_MUTEX_FALSE}"; then
-    GL_COND_OBJ_WINDOWS_MUTEX_TRUE='#'
-    GL_COND_OBJ_WINDOWS_MUTEX_FALSE='#'
   fi
 
 

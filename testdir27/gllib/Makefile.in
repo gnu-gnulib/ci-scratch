@@ -126,6 +126,7 @@ host_triplet = @host@
 @GL_COND_OBJ_TIMEGM_TRUE@am__append_9 = timegm.c
 @GL_COND_OBJ_TZSET_TRUE@am__append_10 = tzset.c
 @GL_COND_OBJ_UNSETENV_TRUE@am__append_11 = unsetenv.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_12 = windows-mutex.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -168,6 +169,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
 	$(top_srcdir)/glm4/largefile.m4 \
 	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/localcharset.m4 \
 	$(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale-fr.m4 \
 	$(top_srcdir)/glm4/locale-ja.m4 \
@@ -260,10 +262,11 @@ libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
 am__libgnu_a_SOURCES_DIST = c-ctype.h c-ctype.c free.c \
-	getlocalename_l-unsafe.c idx.h localename-unsafe.c malloca.c \
-	nstrftime.c setenv.c setlocale-fixes.c setlocale_null.c \
-	setlocale-lock.c setlocale_null-unlocked.c stdlib.c time_r.c \
-	time_rz.c timegm.c tzset.c unistd.c unsetenv.c
+	getlocalename_l-unsafe.c idx.h localcharset.c \
+	localename-environ.c localename-unsafe.c malloca.c nstrftime.c \
+	setenv.c setlocale-fixes.c setlocale_null.c setlocale-lock.c \
+	setlocale_null-unlocked.c stdlib.c time_r.c time_rz.c timegm.c \
+	tzset.c unistd.c unsetenv.c windows-mutex.c
 @GL_COND_OBJ_FREE_TRUE@am__objects_1 = free.$(OBJEXT)
 @GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_TRUE@am__objects_2 = getlocalename_l-unsafe.$(OBJEXT)
 @GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__objects_3 = localename-unsafe.$(OBJEXT)
@@ -277,13 +280,17 @@ am__libgnu_a_SOURCES_DIST = c-ctype.h c-ctype.c free.c \
 @GL_COND_OBJ_TIMEGM_TRUE@am__objects_9 = timegm.$(OBJEXT)
 @GL_COND_OBJ_TZSET_TRUE@am__objects_10 = tzset.$(OBJEXT)
 @GL_COND_OBJ_UNSETENV_TRUE@am__objects_11 = unsetenv.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_12 =  \
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@	windows-mutex.$(OBJEXT)
 am_libgnu_a_OBJECTS = c-ctype.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_2) $(am__objects_3) malloca.$(OBJEXT) \
-	nstrftime.$(OBJEXT) $(am__objects_4) $(am__objects_5) \
-	setlocale_null.$(OBJEXT) $(am__objects_6) \
+	$(am__objects_2) localcharset.$(OBJEXT) \
+	localename-environ.$(OBJEXT) $(am__objects_3) \
+	malloca.$(OBJEXT) nstrftime.$(OBJEXT) $(am__objects_4) \
+	$(am__objects_5) setlocale_null.$(OBJEXT) $(am__objects_6) \
 	setlocale_null-unlocked.$(OBJEXT) stdlib.$(OBJEXT) \
 	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
-	$(am__objects_10) unistd.$(OBJEXT) $(am__objects_11)
+	$(am__objects_10) unistd.$(OBJEXT) $(am__objects_11) \
+	$(am__objects_12)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -302,6 +309,7 @@ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/c-ctype.Po ./$(DEPDIR)/free.Po \
 	./$(DEPDIR)/getlocalename_l-unsafe.Po \
+	./$(DEPDIR)/localcharset.Po ./$(DEPDIR)/localename-environ.Po \
 	./$(DEPDIR)/localename-unsafe.Po ./$(DEPDIR)/malloc.Po \
 	./$(DEPDIR)/malloca.Po ./$(DEPDIR)/mktime.Po \
 	./$(DEPDIR)/nstrftime.Po ./$(DEPDIR)/setenv.Po \
@@ -311,7 +319,7 @@ am__depfiles_remade = ./$(DEPDIR)/c-ctype.Po ./$(DEPDIR)/free.Po \
 	./$(DEPDIR)/strftime.Po ./$(DEPDIR)/time_r.Po \
 	./$(DEPDIR)/time_rz.Po ./$(DEPDIR)/timegm.Po \
 	./$(DEPDIR)/tzset.Po ./$(DEPDIR)/unistd.Po \
-	./$(DEPDIR)/unsetenv.Po
+	./$(DEPDIR)/unsetenv.Po ./$(DEPDIR)/windows-mutex.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -1513,6 +1521,7 @@ LIB_SEMAPHORE = @LIB_SEMAPHORE@
 LIB_SETLOCALE = @LIB_SETLOCALE@
 LIB_SETLOCALE_NULL = @LIB_SETLOCALE_NULL@
 LIMITS_H = @LIMITS_H@
+LOCALCHARSET_TESTS_ENVIRONMENT = @LOCALCHARSET_TESTS_ENVIRONMENT@
 LOCALENAME_ENHANCE_LOCALE_FUNCS = @LOCALENAME_ENHANCE_LOCALE_FUNCS@
 LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
 LOCALE_FR = @LOCALE_FR@
@@ -2082,15 +2091,16 @@ pkgdata_DATA =
 EXTRA_DIST = alloca.in.h assert.in.h verify.h attribute.h errno.in.h \
 	fcntl.in.h flexmember.h getlocalename_l-unsafe.h \
 	intprops-internal.h intprops.h inttypes.in.h cdefs.h \
-	libc-config.h limits.in.h locale.in.h localename.h malloc.c \
-	malloca.h mktime-internal.h mktime.c mktime-internal.h \
-	mktime.c calendar-ethiopian.h calendar-persian.h \
-	calendar-thai.h calendars.h strftime.c strftime.h \
-	setlocale-fixes.h setlocale_null.h windows-initguard.h \
-	setlocale_null.h _Noreturn.h arg-nonnull.h c++defs.h \
-	warn-on-use.h intprops-internal.h stdckdint.in.h stddef.in.h \
-	stdint.in.h stdlib.in.h string.in.h sys_types.in.h time.in.h \
-	time-internal.h mktime-internal.h unistd.in.h wchar.in.h \
+	libc-config.h limits.in.h localcharset.h locale.in.h \
+	localename.h localename.h malloc.c malloca.h mktime-internal.h \
+	mktime.c mktime-internal.h mktime.c calendar-ethiopian.h \
+	calendar-persian.h calendar-thai.h calendars.h strftime.c \
+	strftime.h setlocale-fixes.h setlocale_null.h \
+	windows-initguard.h setlocale_null.h _Noreturn.h arg-nonnull.h \
+	c++defs.h warn-on-use.h intprops-internal.h stdckdint.in.h \
+	stddef.in.h stdint.in.h stdlib.in.h string.in.h sys_types.in.h \
+	time.in.h time-internal.h mktime-internal.h unistd.in.h \
+	wchar.in.h windows-initguard.h windows-mutex.h \
 	xalloc-oversized.h
 BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) $(ERRNO_H) fcntl.h inttypes.h \
 	$(LIMITS_H) locale.h $(STDCKDINT_H) $(STDDEF_H) $(STDINT_H) \
@@ -2112,11 +2122,11 @@ MAINTAINERCLEANFILES =
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
 libgnu_a_SOURCES = c-ctype.h c-ctype.c $(am__append_1) $(am__append_2) \
-	idx.h $(am__append_3) malloca.c nstrftime.c $(am__append_4) \
-	$(am__append_5) setlocale_null.c $(am__append_6) \
-	setlocale_null-unlocked.c stdlib.c $(am__append_7) \
-	$(am__append_8) $(am__append_9) $(am__append_10) unistd.c \
-	$(am__append_11)
+	idx.h localcharset.c localename-environ.c $(am__append_3) \
+	malloca.c nstrftime.c $(am__append_4) $(am__append_5) \
+	setlocale_null.c $(am__append_6) setlocale_null-unlocked.c \
+	stdlib.c $(am__append_7) $(am__append_8) $(am__append_9) \
+	$(am__append_10) unistd.c $(am__append_11) $(am__append_12)
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES = malloc.c mktime.c mktime.c strftime.c
@@ -2222,6 +2232,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/c-ctype.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/free.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getlocalename_l-unsafe.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localcharset.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-environ.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-unsafe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloca.Po@am__quote@ # am--include-marker
@@ -2240,6 +2252,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tzset.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unistd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unsetenv.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/windows-mutex.Po@am__quote@ # am--include-marker
 
 $(am__depfiles_remade):
 	@$(MKDIR_P) $(@D)
@@ -2494,6 +2507,8 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/c-ctype.Po
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l-unsafe.Po
+	-rm -f ./$(DEPDIR)/localcharset.Po
+	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/localename-unsafe.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -2512,6 +2527,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/tzset.Po
 	-rm -f ./$(DEPDIR)/unistd.Po
 	-rm -f ./$(DEPDIR)/unsetenv.Po
+	-rm -f ./$(DEPDIR)/windows-mutex.Po
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-local distclean-tags
@@ -2560,6 +2576,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/c-ctype.Po
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l-unsafe.Po
+	-rm -f ./$(DEPDIR)/localcharset.Po
+	-rm -f ./$(DEPDIR)/localename-environ.Po
 	-rm -f ./$(DEPDIR)/localename-unsafe.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -2578,6 +2596,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/tzset.Po
 	-rm -f ./$(DEPDIR)/unistd.Po
 	-rm -f ./$(DEPDIR)/unsetenv.Po
+	-rm -f ./$(DEPDIR)/windows-mutex.Po
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic \
 	maintainer-clean-local

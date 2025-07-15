@@ -58,6 +58,7 @@ EXTRA_DIST += isnanl.m4
 EXTRA_DIST += largefile.m4
 EXTRA_DIST += lcmessage.m4
 EXTRA_DIST += limits-h.m4
+EXTRA_DIST += localcharset.m4
 EXTRA_DIST += locale-en.m4
 EXTRA_DIST += locale-fr.m4
 EXTRA_DIST += locale-ja.m4

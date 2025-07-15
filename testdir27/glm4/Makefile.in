@@ -131,6 +131,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
 	$(top_srcdir)/glm4/largefile.m4 \
 	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/limits-h.m4 \
+	$(top_srcdir)/glm4/localcharset.m4 \
 	$(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale-fr.m4 \
 	$(top_srcdir)/glm4/locale-ja.m4 \
@@ -1324,6 +1325,7 @@ LIB_SEMAPHORE = @LIB_SEMAPHORE@
 LIB_SETLOCALE = @LIB_SETLOCALE@
 LIB_SETLOCALE_NULL = @LIB_SETLOCALE_NULL@
 LIMITS_H = @LIMITS_H@
+LOCALCHARSET_TESTS_ENVIRONMENT = @LOCALCHARSET_TESTS_ENVIRONMENT@
 LOCALENAME_ENHANCE_LOCALE_FUNCS = @LOCALENAME_ENHANCE_LOCALE_FUNCS@
 LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
 LOCALE_FR = @LOCALE_FR@
@@ -1896,16 +1898,16 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	gnulib-common.m4 gnulib-i18n.m4 include_next.m4 inet_pton.m4 \
 	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
 	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 largefile.m4 \
-	lcmessage.m4 limits-h.m4 locale-en.m4 locale-fr.m4 \
-	locale-ja.m4 locale-zh.m4 locale_h.m4 localename.m4 lock.m4 \
-	lstat.m4 malloc.m4 malloca.m4 math_h.m4 minmax.m4 mkfifo.m4 \
-	mktime.m4 mode_t.m4 msvc-inval.m4 msvc-nothrow.m4 multiarch.m4 \
-	musl.m4 nan-mips.m4 nanosleep.m4 netinet_in_h.m4 nstrftime.m4 \
-	off64_t.m4 off_t.m4 once.m4 open-cloexec.m4 open-slash.m4 \
-	open.m4 pathmax.m4 perror.m4 pid_t.m4 pipe.m4 pselect.m4 \
-	pthread-cond.m4 pthread-mutex.m4 pthread-once.m4 \
-	pthread-rwlock.m4 pthread-spin.m4 pthread-thread.m4 \
-	pthread_h.m4 pthread_mutex_timedlock.m4 \
+	lcmessage.m4 limits-h.m4 localcharset.m4 locale-en.m4 \
+	locale-fr.m4 locale-ja.m4 locale-zh.m4 locale_h.m4 \
+	localename.m4 lock.m4 lstat.m4 malloc.m4 malloca.m4 math_h.m4 \
+	minmax.m4 mkfifo.m4 mktime.m4 mode_t.m4 msvc-inval.m4 \
+	msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 nanosleep.m4 \
+	netinet_in_h.m4 nstrftime.m4 off64_t.m4 off_t.m4 once.m4 \
+	open-cloexec.m4 open-slash.m4 open.m4 pathmax.m4 perror.m4 \
+	pid_t.m4 pipe.m4 pselect.m4 pthread-cond.m4 pthread-mutex.m4 \
+	pthread-once.m4 pthread-rwlock.m4 pthread-spin.m4 \
+	pthread-thread.m4 pthread_h.m4 pthread_mutex_timedlock.m4 \
 	pthread_rwlock_rdlock.m4 pthread_sigmask.m4 putenv.m4 raise.m4 \
 	random.m4 random_r.m4 realloc.m4 reallocarray.m4 sched_h.m4 \
 	sched_yield.m4 select.m4 semaphore.m4 setenv.m4 setlocale.m4 \
