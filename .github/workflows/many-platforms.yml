@@ -78,7 +78,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
@@ -119,7 +119,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-linux-gnu-alma:
     name: make check on AlmaLinux GNU/Linux
@@ -162,7 +162,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
@@ -184,8 +184,6 @@ jobs:
             apk add make gcc musl-dev g++ musl-locales
             cd /work
             ls -l
-            ls -l /usr/share/i18n/locales/musl/de_DE.UTF-8
-            apk list -I
             export CPPFLAGS="-Wall"
             ./build-on.sh 'testdir-all' '' 'make' '/usr/local' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
@@ -202,7 +200,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-macos:
     name: make check on macOS
@@ -245,7 +243,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-freebsd:
     name: make check on FreeBSD
@@ -288,7 +286,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
@@ -332,7 +330,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
@@ -379,7 +377,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
@@ -429,7 +427,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
@@ -472,7 +470,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-cygwin:
     name: make check on Cygwin
@@ -530,7 +528,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-mingw:
     name: make check on mingw
@@ -592,7 +590,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-msvc:
     name: make check on MSVC
@@ -690,7 +688,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
@@ -730,7 +728,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-clang-approach1:
     name: make check with clang 18 downloaded
@@ -774,7 +772,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   check-newest-clang:
     name: make check with the newest clang release
@@ -816,7 +814,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
-          retention-days: 7
+          retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
   check-cross:
@@ -850,5 +848,5 @@ jobs:
             */build/config.log
             */build/config.status
             */build/log[12]
-          retention-days: 7
+          retention-days: 28
           overwrite: true
