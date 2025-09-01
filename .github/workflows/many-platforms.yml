@@ -232,8 +232,8 @@ jobs:
           export LDFLAGS="-L$HOME/lib"
           export CC="`pwd`/macos-compile clang"
           export CXX="`pwd`/macos-compile clang++"
-          : ./build-on.sh 'testdir-all' '' 'make' "$HOME" 'libbacktrace'
-          cat /Applications/Xcode_16.4.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cuchar
+          cat /Applications/Xcode_*.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/c++/v1/cuchar || :
+          ./build-on.sh 'testdir-all' '' 'make' "$HOME" 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
