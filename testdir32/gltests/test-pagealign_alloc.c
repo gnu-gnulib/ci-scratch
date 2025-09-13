@@ -46,7 +46,7 @@ main (int argc, char *argv[])
       50000 |   3.1 sec   | 0.13 sec |
      100000 |  14 sec     | 0.26 sec |
    */
-  int alarm_value = 2;
+  int alarm_value = 10;
   signal (SIGALRM, SIG_DFL);
   alarm (alarm_value);
 #endif

@@ -60,7 +60,7 @@ pagealign_impl_t pagealign_impl;
    For PA_IMPL_MALLOC:
      aligned_ptr -> void *.
      For each memory region, we store the original pointer returned by malloc().
-   For PA_IMPL_MMAP, PA_IMPL_VIRTUAL_ALLOC:
+   For PA_IMPL_MMAP:
      aligned_ptr -> size_t.
      For each memory region, we store its size.  */
 static gl_map_t page_info_map;
@@ -200,10 +200,6 @@ pagealign_alloc (size_t size)
           errno = ENOMEM;
           return NULL;
         }
-      if (page_info_map == NULL)
-        page_info_map =
-          gl_map_create_empty (GL_HASH_MAP, NULL, NULL, NULL, NULL);
-      gl_map_put (page_info_map, ret, (void *) (uintptr_t) size);
       break;
       #else
       errno = ENOSYS;
@@ -288,14 +284,8 @@ pagealign_free (void *aligned_ptr)
       #if defined _WIN32 && !defined __CYGWIN__
       /* Documentation:
          <https://learn.microsoft.com/en-us/windows/win32/api/memoryapi/nf-memoryapi-virtualfree>  */
-      {
-        const void *value;
-        if (page_info_map == NULL
-            || !gl_map_getremove (page_info_map, aligned_ptr, &value))
-          abort ();
-        if (!VirtualFree (aligned_ptr, (size_t) (uintptr_t) value, MEM_RELEASE))
-          error (EXIT_FAILURE, 0, "Failed to free memory");
-      }
+      if (!VirtualFree (aligned_ptr, 0, MEM_RELEASE))
+        error (EXIT_FAILURE, 0, "Failed to free memory");
       break;
       #else
       abort ();
