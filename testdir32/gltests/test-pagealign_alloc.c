@@ -51,7 +51,18 @@ main (int argc, char *argv[])
   alarm (alarm_value);
 #endif
 
-  int n = (argc > 1 ? atoi (argv[1]) : 50000);
+  int n;
+  if (argc > 1)
+    n = atoi (argv[1]);
+  else
+    {
+#if defined __CYGWIN__
+      n = 25000;
+#else
+      n = (sizeof (void *) <= 4 ? 25000 : 50000);
+#endif
+    }
+
   void **pages = XNMALLOC (n, void *);
 
   size_t pagesize = getpagesize ();
