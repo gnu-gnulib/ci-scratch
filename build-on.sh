@@ -75,7 +75,8 @@ done
 # testdir29: dirent-h stdlib-h ...
 # testdir30: uchar-h
 # testdir31: all
-cd testdir31 || exit 1
+# testdir32: pagealign_alloc
+cd testdir32 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
