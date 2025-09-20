@@ -181,15 +181,15 @@ threadN_func (void *arg)
   for (;;)
     {
       nl_langinfo (CODESET);   /* LC_CTYPE */    /* locale charmap */
-      nl_langinfo (AM_STR);    /* LC_TIME */     /* locale -k am_pm */
-      nl_langinfo (PM_STR);    /* LC_TIME */     /* locale -k am_pm */
-      nl_langinfo (DAY_2);     /* LC_TIME */     /* locale -k day */
-      nl_langinfo (DAY_5);     /* LC_TIME */     /* locale -k day */
-      nl_langinfo (ALTMON_2);  /* LC_TIME */     /* locale -k alt_mon */
-      nl_langinfo (ALTMON_9);  /* LC_TIME */     /* locale -k alt_mon */
+      //nl_langinfo (AM_STR);    /* LC_TIME */     /* locale -k am_pm */
+      //nl_langinfo (PM_STR);    /* LC_TIME */     /* locale -k am_pm */
+      //nl_langinfo (DAY_2);     /* LC_TIME */     /* locale -k day */
+      //nl_langinfo (DAY_5);     /* LC_TIME */     /* locale -k day */
+      //nl_langinfo (ALTMON_2);  /* LC_TIME */     /* locale -k alt_mon */
+      //nl_langinfo (ALTMON_9);  /* LC_TIME */     /* locale -k alt_mon */
       nl_langinfo (CRNCYSTR);  /* LC_MONETARY */ /* locale -k currency_symbol */
-      nl_langinfo (RADIXCHAR); /* LC_NUMERIC */  /* locale -k decimal_point */
-      nl_langinfo (THOUSEP);   /* LC_NUMERIC */  /* locale -k thousands_sep */
+      //nl_langinfo (RADIXCHAR); /* LC_NUMERIC */  /* locale -k decimal_point */
+      //nl_langinfo (THOUSEP);   /* LC_NUMERIC */  /* locale -k thousands_sep */
     }
 
   /*NOTREACHED*/
@@ -226,7 +226,7 @@ main (int argc, char *argv[])
   gl_thread_create (thread2_func, NULL);
   gl_thread_create (thread3_func, NULL);
   gl_thread_create (thread4_func, NULL);
-  //gl_thread_create (thread5_func, NULL);
+  gl_thread_create (thread5_func, NULL);
   gl_thread_create (thread6_func, NULL);
   /* Create the disturber thread.  */
   gl_thread_create (threadN_func, NULL);
