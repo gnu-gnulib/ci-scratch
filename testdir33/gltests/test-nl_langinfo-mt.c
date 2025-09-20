@@ -33,16 +33,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
-#include <signal.h>
 
 #include "glthread/thread.h"
-
-
-#define abort() \
-  do { \
-    fprintf (stderr, "abort in %s:%d\n", __FILE__, __LINE__); \
-    raise (SIGABRT); \
-  } while (0)
 
 
 /* Some common locale names.  */
@@ -181,15 +173,15 @@ threadN_func (void *arg)
   for (;;)
     {
       nl_langinfo (CODESET);   /* LC_CTYPE */    /* locale charmap */
-      //nl_langinfo (AM_STR);    /* LC_TIME */     /* locale -k am_pm */
-      //nl_langinfo (PM_STR);    /* LC_TIME */     /* locale -k am_pm */
-      //nl_langinfo (DAY_2);     /* LC_TIME */     /* locale -k day */
-      //nl_langinfo (DAY_5);     /* LC_TIME */     /* locale -k day */
-      //nl_langinfo (ALTMON_2);  /* LC_TIME */     /* locale -k alt_mon */
-      //nl_langinfo (ALTMON_9);  /* LC_TIME */     /* locale -k alt_mon */
+      nl_langinfo (AM_STR);    /* LC_TIME */     /* locale -k am_pm */
+      nl_langinfo (PM_STR);    /* LC_TIME */     /* locale -k am_pm */
+      nl_langinfo (DAY_2);     /* LC_TIME */     /* locale -k day */
+      nl_langinfo (DAY_5);     /* LC_TIME */     /* locale -k day */
+      nl_langinfo (ALTMON_2);  /* LC_TIME */     /* locale -k alt_mon */
+      nl_langinfo (ALTMON_9);  /* LC_TIME */     /* locale -k alt_mon */
       nl_langinfo (CRNCYSTR);  /* LC_MONETARY */ /* locale -k currency_symbol */
-      //nl_langinfo (RADIXCHAR); /* LC_NUMERIC */  /* locale -k decimal_point */
-      //nl_langinfo (THOUSEP);   /* LC_NUMERIC */  /* locale -k thousands_sep */
+      nl_langinfo (RADIXCHAR); /* LC_NUMERIC */  /* locale -k decimal_point */
+      nl_langinfo (THOUSEP);   /* LC_NUMERIC */  /* locale -k thousands_sep */
     }
 
   /*NOTREACHED*/

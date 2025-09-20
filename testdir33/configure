@@ -26641,10 +26641,11 @@ printf '%s\n' "#define HAVE_NL_LANGINFO 1" >>confdefs.h
 
 
   if test $ac_cv_func_nl_langinfo = yes; then
-    # On Solaris 10 and Solaris 11.3, nl_langinfo is not multithread-safe.
+    # On macOS 26, Solaris 10, and Solaris 11.3, nl_langinfo is not
+    # multithread-safe.
     case "$host_os" in
-      solaris*) NL_LANGINFO_MTSAFE=0 ;;
-      *)        NL_LANGINFO_MTSAFE=1 ;;
+      darwin* | solaris*) NL_LANGINFO_MTSAFE=0 ;;
+      *)                  NL_LANGINFO_MTSAFE=1 ;;
     esac
 
 printf '%s\n' "#define NL_LANGINFO_MTSAFE $NL_LANGINFO_MTSAFE" >>confdefs.h
