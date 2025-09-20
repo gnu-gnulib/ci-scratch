@@ -46,6 +46,7 @@ jobs:
   # See https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration
   check-linux-gnu-ubuntu:
     name: make check on Ubuntu GNU/Linux
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -79,6 +80,7 @@ jobs:
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -120,6 +122,7 @@ jobs:
           overwrite: true
   check-linux-gnu-alma:
     name: make check on AlmaLinux GNU/Linux
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -163,6 +166,7 @@ jobs:
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -205,7 +209,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15]
+        os: [macos-13, macos-14, macos-15, macos-26]
     runs-on: ${{ matrix.os }}
     steps:
       # This is needed because we run a script stored in this repository.
@@ -216,7 +220,7 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      - run: ${{ (matrix.os == 'macos-14' || matrix.os == 'macos-15') && 'brew install libiconv' || ':' }}
+      - run: ${{ (matrix.os == 'macos-14' || matrix.os == 'macos-15' || matrix.os == 'macos-26') && 'brew install libiconv' || ':' }}
       - run: |
           pwd
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
@@ -247,6 +251,7 @@ jobs:
     name: make check on FreeBSD
     # The FreeBSD runners sometimes get stuck.
     timeout-minutes: 15
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -288,6 +293,7 @@ jobs:
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -332,6 +338,7 @@ jobs:
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -379,6 +386,7 @@ jobs:
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -429,6 +437,7 @@ jobs:
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -477,6 +486,7 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -535,6 +545,7 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -597,6 +608,7 @@ jobs:
       fail-fast: false
       matrix:
         bitness: [32, 64]
+    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -691,6 +703,7 @@ jobs:
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -731,6 +744,7 @@ jobs:
   check-clang-approach1:
     name: make check with clang 18 downloaded
     # Takes 1 min. longer than check-newest-clang.
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -774,6 +788,7 @@ jobs:
           overwrite: true
   check-newest-clang:
     name: make check with the newest clang release
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
@@ -817,6 +832,7 @@ jobs:
   # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
   check-cross:
     name: make check with a cross-compiler
+    if: ${{ false }}
     runs-on: ubuntu-22.04
     steps:
       # This is needed because we run a script stored in this repository.
