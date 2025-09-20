@@ -226,15 +226,15 @@ main (int argc, char *argv[])
   gl_thread_create (thread2_func, NULL);
   gl_thread_create (thread3_func, NULL);
   gl_thread_create (thread4_func, NULL);
-  gl_thread_create (thread5_func, NULL);
+  //gl_thread_create (thread5_func, NULL);
   gl_thread_create (thread6_func, NULL);
   /* Create the disturber thread.  */
   gl_thread_create (threadN_func, NULL);
 
-  /* Let them run for 2 seconds.  */
+  /* Let them run for 20 seconds.  */
   {
     struct timespec duration;
-    duration.tv_sec = (argc > 1 ? atoi (argv[1]) : 2);
+    duration.tv_sec = (argc > 1 ? atoi (argv[1]) : 20);
     duration.tv_nsec = 0;
 
     nanosleep (&duration, NULL);
