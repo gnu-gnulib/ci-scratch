@@ -33,8 +33,16 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <signal.h>
 
 #include "glthread/thread.h"
+
+
+#define abort() \
+  do { \
+    fprintf (stderr, "abort in %s:%d\n", __FILE__, __LINE__); \
+    raise (SIGABRT); \
+  } while (0)
 
 
 /* Some common locale names.  */
