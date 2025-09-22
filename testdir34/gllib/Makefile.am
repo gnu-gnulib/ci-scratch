@@ -154,12 +154,6 @@ endif
 
 ## end   gnulib module chown
 
-## begin gnulib module chownat
-
-libgnu_a_SOURCES += chownat.c
-
-## end   gnulib module chownat
-
 ## begin gnulib module cloexec
 
 libgnu_a_SOURCES += cloexec.c

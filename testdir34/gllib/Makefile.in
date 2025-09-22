@@ -281,16 +281,16 @@ libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__DEPENDENCIES_1 =
 am__libgnu_a_SOURCES_DIST = openat-priv.h openat-proc.c \
-	basename-lgpl.c chdir-long.c chown.c fchown-stub.c chownat.c \
-	cloexec.c close.c dirfd.c dup2.c error.c exitfail.c fchdir.c \
-	fchownat.c fcntl.c fd-hook.c filenamecat-lgpl.c free.c \
-	fseterr.c fstat.c fstatat.c getcwd-lgpl.c getdtablesize.c \
-	getprogname.c gettext.h idx.h issymlink.c lchown.c lstat.c \
-	malloca.c memchr.c mempcpy.c memrchr.c msvc-inval.c \
-	msvc-nothrow.c open.c openat.c openat-die.c readlink.c \
-	realloc.c save-cwd.c stat.c stat-time.c stdio-consolesafe.c \
-	stdio-read.c stdio-write.c stdlib.c strdup.c strerror.c \
-	strerror-override.c string.c unistd.c
+	basename-lgpl.c chdir-long.c chown.c fchown-stub.c cloexec.c \
+	close.c dirfd.c dup2.c error.c exitfail.c fchdir.c fchownat.c \
+	fcntl.c fd-hook.c filenamecat-lgpl.c free.c fseterr.c fstat.c \
+	fstatat.c getcwd-lgpl.c getdtablesize.c getprogname.c \
+	gettext.h idx.h issymlink.c lchown.c lstat.c malloca.c \
+	memchr.c mempcpy.c memrchr.c msvc-inval.c msvc-nothrow.c \
+	open.c openat.c openat-die.c readlink.c realloc.c save-cwd.c \
+	stat.c stat-time.c stdio-consolesafe.c stdio-read.c \
+	stdio-write.c stdlib.c strdup.c strerror.c strerror-override.c \
+	string.c unistd.c
 @GL_COND_OBJ_CHDIR_LONG_TRUE@am__objects_1 = chdir-long.$(OBJEXT)
 @GL_COND_OBJ_CHOWN_TRUE@am__objects_2 = chown.$(OBJEXT)
 @GL_COND_OBJ_FCHOWN_STUB_TRUE@am__objects_3 = fchown-stub.$(OBJEXT)
@@ -330,21 +330,21 @@ am__libgnu_a_SOURCES_DIST = openat-priv.h openat-proc.c \
 @GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_35 = strerror-override.$(OBJEXT)
 am_libgnu_a_OBJECTS = openat-proc.$(OBJEXT) basename-lgpl.$(OBJEXT) \
 	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
-	chownat.$(OBJEXT) cloexec.$(OBJEXT) $(am__objects_4) \
-	$(am__objects_5) $(am__objects_6) $(am__objects_7) \
-	exitfail.$(OBJEXT) $(am__objects_8) $(am__objects_9) \
-	$(am__objects_10) fd-hook.$(OBJEXT) filenamecat-lgpl.$(OBJEXT) \
-	$(am__objects_11) $(am__objects_12) $(am__objects_13) \
-	$(am__objects_14) $(am__objects_15) $(am__objects_16) \
-	$(am__objects_17) issymlink.$(OBJEXT) $(am__objects_18) \
-	$(am__objects_19) malloca.$(OBJEXT) $(am__objects_20) \
-	$(am__objects_21) $(am__objects_22) $(am__objects_23) \
-	$(am__objects_24) $(am__objects_25) $(am__objects_26) \
-	openat-die.$(OBJEXT) $(am__objects_27) $(am__objects_28) \
-	save-cwd.$(OBJEXT) $(am__objects_29) stat-time.$(OBJEXT) \
-	$(am__objects_30) $(am__objects_31) $(am__objects_32) \
-	stdlib.$(OBJEXT) $(am__objects_33) $(am__objects_34) \
-	$(am__objects_35) string.$(OBJEXT) unistd.$(OBJEXT)
+	cloexec.$(OBJEXT) $(am__objects_4) $(am__objects_5) \
+	$(am__objects_6) $(am__objects_7) exitfail.$(OBJEXT) \
+	$(am__objects_8) $(am__objects_9) $(am__objects_10) \
+	fd-hook.$(OBJEXT) filenamecat-lgpl.$(OBJEXT) $(am__objects_11) \
+	$(am__objects_12) $(am__objects_13) $(am__objects_14) \
+	$(am__objects_15) $(am__objects_16) $(am__objects_17) \
+	issymlink.$(OBJEXT) $(am__objects_18) $(am__objects_19) \
+	malloca.$(OBJEXT) $(am__objects_20) $(am__objects_21) \
+	$(am__objects_22) $(am__objects_23) $(am__objects_24) \
+	$(am__objects_25) $(am__objects_26) openat-die.$(OBJEXT) \
+	$(am__objects_27) $(am__objects_28) save-cwd.$(OBJEXT) \
+	$(am__objects_29) stat-time.$(OBJEXT) $(am__objects_30) \
+	$(am__objects_31) $(am__objects_32) stdlib.$(OBJEXT) \
+	$(am__objects_33) $(am__objects_34) $(am__objects_35) \
+	string.$(OBJEXT) unistd.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -363,31 +363,30 @@ depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
 am__depfiles_remade = ./$(DEPDIR)/at-func.Po \
 	./$(DEPDIR)/basename-lgpl.Po ./$(DEPDIR)/chdir-long.Po \
-	./$(DEPDIR)/chown.Po ./$(DEPDIR)/chownat.Po \
-	./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
-	./$(DEPDIR)/dirfd.Po ./$(DEPDIR)/dup2.Po ./$(DEPDIR)/error.Po \
-	./$(DEPDIR)/exitfail.Po ./$(DEPDIR)/fchdir.Po \
-	./$(DEPDIR)/fchown-stub.Po ./$(DEPDIR)/fchownat.Po \
-	./$(DEPDIR)/fcntl.Po ./$(DEPDIR)/fd-hook.Po \
-	./$(DEPDIR)/filenamecat-lgpl.Po ./$(DEPDIR)/free.Po \
-	./$(DEPDIR)/fseterr.Po ./$(DEPDIR)/fstat.Po \
-	./$(DEPDIR)/fstatat.Po ./$(DEPDIR)/getcwd-lgpl.Po \
-	./$(DEPDIR)/getdtablesize.Po ./$(DEPDIR)/getprogname.Po \
-	./$(DEPDIR)/issymlink.Po ./$(DEPDIR)/lchown.Po \
-	./$(DEPDIR)/lstat.Po ./$(DEPDIR)/malloc.Po \
-	./$(DEPDIR)/malloca.Po ./$(DEPDIR)/memchr.Po \
-	./$(DEPDIR)/mempcpy.Po ./$(DEPDIR)/memrchr.Po \
-	./$(DEPDIR)/msvc-inval.Po ./$(DEPDIR)/msvc-nothrow.Po \
-	./$(DEPDIR)/open.Po ./$(DEPDIR)/openat-die.Po \
-	./$(DEPDIR)/openat-proc.Po ./$(DEPDIR)/openat.Po \
-	./$(DEPDIR)/readlink.Po ./$(DEPDIR)/realloc.Po \
-	./$(DEPDIR)/save-cwd.Po ./$(DEPDIR)/stat-time.Po \
-	./$(DEPDIR)/stat-w32.Po ./$(DEPDIR)/stat.Po \
-	./$(DEPDIR)/stdio-consolesafe.Po ./$(DEPDIR)/stdio-read.Po \
-	./$(DEPDIR)/stdio-write.Po ./$(DEPDIR)/stdlib.Po \
-	./$(DEPDIR)/strdup.Po ./$(DEPDIR)/strerror-override.Po \
-	./$(DEPDIR)/strerror.Po ./$(DEPDIR)/string.Po \
-	./$(DEPDIR)/unistd.Po
+	./$(DEPDIR)/chown.Po ./$(DEPDIR)/cloexec.Po \
+	./$(DEPDIR)/close.Po ./$(DEPDIR)/dirfd.Po ./$(DEPDIR)/dup2.Po \
+	./$(DEPDIR)/error.Po ./$(DEPDIR)/exitfail.Po \
+	./$(DEPDIR)/fchdir.Po ./$(DEPDIR)/fchown-stub.Po \
+	./$(DEPDIR)/fchownat.Po ./$(DEPDIR)/fcntl.Po \
+	./$(DEPDIR)/fd-hook.Po ./$(DEPDIR)/filenamecat-lgpl.Po \
+	./$(DEPDIR)/free.Po ./$(DEPDIR)/fseterr.Po \
+	./$(DEPDIR)/fstat.Po ./$(DEPDIR)/fstatat.Po \
+	./$(DEPDIR)/getcwd-lgpl.Po ./$(DEPDIR)/getdtablesize.Po \
+	./$(DEPDIR)/getprogname.Po ./$(DEPDIR)/issymlink.Po \
+	./$(DEPDIR)/lchown.Po ./$(DEPDIR)/lstat.Po \
+	./$(DEPDIR)/malloc.Po ./$(DEPDIR)/malloca.Po \
+	./$(DEPDIR)/memchr.Po ./$(DEPDIR)/mempcpy.Po \
+	./$(DEPDIR)/memrchr.Po ./$(DEPDIR)/msvc-inval.Po \
+	./$(DEPDIR)/msvc-nothrow.Po ./$(DEPDIR)/open.Po \
+	./$(DEPDIR)/openat-die.Po ./$(DEPDIR)/openat-proc.Po \
+	./$(DEPDIR)/openat.Po ./$(DEPDIR)/readlink.Po \
+	./$(DEPDIR)/realloc.Po ./$(DEPDIR)/save-cwd.Po \
+	./$(DEPDIR)/stat-time.Po ./$(DEPDIR)/stat-w32.Po \
+	./$(DEPDIR)/stat.Po ./$(DEPDIR)/stdio-consolesafe.Po \
+	./$(DEPDIR)/stdio-read.Po ./$(DEPDIR)/stdio-write.Po \
+	./$(DEPDIR)/stdlib.Po ./$(DEPDIR)/strdup.Po \
+	./$(DEPDIR)/strerror-override.Po ./$(DEPDIR)/strerror.Po \
+	./$(DEPDIR)/string.Po ./$(DEPDIR)/unistd.Po
 am__mv = mv -f
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
 	$(CPPFLAGS) $(AM_CFLAGS) $(CFLAGS)
@@ -2196,8 +2195,8 @@ MAINTAINERCLEANFILES =
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
 libgnu_a_SOURCES = openat-priv.h openat-proc.c basename-lgpl.c \
-	$(am__append_1) $(am__append_2) $(am__append_3) chownat.c \
-	cloexec.c $(am__append_4) $(am__append_5) $(am__append_6) \
+	$(am__append_1) $(am__append_2) $(am__append_3) cloexec.c \
+	$(am__append_4) $(am__append_5) $(am__append_6) \
 	$(am__append_7) exitfail.c $(am__append_8) $(am__append_9) \
 	$(am__append_10) fd-hook.c filenamecat-lgpl.c $(am__append_11) \
 	$(am__append_12) $(am__append_13) $(am__append_14) \
@@ -2317,7 +2316,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/basename-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/chdir-long.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/chown.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/chownat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cloexec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/close.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirfd.Po@am__quote@ # am--include-marker
@@ -2621,7 +2619,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/basename-lgpl.Po
 	-rm -f ./$(DEPDIR)/chdir-long.Po
 	-rm -f ./$(DEPDIR)/chown.Po
-	-rm -f ./$(DEPDIR)/chownat.Po
 	-rm -f ./$(DEPDIR)/cloexec.Po
 	-rm -f ./$(DEPDIR)/close.Po
 	-rm -f ./$(DEPDIR)/dirfd.Po
@@ -2719,7 +2716,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/basename-lgpl.Po
 	-rm -f ./$(DEPDIR)/chdir-long.Po
 	-rm -f ./$(DEPDIR)/chown.Po
-	-rm -f ./$(DEPDIR)/chownat.Po
 	-rm -f ./$(DEPDIR)/cloexec.Po
 	-rm -f ./$(DEPDIR)/close.Po
 	-rm -f ./$(DEPDIR)/dirfd.Po

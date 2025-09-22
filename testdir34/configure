@@ -9452,6 +9452,75 @@ do
   fi
 done
 
+
+
+
+    if test $ac_cv_func_chown != no; then
+            { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether chown updates ctime per POSIX" >&5
+printf %s "checking whether chown updates ctime per POSIX... " >&6; }
+if test ${gl_cv_func_chown_ctime_works+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)                             case $host_os in #(
+  openbsd* | cygwin*) :
+    if test "$cross_compiling" = yes
+then :
+  # Obey --enable-cross-guesses.
+              gl_cv_func_chown_ctime_works="$gl_cross_guess_normal"
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+
+$gl_mda_defines
+
+int
+main (void)
+{
+struct stat st1, st2;
+               if (close (creat ("conftest.file", 0600))) return 1;
+               if (stat ("conftest.file", &st1)) return 2;
+               sleep (1);
+               if (chown ("conftest.file", st1.st_uid, st1.st_gid)) return 3;
+               if (stat ("conftest.file", &st2)) return 4;
+               if (st2.st_ctime <= st1.st_ctime) return 5;
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_chown_ctime_works=yes
+else case e in #(
+  e) gl_cv_func_chown_ctime_works=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+           rm -f conftest.file
+           ;; #(
+  *) :
+    gl_cv_func_chown_ctime_works=yes ;;
+esac
+       ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_chown_ctime_works" >&5
+printf '%s\n' "$gl_cv_func_chown_ctime_works" >&6; }
+  fi
+
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for $CC options to detect undeclared functions" >&5
 printf %s "checking for $CC options to detect undeclared functions... " >&6; }
 if test ${ac_cv_c_undeclared_builtin_options+y}
@@ -9668,69 +9737,7 @@ printf '%s\n' "#define CHOWN_TRAILING_SLASH_BUG 1" >>confdefs.h
         ;;
     esac
 
-        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether chown updates ctime per POSIX" >&5
-printf %s "checking whether chown updates ctime per POSIX... " >&6; }
-if test ${gl_cv_func_chown_ctime_works+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e)                             case $host_os in #(
-  openbsd* | cygwin*) :
-    if test "$cross_compiling" = yes
-then :
-  # Obey --enable-cross-guesses.
-              gl_cv_func_chown_ctime_works="$gl_cross_guess_normal"
 
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-
-#include <unistd.h>
-#include <stdlib.h>
-#include <errno.h>
-#include <fcntl.h>
-#include <sys/stat.h>
-
-
-$gl_mda_defines
-
-int
-main (void)
-{
-struct stat st1, st2;
-               if (close (creat ("conftest.file", 0600))) return 1;
-               if (stat ("conftest.file", &st1)) return 2;
-               sleep (1);
-               if (chown ("conftest.file", st1.st_uid, st1.st_gid)) return 3;
-               if (stat ("conftest.file", &st2)) return 4;
-               if (st2.st_ctime <= st1.st_ctime) return 5;
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_run "$LINENO"
-then :
-  gl_cv_func_chown_ctime_works=yes
-else case e in #(
-  e) gl_cv_func_chown_ctime_works=no ;;
-esac
-fi
-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
-  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-
-           rm -f conftest.file
-           ;; #(
-  *) :
-    gl_cv_func_chown_ctime_works=yes ;;
-esac
-       ;;
-esac
-fi
-{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_chown_ctime_works" >&5
-printf '%s\n' "$gl_cv_func_chown_ctime_works" >&6; }
     case "$gl_cv_func_chown_ctime_works" in
       *yes) ;;
       *)
@@ -21263,8 +21270,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21266: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21267: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21273: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21274: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21293,7 +21300,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:21296: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21303: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -21545,7 +21552,7 @@ fi
 fi
 
 fi
-      echo "$as_me:21548: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21555: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -21835,8 +21842,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21838: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21839: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21845: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21846: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21865,7 +21872,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:21868: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21875: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -22117,7 +22124,7 @@ fi
 fi
 
 fi
-      echo "$as_me:22120: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:22127: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -23194,8 +23201,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:23197: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:23198: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:23204: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:23205: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -23224,7 +23231,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:23227: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:23234: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -23476,7 +23483,7 @@ fi
 fi
 
 fi
-      echo "$as_me:23479: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:23486: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -25549,10 +25556,6 @@ printf '%s\n' "#define GNULIB_TEST_CHOWN 1" >>confdefs.h
 
 
 
-printf '%s\n' "#define GNULIB_CHOWNAT 1" >>confdefs.h
-
-
-
 printf '%s\n' "#define GNULIB_TEST_CLOEXEC 1" >>confdefs.h
 
 
@@ -26184,13 +26187,15 @@ then :
   printf %s "(cached) " >&6
 else case e in #(
   e)
-     gl_dangle=conftest.dangle
-     # Remove any remnants of a previous test.
-     rm -f $gl_dangle
-     # Arrange for deletion of the temporary file this test creates.
-     ac_clean_files="$ac_clean_files $gl_dangle"
-     ln -s conftest.no-such $gl_dangle
-     if test "$cross_compiling" = yes
+     case "$gl_cv_func_chown_ctime_works" in
+       *yes)
+         gl_dangle=conftest.dangle
+         # Remove any remnants of a previous test.
+         rm -f $gl_dangle
+         # Arrange for deletion of the temporary file this test creates.
+         ac_clean_files="$ac_clean_files $gl_dangle"
+         ln -s conftest.no-such $gl_dangle
+         if test "$cross_compiling" = yes
 then :
   gl_cv_func_fchownat_nofollow_works="$gl_cross_guess_normal"
 else case e in #(
@@ -26225,19 +26230,24 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
 esac
 fi
 
-   ;;
+         ;;
+       *)
+                                                                        gl_cv_func_fchownat_nofollow_works="guessing no"
+         ;;
+     esac
+     ;;
 esac
 fi
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_fchownat_nofollow_works" >&5
 printf '%s\n' "$gl_cv_func_fchownat_nofollow_works" >&6; }
-  if test "$gl_cv_func_fchownat_nofollow_works" != yes
-then :
-  REPLACE_FCHOWNAT=1
+  case "$gl_cv_func_fchownat_nofollow_works" in
+    *yes)  ;;
+    *)    REPLACE_FCHOWNAT=1
 
 printf '%s\n' "#define FCHOWNAT_NOFOLLOW_BUG 1" >>confdefs.h
 
-
-fi
+        ;;
+  esac
 
 
 

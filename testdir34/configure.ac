@@ -68,7 +68,6 @@ gl_m4_base='glm4'
   gl_CONDITIONAL([GL_COND_OBJ_FCHOWN_STUB],
                  [test $REPLACE_CHOWN = 1 && test $ac_cv_func_fchown = no])
   gl_UNISTD_MODULE_INDICATOR([chown])
-  gl_MODULE_INDICATOR([chownat]) dnl for lib/openat.h
   gl_MODULE_INDICATOR_FOR_TESTS([cloexec])
   gl_FUNC_CLOSE
   gl_CONDITIONAL([GL_COND_OBJ_CLOSE], [test $REPLACE_CLOSE = 1])
