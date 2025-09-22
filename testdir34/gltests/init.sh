@@ -103,7 +103,11 @@ warn_ ()
   case $IFS in
     ' '*) printf '%s\n' "$*" >&2
           test $stderr_fileno_ = 2 \
-            || { printf '%s\n' "$*" | sed 1q >&$stderr_fileno_ ; } ;;
+            || { local args=$*
+                 local firstline=${args%%"$gl_init_sh_nl_"*}
+                 printf '%s\n' "$firstline" >&$stderr_fileno_
+               }
+          ;;
     *) (IFS=' '; warn_ "$@");;
   esac
 }
@@ -160,12 +164,12 @@ fi
 #  ? - not ok
 gl_shell_test_script_='
 test $(echo y) = y || exit 1
-LC_ALL=en_US.UTF-8 printf "\\351" 2>/dev/null \
-  | LC_ALL=C tr "\\351" x | LC_ALL=C grep "^x$" > /dev/null \
-  || exit 1
-printf "\\351" 2>/dev/null \
-  | LC_ALL=C tr "\\351" x | LC_ALL=C grep "^x$" > /dev/null \
-  || exit 1
+case $({ LC_ALL=en_US.UTF-8 printf "\\351"
+         printf "\\351\\n"
+       } 2>/dev/null | LC_ALL=C tr "\\351" x) in
+  xx) ;;
+  *) exit 1;;
+esac
 f_local_() { local v=1; }; f_local_ || exit 1
 f_dash_local_fail_() { local t=$(printf " 1"); }; f_dash_local_fail_
 score_=10
@@ -484,8 +488,11 @@ remove_tmp_ ()
     # cd out of the directory we're about to remove
     cd "$initial_cwd_" || cd / || cd /tmp
     chmod -R u+rwx "$test_dir_"
-    # If removal fails and exit status was to be 0, then change it to 1.
-    rm -rf "$test_dir_" || { test $__st = 0 && __st=1; }
+    # If the first removal fails, wait for subprocesses to exit and try again.
+    # If that fails and exit status was to be 0, change it to 1.
+    rm -rf "$test_dir_" 2>/dev/null \
+      || { sleep 1 && rm -rf "$test_dir_"; } \
+      || { test $__st = 0 && __st=1; }
   fi
   exit $__st
 }

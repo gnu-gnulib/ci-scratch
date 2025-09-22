@@ -9675,11 +9675,58 @@ then :
   printf %s "(cached) " >&6
 else case e in #(
   e)                             case $host_os in #(
-  openbsd*) :
-    gl_cv_func_chown_ctime_works=no ;; #(
+  openbsd* | cygwin*) :
+    if test "$cross_compiling" = yes
+then :
+  # Obey --enable-cross-guesses.
+              gl_cv_func_chown_ctime_works="$gl_cross_guess_normal"
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <fcntl.h>
+#include <sys/stat.h>
+
+
+$gl_mda_defines
+
+int
+main (void)
+{
+struct stat st1, st2;
+               if (close (creat ("conftest.file", 0600))) return 1;
+               if (stat ("conftest.file", &st1)) return 2;
+               sleep (1);
+               if (chown ("conftest.file", st1.st_uid, st1.st_gid)) return 3;
+               if (stat ("conftest.file", &st2)) return 4;
+               if (st2.st_ctime <= st1.st_ctime) return 5;
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_chown_ctime_works=yes
+else case e in #(
+  e) gl_cv_func_chown_ctime_works=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+           rm -f conftest.file
+           ;; #(
   *) :
     gl_cv_func_chown_ctime_works=yes ;;
-esac ;;
+esac
+       ;;
 esac
 fi
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_chown_ctime_works" >&5
@@ -21216,8 +21263,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21219: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21220: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21266: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21267: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21246,7 +21293,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:21249: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21296: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -21498,7 +21545,7 @@ fi
 fi
 
 fi
-      echo "$as_me:21501: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:21548: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -21788,8 +21835,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:21791: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:21792: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:21838: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:21839: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -21818,7 +21865,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:21821: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:21868: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -22070,7 +22117,7 @@ fi
 fi
 
 fi
-      echo "$as_me:22073: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:22120: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -23147,8 +23194,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:23150: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:23151: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:23197: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:23198: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -23177,7 +23224,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:23180: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:23227: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -23429,7 +23476,7 @@ fi
 fi
 
 fi
-      echo "$as_me:23432: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:23479: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -34265,12 +34312,70 @@ printf '%s\n' "$gl_cv_func_pthread_once_works" >&6; }
         *yes) ;;
         *) REPLACE_PTHREAD_ONCE=1 ;;
       esac
-                                    case "$host_os" in
-        *-gnu* | gnu* | freebsd* | dragonfly* | midnightbsd*)
-          PTHREAD_ONCE_LIB="$LIBPMULTITHREAD" ;;
-        *)
-          PTHREAD_ONCE_LIB="$LIBPTHREAD" ;;
-      esac
+                  if test -z "$LIBPTHREAD" && test -n "$LIBPMULTITHREAD"; then
+        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether pthread_once can be used without linking with libpthread" >&5
+printf %s "checking whether pthread_once can be used without linking with libpthread... " >&6; }
+if test ${gl_cv_func_pthread_once_no_lib+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) if test "$cross_compiling" = yes
+then :
+  case "$host_os" in
+                # Guess no on glibc.
+                *-gnu* | gnu*)
+                  gl_cv_func_pthread_once_no_lib="guessing no" ;;
+                # Guess no on FreeBSD.
+                freebsd* | dragonfly* | midnightbsd*)
+                  gl_cv_func_pthread_once_no_lib="guessing no" ;;
+                # Guess yes otherwise.
+                *)
+                  gl_cv_func_pthread_once_no_lib="guessing yes" ;;
+              esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+#include <pthread.h>
+                  static pthread_once_t a_once = PTHREAD_ONCE_INIT;
+                  static int a;
+                  static void a_init (void) { a = 8647; }
+
+int
+main (void)
+{
+if (pthread_once (&a_once, a_init)) return 1;
+                  if (a != 8647) return 2;
+                  return 0;
+
+  ;
+  return 0;
+}
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_pthread_once_no_lib=yes
+else case e in #(
+  e) gl_cv_func_pthread_once_no_lib=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+           ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_pthread_once_no_lib" >&5
+printf '%s\n' "$gl_cv_func_pthread_once_no_lib" >&6; }
+        case "$gl_cv_func_pthread_once_no_lib" in
+          *yes) PTHREAD_ONCE_LIB="$LIBPTHREAD" ;;
+          *)    PTHREAD_ONCE_LIB="$LIBPMULTITHREAD" ;;
+        esac
+                                      else
+        PTHREAD_ONCE_LIB="$LIBPTHREAD"
+      fi
     fi
   fi
 
