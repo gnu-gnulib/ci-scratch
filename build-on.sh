@@ -79,7 +79,8 @@ done
 # testdir33: nl_langinfo
 # testdir34: chown chownat fchownat lchown
 # testdir35: coreutils-9.8
-cd testdir35 || exit 1
+# testdir36: posix_spawn_file_actions_addclose
+cd testdir36 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
