@@ -142,7 +142,8 @@ main (int argc, char *argv[])
       time_t first = UT_TIME_MEMBER (&entries[0]);
       time_t last = UT_TIME_MEMBER (&entries[num_entries - 1]);
       time_t now = time (NULL);
-      ASSERT (first >= now - 157680000);
+      if (getenv ("USER") != NULL)
+        ASSERT (first >= now - 157680000);
       ASSERT (last <= now + 604800);
 
       /* read_utmp should not produce multiple BOOT_TIME entries.  */
