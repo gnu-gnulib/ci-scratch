@@ -2223,14 +2223,6 @@ EXTRA_DIST += iconv_open-aix.gperf iconv_open-hpux.gperf iconv_open-solaris.gper
 
 ## end   gnulib module iconv_open
 
-## begin gnulib module idcache
-
-libgnu_a_SOURCES += idcache.c
-
-EXTRA_DIST += idcache.h
-
-## end   gnulib module idcache
-
 ## begin gnulib module idx
 
 libgnu_a_SOURCES += idx.h
@@ -2298,16 +2290,6 @@ EXTRA_libgnu_a_SOURCES += integer_length_l.c
 EXTRA_DIST += intprops-internal.h intprops.h
 
 ## end   gnulib module intprops
-
-## begin gnulib module inttostr
-
-libgnu_a_SOURCES +=    imaxtostr.c    inttostr.c    offtostr.c    uinttostr.c    umaxtostr.c
-
-EXTRA_DIST += anytostr.c inttostr.h
-
-EXTRA_libgnu_a_SOURCES += anytostr.c
-
-## end   gnulib module inttostr
 
 ## begin gnulib module inttypes-h-incomplete
 
@@ -2744,14 +2726,6 @@ EXTRA_DIST += localename.h
 libgnu_a_SOURCES += glthread/lock.h glthread/lock.c
 
 ## end   gnulib module lock
-
-## begin gnulib module login_tty
-
-if GL_COND_OBJ_LOGIN_TTY
-libgnu_a_SOURCES += login_tty.c
-endif
-
-## end   gnulib module login_tty
 
 ## begin gnulib module lstat
 
@@ -3847,14 +3821,6 @@ libgnu_a_SOURCES += spawnp.c
 endif
 
 ## end   gnulib module posix_spawnp
-
-## begin gnulib module posixver
-
-libgnu_a_SOURCES += posixver.c
-
-EXTRA_DIST += posixver.h
-
-## end   gnulib module posixver
 
 ## begin gnulib module printf-frexp
 
@@ -5621,36 +5587,6 @@ EXTRA_DIST += strtoimax.c
 EXTRA_libgnu_a_SOURCES += strtoimax.c
 
 ## end   gnulib module strtoumax
-
-## begin gnulib module sys_ioctl-h
-
-BUILT_SOURCES += sys/ioctl.h
-
-# We need the following in order to create <sys/ioctl.h> when the system
-# does not have a complete one.
-sys/ioctl.h: sys_ioctl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
-	$(AM_V_GEN)$(MKDIR_P) '%reldir%/sys'
-	$(AM_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's|@''HAVE_SYS_IOCTL_H''@|$(HAVE_SYS_IOCTL_H)|g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_SYS_IOCTL_H''@|$(NEXT_SYS_IOCTL_H)|g' \
-	      -e 's/@''GNULIB_IOCTL''@/$(GL_GNULIB_IOCTL)/g' \
-	      -e 's|@''SYS_IOCTL_H_HAVE_WINSOCK2_H''@|$(SYS_IOCTL_H_HAVE_WINSOCK2_H)|g' \
-	      -e 's|@''SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|$(SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS)|g' \
-	      -e 's|@''REPLACE_IOCTL''@|$(REPLACE_IOCTL)|g' \
-	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
-	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
-	      $(srcdir)/sys_ioctl.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-MOSTLYCLEANFILES += sys/ioctl.h sys/ioctl.h-t
-MOSTLYCLEANDIRS += sys
-
-EXTRA_DIST += sys_ioctl.in.h
-
-## end   gnulib module sys_ioctl-h
 
 ## begin gnulib module sys_random-h
 
@@ -7739,14 +7675,6 @@ endif
 
 ## end   gnulib module unsetenv
 
-## begin gnulib module userspec
-
-libgnu_a_SOURCES += userspec.c
-
-EXTRA_DIST += userspec.h
-
-## end   gnulib module userspec
-
 ## begin gnulib module utime
 
 if GL_COND_OBJ_UTIME
@@ -7791,36 +7719,6 @@ libgnu_a_SOURCES += utimens.c
 EXTRA_DIST += utimens.h
 
 ## end   gnulib module utimens
-
-## begin gnulib module utmp-h
-
-BUILT_SOURCES += utmp.h
-
-# We need the following in order to create <utmp.h> when the system
-# doesn't have one that works with the given compiler.
-utmp.h: utmp.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
-	$(gl_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's/@''HAVE_UTMP_H''@/$(HAVE_UTMP_H)/g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_UTMP_H''@|$(NEXT_UTMP_H)|g' \
-	      -e 's|@''HAVE_UTIL_H''@|$(HAVE_UTIL_H)|g' \
-	      -e 's|@''HAVE_LIBUTIL_H''@|$(HAVE_LIBUTIL_H)|g' \
-	      -e 's|@''HAVE_TERMIOS_H''@|$(HAVE_TERMIOS_H)|g' \
-	      -e 's/@''GNULIB_LOGIN_TTY''@/$(GL_GNULIB_LOGIN_TTY)/g' \
-	      -e 's|@''HAVE_LOGIN_TTY''@|$(HAVE_LOGIN_TTY)|g' \
-	      -e 's|@''REPLACE_LOGIN_TTY''@|$(REPLACE_LOGIN_TTY)|g' \
-	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
-	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
-	      $(srcdir)/utmp.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-MOSTLYCLEANFILES += utmp.h utmp.h-t
-
-EXTRA_DIST += utmp.in.h
-
-## end   gnulib module utmp-h
 
 ## begin gnulib module vasnprintf
 

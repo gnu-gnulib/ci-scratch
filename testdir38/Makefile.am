@@ -2,6 +2,6 @@
 
 AUTOMAKE_OPTIONS = 1.14 foreign
 
-SUBDIRS = gllib glm4
+SUBDIRS = gllib glm4 gltests
 
 ACLOCAL_AMFLAGS = -I glm4

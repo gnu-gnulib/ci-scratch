@@ -186,135 +186,134 @@ host_triplet = @host@
 @GL_COND_OBJ_LOCALECONV_TRUE@am__append_73 = localeconv.c
 @GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__append_74 = localename-unsafe.c
 @GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__append_75 = localename-unsafe.c
-@GL_COND_OBJ_LOGIN_TTY_TRUE@am__append_76 = login_tty.c
-@GL_COND_OBJ_LSTAT_TRUE@am__append_77 = lstat.c
-@GL_COND_OBJ_MBRTOC32_TRUE@am__append_78 = mbrtoc32.c
-@GL_COND_OBJ_MBRTOWC_TRUE@am__append_79 = mbrtowc.c
-@GL_COND_OBJ_MBSINIT_TRUE@am__append_80 = mbsinit.c
-@GL_COND_OBJ_MBTOWC_TRUE@am__append_81 = mbtowc.c
-@GL_COND_OBJ_MEMCHR_TRUE@am__append_82 = memchr.c
-@GL_COND_OBJ_MEMPCPY_TRUE@am__append_83 = mempcpy.c
-@GL_COND_OBJ_MEMRCHR_TRUE@am__append_84 = memrchr.c
-@GL_COND_OBJ_MKDIR_TRUE@am__append_85 = mkdir.c
-@GL_COND_OBJ_MKDTEMP_TRUE@am__append_86 = mkdtemp.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_87 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_88 = msvc-nothrow.c
-@GL_COND_OBJ_NEWLOCALE_TRUE@am__append_89 = newlocale.c
-@GL_COND_OBJ_NL_LANGINFO_TRUE@am__append_90 = nl_langinfo.c
-@GL_COND_OBJ_NL_LANGINFO_LOCK_TRUE@am__append_91 = nl_langinfo-lock.c
-@GL_COND_OBJ_OBSTACK_TRUE@am__append_92 = obstack.c
-@GL_COND_OBJ_OPEN_TRUE@am__append_93 = open.c
-@GL_COND_OBJ_OPENAT_TRUE@am__append_94 = openat.c
-@GL_COND_OBJ_OPENDIR_TRUE@am__append_95 = opendir.c
-@GL_COND_OBJ_PIPE_TRUE@am__append_96 = pipe.c
-@GL_COND_OBJ_POLL_TRUE@am__append_97 = poll.c
-@GL_COND_OBJ_SPAWN_TRUE@am__append_98 = spawn.c
-@GL_COND_OBJ_SPAWNI_TRUE@am__append_99 = spawni.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__append_100 = spawn_faction_addchdir.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__append_101 = spawn_faction_addclose.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__append_102 = spawn_faction_adddup2.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__append_103 = spawn_faction_addopen.c
-@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__append_104 = spawn_faction_destroy.c
-@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__append_105 = spawn_faction_init.c
-@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__append_106 = spawnattr_destroy.c
-@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__append_107 = spawnattr_init.c
-@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__append_108 = spawnattr_setflags.c
-@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__append_109 = spawnattr_setpgroup.c
-@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__append_110 = spawnattr_setsigmask.c
-@GL_COND_OBJ_SPAWNP_TRUE@am__append_111 = spawnp.c
-@GL_COND_OBJ_PSELECT_TRUE@am__append_112 = pselect.c
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_113 = pthread-once.c
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_114 = pthread_sigmask.c
-@GL_COND_OBJ_PUTENV_TRUE@am__append_115 = putenv.c
-@GL_COND_OBJ_QSORT_TRUE@am__append_116 = qsort.c
-@GL_COND_OBJ_QSORT_R_TRUE@am__append_117 = qsort_r.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_118 = raise.c
-@GL_COND_OBJ_RANDOM_R_TRUE@am__append_119 = random_r.c
-@GL_COND_OBJ_RAWMEMCHR_TRUE@am__append_120 = rawmemchr.c
-@GL_COND_OBJ_READ_TRUE@am__append_121 = read.c
-@GL_COND_OBJ_READDIR_TRUE@am__append_122 = readdir.c
-@GL_COND_OBJ_READLINK_TRUE@am__append_123 = readlink.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_124 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_125 = reallocarray.c
-@GL_COND_OBJ_REGEX_TRUE@am__append_126 = regex.c
-@GL_COND_OBJ_PROGRELOC_TRUE@am__append_127 = progreloc.c
-@GL_COND_OBJ_REWINDDIR_TRUE@am__append_128 = rewinddir.c
-@GL_COND_OBJ_RMDIR_TRUE@am__append_129 = rmdir.c
-@GL_COND_OBJ_SCANDIR_TRUE@am__append_130 = scandir.c
-@GL_COND_OBJ_SECURE_GETENV_TRUE@am__append_131 = secure_getenv.c
-@GL_COND_OBJ_SELECT_TRUE@am__append_132 = select.c
-@GL_COND_OBJ_SETENV_TRUE@am__append_133 = setenv.c
-@GL_COND_OBJ_SETLOCALE_TRUE@am__append_134 = setlocale.c
-@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__append_135 = setlocale-fixes.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_136 = setlocale-lock.c
-@GL_COND_OBJ_SIG2STR_TRUE@am__append_137 = sig2str.c
-@GL_COND_OBJ_SIGACTION_TRUE@am__append_138 = sigaction.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_139 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_140 = sigprocmask.c
-@GL_COND_OBJ_OS2_SPAWN_TRUE@am__append_141 = os2-spawn.c
-@GL_COND_OBJ_SPIN_TRUE@am__append_142 = glthread/spin.c
-@GL_COND_OBJ_STACK_TRACE_TRUE@am__append_143 = stack-trace.c
-@GL_COND_OBJ_STAT_TRUE@am__append_144 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_145 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_146 = stdio-write.c
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_147 = stdio-consolesafe.c
-@GL_COND_OBJ_STPCPY_TRUE@am__append_148 = stpcpy.c
-@GL_COND_OBJ_STRCHRNUL_TRUE@am__append_149 = strchrnul.c
-@GL_COND_OBJ_STRDUP_TRUE@am__append_150 = strdup.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_151 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_152 = strerror-override.c
-@GL_COND_OBJ_STRFMON_L_TRUE@am__append_153 = strfmon_l.c
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_154 = strncasecmp.c
-@GL_COND_OBJ_STRNDUP_TRUE@am__append_155 = strndup.c
-@GL_COND_OBJ_STRNLEN_TRUE@am__append_156 = strnlen.c
-@GL_COND_OBJ_STRPTIME_TRUE@am__append_157 = strptime.c
-@GL_COND_OBJ_STRTOD_TRUE@am__append_158 = strtod.c
-@GL_COND_OBJ_STRTOF_TRUE@am__append_159 = strtof.c
-@GL_COND_OBJ_STRTOL_TRUE@am__append_160 = strtol.c
-@GL_COND_OBJ_STRTOLD_TRUE@am__append_161 = strtold.c
-@GL_COND_OBJ_STRTOLL_TRUE@am__append_162 = strtoll.c
-@GL_COND_OBJ_STRTOUL_TRUE@am__append_163 = strtoul.c
-@GL_COND_OBJ_STRTOULL_TRUE@am__append_164 = strtoull.c
-@GL_COND_OBJ_STRTOUMAX_TRUE@am__append_165 = strtoumax.c
-@GL_COND_OBJ_TIME_R_TRUE@am__append_166 = time_r.c
-@GL_COND_OBJ_TIMEGM_TRUE@am__append_167 = timegm.c
-@GL_COND_OBJ_TSEARCH_TRUE@am__append_168 = tsearch.c
-@GL_COND_OBJ_TZSET_TRUE@am__append_169 = tzset.c
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_170 = unicase/tolower.c
-@LIBUNISTRING_COMPILE_UNICASE_TOTITLE_TRUE@am__append_171 = unicase/totitle.c
-@LIBUNISTRING_COMPILE_UNICASE_TOUPPER_TRUE@am__append_172 = unicase/toupper.c
-@LIBUNISTRING_COMPILE_UNICASE_U16_CT_TOTITLE_TRUE@am__append_173 = unicase/u16-ct-totitle.c
-@LIBUNISTRING_COMPILE_UNICASE_U32_CT_TOTITLE_TRUE@am__append_174 = unicase/u32-ct-totitle.c
-@LIBUNISTRING_COMPILE_UNICASE_U8_CT_TOTITLE_TRUE@am__append_175 = unicase/u8-ct-totitle.c
-@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_FROM_ENC_TRUE@am__append_176 = uniconv/u16-conv-from-enc.c
-@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_TO_ENC_TRUE@am__append_177 = uniconv/u16-conv-to-enc.c
-@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_FROM_ENC_TRUE@am__append_178 = uniconv/u32-conv-from-enc.c
-@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_TO_ENC_TRUE@am__append_179 = uniconv/u32-conv-to-enc.c
-@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_FROM_ENC_TRUE@am__append_180 = uniconv/u8-conv-from-enc.c
-@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_TO_ENC_TRUE@am__append_181 = uniconv/u8-conv-to-enc.c
-@LIBUNISTRING_COMPILE_UNICTYPE_COMBINING_CLASS_TRUE@am__append_182 = unictype/combiningclass.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_183 = unictype/ctype_alnum.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_184 = unictype/ctype_alpha.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_185 = unictype/ctype_blank.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_186 = unictype/ctype_cntrl.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_187 = unictype/ctype_digit.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_188 = unictype/ctype_graph.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_189 = unictype/ctype_lower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_190 = unictype/ctype_print.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_191 = unictype/ctype_punct.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_192 = unictype/ctype_space.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_193 = unictype/ctype_upper.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_194 = unictype/ctype_xdigit.c
-@LIBUNISTRING_COMPILE_UNICTYPE_INCB_OF_TRUE@am__append_195 = unictype/incb_of.c
-@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_EXTENDED_PICTOGRAPHIC_TRUE@am__append_196 = unictype/pr_extended_pictographic.c
-@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_SOFT_DOTTED_TRUE@am__append_197 = unictype/pr_soft_dotted.c
-@LIBUNISTRING_COMPILE_UNIGBRK_U8_GRAPHEME_BREAKS_TRUE@am__append_198 = unigbrk/u8-grapheme-breaks.c
-@LIBUNISTRING_COMPILE_UNIGBRK_UC_GBRK_PROP_TRUE@am__append_199 = unigbrk/uc-gbrk-prop.c
-@LIBUNISTRING_COMPILE_UNIGBRK_ULC_GRAPHEME_BREAKS_TRUE@am__append_200 = unigbrk/ulc-grapheme-breaks.c
-@LIBUNISTRING_COMPILE_UNILBRK_U8_POSSIBLE_LINEBREAKS_TRUE@am__append_201 = unilbrk/u8-possible-linebreaks.c
-@LIBUNISTRING_COMPILE_UNILBRK_U8_WIDTH_LINEBREAKS_TRUE@am__append_202 = unilbrk/u8-width-linebreaks.c
-@LIBUNISTRING_COMPILE_UNILBRK_ULC_POSSIBLE_LINEBREAKS_TRUE@am__append_203 = unilbrk/ulc-possible-linebreaks.c
-@LIBUNISTRING_COMPILE_UNILBRK_ULC_WIDTH_LINEBREAKS_TRUE@am__append_204 = unilbrk/ulc-width-linebreaks.c
+@GL_COND_OBJ_LSTAT_TRUE@am__append_76 = lstat.c
+@GL_COND_OBJ_MBRTOC32_TRUE@am__append_77 = mbrtoc32.c
+@GL_COND_OBJ_MBRTOWC_TRUE@am__append_78 = mbrtowc.c
+@GL_COND_OBJ_MBSINIT_TRUE@am__append_79 = mbsinit.c
+@GL_COND_OBJ_MBTOWC_TRUE@am__append_80 = mbtowc.c
+@GL_COND_OBJ_MEMCHR_TRUE@am__append_81 = memchr.c
+@GL_COND_OBJ_MEMPCPY_TRUE@am__append_82 = mempcpy.c
+@GL_COND_OBJ_MEMRCHR_TRUE@am__append_83 = memrchr.c
+@GL_COND_OBJ_MKDIR_TRUE@am__append_84 = mkdir.c
+@GL_COND_OBJ_MKDTEMP_TRUE@am__append_85 = mkdtemp.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_86 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_87 = msvc-nothrow.c
+@GL_COND_OBJ_NEWLOCALE_TRUE@am__append_88 = newlocale.c
+@GL_COND_OBJ_NL_LANGINFO_TRUE@am__append_89 = nl_langinfo.c
+@GL_COND_OBJ_NL_LANGINFO_LOCK_TRUE@am__append_90 = nl_langinfo-lock.c
+@GL_COND_OBJ_OBSTACK_TRUE@am__append_91 = obstack.c
+@GL_COND_OBJ_OPEN_TRUE@am__append_92 = open.c
+@GL_COND_OBJ_OPENAT_TRUE@am__append_93 = openat.c
+@GL_COND_OBJ_OPENDIR_TRUE@am__append_94 = opendir.c
+@GL_COND_OBJ_PIPE_TRUE@am__append_95 = pipe.c
+@GL_COND_OBJ_POLL_TRUE@am__append_96 = poll.c
+@GL_COND_OBJ_SPAWN_TRUE@am__append_97 = spawn.c
+@GL_COND_OBJ_SPAWNI_TRUE@am__append_98 = spawni.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__append_99 = spawn_faction_addchdir.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__append_100 = spawn_faction_addclose.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__append_101 = spawn_faction_adddup2.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__append_102 = spawn_faction_addopen.c
+@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__append_103 = spawn_faction_destroy.c
+@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__append_104 = spawn_faction_init.c
+@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__append_105 = spawnattr_destroy.c
+@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__append_106 = spawnattr_init.c
+@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__append_107 = spawnattr_setflags.c
+@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__append_108 = spawnattr_setpgroup.c
+@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__append_109 = spawnattr_setsigmask.c
+@GL_COND_OBJ_SPAWNP_TRUE@am__append_110 = spawnp.c
+@GL_COND_OBJ_PSELECT_TRUE@am__append_111 = pselect.c
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_112 = pthread-once.c
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_113 = pthread_sigmask.c
+@GL_COND_OBJ_PUTENV_TRUE@am__append_114 = putenv.c
+@GL_COND_OBJ_QSORT_TRUE@am__append_115 = qsort.c
+@GL_COND_OBJ_QSORT_R_TRUE@am__append_116 = qsort_r.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_117 = raise.c
+@GL_COND_OBJ_RANDOM_R_TRUE@am__append_118 = random_r.c
+@GL_COND_OBJ_RAWMEMCHR_TRUE@am__append_119 = rawmemchr.c
+@GL_COND_OBJ_READ_TRUE@am__append_120 = read.c
+@GL_COND_OBJ_READDIR_TRUE@am__append_121 = readdir.c
+@GL_COND_OBJ_READLINK_TRUE@am__append_122 = readlink.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_123 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_124 = reallocarray.c
+@GL_COND_OBJ_REGEX_TRUE@am__append_125 = regex.c
+@GL_COND_OBJ_PROGRELOC_TRUE@am__append_126 = progreloc.c
+@GL_COND_OBJ_REWINDDIR_TRUE@am__append_127 = rewinddir.c
+@GL_COND_OBJ_RMDIR_TRUE@am__append_128 = rmdir.c
+@GL_COND_OBJ_SCANDIR_TRUE@am__append_129 = scandir.c
+@GL_COND_OBJ_SECURE_GETENV_TRUE@am__append_130 = secure_getenv.c
+@GL_COND_OBJ_SELECT_TRUE@am__append_131 = select.c
+@GL_COND_OBJ_SETENV_TRUE@am__append_132 = setenv.c
+@GL_COND_OBJ_SETLOCALE_TRUE@am__append_133 = setlocale.c
+@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__append_134 = setlocale-fixes.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_135 = setlocale-lock.c
+@GL_COND_OBJ_SIG2STR_TRUE@am__append_136 = sig2str.c
+@GL_COND_OBJ_SIGACTION_TRUE@am__append_137 = sigaction.c
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_138 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_139 = sigprocmask.c
+@GL_COND_OBJ_OS2_SPAWN_TRUE@am__append_140 = os2-spawn.c
+@GL_COND_OBJ_SPIN_TRUE@am__append_141 = glthread/spin.c
+@GL_COND_OBJ_STACK_TRACE_TRUE@am__append_142 = stack-trace.c
+@GL_COND_OBJ_STAT_TRUE@am__append_143 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_144 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_145 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_146 = stdio-consolesafe.c
+@GL_COND_OBJ_STPCPY_TRUE@am__append_147 = stpcpy.c
+@GL_COND_OBJ_STRCHRNUL_TRUE@am__append_148 = strchrnul.c
+@GL_COND_OBJ_STRDUP_TRUE@am__append_149 = strdup.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_150 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_151 = strerror-override.c
+@GL_COND_OBJ_STRFMON_L_TRUE@am__append_152 = strfmon_l.c
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_153 = strncasecmp.c
+@GL_COND_OBJ_STRNDUP_TRUE@am__append_154 = strndup.c
+@GL_COND_OBJ_STRNLEN_TRUE@am__append_155 = strnlen.c
+@GL_COND_OBJ_STRPTIME_TRUE@am__append_156 = strptime.c
+@GL_COND_OBJ_STRTOD_TRUE@am__append_157 = strtod.c
+@GL_COND_OBJ_STRTOF_TRUE@am__append_158 = strtof.c
+@GL_COND_OBJ_STRTOL_TRUE@am__append_159 = strtol.c
+@GL_COND_OBJ_STRTOLD_TRUE@am__append_160 = strtold.c
+@GL_COND_OBJ_STRTOLL_TRUE@am__append_161 = strtoll.c
+@GL_COND_OBJ_STRTOUL_TRUE@am__append_162 = strtoul.c
+@GL_COND_OBJ_STRTOULL_TRUE@am__append_163 = strtoull.c
+@GL_COND_OBJ_STRTOUMAX_TRUE@am__append_164 = strtoumax.c
+@GL_COND_OBJ_TIME_R_TRUE@am__append_165 = time_r.c
+@GL_COND_OBJ_TIMEGM_TRUE@am__append_166 = timegm.c
+@GL_COND_OBJ_TSEARCH_TRUE@am__append_167 = tsearch.c
+@GL_COND_OBJ_TZSET_TRUE@am__append_168 = tzset.c
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_169 = unicase/tolower.c
+@LIBUNISTRING_COMPILE_UNICASE_TOTITLE_TRUE@am__append_170 = unicase/totitle.c
+@LIBUNISTRING_COMPILE_UNICASE_TOUPPER_TRUE@am__append_171 = unicase/toupper.c
+@LIBUNISTRING_COMPILE_UNICASE_U16_CT_TOTITLE_TRUE@am__append_172 = unicase/u16-ct-totitle.c
+@LIBUNISTRING_COMPILE_UNICASE_U32_CT_TOTITLE_TRUE@am__append_173 = unicase/u32-ct-totitle.c
+@LIBUNISTRING_COMPILE_UNICASE_U8_CT_TOTITLE_TRUE@am__append_174 = unicase/u8-ct-totitle.c
+@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_FROM_ENC_TRUE@am__append_175 = uniconv/u16-conv-from-enc.c
+@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_TO_ENC_TRUE@am__append_176 = uniconv/u16-conv-to-enc.c
+@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_FROM_ENC_TRUE@am__append_177 = uniconv/u32-conv-from-enc.c
+@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_TO_ENC_TRUE@am__append_178 = uniconv/u32-conv-to-enc.c
+@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_FROM_ENC_TRUE@am__append_179 = uniconv/u8-conv-from-enc.c
+@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_TO_ENC_TRUE@am__append_180 = uniconv/u8-conv-to-enc.c
+@LIBUNISTRING_COMPILE_UNICTYPE_COMBINING_CLASS_TRUE@am__append_181 = unictype/combiningclass.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_182 = unictype/ctype_alnum.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_183 = unictype/ctype_alpha.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_184 = unictype/ctype_blank.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_185 = unictype/ctype_cntrl.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_186 = unictype/ctype_digit.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_187 = unictype/ctype_graph.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_188 = unictype/ctype_lower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_189 = unictype/ctype_print.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_190 = unictype/ctype_punct.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_191 = unictype/ctype_space.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_192 = unictype/ctype_upper.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_193 = unictype/ctype_xdigit.c
+@LIBUNISTRING_COMPILE_UNICTYPE_INCB_OF_TRUE@am__append_194 = unictype/incb_of.c
+@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_EXTENDED_PICTOGRAPHIC_TRUE@am__append_195 = unictype/pr_extended_pictographic.c
+@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_SOFT_DOTTED_TRUE@am__append_196 = unictype/pr_soft_dotted.c
+@LIBUNISTRING_COMPILE_UNIGBRK_U8_GRAPHEME_BREAKS_TRUE@am__append_197 = unigbrk/u8-grapheme-breaks.c
+@LIBUNISTRING_COMPILE_UNIGBRK_UC_GBRK_PROP_TRUE@am__append_198 = unigbrk/uc-gbrk-prop.c
+@LIBUNISTRING_COMPILE_UNIGBRK_ULC_GRAPHEME_BREAKS_TRUE@am__append_199 = unigbrk/ulc-grapheme-breaks.c
+@LIBUNISTRING_COMPILE_UNILBRK_U8_POSSIBLE_LINEBREAKS_TRUE@am__append_200 = unilbrk/u8-possible-linebreaks.c
+@LIBUNISTRING_COMPILE_UNILBRK_U8_WIDTH_LINEBREAKS_TRUE@am__append_201 = unilbrk/u8-width-linebreaks.c
+@LIBUNISTRING_COMPILE_UNILBRK_ULC_POSSIBLE_LINEBREAKS_TRUE@am__append_202 = unilbrk/ulc-possible-linebreaks.c
+@LIBUNISTRING_COMPILE_UNILBRK_ULC_WIDTH_LINEBREAKS_TRUE@am__append_203 = unilbrk/ulc-width-linebreaks.c
 
 # Note: Compilation of this file takes a long time with gcc ≥ 11 and option
 # -fanalyzer. See <https://gcc.gnu.org/PR110112>.
@@ -323,80 +322,80 @@ host_triplet = @host@
 # An alternative workaround would be to pass the option -fno-analyzer, using
 # the technique from
 # https://www.gnu.org/software/automake/manual/html_node/Per_002dObject-Flags.html
-@LIBUNISTRING_COMPILE_UNINAME_UNINAME_TRUE@am__append_205 = uniname/uniname.c
-@LIBUNISTRING_COMPILE_UNINORM_FILTER_TRUE@am__append_206 = uninorm/uninorm-filter.c
-@LIBUNISTRING_COMPILE_UNINORM_U16_NORMALIZE_TRUE@am__append_207 = uninorm/u16-normalize.c
-@LIBUNISTRING_COMPILE_UNINORM_U32_NORMALIZE_TRUE@am__append_208 = uninorm/u32-normalize.c
-@LIBUNISTRING_COMPILE_UNINORM_U8_NORMALIZE_TRUE@am__append_209 = uninorm/u8-normalize.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U16_U16_VASNPRINTF_TRUE@am__append_210 = unistdio/u16-u16-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U16_VASNPRINTF_TRUE@am__append_211 = unistdio/u16-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U32_U32_VASNPRINTF_TRUE@am__append_212 = unistdio/u32-u32-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U32_VASNPRINTF_TRUE@am__append_213 = unistdio/u32-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U8_U8_VASNPRINTF_TRUE@am__append_214 = unistdio/u8-u8-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_U8_VASNPRINTF_TRUE@am__append_215 = unistdio/u8-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTDIO_ULC_VASNPRINTF_TRUE@am__append_216 = unistdio/ulc-vasnprintf.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_CPY_TRUE@am__append_217 = unistr/u16-cpy.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBLEN_TRUE@am__append_218 = unistr/u16-mblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBSNLEN_TRUE@am__append_219 = unistr/u16-mbsnlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUC_UNSAFE_TRUE@am__append_220 = unistr/u16-mbtouc-unsafe.c unistr/u16-mbtouc-unsafe-aux.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUCR_TRUE@am__append_221 = unistr/u16-mbtoucr.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_SET_TRUE@am__append_222 = unistr/u16-set.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_STRLEN_TRUE@am__append_223 = unistr/u16-strlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_STRMBLEN_TRUE@am__append_224 = unistr/u16-strmblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U32_TRUE@am__append_225 = unistr/u16-to-u32.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U8_TRUE@am__append_226 = unistr/u16-to-u8.c
-@LIBUNISTRING_COMPILE_UNISTR_U16_UCTOMB_TRUE@am__append_227 = unistr/u16-uctomb.c unistr/u16-uctomb-aux.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_CPY_TRUE@am__append_228 = unistr/u32-cpy.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBLEN_TRUE@am__append_229 = unistr/u32-mblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBSNLEN_TRUE@am__append_230 = unistr/u32-mbsnlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBTOUC_UNSAFE_TRUE@am__append_231 = unistr/u32-mbtouc-unsafe.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_SET_TRUE@am__append_232 = unistr/u32-set.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_STRLEN_TRUE@am__append_233 = unistr/u32-strlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_STRMBLEN_TRUE@am__append_234 = unistr/u32-strmblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U16_TRUE@am__append_235 = unistr/u32-to-u16.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U8_TRUE@am__append_236 = unistr/u32-to-u8.c
-@LIBUNISTRING_COMPILE_UNISTR_U32_UCTOMB_TRUE@am__append_237 = unistr/u32-uctomb.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_CHECK_TRUE@am__append_238 = unistr/u8-check.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_CPY_TRUE@am__append_239 = unistr/u8-cpy.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBLEN_TRUE@am__append_240 = unistr/u8-mblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBSNLEN_TRUE@am__append_241 = unistr/u8-mbsnlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_TRUE@am__append_242 = unistr/u8-mbtouc.c unistr/u8-mbtouc-aux.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_UNSAFE_TRUE@am__append_243 = unistr/u8-mbtouc-unsafe.c unistr/u8-mbtouc-unsafe-aux.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUCR_TRUE@am__append_244 = unistr/u8-mbtoucr.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_PREV_TRUE@am__append_245 = unistr/u8-prev.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_SET_TRUE@am__append_246 = unistr/u8-set.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_STRLEN_TRUE@am__append_247 = unistr/u8-strlen.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_STRMBLEN_TRUE@am__append_248 = unistr/u8-strmblen.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U16_TRUE@am__append_249 = unistr/u8-to-u16.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U32_TRUE@am__append_250 = unistr/u8-to-u32.c
-@LIBUNISTRING_COMPILE_UNISTR_U8_UCTOMB_TRUE@am__append_251 = unistr/u8-uctomb.c unistr/u8-uctomb-aux.c
-@LIBUNISTRING_COMPILE_UNIWBRK_U16_WORDBREAKS_TRUE@am__append_252 = uniwbrk/u16-wordbreaks.c
-@LIBUNISTRING_COMPILE_UNIWBRK_U32_WORDBREAKS_TRUE@am__append_253 = uniwbrk/u32-wordbreaks.c
-@LIBUNISTRING_COMPILE_UNIWBRK_U8_WORDBREAKS_TRUE@am__append_254 = uniwbrk/u8-wordbreaks.c
-@LIBUNISTRING_COMPILE_UNIWBRK_ULC_WORDBREAKS_TRUE@am__append_255 = uniwbrk/ulc-wordbreaks.c
-@LIBUNISTRING_COMPILE_UNIWBRK_WORDBREAK_PROPERTY_TRUE@am__append_256 = uniwbrk/wordbreak-property.c
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_257 = uniwidth/width.c
-@GL_COND_OBJ_UNSETENV_TRUE@am__append_258 = unsetenv.c
-@GL_COND_OBJ_UTIME_TRUE@am__append_259 = utime.c
-@GL_COND_OBJ_WAITPID_TRUE@am__append_260 = waitpid.c
-@GL_COND_OBJ_WCRTOMB_TRUE@am__append_261 = wcrtomb.c
-@GL_COND_OBJ_WCTOB_TRUE@am__append_262 = wctob.c
-@GL_COND_OBJ_WCTOMB_TRUE@am__append_263 = wctomb.c
-@GL_COND_OBJ_WCTYPE_TRUE@am__append_264 = wctype.c
-@GL_COND_OBJ_WCWIDTH_TRUE@am__append_265 = wcwidth.c
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_266 = windows-cond.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_267 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_268 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_269 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_270 = windows-rwlock.c
-@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__append_271 = windows-path.c
-@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__append_272 = windows-spawn.c
-@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_273 = windows-spin.c
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_274 = windows-timedrwlock.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_275 = windows-tls.c
-@GL_COND_OBJ_WMEMCPY_TRUE@am__append_276 = wmemcpy.c
-@GL_COND_OBJ_WMEMSET_TRUE@am__append_277 = wmemset.c
-@GL_COND_OBJ_WRITE_TRUE@am__append_278 = write.c
+@LIBUNISTRING_COMPILE_UNINAME_UNINAME_TRUE@am__append_204 = uniname/uniname.c
+@LIBUNISTRING_COMPILE_UNINORM_FILTER_TRUE@am__append_205 = uninorm/uninorm-filter.c
+@LIBUNISTRING_COMPILE_UNINORM_U16_NORMALIZE_TRUE@am__append_206 = uninorm/u16-normalize.c
+@LIBUNISTRING_COMPILE_UNINORM_U32_NORMALIZE_TRUE@am__append_207 = uninorm/u32-normalize.c
+@LIBUNISTRING_COMPILE_UNINORM_U8_NORMALIZE_TRUE@am__append_208 = uninorm/u8-normalize.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U16_U16_VASNPRINTF_TRUE@am__append_209 = unistdio/u16-u16-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U16_VASNPRINTF_TRUE@am__append_210 = unistdio/u16-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U32_U32_VASNPRINTF_TRUE@am__append_211 = unistdio/u32-u32-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U32_VASNPRINTF_TRUE@am__append_212 = unistdio/u32-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U8_U8_VASNPRINTF_TRUE@am__append_213 = unistdio/u8-u8-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_U8_VASNPRINTF_TRUE@am__append_214 = unistdio/u8-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTDIO_ULC_VASNPRINTF_TRUE@am__append_215 = unistdio/ulc-vasnprintf.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_CPY_TRUE@am__append_216 = unistr/u16-cpy.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBLEN_TRUE@am__append_217 = unistr/u16-mblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBSNLEN_TRUE@am__append_218 = unistr/u16-mbsnlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUC_UNSAFE_TRUE@am__append_219 = unistr/u16-mbtouc-unsafe.c unistr/u16-mbtouc-unsafe-aux.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUCR_TRUE@am__append_220 = unistr/u16-mbtoucr.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_SET_TRUE@am__append_221 = unistr/u16-set.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_STRLEN_TRUE@am__append_222 = unistr/u16-strlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_STRMBLEN_TRUE@am__append_223 = unistr/u16-strmblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U32_TRUE@am__append_224 = unistr/u16-to-u32.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U8_TRUE@am__append_225 = unistr/u16-to-u8.c
+@LIBUNISTRING_COMPILE_UNISTR_U16_UCTOMB_TRUE@am__append_226 = unistr/u16-uctomb.c unistr/u16-uctomb-aux.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_CPY_TRUE@am__append_227 = unistr/u32-cpy.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBLEN_TRUE@am__append_228 = unistr/u32-mblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBSNLEN_TRUE@am__append_229 = unistr/u32-mbsnlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBTOUC_UNSAFE_TRUE@am__append_230 = unistr/u32-mbtouc-unsafe.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_SET_TRUE@am__append_231 = unistr/u32-set.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_STRLEN_TRUE@am__append_232 = unistr/u32-strlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_STRMBLEN_TRUE@am__append_233 = unistr/u32-strmblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U16_TRUE@am__append_234 = unistr/u32-to-u16.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U8_TRUE@am__append_235 = unistr/u32-to-u8.c
+@LIBUNISTRING_COMPILE_UNISTR_U32_UCTOMB_TRUE@am__append_236 = unistr/u32-uctomb.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_CHECK_TRUE@am__append_237 = unistr/u8-check.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_CPY_TRUE@am__append_238 = unistr/u8-cpy.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBLEN_TRUE@am__append_239 = unistr/u8-mblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBSNLEN_TRUE@am__append_240 = unistr/u8-mbsnlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_TRUE@am__append_241 = unistr/u8-mbtouc.c unistr/u8-mbtouc-aux.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_UNSAFE_TRUE@am__append_242 = unistr/u8-mbtouc-unsafe.c unistr/u8-mbtouc-unsafe-aux.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUCR_TRUE@am__append_243 = unistr/u8-mbtoucr.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_PREV_TRUE@am__append_244 = unistr/u8-prev.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_SET_TRUE@am__append_245 = unistr/u8-set.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_STRLEN_TRUE@am__append_246 = unistr/u8-strlen.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_STRMBLEN_TRUE@am__append_247 = unistr/u8-strmblen.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U16_TRUE@am__append_248 = unistr/u8-to-u16.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U32_TRUE@am__append_249 = unistr/u8-to-u32.c
+@LIBUNISTRING_COMPILE_UNISTR_U8_UCTOMB_TRUE@am__append_250 = unistr/u8-uctomb.c unistr/u8-uctomb-aux.c
+@LIBUNISTRING_COMPILE_UNIWBRK_U16_WORDBREAKS_TRUE@am__append_251 = uniwbrk/u16-wordbreaks.c
+@LIBUNISTRING_COMPILE_UNIWBRK_U32_WORDBREAKS_TRUE@am__append_252 = uniwbrk/u32-wordbreaks.c
+@LIBUNISTRING_COMPILE_UNIWBRK_U8_WORDBREAKS_TRUE@am__append_253 = uniwbrk/u8-wordbreaks.c
+@LIBUNISTRING_COMPILE_UNIWBRK_ULC_WORDBREAKS_TRUE@am__append_254 = uniwbrk/ulc-wordbreaks.c
+@LIBUNISTRING_COMPILE_UNIWBRK_WORDBREAK_PROPERTY_TRUE@am__append_255 = uniwbrk/wordbreak-property.c
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_256 = uniwidth/width.c
+@GL_COND_OBJ_UNSETENV_TRUE@am__append_257 = unsetenv.c
+@GL_COND_OBJ_UTIME_TRUE@am__append_258 = utime.c
+@GL_COND_OBJ_WAITPID_TRUE@am__append_259 = waitpid.c
+@GL_COND_OBJ_WCRTOMB_TRUE@am__append_260 = wcrtomb.c
+@GL_COND_OBJ_WCTOB_TRUE@am__append_261 = wctob.c
+@GL_COND_OBJ_WCTOMB_TRUE@am__append_262 = wctomb.c
+@GL_COND_OBJ_WCTYPE_TRUE@am__append_263 = wctype.c
+@GL_COND_OBJ_WCWIDTH_TRUE@am__append_264 = wcwidth.c
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_265 = windows-cond.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_266 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_267 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_268 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_269 = windows-rwlock.c
+@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__append_270 = windows-path.c
+@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__append_271 = windows-spawn.c
+@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_272 = windows-spin.c
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_273 = windows-timedrwlock.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_274 = windows-tls.c
+@GL_COND_OBJ_WMEMCPY_TRUE@am__append_275 = wmemcpy.c
+@GL_COND_OBJ_WMEMSET_TRUE@am__append_276 = wmemset.c
+@GL_COND_OBJ_WRITE_TRUE@am__append_277 = write.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -406,7 +405,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/alphasort.m4 \
 	$(top_srcdir)/glm4/arctwo.m4 $(top_srcdir)/glm4/argz.m4 \
 	$(top_srcdir)/glm4/arpa_inet_h.m4 $(top_srcdir)/glm4/assert.m4 \
-	$(top_srcdir)/glm4/assert_h.m4 \
+	$(top_srcdir)/glm4/assert_h.m4 $(top_srcdir)/glm4/atoll.m4 \
 	$(top_srcdir)/glm4/atomic-cas.m4 $(top_srcdir)/glm4/btowc.m4 \
 	$(top_srcdir)/glm4/build-cc.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
@@ -423,8 +422,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/configmake.m4 \
 	$(top_srcdir)/glm4/copy-file-range.m4 \
 	$(top_srcdir)/glm4/copy-file.m4 $(top_srcdir)/glm4/crc.m4 \
-	$(top_srcdir)/glm4/csharp.m4 $(top_srcdir)/glm4/csharpcomp.m4 \
-	$(top_srcdir)/glm4/ctype_h.m4 \
+	$(top_srcdir)/glm4/creat.m4 $(top_srcdir)/glm4/csharp.m4 \
+	$(top_srcdir)/glm4/csharpcomp.m4 $(top_srcdir)/glm4/ctype_h.m4 \
 	$(top_srcdir)/glm4/cycle-check.m4 $(top_srcdir)/glm4/d-ino.m4 \
 	$(top_srcdir)/glm4/d-type.m4 $(top_srcdir)/glm4/dirent_h.m4 \
 	$(top_srcdir)/glm4/dirfd.m4 \
@@ -445,7 +444,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fchdir.m4 $(top_srcdir)/glm4/fclose.m4 \
 	$(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl-safer.m4 $(top_srcdir)/glm4/fcntl.m4 \
-	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopendir.m4 \
+	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
+	$(top_srcdir)/glm4/fdopendir.m4 \
 	$(top_srcdir)/glm4/fegetround.m4 $(top_srcdir)/glm4/fflush.m4 \
 	$(top_srcdir)/glm4/ffs.m4 $(top_srcdir)/glm4/ffsl.m4 \
 	$(top_srcdir)/glm4/ffsll.m4 $(top_srcdir)/glm4/filenamecat.m4 \
@@ -454,13 +454,17 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fma.m4 $(top_srcdir)/glm4/fmaf.m4 \
 	$(top_srcdir)/glm4/fmal.m4 $(top_srcdir)/glm4/fopen.m4 \
-	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/freelocale.m4 $(top_srcdir)/glm4/frexp.m4 \
+	$(top_srcdir)/glm4/fpending.m4 $(top_srcdir)/glm4/fpieee.m4 \
+	$(top_srcdir)/glm4/fpurge.m4 $(top_srcdir)/glm4/freading.m4 \
+	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/freelocale.m4 \
+	$(top_srcdir)/glm4/freopen.m4 $(top_srcdir)/glm4/frexp.m4 \
 	$(top_srcdir)/glm4/frexpf.m4 $(top_srcdir)/glm4/frexpl.m4 \
+	$(top_srcdir)/glm4/fseek.m4 $(top_srcdir)/glm4/fseeko.m4 \
 	$(top_srcdir)/glm4/fseterr.m4 $(top_srcdir)/glm4/fstat.m4 \
 	$(top_srcdir)/glm4/fstatat.m4 $(top_srcdir)/glm4/fstypename.m4 \
-	$(top_srcdir)/glm4/fts.m4 $(top_srcdir)/glm4/gc.m4 \
-	$(top_srcdir)/glm4/getaddrinfo.m4 \
+	$(top_srcdir)/glm4/ftell.m4 $(top_srcdir)/glm4/ftello.m4 \
+	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/fts.m4 \
+	$(top_srcdir)/glm4/gc.m4 $(top_srcdir)/glm4/getaddrinfo.m4 \
 	$(top_srcdir)/glm4/getcwd-abort-bug.m4 \
 	$(top_srcdir)/glm4/getcwd-path-max.m4 \
 	$(top_srcdir)/glm4/getcwd.m4 $(top_srcdir)/glm4/getdelim.m4 \
@@ -468,10 +472,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/getgroups.m4 $(top_srcdir)/glm4/getline.m4 \
 	$(top_srcdir)/glm4/getloadavg.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
-	$(top_srcdir)/glm4/getlogin.m4 \
+	$(top_srcdir)/glm4/getlogin.m4 $(top_srcdir)/glm4/getopt.m4 \
 	$(top_srcdir)/glm4/getpagesize.m4 \
 	$(top_srcdir)/glm4/getprogname.m4 \
 	$(top_srcdir)/glm4/getrandom.m4 \
+	$(top_srcdir)/glm4/getrusage.m4 $(top_srcdir)/glm4/gettext.m4 \
 	$(top_srcdir)/glm4/gettext_h.m4 $(top_srcdir)/glm4/gettime.m4 \
 	$(top_srcdir)/glm4/gettimeofday.m4 \
 	$(top_srcdir)/glm4/getugroups.m4 \
@@ -480,10 +485,10 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 \
 	$(top_srcdir)/glm4/group-member.m4 \
 	$(top_srcdir)/glm4/host-cpu-c-abi.m4 \
-	$(top_srcdir)/glm4/hostent.m4 $(top_srcdir)/glm4/human.m4 \
-	$(top_srcdir)/glm4/i-ring.m4 $(top_srcdir)/glm4/iconv.m4 \
-	$(top_srcdir)/glm4/iconv_h.m4 $(top_srcdir)/glm4/iconv_open.m4 \
-	$(top_srcdir)/glm4/idcache.m4 \
+	$(top_srcdir)/glm4/hostent.m4 $(top_srcdir)/glm4/htonl.m4 \
+	$(top_srcdir)/glm4/human.m4 $(top_srcdir)/glm4/i-ring.m4 \
+	$(top_srcdir)/glm4/iconv.m4 $(top_srcdir)/glm4/iconv_h.m4 \
+	$(top_srcdir)/glm4/iconv_open.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/inet_ntop.m4 \
 	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inline.m4 \
@@ -491,12 +496,13 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
 	$(top_srcdir)/glm4/intmax_t.m4 $(top_srcdir)/glm4/inttostr.m4 \
 	$(top_srcdir)/glm4/inttypes.m4 \
-	$(top_srcdir)/glm4/inttypes_h.m4 \
-	$(top_srcdir)/glm4/isfinite.m4 $(top_srcdir)/glm4/isinf.m4 \
-	$(top_srcdir)/glm4/isnand.m4 $(top_srcdir)/glm4/isnanf.m4 \
-	$(top_srcdir)/glm4/isnanl.m4 $(top_srcdir)/glm4/iswblank.m4 \
-	$(top_srcdir)/glm4/iswctype.m4 $(top_srcdir)/glm4/iswdigit.m4 \
-	$(top_srcdir)/glm4/iswpunct.m4 $(top_srcdir)/glm4/iswxdigit.m4 \
+	$(top_srcdir)/glm4/inttypes_h.m4 $(top_srcdir)/glm4/ioctl.m4 \
+	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isfinite.m4 \
+	$(top_srcdir)/glm4/isinf.m4 $(top_srcdir)/glm4/isnand.m4 \
+	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
+	$(top_srcdir)/glm4/iswblank.m4 $(top_srcdir)/glm4/iswctype.m4 \
+	$(top_srcdir)/glm4/iswdigit.m4 $(top_srcdir)/glm4/iswpunct.m4 \
+	$(top_srcdir)/glm4/iswxdigit.m4 \
 	$(top_srcdir)/glm4/langinfo_h.m4 \
 	$(top_srcdir)/glm4/largefile.m4 \
 	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/ldexp.m4 \
@@ -507,13 +513,15 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/libunistring-base.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 \
 	$(top_srcdir)/glm4/localcharset.m4 \
+	$(top_srcdir)/glm4/locale-ar.m4 \
 	$(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale-fr.m4 \
 	$(top_srcdir)/glm4/locale-ja.m4 \
+	$(top_srcdir)/glm4/locale-tr.m4 \
 	$(top_srcdir)/glm4/locale-zh.m4 $(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localeconv.m4 \
 	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
-	$(top_srcdir)/glm4/login_tty.m4 $(top_srcdir)/glm4/lstat.m4 \
+	$(top_srcdir)/glm4/lseek.m4 $(top_srcdir)/glm4/lstat.m4 \
 	$(top_srcdir)/glm4/malloc.m4 $(top_srcdir)/glm4/malloca.m4 \
 	$(top_srcdir)/glm4/math_h.m4 $(top_srcdir)/glm4/mathfunc.m4 \
 	$(top_srcdir)/glm4/mbchar.m4 $(top_srcdir)/glm4/mbiter.m4 \
@@ -523,19 +531,22 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/md4.m4 $(top_srcdir)/glm4/memcasecmp.m4 \
 	$(top_srcdir)/glm4/memchr.m4 $(top_srcdir)/glm4/memmem.m4 \
 	$(top_srcdir)/glm4/mempcpy.m4 $(top_srcdir)/glm4/memrchr.m4 \
+	$(top_srcdir)/glm4/memset_explicit.m4 \
 	$(top_srcdir)/glm4/mgetgroups.m4 $(top_srcdir)/glm4/minmax.m4 \
 	$(top_srcdir)/glm4/mkdir.m4 $(top_srcdir)/glm4/mkdtemp.m4 \
-	$(top_srcdir)/glm4/mktime.m4 $(top_srcdir)/glm4/mmap-anon.m4 \
-	$(top_srcdir)/glm4/mode_t.m4 $(top_srcdir)/glm4/modechange.m4 \
+	$(top_srcdir)/glm4/mkfifo.m4 $(top_srcdir)/glm4/mktime.m4 \
+	$(top_srcdir)/glm4/mmap-anon.m4 $(top_srcdir)/glm4/mode_t.m4 \
+	$(top_srcdir)/glm4/modechange.m4 \
 	$(top_srcdir)/glm4/monetary_h.m4 \
 	$(top_srcdir)/glm4/mountlist.m4 $(top_srcdir)/glm4/mpsort.m4 \
 	$(top_srcdir)/glm4/msvc-inval.m4 \
 	$(top_srcdir)/glm4/msvc-nothrow.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
+	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
 	$(top_srcdir)/glm4/netdb_h.m4 \
 	$(top_srcdir)/glm4/netinet_in_h.m4 \
 	$(top_srcdir)/glm4/newlocale.m4 \
-	$(top_srcdir)/glm4/nl_langinfo.m4 \
+	$(top_srcdir)/glm4/nl_langinfo.m4 $(top_srcdir)/glm4/nls.m4 \
 	$(top_srcdir)/glm4/nocrash.m4 $(top_srcdir)/glm4/nproc.m4 \
 	$(top_srcdir)/glm4/nstrftime.m4 $(top_srcdir)/glm4/nullptr.m4 \
 	$(top_srcdir)/glm4/obstack.m4 $(top_srcdir)/glm4/off64_t.m4 \
@@ -543,40 +554,50 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/open-cloexec.m4 \
 	$(top_srcdir)/glm4/open-slash.m4 $(top_srcdir)/glm4/open.m4 \
 	$(top_srcdir)/glm4/openat.m4 $(top_srcdir)/glm4/opendir.m4 \
-	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/pipe.m4 \
-	$(top_srcdir)/glm4/pipe2.m4 $(top_srcdir)/glm4/poll.m4 \
-	$(top_srcdir)/glm4/poll_h.m4 $(top_srcdir)/glm4/posix_spawn.m4 \
+	$(top_srcdir)/glm4/pathmax.m4 $(top_srcdir)/glm4/pclose.m4 \
+	$(top_srcdir)/glm4/perror.m4 $(top_srcdir)/glm4/pipe.m4 \
+	$(top_srcdir)/glm4/pipe2.m4 $(top_srcdir)/glm4/po.m4 \
+	$(top_srcdir)/glm4/poll.m4 $(top_srcdir)/glm4/poll_h.m4 \
+	$(top_srcdir)/glm4/popen.m4 $(top_srcdir)/glm4/posix_spawn.m4 \
 	$(top_srcdir)/glm4/posix_spawn_faction_addchdir.m4 \
-	$(top_srcdir)/glm4/posixver.m4 \
 	$(top_srcdir)/glm4/printf-frexp.m4 \
 	$(top_srcdir)/glm4/printf-frexpl.m4 \
-	$(top_srcdir)/glm4/printf.m4 $(top_srcdir)/glm4/pselect.m4 \
+	$(top_srcdir)/glm4/printf.m4 $(top_srcdir)/glm4/priv-set.m4 \
+	$(top_srcdir)/glm4/progtest.m4 $(top_srcdir)/glm4/pselect.m4 \
+	$(top_srcdir)/glm4/pthread-cond.m4 \
+	$(top_srcdir)/glm4/pthread-mutex.m4 \
 	$(top_srcdir)/glm4/pthread-once.m4 \
+	$(top_srcdir)/glm4/pthread-rwlock.m4 \
 	$(top_srcdir)/glm4/pthread-spin.m4 \
+	$(top_srcdir)/glm4/pthread-thread.m4 \
 	$(top_srcdir)/glm4/pthread_h.m4 \
+	$(top_srcdir)/glm4/pthread_mutex_timedlock.m4 \
 	$(top_srcdir)/glm4/pthread_rwlock_rdlock.m4 \
 	$(top_srcdir)/glm4/pthread_sigmask.m4 \
-	$(top_srcdir)/glm4/pty.m4 $(top_srcdir)/glm4/pty_h.m4 \
 	$(top_srcdir)/glm4/putenv.m4 $(top_srcdir)/glm4/qsort_r.m4 \
 	$(top_srcdir)/glm4/quote.m4 $(top_srcdir)/glm4/quotearg.m4 \
-	$(top_srcdir)/glm4/raise.m4 $(top_srcdir)/glm4/random_r.m4 \
-	$(top_srcdir)/glm4/rawmemchr.m4 $(top_srcdir)/glm4/read.m4 \
+	$(top_srcdir)/glm4/raise.m4 $(top_srcdir)/glm4/random.m4 \
+	$(top_srcdir)/glm4/random_r.m4 $(top_srcdir)/glm4/rawmemchr.m4 \
+	$(top_srcdir)/glm4/read-file.m4 $(top_srcdir)/glm4/read.m4 \
 	$(top_srcdir)/glm4/readdir.m4 $(top_srcdir)/glm4/readlink.m4 \
+	$(top_srcdir)/glm4/readlinkat.m4 \
 	$(top_srcdir)/glm4/readtokens.m4 \
 	$(top_srcdir)/glm4/readutmp.m4 $(top_srcdir)/glm4/realloc.m4 \
 	$(top_srcdir)/glm4/reallocarray.m4 $(top_srcdir)/glm4/regex.m4 \
 	$(top_srcdir)/glm4/relocatable-lib.m4 \
-	$(top_srcdir)/glm4/relocatable.m4 \
+	$(top_srcdir)/glm4/relocatable.m4 $(top_srcdir)/glm4/remove.m4 \
 	$(top_srcdir)/glm4/rewinddir.m4 $(top_srcdir)/glm4/rmdir.m4 \
 	$(top_srcdir)/glm4/safe-read.m4 \
 	$(top_srcdir)/glm4/safe-write.m4 \
 	$(top_srcdir)/glm4/save-cwd.m4 $(top_srcdir)/glm4/scandir.m4 \
-	$(top_srcdir)/glm4/sched_h.m4 $(top_srcdir)/glm4/search_h.m4 \
+	$(top_srcdir)/glm4/sched_h.m4 \
+	$(top_srcdir)/glm4/sched_yield.m4 \
+	$(top_srcdir)/glm4/search_h.m4 \
 	$(top_srcdir)/glm4/secure_getenv.m4 \
 	$(top_srcdir)/glm4/select.m4 \
 	$(top_srcdir)/glm4/selinux-selinux-h.m4 \
-	$(top_srcdir)/glm4/servent.m4 $(top_srcdir)/glm4/setenv.m4 \
-	$(top_srcdir)/glm4/setlocale.m4 \
+	$(top_srcdir)/glm4/semaphore.m4 $(top_srcdir)/glm4/servent.m4 \
+	$(top_srcdir)/glm4/setenv.m4 $(top_srcdir)/glm4/setlocale.m4 \
 	$(top_srcdir)/glm4/setlocale_null.m4 \
 	$(top_srcdir)/glm4/sh-filename.m4 $(top_srcdir)/glm4/sha1.m4 \
 	$(top_srcdir)/glm4/sha256.m4 $(top_srcdir)/glm4/sha3.m4 \
@@ -585,7 +606,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/sigaction.m4 $(top_srcdir)/glm4/signal_h.m4 \
 	$(top_srcdir)/glm4/signalblocking.m4 \
 	$(top_srcdir)/glm4/signbit.m4 $(top_srcdir)/glm4/size_max.m4 \
-	$(top_srcdir)/glm4/sm3.m4 $(top_srcdir)/glm4/snprintf.m4 \
+	$(top_srcdir)/glm4/sleep.m4 $(top_srcdir)/glm4/sm3.m4 \
+	$(top_srcdir)/glm4/snan.m4 $(top_srcdir)/glm4/snprintf.m4 \
 	$(top_srcdir)/glm4/socketlib.m4 $(top_srcdir)/glm4/sockets.m4 \
 	$(top_srcdir)/glm4/socklen.m4 $(top_srcdir)/glm4/sockpfaf.m4 \
 	$(top_srcdir)/glm4/sparcv8+.m4 \
@@ -602,6 +624,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/strcasestr.m4 \
 	$(top_srcdir)/glm4/strchrnul.m4 $(top_srcdir)/glm4/strdup.m4 \
 	$(top_srcdir)/glm4/strerror.m4 \
+	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/strerrorname_np.m4 \
 	$(top_srcdir)/glm4/strfmon_l.m4 $(top_srcdir)/glm4/string_h.m4 \
 	$(top_srcdir)/glm4/stringeq.m4 $(top_srcdir)/glm4/strings_h.m4 \
@@ -612,9 +635,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/strtol.m4 $(top_srcdir)/glm4/strtold.m4 \
 	$(top_srcdir)/glm4/strtoll.m4 $(top_srcdir)/glm4/strtoul.m4 \
 	$(top_srcdir)/glm4/strtoull.m4 $(top_srcdir)/glm4/strtoumax.m4 \
+	$(top_srcdir)/glm4/symlink.m4 $(top_srcdir)/glm4/symlinkat.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
 	$(top_srcdir)/glm4/sys_random_h.m4 \
+	$(top_srcdir)/glm4/sys_resource_h.m4 \
 	$(top_srcdir)/glm4/sys_select_h.m4 \
 	$(top_srcdir)/glm4/sys_socket_h.m4 \
 	$(top_srcdir)/glm4/sys_stat_h.m4 \
@@ -623,37 +648,42 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/sys_uio_h.m4 \
 	$(top_srcdir)/glm4/sys_wait_h.m4 $(top_srcdir)/glm4/systemd.m4 \
 	$(top_srcdir)/glm4/tcgetattr.m4 $(top_srcdir)/glm4/tempname.m4 \
-	$(top_srcdir)/glm4/termios_h.m4 \
-	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time_h.m4 \
+	$(top_srcdir)/glm4/thread.m4 $(top_srcdir)/glm4/threadlib.m4 \
+	$(top_srcdir)/glm4/time.m4 $(top_srcdir)/glm4/time_h.m4 \
 	$(top_srcdir)/glm4/time_r.m4 $(top_srcdir)/glm4/time_rz.m4 \
 	$(top_srcdir)/glm4/timegm.m4 $(top_srcdir)/glm4/timespec.m4 \
 	$(top_srcdir)/glm4/tls.m4 $(top_srcdir)/glm4/tm_gmtoff.m4 \
-	$(top_srcdir)/glm4/tmpdir.m4 $(top_srcdir)/glm4/tsearch.m4 \
+	$(top_srcdir)/glm4/tmpdir.m4 $(top_srcdir)/glm4/trunc.m4 \
+	$(top_srcdir)/glm4/truncl.m4 $(top_srcdir)/glm4/tsearch.m4 \
 	$(top_srcdir)/glm4/tzset.m4 $(top_srcdir)/glm4/uchar_h.m4 \
-	$(top_srcdir)/glm4/unicase_h.m4 \
+	$(top_srcdir)/glm4/ungetc.m4 $(top_srcdir)/glm4/unicase_h.m4 \
 	$(top_srcdir)/glm4/unictype_h.m4 \
 	$(top_srcdir)/glm4/uninorm_h.m4 \
 	$(top_srcdir)/glm4/unistd-safer.m4 \
 	$(top_srcdir)/glm4/unistd_h.m4 \
-	$(top_srcdir)/glm4/unitypes_h.m4 \
-	$(top_srcdir)/glm4/unlocked-io.m4 \
-	$(top_srcdir)/glm4/userspec.m4 $(top_srcdir)/glm4/utime.m4 \
-	$(top_srcdir)/glm4/utime_h.m4 $(top_srcdir)/glm4/utimens.m4 \
-	$(top_srcdir)/glm4/utimes.m4 $(top_srcdir)/glm4/utmp_h.m4 \
+	$(top_srcdir)/glm4/unitypes_h.m4 $(top_srcdir)/glm4/unlink.m4 \
+	$(top_srcdir)/glm4/unlinkat.m4 $(top_srcdir)/glm4/unlinkdir.m4 \
+	$(top_srcdir)/glm4/unlocked-io.m4 $(top_srcdir)/glm4/usleep.m4 \
+	$(top_srcdir)/glm4/utime.m4 $(top_srcdir)/glm4/utime_h.m4 \
+	$(top_srcdir)/glm4/utimecmp.m4 $(top_srcdir)/glm4/utimens.m4 \
+	$(top_srcdir)/glm4/utimensat.m4 $(top_srcdir)/glm4/utimes.m4 \
 	$(top_srcdir)/glm4/vasnprintf.m4 \
 	$(top_srcdir)/glm4/visibility.m4 \
 	$(top_srcdir)/glm4/wait-process.m4 \
 	$(top_srcdir)/glm4/waitpid.m4 \
 	$(top_srcdir)/glm4/warn-on-use.m4 \
 	$(top_srcdir)/glm4/wchar_h.m4 $(top_srcdir)/glm4/wcrtomb.m4 \
-	$(top_srcdir)/glm4/wctob.m4 $(top_srcdir)/glm4/wctomb.m4 \
-	$(top_srcdir)/glm4/wctype.m4 $(top_srcdir)/glm4/wctype_h.m4 \
-	$(top_srcdir)/glm4/wcwidth.m4 $(top_srcdir)/glm4/wint_t.m4 \
-	$(top_srcdir)/glm4/wmemcpy.m4 $(top_srcdir)/glm4/wmemset.m4 \
-	$(top_srcdir)/glm4/write.m4 $(top_srcdir)/glm4/xalloc.m4 \
-	$(top_srcdir)/glm4/xattr.m4 $(top_srcdir)/glm4/xsize.m4 \
+	$(top_srcdir)/glm4/wcscmp.m4 $(top_srcdir)/glm4/wctob.m4 \
+	$(top_srcdir)/glm4/wctomb.m4 $(top_srcdir)/glm4/wctype.m4 \
+	$(top_srcdir)/glm4/wctype_h.m4 $(top_srcdir)/glm4/wcwidth.m4 \
+	$(top_srcdir)/glm4/windows-rc.m4 $(top_srcdir)/glm4/wint_t.m4 \
+	$(top_srcdir)/glm4/wmemcmp.m4 $(top_srcdir)/glm4/wmemcpy.m4 \
+	$(top_srcdir)/glm4/wmemset.m4 $(top_srcdir)/glm4/write.m4 \
+	$(top_srcdir)/glm4/xalloc.m4 $(top_srcdir)/glm4/xattr.m4 \
+	$(top_srcdir)/glm4/xgetcwd.m4 $(top_srcdir)/glm4/xsize.m4 \
 	$(top_srcdir)/glm4/xstrtol.m4 $(top_srcdir)/glm4/xvasprintf.m4 \
-	$(top_srcdir)/glm4/zzgnulib.m4 $(top_srcdir)/configure.ac
+	$(top_srcdir)/glm4/yield.m4 $(top_srcdir)/glm4/zzgnulib.m4 \
+	$(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 DIST_COMMON = $(srcdir)/Makefile.am $(noinst_HEADERS) \
@@ -732,20 +762,18 @@ am__libgnu_a_SOURCES_DIST = access.c acl-errno-valid.c acl-internal.c \
 	hashcode-named-file.c hashcode-string1.h hashcode-string1.c \
 	hashcode-string2.h hashcode-string2.c hashkey-string.h \
 	hashkey-string.c human.c i-ring.c ialloc.c iconv_open.c \
-	iconv.c iconv_close.c idcache.c idx.h inet_ntop.c inet_pton.c \
-	ino-map.c ino-map.h integer_length.c integer_length_l.c \
-	integer_length_ll.c imaxtostr.c inttostr.c offtostr.c \
-	uinttostr.c umaxtostr.c isfinite.c isinf.c issymlink.c \
-	iswblank.c iswctype.c iswdigit.c iswpunct.c iswxdigit.c \
-	javacomp.h javacomp.c javaexec.h javaexec.c javaversion.h \
-	javaversion.c kwset.c ldexp.c ldexpf.c ldexpl.c ldtoastr.c \
-	gl_linked_list.h gl_linked_list.c gl_anylinked_list1.h \
-	gl_anylinked_list2.h gl_linkedhash_list.h gl_linkedhash_list.c \
-	gl_linkedhash_map.h gl_linkedhash_map.c gl_linkedhash_set.h \
-	gl_linkedhash_set.c gl_list.h gl_list.c localcharset.c \
-	localeconv.c localename.c localename-environ.c \
-	localename-unsafe.c glthread/lock.h glthread/lock.c \
-	login_tty.c lstat.c malloca.c gl_map.h gl_map.c math.c \
+	iconv.c iconv_close.c idx.h inet_ntop.c inet_pton.c ino-map.c \
+	ino-map.h integer_length.c integer_length_l.c \
+	integer_length_ll.c isfinite.c isinf.c issymlink.c iswblank.c \
+	iswctype.c iswdigit.c iswpunct.c iswxdigit.c javacomp.h \
+	javacomp.c javaexec.h javaexec.c javaversion.h javaversion.c \
+	kwset.c ldexp.c ldexpf.c ldexpl.c ldtoastr.c gl_linked_list.h \
+	gl_linked_list.c gl_anylinked_list1.h gl_anylinked_list2.h \
+	gl_linkedhash_list.h gl_linkedhash_list.c gl_linkedhash_map.h \
+	gl_linkedhash_map.c gl_linkedhash_set.h gl_linkedhash_set.c \
+	gl_list.h gl_list.c localcharset.c localeconv.c localename.c \
+	localename-environ.c localename-unsafe.c glthread/lock.h \
+	glthread/lock.c lstat.c malloca.c gl_map.h gl_map.c math.c \
 	mbchar.c mbiterf.h mbiterf.c mbrtoc32.c mbrtowc.c mbscasestr.c \
 	mbsinit.c mbslen.c mbsnlen.c mbsstr.c mbszero.c mbtowc.c \
 	mbuiter.h mbuiter.c mbuiterf.h mbuiterf.c mem-hash-map.h \
@@ -762,8 +790,8 @@ am__libgnu_a_SOURCES_DIST = access.c acl-errno-valid.c acl-internal.c \
 	spawn_faction_addopen.c spawn_faction_destroy.c \
 	spawn_faction_init.c spawnattr_destroy.c spawnattr_init.c \
 	spawnattr_setflags.c spawnattr_setpgroup.c \
-	spawnattr_setsigmask.c spawnp.c posixver.c printf-frexp.c \
-	printf-frexpl.c progname.h progname.c pselect.c pthread-once.c \
+	spawnattr_setsigmask.c spawnp.c printf-frexp.c printf-frexpl.c \
+	progname.h progname.c pselect.c pthread-once.c \
 	pthread_sigmask.c putenv.c qcopy-acl.c qsort.c qsort_r.c \
 	quotearg.c raise.c random_r.c rawmemchr.c gl_rbtree_list.h \
 	gl_rbtree_list.c gl_anyrbtree_list1.h gl_anyrbtree_list2.h \
@@ -838,13 +866,12 @@ am__libgnu_a_SOURCES_DIST = access.c acl-errno-valid.c acl-internal.c \
 	uniwbrk/wbrktable.c uniwbrk/u16-wordbreaks.c \
 	uniwbrk/u32-wordbreaks.c uniwbrk/u8-wordbreaks.c \
 	uniwbrk/ulc-wordbreaks.c uniwbrk/wordbreak-property.c \
-	uniwidth/width.c unsetenv.c userspec.c utime.c utimens.c \
-	wprintf-parse.c vasnwprintf.c asnwprintf.c vaszprintf.c \
-	aszprintf.c vma-iter.c vsnzprintf.c wait-process.h \
-	wait-process.c waitpid.c wcrtomb.c wctob.c wctomb.c wctype.c \
-	wctype-h.c wcwidth.c windows-cond.c windows-mutex.c \
-	windows-once.c windows-recmutex.c windows-rwlock.c \
-	windows-path.c windows-spawn.c windows-spin.c \
+	uniwidth/width.c unsetenv.c utime.c utimens.c wprintf-parse.c \
+	vasnwprintf.c asnwprintf.c vaszprintf.c aszprintf.c vma-iter.c \
+	vsnzprintf.c wait-process.h wait-process.c waitpid.c wcrtomb.c \
+	wctob.c wctomb.c wctype.c wctype-h.c wcwidth.c windows-cond.c \
+	windows-mutex.c windows-once.c windows-recmutex.c \
+	windows-rwlock.c windows-path.c windows-spawn.c windows-spin.c \
 	windows-timedrwlock.c windows-tls.c wmemcpy.c wmemset.c \
 	write.c xmalloc.c xalloc-die.c xconcat-filename.c gl_xlist.h \
 	gl_xlist.c xmalloca.c xreadlink.c xsetenv.h xsetenv.c xsize.h \
@@ -934,233 +961,232 @@ am__dirstamp = $(am__leading_dot)dirstamp
 @GL_COND_OBJ_LOCALECONV_TRUE@am__objects_73 = localeconv.$(OBJEXT)
 @GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__objects_74 = localename-unsafe.$(OBJEXT)
 @GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__objects_75 = localename-unsafe.$(OBJEXT)
-@GL_COND_OBJ_LOGIN_TTY_TRUE@am__objects_76 = login_tty.$(OBJEXT)
-@GL_COND_OBJ_LSTAT_TRUE@am__objects_77 = lstat.$(OBJEXT)
-@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_78 = mbrtoc32.$(OBJEXT)
-@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_79 = mbrtowc.$(OBJEXT)
-@GL_COND_OBJ_MBSINIT_TRUE@am__objects_80 = mbsinit.$(OBJEXT)
-@GL_COND_OBJ_MBTOWC_TRUE@am__objects_81 = mbtowc.$(OBJEXT)
-@GL_COND_OBJ_MEMCHR_TRUE@am__objects_82 = memchr.$(OBJEXT)
-@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_83 = mempcpy.$(OBJEXT)
-@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_84 = memrchr.$(OBJEXT)
-@GL_COND_OBJ_MKDIR_TRUE@am__objects_85 = mkdir.$(OBJEXT)
-@GL_COND_OBJ_MKDTEMP_TRUE@am__objects_86 = mkdtemp.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_87 = msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_88 =  \
+@GL_COND_OBJ_LSTAT_TRUE@am__objects_76 = lstat.$(OBJEXT)
+@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_77 = mbrtoc32.$(OBJEXT)
+@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_78 = mbrtowc.$(OBJEXT)
+@GL_COND_OBJ_MBSINIT_TRUE@am__objects_79 = mbsinit.$(OBJEXT)
+@GL_COND_OBJ_MBTOWC_TRUE@am__objects_80 = mbtowc.$(OBJEXT)
+@GL_COND_OBJ_MEMCHR_TRUE@am__objects_81 = memchr.$(OBJEXT)
+@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_82 = mempcpy.$(OBJEXT)
+@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_83 = memrchr.$(OBJEXT)
+@GL_COND_OBJ_MKDIR_TRUE@am__objects_84 = mkdir.$(OBJEXT)
+@GL_COND_OBJ_MKDTEMP_TRUE@am__objects_85 = mkdtemp.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_86 = msvc-inval.$(OBJEXT)
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_87 =  \
 @GL_COND_OBJ_MSVC_NOTHROW_TRUE@	msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_NEWLOCALE_TRUE@am__objects_89 = newlocale.$(OBJEXT)
-@GL_COND_OBJ_NL_LANGINFO_TRUE@am__objects_90 = nl_langinfo.$(OBJEXT)
-@GL_COND_OBJ_NL_LANGINFO_LOCK_TRUE@am__objects_91 =  \
+@GL_COND_OBJ_NEWLOCALE_TRUE@am__objects_88 = newlocale.$(OBJEXT)
+@GL_COND_OBJ_NL_LANGINFO_TRUE@am__objects_89 = nl_langinfo.$(OBJEXT)
+@GL_COND_OBJ_NL_LANGINFO_LOCK_TRUE@am__objects_90 =  \
 @GL_COND_OBJ_NL_LANGINFO_LOCK_TRUE@	nl_langinfo-lock.$(OBJEXT)
-@GL_COND_OBJ_OBSTACK_TRUE@am__objects_92 = obstack.$(OBJEXT)
-@GL_COND_OBJ_OPEN_TRUE@am__objects_93 = open.$(OBJEXT)
-@GL_COND_OBJ_OPENAT_TRUE@am__objects_94 = openat.$(OBJEXT)
-@GL_COND_OBJ_OPENDIR_TRUE@am__objects_95 = opendir.$(OBJEXT)
-@GL_COND_OBJ_PIPE_TRUE@am__objects_96 = pipe.$(OBJEXT)
-@GL_COND_OBJ_POLL_TRUE@am__objects_97 = poll.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_TRUE@am__objects_98 = spawn.$(OBJEXT)
-@GL_COND_OBJ_SPAWNI_TRUE@am__objects_99 = spawni.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__objects_100 = spawn_faction_addchdir.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__objects_101 = spawn_faction_addclose.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__objects_102 = spawn_faction_adddup2.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__objects_103 = spawn_faction_addopen.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__objects_104 = spawn_faction_destroy.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__objects_105 = spawn_faction_init.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__objects_106 = spawnattr_destroy.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__objects_107 =  \
+@GL_COND_OBJ_OBSTACK_TRUE@am__objects_91 = obstack.$(OBJEXT)
+@GL_COND_OBJ_OPEN_TRUE@am__objects_92 = open.$(OBJEXT)
+@GL_COND_OBJ_OPENAT_TRUE@am__objects_93 = openat.$(OBJEXT)
+@GL_COND_OBJ_OPENDIR_TRUE@am__objects_94 = opendir.$(OBJEXT)
+@GL_COND_OBJ_PIPE_TRUE@am__objects_95 = pipe.$(OBJEXT)
+@GL_COND_OBJ_POLL_TRUE@am__objects_96 = poll.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_TRUE@am__objects_97 = spawn.$(OBJEXT)
+@GL_COND_OBJ_SPAWNI_TRUE@am__objects_98 = spawni.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__objects_99 = spawn_faction_addchdir.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__objects_100 = spawn_faction_addclose.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__objects_101 = spawn_faction_adddup2.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__objects_102 = spawn_faction_addopen.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__objects_103 = spawn_faction_destroy.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__objects_104 = spawn_faction_init.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__objects_105 = spawnattr_destroy.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__objects_106 =  \
 @GL_COND_OBJ_SPAWNATTR_INIT_TRUE@	spawnattr_init.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__objects_108 = spawnattr_setflags.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__objects_109 = spawnattr_setpgroup.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__objects_110 = spawnattr_setsigmask.$(OBJEXT)
-@GL_COND_OBJ_SPAWNP_TRUE@am__objects_111 = spawnp.$(OBJEXT)
-@GL_COND_OBJ_PSELECT_TRUE@am__objects_112 = pselect.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_113 =  \
+@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__objects_107 = spawnattr_setflags.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__objects_108 = spawnattr_setpgroup.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__objects_109 = spawnattr_setsigmask.$(OBJEXT)
+@GL_COND_OBJ_SPAWNP_TRUE@am__objects_110 = spawnp.$(OBJEXT)
+@GL_COND_OBJ_PSELECT_TRUE@am__objects_111 = pselect.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_112 =  \
 @GL_COND_OBJ_PTHREAD_ONCE_TRUE@	pthread-once.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_114 =  \
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_113 =  \
 @GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@	pthread_sigmask.$(OBJEXT)
-@GL_COND_OBJ_PUTENV_TRUE@am__objects_115 = putenv.$(OBJEXT)
-@GL_COND_OBJ_QSORT_TRUE@am__objects_116 = qsort.$(OBJEXT)
-@GL_COND_OBJ_QSORT_R_TRUE@am__objects_117 = qsort_r.$(OBJEXT)
-@GL_COND_OBJ_RAISE_TRUE@am__objects_118 = raise.$(OBJEXT)
-@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_119 = random_r.$(OBJEXT)
-@GL_COND_OBJ_RAWMEMCHR_TRUE@am__objects_120 = rawmemchr.$(OBJEXT)
-@GL_COND_OBJ_READ_TRUE@am__objects_121 = read.$(OBJEXT)
-@GL_COND_OBJ_READDIR_TRUE@am__objects_122 = readdir.$(OBJEXT)
-@GL_COND_OBJ_READLINK_TRUE@am__objects_123 = readlink.$(OBJEXT)
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_124 = realloc.$(OBJEXT)
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_125 =  \
+@GL_COND_OBJ_PUTENV_TRUE@am__objects_114 = putenv.$(OBJEXT)
+@GL_COND_OBJ_QSORT_TRUE@am__objects_115 = qsort.$(OBJEXT)
+@GL_COND_OBJ_QSORT_R_TRUE@am__objects_116 = qsort_r.$(OBJEXT)
+@GL_COND_OBJ_RAISE_TRUE@am__objects_117 = raise.$(OBJEXT)
+@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_118 = random_r.$(OBJEXT)
+@GL_COND_OBJ_RAWMEMCHR_TRUE@am__objects_119 = rawmemchr.$(OBJEXT)
+@GL_COND_OBJ_READ_TRUE@am__objects_120 = read.$(OBJEXT)
+@GL_COND_OBJ_READDIR_TRUE@am__objects_121 = readdir.$(OBJEXT)
+@GL_COND_OBJ_READLINK_TRUE@am__objects_122 = readlink.$(OBJEXT)
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_123 = realloc.$(OBJEXT)
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_124 =  \
 @GL_COND_OBJ_REALLOCARRAY_TRUE@	reallocarray.$(OBJEXT)
-@GL_COND_OBJ_REGEX_TRUE@am__objects_126 = regex.$(OBJEXT)
-@GL_COND_OBJ_PROGRELOC_TRUE@am__objects_127 = progreloc.$(OBJEXT)
-@GL_COND_OBJ_REWINDDIR_TRUE@am__objects_128 = rewinddir.$(OBJEXT)
-@GL_COND_OBJ_RMDIR_TRUE@am__objects_129 = rmdir.$(OBJEXT)
-@GL_COND_OBJ_SCANDIR_TRUE@am__objects_130 = scandir.$(OBJEXT)
-@GL_COND_OBJ_SECURE_GETENV_TRUE@am__objects_131 =  \
+@GL_COND_OBJ_REGEX_TRUE@am__objects_125 = regex.$(OBJEXT)
+@GL_COND_OBJ_PROGRELOC_TRUE@am__objects_126 = progreloc.$(OBJEXT)
+@GL_COND_OBJ_REWINDDIR_TRUE@am__objects_127 = rewinddir.$(OBJEXT)
+@GL_COND_OBJ_RMDIR_TRUE@am__objects_128 = rmdir.$(OBJEXT)
+@GL_COND_OBJ_SCANDIR_TRUE@am__objects_129 = scandir.$(OBJEXT)
+@GL_COND_OBJ_SECURE_GETENV_TRUE@am__objects_130 =  \
 @GL_COND_OBJ_SECURE_GETENV_TRUE@	secure_getenv.$(OBJEXT)
-@GL_COND_OBJ_SELECT_TRUE@am__objects_132 = select.$(OBJEXT)
-@GL_COND_OBJ_SETENV_TRUE@am__objects_133 = setenv.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_TRUE@am__objects_134 = setlocale.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__objects_135 =  \
+@GL_COND_OBJ_SELECT_TRUE@am__objects_131 = select.$(OBJEXT)
+@GL_COND_OBJ_SETENV_TRUE@am__objects_132 = setenv.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_TRUE@am__objects_133 = setlocale.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__objects_134 =  \
 @GL_COND_OBJ_SETLOCALE_FIXES_TRUE@	setlocale-fixes.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_136 =  \
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_135 =  \
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@	setlocale-lock.$(OBJEXT)
-@GL_COND_OBJ_SIG2STR_TRUE@am__objects_137 = sig2str.$(OBJEXT)
-@GL_COND_OBJ_SIGACTION_TRUE@am__objects_138 = sigaction.$(OBJEXT)
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_139 = signbitf.$(OBJEXT) \
+@GL_COND_OBJ_SIG2STR_TRUE@am__objects_136 = sig2str.$(OBJEXT)
+@GL_COND_OBJ_SIGACTION_TRUE@am__objects_137 = sigaction.$(OBJEXT)
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_138 = signbitf.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitd.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitl.$(OBJEXT)
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_140 = sigprocmask.$(OBJEXT)
-@GL_COND_OBJ_OS2_SPAWN_TRUE@am__objects_141 = os2-spawn.$(OBJEXT)
-@GL_COND_OBJ_SPIN_TRUE@am__objects_142 = glthread/spin.$(OBJEXT)
-@GL_COND_OBJ_STACK_TRACE_TRUE@am__objects_143 = stack-trace.$(OBJEXT)
-@GL_COND_OBJ_STAT_TRUE@am__objects_144 = stat.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_145 = stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_146 = stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_147 = stdio-consolesafe.$(OBJEXT)
-@GL_COND_OBJ_STPCPY_TRUE@am__objects_148 = stpcpy.$(OBJEXT)
-@GL_COND_OBJ_STRCHRNUL_TRUE@am__objects_149 = strchrnul.$(OBJEXT)
-@GL_COND_OBJ_STRDUP_TRUE@am__objects_150 = strdup.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_TRUE@am__objects_151 = strerror.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_152 = strerror-override.$(OBJEXT)
-@GL_COND_OBJ_STRFMON_L_TRUE@am__objects_153 = strfmon_l.$(OBJEXT)
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_154 = strncasecmp.$(OBJEXT)
-@GL_COND_OBJ_STRNDUP_TRUE@am__objects_155 = strndup.$(OBJEXT)
-@GL_COND_OBJ_STRNLEN_TRUE@am__objects_156 = strnlen.$(OBJEXT)
-@GL_COND_OBJ_STRPTIME_TRUE@am__objects_157 = strptime.$(OBJEXT)
-@GL_COND_OBJ_STRTOD_TRUE@am__objects_158 = strtod.$(OBJEXT)
-@GL_COND_OBJ_STRTOF_TRUE@am__objects_159 = strtof.$(OBJEXT)
-@GL_COND_OBJ_STRTOL_TRUE@am__objects_160 = strtol.$(OBJEXT)
-@GL_COND_OBJ_STRTOLD_TRUE@am__objects_161 = strtold.$(OBJEXT)
-@GL_COND_OBJ_STRTOLL_TRUE@am__objects_162 = strtoll.$(OBJEXT)
-@GL_COND_OBJ_STRTOUL_TRUE@am__objects_163 = strtoul.$(OBJEXT)
-@GL_COND_OBJ_STRTOULL_TRUE@am__objects_164 = strtoull.$(OBJEXT)
-@GL_COND_OBJ_STRTOUMAX_TRUE@am__objects_165 = strtoumax.$(OBJEXT)
-@GL_COND_OBJ_TIME_R_TRUE@am__objects_166 = time_r.$(OBJEXT)
-@GL_COND_OBJ_TIMEGM_TRUE@am__objects_167 = timegm.$(OBJEXT)
-@GL_COND_OBJ_TSEARCH_TRUE@am__objects_168 = tsearch.$(OBJEXT)
-@GL_COND_OBJ_TZSET_TRUE@am__objects_169 = tzset.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_170 = unicase/tolower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_TOTITLE_TRUE@am__objects_171 = unicase/totitle.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_TOUPPER_TRUE@am__objects_172 = unicase/toupper.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_U16_CT_TOTITLE_TRUE@am__objects_173 = unicase/u16-ct-totitle.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_U32_CT_TOTITLE_TRUE@am__objects_174 = unicase/u32-ct-totitle.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_U8_CT_TOTITLE_TRUE@am__objects_175 = unicase/u8-ct-totitle.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_FROM_ENC_TRUE@am__objects_176 = uniconv/u16-conv-from-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_TO_ENC_TRUE@am__objects_177 = uniconv/u16-conv-to-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_FROM_ENC_TRUE@am__objects_178 = uniconv/u32-conv-from-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_TO_ENC_TRUE@am__objects_179 = uniconv/u32-conv-to-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_FROM_ENC_TRUE@am__objects_180 = uniconv/u8-conv-from-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_TO_ENC_TRUE@am__objects_181 = uniconv/u8-conv-to-enc.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_COMBINING_CLASS_TRUE@am__objects_182 = unictype/combiningclass.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_183 = unictype/ctype_alnum.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_184 = unictype/ctype_alpha.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_185 = unictype/ctype_blank.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_186 = unictype/ctype_cntrl.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_187 = unictype/ctype_digit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_188 = unictype/ctype_graph.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_189 = unictype/ctype_lower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_190 = unictype/ctype_print.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_191 = unictype/ctype_punct.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_192 = unictype/ctype_space.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_193 = unictype/ctype_upper.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_194 = unictype/ctype_xdigit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_INCB_OF_TRUE@am__objects_195 = unictype/incb_of.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_EXTENDED_PICTOGRAPHIC_TRUE@am__objects_196 = unictype/pr_extended_pictographic.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_SOFT_DOTTED_TRUE@am__objects_197 = unictype/pr_soft_dotted.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIGBRK_U8_GRAPHEME_BREAKS_TRUE@am__objects_198 = unigbrk/u8-grapheme-breaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIGBRK_UC_GBRK_PROP_TRUE@am__objects_199 = unigbrk/uc-gbrk-prop.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIGBRK_ULC_GRAPHEME_BREAKS_TRUE@am__objects_200 = unigbrk/ulc-grapheme-breaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNILBRK_U8_POSSIBLE_LINEBREAKS_TRUE@am__objects_201 = unilbrk/u8-possible-linebreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNILBRK_U8_WIDTH_LINEBREAKS_TRUE@am__objects_202 = unilbrk/u8-width-linebreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNILBRK_ULC_POSSIBLE_LINEBREAKS_TRUE@am__objects_203 = unilbrk/ulc-possible-linebreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNILBRK_ULC_WIDTH_LINEBREAKS_TRUE@am__objects_204 = unilbrk/ulc-width-linebreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNINAME_UNINAME_TRUE@am__objects_205 = uniname/uniname.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNINORM_FILTER_TRUE@am__objects_206 = uninorm/uninorm-filter.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNINORM_U16_NORMALIZE_TRUE@am__objects_207 = uninorm/u16-normalize.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNINORM_U32_NORMALIZE_TRUE@am__objects_208 = uninorm/u32-normalize.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNINORM_U8_NORMALIZE_TRUE@am__objects_209 = uninorm/u8-normalize.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U16_U16_VASNPRINTF_TRUE@am__objects_210 = unistdio/u16-u16-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U16_VASNPRINTF_TRUE@am__objects_211 = unistdio/u16-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U32_U32_VASNPRINTF_TRUE@am__objects_212 = unistdio/u32-u32-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U32_VASNPRINTF_TRUE@am__objects_213 = unistdio/u32-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U8_U8_VASNPRINTF_TRUE@am__objects_214 = unistdio/u8-u8-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_U8_VASNPRINTF_TRUE@am__objects_215 = unistdio/u8-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTDIO_ULC_VASNPRINTF_TRUE@am__objects_216 = unistdio/ulc-vasnprintf.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_CPY_TRUE@am__objects_217 = unistr/u16-cpy.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBLEN_TRUE@am__objects_218 = unistr/u16-mblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBSNLEN_TRUE@am__objects_219 = unistr/u16-mbsnlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUC_UNSAFE_TRUE@am__objects_220 = unistr/u16-mbtouc-unsafe.$(OBJEXT) \
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_139 = sigprocmask.$(OBJEXT)
+@GL_COND_OBJ_OS2_SPAWN_TRUE@am__objects_140 = os2-spawn.$(OBJEXT)
+@GL_COND_OBJ_SPIN_TRUE@am__objects_141 = glthread/spin.$(OBJEXT)
+@GL_COND_OBJ_STACK_TRACE_TRUE@am__objects_142 = stack-trace.$(OBJEXT)
+@GL_COND_OBJ_STAT_TRUE@am__objects_143 = stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_144 = stdio-read.$(OBJEXT)
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_145 = stdio-write.$(OBJEXT)
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_146 = stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STPCPY_TRUE@am__objects_147 = stpcpy.$(OBJEXT)
+@GL_COND_OBJ_STRCHRNUL_TRUE@am__objects_148 = strchrnul.$(OBJEXT)
+@GL_COND_OBJ_STRDUP_TRUE@am__objects_149 = strdup.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_TRUE@am__objects_150 = strerror.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_151 = strerror-override.$(OBJEXT)
+@GL_COND_OBJ_STRFMON_L_TRUE@am__objects_152 = strfmon_l.$(OBJEXT)
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_153 = strncasecmp.$(OBJEXT)
+@GL_COND_OBJ_STRNDUP_TRUE@am__objects_154 = strndup.$(OBJEXT)
+@GL_COND_OBJ_STRNLEN_TRUE@am__objects_155 = strnlen.$(OBJEXT)
+@GL_COND_OBJ_STRPTIME_TRUE@am__objects_156 = strptime.$(OBJEXT)
+@GL_COND_OBJ_STRTOD_TRUE@am__objects_157 = strtod.$(OBJEXT)
+@GL_COND_OBJ_STRTOF_TRUE@am__objects_158 = strtof.$(OBJEXT)
+@GL_COND_OBJ_STRTOL_TRUE@am__objects_159 = strtol.$(OBJEXT)
+@GL_COND_OBJ_STRTOLD_TRUE@am__objects_160 = strtold.$(OBJEXT)
+@GL_COND_OBJ_STRTOLL_TRUE@am__objects_161 = strtoll.$(OBJEXT)
+@GL_COND_OBJ_STRTOUL_TRUE@am__objects_162 = strtoul.$(OBJEXT)
+@GL_COND_OBJ_STRTOULL_TRUE@am__objects_163 = strtoull.$(OBJEXT)
+@GL_COND_OBJ_STRTOUMAX_TRUE@am__objects_164 = strtoumax.$(OBJEXT)
+@GL_COND_OBJ_TIME_R_TRUE@am__objects_165 = time_r.$(OBJEXT)
+@GL_COND_OBJ_TIMEGM_TRUE@am__objects_166 = timegm.$(OBJEXT)
+@GL_COND_OBJ_TSEARCH_TRUE@am__objects_167 = tsearch.$(OBJEXT)
+@GL_COND_OBJ_TZSET_TRUE@am__objects_168 = tzset.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_169 = unicase/tolower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOTITLE_TRUE@am__objects_170 = unicase/totitle.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOUPPER_TRUE@am__objects_171 = unicase/toupper.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_U16_CT_TOTITLE_TRUE@am__objects_172 = unicase/u16-ct-totitle.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_U32_CT_TOTITLE_TRUE@am__objects_173 = unicase/u32-ct-totitle.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_U8_CT_TOTITLE_TRUE@am__objects_174 = unicase/u8-ct-totitle.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_FROM_ENC_TRUE@am__objects_175 = uniconv/u16-conv-from-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U16_CONV_TO_ENC_TRUE@am__objects_176 = uniconv/u16-conv-to-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_FROM_ENC_TRUE@am__objects_177 = uniconv/u32-conv-from-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U32_CONV_TO_ENC_TRUE@am__objects_178 = uniconv/u32-conv-to-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_FROM_ENC_TRUE@am__objects_179 = uniconv/u8-conv-from-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICONV_U8_CONV_TO_ENC_TRUE@am__objects_180 = uniconv/u8-conv-to-enc.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_COMBINING_CLASS_TRUE@am__objects_181 = unictype/combiningclass.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_182 = unictype/ctype_alnum.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_183 = unictype/ctype_alpha.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_184 = unictype/ctype_blank.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_185 = unictype/ctype_cntrl.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_186 = unictype/ctype_digit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_187 = unictype/ctype_graph.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_188 = unictype/ctype_lower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_189 = unictype/ctype_print.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_190 = unictype/ctype_punct.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_191 = unictype/ctype_space.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_192 = unictype/ctype_upper.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_193 = unictype/ctype_xdigit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_INCB_OF_TRUE@am__objects_194 = unictype/incb_of.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_EXTENDED_PICTOGRAPHIC_TRUE@am__objects_195 = unictype/pr_extended_pictographic.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_PROPERTY_SOFT_DOTTED_TRUE@am__objects_196 = unictype/pr_soft_dotted.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIGBRK_U8_GRAPHEME_BREAKS_TRUE@am__objects_197 = unigbrk/u8-grapheme-breaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIGBRK_UC_GBRK_PROP_TRUE@am__objects_198 = unigbrk/uc-gbrk-prop.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIGBRK_ULC_GRAPHEME_BREAKS_TRUE@am__objects_199 = unigbrk/ulc-grapheme-breaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNILBRK_U8_POSSIBLE_LINEBREAKS_TRUE@am__objects_200 = unilbrk/u8-possible-linebreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNILBRK_U8_WIDTH_LINEBREAKS_TRUE@am__objects_201 = unilbrk/u8-width-linebreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNILBRK_ULC_POSSIBLE_LINEBREAKS_TRUE@am__objects_202 = unilbrk/ulc-possible-linebreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNILBRK_ULC_WIDTH_LINEBREAKS_TRUE@am__objects_203 = unilbrk/ulc-width-linebreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNINAME_UNINAME_TRUE@am__objects_204 = uniname/uniname.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNINORM_FILTER_TRUE@am__objects_205 = uninorm/uninorm-filter.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNINORM_U16_NORMALIZE_TRUE@am__objects_206 = uninorm/u16-normalize.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNINORM_U32_NORMALIZE_TRUE@am__objects_207 = uninorm/u32-normalize.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNINORM_U8_NORMALIZE_TRUE@am__objects_208 = uninorm/u8-normalize.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U16_U16_VASNPRINTF_TRUE@am__objects_209 = unistdio/u16-u16-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U16_VASNPRINTF_TRUE@am__objects_210 = unistdio/u16-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U32_U32_VASNPRINTF_TRUE@am__objects_211 = unistdio/u32-u32-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U32_VASNPRINTF_TRUE@am__objects_212 = unistdio/u32-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U8_U8_VASNPRINTF_TRUE@am__objects_213 = unistdio/u8-u8-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_U8_VASNPRINTF_TRUE@am__objects_214 = unistdio/u8-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTDIO_ULC_VASNPRINTF_TRUE@am__objects_215 = unistdio/ulc-vasnprintf.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_CPY_TRUE@am__objects_216 = unistr/u16-cpy.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBLEN_TRUE@am__objects_217 = unistr/u16-mblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBSNLEN_TRUE@am__objects_218 = unistr/u16-mbsnlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUC_UNSAFE_TRUE@am__objects_219 = unistr/u16-mbtouc-unsafe.$(OBJEXT) \
 @LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUC_UNSAFE_TRUE@	unistr/u16-mbtouc-unsafe-aux.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUCR_TRUE@am__objects_221 = unistr/u16-mbtoucr.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_SET_TRUE@am__objects_222 = unistr/u16-set.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_STRLEN_TRUE@am__objects_223 = unistr/u16-strlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_STRMBLEN_TRUE@am__objects_224 = unistr/u16-strmblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U32_TRUE@am__objects_225 = unistr/u16-to-u32.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U8_TRUE@am__objects_226 = unistr/u16-to-u8.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U16_UCTOMB_TRUE@am__objects_227 = unistr/u16-uctomb.$(OBJEXT) \
+@LIBUNISTRING_COMPILE_UNISTR_U16_MBTOUCR_TRUE@am__objects_220 = unistr/u16-mbtoucr.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_SET_TRUE@am__objects_221 = unistr/u16-set.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_STRLEN_TRUE@am__objects_222 = unistr/u16-strlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_STRMBLEN_TRUE@am__objects_223 = unistr/u16-strmblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U32_TRUE@am__objects_224 = unistr/u16-to-u32.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_TO_U8_TRUE@am__objects_225 = unistr/u16-to-u8.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U16_UCTOMB_TRUE@am__objects_226 = unistr/u16-uctomb.$(OBJEXT) \
 @LIBUNISTRING_COMPILE_UNISTR_U16_UCTOMB_TRUE@	unistr/u16-uctomb-aux.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_CPY_TRUE@am__objects_228 = unistr/u32-cpy.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBLEN_TRUE@am__objects_229 = unistr/u32-mblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBSNLEN_TRUE@am__objects_230 = unistr/u32-mbsnlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_MBTOUC_UNSAFE_TRUE@am__objects_231 = unistr/u32-mbtouc-unsafe.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_SET_TRUE@am__objects_232 = unistr/u32-set.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_STRLEN_TRUE@am__objects_233 = unistr/u32-strlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_STRMBLEN_TRUE@am__objects_234 = unistr/u32-strmblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U16_TRUE@am__objects_235 = unistr/u32-to-u16.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U8_TRUE@am__objects_236 = unistr/u32-to-u8.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U32_UCTOMB_TRUE@am__objects_237 = unistr/u32-uctomb.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_CHECK_TRUE@am__objects_238 = unistr/u8-check.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_CPY_TRUE@am__objects_239 = unistr/u8-cpy.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBLEN_TRUE@am__objects_240 = unistr/u8-mblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBSNLEN_TRUE@am__objects_241 = unistr/u8-mbsnlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_TRUE@am__objects_242 = unistr/u8-mbtouc.$(OBJEXT) \
+@LIBUNISTRING_COMPILE_UNISTR_U32_CPY_TRUE@am__objects_227 = unistr/u32-cpy.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBLEN_TRUE@am__objects_228 = unistr/u32-mblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBSNLEN_TRUE@am__objects_229 = unistr/u32-mbsnlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_MBTOUC_UNSAFE_TRUE@am__objects_230 = unistr/u32-mbtouc-unsafe.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_SET_TRUE@am__objects_231 = unistr/u32-set.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_STRLEN_TRUE@am__objects_232 = unistr/u32-strlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_STRMBLEN_TRUE@am__objects_233 = unistr/u32-strmblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U16_TRUE@am__objects_234 = unistr/u32-to-u16.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_TO_U8_TRUE@am__objects_235 = unistr/u32-to-u8.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U32_UCTOMB_TRUE@am__objects_236 = unistr/u32-uctomb.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_CHECK_TRUE@am__objects_237 = unistr/u8-check.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_CPY_TRUE@am__objects_238 = unistr/u8-cpy.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBLEN_TRUE@am__objects_239 = unistr/u8-mblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBSNLEN_TRUE@am__objects_240 = unistr/u8-mbsnlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_TRUE@am__objects_241 = unistr/u8-mbtouc.$(OBJEXT) \
 @LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_TRUE@	unistr/u8-mbtouc-aux.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_UNSAFE_TRUE@am__objects_243 = unistr/u8-mbtouc-unsafe.$(OBJEXT) \
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_UNSAFE_TRUE@am__objects_242 = unistr/u8-mbtouc-unsafe.$(OBJEXT) \
 @LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUC_UNSAFE_TRUE@	unistr/u8-mbtouc-unsafe-aux.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUCR_TRUE@am__objects_244 = unistr/u8-mbtoucr.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_PREV_TRUE@am__objects_245 = unistr/u8-prev.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_SET_TRUE@am__objects_246 = unistr/u8-set.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_STRLEN_TRUE@am__objects_247 = unistr/u8-strlen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_STRMBLEN_TRUE@am__objects_248 = unistr/u8-strmblen.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U16_TRUE@am__objects_249 = unistr/u8-to-u16.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U32_TRUE@am__objects_250 = unistr/u8-to-u32.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNISTR_U8_UCTOMB_TRUE@am__objects_251 = unistr/u8-uctomb.$(OBJEXT) \
+@LIBUNISTRING_COMPILE_UNISTR_U8_MBTOUCR_TRUE@am__objects_243 = unistr/u8-mbtoucr.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_PREV_TRUE@am__objects_244 = unistr/u8-prev.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_SET_TRUE@am__objects_245 = unistr/u8-set.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_STRLEN_TRUE@am__objects_246 = unistr/u8-strlen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_STRMBLEN_TRUE@am__objects_247 = unistr/u8-strmblen.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U16_TRUE@am__objects_248 = unistr/u8-to-u16.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_TO_U32_TRUE@am__objects_249 = unistr/u8-to-u32.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNISTR_U8_UCTOMB_TRUE@am__objects_250 = unistr/u8-uctomb.$(OBJEXT) \
 @LIBUNISTRING_COMPILE_UNISTR_U8_UCTOMB_TRUE@	unistr/u8-uctomb-aux.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWBRK_U16_WORDBREAKS_TRUE@am__objects_252 = uniwbrk/u16-wordbreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWBRK_U32_WORDBREAKS_TRUE@am__objects_253 = uniwbrk/u32-wordbreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWBRK_U8_WORDBREAKS_TRUE@am__objects_254 = uniwbrk/u8-wordbreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWBRK_ULC_WORDBREAKS_TRUE@am__objects_255 = uniwbrk/ulc-wordbreaks.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWBRK_WORDBREAK_PROPERTY_TRUE@am__objects_256 = uniwbrk/wordbreak-property.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_257 = uniwidth/width.$(OBJEXT)
-@GL_COND_OBJ_UNSETENV_TRUE@am__objects_258 = unsetenv.$(OBJEXT)
-@GL_COND_OBJ_UTIME_TRUE@am__objects_259 = utime.$(OBJEXT)
-@GL_COND_OBJ_WAITPID_TRUE@am__objects_260 = waitpid.$(OBJEXT)
-@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_261 = wcrtomb.$(OBJEXT)
-@GL_COND_OBJ_WCTOB_TRUE@am__objects_262 = wctob.$(OBJEXT)
-@GL_COND_OBJ_WCTOMB_TRUE@am__objects_263 = wctomb.$(OBJEXT)
-@GL_COND_OBJ_WCTYPE_TRUE@am__objects_264 = wctype.$(OBJEXT)
-@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_265 = wcwidth.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_266 =  \
+@LIBUNISTRING_COMPILE_UNIWBRK_U16_WORDBREAKS_TRUE@am__objects_251 = uniwbrk/u16-wordbreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWBRK_U32_WORDBREAKS_TRUE@am__objects_252 = uniwbrk/u32-wordbreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWBRK_U8_WORDBREAKS_TRUE@am__objects_253 = uniwbrk/u8-wordbreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWBRK_ULC_WORDBREAKS_TRUE@am__objects_254 = uniwbrk/ulc-wordbreaks.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWBRK_WORDBREAK_PROPERTY_TRUE@am__objects_255 = uniwbrk/wordbreak-property.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_256 = uniwidth/width.$(OBJEXT)
+@GL_COND_OBJ_UNSETENV_TRUE@am__objects_257 = unsetenv.$(OBJEXT)
+@GL_COND_OBJ_UTIME_TRUE@am__objects_258 = utime.$(OBJEXT)
+@GL_COND_OBJ_WAITPID_TRUE@am__objects_259 = waitpid.$(OBJEXT)
+@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_260 = wcrtomb.$(OBJEXT)
+@GL_COND_OBJ_WCTOB_TRUE@am__objects_261 = wctob.$(OBJEXT)
+@GL_COND_OBJ_WCTOMB_TRUE@am__objects_262 = wctomb.$(OBJEXT)
+@GL_COND_OBJ_WCTYPE_TRUE@am__objects_263 = wctype.$(OBJEXT)
+@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_264 = wcwidth.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_265 =  \
 @GL_COND_OBJ_WINDOWS_COND_TRUE@	windows-cond.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_267 =  \
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_266 =  \
 @GL_COND_OBJ_WINDOWS_MUTEX_TRUE@	windows-mutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_268 =  \
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_267 =  \
 @GL_COND_OBJ_WINDOWS_ONCE_TRUE@	windows-once.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_269 =  \
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_268 =  \
 @GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@	windows-recmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_270 =  \
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_269 =  \
 @GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@	windows-rwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__objects_271 =  \
+@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__objects_270 =  \
 @GL_COND_OBJ_WINDOWS_PATH_TRUE@	windows-path.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__objects_272 =  \
+@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__objects_271 =  \
 @GL_COND_OBJ_WINDOWS_SPAWN_TRUE@	windows-spawn.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__objects_273 =  \
+@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__objects_272 =  \
 @GL_COND_OBJ_WINDOWS_SPIN_TRUE@	windows-spin.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_274 = windows-timedrwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_275 = windows-tls.$(OBJEXT)
-@GL_COND_OBJ_WMEMCPY_TRUE@am__objects_276 = wmemcpy.$(OBJEXT)
-@GL_COND_OBJ_WMEMSET_TRUE@am__objects_277 = wmemset.$(OBJEXT)
-@GL_COND_OBJ_WRITE_TRUE@am__objects_278 = write.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_273 = windows-timedrwlock.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_274 = windows-tls.$(OBJEXT)
+@GL_COND_OBJ_WMEMCPY_TRUE@am__objects_275 = wmemcpy.$(OBJEXT)
+@GL_COND_OBJ_WMEMSET_TRUE@am__objects_276 = wmemset.$(OBJEXT)
+@GL_COND_OBJ_WRITE_TRUE@am__objects_277 = write.$(OBJEXT)
 am_libgnu_a_OBJECTS = $(am__objects_1) acl-errno-valid.$(OBJEXT) \
 	acl-internal.$(OBJEXT) get-permissions.$(OBJEXT) \
 	set-permissions.$(OBJEXT) $(am__objects_2) allocator.$(OBJEXT) \
@@ -1240,11 +1266,9 @@ am_libgnu_a_OBJECTS = $(am__objects_1) acl-errno-valid.$(OBJEXT) \
 	hashcode-string1.$(OBJEXT) hashcode-string2.$(OBJEXT) \
 	hashkey-string.$(OBJEXT) human.$(OBJEXT) i-ring.$(OBJEXT) \
 	ialloc.$(OBJEXT) $(am__objects_59) $(am__objects_60) \
-	idcache.$(OBJEXT) $(am__objects_61) $(am__objects_62) \
-	ino-map.$(OBJEXT) integer_length.$(OBJEXT) \
-	integer_length_l.$(OBJEXT) integer_length_ll.$(OBJEXT) \
-	imaxtostr.$(OBJEXT) inttostr.$(OBJEXT) offtostr.$(OBJEXT) \
-	uinttostr.$(OBJEXT) umaxtostr.$(OBJEXT) $(am__objects_63) \
+	$(am__objects_61) $(am__objects_62) ino-map.$(OBJEXT) \
+	integer_length.$(OBJEXT) integer_length_l.$(OBJEXT) \
+	integer_length_ll.$(OBJEXT) $(am__objects_63) \
 	$(am__objects_64) issymlink.$(OBJEXT) $(am__objects_65) \
 	$(am__objects_66) $(am__objects_67) $(am__objects_68) \
 	$(am__objects_69) javacomp.$(OBJEXT) javaexec.$(OBJEXT) \
@@ -1255,122 +1279,122 @@ am_libgnu_a_OBJECTS = $(am__objects_1) acl-errno-valid.$(OBJEXT) \
 	gl_list.$(OBJEXT) localcharset.$(OBJEXT) $(am__objects_73) \
 	localename.$(OBJEXT) localename-environ.$(OBJEXT) \
 	$(am__objects_74) $(am__objects_75) glthread/lock.$(OBJEXT) \
-	$(am__objects_76) $(am__objects_77) malloca.$(OBJEXT) \
-	gl_map.$(OBJEXT) math.$(OBJEXT) mbchar.$(OBJEXT) \
-	mbiterf.$(OBJEXT) $(am__objects_78) $(am__objects_79) \
-	mbscasestr.$(OBJEXT) $(am__objects_80) mbslen.$(OBJEXT) \
-	mbsnlen.$(OBJEXT) mbsstr.$(OBJEXT) mbszero.$(OBJEXT) \
-	$(am__objects_81) mbuiter.$(OBJEXT) mbuiterf.$(OBJEXT) \
-	mem-hash-map.$(OBJEXT) memcasecmp.$(OBJEXT) $(am__objects_82) \
-	memchr2.$(OBJEXT) $(am__objects_83) $(am__objects_84) \
-	mgetgroups.$(OBJEXT) $(am__objects_85) $(am__objects_86) \
-	modechange.$(OBJEXT) mountlist.$(OBJEXT) mpsort.$(OBJEXT) \
-	$(am__objects_87) $(am__objects_88) $(am__objects_89) \
-	next-prime.$(OBJEXT) $(am__objects_90) $(am__objects_91) \
-	nproc.$(OBJEXT) nstrftime.$(OBJEXT) $(am__objects_92) \
-	gl_omap.$(OBJEXT) glthread/once.$(OBJEXT) $(am__objects_93) \
-	$(am__objects_94) openat-die.$(OBJEXT) $(am__objects_95) \
-	opendirat.$(OBJEXT) gl_oset.$(OBJEXT) pipe-filter-ii.$(OBJEXT) \
-	pipe-filter-aux.$(OBJEXT) $(am__objects_96) pipe2.$(OBJEXT) \
-	pipe2-safer.$(OBJEXT) $(am__objects_97) $(am__objects_98) \
-	$(am__objects_99) $(am__objects_100) $(am__objects_101) \
-	$(am__objects_102) $(am__objects_103) $(am__objects_104) \
-	$(am__objects_105) $(am__objects_106) $(am__objects_107) \
-	$(am__objects_108) $(am__objects_109) $(am__objects_110) \
-	$(am__objects_111) posixver.$(OBJEXT) printf-frexp.$(OBJEXT) \
-	printf-frexpl.$(OBJEXT) progname.$(OBJEXT) $(am__objects_112) \
-	$(am__objects_113) $(am__objects_114) $(am__objects_115) \
-	qcopy-acl.$(OBJEXT) $(am__objects_116) $(am__objects_117) \
-	quotearg.$(OBJEXT) $(am__objects_118) $(am__objects_119) \
-	$(am__objects_120) gl_rbtree_list.$(OBJEXT) \
+	$(am__objects_76) malloca.$(OBJEXT) gl_map.$(OBJEXT) \
+	math.$(OBJEXT) mbchar.$(OBJEXT) mbiterf.$(OBJEXT) \
+	$(am__objects_77) $(am__objects_78) mbscasestr.$(OBJEXT) \
+	$(am__objects_79) mbslen.$(OBJEXT) mbsnlen.$(OBJEXT) \
+	mbsstr.$(OBJEXT) mbszero.$(OBJEXT) $(am__objects_80) \
+	mbuiter.$(OBJEXT) mbuiterf.$(OBJEXT) mem-hash-map.$(OBJEXT) \
+	memcasecmp.$(OBJEXT) $(am__objects_81) memchr2.$(OBJEXT) \
+	$(am__objects_82) $(am__objects_83) mgetgroups.$(OBJEXT) \
+	$(am__objects_84) $(am__objects_85) modechange.$(OBJEXT) \
+	mountlist.$(OBJEXT) mpsort.$(OBJEXT) $(am__objects_86) \
+	$(am__objects_87) $(am__objects_88) next-prime.$(OBJEXT) \
+	$(am__objects_89) $(am__objects_90) nproc.$(OBJEXT) \
+	nstrftime.$(OBJEXT) $(am__objects_91) gl_omap.$(OBJEXT) \
+	glthread/once.$(OBJEXT) $(am__objects_92) $(am__objects_93) \
+	openat-die.$(OBJEXT) $(am__objects_94) opendirat.$(OBJEXT) \
+	gl_oset.$(OBJEXT) pipe-filter-ii.$(OBJEXT) \
+	pipe-filter-aux.$(OBJEXT) $(am__objects_95) pipe2.$(OBJEXT) \
+	pipe2-safer.$(OBJEXT) $(am__objects_96) $(am__objects_97) \
+	$(am__objects_98) $(am__objects_99) $(am__objects_100) \
+	$(am__objects_101) $(am__objects_102) $(am__objects_103) \
+	$(am__objects_104) $(am__objects_105) $(am__objects_106) \
+	$(am__objects_107) $(am__objects_108) $(am__objects_109) \
+	$(am__objects_110) printf-frexp.$(OBJEXT) \
+	printf-frexpl.$(OBJEXT) progname.$(OBJEXT) $(am__objects_111) \
+	$(am__objects_112) $(am__objects_113) $(am__objects_114) \
+	qcopy-acl.$(OBJEXT) $(am__objects_115) $(am__objects_116) \
+	quotearg.$(OBJEXT) $(am__objects_117) $(am__objects_118) \
+	$(am__objects_119) gl_rbtree_list.$(OBJEXT) \
 	gl_rbtree_omap.$(OBJEXT) gl_rbtree_oset.$(OBJEXT) \
-	gl_rbtreehash_list.$(OBJEXT) $(am__objects_121) \
-	$(am__objects_122) $(am__objects_123) readtokens.$(OBJEXT) \
-	readutmp.$(OBJEXT) $(am__objects_124) $(am__objects_125) \
-	$(am__objects_126) regex-quote.$(OBJEXT) $(am__objects_127) \
-	$(am__objects_128) $(am__objects_129) safe-read.$(OBJEXT) \
+	gl_rbtreehash_list.$(OBJEXT) $(am__objects_120) \
+	$(am__objects_121) $(am__objects_122) readtokens.$(OBJEXT) \
+	readutmp.$(OBJEXT) $(am__objects_123) $(am__objects_124) \
+	$(am__objects_125) regex-quote.$(OBJEXT) $(am__objects_126) \
+	$(am__objects_127) $(am__objects_128) safe-read.$(OBJEXT) \
 	safe-write.$(OBJEXT) same-inode.$(OBJEXT) save-cwd.$(OBJEXT) \
-	$(am__objects_130) $(am__objects_131) $(am__objects_132) \
-	gl_set.$(OBJEXT) $(am__objects_133) $(am__objects_134) \
-	$(am__objects_135) setlocale_null.$(OBJEXT) $(am__objects_136) \
+	$(am__objects_129) $(am__objects_130) $(am__objects_131) \
+	gl_set.$(OBJEXT) $(am__objects_132) $(am__objects_133) \
+	$(am__objects_134) setlocale_null.$(OBJEXT) $(am__objects_135) \
 	setlocale_null-unlocked.$(OBJEXT) sh-quote.$(OBJEXT) \
-	$(am__objects_137) $(am__objects_138) sig-handler.$(OBJEXT) \
-	$(am__objects_139) $(am__objects_140) sockets.$(OBJEXT) \
-	spawn-pipe.$(OBJEXT) $(am__objects_141) $(am__objects_142) \
-	$(am__objects_143) $(am__objects_144) stat-time.$(OBJEXT) \
-	$(am__objects_145) $(am__objects_146) $(am__objects_147) \
-	stdlib.$(OBJEXT) stdopen.$(OBJEXT) $(am__objects_148) \
-	$(am__objects_149) $(am__objects_150) $(am__objects_151) \
-	$(am__objects_152) $(am__objects_153) striconveh.$(OBJEXT) \
+	$(am__objects_136) $(am__objects_137) sig-handler.$(OBJEXT) \
+	$(am__objects_138) $(am__objects_139) sockets.$(OBJEXT) \
+	spawn-pipe.$(OBJEXT) $(am__objects_140) $(am__objects_141) \
+	$(am__objects_142) $(am__objects_143) stat-time.$(OBJEXT) \
+	$(am__objects_144) $(am__objects_145) $(am__objects_146) \
+	stdlib.$(OBJEXT) stdopen.$(OBJEXT) $(am__objects_147) \
+	$(am__objects_148) $(am__objects_149) $(am__objects_150) \
+	$(am__objects_151) $(am__objects_152) striconveh.$(OBJEXT) \
 	striconveha.$(OBJEXT) string-desc.$(OBJEXT) \
 	string-desc-contains.$(OBJEXT) string.$(OBJEXT) \
-	$(am__objects_154) $(am__objects_155) $(am__objects_156) \
-	strnlen1.$(OBJEXT) $(am__objects_157) $(am__objects_158) \
-	$(am__objects_159) $(am__objects_160) $(am__objects_161) \
-	$(am__objects_162) $(am__objects_163) $(am__objects_164) \
-	$(am__objects_165) sys_socket.$(OBJEXT) system-quote.$(OBJEXT) \
+	$(am__objects_153) $(am__objects_154) $(am__objects_155) \
+	strnlen1.$(OBJEXT) $(am__objects_156) $(am__objects_157) \
+	$(am__objects_158) $(am__objects_159) $(am__objects_160) \
+	$(am__objects_161) $(am__objects_162) $(am__objects_163) \
+	$(am__objects_164) sys_socket.$(OBJEXT) system-quote.$(OBJEXT) \
 	tempname.$(OBJEXT) term-style-control.$(OBJEXT) \
-	glthread/threadlib.$(OBJEXT) $(am__objects_166) \
-	time_rz.$(OBJEXT) $(am__objects_167) timespec.$(OBJEXT) \
-	glthread/tls.$(OBJEXT) tmpdir.$(OBJEXT) $(am__objects_168) \
-	$(am__objects_169) u64.$(OBJEXT) unicase/cased.$(OBJEXT) \
+	glthread/threadlib.$(OBJEXT) $(am__objects_165) \
+	time_rz.$(OBJEXT) $(am__objects_166) timespec.$(OBJEXT) \
+	glthread/tls.$(OBJEXT) tmpdir.$(OBJEXT) $(am__objects_167) \
+	$(am__objects_168) u64.$(OBJEXT) unicase/cased.$(OBJEXT) \
 	unicase/ignorable.$(OBJEXT) unicase/special-casing.$(OBJEXT) \
-	$(am__objects_170) $(am__objects_171) $(am__objects_172) \
-	unicase/u16-casemap.$(OBJEXT) $(am__objects_173) \
-	unicase/u32-casemap.$(OBJEXT) $(am__objects_174) \
-	unicase/u8-casemap.$(OBJEXT) $(am__objects_175) \
-	$(am__objects_176) $(am__objects_177) $(am__objects_178) \
-	$(am__objects_179) $(am__objects_180) $(am__objects_181) \
-	$(am__objects_182) $(am__objects_183) $(am__objects_184) \
-	$(am__objects_185) $(am__objects_186) $(am__objects_187) \
-	$(am__objects_188) $(am__objects_189) $(am__objects_190) \
-	$(am__objects_191) $(am__objects_192) $(am__objects_193) \
-	$(am__objects_194) $(am__objects_195) $(am__objects_196) \
-	$(am__objects_197) $(am__objects_198) $(am__objects_199) \
-	$(am__objects_200) unilbrk/lbrktables.$(OBJEXT) \
-	$(am__objects_201) $(am__objects_202) \
-	unilbrk/ulc-common.$(OBJEXT) $(am__objects_203) \
-	$(am__objects_204) $(am__objects_205) \
-	uninorm/decompose-internal.$(OBJEXT) $(am__objects_206) \
-	$(am__objects_207) $(am__objects_208) $(am__objects_209) \
+	$(am__objects_169) $(am__objects_170) $(am__objects_171) \
+	unicase/u16-casemap.$(OBJEXT) $(am__objects_172) \
+	unicase/u32-casemap.$(OBJEXT) $(am__objects_173) \
+	unicase/u8-casemap.$(OBJEXT) $(am__objects_174) \
+	$(am__objects_175) $(am__objects_176) $(am__objects_177) \
+	$(am__objects_178) $(am__objects_179) $(am__objects_180) \
+	$(am__objects_181) $(am__objects_182) $(am__objects_183) \
+	$(am__objects_184) $(am__objects_185) $(am__objects_186) \
+	$(am__objects_187) $(am__objects_188) $(am__objects_189) \
+	$(am__objects_190) $(am__objects_191) $(am__objects_192) \
+	$(am__objects_193) $(am__objects_194) $(am__objects_195) \
+	$(am__objects_196) $(am__objects_197) $(am__objects_198) \
+	$(am__objects_199) unilbrk/lbrktables.$(OBJEXT) \
+	$(am__objects_200) $(am__objects_201) \
+	unilbrk/ulc-common.$(OBJEXT) $(am__objects_202) \
+	$(am__objects_203) $(am__objects_204) \
+	uninorm/decompose-internal.$(OBJEXT) $(am__objects_205) \
+	$(am__objects_206) $(am__objects_207) $(am__objects_208) \
 	unistd.$(OBJEXT) dup-safer.$(OBJEXT) fd-safer.$(OBJEXT) \
 	pipe-safer.$(OBJEXT) unistdio/u-printf-args.$(OBJEXT) \
-	unistdio/u16-printf-parse.$(OBJEXT) $(am__objects_210) \
-	$(am__objects_211) unistdio/u32-printf-parse.$(OBJEXT) \
-	$(am__objects_212) $(am__objects_213) \
-	unistdio/u8-printf-parse.$(OBJEXT) $(am__objects_214) \
-	$(am__objects_215) unistdio/ulc-printf-parse.$(OBJEXT) \
-	$(am__objects_216) $(am__objects_217) $(am__objects_218) \
-	$(am__objects_219) $(am__objects_220) $(am__objects_221) \
-	$(am__objects_222) $(am__objects_223) $(am__objects_224) \
-	$(am__objects_225) $(am__objects_226) $(am__objects_227) \
-	$(am__objects_228) $(am__objects_229) $(am__objects_230) \
-	$(am__objects_231) $(am__objects_232) $(am__objects_233) \
-	$(am__objects_234) $(am__objects_235) $(am__objects_236) \
-	$(am__objects_237) $(am__objects_238) $(am__objects_239) \
-	$(am__objects_240) $(am__objects_241) $(am__objects_242) \
-	$(am__objects_243) $(am__objects_244) $(am__objects_245) \
-	$(am__objects_246) $(am__objects_247) $(am__objects_248) \
-	$(am__objects_249) $(am__objects_250) $(am__objects_251) \
-	uniwbrk/wbrktable.$(OBJEXT) $(am__objects_252) \
-	$(am__objects_253) $(am__objects_254) $(am__objects_255) \
-	$(am__objects_256) $(am__objects_257) $(am__objects_258) \
-	userspec.$(OBJEXT) $(am__objects_259) utimens.$(OBJEXT) \
-	wprintf-parse.$(OBJEXT) vasnwprintf.$(OBJEXT) \
-	asnwprintf.$(OBJEXT) vaszprintf.$(OBJEXT) aszprintf.$(OBJEXT) \
-	vma-iter.$(OBJEXT) vsnzprintf.$(OBJEXT) wait-process.$(OBJEXT) \
+	unistdio/u16-printf-parse.$(OBJEXT) $(am__objects_209) \
+	$(am__objects_210) unistdio/u32-printf-parse.$(OBJEXT) \
+	$(am__objects_211) $(am__objects_212) \
+	unistdio/u8-printf-parse.$(OBJEXT) $(am__objects_213) \
+	$(am__objects_214) unistdio/ulc-printf-parse.$(OBJEXT) \
+	$(am__objects_215) $(am__objects_216) $(am__objects_217) \
+	$(am__objects_218) $(am__objects_219) $(am__objects_220) \
+	$(am__objects_221) $(am__objects_222) $(am__objects_223) \
+	$(am__objects_224) $(am__objects_225) $(am__objects_226) \
+	$(am__objects_227) $(am__objects_228) $(am__objects_229) \
+	$(am__objects_230) $(am__objects_231) $(am__objects_232) \
+	$(am__objects_233) $(am__objects_234) $(am__objects_235) \
+	$(am__objects_236) $(am__objects_237) $(am__objects_238) \
+	$(am__objects_239) $(am__objects_240) $(am__objects_241) \
+	$(am__objects_242) $(am__objects_243) $(am__objects_244) \
+	$(am__objects_245) $(am__objects_246) $(am__objects_247) \
+	$(am__objects_248) $(am__objects_249) $(am__objects_250) \
+	uniwbrk/wbrktable.$(OBJEXT) $(am__objects_251) \
+	$(am__objects_252) $(am__objects_253) $(am__objects_254) \
+	$(am__objects_255) $(am__objects_256) $(am__objects_257) \
+	$(am__objects_258) utimens.$(OBJEXT) wprintf-parse.$(OBJEXT) \
+	vasnwprintf.$(OBJEXT) asnwprintf.$(OBJEXT) \
+	vaszprintf.$(OBJEXT) aszprintf.$(OBJEXT) vma-iter.$(OBJEXT) \
+	vsnzprintf.$(OBJEXT) wait-process.$(OBJEXT) $(am__objects_259) \
 	$(am__objects_260) $(am__objects_261) $(am__objects_262) \
-	$(am__objects_263) $(am__objects_264) wctype-h.$(OBJEXT) \
+	$(am__objects_263) wctype-h.$(OBJEXT) $(am__objects_264) \
 	$(am__objects_265) $(am__objects_266) $(am__objects_267) \
 	$(am__objects_268) $(am__objects_269) $(am__objects_270) \
 	$(am__objects_271) $(am__objects_272) $(am__objects_273) \
 	$(am__objects_274) $(am__objects_275) $(am__objects_276) \
-	$(am__objects_277) $(am__objects_278) xmalloc.$(OBJEXT) \
-	xalloc-die.$(OBJEXT) xconcat-filename.$(OBJEXT) \
-	gl_xlist.$(OBJEXT) xmalloca.$(OBJEXT) xreadlink.$(OBJEXT) \
-	xsetenv.$(OBJEXT) xsize.$(OBJEXT) xstring-desc.$(OBJEXT) \
-	xstrtol.$(OBJEXT) xstrtoul.$(OBJEXT) xstrtoumax.$(OBJEXT) \
-	xvasprintf.$(OBJEXT) xasprintf.$(OBJEXT)
+	$(am__objects_277) xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT) \
+	xconcat-filename.$(OBJEXT) gl_xlist.$(OBJEXT) \
+	xmalloca.$(OBJEXT) xreadlink.$(OBJEXT) xsetenv.$(OBJEXT) \
+	xsize.$(OBJEXT) xstring-desc.$(OBJEXT) xstrtol.$(OBJEXT) \
+	xstrtoul.$(OBJEXT) xstrtoumax.$(OBJEXT) xvasprintf.$(OBJEXT) \
+	xasprintf.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
@@ -1391,39 +1415,38 @@ am__depfiles_remade = ./$(DEPDIR)/access.Po \
 	./$(DEPDIR)/acl-errno-valid.Po ./$(DEPDIR)/acl-internal.Po \
 	./$(DEPDIR)/acl_entries.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/allocator.Po ./$(DEPDIR)/alphasort.Po \
-	./$(DEPDIR)/anytostr.Po ./$(DEPDIR)/arcfour.Po \
-	./$(DEPDIR)/arctwo.Po ./$(DEPDIR)/areadlink.Po \
-	./$(DEPDIR)/argmatch.Po ./$(DEPDIR)/argz.Po \
-	./$(DEPDIR)/arpa_inet.Po ./$(DEPDIR)/asnprintf.Po \
-	./$(DEPDIR)/asnwprintf.Po ./$(DEPDIR)/asyncsafe-spin.Po \
-	./$(DEPDIR)/aszprintf.Po ./$(DEPDIR)/at-func.Po \
-	./$(DEPDIR)/basename-lgpl.Po ./$(DEPDIR)/basename.Po \
-	./$(DEPDIR)/bcp47.Po ./$(DEPDIR)/binary-io.Po \
-	./$(DEPDIR)/bitrotate.Po ./$(DEPDIR)/bitset.Po \
-	./$(DEPDIR)/btowc.Po ./$(DEPDIR)/byteswap.Po \
-	./$(DEPDIR)/c-ctype.Po ./$(DEPDIR)/c-dtoastr.Po \
-	./$(DEPDIR)/c-ldtoastr.Po ./$(DEPDIR)/c-nstrftime.Po \
-	./$(DEPDIR)/c-snprintf.Po ./$(DEPDIR)/c-strcasecmp.Po \
-	./$(DEPDIR)/c-strcasestr.Po ./$(DEPDIR)/c-strncasecmp.Po \
-	./$(DEPDIR)/c-strstr.Po ./$(DEPDIR)/c-strtod.Po \
-	./$(DEPDIR)/c-strtold.Po ./$(DEPDIR)/c-vasnprintf.Po \
-	./$(DEPDIR)/c-vsnzprintf.Po ./$(DEPDIR)/c32isalnum.Po \
-	./$(DEPDIR)/c32isalpha.Po ./$(DEPDIR)/c32isblank.Po \
-	./$(DEPDIR)/c32iscntrl.Po ./$(DEPDIR)/c32isdigit.Po \
-	./$(DEPDIR)/c32isgraph.Po ./$(DEPDIR)/c32islower.Po \
-	./$(DEPDIR)/c32isprint.Po ./$(DEPDIR)/c32ispunct.Po \
-	./$(DEPDIR)/c32isspace.Po ./$(DEPDIR)/c32isupper.Po \
-	./$(DEPDIR)/c32isxdigit.Po ./$(DEPDIR)/c32rtomb.Po \
-	./$(DEPDIR)/c32tob.Po ./$(DEPDIR)/c32tolower.Po \
-	./$(DEPDIR)/c32toupper.Po ./$(DEPDIR)/c32width.Po \
-	./$(DEPDIR)/calloc.Po ./$(DEPDIR)/canonicalize-lgpl.Po \
-	./$(DEPDIR)/canonicalize.Po ./$(DEPDIR)/careadlinkat.Po \
-	./$(DEPDIR)/chdir-long.Po ./$(DEPDIR)/classpath.Po \
-	./$(DEPDIR)/clean-temp-simple.Po ./$(DEPDIR)/clean-temp.Po \
-	./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
-	./$(DEPDIR)/closedir.Po ./$(DEPDIR)/concat-filename.Po \
-	./$(DEPDIR)/copy-file-range.Po ./$(DEPDIR)/copy-file.Po \
-	./$(DEPDIR)/count-leading-zeros.Po \
+	./$(DEPDIR)/arcfour.Po ./$(DEPDIR)/arctwo.Po \
+	./$(DEPDIR)/areadlink.Po ./$(DEPDIR)/argmatch.Po \
+	./$(DEPDIR)/argz.Po ./$(DEPDIR)/arpa_inet.Po \
+	./$(DEPDIR)/asnprintf.Po ./$(DEPDIR)/asnwprintf.Po \
+	./$(DEPDIR)/asyncsafe-spin.Po ./$(DEPDIR)/aszprintf.Po \
+	./$(DEPDIR)/at-func.Po ./$(DEPDIR)/basename-lgpl.Po \
+	./$(DEPDIR)/basename.Po ./$(DEPDIR)/bcp47.Po \
+	./$(DEPDIR)/binary-io.Po ./$(DEPDIR)/bitrotate.Po \
+	./$(DEPDIR)/bitset.Po ./$(DEPDIR)/btowc.Po \
+	./$(DEPDIR)/byteswap.Po ./$(DEPDIR)/c-ctype.Po \
+	./$(DEPDIR)/c-dtoastr.Po ./$(DEPDIR)/c-ldtoastr.Po \
+	./$(DEPDIR)/c-nstrftime.Po ./$(DEPDIR)/c-snprintf.Po \
+	./$(DEPDIR)/c-strcasecmp.Po ./$(DEPDIR)/c-strcasestr.Po \
+	./$(DEPDIR)/c-strncasecmp.Po ./$(DEPDIR)/c-strstr.Po \
+	./$(DEPDIR)/c-strtod.Po ./$(DEPDIR)/c-strtold.Po \
+	./$(DEPDIR)/c-vasnprintf.Po ./$(DEPDIR)/c-vsnzprintf.Po \
+	./$(DEPDIR)/c32isalnum.Po ./$(DEPDIR)/c32isalpha.Po \
+	./$(DEPDIR)/c32isblank.Po ./$(DEPDIR)/c32iscntrl.Po \
+	./$(DEPDIR)/c32isdigit.Po ./$(DEPDIR)/c32isgraph.Po \
+	./$(DEPDIR)/c32islower.Po ./$(DEPDIR)/c32isprint.Po \
+	./$(DEPDIR)/c32ispunct.Po ./$(DEPDIR)/c32isspace.Po \
+	./$(DEPDIR)/c32isupper.Po ./$(DEPDIR)/c32isxdigit.Po \
+	./$(DEPDIR)/c32rtomb.Po ./$(DEPDIR)/c32tob.Po \
+	./$(DEPDIR)/c32tolower.Po ./$(DEPDIR)/c32toupper.Po \
+	./$(DEPDIR)/c32width.Po ./$(DEPDIR)/calloc.Po \
+	./$(DEPDIR)/canonicalize-lgpl.Po ./$(DEPDIR)/canonicalize.Po \
+	./$(DEPDIR)/careadlinkat.Po ./$(DEPDIR)/chdir-long.Po \
+	./$(DEPDIR)/classpath.Po ./$(DEPDIR)/clean-temp-simple.Po \
+	./$(DEPDIR)/clean-temp.Po ./$(DEPDIR)/cloexec.Po \
+	./$(DEPDIR)/close.Po ./$(DEPDIR)/closedir.Po \
+	./$(DEPDIR)/concat-filename.Po ./$(DEPDIR)/copy-file-range.Po \
+	./$(DEPDIR)/copy-file.Po ./$(DEPDIR)/count-leading-zeros.Po \
 	./$(DEPDIR)/count-one-bits.Po \
 	./$(DEPDIR)/count-trailing-zeros.Po \
 	./$(DEPDIR)/crc-generate-table.Po ./$(DEPDIR)/crc.Po \
@@ -1491,36 +1514,35 @@ am__depfiles_remade = ./$(DEPDIR)/access.Po \
 	./$(DEPDIR)/human.Po ./$(DEPDIR)/i-ring.Po \
 	./$(DEPDIR)/ialloc.Po ./$(DEPDIR)/iconv.Po \
 	./$(DEPDIR)/iconv_close.Po ./$(DEPDIR)/iconv_open.Po \
-	./$(DEPDIR)/idcache.Po ./$(DEPDIR)/imaxtostr.Po \
 	./$(DEPDIR)/inet_ntop.Po ./$(DEPDIR)/inet_pton.Po \
 	./$(DEPDIR)/ino-map.Po ./$(DEPDIR)/integer_length.Po \
 	./$(DEPDIR)/integer_length_l.Po \
-	./$(DEPDIR)/integer_length_ll.Po ./$(DEPDIR)/inttostr.Po \
-	./$(DEPDIR)/isfinite.Po ./$(DEPDIR)/isinf.Po \
-	./$(DEPDIR)/isnan.Po ./$(DEPDIR)/isnand.Po \
-	./$(DEPDIR)/isnanf.Po ./$(DEPDIR)/isnanl.Po \
-	./$(DEPDIR)/issymlink.Po ./$(DEPDIR)/iswblank.Po \
-	./$(DEPDIR)/iswctype.Po ./$(DEPDIR)/iswdigit.Po \
-	./$(DEPDIR)/iswpunct.Po ./$(DEPDIR)/iswxdigit.Po \
-	./$(DEPDIR)/itold.Po ./$(DEPDIR)/javacomp.Po \
-	./$(DEPDIR)/javaexec.Po ./$(DEPDIR)/javaversion.Po \
-	./$(DEPDIR)/kwset.Po ./$(DEPDIR)/lc-charset-dispatch.Po \
-	./$(DEPDIR)/ldexp.Po ./$(DEPDIR)/ldexpf.Po \
-	./$(DEPDIR)/ldexpl.Po ./$(DEPDIR)/ldtoastr.Po \
-	./$(DEPDIR)/localcharset.Po ./$(DEPDIR)/localeconv.Po \
-	./$(DEPDIR)/localeinfo.Po ./$(DEPDIR)/localename-environ.Po \
+	./$(DEPDIR)/integer_length_ll.Po ./$(DEPDIR)/isfinite.Po \
+	./$(DEPDIR)/isinf.Po ./$(DEPDIR)/isnan.Po \
+	./$(DEPDIR)/isnand.Po ./$(DEPDIR)/isnanf.Po \
+	./$(DEPDIR)/isnanl.Po ./$(DEPDIR)/issymlink.Po \
+	./$(DEPDIR)/iswblank.Po ./$(DEPDIR)/iswctype.Po \
+	./$(DEPDIR)/iswdigit.Po ./$(DEPDIR)/iswpunct.Po \
+	./$(DEPDIR)/iswxdigit.Po ./$(DEPDIR)/itold.Po \
+	./$(DEPDIR)/javacomp.Po ./$(DEPDIR)/javaexec.Po \
+	./$(DEPDIR)/javaversion.Po ./$(DEPDIR)/kwset.Po \
+	./$(DEPDIR)/lc-charset-dispatch.Po ./$(DEPDIR)/ldexp.Po \
+	./$(DEPDIR)/ldexpf.Po ./$(DEPDIR)/ldexpl.Po \
+	./$(DEPDIR)/ldtoastr.Po ./$(DEPDIR)/localcharset.Po \
+	./$(DEPDIR)/localeconv.Po ./$(DEPDIR)/localeinfo.Po \
+	./$(DEPDIR)/localename-environ.Po \
 	./$(DEPDIR)/localename-table.Po \
 	./$(DEPDIR)/localename-unsafe.Po ./$(DEPDIR)/localename.Po \
-	./$(DEPDIR)/login_tty.Po ./$(DEPDIR)/lstat.Po \
-	./$(DEPDIR)/malloc.Po ./$(DEPDIR)/malloca.Po \
-	./$(DEPDIR)/math.Po ./$(DEPDIR)/mbchar.Po \
-	./$(DEPDIR)/mbiterf.Po ./$(DEPDIR)/mbrtoc32.Po \
-	./$(DEPDIR)/mbrtowc.Po ./$(DEPDIR)/mbscasestr.Po \
-	./$(DEPDIR)/mbsinit.Po ./$(DEPDIR)/mbslen.Po \
-	./$(DEPDIR)/mbsnlen.Po ./$(DEPDIR)/mbsstr.Po \
-	./$(DEPDIR)/mbszero.Po ./$(DEPDIR)/mbtowc-lock.Po \
-	./$(DEPDIR)/mbtowc.Po ./$(DEPDIR)/mbuiter.Po \
-	./$(DEPDIR)/mbuiterf.Po ./$(DEPDIR)/md2.Po ./$(DEPDIR)/md4.Po \
+	./$(DEPDIR)/lstat.Po ./$(DEPDIR)/malloc.Po \
+	./$(DEPDIR)/malloca.Po ./$(DEPDIR)/math.Po \
+	./$(DEPDIR)/mbchar.Po ./$(DEPDIR)/mbiterf.Po \
+	./$(DEPDIR)/mbrtoc32.Po ./$(DEPDIR)/mbrtowc.Po \
+	./$(DEPDIR)/mbscasestr.Po ./$(DEPDIR)/mbsinit.Po \
+	./$(DEPDIR)/mbslen.Po ./$(DEPDIR)/mbsnlen.Po \
+	./$(DEPDIR)/mbsstr.Po ./$(DEPDIR)/mbszero.Po \
+	./$(DEPDIR)/mbtowc-lock.Po ./$(DEPDIR)/mbtowc.Po \
+	./$(DEPDIR)/mbuiter.Po ./$(DEPDIR)/mbuiterf.Po \
+	./$(DEPDIR)/md2.Po ./$(DEPDIR)/md4.Po \
 	./$(DEPDIR)/mem-hash-map.Po ./$(DEPDIR)/memcasecmp.Po \
 	./$(DEPDIR)/memchr.Po ./$(DEPDIR)/memchr2.Po \
 	./$(DEPDIR)/memmem.Po ./$(DEPDIR)/mempcpy.Po \
@@ -1532,15 +1554,14 @@ am__depfiles_remade = ./$(DEPDIR)/access.Po \
 	./$(DEPDIR)/newlocale.Po ./$(DEPDIR)/next-prime.Po \
 	./$(DEPDIR)/nl_langinfo-lock.Po ./$(DEPDIR)/nl_langinfo.Po \
 	./$(DEPDIR)/nproc.Po ./$(DEPDIR)/nstrftime.Po \
-	./$(DEPDIR)/obstack.Po ./$(DEPDIR)/offtostr.Po \
-	./$(DEPDIR)/open-safer.Po ./$(DEPDIR)/open.Po \
-	./$(DEPDIR)/openat-die.Po ./$(DEPDIR)/openat-proc.Po \
-	./$(DEPDIR)/openat.Po ./$(DEPDIR)/opendir.Po \
-	./$(DEPDIR)/opendirat.Po ./$(DEPDIR)/os2-spawn.Po \
-	./$(DEPDIR)/pipe-filter-aux.Po ./$(DEPDIR)/pipe-filter-ii.Po \
-	./$(DEPDIR)/pipe-safer.Po ./$(DEPDIR)/pipe.Po \
-	./$(DEPDIR)/pipe2-safer.Po ./$(DEPDIR)/pipe2.Po \
-	./$(DEPDIR)/poll.Po ./$(DEPDIR)/posixver.Po \
+	./$(DEPDIR)/obstack.Po ./$(DEPDIR)/open-safer.Po \
+	./$(DEPDIR)/open.Po ./$(DEPDIR)/openat-die.Po \
+	./$(DEPDIR)/openat-proc.Po ./$(DEPDIR)/openat.Po \
+	./$(DEPDIR)/opendir.Po ./$(DEPDIR)/opendirat.Po \
+	./$(DEPDIR)/os2-spawn.Po ./$(DEPDIR)/pipe-filter-aux.Po \
+	./$(DEPDIR)/pipe-filter-ii.Po ./$(DEPDIR)/pipe-safer.Po \
+	./$(DEPDIR)/pipe.Po ./$(DEPDIR)/pipe2-safer.Po \
+	./$(DEPDIR)/pipe2.Po ./$(DEPDIR)/poll.Po \
 	./$(DEPDIR)/printf-args.Po ./$(DEPDIR)/printf-frexp.Po \
 	./$(DEPDIR)/printf-frexpl.Po ./$(DEPDIR)/printf-parse.Po \
 	./$(DEPDIR)/progname.Po ./$(DEPDIR)/progreloc.Po \
@@ -1607,35 +1628,33 @@ am__depfiles_remade = ./$(DEPDIR)/access.Po \
 	./$(DEPDIR)/time_rz.Po ./$(DEPDIR)/timegm.Po \
 	./$(DEPDIR)/timespec.Po ./$(DEPDIR)/tmpdir.Po \
 	./$(DEPDIR)/tsearch.Po ./$(DEPDIR)/tzset.Po ./$(DEPDIR)/u64.Po \
-	./$(DEPDIR)/uinttostr.Po ./$(DEPDIR)/umaxtostr.Po \
 	./$(DEPDIR)/unistd.Po ./$(DEPDIR)/unsetenv.Po \
-	./$(DEPDIR)/userspec.Po ./$(DEPDIR)/utime.Po \
-	./$(DEPDIR)/utimens.Po ./$(DEPDIR)/vasnprintf.Po \
-	./$(DEPDIR)/vasnwprintf.Po ./$(DEPDIR)/vaszprintf.Po \
-	./$(DEPDIR)/vma-iter.Po ./$(DEPDIR)/vsnzprintf.Po \
-	./$(DEPDIR)/wait-process.Po ./$(DEPDIR)/waitpid.Po \
-	./$(DEPDIR)/wcrtomb.Po ./$(DEPDIR)/wctob.Po \
-	./$(DEPDIR)/wctomb.Po ./$(DEPDIR)/wctype-h.Po \
-	./$(DEPDIR)/wctype.Po ./$(DEPDIR)/wcwidth.Po \
-	./$(DEPDIR)/windows-cond.Po ./$(DEPDIR)/windows-mutex.Po \
-	./$(DEPDIR)/windows-once.Po ./$(DEPDIR)/windows-path.Po \
-	./$(DEPDIR)/windows-recmutex.Po ./$(DEPDIR)/windows-rwlock.Po \
-	./$(DEPDIR)/windows-spawn.Po ./$(DEPDIR)/windows-spin.Po \
-	./$(DEPDIR)/windows-timedrwlock.Po ./$(DEPDIR)/windows-tls.Po \
-	./$(DEPDIR)/wmemcpy.Po ./$(DEPDIR)/wmemset.Po \
-	./$(DEPDIR)/wprintf-parse.Po ./$(DEPDIR)/write.Po \
-	./$(DEPDIR)/xalloc-die.Po ./$(DEPDIR)/xasprintf.Po \
-	./$(DEPDIR)/xconcat-filename.Po ./$(DEPDIR)/xmalloc.Po \
-	./$(DEPDIR)/xmalloca.Po ./$(DEPDIR)/xreadlink.Po \
-	./$(DEPDIR)/xsetenv.Po ./$(DEPDIR)/xsize.Po \
-	./$(DEPDIR)/xstring-desc.Po ./$(DEPDIR)/xstrtol.Po \
-	./$(DEPDIR)/xstrtoul.Po ./$(DEPDIR)/xstrtoumax.Po \
-	./$(DEPDIR)/xvasprintf.Po bitset/$(DEPDIR)/array.Po \
-	bitset/$(DEPDIR)/list.Po bitset/$(DEPDIR)/stats.Po \
-	bitset/$(DEPDIR)/table.Po bitset/$(DEPDIR)/vector.Po \
-	glthread/$(DEPDIR)/lock.Po glthread/$(DEPDIR)/once.Po \
-	glthread/$(DEPDIR)/spin.Po glthread/$(DEPDIR)/threadlib.Po \
-	glthread/$(DEPDIR)/tls.Po \
+	./$(DEPDIR)/utime.Po ./$(DEPDIR)/utimens.Po \
+	./$(DEPDIR)/vasnprintf.Po ./$(DEPDIR)/vasnwprintf.Po \
+	./$(DEPDIR)/vaszprintf.Po ./$(DEPDIR)/vma-iter.Po \
+	./$(DEPDIR)/vsnzprintf.Po ./$(DEPDIR)/wait-process.Po \
+	./$(DEPDIR)/waitpid.Po ./$(DEPDIR)/wcrtomb.Po \
+	./$(DEPDIR)/wctob.Po ./$(DEPDIR)/wctomb.Po \
+	./$(DEPDIR)/wctype-h.Po ./$(DEPDIR)/wctype.Po \
+	./$(DEPDIR)/wcwidth.Po ./$(DEPDIR)/windows-cond.Po \
+	./$(DEPDIR)/windows-mutex.Po ./$(DEPDIR)/windows-once.Po \
+	./$(DEPDIR)/windows-path.Po ./$(DEPDIR)/windows-recmutex.Po \
+	./$(DEPDIR)/windows-rwlock.Po ./$(DEPDIR)/windows-spawn.Po \
+	./$(DEPDIR)/windows-spin.Po ./$(DEPDIR)/windows-timedrwlock.Po \
+	./$(DEPDIR)/windows-tls.Po ./$(DEPDIR)/wmemcpy.Po \
+	./$(DEPDIR)/wmemset.Po ./$(DEPDIR)/wprintf-parse.Po \
+	./$(DEPDIR)/write.Po ./$(DEPDIR)/xalloc-die.Po \
+	./$(DEPDIR)/xasprintf.Po ./$(DEPDIR)/xconcat-filename.Po \
+	./$(DEPDIR)/xmalloc.Po ./$(DEPDIR)/xmalloca.Po \
+	./$(DEPDIR)/xreadlink.Po ./$(DEPDIR)/xsetenv.Po \
+	./$(DEPDIR)/xsize.Po ./$(DEPDIR)/xstring-desc.Po \
+	./$(DEPDIR)/xstrtol.Po ./$(DEPDIR)/xstrtoul.Po \
+	./$(DEPDIR)/xstrtoumax.Po ./$(DEPDIR)/xvasprintf.Po \
+	bitset/$(DEPDIR)/array.Po bitset/$(DEPDIR)/list.Po \
+	bitset/$(DEPDIR)/stats.Po bitset/$(DEPDIR)/table.Po \
+	bitset/$(DEPDIR)/vector.Po glthread/$(DEPDIR)/lock.Po \
+	glthread/$(DEPDIR)/once.Po glthread/$(DEPDIR)/spin.Po \
+	glthread/$(DEPDIR)/threadlib.Po glthread/$(DEPDIR)/tls.Po \
 	malloc/$(DEPDIR)/dynarray-skeleton.Po \
 	malloc/$(DEPDIR)/dynarray_at_failure.Po \
 	malloc/$(DEPDIR)/dynarray_emplace_enlarge.Po \
@@ -1892,7 +1911,6 @@ CXX_HAS_CHAR8_TYPE = @CXX_HAS_CHAR8_TYPE@
 CXX_HAS_UCHAR_TYPES = @CXX_HAS_UCHAR_TYPES@
 CXX_HAVE_UCHAR_H = @CXX_HAVE_UCHAR_H@
 CYGPATH_W = @CYGPATH_W@
-DEFAULT_POSIX2_VERSION = @DEFAULT_POSIX2_VERSION@
 DEFS = @DEFS@ -DEXEEXT=\"@EXEEXT@\" -DEXEEXT=\"@EXEEXT@\" \
 	-DEXEEXT=\"@EXEEXT@\"
 DEPDIR = @DEPDIR@
@@ -1920,7 +1938,10 @@ GETADDRINFO_LIB = @GETADDRINFO_LIB@
 GETLOADAVG_LIBS = @GETLOADAVG_LIBS@
 GETLOCALENAME_L_LIB = @GETLOCALENAME_L_LIB@
 GETLOGIN_LIB = @GETLOGIN_LIB@
+GETOPT_CDEFS_H = @GETOPT_CDEFS_H@
+GETOPT_H = @GETOPT_H@
 GETRANDOM_LIB = @GETRANDOM_LIB@
+GETTEXT_MACRO_VERSION = @GETTEXT_MACRO_VERSION@
 GL_CFLAG_ALLOW_WARNINGS = @GL_CFLAG_ALLOW_WARNINGS@
 GL_CXXFLAG_ALLOW_WARNINGS = @GL_CXXFLAG_ALLOW_WARNINGS@
 GL_GNULIB_ABORT_DEBUG = @GL_GNULIB_ABORT_DEBUG@
@@ -2092,6 +2113,7 @@ GL_GNULIB_GETPAYLOADL = @GL_GNULIB_GETPAYLOADL@
 GL_GNULIB_GETPEERNAME = @GL_GNULIB_GETPEERNAME@
 GL_GNULIB_GETPROGNAME = @GL_GNULIB_GETPROGNAME@
 GL_GNULIB_GETRANDOM = @GL_GNULIB_GETRANDOM@
+GL_GNULIB_GETRUSAGE = @GL_GNULIB_GETRUSAGE@
 GL_GNULIB_GETSOCKNAME = @GL_GNULIB_GETSOCKNAME@
 GL_GNULIB_GETSOCKOPT = @GL_GNULIB_GETSOCKOPT@
 GL_GNULIB_GETSUBOPT = @GL_GNULIB_GETSUBOPT@
@@ -2162,7 +2184,6 @@ GL_GNULIB_LOGB = @GL_GNULIB_LOGB@
 GL_GNULIB_LOGBF = @GL_GNULIB_LOGBF@
 GL_GNULIB_LOGBL = @GL_GNULIB_LOGBL@
 GL_GNULIB_LOGF = @GL_GNULIB_LOGF@
-GL_GNULIB_LOGIN_TTY = @GL_GNULIB_LOGIN_TTY@
 GL_GNULIB_LOGL = @GL_GNULIB_LOGL@
 GL_GNULIB_LOGP1 = @GL_GNULIB_LOGP1@
 GL_GNULIB_LOGP1F = @GL_GNULIB_LOGP1F@
@@ -2683,6 +2704,8 @@ GL_GNULIB_WMEMSET = @GL_GNULIB_WMEMSET@
 GL_GNULIB_WRITE = @GL_GNULIB_WRITE@
 GL_GNULIB_ZPRINTF = @GL_GNULIB_ZPRINTF@
 GL_GNULIB__EXIT = @GL_GNULIB__EXIT@
+GMSGFMT = @GMSGFMT@
+GMSGFMT_015 = @GMSGFMT_015@
 GNULIBHEADERS_OVERRIDE_CHAR16_T = @GNULIBHEADERS_OVERRIDE_CHAR16_T@
 GNULIBHEADERS_OVERRIDE_CHAR32_T = @GNULIBHEADERS_OVERRIDE_CHAR32_T@
 GNULIBHEADERS_OVERRIDE_CHAR8_T = @GNULIBHEADERS_OVERRIDE_CHAR8_T@
@@ -2802,7 +2825,6 @@ HAVE_DECL_STRTOIMAX = @HAVE_DECL_STRTOIMAX@
 HAVE_DECL_STRTOK_R = @HAVE_DECL_STRTOK_R@
 HAVE_DECL_STRTOUMAX = @HAVE_DECL_STRTOUMAX@
 HAVE_DECL_TANL = @HAVE_DECL_TANL@
-HAVE_DECL_TCGETSID = @HAVE_DECL_TCGETSID@
 HAVE_DECL_TRUNC = @HAVE_DECL_TRUNC@
 HAVE_DECL_TRUNCATE = @HAVE_DECL_TRUNCATE@
 HAVE_DECL_TRUNCF = @HAVE_DECL_TRUNCF@
@@ -2852,7 +2874,6 @@ HAVE_FMAF = @HAVE_FMAF@
 HAVE_FMAL = @HAVE_FMAL@
 HAVE_FMODF = @HAVE_FMODF@
 HAVE_FMODL = @HAVE_FMODL@
-HAVE_FORKPTY = @HAVE_FORKPTY@
 HAVE_FREELOCALE = @HAVE_FREELOCALE@
 HAVE_FREXPF = @HAVE_FREXPF@
 HAVE_FSEEKO = @HAVE_FSEEKO@
@@ -2867,6 +2888,7 @@ HAVE_GETGROUPS = @HAVE_GETGROUPS@
 HAVE_GETHOSTNAME = @HAVE_GETHOSTNAME@
 HAVE_GETLOCALENAME_L = @HAVE_GETLOCALENAME_L@
 HAVE_GETLOGIN = @HAVE_GETLOGIN@
+HAVE_GETOPT_H = @HAVE_GETOPT_H@
 HAVE_GETPAGESIZE = @HAVE_GETPAGESIZE@
 HAVE_GETPASS = @HAVE_GETPASS@
 HAVE_GETPAYLOAD = @HAVE_GETPAYLOAD@
@@ -2874,6 +2896,7 @@ HAVE_GETPAYLOADF = @HAVE_GETPAYLOADF@
 HAVE_GETPAYLOADL = @HAVE_GETPAYLOADL@
 HAVE_GETPROGNAME = @HAVE_GETPROGNAME@
 HAVE_GETRANDOM = @HAVE_GETRANDOM@
+HAVE_GETRUSAGE = @HAVE_GETRUSAGE@
 HAVE_GETSUBOPT = @HAVE_GETSUBOPT@
 HAVE_GETTIMEOFDAY = @HAVE_GETTIMEOFDAY@
 HAVE_GETUMASK = @HAVE_GETUMASK@
@@ -2916,7 +2939,6 @@ HAVE_LCHMOD = @HAVE_LCHMOD@
 HAVE_LCHOWN = @HAVE_LCHOWN@
 HAVE_LDEXPF = @HAVE_LDEXPF@
 HAVE_LIBGCRYPT = @HAVE_LIBGCRYPT@
-HAVE_LIBUTIL_H = @HAVE_LIBUTIL_H@
 HAVE_LINK = @HAVE_LINK@
 HAVE_LINKAT = @HAVE_LINKAT@
 HAVE_LOCALE_T = @HAVE_LOCALE_T@
@@ -2931,7 +2953,6 @@ HAVE_LOG2L = @HAVE_LOG2L@
 HAVE_LOGBF = @HAVE_LOGBF@
 HAVE_LOGBL = @HAVE_LOGBL@
 HAVE_LOGF = @HAVE_LOGF@
-HAVE_LOGIN_TTY = @HAVE_LOGIN_TTY@
 HAVE_LOGL = @HAVE_LOGL@
 HAVE_LOGP1 = @HAVE_LOGP1@
 HAVE_LOGP1F = @HAVE_LOGP1F@
@@ -2974,7 +2995,6 @@ HAVE_OFF64_T = @HAVE_OFF64_T@
 HAVE_OPENAT = @HAVE_OPENAT@
 HAVE_OPENAT2 = @HAVE_OPENAT2@
 HAVE_OPENDIR = @HAVE_OPENDIR@
-HAVE_OPENPTY = @HAVE_OPENPTY@
 HAVE_OS_H = @HAVE_OS_H@
 HAVE_PCLOSE = @HAVE_PCLOSE@
 HAVE_PIPE = @HAVE_PIPE@
@@ -3153,6 +3173,7 @@ HAVE_SYS_IOCTL_H = @HAVE_SYS_IOCTL_H@
 HAVE_SYS_LOADAVG_H = @HAVE_SYS_LOADAVG_H@
 HAVE_SYS_PARAM_H = @HAVE_SYS_PARAM_H@
 HAVE_SYS_RANDOM_H = @HAVE_SYS_RANDOM_H@
+HAVE_SYS_RESOURCE_H = @HAVE_SYS_RESOURCE_H@
 HAVE_SYS_SELECT_H = @HAVE_SYS_SELECT_H@
 HAVE_SYS_SOCKET_H = @HAVE_SYS_SOCKET_H@
 HAVE_SYS_TIME_H = @HAVE_SYS_TIME_H@
@@ -3161,7 +3182,6 @@ HAVE_SYS_UIO_H = @HAVE_SYS_UIO_H@
 HAVE_TANF = @HAVE_TANF@
 HAVE_TANHF = @HAVE_TANHF@
 HAVE_TANL = @HAVE_TANL@
-HAVE_TERMIOS_H = @HAVE_TERMIOS_H@
 HAVE_TIMEGM = @HAVE_TIMEGM@
 HAVE_TIMESPEC_GET = @HAVE_TIMESPEC_GET@
 HAVE_TIMESPEC_GETRES = @HAVE_TIMESPEC_GETRES@
@@ -3185,11 +3205,9 @@ HAVE_UNISTRING_WOE32DLL_H = @HAVE_UNISTRING_WOE32DLL_H@
 HAVE_UNLINKAT = @HAVE_UNLINKAT@
 HAVE_UNLOCKPT = @HAVE_UNLOCKPT@
 HAVE_USLEEP = @HAVE_USLEEP@
-HAVE_UTIL_H = @HAVE_UTIL_H@
 HAVE_UTIME = @HAVE_UTIME@
 HAVE_UTIMENSAT = @HAVE_UTIMENSAT@
 HAVE_UTIME_H = @HAVE_UTIME_H@
-HAVE_UTMP_H = @HAVE_UTMP_H@
 HAVE_VASPRINTF = @HAVE_VASPRINTF@
 HAVE_VDPRINTF = @HAVE_VDPRINTF@
 HAVE_VISIBILITY = @HAVE_VISIBILITY@
@@ -3242,6 +3260,7 @@ HAVE_WS2TCPIP_H = @HAVE_WS2TCPIP_H@
 HAVE_XLOCALE_H = @HAVE_XLOCALE_H@
 HAVE__EXIT = @HAVE__EXIT@
 HOSTENT_LIB = @HOSTENT_LIB@
+HTONL_LIB = @HTONL_LIB@
 ICONV_CONST = @ICONV_CONST@
 ICONV_H = @ICONV_H@
 INCLUDE_NEXT = @INCLUDE_NEXT@
@@ -3256,6 +3275,7 @@ INSTALL_SCRIPT = @INSTALL_SCRIPT@
 INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@
 INT32_MAX_LT_INTMAX_MAX = @INT32_MAX_LT_INTMAX_MAX@
 INT64_MAX_EQ_LONG_MAX = @INT64_MAX_EQ_LONG_MAX@
+INTLLIBS = @INTLLIBS@
 INTL_MACOSX_LIBS = @INTL_MACOSX_LIBS@
 ISFINITE_LIBM = @ISFINITE_LIBM@
 ISINF_LIBM = @ISINF_LIBM@
@@ -3285,6 +3305,7 @@ LIBPTHREAD = @LIBPTHREAD@
 LIBS = @LIBS@
 LIBSOCKET = @LIBSOCKET@
 LIBSTDTHREAD = @LIBSTDTHREAD@
+LIBTESTS_LIBDEPS = @LIBTESTS_LIBDEPS@
 LIBTHREAD = @LIBTHREAD@
 LIBUNISTRING_UNICASE_H = @LIBUNISTRING_UNICASE_H@
 LIBUNISTRING_UNICONV_H = @LIBUNISTRING_UNICONV_H@
@@ -3307,6 +3328,7 @@ LIB_GETLOGIN = @LIB_GETLOGIN@
 LIB_GETRANDOM = @LIB_GETRANDOM@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
+LIB_NANOSLEEP = @LIB_NANOSLEEP@
 LIB_NL_LANGINFO = @LIB_NL_LANGINFO@
 LIB_POLL = @LIB_POLL@
 LIB_POSIX_SPAWN = @LIB_POSIX_SPAWN@
@@ -3315,16 +3337,19 @@ LIB_PTHREAD_SIGMASK = @LIB_PTHREAD_SIGMASK@
 LIB_SCHED_YIELD = @LIB_SCHED_YIELD@
 LIB_SELECT = @LIB_SELECT@
 LIB_SELINUX = @LIB_SELINUX@
+LIB_SEMAPHORE = @LIB_SEMAPHORE@
 LIB_SETLOCALE = @LIB_SETLOCALE@
 LIB_SETLOCALE_NULL = @LIB_SETLOCALE_NULL@
 LIB_XATTR = @LIB_XATTR@
 LIMITS_H = @LIMITS_H@
 LOCALCHARSET_TESTS_ENVIRONMENT = @LOCALCHARSET_TESTS_ENVIRONMENT@
 LOCALENAME_ENHANCE_LOCALE_FUNCS = @LOCALENAME_ENHANCE_LOCALE_FUNCS@
+LOCALE_AR = @LOCALE_AR@
 LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
 LOCALE_FR = @LOCALE_FR@
 LOCALE_FR_UTF8 = @LOCALE_FR_UTF8@
 LOCALE_JA = @LOCALE_JA@
+LOCALE_TR_UTF8 = @LOCALE_TR_UTF8@
 LOCALE_ZH_CN = @LOCALE_ZH_CN@
 LTLIBGCRYPT = @LTLIBGCRYPT@
 LTLIBICONV = @LTLIBICONV@
@@ -3336,6 +3361,10 @@ MAKEINFO = @MAKEINFO@
 MBRTOWC_LIB = @MBRTOWC_LIB@
 MKDIR_P = @MKDIR_P@
 MONETARY_H = @MONETARY_H@
+MSGFMT = @MSGFMT@
+MSGMERGE = @MSGMERGE@
+MSGMERGE_FOR_MSGFMT_OPTION = @MSGMERGE_FOR_MSGFMT_OPTION@
+NANOSLEEP_LIB = @NANOSLEEP_LIB@
 NETINET_IN_H = @NETINET_IN_H@
 NEXT_ARPA_INET_H = @NEXT_ARPA_INET_H@
 NEXT_ASSERT_H = @NEXT_ASSERT_H@
@@ -3348,6 +3377,7 @@ NEXT_AS_FIRST_DIRECTIVE_ERRNO_H = @NEXT_AS_FIRST_DIRECTIVE_ERRNO_H@
 NEXT_AS_FIRST_DIRECTIVE_ERROR_H = @NEXT_AS_FIRST_DIRECTIVE_ERROR_H@
 NEXT_AS_FIRST_DIRECTIVE_FCNTL_H = @NEXT_AS_FIRST_DIRECTIVE_FCNTL_H@
 NEXT_AS_FIRST_DIRECTIVE_FLOAT_H = @NEXT_AS_FIRST_DIRECTIVE_FLOAT_H@
+NEXT_AS_FIRST_DIRECTIVE_GETOPT_H = @NEXT_AS_FIRST_DIRECTIVE_GETOPT_H@
 NEXT_AS_FIRST_DIRECTIVE_ICONV_H = @NEXT_AS_FIRST_DIRECTIVE_ICONV_H@
 NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H = @NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H@
 NEXT_AS_FIRST_DIRECTIVE_LANGINFO_H = @NEXT_AS_FIRST_DIRECTIVE_LANGINFO_H@
@@ -3373,6 +3403,7 @@ NEXT_AS_FIRST_DIRECTIVE_STRINGS_H = @NEXT_AS_FIRST_DIRECTIVE_STRINGS_H@
 NEXT_AS_FIRST_DIRECTIVE_STRING_H = @NEXT_AS_FIRST_DIRECTIVE_STRING_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_IOCTL_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_IOCTL_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_RANDOM_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_RANDOM_H@
+NEXT_AS_FIRST_DIRECTIVE_SYS_RESOURCE_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_RESOURCE_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_SELECT_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_SELECT_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_SOCKET_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_SOCKET_H@
 NEXT_AS_FIRST_DIRECTIVE_SYS_STAT_H = @NEXT_AS_FIRST_DIRECTIVE_SYS_STAT_H@
@@ -3384,7 +3415,6 @@ NEXT_AS_FIRST_DIRECTIVE_TIME_H = @NEXT_AS_FIRST_DIRECTIVE_TIME_H@
 NEXT_AS_FIRST_DIRECTIVE_UCHAR_H = @NEXT_AS_FIRST_DIRECTIVE_UCHAR_H@
 NEXT_AS_FIRST_DIRECTIVE_UNISTD_H = @NEXT_AS_FIRST_DIRECTIVE_UNISTD_H@
 NEXT_AS_FIRST_DIRECTIVE_UTIME_H = @NEXT_AS_FIRST_DIRECTIVE_UTIME_H@
-NEXT_AS_FIRST_DIRECTIVE_UTMP_H = @NEXT_AS_FIRST_DIRECTIVE_UTMP_H@
 NEXT_AS_FIRST_DIRECTIVE_WCHAR_H = @NEXT_AS_FIRST_DIRECTIVE_WCHAR_H@
 NEXT_AS_FIRST_DIRECTIVE_WCTYPE_H = @NEXT_AS_FIRST_DIRECTIVE_WCTYPE_H@
 NEXT_CTYPE_H = @NEXT_CTYPE_H@
@@ -3394,6 +3424,7 @@ NEXT_ERRNO_H = @NEXT_ERRNO_H@
 NEXT_ERROR_H = @NEXT_ERROR_H@
 NEXT_FCNTL_H = @NEXT_FCNTL_H@
 NEXT_FLOAT_H = @NEXT_FLOAT_H@
+NEXT_GETOPT_H = @NEXT_GETOPT_H@
 NEXT_ICONV_H = @NEXT_ICONV_H@
 NEXT_INTTYPES_H = @NEXT_INTTYPES_H@
 NEXT_LANGINFO_H = @NEXT_LANGINFO_H@
@@ -3419,6 +3450,7 @@ NEXT_STRINGS_H = @NEXT_STRINGS_H@
 NEXT_STRING_H = @NEXT_STRING_H@
 NEXT_SYS_IOCTL_H = @NEXT_SYS_IOCTL_H@
 NEXT_SYS_RANDOM_H = @NEXT_SYS_RANDOM_H@
+NEXT_SYS_RESOURCE_H = @NEXT_SYS_RESOURCE_H@
 NEXT_SYS_SELECT_H = @NEXT_SYS_SELECT_H@
 NEXT_SYS_SOCKET_H = @NEXT_SYS_SOCKET_H@
 NEXT_SYS_STAT_H = @NEXT_SYS_STAT_H@
@@ -3430,7 +3462,6 @@ NEXT_TIME_H = @NEXT_TIME_H@
 NEXT_UCHAR_H = @NEXT_UCHAR_H@
 NEXT_UNISTD_H = @NEXT_UNISTD_H@
 NEXT_UTIME_H = @NEXT_UTIME_H@
-NEXT_UTMP_H = @NEXT_UTMP_H@
 NEXT_WCHAR_H = @NEXT_WCHAR_H@
 NEXT_WCTYPE_H = @NEXT_WCTYPE_H@
 NULLPTR_T_NEEDS_STDDEF = @NULLPTR_T_NEEDS_STDDEF@
@@ -3446,6 +3477,7 @@ PACKAGE_VERSION = @PACKAGE_VERSION@
 PATH_SEPARATOR = @PATH_SEPARATOR@
 POLL_LIB = @POLL_LIB@
 POSIX_SPAWN_LIB = @POSIX_SPAWN_LIB@
+POSUB = @POSUB@
 PRAGMA_COLUMNS = @PRAGMA_COLUMNS@
 PRAGMA_SYSTEM_HEADER = @PRAGMA_SYSTEM_HEADER@
 PRIPTR_PREFIX = @PRIPTR_PREFIX@
@@ -3453,7 +3485,6 @@ PTHREAD_H_DEFINES_STRUCT_TIMESPEC = @PTHREAD_H_DEFINES_STRUCT_TIMESPEC@
 PTHREAD_ONCE_LIB = @PTHREAD_ONCE_LIB@
 PTHREAD_SIGMASK_LIB = @PTHREAD_SIGMASK_LIB@
 PTRDIFF_T_SUFFIX = @PTRDIFF_T_SUFFIX@
-PTY_LIB = @PTY_LIB@
 QCOPY_ACL_LIB = @QCOPY_ACL_LIB@
 RANLIB = @RANLIB@
 READUTMP_LIB = @READUTMP_LIB@
@@ -3535,7 +3566,6 @@ REPLACE_FMODF = @REPLACE_FMODF@
 REPLACE_FMODL = @REPLACE_FMODL@
 REPLACE_FOPEN = @REPLACE_FOPEN@
 REPLACE_FOPEN_FOR_FOPEN_GNU = @REPLACE_FOPEN_FOR_FOPEN_GNU@
-REPLACE_FORKPTY = @REPLACE_FORKPTY@
 REPLACE_FPRINTF = @REPLACE_FPRINTF@
 REPLACE_FPURGE = @REPLACE_FPURGE@
 REPLACE_FREE = @REPLACE_FREE@
@@ -3626,7 +3656,6 @@ REPLACE_LOGB = @REPLACE_LOGB@
 REPLACE_LOGBF = @REPLACE_LOGBF@
 REPLACE_LOGBL = @REPLACE_LOGBL@
 REPLACE_LOGF = @REPLACE_LOGF@
-REPLACE_LOGIN_TTY = @REPLACE_LOGIN_TTY@
 REPLACE_LOGL = @REPLACE_LOGL@
 REPLACE_LSEEK = @REPLACE_LSEEK@
 REPLACE_LSTAT = @REPLACE_LSTAT@
@@ -3670,7 +3699,6 @@ REPLACE_OBSTACK_PRINTF = @REPLACE_OBSTACK_PRINTF@
 REPLACE_OPEN = @REPLACE_OPEN@
 REPLACE_OPENAT = @REPLACE_OPENAT@
 REPLACE_OPENDIR = @REPLACE_OPENDIR@
-REPLACE_OPENPTY = @REPLACE_OPENPTY@
 REPLACE_PERROR = @REPLACE_PERROR@
 REPLACE_PIPE2 = @REPLACE_PIPE2@
 REPLACE_POLL = @REPLACE_POLL@
@@ -3873,6 +3901,7 @@ REPLACE_WMEMPCPY = @REPLACE_WMEMPCPY@
 REPLACE_WRITE = @REPLACE_WRITE@
 REPLACE__EXIT = @REPLACE__EXIT@
 SCHED_YIELD_LIB = @SCHED_YIELD_LIB@
+SED = @SED@
 SELECT_LIB = @SELECT_LIB@
 SERVENT_LIB = @SERVENT_LIB@
 SETLOCALE_LIB = @SETLOCALE_LIB@
@@ -3892,8 +3921,11 @@ SYSTEMD_CHOICE = @SYSTEMD_CHOICE@
 SYS_IOCTL_H_HAVE_WINSOCK2_H = @SYS_IOCTL_H_HAVE_WINSOCK2_H@
 SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS = @SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS@
 SYS_TIME_H_DEFINES_STRUCT_TIMESPEC = @SYS_TIME_H_DEFINES_STRUCT_TIMESPEC@
+TEST_TSEARCH_LIBM = @TEST_TSEARCH_LIBM@
 TIME_H_DEFINES_STRUCT_TIMESPEC = @TIME_H_DEFINES_STRUCT_TIMESPEC@
 TIME_H_DEFINES_TIME_UTC = @TIME_H_DEFINES_TIME_UTC@
+TRUNCL_LIBM = @TRUNCL_LIBM@
+TRUNC_LIBM = @TRUNC_LIBM@
 UINT32_MAX_LT_UINTMAX_MAX = @UINT32_MAX_LT_UINTMAX_MAX@
 UINT64_MAX_EQ_ULONG_MAX = @UINT64_MAX_EQ_ULONG_MAX@
 UNDEFINE_STRTOK_R = @UNDEFINE_STRTOK_R@
@@ -3902,6 +3934,7 @@ UNISTD_H_HAVE_SYS_RANDOM_H = @UNISTD_H_HAVE_SYS_RANDOM_H@
 UNISTD_H_HAVE_WINSOCK2_H = @UNISTD_H_HAVE_WINSOCK2_H@
 UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS = @UNISTD_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS@
 USE_ACL = @USE_ACL@
+USE_NLS = @USE_NLS@
 USE_SELINUX_SELINUX_H = @USE_SELINUX_SELINUX_H@
 VERSION = @VERSION@
 WCHAR_T_SUFFIX = @WCHAR_T_SUFFIX@
@@ -3909,7 +3942,12 @@ WINDOWS_64_BIT_OFF_T = @WINDOWS_64_BIT_OFF_T@
 WINDOWS_64_BIT_ST_SIZE = @WINDOWS_64_BIT_ST_SIZE@
 WINDOWS_STAT_INODES = @WINDOWS_STAT_INODES@
 WINDOWS_STAT_TIMESPEC = @WINDOWS_STAT_TIMESPEC@
+WINDRES = @WINDRES@
 WINT_T_SUFFIX = @WINT_T_SUFFIX@
+XGETTEXT = @XGETTEXT@
+XGETTEXT_015 = @XGETTEXT_015@
+XGETTEXT_EXTRA_OPTIONS = @XGETTEXT_EXTRA_OPTIONS@
+YIELD_LIB = @YIELD_LIB@
 abs_builddir = @abs_builddir@
 abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
@@ -4084,14 +4122,13 @@ EXTRA_DIST = acl-internal.h acl.h alloca.c alloca.in.h allocator.h \
 	iconv.in.h iconv_open-aix.h iconv_open-hpux.h \
 	iconv_open-solaris.h iconv_open-zos.h iconv_open-aix.gperf \
 	iconv_open-hpux.gperf iconv_open-solaris.gperf \
-	iconv_open-zos.gperf idcache.h ignore-value.h float+.h \
-	integer_length.h integer_length.h integer_length.h \
-	integer_length_l.c intprops-internal.h intprops.h anytostr.c \
-	inttostr.h inttypes.in.h float+.h isnan.c isnand.c float+.h \
-	isnan.c isnand-nolibm.h isnand.c float+.h isnan.c \
-	isnanf-nolibm.h isnanf.c float+.h isnan.c isnanl.c float+.h \
-	isnan.c isnanl-nolibm.h isnanl.c issymlink.h iswctype-impl.h \
-	$(top_srcdir)/build-aux/javacomp.sh.in \
+	iconv_open-zos.gperf ignore-value.h float+.h integer_length.h \
+	integer_length.h integer_length.h integer_length_l.c \
+	intprops-internal.h intprops.h inttypes.in.h float+.h isnan.c \
+	isnand.c float+.h isnan.c isnand-nolibm.h isnand.c float+.h \
+	isnan.c isnanf-nolibm.h isnanf.c float+.h isnan.c isnanl.c \
+	float+.h isnan.c isnanl-nolibm.h isnanl.c issymlink.h \
+	iswctype-impl.h $(top_srcdir)/build-aux/javacomp.sh.in \
 	$(top_srcdir)/build-aux/javaexec.sh.in javaversion.class \
 	javaversion.java kwset.h langinfo.in.h ldexp.c ftoastr.c \
 	ftoastr.h cdefs.h libc-config.h limits.in.h localcharset.h \
@@ -4113,7 +4150,7 @@ EXTRA_DIST = acl-internal.h acl.h alloca.c alloca.in.h allocator.h \
 	calendars.h strftime.c strftime.h obstack.in.h openat.h \
 	dirent-private.h opendirat.h pathmax.h pipe-filter-aux.h \
 	pipe-filter.h poll.in.h spawn_int.h spawn_int.h spawn_int.h \
-	spawn_int.h spawn_int.h spawn_int.h posixver.h printf-frexp.h \
+	spawn_int.h spawn_int.h spawn_int.h printf-frexp.h \
 	printf-frexp.c printf-frexpl.h pthread.in.h quote.h quote.h \
 	quotearg.h rawmemchr.valgrind dirent-private.h readtokens.h \
 	boot-time-aux.h readutmp.h regcomp.c regex.h regex_internal.c \
@@ -4143,13 +4180,13 @@ EXTRA_DIST = acl-internal.h acl.h alloca.c alloca.in.h allocator.h \
 	strchrnul.valgrind streq.h strerror-override.h iconveh.h \
 	string-desc.h string.in.h strings.in.h strstr.c str-two-way.h \
 	strstr.c strtod.c strtod.c strtol.c strtol.c strtol.c \
-	strtoul.c strtoimax.c sys_ioctl.in.h sys_random.in.h \
-	sys_select.in.h sys_socket.in.h sys_stat.in.h sys_time.in.h \
-	sys_types.in.h sys_uio.in.h sys_wait.in.h tempname.h \
-	term-style-control.h thread-optim.h time.in.h time-internal.h \
-	mktime-internal.h timespec.h u64.h uchar.in.h unicase.in.h \
-	unicase/cased.h unicase/caseprop.h unictype/bitmap.h \
-	unicase/caseprop.h unicase/ignorable.h unictype/bitmap.h \
+	strtoul.c strtoimax.c sys_random.in.h sys_select.in.h \
+	sys_socket.in.h sys_stat.in.h sys_time.in.h sys_types.in.h \
+	sys_uio.in.h sys_wait.in.h tempname.h term-style-control.h \
+	thread-optim.h time.in.h time-internal.h mktime-internal.h \
+	timespec.h u64.h uchar.in.h unicase.in.h unicase/cased.h \
+	unicase/caseprop.h unictype/bitmap.h unicase/caseprop.h \
+	unicase/ignorable.h unictype/bitmap.h \
 	unicase/special-casing-table.h \
 	unicase/special-casing-table.gperf unicase/special-casing.in.h \
 	unicase/simple-mapping.h unicase/tolower.h \
@@ -4201,16 +4238,16 @@ EXTRA_DIST = acl-internal.h acl.h alloca.c alloca.in.h allocator.h \
 	uniwbrk/u-wordbreaks.h uniwbrk/u-wordbreaks.h \
 	uniwbrk/wbrkprop.h localcharset.h uniwidth.in.h \
 	unictype/bitmap.h uniwidth/cjk.h uniwidth/width0.h \
-	uniwidth/width2.h unlocked-io.h userspec.h utime.in.h \
-	utimens.h utmp.in.h asnprintf.c float+.h printf-args.c \
-	printf-args.h printf-parse.c printf-parse.h vasnprintf.c \
-	vasnprintf.h float+.h printf-args.c printf-args.h \
-	printf-parse.c vasnprintf.c vasnwprintf.h wprintf-parse.h \
-	verify.h vma-iter.h wchar.in.h wctomb-impl.h wctype-impl.h \
-	wctype.in.h windows-cond.h windows-initguard.h \
-	windows-initguard.h windows-mutex.h windows-once.h \
-	windows-initguard.h windows-recmutex.h windows-initguard.h \
-	windows-rwlock.h windows-path.h windows-spawn.h windows-spin.h \
+	uniwidth/width2.h unlocked-io.h utime.in.h utimens.h \
+	asnprintf.c float+.h printf-args.c printf-args.h \
+	printf-parse.c printf-parse.h vasnprintf.c vasnprintf.h \
+	float+.h printf-args.c printf-args.h printf-parse.c \
+	vasnprintf.c vasnwprintf.h wprintf-parse.h verify.h vma-iter.h \
+	wchar.in.h wctomb-impl.h wctype-impl.h wctype.in.h \
+	windows-cond.h windows-initguard.h windows-initguard.h \
+	windows-mutex.h windows-once.h windows-initguard.h \
+	windows-recmutex.h windows-initguard.h windows-rwlock.h \
+	windows-path.h windows-spawn.h windows-spin.h \
 	windows-initguard.h windows-timedrwlock.h windows-tls.h \
 	wmemcpy-impl.h wmemset-impl.h xalloc.h xalloc.h \
 	xalloc-oversized.h concat-filename.h xmalloca.h xreadlink.h \
@@ -4225,17 +4262,16 @@ BUILT_SOURCES = $(ALLOCA_H) $(ARGZ_H) arpa/inet.h $(ASSERT_H) \
 	$(LIMITS_H) locale.h math.h $(MONETARY_H) netdb.h \
 	$(NETINET_IN_H) $(OBSTACK_H) poll.h pthread.h sched.h search.h \
 	signal.h spawn.h $(STDARG_H) $(STDCKDINT_H) $(STDDEF_H) \
-	$(STDINT_H) stdio.h stdlib.h string.h strings.h sys/ioctl.h \
-	sys/random.h sys/select.h sys/socket.h sys/stat.h sys/time.h \
-	sys/types.h sys/uio.h sys/wait.h time.h uchar.h \
-	$(LIBUNISTRING_UNICASE_H) unicase/special-casing-table.h \
-	unicase/special-casing.h $(LIBUNISTRING_UNICONV_H) \
-	$(LIBUNISTRING_UNICTYPE_H) $(LIBUNISTRING_UNIGBRK_H) \
-	$(LIBUNISTRING_UNILBRK_H) $(LIBUNISTRING_UNINAME_H) \
-	$(LIBUNISTRING_UNINORM_H) unistd.h $(LIBUNISTRING_UNISTDIO_H) \
-	$(LIBUNISTRING_UNISTR_H) $(LIBUNISTRING_UNITYPES_H) \
-	$(LIBUNISTRING_UNIWBRK_H) $(LIBUNISTRING_UNIWIDTH_H) utime.h \
-	utmp.h wchar.h wctype.h
+	$(STDINT_H) stdio.h stdlib.h string.h strings.h sys/random.h \
+	sys/select.h sys/socket.h sys/stat.h sys/time.h sys/types.h \
+	sys/uio.h sys/wait.h time.h uchar.h $(LIBUNISTRING_UNICASE_H) \
+	unicase/special-casing-table.h unicase/special-casing.h \
+	$(LIBUNISTRING_UNICONV_H) $(LIBUNISTRING_UNICTYPE_H) \
+	$(LIBUNISTRING_UNIGBRK_H) $(LIBUNISTRING_UNILBRK_H) \
+	$(LIBUNISTRING_UNINAME_H) $(LIBUNISTRING_UNINORM_H) unistd.h \
+	$(LIBUNISTRING_UNISTDIO_H) $(LIBUNISTRING_UNISTR_H) \
+	$(LIBUNISTRING_UNITYPES_H) $(LIBUNISTRING_UNIWBRK_H) \
+	$(LIBUNISTRING_UNIWIDTH_H) utime.h wchar.h wctype.h
 SUFFIXES = 
 MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t argz.h \
 	argz.h-t arpa/inet.h arpa/inet.h-t assert.h assert.h-t \
@@ -4261,12 +4297,12 @@ MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t argz.h \
 	stddef.h stddef.h-t stdint.h stdint.h-t stdio.h stdio.h-t1 \
 	stdio.h-t2 stdio.h-t3 stdlib.h stdlib.h-t1 stdlib.h-t2 \
 	stdlib.h-t3 string.h string.h-t1 string.h-t2 strings.h \
-	strings.h-t sys/ioctl.h sys/ioctl.h-t sys/random.h \
-	sys/random.h-t sys/select.h sys/select.h-t sys/socket.h \
-	sys/socket.h-t sys/stat.h sys/stat.h-t sys/time.h sys/time.h-t \
-	sys/types.h sys/types.h-t sys/uio.h sys/uio.h-t sys/wait.h \
-	sys/wait.h-t time.h time.h-t uchar.h uchar.h-t unicase.h \
-	unicase.h-t unicase/special-casing-table.h-t1 \
+	strings.h-t sys/random.h sys/random.h-t sys/select.h \
+	sys/select.h-t sys/socket.h sys/socket.h-t sys/stat.h \
+	sys/stat.h-t sys/time.h sys/time.h-t sys/types.h sys/types.h-t \
+	sys/uio.h sys/uio.h-t sys/wait.h sys/wait.h-t time.h time.h-t \
+	uchar.h uchar.h-t unicase.h unicase.h-t \
+	unicase/special-casing-table.h-t1 \
 	unicase/special-casing-table.h-t2 unicase/special-casing.h \
 	unicase/special-casing.h-t uniconv.h uniconv.h-t unictype.h \
 	unictype.h-t1 unictype.h-t2 unictype.h-t3 unictype.h-t4 \
@@ -4274,11 +4310,9 @@ MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t argz.h \
 	uniname.h-t uninorm.h uninorm.h-t unistd.h unistd.h-t1 \
 	unistd.h-t2 unistd.h-t3 unistd.h-t4 unistdio.h unistdio.h-t \
 	unistr.h unistr.h-t unitypes.h unitypes.h-t uniwbrk.h \
-	uniwbrk.h-t uniwidth.h uniwidth.h-t utime.h utime.h-t utmp.h \
-	utmp.h-t wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3 wctype.h \
-	wctype.h-t
-MOSTLYCLEANDIRS = arpa crc-tmp netinet sys sys sys sys sys sys sys sys \
-	sys
+	uniwbrk.h-t uniwidth.h uniwidth.h-t utime.h utime.h-t wchar.h \
+	wchar.h-t1 wchar.h-t2 wchar.h-t3 wctype.h wctype.h-t
+MOSTLYCLEANDIRS = arpa crc-tmp netinet sys sys sys sys sys sys sys sys
 CLEANFILES = configmake.h configmake.h-t
 DISTCLEANFILES = 
 MAINTAINERCLEANFILES = crc-sliceby8.h iconv_open-aix.h \
@@ -4359,49 +4393,47 @@ libgnu_a_SOURCES = $(am__append_1) acl-errno-valid.c acl-internal.c \
 	hashcode-mem.c hashcode-named-file.c hashcode-string1.h \
 	hashcode-string1.c hashcode-string2.h hashcode-string2.c \
 	hashkey-string.h hashkey-string.c human.c i-ring.c ialloc.c \
-	$(am__append_59) $(am__append_60) idcache.c idx.h \
-	$(am__append_61) $(am__append_62) ino-map.c ino-map.h \
-	integer_length.c integer_length_l.c integer_length_ll.c \
-	imaxtostr.c inttostr.c offtostr.c uinttostr.c umaxtostr.c \
-	$(am__append_63) $(am__append_64) issymlink.c $(am__append_65) \
-	$(am__append_66) $(am__append_67) $(am__append_68) \
-	$(am__append_69) javacomp.h javacomp.c javaexec.h javaexec.c \
-	javaversion.h javaversion.c kwset.c $(am__append_70) \
-	$(am__append_71) $(am__append_72) ldtoastr.c gl_linked_list.h \
-	gl_linked_list.c gl_anylinked_list1.h gl_anylinked_list2.h \
-	gl_linkedhash_list.h gl_linkedhash_list.c gl_anyhash1.h \
-	gl_anyhash2.h gl_anyhash_primes.h gl_anylinked_list1.h \
-	gl_anylinked_list2.h gl_linkedhash_map.h gl_linkedhash_map.c \
-	gl_anyhash1.h gl_anyhash2.h gl_anyhash_primes.h \
-	gl_linkedhash_set.h gl_linkedhash_set.c gl_anyhash1.h \
-	gl_anyhash2.h gl_anyhash_primes.h gl_list.h gl_list.c \
-	localcharset.c $(am__append_73) localename.c \
-	localename-environ.c $(am__append_74) $(am__append_75) \
-	glthread/lock.h glthread/lock.c $(am__append_76) \
-	$(am__append_77) malloca.c gl_map.h gl_map.c math.c mbchar.c \
-	mbiterf.h mbiterf.c $(am__append_78) $(am__append_79) \
-	mbscasestr.c $(am__append_80) mbslen.c mbsnlen.c mbsstr.c \
-	mbszero.c $(am__append_81) mbuiter.h mbuiter.c mbuiterf.h \
-	mbuiterf.c mem-hash-map.h mem-hash-map.c memcasecmp.c \
-	$(am__append_82) memchr2.h memchr2.c $(am__append_83) \
-	$(am__append_84) mgetgroups.c minmax.h $(am__append_85) \
-	$(am__append_86) modechange.c mountlist.c mpsort.c \
-	$(am__append_87) $(am__append_88) $(am__append_89) \
-	next-prime.h next-prime.c $(am__append_90) $(am__append_91) \
-	nproc.c nstrftime.c $(am__append_92) gl_omap.h gl_omap.c \
-	glthread/once.h glthread/once.c $(am__append_93) \
-	$(am__append_94) openat-die.c $(am__append_95) opendirat.c \
+	$(am__append_59) $(am__append_60) idx.h $(am__append_61) \
+	$(am__append_62) ino-map.c ino-map.h integer_length.c \
+	integer_length_l.c integer_length_ll.c $(am__append_63) \
+	$(am__append_64) issymlink.c $(am__append_65) $(am__append_66) \
+	$(am__append_67) $(am__append_68) $(am__append_69) javacomp.h \
+	javacomp.c javaexec.h javaexec.c javaversion.h javaversion.c \
+	kwset.c $(am__append_70) $(am__append_71) $(am__append_72) \
+	ldtoastr.c gl_linked_list.h gl_linked_list.c \
+	gl_anylinked_list1.h gl_anylinked_list2.h gl_linkedhash_list.h \
+	gl_linkedhash_list.c gl_anyhash1.h gl_anyhash2.h \
+	gl_anyhash_primes.h gl_anylinked_list1.h gl_anylinked_list2.h \
+	gl_linkedhash_map.h gl_linkedhash_map.c gl_anyhash1.h \
+	gl_anyhash2.h gl_anyhash_primes.h gl_linkedhash_set.h \
+	gl_linkedhash_set.c gl_anyhash1.h gl_anyhash2.h \
+	gl_anyhash_primes.h gl_list.h gl_list.c localcharset.c \
+	$(am__append_73) localename.c localename-environ.c \
+	$(am__append_74) $(am__append_75) glthread/lock.h \
+	glthread/lock.c $(am__append_76) malloca.c gl_map.h gl_map.c \
+	math.c mbchar.c mbiterf.h mbiterf.c $(am__append_77) \
+	$(am__append_78) mbscasestr.c $(am__append_79) mbslen.c \
+	mbsnlen.c mbsstr.c mbszero.c $(am__append_80) mbuiter.h \
+	mbuiter.c mbuiterf.h mbuiterf.c mem-hash-map.h mem-hash-map.c \
+	memcasecmp.c $(am__append_81) memchr2.h memchr2.c \
+	$(am__append_82) $(am__append_83) mgetgroups.c minmax.h \
+	$(am__append_84) $(am__append_85) modechange.c mountlist.c \
+	mpsort.c $(am__append_86) $(am__append_87) $(am__append_88) \
+	next-prime.h next-prime.c $(am__append_89) $(am__append_90) \
+	nproc.c nstrftime.c $(am__append_91) gl_omap.h gl_omap.c \
+	glthread/once.h glthread/once.c $(am__append_92) \
+	$(am__append_93) openat-die.c $(am__append_94) opendirat.c \
 	gl_oset.h gl_oset.c pipe-filter-ii.c pipe-filter-aux.c \
-	$(am__append_96) pipe2.c pipe2-safer.c $(am__append_97) \
-	$(am__append_98) $(am__append_99) $(am__append_100) \
-	$(am__append_101) $(am__append_102) $(am__append_103) \
-	$(am__append_104) $(am__append_105) $(am__append_106) \
-	$(am__append_107) $(am__append_108) $(am__append_109) \
-	$(am__append_110) $(am__append_111) posixver.c printf-frexp.c \
-	printf-frexpl.c progname.h progname.c $(am__append_112) \
-	$(am__append_113) $(am__append_114) $(am__append_115) \
-	qcopy-acl.c $(am__append_116) $(am__append_117) quotearg.c \
-	$(am__append_118) $(am__append_119) $(am__append_120) \
+	$(am__append_95) pipe2.c pipe2-safer.c $(am__append_96) \
+	$(am__append_97) $(am__append_98) $(am__append_99) \
+	$(am__append_100) $(am__append_101) $(am__append_102) \
+	$(am__append_103) $(am__append_104) $(am__append_105) \
+	$(am__append_106) $(am__append_107) $(am__append_108) \
+	$(am__append_109) $(am__append_110) printf-frexp.c \
+	printf-frexpl.c progname.h progname.c $(am__append_111) \
+	$(am__append_112) $(am__append_113) $(am__append_114) \
+	qcopy-acl.c $(am__append_115) $(am__append_116) quotearg.c \
+	$(am__append_117) $(am__append_118) $(am__append_119) \
 	gl_rbtree_list.h gl_rbtree_list.c gl_anyrbtree_list1.h \
 	gl_anyrbtree_list2.h gl_anytree_list1.h gl_anytree_list2.h \
 	gl_rbtree_omap.h gl_rbtree_omap.c gl_rbtree_ordered.h \
@@ -4410,80 +4442,80 @@ libgnu_a_SOURCES = $(am__append_1) acl-errno-valid.c acl-internal.c \
 	gl_rbtreehash_list.c gl_anyhash1.h gl_anyhash2.h \
 	gl_anyhash_primes.h gl_anyrbtree_list1.h gl_anyrbtree_list2.h \
 	gl_anytree_list1.h gl_anytree_list2.h gl_anytreehash_list1.h \
-	gl_anytreehash_list2.h $(am__append_121) $(am__append_122) \
-	$(am__append_123) readtokens.c readutmp.c $(am__append_124) \
-	$(am__append_125) $(am__append_126) regex-quote.c \
-	$(am__append_127) $(am__append_128) $(am__append_129) \
+	gl_anytreehash_list2.h $(am__append_120) $(am__append_121) \
+	$(am__append_122) readtokens.c readutmp.c $(am__append_123) \
+	$(am__append_124) $(am__append_125) regex-quote.c \
+	$(am__append_126) $(am__append_127) $(am__append_128) \
 	safe-read.c safe-write.c same-inode.h same-inode.c save-cwd.c \
-	$(am__append_130) $(am__append_131) $(am__append_132) gl_set.h \
-	gl_set.c $(am__append_133) $(am__append_134) $(am__append_135) \
-	setlocale_null.c $(am__append_136) setlocale_null-unlocked.c \
-	sh-quote.h sh-quote.c $(am__append_137) $(am__append_138) \
-	sig-handler.c $(am__append_139) $(am__append_140) size_max.h \
+	$(am__append_129) $(am__append_130) $(am__append_131) gl_set.h \
+	gl_set.c $(am__append_132) $(am__append_133) $(am__append_134) \
+	setlocale_null.c $(am__append_135) setlocale_null-unlocked.c \
+	sh-quote.h sh-quote.c $(am__append_136) $(am__append_137) \
+	sig-handler.c $(am__append_138) $(am__append_139) size_max.h \
 	sockets.h sockets.c spawn-pipe.h spawn-pipe.c \
-	$(am__append_141) $(am__append_142) $(am__append_143) \
-	$(am__append_144) stat-time.c $(am__append_145) \
-	$(am__append_146) $(am__append_147) stdlib.c stdopen.c \
-	$(am__append_148) $(am__append_149) $(am__append_150) \
-	$(am__append_151) $(am__append_152) $(am__append_153) \
+	$(am__append_140) $(am__append_141) $(am__append_142) \
+	$(am__append_143) stat-time.c $(am__append_144) \
+	$(am__append_145) $(am__append_146) stdlib.c stdopen.c \
+	$(am__append_147) $(am__append_148) $(am__append_149) \
+	$(am__append_150) $(am__append_151) $(am__append_152) \
 	striconveh.h striconveh.c striconveha.h striconveha.c \
 	string-desc.c string-desc-contains.c string.c \
-	$(am__append_154) $(am__append_155) $(am__append_156) \
-	strnlen1.h strnlen1.c $(am__append_157) $(am__append_158) \
-	$(am__append_159) $(am__append_160) $(am__append_161) \
-	$(am__append_162) $(am__append_163) $(am__append_164) \
-	$(am__append_165) sys_socket.c system-quote.h system-quote.c \
+	$(am__append_153) $(am__append_154) $(am__append_155) \
+	strnlen1.h strnlen1.c $(am__append_156) $(am__append_157) \
+	$(am__append_158) $(am__append_159) $(am__append_160) \
+	$(am__append_161) $(am__append_162) $(am__append_163) \
+	$(am__append_164) sys_socket.c system-quote.h system-quote.c \
 	tempname.c term-style-control.c glthread/threadlib.c \
-	$(am__append_166) time_rz.c $(am__append_167) timespec.c \
+	$(am__append_165) time_rz.c $(am__append_166) timespec.c \
 	glthread/tls.h glthread/tls.c tmpdir.h tmpdir.c \
-	$(am__append_168) $(am__append_169) u64.c unicase/cased.c \
-	unicase/ignorable.c unicase/special-casing.c $(am__append_170) \
-	$(am__append_171) $(am__append_172) unicase/u16-casemap.c \
-	$(am__append_173) unicase/u32-casemap.c $(am__append_174) \
-	unicase/u8-casemap.c $(am__append_175) $(am__append_176) \
-	$(am__append_177) $(am__append_178) $(am__append_179) \
-	$(am__append_180) $(am__append_181) $(am__append_182) \
-	$(am__append_183) $(am__append_184) $(am__append_185) \
-	$(am__append_186) $(am__append_187) $(am__append_188) \
-	$(am__append_189) $(am__append_190) $(am__append_191) \
-	$(am__append_192) $(am__append_193) $(am__append_194) \
-	$(am__append_195) $(am__append_196) $(am__append_197) \
-	$(am__append_198) $(am__append_199) $(am__append_200) \
-	unilbrk/lbrktables.c $(am__append_201) $(am__append_202) \
-	unilbrk/ulc-common.c $(am__append_203) $(am__append_204) \
-	$(am__append_205) uninorm/decompose-internal.c \
-	$(am__append_206) $(am__append_207) $(am__append_208) \
-	$(am__append_209) unistd.c dup-safer.c fd-safer.c pipe-safer.c \
+	$(am__append_167) $(am__append_168) u64.c unicase/cased.c \
+	unicase/ignorable.c unicase/special-casing.c $(am__append_169) \
+	$(am__append_170) $(am__append_171) unicase/u16-casemap.c \
+	$(am__append_172) unicase/u32-casemap.c $(am__append_173) \
+	unicase/u8-casemap.c $(am__append_174) $(am__append_175) \
+	$(am__append_176) $(am__append_177) $(am__append_178) \
+	$(am__append_179) $(am__append_180) $(am__append_181) \
+	$(am__append_182) $(am__append_183) $(am__append_184) \
+	$(am__append_185) $(am__append_186) $(am__append_187) \
+	$(am__append_188) $(am__append_189) $(am__append_190) \
+	$(am__append_191) $(am__append_192) $(am__append_193) \
+	$(am__append_194) $(am__append_195) $(am__append_196) \
+	$(am__append_197) $(am__append_198) $(am__append_199) \
+	unilbrk/lbrktables.c $(am__append_200) $(am__append_201) \
+	unilbrk/ulc-common.c $(am__append_202) $(am__append_203) \
+	$(am__append_204) uninorm/decompose-internal.c \
+	$(am__append_205) $(am__append_206) $(am__append_207) \
+	$(am__append_208) unistd.c dup-safer.c fd-safer.c pipe-safer.c \
 	unistdio/u-printf-args.c unistdio/u16-printf-parse.c \
-	$(am__append_210) $(am__append_211) \
-	unistdio/u32-printf-parse.c $(am__append_212) \
-	$(am__append_213) unistdio/u8-printf-parse.c $(am__append_214) \
-	$(am__append_215) unistdio/ulc-printf-parse.c \
-	$(am__append_216) $(am__append_217) $(am__append_218) \
-	$(am__append_219) $(am__append_220) $(am__append_221) \
-	$(am__append_222) $(am__append_223) $(am__append_224) \
-	$(am__append_225) $(am__append_226) $(am__append_227) \
-	$(am__append_228) $(am__append_229) $(am__append_230) \
-	$(am__append_231) $(am__append_232) $(am__append_233) \
-	$(am__append_234) $(am__append_235) $(am__append_236) \
-	$(am__append_237) $(am__append_238) $(am__append_239) \
-	$(am__append_240) $(am__append_241) $(am__append_242) \
-	$(am__append_243) $(am__append_244) $(am__append_245) \
-	$(am__append_246) $(am__append_247) $(am__append_248) \
-	$(am__append_249) $(am__append_250) $(am__append_251) \
-	uniwbrk/wbrktable.c $(am__append_252) $(am__append_253) \
-	$(am__append_254) $(am__append_255) $(am__append_256) \
-	$(am__append_257) $(am__append_258) userspec.c \
-	$(am__append_259) utimens.c wprintf-parse.c vasnwprintf.c \
-	asnwprintf.c vaszprintf.c aszprintf.c vma-iter.c vsnzprintf.c \
-	wait-process.h wait-process.c $(am__append_260) \
-	$(am__append_261) $(am__append_262) $(am__append_263) \
-	$(am__append_264) wctype-h.c $(am__append_265) \
-	$(am__append_266) $(am__append_267) $(am__append_268) \
-	$(am__append_269) $(am__append_270) $(am__append_271) \
-	$(am__append_272) $(am__append_273) $(am__append_274) \
-	$(am__append_275) $(am__append_276) $(am__append_277) \
-	$(am__append_278) xmalloc.c xalloc-die.c xconcat-filename.c \
+	$(am__append_209) $(am__append_210) \
+	unistdio/u32-printf-parse.c $(am__append_211) \
+	$(am__append_212) unistdio/u8-printf-parse.c $(am__append_213) \
+	$(am__append_214) unistdio/ulc-printf-parse.c \
+	$(am__append_215) $(am__append_216) $(am__append_217) \
+	$(am__append_218) $(am__append_219) $(am__append_220) \
+	$(am__append_221) $(am__append_222) $(am__append_223) \
+	$(am__append_224) $(am__append_225) $(am__append_226) \
+	$(am__append_227) $(am__append_228) $(am__append_229) \
+	$(am__append_230) $(am__append_231) $(am__append_232) \
+	$(am__append_233) $(am__append_234) $(am__append_235) \
+	$(am__append_236) $(am__append_237) $(am__append_238) \
+	$(am__append_239) $(am__append_240) $(am__append_241) \
+	$(am__append_242) $(am__append_243) $(am__append_244) \
+	$(am__append_245) $(am__append_246) $(am__append_247) \
+	$(am__append_248) $(am__append_249) $(am__append_250) \
+	uniwbrk/wbrktable.c $(am__append_251) $(am__append_252) \
+	$(am__append_253) $(am__append_254) $(am__append_255) \
+	$(am__append_256) $(am__append_257) $(am__append_258) \
+	utimens.c wprintf-parse.c vasnwprintf.c asnwprintf.c \
+	vaszprintf.c aszprintf.c vma-iter.c vsnzprintf.c \
+	wait-process.h wait-process.c $(am__append_259) \
+	$(am__append_260) $(am__append_261) $(am__append_262) \
+	$(am__append_263) wctype-h.c $(am__append_264) \
+	$(am__append_265) $(am__append_266) $(am__append_267) \
+	$(am__append_268) $(am__append_269) $(am__append_270) \
+	$(am__append_271) $(am__append_272) $(am__append_273) \
+	$(am__append_274) $(am__append_275) $(am__append_276) \
+	$(am__append_277) xmalloc.c xalloc-die.c xconcat-filename.c \
 	gl_xlist.h gl_xlist.c xmalloca.c xreadlink.c xsetenv.h \
 	xsetenv.c xsize.h xsize.c xstring-desc.c xstrtol.c xstrtoul.c \
 	xstrtoumax.c xvasprintf.h xvasprintf.c xasprintf.c
@@ -4495,9 +4527,9 @@ EXTRA_libgnu_a_SOURCES = alloca.c ftoastr.c ftoastr.c strftime.c \
 	ftoastr.c findprog.c fma.c fma.c fopen.c fopen.c strftime.c \
 	frexp.c frexp.c frexp.c frexpl.c frexp.c frexpl.c stat-w32.c \
 	at-func.c fts-cycle.c gen-uni-tables.c \
-	malloc/dynarray-skeleton.c integer_length_l.c anytostr.c \
-	isnan.c isnand.c isnan.c isnand.c isnan.c isnanf.c isnan.c \
-	isnanl.c isnan.c isnanl.c ldexp.c ftoastr.c malloc.c malloc.c \
+	malloc/dynarray-skeleton.c integer_length_l.c isnan.c isnand.c \
+	isnan.c isnand.c isnan.c isnanf.c isnan.c isnanl.c isnan.c \
+	isnanl.c ldexp.c ftoastr.c malloc.c malloc.c \
 	lc-charset-dispatch.c mbtowc-lock.c lc-charset-dispatch.c \
 	mbtowc-lock.c memmem.c memmem.c mktime.c mktime.c nstrftime.c \
 	strftime.c strftime.c printf-frexp.c regcomp.c \
@@ -4971,7 +5003,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/alloca.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/allocator.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/alphasort.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/anytostr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arcfour.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/arctwo.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/areadlink.Po@am__quote@ # am--include-marker
@@ -5164,15 +5195,12 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iconv.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iconv_close.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/iconv_open.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/idcache.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/imaxtostr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/inet_ntop.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/inet_pton.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ino-map.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/integer_length.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/integer_length_l.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/integer_length_ll.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/inttostr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/isfinite.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/isinf.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/isnan.Po@am__quote@ # am--include-marker
@@ -5202,7 +5230,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-table.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename-unsafe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localename.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/login_tty.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lstat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloca.Po@am__quote@ # am--include-marker
@@ -5246,7 +5273,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nproc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/nstrftime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/obstack.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/offtostr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open-safer.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/openat-die.Po@am__quote@ # am--include-marker
@@ -5262,7 +5288,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pipe2-safer.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/pipe2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/poll.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/posixver.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/printf-args.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/printf-frexp.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/printf-frexpl.Po@am__quote@ # am--include-marker
@@ -5389,11 +5414,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tsearch.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tzset.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/u64.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/uinttostr.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/umaxtostr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unistd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/unsetenv.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/userspec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/utimens.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/vasnprintf.Po@am__quote@ # am--include-marker
@@ -5852,7 +5874,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/alloca.Po
 	-rm -f ./$(DEPDIR)/allocator.Po
 	-rm -f ./$(DEPDIR)/alphasort.Po
-	-rm -f ./$(DEPDIR)/anytostr.Po
 	-rm -f ./$(DEPDIR)/arcfour.Po
 	-rm -f ./$(DEPDIR)/arctwo.Po
 	-rm -f ./$(DEPDIR)/areadlink.Po
@@ -6045,15 +6066,12 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/iconv.Po
 	-rm -f ./$(DEPDIR)/iconv_close.Po
 	-rm -f ./$(DEPDIR)/iconv_open.Po
-	-rm -f ./$(DEPDIR)/idcache.Po
-	-rm -f ./$(DEPDIR)/imaxtostr.Po
 	-rm -f ./$(DEPDIR)/inet_ntop.Po
 	-rm -f ./$(DEPDIR)/inet_pton.Po
 	-rm -f ./$(DEPDIR)/ino-map.Po
 	-rm -f ./$(DEPDIR)/integer_length.Po
 	-rm -f ./$(DEPDIR)/integer_length_l.Po
 	-rm -f ./$(DEPDIR)/integer_length_ll.Po
-	-rm -f ./$(DEPDIR)/inttostr.Po
 	-rm -f ./$(DEPDIR)/isfinite.Po
 	-rm -f ./$(DEPDIR)/isinf.Po
 	-rm -f ./$(DEPDIR)/isnan.Po
@@ -6083,7 +6101,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/localename-table.Po
 	-rm -f ./$(DEPDIR)/localename-unsafe.Po
 	-rm -f ./$(DEPDIR)/localename.Po
-	-rm -f ./$(DEPDIR)/login_tty.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -6127,7 +6144,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/nproc.Po
 	-rm -f ./$(DEPDIR)/nstrftime.Po
 	-rm -f ./$(DEPDIR)/obstack.Po
-	-rm -f ./$(DEPDIR)/offtostr.Po
 	-rm -f ./$(DEPDIR)/open-safer.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/openat-die.Po
@@ -6143,7 +6159,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/pipe2-safer.Po
 	-rm -f ./$(DEPDIR)/pipe2.Po
 	-rm -f ./$(DEPDIR)/poll.Po
-	-rm -f ./$(DEPDIR)/posixver.Po
 	-rm -f ./$(DEPDIR)/printf-args.Po
 	-rm -f ./$(DEPDIR)/printf-frexp.Po
 	-rm -f ./$(DEPDIR)/printf-frexpl.Po
@@ -6270,11 +6285,8 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/tsearch.Po
 	-rm -f ./$(DEPDIR)/tzset.Po
 	-rm -f ./$(DEPDIR)/u64.Po
-	-rm -f ./$(DEPDIR)/uinttostr.Po
-	-rm -f ./$(DEPDIR)/umaxtostr.Po
 	-rm -f ./$(DEPDIR)/unistd.Po
 	-rm -f ./$(DEPDIR)/unsetenv.Po
-	-rm -f ./$(DEPDIR)/userspec.Po
 	-rm -f ./$(DEPDIR)/utime.Po
 	-rm -f ./$(DEPDIR)/utimens.Po
 	-rm -f ./$(DEPDIR)/vasnprintf.Po
@@ -6496,7 +6508,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/alloca.Po
 	-rm -f ./$(DEPDIR)/allocator.Po
 	-rm -f ./$(DEPDIR)/alphasort.Po
-	-rm -f ./$(DEPDIR)/anytostr.Po
 	-rm -f ./$(DEPDIR)/arcfour.Po
 	-rm -f ./$(DEPDIR)/arctwo.Po
 	-rm -f ./$(DEPDIR)/areadlink.Po
@@ -6689,15 +6700,12 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/iconv.Po
 	-rm -f ./$(DEPDIR)/iconv_close.Po
 	-rm -f ./$(DEPDIR)/iconv_open.Po
-	-rm -f ./$(DEPDIR)/idcache.Po
-	-rm -f ./$(DEPDIR)/imaxtostr.Po
 	-rm -f ./$(DEPDIR)/inet_ntop.Po
 	-rm -f ./$(DEPDIR)/inet_pton.Po
 	-rm -f ./$(DEPDIR)/ino-map.Po
 	-rm -f ./$(DEPDIR)/integer_length.Po
 	-rm -f ./$(DEPDIR)/integer_length_l.Po
 	-rm -f ./$(DEPDIR)/integer_length_ll.Po
-	-rm -f ./$(DEPDIR)/inttostr.Po
 	-rm -f ./$(DEPDIR)/isfinite.Po
 	-rm -f ./$(DEPDIR)/isinf.Po
 	-rm -f ./$(DEPDIR)/isnan.Po
@@ -6727,7 +6735,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/localename-table.Po
 	-rm -f ./$(DEPDIR)/localename-unsafe.Po
 	-rm -f ./$(DEPDIR)/localename.Po
-	-rm -f ./$(DEPDIR)/login_tty.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
 	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
@@ -6771,7 +6778,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/nproc.Po
 	-rm -f ./$(DEPDIR)/nstrftime.Po
 	-rm -f ./$(DEPDIR)/obstack.Po
-	-rm -f ./$(DEPDIR)/offtostr.Po
 	-rm -f ./$(DEPDIR)/open-safer.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/openat-die.Po
@@ -6787,7 +6793,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/pipe2-safer.Po
 	-rm -f ./$(DEPDIR)/pipe2.Po
 	-rm -f ./$(DEPDIR)/poll.Po
-	-rm -f ./$(DEPDIR)/posixver.Po
 	-rm -f ./$(DEPDIR)/printf-args.Po
 	-rm -f ./$(DEPDIR)/printf-frexp.Po
 	-rm -f ./$(DEPDIR)/printf-frexpl.Po
@@ -6914,11 +6919,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/tsearch.Po
 	-rm -f ./$(DEPDIR)/tzset.Po
 	-rm -f ./$(DEPDIR)/u64.Po
-	-rm -f ./$(DEPDIR)/uinttostr.Po
-	-rm -f ./$(DEPDIR)/umaxtostr.Po
 	-rm -f ./$(DEPDIR)/unistd.Po
 	-rm -f ./$(DEPDIR)/unsetenv.Po
-	-rm -f ./$(DEPDIR)/userspec.Po
 	-rm -f ./$(DEPDIR)/utime.Po
 	-rm -f ./$(DEPDIR)/utimens.Po
 	-rm -f ./$(DEPDIR)/vasnprintf.Po
@@ -8901,26 +8903,6 @@ strings.h: strings.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE
 	      $(srcdir)/strings.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 
-# We need the following in order to create <sys/ioctl.h> when the system
-# does not have a complete one.
-sys/ioctl.h: sys_ioctl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
-	$(AM_V_GEN)$(MKDIR_P) 'sys'
-	$(AM_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's|@''HAVE_SYS_IOCTL_H''@|$(HAVE_SYS_IOCTL_H)|g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_SYS_IOCTL_H''@|$(NEXT_SYS_IOCTL_H)|g' \
-	      -e 's/@''GNULIB_IOCTL''@/$(GL_GNULIB_IOCTL)/g' \
-	      -e 's|@''SYS_IOCTL_H_HAVE_WINSOCK2_H''@|$(SYS_IOCTL_H_HAVE_WINSOCK2_H)|g' \
-	      -e 's|@''SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS''@|$(SYS_IOCTL_H_HAVE_WINSOCK2_H_AND_USE_SOCKETS)|g' \
-	      -e 's|@''REPLACE_IOCTL''@|$(REPLACE_IOCTL)|g' \
-	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
-	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
-	      $(srcdir)/sys_ioctl.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-
 # We need the following in order to create <sys/random.h> when the system
 # doesn't have one.
 sys/random.h: sys_random.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
@@ -9712,27 +9694,6 @@ utime.h: utime.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) 
 	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
 	      $(srcdir)/utime.in.h > $@-t
-	$(AM_V_at)mv $@-t $@
-
-# We need the following in order to create <utmp.h> when the system
-# doesn't have one that works with the given compiler.
-utmp.h: utmp.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H)
-	$(gl_V_at)$(SED_HEADER_STDOUT) \
-	      -e 's|@''GUARD_PREFIX''@|GL|g' \
-	      -e 's/@''HAVE_UTMP_H''@/$(HAVE_UTMP_H)/g' \
-	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
-	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
-	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
-	      -e 's|@''NEXT_UTMP_H''@|$(NEXT_UTMP_H)|g' \
-	      -e 's|@''HAVE_UTIL_H''@|$(HAVE_UTIL_H)|g' \
-	      -e 's|@''HAVE_LIBUTIL_H''@|$(HAVE_LIBUTIL_H)|g' \
-	      -e 's|@''HAVE_TERMIOS_H''@|$(HAVE_TERMIOS_H)|g' \
-	      -e 's/@''GNULIB_LOGIN_TTY''@/$(GL_GNULIB_LOGIN_TTY)/g' \
-	      -e 's|@''HAVE_LOGIN_TTY''@|$(HAVE_LOGIN_TTY)|g' \
-	      -e 's|@''REPLACE_LOGIN_TTY''@|$(REPLACE_LOGIN_TTY)|g' \
-	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
-	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
-	      $(srcdir)/utmp.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 
 # We need the following in order to create <wchar.h> when the system

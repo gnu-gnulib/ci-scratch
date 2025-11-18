@@ -1657,9 +1657,9 @@ __strftime_internal (STREAM_OR_CHAR_T *s, STRFTIME_ARG (size_t maxsize)
                           {
                             /* The last word has length >= 3.  */
                             bool found_letter = false;
-                            for (const char *p = space + 1; *p != '\0'; p++)
-                              if ((*p >= 'A' && *p <= 'Z')
-                                  || (*p >= 'a' && *p <= 'z'))
+                            for (const char *wp = space + 1; *wp != '\0'; wp++)
+                              if ((*wp >= 'A' && *wp <= 'Z')
+                                  || (*wp >= 'a' && *wp <= 'z'))
                                 {
                                   found_letter = true;
                                   break;
