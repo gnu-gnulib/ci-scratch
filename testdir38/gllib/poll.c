@@ -466,7 +466,6 @@ poll (struct pollfd *pfd, nfds_t nfd, int timeout)
   BOOL poll_again;
   MSG msg;
   int rc = 0;
-  nfds_t i;
 
   if (nfd > INT_MAX || timeout < -1)
     {
@@ -485,7 +484,7 @@ restart:
   FD_ZERO (&xfds);
 
   /* Classify socket handles and create fd sets. */
-  for (int i = 0; i < nfd; i++)
+  for (nfds_t i = 0; i < nfd; i++)
     {
       int sought = pfd[i].events;
       pfd[i].revents = 0;
@@ -576,7 +575,7 @@ restart:
   /* Place a sentinel at the end of the array.  */
   handle_array[nhandles] = NULL;
   nhandles = 1;
-  for (int i = 0; i < nfd; i++)
+  for (nfds_t i = 0; i < nfd; i++)
     {
       int happened;
 

@@ -276,7 +276,7 @@ rpl_select (int nfds, fd_set *rfds, fd_set *wfds, fd_set *xfds,
   unsigned char anyfds_in[FD_SETSIZE / CHAR_BIT];
   DWORD ret, wait_timeout, nhandles, nsock, nbuffer;
   MSG msg;
-  int i, fd, rc;
+  int fd, rc;
   clock_t tend;
 
   if (nfds < 0 || nfds > FD_SETSIZE)
