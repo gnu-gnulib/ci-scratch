@@ -229,7 +229,7 @@ _quicksort (void *const pbase, size_t total_elems, size_t size,
 
     /* Insertion sort, running from left-hand-side up to right-hand-side.  */
 
-    run_ptr = base_ptr + size;
+    char *run_ptr = base_ptr + size;
     while ((run_ptr += size) <= end_ptr)
       {
 	tmp_ptr = run_ptr - size;
