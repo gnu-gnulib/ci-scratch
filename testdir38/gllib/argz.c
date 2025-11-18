@@ -252,6 +252,7 @@ argz_create (char *const argv[], char **argz, size_t *len)
 {
   size_t tlen = 0;
   char *const *ap;
+  char *p;
 
   for (int argc = 0; argv[argc] != NULL; ++argc)
     tlen += strlen (argv[argc]) + 1;
@@ -264,7 +265,7 @@ argz_create (char *const argv[], char **argz, size_t *len)
       if (*argz == NULL)
         return ENOMEM;
 
-      for (char *p = *argz, ap = argv; *ap; ++ap, ++p)
+      for (p = *argz, ap = argv; *ap; ++ap, ++p)
         p = stpcpy (p, *ap);
     }
   *len = tlen;
