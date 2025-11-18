@@ -81,7 +81,8 @@ done
 # testdir35: coreutils-9.8
 # testdir36: posix_spawn_file_actions_addclose
 # testdir37: boot-time, readutmp
-cd testdir37 || exit 1
+# testdir38: 200 modules
+cd testdir38 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
@@ -93,7 +94,7 @@ mkdir build
 cd build
 
 # Configure.
-CPPFLAGS="$CPPFLAGS -DCONTINUE_AFTER_ASSERT" \
+CPPFLAGS="$CPPFLAGS -DCONTINUE_AFTER_ASSERT -Wshadow=local" \
 FORCE_UNSAFE_CONFIGURE=1 ../configure --config-cache --with-included-libunistring $configure_options > log1 2>&1; rc=$?; cat log1; test $rc = 0 || exit 1
 
 # Build.
