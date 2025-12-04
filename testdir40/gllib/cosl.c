@@ -102,7 +102,7 @@ cosl (long double x)
   /* argument reduction needed */
   else
     {
-      long double y[2],
+      long double y[2];
       int n = ieee754_rem_pio2l (x, y);
       switch (n & 3)
         {

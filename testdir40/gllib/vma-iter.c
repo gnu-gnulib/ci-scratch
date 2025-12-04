@@ -1030,7 +1030,7 @@ vma_iterate (vma_iterate_callback_fn callback, void *data)
       /* Read the contents of /proc/<pid>/map in a single system call.
          This guarantees a consistent result (no duplicated or omitted
          entries).  */
-     retry:
+     retry: ;
       ssize_t nbytes;
       do
         nbytes = read (fd, auxmap, memneed);
