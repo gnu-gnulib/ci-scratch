@@ -79,7 +79,7 @@ rpl_getgroups (int n, gid_t *group)
       if (sizeof *group == sizeof (GETGROUPS_T))
         return getgroups (n, (GETGROUPS_T *) group);
 
-      if (SIZE_MAX / sizeof *gbuf <= n)
+      if (SIZE_MAX / sizeof (GETGROUPS_T) <= n)
         {
           errno = ENOMEM;
           return -1;

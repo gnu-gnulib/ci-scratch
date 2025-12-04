@@ -849,7 +849,7 @@ acexec_trans (kwset_t kwset, char const *text, idx_t len,
         }
     }
 
- match:
+ match: ;
   struct trie const *accept = trie;
   while (accept->accepting < 0)
     accept = accept->fail;
