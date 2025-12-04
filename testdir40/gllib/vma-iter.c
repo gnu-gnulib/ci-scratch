@@ -812,9 +812,9 @@ vma_iterate_bsd (vma_iterate_callback_fn callback, void *data)
         }
       if (rlen == 0)
         break;
+      char *p_end = mem + rlen;
       {
         char *p = mem;
-        char *p_end = mem + rlen;
         while (p < p_end)
           {
             struct kinfo_vmentry *kve = (struct kinfo_vmentry *) p;

@@ -2423,6 +2423,15 @@ EXTRA_DIST += test-fabsl.c test-fabs.h signature.h minus-zero.h macros.h randoml
 
 ## end   gnulib module fabsl-tests
 
+## begin gnulib module faccessat-tests
+
+TESTS += test-faccessat
+noinst_PROGRAMS += test-faccessat
+test_faccessat_LDADD = $(LDADD) $(EUIDACCESS_LIBGEN) @LIBINTL@
+EXTRA_DIST += test-faccessat.c signature.h macros.h
+
+## end   gnulib module faccessat-tests
+
 ## begin gnulib module fbufmode-tests
 
 TESTS += test-fbufmode
@@ -2449,6 +2458,15 @@ test_fchmodat_LDADD = $(LDADD) @LIBINTL@
 EXTRA_DIST += test-fchmodat.c signature.h macros.h
 
 ## end   gnulib module fchmodat-tests
+
+## begin gnulib module fchownat-tests
+
+TESTS += test-fchownat
+noinst_PROGRAMS += test-fchownat
+test_fchownat_LDADD = $(LDADD) $(NANOSLEEP_LIB) @LIBINTL@
+EXTRA_DIST += nap.h test-chown.h test-lchown.h test-fchownat.c signature.h macros.h
+
+## end   gnulib module fchownat-tests
 
 ## begin gnulib module fclose-tests
 
@@ -2957,6 +2975,15 @@ noinst_PROGRAMS += test-fopen
 EXTRA_DIST += test-fopen.h test-fopen.c signature.h macros.h
 
 ## end   gnulib module fopen-tests
+
+## begin gnulib module forkpty-tests
+
+TESTS += test-forkpty
+noinst_PROGRAMS += test-forkpty
+test_forkpty_LDADD = $(LDADD) @PTY_LIB@
+EXTRA_DIST += test-forkpty.c signature.h
+
+## end   gnulib module forkpty-tests
 
 ## begin gnulib module fpending-tests
 
@@ -3662,6 +3689,14 @@ V_GPERF_ = $(V_GPERF_@AM_DEFAULT_V@)
 V_GPERF_0 = @echo "  GPERF   " $@;
 
 ## end   gnulib module gperf
+
+## begin gnulib module grantpt-tests
+
+TESTS += test-grantpt
+noinst_PROGRAMS += test-grantpt
+EXTRA_DIST += test-grantpt.c signature.h macros.h
+
+## end   gnulib module grantpt-tests
 
 ## begin gnulib module hamt-tests
 
@@ -4820,6 +4855,15 @@ test_logf_LDADD = $(LDADD) @LOGF_LIBM@
 EXTRA_DIST += test-logf.c test-log.h minus-zero.h signature.h macros.h randomf.c
 
 ## end   gnulib module logf-tests
+
+## begin gnulib module login_tty-tests
+
+TESTS += test-login_tty
+noinst_PROGRAMS += test-login_tty
+test_login_tty_LDADD = $(LDADD) @PTY_LIB@
+EXTRA_DIST += test-login_tty.c
+
+## end   gnulib module login_tty-tests
 
 ## begin gnulib module logl-ieee-tests
 
@@ -6032,6 +6076,14 @@ noinst_PROGRAMS += test-posix_memalign
 EXTRA_DIST += test-posix_memalign.c macros.h
 
 ## end   gnulib module posix_memalign-tests
+
+## begin gnulib module posix_openpt-tests
+
+TESTS += test-posix_openpt
+noinst_PROGRAMS += test-posix_openpt
+EXTRA_DIST += test-posix_openpt.c signature.h macros.h
+
+## end   gnulib module posix_openpt-tests
 
 ## begin gnulib module posix_spawn-tests
 
@@ -13140,6 +13192,15 @@ TESTS_ENVIRONMENT += abs_aux_dir='$(abs_aux_dir)'
 EXTRA_DIST += test-update-copyright.sh
 
 ## end   gnulib module update-copyright-tests
+
+## begin gnulib module userspec-tests
+
+TESTS += test-userspec
+noinst_PROGRAMS += test-userspec
+test_userspec_LDADD = $(LDADD) @LIBINTL@
+EXTRA_DIST += test-userspec.c
+
+## end   gnulib module userspec-tests
 
 ## begin gnulib module usleep-tests
 

@@ -173,10 +173,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
 	$(top_srcdir)/glm4/extern-inline.m4 $(top_srcdir)/glm4/fabs.m4 \
 	$(top_srcdir)/glm4/fabsf.m4 $(top_srcdir)/glm4/fabsl.m4 \
+	$(top_srcdir)/glm4/faccessat.m4 \
 	$(top_srcdir)/glm4/fatal-signal.m4 \
 	$(top_srcdir)/glm4/fbufmode.m4 $(top_srcdir)/glm4/fchdir.m4 \
-	$(top_srcdir)/glm4/fchmodat.m4 $(top_srcdir)/glm4/fclose.m4 \
-	$(top_srcdir)/glm4/fcntl-o.m4 \
+	$(top_srcdir)/glm4/fchmodat.m4 $(top_srcdir)/glm4/fchownat.m4 \
+	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl-safer.m4 $(top_srcdir)/glm4/fcntl.m4 \
 	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdatasync.m4 \
 	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fdopendir.m4 \
@@ -267,6 +268,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/glob_h.m4 $(top_srcdir)/glm4/gnu-make.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 $(top_srcdir)/glm4/gocomp.m4 \
+	$(top_srcdir)/glm4/grantpt.m4 \
 	$(top_srcdir)/glm4/group-member.m4 \
 	$(top_srcdir)/glm4/hasmntopt.m4 \
 	$(top_srcdir)/glm4/host-cpu-c-abi.m4 \
@@ -278,11 +280,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/i-ring.m4 $(top_srcdir)/glm4/iconv.m4 \
 	$(top_srcdir)/glm4/iconv_h.m4 \
 	$(top_srcdir)/glm4/iconv_open-utf.m4 \
-	$(top_srcdir)/glm4/iconv_open.m4 $(top_srcdir)/glm4/idpriv.m4 \
-	$(top_srcdir)/glm4/ieee754-h.m4 $(top_srcdir)/glm4/ilogb.m4 \
-	$(top_srcdir)/glm4/ilogbf.m4 $(top_srcdir)/glm4/ilogbl.m4 \
-	$(top_srcdir)/glm4/imaxabs.m4 $(top_srcdir)/glm4/imaxdiv.m4 \
-	$(top_srcdir)/glm4/immutable.m4 \
+	$(top_srcdir)/glm4/iconv_open.m4 $(top_srcdir)/glm4/idcache.m4 \
+	$(top_srcdir)/glm4/idpriv.m4 $(top_srcdir)/glm4/ieee754-h.m4 \
+	$(top_srcdir)/glm4/ilogb.m4 $(top_srcdir)/glm4/ilogbf.m4 \
+	$(top_srcdir)/glm4/ilogbl.m4 $(top_srcdir)/glm4/imaxabs.m4 \
+	$(top_srcdir)/glm4/imaxdiv.m4 $(top_srcdir)/glm4/immutable.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/inet_ntop.m4 \
 	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inline.m4 \
@@ -349,11 +351,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/log2f.m4 $(top_srcdir)/glm4/log2l.m4 \
 	$(top_srcdir)/glm4/logb.m4 $(top_srcdir)/glm4/logbf.m4 \
 	$(top_srcdir)/glm4/logbl.m4 $(top_srcdir)/glm4/logf-ieee.m4 \
-	$(top_srcdir)/glm4/logf.m4 $(top_srcdir)/glm4/logl.m4 \
-	$(top_srcdir)/glm4/logp1.m4 $(top_srcdir)/glm4/logp1f.m4 \
-	$(top_srcdir)/glm4/logp1l.m4 $(top_srcdir)/glm4/longlong.m4 \
-	$(top_srcdir)/glm4/lseek.m4 $(top_srcdir)/glm4/lstat.m4 \
-	$(top_srcdir)/glm4/malloc-align.m4 \
+	$(top_srcdir)/glm4/logf.m4 $(top_srcdir)/glm4/login_tty.m4 \
+	$(top_srcdir)/glm4/logl.m4 $(top_srcdir)/glm4/logp1.m4 \
+	$(top_srcdir)/glm4/logp1f.m4 $(top_srcdir)/glm4/logp1l.m4 \
+	$(top_srcdir)/glm4/longlong.m4 $(top_srcdir)/glm4/lseek.m4 \
+	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc-align.m4 \
 	$(top_srcdir)/glm4/malloc.m4 $(top_srcdir)/glm4/malloc_h.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
 	$(top_srcdir)/glm4/mathfunc.m4 $(top_srcdir)/glm4/mbchar.m4 \
@@ -420,6 +422,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/poll_h.m4 $(top_srcdir)/glm4/popen.m4 \
 	$(top_srcdir)/glm4/posix-shell.m4 \
 	$(top_srcdir)/glm4/posix_memalign.m4 \
+	$(top_srcdir)/glm4/posix_openpt.m4 \
 	$(top_srcdir)/glm4/posix_spawn.m4 \
 	$(top_srcdir)/glm4/posix_spawn_faction_addchdir.m4 \
 	$(top_srcdir)/glm4/posix_spawn_faction_addfchdir.m4 \
@@ -619,11 +622,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/unlinkat.m4 $(top_srcdir)/glm4/unlinkdir.m4 \
 	$(top_srcdir)/glm4/unlocked-io.m4 \
 	$(top_srcdir)/glm4/unlockpt.m4 $(top_srcdir)/glm4/uptime.m4 \
-	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/utime.m4 \
-	$(top_srcdir)/glm4/utime_h.m4 $(top_srcdir)/glm4/utimecmp.m4 \
-	$(top_srcdir)/glm4/utimens.m4 $(top_srcdir)/glm4/utimensat.m4 \
-	$(top_srcdir)/glm4/utimes.m4 $(top_srcdir)/glm4/utmp_h.m4 \
-	$(top_srcdir)/glm4/va-args.m4 \
+	$(top_srcdir)/glm4/userspec.m4 $(top_srcdir)/glm4/usleep.m4 \
+	$(top_srcdir)/glm4/utime.m4 $(top_srcdir)/glm4/utime_h.m4 \
+	$(top_srcdir)/glm4/utimecmp.m4 $(top_srcdir)/glm4/utimens.m4 \
+	$(top_srcdir)/glm4/utimensat.m4 $(top_srcdir)/glm4/utimes.m4 \
+	$(top_srcdir)/glm4/utmp_h.m4 $(top_srcdir)/glm4/va-args.m4 \
 	$(top_srcdir)/glm4/valgrind-helper.m4 \
 	$(top_srcdir)/glm4/valgrind-tests.m4 \
 	$(top_srcdir)/glm4/vasnprintf-gnu.m4 \
@@ -3388,19 +3391,20 @@ EXTRA_DIST = 00gnulib.m4 _Exit.m4 __inline.m4 abort-debug.m4 \
 	explicit_bzero.m4 expm1-ieee.m4 expm1.m4 expm1f-ieee.m4 \
 	expm1f.m4 expm1l.m4 exponentd.m4 exponentf.m4 exponentl.m4 \
 	extensions-aix.m4 extensions.m4 extern-inline.m4 fabs.m4 \
-	fabsf.m4 fabsl.m4 fatal-signal.m4 fbufmode.m4 fchdir.m4 \
-	fchmodat.m4 fclose.m4 fcntl-o.m4 fcntl-safer.m4 fcntl.m4 \
-	fcntl_h.m4 fdatasync.m4 fdopen.m4 fdopendir.m4 fegetround.m4 \
-	fenv-environment.m4 fenv-exceptions-state-c23.m4 \
-	fenv-exceptions-state.m4 fenv-exceptions-tracking-c23.m4 \
-	fenv-exceptions-tracking.m4 fenv-exceptions-trapping.m4 \
-	fenv-exceptions.m4 fenv-rounding.m4 fenv_h.m4 fflush.m4 ffs.m4 \
-	ffsl.m4 ffsll.m4 fileblocks.m4 filemode.m4 filenamecat.m4 \
-	findprog-in.m4 findprog.m4 flexmember.m4 float_h.m4 flock.m4 \
-	floor-ieee.m4 floor.m4 floorf-ieee.m4 floorf.m4 floorl.m4 \
-	fma.m4 fmaf.m4 fmal.m4 fmod-ieee.m4 fmod.m4 fmodf-ieee.m4 \
-	fmodf.m4 fmodl-ieee.m4 fmodl.m4 fnmatch.m4 fnmatch_h.m4 \
-	fopen.m4 fpe-trapping.m4 fpending.m4 fpieee.m4 fprintf-gnu.m4 \
+	fabsf.m4 fabsl.m4 faccessat.m4 fatal-signal.m4 fbufmode.m4 \
+	fchdir.m4 fchmodat.m4 fchownat.m4 fclose.m4 fcntl-o.m4 \
+	fcntl-safer.m4 fcntl.m4 fcntl_h.m4 fdatasync.m4 fdopen.m4 \
+	fdopendir.m4 fegetround.m4 fenv-environment.m4 \
+	fenv-exceptions-state-c23.m4 fenv-exceptions-state.m4 \
+	fenv-exceptions-tracking-c23.m4 fenv-exceptions-tracking.m4 \
+	fenv-exceptions-trapping.m4 fenv-exceptions.m4 \
+	fenv-rounding.m4 fenv_h.m4 fflush.m4 ffs.m4 ffsl.m4 ffsll.m4 \
+	fileblocks.m4 filemode.m4 filenamecat.m4 findprog-in.m4 \
+	findprog.m4 flexmember.m4 float_h.m4 flock.m4 floor-ieee.m4 \
+	floor.m4 floorf-ieee.m4 floorf.m4 floorl.m4 fma.m4 fmaf.m4 \
+	fmal.m4 fmod-ieee.m4 fmod.m4 fmodf-ieee.m4 fmodf.m4 \
+	fmodl-ieee.m4 fmodl.m4 fnmatch.m4 fnmatch_h.m4 fopen.m4 \
+	fpe-trapping.m4 fpending.m4 fpieee.m4 fprintf-gnu.m4 \
 	fprintf-posix.m4 fpurge.m4 freadable.m4 freadahead.m4 \
 	freading.m4 freadptr.m4 freadseek.m4 free.m4 freelocale.m4 \
 	freopen.m4 frexp.m4 frexpf.m4 frexpl.m4 fseek.m4 fseeko.m4 \
@@ -3420,43 +3424,44 @@ EXTRA_DIST = 00gnulib.m4 _Exit.m4 __inline.m4 abort-debug.m4 \
 	gettext.m4 gettext_h.m4 gettime.m4 gettimeofday.m4 \
 	getugroups.m4 getumask.m4 getusershell.m4 gl-openssl.m4 \
 	glob.m4 glob_h.m4 gnu-make.m4 gnulib-common.m4 gnulib-i18n.m4 \
-	gocomp.m4 group-member.m4 hasmntopt.m4 host-cpu-c-abi.m4 \
-	host-os.m4 hostent.m4 htonl.m4 human.m4 hypot-ieee.m4 hypot.m4 \
-	hypotf-ieee.m4 hypotf.m4 hypotl-ieee.m4 hypotl.m4 i-ring.m4 \
-	iconv.m4 iconv_h.m4 iconv_open-utf.m4 iconv_open.m4 idpriv.m4 \
-	ieee754-h.m4 ilogb.m4 ilogbf.m4 ilogbl.m4 imaxabs.m4 \
-	imaxdiv.m4 immutable.m4 include_next.m4 inet_ntop.m4 \
-	inet_pton.m4 init-package-version.m4 inline.m4 \
-	intl-thread-locale.m4 intlmacosx.m4 intmax_t.m4 inttostr.m4 \
-	inttypes.m4 inttypes_h.m4 ioctl.m4 isalnum_l.m4 isalpha_l.m4 \
-	isapipe.m4 isatty.m4 isblank.m4 isblank_l.m4 iscntrl_l.m4 \
-	isdigit_l.m4 isfinite.m4 isgraph_l.m4 isinf.m4 islower_l.m4 \
-	isnan.m4 isnand.m4 isnanf.m4 isnanl.m4 isprint_l.m4 \
-	ispunct_l.m4 isspace_l.m4 isupper_l.m4 iswblank.m4 iswctype.m4 \
-	iswdigit.m4 iswpunct.m4 iswxdigit.m4 isxdigit_l.m4 javacomp.m4 \
-	javaexec.m4 jm-winsz1.m4 jm-winsz2.m4 langinfo_h.m4 \
-	largefile.m4 lchmod.m4 lchown.m4 lcmessage.m4 ld-output-def.m4 \
-	ld-version-script.m4 ldd.m4 ldexp.m4 ldexpf.m4 ldexpl.m4 \
-	lib-ld.m4 lib-link.m4 lib-prefix.m4 libdl.m4 libgcrypt.m4 \
-	libgmp.m4 libsigsegv.m4 libtextstyle-optional.m4 \
-	libtextstyle.m4 libunistring-base.m4 libunistring-optional.m4 \
-	libunistring.m4 limits-h.m4 link-follow.m4 link.m4 linkat.m4 \
-	localcharset.m4 locale-ar.m4 locale-en.m4 locale-fr.m4 \
-	locale-ja.m4 locale-tr.m4 locale-zh.m4 locale_h.m4 \
-	localeconv.m4 localename.m4 localtime.m4 lock.m4 log-ieee.m4 \
-	log.m4 log10-ieee.m4 log10.m4 log10f-ieee.m4 log10f.m4 \
-	log10l.m4 log1p-ieee.m4 log1p.m4 log1pf-ieee.m4 log1pf.m4 \
-	log1pl-ieee.m4 log1pl.m4 log2-ieee.m4 log2.m4 log2f-ieee.m4 \
-	log2f.m4 log2l.m4 logb.m4 logbf.m4 logbl.m4 logf-ieee.m4 \
-	logf.m4 logl.m4 logp1.m4 logp1f.m4 logp1l.m4 longlong.m4 \
-	lseek.m4 lstat.m4 malloc-align.m4 malloc.m4 malloc_h.m4 \
-	malloca.m4 manywarnings-c++.m4 manywarnings.m4 math_h.m4 \
-	mathfunc.m4 mbchar.m4 mbfile.m4 mbiter.m4 mbrlen.m4 \
-	mbrtoc16.m4 mbrtoc32.m4 mbrtowc.m4 mbsinit.m4 mbslen.m4 \
-	mbsnrtowcs.m4 mbsrtowcs.m4 mbstate_t.m4 mbstowcs.m4 \
-	mbswidth.m4 mbtowc.m4 md4.m4 md5.m4 memalign.m4 memcasecmp.m4 \
-	memchr.m4 memcmp.m4 memcoll.m4 memcpy.m4 memmem.m4 memmove.m4 \
-	mempcpy.m4 memrchr.m4 memset.m4 memset_explicit.m4 memxor.m4 \
+	gocomp.m4 grantpt.m4 group-member.m4 hasmntopt.m4 \
+	host-cpu-c-abi.m4 host-os.m4 hostent.m4 htonl.m4 human.m4 \
+	hypot-ieee.m4 hypot.m4 hypotf-ieee.m4 hypotf.m4 hypotl-ieee.m4 \
+	hypotl.m4 i-ring.m4 iconv.m4 iconv_h.m4 iconv_open-utf.m4 \
+	iconv_open.m4 idcache.m4 idpriv.m4 ieee754-h.m4 ilogb.m4 \
+	ilogbf.m4 ilogbl.m4 imaxabs.m4 imaxdiv.m4 immutable.m4 \
+	include_next.m4 inet_ntop.m4 inet_pton.m4 \
+	init-package-version.m4 inline.m4 intl-thread-locale.m4 \
+	intlmacosx.m4 intmax_t.m4 inttostr.m4 inttypes.m4 \
+	inttypes_h.m4 ioctl.m4 isalnum_l.m4 isalpha_l.m4 isapipe.m4 \
+	isatty.m4 isblank.m4 isblank_l.m4 iscntrl_l.m4 isdigit_l.m4 \
+	isfinite.m4 isgraph_l.m4 isinf.m4 islower_l.m4 isnan.m4 \
+	isnand.m4 isnanf.m4 isnanl.m4 isprint_l.m4 ispunct_l.m4 \
+	isspace_l.m4 isupper_l.m4 iswblank.m4 iswctype.m4 iswdigit.m4 \
+	iswpunct.m4 iswxdigit.m4 isxdigit_l.m4 javacomp.m4 javaexec.m4 \
+	jm-winsz1.m4 jm-winsz2.m4 langinfo_h.m4 largefile.m4 lchmod.m4 \
+	lchown.m4 lcmessage.m4 ld-output-def.m4 ld-version-script.m4 \
+	ldd.m4 ldexp.m4 ldexpf.m4 ldexpl.m4 lib-ld.m4 lib-link.m4 \
+	lib-prefix.m4 libdl.m4 libgcrypt.m4 libgmp.m4 libsigsegv.m4 \
+	libtextstyle-optional.m4 libtextstyle.m4 libunistring-base.m4 \
+	libunistring-optional.m4 libunistring.m4 limits-h.m4 \
+	link-follow.m4 link.m4 linkat.m4 localcharset.m4 locale-ar.m4 \
+	locale-en.m4 locale-fr.m4 locale-ja.m4 locale-tr.m4 \
+	locale-zh.m4 locale_h.m4 localeconv.m4 localename.m4 \
+	localtime.m4 lock.m4 log-ieee.m4 log.m4 log10-ieee.m4 log10.m4 \
+	log10f-ieee.m4 log10f.m4 log10l.m4 log1p-ieee.m4 log1p.m4 \
+	log1pf-ieee.m4 log1pf.m4 log1pl-ieee.m4 log1pl.m4 log2-ieee.m4 \
+	log2.m4 log2f-ieee.m4 log2f.m4 log2l.m4 logb.m4 logbf.m4 \
+	logbl.m4 logf-ieee.m4 logf.m4 login_tty.m4 logl.m4 logp1.m4 \
+	logp1f.m4 logp1l.m4 longlong.m4 lseek.m4 lstat.m4 \
+	malloc-align.m4 malloc.m4 malloc_h.m4 malloca.m4 \
+	manywarnings-c++.m4 manywarnings.m4 math_h.m4 mathfunc.m4 \
+	mbchar.m4 mbfile.m4 mbiter.m4 mbrlen.m4 mbrtoc16.m4 \
+	mbrtoc32.m4 mbrtowc.m4 mbsinit.m4 mbslen.m4 mbsnrtowcs.m4 \
+	mbsrtowcs.m4 mbstate_t.m4 mbstowcs.m4 mbswidth.m4 mbtowc.m4 \
+	md4.m4 md5.m4 memalign.m4 memcasecmp.m4 memchr.m4 memcmp.m4 \
+	memcoll.m4 memcpy.m4 memmem.m4 memmove.m4 mempcpy.m4 \
+	memrchr.m4 memset.m4 memset_explicit.m4 memxor.m4 \
 	mgetgroups.m4 minmax.m4 minus-zero.m4 mkancesdirs.m4 \
 	mkdir-p.m4 mkdir.m4 mkdirat.m4 mkdtemp.m4 mkfifo.m4 \
 	mkfifoat.m4 mknod.m4 mkostemp.m4 mkostemps.m4 mkstemp.m4 \
@@ -3474,8 +3479,8 @@ EXTRA_DIST = 00gnulib.m4 _Exit.m4 __inline.m4 abort-debug.m4 \
 	openat2.m4 opendir.m4 pagealign_alloc.m4 parse-datetime.m4 \
 	passfd.m4 pathmax.m4 pclose.m4 perl.m4 perror.m4 physmem.m4 \
 	pid_t.m4 pipe.m4 pipe2.m4 po.m4 poll.m4 poll_h.m4 popen.m4 \
-	posix-shell.m4 posix_memalign.m4 posix_spawn.m4 \
-	posix_spawn_faction_addchdir.m4 \
+	posix-shell.m4 posix_memalign.m4 posix_openpt.m4 \
+	posix_spawn.m4 posix_spawn_faction_addchdir.m4 \
 	posix_spawn_faction_addfchdir.m4 posixcheck.m4 posixtm.m4 \
 	posixver.m4 pow.m4 powf.m4 pread.m4 printf-frexp.m4 \
 	printf-frexpl.m4 printf-gnu.m4 printf-posix.m4 \
@@ -3539,9 +3544,9 @@ EXTRA_DIST = 00gnulib.m4 _Exit.m4 __inline.m4 abort-debug.m4 \
 	uchar_h.m4 uname.m4 ungetc.m4 unicase_h.m4 unicodeio.m4 \
 	unictype_h.m4 unimetadata_h.m4 uninorm_h.m4 unistd-safer.m4 \
 	unistd_h.m4 unitypes_h.m4 unlink-busy.m4 unlink.m4 unlinkat.m4 \
-	unlinkdir.m4 unlocked-io.m4 unlockpt.m4 uptime.m4 usleep.m4 \
-	utime.m4 utime_h.m4 utimecmp.m4 utimens.m4 utimensat.m4 \
-	utimes.m4 utmp_h.m4 va-args.m4 valgrind-helper.m4 \
+	unlinkdir.m4 unlocked-io.m4 unlockpt.m4 uptime.m4 userspec.m4 \
+	usleep.m4 utime.m4 utime_h.m4 utimecmp.m4 utimens.m4 \
+	utimensat.m4 utimes.m4 utmp_h.m4 va-args.m4 valgrind-helper.m4 \
 	valgrind-tests.m4 vararrays.m4 vasnprintf-gnu.m4 \
 	vasnprintf-posix.m4 vasnprintf.m4 vasnwprintf-gnu.m4 \
 	vasnwprintf-posix.m4 vasprintf-gnu.m4 vasprintf-posix.m4 \

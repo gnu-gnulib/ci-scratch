@@ -239,8 +239,9 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-expm1l$(EXEEXT) test-fabs-ieee$(EXEEXT) \
 	test-fabs$(EXEEXT) test-fabsf-ieee$(EXEEXT) \
 	test-fabsf$(EXEEXT) test-fabsl-ieee$(EXEEXT) \
-	test-fabsl$(EXEEXT) test-fbufmode$(EXEEXT) \
-	test-fchdir$(EXEEXT) test-fchmodat$(EXEEXT) \
+	test-fabsl$(EXEEXT) test-faccessat$(EXEEXT) \
+	test-fbufmode$(EXEEXT) test-fchdir$(EXEEXT) \
+	test-fchmodat$(EXEEXT) test-fchownat$(EXEEXT) \
 	test-fclose$(EXEEXT) test-fcntl-h$(EXEEXT) \
 	test-fcntl-safer$(EXEEXT) test-fcntl$(EXEEXT) \
 	test-fdatasync$(EXEEXT) test-fdopen$(EXEEXT) \
@@ -281,10 +282,11 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-fnmatch-w32-4.sh test-fnmatch-w32-5.sh \
 	test-fnmatch-w32-6.sh test-fnmatch-w32-7.sh \
 	test-fnmatch-w32-8.sh test-fopen-gnu$(EXEEXT) \
-	test-fopen-safer$(EXEEXT) test-fopen$(EXEEXT) test-fpending.sh \
-	test-fprintf-gnu.sh test-fprintf-posix.sh \
-	test-fprintf-posix2.sh test-fprintf-posix3.sh \
-	test-fpurge$(EXEEXT) test-fputc$(EXEEXT) test-fread$(EXEEXT) \
+	test-fopen-safer$(EXEEXT) test-fopen$(EXEEXT) \
+	test-forkpty$(EXEEXT) test-fpending.sh test-fprintf-gnu.sh \
+	test-fprintf-posix.sh test-fprintf-posix2.sh \
+	test-fprintf-posix3.sh test-fpurge$(EXEEXT) \
+	test-fputc$(EXEEXT) test-fread$(EXEEXT) \
 	test-freadable$(EXEEXT) test-freadahead.sh \
 	test-freading$(EXEEXT) test-freadptr.sh test-freadptr2.sh \
 	test-freadseek.sh test-free$(EXEEXT) test-freelocale$(EXEEXT) \
@@ -320,10 +322,10 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-gettime-res$(EXEEXT) test-gettimeofday$(EXEEXT) \
 	test-getumask$(EXEEXT) test-getusershell$(EXEEXT) \
 	test-dynarray$(EXEEXT) test-scratch-buffer$(EXEEXT) \
-	test-glob-h$(EXEEXT) test-glob$(EXEEXT) test-hamt$(EXEEXT) \
-	test-hard-locale$(EXEEXT) test-hash_map$(EXEEXT) \
-	test-hash_set$(EXEEXT) test-hash$(EXEEXT) \
-	test-hasmntopt$(EXEEXT) test-htonl$(EXEEXT) \
+	test-glob-h$(EXEEXT) test-glob$(EXEEXT) test-grantpt$(EXEEXT) \
+	test-hamt$(EXEEXT) test-hard-locale$(EXEEXT) \
+	test-hash_map$(EXEEXT) test-hash_set$(EXEEXT) \
+	test-hash$(EXEEXT) test-hasmntopt$(EXEEXT) test-htonl$(EXEEXT) \
 	test-hypot-ieee$(EXEEXT) test-hypot$(EXEEXT) \
 	test-hypotf-ieee$(EXEEXT) test-hypotf$(EXEEXT) \
 	test-hypotl-ieee$(EXEEXT) test-hypotl$(EXEEXT) \
@@ -380,12 +382,13 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-logbf-ieee$(EXEEXT) test-logbf$(EXEEXT) \
 	test-logbl-ieee$(EXEEXT) test-logbl$(EXEEXT) \
 	test-logf-ieee$(EXEEXT) test-logf$(EXEEXT) \
-	test-logl-ieee$(EXEEXT) test-logl$(EXEEXT) test-logp1$(EXEEXT) \
-	test-logp1f$(EXEEXT) test-logp1l$(EXEEXT) test-lseek.sh \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
-	test-malloc-h$(EXEEXT) test-malloc-posix$(EXEEXT) \
-	test-malloca$(EXEEXT) $(am__EXEEXT_4) test-math-h$(EXEEXT) \
-	test-mbfile.sh test-mbmemcasecmp-2.sh test-mbmemcasecmp-3.sh \
+	test-login_tty$(EXEEXT) test-logl-ieee$(EXEEXT) \
+	test-logl$(EXEEXT) test-logp1$(EXEEXT) test-logp1f$(EXEEXT) \
+	test-logp1l$(EXEEXT) test-lseek.sh test-lstat$(EXEEXT) \
+	test-malloc-gnu$(EXEEXT) test-malloc-h$(EXEEXT) \
+	test-malloc-posix$(EXEEXT) test-malloca$(EXEEXT) \
+	$(am__EXEEXT_4) test-math-h$(EXEEXT) test-mbfile.sh \
+	test-mbmemcasecmp-2.sh test-mbmemcasecmp-3.sh \
 	test-mbmemcasecmp-4.sh test-mbmemcasecoll-2.sh \
 	test-mbmemcasecoll-3.sh test-mbmemcasecoll-4.sh \
 	test-mbrlen-1.sh test-mbrlen-2.sh test-mbrlen-3.sh \
@@ -470,7 +473,7 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-poll-h$(EXEEXT) test-poll$(EXEEXT) \
 	test-popen-safer$(EXEEXT) test-popen-safer2$(EXEEXT) \
 	test-popen$(EXEEXT) test-posix_memalign$(EXEEXT) \
-	test-posix_spawn-open1$(EXEEXT) \
+	test-posix_openpt$(EXEEXT) test-posix_spawn-open1$(EXEEXT) \
 	test-posix_spawn-open2$(EXEEXT) \
 	test-posix_spawn-inherit0$(EXEEXT) \
 	test-posix_spawn-inherit1$(EXEEXT) \
@@ -905,8 +908,8 @@ TESTS = test-_Exit.sh test-accept$(EXEEXT) test-accept4$(EXEEXT) \
 	test-uc_width$(EXEEXT) uniwidth/test-uc_width2.sh \
 	test-unlink$(EXEEXT) test-unlinkat$(EXEEXT) \
 	test-unlockpt$(EXEEXT) test-unsetenv$(EXEEXT) \
-	test-update-copyright.sh $(am__EXEEXT_15) \
-	test-utime-h$(EXEEXT) test-utime$(EXEEXT) \
+	test-update-copyright.sh test-userspec$(EXEEXT) \
+	$(am__EXEEXT_15) test-utime-h$(EXEEXT) test-utime$(EXEEXT) \
 	test-utimens$(EXEEXT) test-utimensat$(EXEEXT) \
 	test-utmp-h$(EXEEXT) test-vasnprintf-gnu$(EXEEXT) \
 	test-vasnprintf-posix$(EXEEXT) test-vasnprintf-posix2.sh \
@@ -1090,8 +1093,9 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-expm1l$(EXEEXT) test-fabs-ieee$(EXEEXT) \
 	test-fabs$(EXEEXT) test-fabsf-ieee$(EXEEXT) \
 	test-fabsf$(EXEEXT) test-fabsl-ieee$(EXEEXT) \
-	test-fabsl$(EXEEXT) test-fbufmode$(EXEEXT) \
-	test-fchdir$(EXEEXT) test-fchmodat$(EXEEXT) \
+	test-fabsl$(EXEEXT) test-faccessat$(EXEEXT) \
+	test-fbufmode$(EXEEXT) test-fchdir$(EXEEXT) \
+	test-fchmodat$(EXEEXT) test-fchownat$(EXEEXT) \
 	test-fclose$(EXEEXT) test-fcntl-h$(EXEEXT) \
 	test-fcntl-safer$(EXEEXT) test-fcntl$(EXEEXT) \
 	test-fdatasync$(EXEEXT) test-fdopen$(EXEEXT) \
@@ -1130,10 +1134,10 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-fnmatch-h$(EXEEXT) test-fnmatch$(EXEEXT) \
 	test-fnmatch-w32$(EXEEXT) test-fopen-gnu$(EXEEXT) \
 	test-fopen-safer$(EXEEXT) test-fopen$(EXEEXT) \
-	test-fpending$(EXEEXT) test-fprintf-gnu$(EXEEXT) \
-	test-fprintf-posix$(EXEEXT) test-fprintf-posix2$(EXEEXT) \
-	test-fprintf-posix3$(EXEEXT) test-fpurge$(EXEEXT) \
-	test-fputc$(EXEEXT) test-fread$(EXEEXT) \
+	test-forkpty$(EXEEXT) test-fpending$(EXEEXT) \
+	test-fprintf-gnu$(EXEEXT) test-fprintf-posix$(EXEEXT) \
+	test-fprintf-posix2$(EXEEXT) test-fprintf-posix3$(EXEEXT) \
+	test-fpurge$(EXEEXT) test-fputc$(EXEEXT) test-fread$(EXEEXT) \
 	test-freadable$(EXEEXT) test-freadahead$(EXEEXT) \
 	test-freading$(EXEEXT) test-freadptr$(EXEEXT) \
 	test-freadptr2$(EXEEXT) test-freadseek$(EXEEXT) \
@@ -1171,7 +1175,7 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-gettimeofday$(EXEEXT) test-getumask$(EXEEXT) \
 	test-getusershell$(EXEEXT) test-dynarray$(EXEEXT) \
 	test-scratch-buffer$(EXEEXT) test-glob-h$(EXEEXT) \
-	test-glob$(EXEEXT) test-hamt$(EXEEXT) \
+	test-glob$(EXEEXT) test-grantpt$(EXEEXT) test-hamt$(EXEEXT) \
 	test-hard-locale$(EXEEXT) current-locale$(EXEEXT) \
 	test-hash_map$(EXEEXT) test-hash_set$(EXEEXT) \
 	test-hash$(EXEEXT) test-hasmntopt$(EXEEXT) test-htonl$(EXEEXT) \
@@ -1233,39 +1237,40 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-logbf-ieee$(EXEEXT) test-logbf$(EXEEXT) \
 	test-logbl-ieee$(EXEEXT) test-logbl$(EXEEXT) \
 	test-logf-ieee$(EXEEXT) test-logf$(EXEEXT) \
-	test-logl-ieee$(EXEEXT) test-logl$(EXEEXT) test-logp1$(EXEEXT) \
-	test-logp1f$(EXEEXT) test-logp1l$(EXEEXT) test-lseek$(EXEEXT) \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
-	test-malloc-h$(EXEEXT) test-malloc-posix$(EXEEXT) \
-	test-malloca$(EXEEXT) $(am__EXEEXT_4) test-math-h$(EXEEXT) \
-	test-mbfile$(EXEEXT) test-mbmemcasecmp$(EXEEXT) \
-	test-mbmemcasecoll$(EXEEXT) test-mbrlen$(EXEEXT) \
-	test-mbrlen-w32$(EXEEXT) test-mbrtoc16$(EXEEXT) \
-	test-mbrtoc16-w32$(EXEEXT) test-mbrtoc32-regular$(EXEEXT) \
-	test-mbrtoc32$(EXEEXT) test-mbrtoc32-w32$(EXEEXT) \
-	test-mbrtowc$(EXEEXT) test-mbrtowc-w32$(EXEEXT) \
-	$(am__EXEEXT_5) test-mbs_endswith1$(EXEEXT) \
-	test-mbs_endswith2$(EXEEXT) test-mbs_endswith3$(EXEEXT) \
-	test-mbscasecmp$(EXEEXT) test-mbscasestr1$(EXEEXT) \
-	test-mbscasestr2$(EXEEXT) test-mbscasestr3$(EXEEXT) \
-	test-mbscasestr4$(EXEEXT) test-mbschr$(EXEEXT) \
-	test-mbscspn$(EXEEXT) test-mbsinit$(EXEEXT) \
-	test-mbslen$(EXEEXT) test-mbsncasecmp$(EXEEXT) \
-	test-mbsnlen$(EXEEXT) test-mbsnrtoc32s$(EXEEXT) \
-	test-mbsnrtowcs$(EXEEXT) test-mbspbrk$(EXEEXT) \
-	test-mbspcasecmp$(EXEEXT) test-mbsrchr$(EXEEXT) \
-	test-mbsrtoc32s$(EXEEXT) test-mbsrtowcs$(EXEEXT) \
-	test-mbsspn$(EXEEXT) test-mbsstr1$(EXEEXT) \
-	test-mbsstr2$(EXEEXT) test-mbsstr3$(EXEEXT) \
-	test-mbstoc32s$(EXEEXT) test-mbstowcs$(EXEEXT) \
-	test-mcel$(EXEEXT) test-memalign$(EXEEXT) \
-	test-memcasecmp$(EXEEXT) test-memccpy$(EXEEXT) \
-	test-memchr$(EXEEXT) test-memchr2$(EXEEXT) \
-	test-memcmp$(EXEEXT) test-memcoll$(EXEEXT) \
-	test-memcpy$(EXEEXT) test-memmem$(EXEEXT) \
-	test-memmove$(EXEEXT) test-memrchr$(EXEEXT) \
-	test-memset$(EXEEXT) test-memset_explicit$(EXEEXT) \
-	test-mkdir$(EXEEXT) test-mkdirat$(EXEEXT) test-mkfifo$(EXEEXT) \
+	test-login_tty$(EXEEXT) test-logl-ieee$(EXEEXT) \
+	test-logl$(EXEEXT) test-logp1$(EXEEXT) test-logp1f$(EXEEXT) \
+	test-logp1l$(EXEEXT) test-lseek$(EXEEXT) test-lstat$(EXEEXT) \
+	test-malloc-gnu$(EXEEXT) test-malloc-h$(EXEEXT) \
+	test-malloc-posix$(EXEEXT) test-malloca$(EXEEXT) \
+	$(am__EXEEXT_4) test-math-h$(EXEEXT) test-mbfile$(EXEEXT) \
+	test-mbmemcasecmp$(EXEEXT) test-mbmemcasecoll$(EXEEXT) \
+	test-mbrlen$(EXEEXT) test-mbrlen-w32$(EXEEXT) \
+	test-mbrtoc16$(EXEEXT) test-mbrtoc16-w32$(EXEEXT) \
+	test-mbrtoc32-regular$(EXEEXT) test-mbrtoc32$(EXEEXT) \
+	test-mbrtoc32-w32$(EXEEXT) test-mbrtowc$(EXEEXT) \
+	test-mbrtowc-w32$(EXEEXT) $(am__EXEEXT_5) \
+	test-mbs_endswith1$(EXEEXT) test-mbs_endswith2$(EXEEXT) \
+	test-mbs_endswith3$(EXEEXT) test-mbscasecmp$(EXEEXT) \
+	test-mbscasestr1$(EXEEXT) test-mbscasestr2$(EXEEXT) \
+	test-mbscasestr3$(EXEEXT) test-mbscasestr4$(EXEEXT) \
+	test-mbschr$(EXEEXT) test-mbscspn$(EXEEXT) \
+	test-mbsinit$(EXEEXT) test-mbslen$(EXEEXT) \
+	test-mbsncasecmp$(EXEEXT) test-mbsnlen$(EXEEXT) \
+	test-mbsnrtoc32s$(EXEEXT) test-mbsnrtowcs$(EXEEXT) \
+	test-mbspbrk$(EXEEXT) test-mbspcasecmp$(EXEEXT) \
+	test-mbsrchr$(EXEEXT) test-mbsrtoc32s$(EXEEXT) \
+	test-mbsrtowcs$(EXEEXT) test-mbsspn$(EXEEXT) \
+	test-mbsstr1$(EXEEXT) test-mbsstr2$(EXEEXT) \
+	test-mbsstr3$(EXEEXT) test-mbstoc32s$(EXEEXT) \
+	test-mbstowcs$(EXEEXT) test-mcel$(EXEEXT) \
+	test-memalign$(EXEEXT) test-memcasecmp$(EXEEXT) \
+	test-memccpy$(EXEEXT) test-memchr$(EXEEXT) \
+	test-memchr2$(EXEEXT) test-memcmp$(EXEEXT) \
+	test-memcoll$(EXEEXT) test-memcpy$(EXEEXT) \
+	test-memmem$(EXEEXT) test-memmove$(EXEEXT) \
+	test-memrchr$(EXEEXT) test-memset$(EXEEXT) \
+	test-memset_explicit$(EXEEXT) test-mkdir$(EXEEXT) \
+	test-mkdirat$(EXEEXT) test-mkfifo$(EXEEXT) \
 	test-mkfifoat$(EXEEXT) test-mknod$(EXEEXT) \
 	test-modf-ieee$(EXEEXT) test-modf$(EXEEXT) \
 	test-modff-ieee$(EXEEXT) test-modff$(EXEEXT) \
@@ -1308,7 +1313,7 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-pipe2$(EXEEXT) test-poll-h$(EXEEXT) test-poll$(EXEEXT) \
 	test-popen-safer$(EXEEXT) test-popen-safer2$(EXEEXT) \
 	test-popen$(EXEEXT) test-posix_memalign$(EXEEXT) \
-	test-posix_spawn-open1$(EXEEXT) \
+	test-posix_openpt$(EXEEXT) test-posix_spawn-open1$(EXEEXT) \
 	test-posix_spawn-open2$(EXEEXT) \
 	test-posix_spawn-inherit0$(EXEEXT) \
 	test-posix_spawn-inherit1$(EXEEXT) \
@@ -1744,7 +1749,8 @@ noinst_PROGRAMS = test-_Exit$(EXEEXT) test-accept$(EXEEXT) \
 	test-uc_width$(EXEEXT) test-uc_width2$(EXEEXT) \
 	test-unlink$(EXEEXT) test-unlinkat$(EXEEXT) \
 	test-unlockpt$(EXEEXT) test-unsetenv$(EXEEXT) \
-	test-usleep$(EXEEXT) test-utime-h$(EXEEXT) test-utime$(EXEEXT) \
+	test-userspec$(EXEEXT) test-usleep$(EXEEXT) \
+	test-utime-h$(EXEEXT) test-utime$(EXEEXT) \
 	test-utimens$(EXEEXT) test-utimensat$(EXEEXT) \
 	test-utmp-h$(EXEEXT) test-vasnprintf-gnu$(EXEEXT) \
 	test-vasnprintf-posix$(EXEEXT) test-vasnprintf-posix2$(EXEEXT) \
@@ -1926,10 +1932,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
 	$(top_srcdir)/glm4/extern-inline.m4 $(top_srcdir)/glm4/fabs.m4 \
 	$(top_srcdir)/glm4/fabsf.m4 $(top_srcdir)/glm4/fabsl.m4 \
+	$(top_srcdir)/glm4/faccessat.m4 \
 	$(top_srcdir)/glm4/fatal-signal.m4 \
 	$(top_srcdir)/glm4/fbufmode.m4 $(top_srcdir)/glm4/fchdir.m4 \
-	$(top_srcdir)/glm4/fchmodat.m4 $(top_srcdir)/glm4/fclose.m4 \
-	$(top_srcdir)/glm4/fcntl-o.m4 \
+	$(top_srcdir)/glm4/fchmodat.m4 $(top_srcdir)/glm4/fchownat.m4 \
+	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl-safer.m4 $(top_srcdir)/glm4/fcntl.m4 \
 	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdatasync.m4 \
 	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fdopendir.m4 \
@@ -2020,6 +2027,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/glob_h.m4 $(top_srcdir)/glm4/gnu-make.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 $(top_srcdir)/glm4/gocomp.m4 \
+	$(top_srcdir)/glm4/grantpt.m4 \
 	$(top_srcdir)/glm4/group-member.m4 \
 	$(top_srcdir)/glm4/hasmntopt.m4 \
 	$(top_srcdir)/glm4/host-cpu-c-abi.m4 \
@@ -2031,11 +2039,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/i-ring.m4 $(top_srcdir)/glm4/iconv.m4 \
 	$(top_srcdir)/glm4/iconv_h.m4 \
 	$(top_srcdir)/glm4/iconv_open-utf.m4 \
-	$(top_srcdir)/glm4/iconv_open.m4 $(top_srcdir)/glm4/idpriv.m4 \
-	$(top_srcdir)/glm4/ieee754-h.m4 $(top_srcdir)/glm4/ilogb.m4 \
-	$(top_srcdir)/glm4/ilogbf.m4 $(top_srcdir)/glm4/ilogbl.m4 \
-	$(top_srcdir)/glm4/imaxabs.m4 $(top_srcdir)/glm4/imaxdiv.m4 \
-	$(top_srcdir)/glm4/immutable.m4 \
+	$(top_srcdir)/glm4/iconv_open.m4 $(top_srcdir)/glm4/idcache.m4 \
+	$(top_srcdir)/glm4/idpriv.m4 $(top_srcdir)/glm4/ieee754-h.m4 \
+	$(top_srcdir)/glm4/ilogb.m4 $(top_srcdir)/glm4/ilogbf.m4 \
+	$(top_srcdir)/glm4/ilogbl.m4 $(top_srcdir)/glm4/imaxabs.m4 \
+	$(top_srcdir)/glm4/imaxdiv.m4 $(top_srcdir)/glm4/immutable.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
 	$(top_srcdir)/glm4/inet_ntop.m4 \
 	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inline.m4 \
@@ -2102,11 +2110,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/log2f.m4 $(top_srcdir)/glm4/log2l.m4 \
 	$(top_srcdir)/glm4/logb.m4 $(top_srcdir)/glm4/logbf.m4 \
 	$(top_srcdir)/glm4/logbl.m4 $(top_srcdir)/glm4/logf-ieee.m4 \
-	$(top_srcdir)/glm4/logf.m4 $(top_srcdir)/glm4/logl.m4 \
-	$(top_srcdir)/glm4/logp1.m4 $(top_srcdir)/glm4/logp1f.m4 \
-	$(top_srcdir)/glm4/logp1l.m4 $(top_srcdir)/glm4/longlong.m4 \
-	$(top_srcdir)/glm4/lseek.m4 $(top_srcdir)/glm4/lstat.m4 \
-	$(top_srcdir)/glm4/malloc-align.m4 \
+	$(top_srcdir)/glm4/logf.m4 $(top_srcdir)/glm4/login_tty.m4 \
+	$(top_srcdir)/glm4/logl.m4 $(top_srcdir)/glm4/logp1.m4 \
+	$(top_srcdir)/glm4/logp1f.m4 $(top_srcdir)/glm4/logp1l.m4 \
+	$(top_srcdir)/glm4/longlong.m4 $(top_srcdir)/glm4/lseek.m4 \
+	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc-align.m4 \
 	$(top_srcdir)/glm4/malloc.m4 $(top_srcdir)/glm4/malloc_h.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
 	$(top_srcdir)/glm4/mathfunc.m4 $(top_srcdir)/glm4/mbchar.m4 \
@@ -2173,6 +2181,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/poll_h.m4 $(top_srcdir)/glm4/popen.m4 \
 	$(top_srcdir)/glm4/posix-shell.m4 \
 	$(top_srcdir)/glm4/posix_memalign.m4 \
+	$(top_srcdir)/glm4/posix_openpt.m4 \
 	$(top_srcdir)/glm4/posix_spawn.m4 \
 	$(top_srcdir)/glm4/posix_spawn_faction_addchdir.m4 \
 	$(top_srcdir)/glm4/posix_spawn_faction_addfchdir.m4 \
@@ -2372,11 +2381,11 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/unlinkat.m4 $(top_srcdir)/glm4/unlinkdir.m4 \
 	$(top_srcdir)/glm4/unlocked-io.m4 \
 	$(top_srcdir)/glm4/unlockpt.m4 $(top_srcdir)/glm4/uptime.m4 \
-	$(top_srcdir)/glm4/usleep.m4 $(top_srcdir)/glm4/utime.m4 \
-	$(top_srcdir)/glm4/utime_h.m4 $(top_srcdir)/glm4/utimecmp.m4 \
-	$(top_srcdir)/glm4/utimens.m4 $(top_srcdir)/glm4/utimensat.m4 \
-	$(top_srcdir)/glm4/utimes.m4 $(top_srcdir)/glm4/utmp_h.m4 \
-	$(top_srcdir)/glm4/va-args.m4 \
+	$(top_srcdir)/glm4/userspec.m4 $(top_srcdir)/glm4/usleep.m4 \
+	$(top_srcdir)/glm4/utime.m4 $(top_srcdir)/glm4/utime_h.m4 \
+	$(top_srcdir)/glm4/utimecmp.m4 $(top_srcdir)/glm4/utimens.m4 \
+	$(top_srcdir)/glm4/utimensat.m4 $(top_srcdir)/glm4/utimes.m4 \
+	$(top_srcdir)/glm4/utmp_h.m4 $(top_srcdir)/glm4/va-args.m4 \
 	$(top_srcdir)/glm4/valgrind-helper.m4 \
 	$(top_srcdir)/glm4/valgrind-tests.m4 \
 	$(top_srcdir)/glm4/vasnprintf-gnu.m4 \
@@ -3779,6 +3788,10 @@ test_fabsl_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_fabsl_ieee_SOURCES = test-fabsl-ieee.c
 test_fabsl_ieee_OBJECTS = test-fabsl-ieee.$(OBJEXT)
 test_fabsl_ieee_DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_faccessat_SOURCES = test-faccessat.c
+test_faccessat_OBJECTS = test-faccessat.$(OBJEXT)
+test_faccessat_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_1)
 test_fbufmode_SOURCES = test-fbufmode.c
 test_fbufmode_OBJECTS = test-fbufmode.$(OBJEXT)
 test_fbufmode_LDADD = $(LDADD)
@@ -3790,6 +3803,10 @@ test_fchdir_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_fchmodat_SOURCES = test-fchmodat.c
 test_fchmodat_OBJECTS = test-fchmodat.$(OBJEXT)
 test_fchmodat_DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_fchownat_SOURCES = test-fchownat.c
+test_fchownat_OBJECTS = test-fchownat.$(OBJEXT)
+test_fchownat_DEPENDENCIES = $(am__DEPENDENCIES_2) \
+	$(am__DEPENDENCIES_1)
 test_fclose_SOURCES = test-fclose.c
 test_fclose_OBJECTS = test-fclose.$(OBJEXT)
 test_fclose_LDADD = $(LDADD)
@@ -4058,6 +4075,9 @@ test_fopen_safer_OBJECTS = test-fopen-safer.$(OBJEXT)
 test_fopen_safer_LDADD = $(LDADD)
 test_fopen_safer_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_forkpty_SOURCES = test-forkpty.c
+test_forkpty_OBJECTS = test-forkpty.$(OBJEXT)
+test_forkpty_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_fpending_SOURCES = test-fpending.c
 test_fpending_OBJECTS = test-fpending.$(OBJEXT)
 test_fpending_LDADD = $(LDADD)
@@ -4504,6 +4524,11 @@ test_gmtime_r_mt_SOURCES = test-gmtime_r-mt.c
 test_gmtime_r_mt_OBJECTS = test-gmtime_r-mt.$(OBJEXT)
 test_gmtime_r_mt_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
+test_grantpt_SOURCES = test-grantpt.c
+test_grantpt_OBJECTS = test-grantpt.$(OBJEXT)
+test_grantpt_LDADD = $(LDADD)
+test_grantpt_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_hamt_SOURCES = test-hamt.c
 test_hamt_OBJECTS = test-hamt.$(OBJEXT)
 test_hamt_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -5055,6 +5080,9 @@ test_logf_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_logf_ieee_SOURCES = test-logf-ieee.c
 test_logf_ieee_OBJECTS = test-logf-ieee.$(OBJEXT)
 test_logf_ieee_DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_login_tty_SOURCES = test-login_tty.c
+test_login_tty_OBJECTS = test-login_tty.$(OBJEXT)
+test_login_tty_DEPENDENCIES = $(am__DEPENDENCIES_2)
 am_test_logl_OBJECTS = test-logl.$(OBJEXT) randoml.$(OBJEXT)
 test_logl_OBJECTS = $(am_test_logl_OBJECTS)
 test_logl_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -5733,6 +5761,11 @@ test_posix_memalign_SOURCES = test-posix_memalign.c
 test_posix_memalign_OBJECTS = test-posix_memalign.$(OBJEXT)
 test_posix_memalign_LDADD = $(LDADD)
 test_posix_memalign_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_posix_openpt_SOURCES = test-posix_openpt.c
+test_posix_openpt_OBJECTS = test-posix_openpt.$(OBJEXT)
+test_posix_openpt_LDADD = $(LDADD)
+test_posix_openpt_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_posix_spawn_chdir_SOURCES = test-posix_spawn-chdir.c
 test_posix_spawn_chdir_OBJECTS = test-posix_spawn-chdir.$(OBJEXT)
@@ -8825,6 +8858,9 @@ test_unsetenv_OBJECTS = test-unsetenv.$(OBJEXT)
 test_unsetenv_LDADD = $(LDADD)
 test_unsetenv_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_userspec_SOURCES = test-userspec.c
+test_userspec_OBJECTS = test-userspec.$(OBJEXT)
+test_userspec_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_usleep_SOURCES = test-usleep.c
 test_usleep_OBJECTS = test-usleep.$(OBJEXT)
 test_usleep_LDADD = $(LDADD)
@@ -9427,8 +9463,9 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-fabs-ieee.Po ./$(DEPDIR)/test-fabs.Po \
 	./$(DEPDIR)/test-fabsf-ieee.Po ./$(DEPDIR)/test-fabsf.Po \
 	./$(DEPDIR)/test-fabsl-ieee.Po ./$(DEPDIR)/test-fabsl.Po \
-	./$(DEPDIR)/test-fbufmode.Po ./$(DEPDIR)/test-fchdir.Po \
-	./$(DEPDIR)/test-fchmodat.Po ./$(DEPDIR)/test-fclose.Po \
+	./$(DEPDIR)/test-faccessat.Po ./$(DEPDIR)/test-fbufmode.Po \
+	./$(DEPDIR)/test-fchdir.Po ./$(DEPDIR)/test-fchmodat.Po \
+	./$(DEPDIR)/test-fchownat.Po ./$(DEPDIR)/test-fclose.Po \
 	./$(DEPDIR)/test-fcntl-h.Po ./$(DEPDIR)/test-fcntl-safer.Po \
 	./$(DEPDIR)/test-fcntl.Po ./$(DEPDIR)/test-fdatasync.Po \
 	./$(DEPDIR)/test-fdopen.Po ./$(DEPDIR)/test-fdopendir.Po \
@@ -9468,8 +9505,8 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-fmodl.Po ./$(DEPDIR)/test-fnmatch-h.Po \
 	./$(DEPDIR)/test-fnmatch-w32.Po ./$(DEPDIR)/test-fnmatch.Po \
 	./$(DEPDIR)/test-fopen-gnu.Po ./$(DEPDIR)/test-fopen-safer.Po \
-	./$(DEPDIR)/test-fopen.Po ./$(DEPDIR)/test-fpending.Po \
-	./$(DEPDIR)/test-fprintf-gnu.Po \
+	./$(DEPDIR)/test-fopen.Po ./$(DEPDIR)/test-forkpty.Po \
+	./$(DEPDIR)/test-fpending.Po ./$(DEPDIR)/test-fprintf-gnu.Po \
 	./$(DEPDIR)/test-fprintf-posix.Po \
 	./$(DEPDIR)/test-fprintf-posix2.Po \
 	./$(DEPDIR)/test-fprintf-posix3.Po ./$(DEPDIR)/test-fpurge.Po \
@@ -9527,11 +9564,12 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-gettimeofday.Po ./$(DEPDIR)/test-getumask.Po \
 	./$(DEPDIR)/test-getusershell.Po ./$(DEPDIR)/test-glob-h.Po \
 	./$(DEPDIR)/test-glob.Po ./$(DEPDIR)/test-gmtime_r-mt.Po \
-	./$(DEPDIR)/test-gmtime_r.Po ./$(DEPDIR)/test-hamt.Po \
-	./$(DEPDIR)/test-hard-locale.Po ./$(DEPDIR)/test-hash.Po \
-	./$(DEPDIR)/test-hash_map.Po ./$(DEPDIR)/test-hash_set.Po \
-	./$(DEPDIR)/test-hasmntopt.Po ./$(DEPDIR)/test-hmac-md5.Po \
-	./$(DEPDIR)/test-hmac-sha1.Po ./$(DEPDIR)/test-hmac-sha256.Po \
+	./$(DEPDIR)/test-gmtime_r.Po ./$(DEPDIR)/test-grantpt.Po \
+	./$(DEPDIR)/test-hamt.Po ./$(DEPDIR)/test-hard-locale.Po \
+	./$(DEPDIR)/test-hash.Po ./$(DEPDIR)/test-hash_map.Po \
+	./$(DEPDIR)/test-hash_set.Po ./$(DEPDIR)/test-hasmntopt.Po \
+	./$(DEPDIR)/test-hmac-md5.Po ./$(DEPDIR)/test-hmac-sha1.Po \
+	./$(DEPDIR)/test-hmac-sha256.Po \
 	./$(DEPDIR)/test-hmac-sha512.Po ./$(DEPDIR)/test-htonl.Po \
 	./$(DEPDIR)/test-hypot-ieee.Po ./$(DEPDIR)/test-hypot.Po \
 	./$(DEPDIR)/test-hypotf-ieee.Po ./$(DEPDIR)/test-hypotf.Po \
@@ -9599,14 +9637,14 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-logbf-ieee.Po ./$(DEPDIR)/test-logbf.Po \
 	./$(DEPDIR)/test-logbl-ieee.Po ./$(DEPDIR)/test-logbl.Po \
 	./$(DEPDIR)/test-logf-ieee.Po ./$(DEPDIR)/test-logf.Po \
-	./$(DEPDIR)/test-logl-ieee.Po ./$(DEPDIR)/test-logl.Po \
-	./$(DEPDIR)/test-logp1.Po ./$(DEPDIR)/test-logp1f.Po \
-	./$(DEPDIR)/test-logp1l.Po ./$(DEPDIR)/test-lseek.Po \
-	./$(DEPDIR)/test-lstat.Po ./$(DEPDIR)/test-malloc-gnu.Po \
-	./$(DEPDIR)/test-malloc-h.Po ./$(DEPDIR)/test-malloc-posix.Po \
-	./$(DEPDIR)/test-malloca.Po ./$(DEPDIR)/test-map-c++.Po \
-	./$(DEPDIR)/test-math-h.Po ./$(DEPDIR)/test-mbfile.Po \
-	./$(DEPDIR)/test-mbmemcasecmp.Po \
+	./$(DEPDIR)/test-login_tty.Po ./$(DEPDIR)/test-logl-ieee.Po \
+	./$(DEPDIR)/test-logl.Po ./$(DEPDIR)/test-logp1.Po \
+	./$(DEPDIR)/test-logp1f.Po ./$(DEPDIR)/test-logp1l.Po \
+	./$(DEPDIR)/test-lseek.Po ./$(DEPDIR)/test-lstat.Po \
+	./$(DEPDIR)/test-malloc-gnu.Po ./$(DEPDIR)/test-malloc-h.Po \
+	./$(DEPDIR)/test-malloc-posix.Po ./$(DEPDIR)/test-malloca.Po \
+	./$(DEPDIR)/test-map-c++.Po ./$(DEPDIR)/test-math-h.Po \
+	./$(DEPDIR)/test-mbfile.Po ./$(DEPDIR)/test-mbmemcasecmp.Po \
 	./$(DEPDIR)/test-mbmemcasecoll.Po \
 	./$(DEPDIR)/test-mbrlen-w32.Po ./$(DEPDIR)/test-mbrlen.Po \
 	./$(DEPDIR)/test-mbrtoc16-w32.Po ./$(DEPDIR)/test-mbrtoc16.Po \
@@ -9690,6 +9728,7 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-popen-safer.Po \
 	./$(DEPDIR)/test-popen-safer2.Po ./$(DEPDIR)/test-popen.Po \
 	./$(DEPDIR)/test-posix_memalign.Po \
+	./$(DEPDIR)/test-posix_openpt.Po \
 	./$(DEPDIR)/test-posix_spawn-chdir.Po \
 	./$(DEPDIR)/test-posix_spawn-dup2-stdin.Po \
 	./$(DEPDIR)/test-posix_spawn-dup2-stdout.Po \
@@ -9899,10 +9938,11 @@ am__depfiles_remade = ./$(DEPDIR)/bench_crc-bench-crc.Po \
 	./$(DEPDIR)/test-uname.Po ./$(DEPDIR)/test-unicodeio.Po \
 	./$(DEPDIR)/test-unistd-h.Po ./$(DEPDIR)/test-unlink.Po \
 	./$(DEPDIR)/test-unlinkat.Po ./$(DEPDIR)/test-unlockpt.Po \
-	./$(DEPDIR)/test-unsetenv.Po ./$(DEPDIR)/test-usleep.Po \
-	./$(DEPDIR)/test-utime-h.Po ./$(DEPDIR)/test-utime.Po \
-	./$(DEPDIR)/test-utimens.Po ./$(DEPDIR)/test-utimensat.Po \
-	./$(DEPDIR)/test-utmp-h.Po ./$(DEPDIR)/test-vasnprintf-gnu.Po \
+	./$(DEPDIR)/test-unsetenv.Po ./$(DEPDIR)/test-userspec.Po \
+	./$(DEPDIR)/test-usleep.Po ./$(DEPDIR)/test-utime-h.Po \
+	./$(DEPDIR)/test-utime.Po ./$(DEPDIR)/test-utimens.Po \
+	./$(DEPDIR)/test-utimensat.Po ./$(DEPDIR)/test-utmp-h.Po \
+	./$(DEPDIR)/test-vasnprintf-gnu.Po \
 	./$(DEPDIR)/test-vasnprintf-posix.Po \
 	./$(DEPDIR)/test-vasnprintf-posix2.Po \
 	./$(DEPDIR)/test-vasnprintf-posix3.Po \
@@ -10595,22 +10635,23 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-expm1-ieee.c $(test_expm1f_SOURCES) test-expm1f-ieee.c \
 	$(test_expm1l_SOURCES) test-expm1l-ieee.c $(test_fabs_SOURCES) \
 	test-fabs-ieee.c $(test_fabsf_SOURCES) test-fabsf-ieee.c \
-	$(test_fabsl_SOURCES) test-fabsl-ieee.c test-fbufmode.c \
-	test-fchdir.c test-fchmodat.c test-fclose.c test-fcntl.c \
-	test-fcntl-h.c test-fcntl-safer.c test-fdatasync.c \
-	test-fdopen.c test-fdopendir.c test-fdutimensat.c \
-	test-fenv-env-1.c test-fenv-env-2.c test-fenv-env-3.c \
-	test-fenv-env-4.c test-fenv-env-5.c test-fenv-env-6.c \
-	test-fenv-except-state-1.c test-fenv-except-state-2.c \
-	test-fenv-except-state-3.c test-fenv-except-state-4.c \
-	test-fenv-except-tracking-1.c test-fenv-except-tracking-2.c \
-	test-fenv-except-tracking-3.c test-fenv-except-tracking-4.c \
-	test-fenv-except-tracking-5.c test-fenv-except-trapping-1.c \
-	test-fenv-except-trapping-2.c test-fenv-h.c test-fenv-round.c \
-	test-fflush.c test-fflush2.c test-ffs.c test-ffsl.c \
-	test-ffsll.c test-fgetc.c test-file-has-acl.c test-filemode.c \
-	test-filenamecat.c test-filevercmp.c test-float-h.c \
-	test-flock.c test-floor-ieee.c test-floor1.c test-floor2.c \
+	$(test_fabsl_SOURCES) test-fabsl-ieee.c test-faccessat.c \
+	test-fbufmode.c test-fchdir.c test-fchmodat.c test-fchownat.c \
+	test-fclose.c test-fcntl.c test-fcntl-h.c test-fcntl-safer.c \
+	test-fdatasync.c test-fdopen.c test-fdopendir.c \
+	test-fdutimensat.c test-fenv-env-1.c test-fenv-env-2.c \
+	test-fenv-env-3.c test-fenv-env-4.c test-fenv-env-5.c \
+	test-fenv-env-6.c test-fenv-except-state-1.c \
+	test-fenv-except-state-2.c test-fenv-except-state-3.c \
+	test-fenv-except-state-4.c test-fenv-except-tracking-1.c \
+	test-fenv-except-tracking-2.c test-fenv-except-tracking-3.c \
+	test-fenv-except-tracking-4.c test-fenv-except-tracking-5.c \
+	test-fenv-except-trapping-1.c test-fenv-except-trapping-2.c \
+	test-fenv-h.c test-fenv-round.c test-fflush.c test-fflush2.c \
+	test-ffs.c test-ffsl.c test-ffsll.c test-fgetc.c \
+	test-file-has-acl.c test-filemode.c test-filenamecat.c \
+	test-filevercmp.c test-float-h.c test-flock.c \
+	test-floor-ieee.c test-floor1.c test-floor2.c \
 	test-floorf-ieee.c test-floorf1.c test-floorf2.c test-floorl.c \
 	test-floorl-ieee.c test-fma-ieee.c test-fma1.c test-fma2.c \
 	test-fmaf-ieee.c test-fmaf1.c test-fmaf2.c test-fmal-ieee.c \
@@ -10618,13 +10659,13 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-fmod-ieee.c $(test_fmodf_SOURCES) test-fmodf-ieee.c \
 	$(test_fmodl_SOURCES) test-fmodl-ieee.c test-fnmatch.c \
 	test-fnmatch-h.c test-fnmatch-w32.c test-fopen.c \
-	test-fopen-gnu.c test-fopen-safer.c test-fpending.c \
-	test-fprintf-gnu.c test-fprintf-posix.c test-fprintf-posix2.c \
-	test-fprintf-posix3.c test-fpurge.c test-fputc.c test-fread.c \
-	test-freadable.c test-freadahead.c test-freading.c \
-	test-freadptr.c test-freadptr2.c test-freadseek.c test-free.c \
-	test-freelocale.c test-freopen.c test-freopen-safer.c \
-	$(test_frexp_SOURCES) test-frexp-ieee.c \
+	test-fopen-gnu.c test-fopen-safer.c test-forkpty.c \
+	test-fpending.c test-fprintf-gnu.c test-fprintf-posix.c \
+	test-fprintf-posix2.c test-fprintf-posix3.c test-fpurge.c \
+	test-fputc.c test-fread.c test-freadable.c test-freadahead.c \
+	test-freading.c test-freadptr.c test-freadptr2.c \
+	test-freadseek.c test-free.c test-freelocale.c test-freopen.c \
+	test-freopen-safer.c $(test_frexp_SOURCES) test-frexp-ieee.c \
 	$(test_frexp_nolibm_SOURCES) $(test_frexpf_SOURCES) \
 	test-frexpf-ieee.c $(test_frexpl_SOURCES) test-frexpl-ieee.c \
 	$(test_frexpl_nolibm_SOURCES) test-fseek.c test-fseeko.c \
@@ -10651,7 +10692,7 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-getrusage.c test-getsockname.c test-getsockopt.c \
 	test-gettext-h.c test-gettime-res.c test-gettimeofday.c \
 	test-getumask.c test-getusershell.c test-glob.c test-glob-h.c \
-	test-gmtime_r.c test-gmtime_r-mt.c test-hamt.c \
+	test-gmtime_r.c test-gmtime_r-mt.c test-grantpt.c test-hamt.c \
 	test-hard-locale.c test-hash.c test-hash_map.c test-hash_set.c \
 	test-hasmntopt.c test-hmac-md5.c test-hmac-sha1.c \
 	test-hmac-sha256.c test-hmac-sha512.c test-htonl.c \
@@ -10705,16 +10746,16 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-log2f-ieee.c $(test_log2l_SOURCES) test-log2l-ieee.c \
 	$(test_logb_SOURCES) test-logb-ieee.c $(test_logbf_SOURCES) \
 	test-logbf-ieee.c $(test_logbl_SOURCES) test-logbl-ieee.c \
-	$(test_logf_SOURCES) test-logf-ieee.c $(test_logl_SOURCES) \
-	test-logl-ieee.c $(test_logp1_SOURCES) $(test_logp1f_SOURCES) \
-	$(test_logp1l_SOURCES) test-lseek.c test-lstat.c \
-	test-malloc-gnu.c test-malloc-h.c test-malloc-posix.c \
-	test-malloca.c $(test_map_c___SOURCES) test-math-h.c \
-	test-mbfile.c test-mbmemcasecmp.c test-mbmemcasecoll.c \
-	test-mbrlen.c test-mbrlen-w32.c test-mbrtoc16.c \
-	test-mbrtoc16-w32.c test-mbrtoc32.c test-mbrtoc32-regular.c \
-	test-mbrtoc32-w32.c test-mbrtowc.c test-mbrtowc-w32.c \
-	test-mbrtowc-w32utf8.c test-mbs_endswith1.c \
+	$(test_logf_SOURCES) test-logf-ieee.c test-login_tty.c \
+	$(test_logl_SOURCES) test-logl-ieee.c $(test_logp1_SOURCES) \
+	$(test_logp1f_SOURCES) $(test_logp1l_SOURCES) test-lseek.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-h.c \
+	test-malloc-posix.c test-malloca.c $(test_map_c___SOURCES) \
+	test-math-h.c test-mbfile.c test-mbmemcasecmp.c \
+	test-mbmemcasecoll.c test-mbrlen.c test-mbrlen-w32.c \
+	test-mbrtoc16.c test-mbrtoc16-w32.c test-mbrtoc32.c \
+	test-mbrtoc32-regular.c test-mbrtoc32-w32.c test-mbrtowc.c \
+	test-mbrtowc-w32.c test-mbrtowc-w32utf8.c test-mbs_endswith1.c \
 	test-mbs_endswith2.c test-mbs_endswith3.c test-mbscasecmp.c \
 	test-mbscasestr1.c test-mbscasestr2.c test-mbscasestr3.c \
 	test-mbscasestr4.c test-mbschr.c test-mbscspn.c test-mbsinit.c \
@@ -10758,7 +10799,7 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-pipe-filter-ii1.c test-pipe-filter-ii2-child.c \
 	test-pipe-filter-ii2-main.c test-pipe2.c test-poll.c \
 	test-poll-h.c test-popen.c test-popen-safer.c \
-	test-popen-safer2.c test-posix_memalign.c \
+	test-popen-safer2.c test-posix_memalign.c test-posix_openpt.c \
 	test-posix_spawn-chdir.c test-posix_spawn-dup2-stdin.c \
 	test-posix_spawn-dup2-stdout.c test-posix_spawn-fchdir.c \
 	test-posix_spawn-inherit0.c test-posix_spawn-inherit1.c \
@@ -11112,14 +11153,14 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_unistdio_h_SOURCES) $(test_unistr_h_SOURCES) \
 	$(test_uniwbrk_h_SOURCES) $(test_uniwidth_h_SOURCES) \
 	test-unlink.c test-unlinkat.c test-unlockpt.c test-unsetenv.c \
-	test-usleep.c test-utime.c test-utime-h.c test-utimens.c \
-	test-utimensat.c test-utmp-h.c test-vasnprintf.c \
-	test-vasnprintf-gnu.c test-vasnprintf-posix.c \
-	test-vasnprintf-posix2.c test-vasnprintf-posix3.c \
-	test-vasnwprintf.c test-vasnwprintf-gnu.c \
-	test-vasnwprintf-posix.c test-vasnwprintf-posix2.c \
-	test-vasnwprintf-posix3.c test-vasprintf.c \
-	test-vasprintf-gnu.c test-vasprintf-posix.c \
+	test-userspec.c test-usleep.c test-utime.c test-utime-h.c \
+	test-utimens.c test-utimensat.c test-utmp-h.c \
+	test-vasnprintf.c test-vasnprintf-gnu.c \
+	test-vasnprintf-posix.c test-vasnprintf-posix2.c \
+	test-vasnprintf-posix3.c test-vasnwprintf.c \
+	test-vasnwprintf-gnu.c test-vasnwprintf-posix.c \
+	test-vasnwprintf-posix2.c test-vasnwprintf-posix3.c \
+	test-vasprintf.c test-vasprintf-gnu.c test-vasprintf-posix.c \
 	test-vaszprintf-gnu.c test-vaszprintf-posix.c test-vdprintf.c \
 	test-vdprintf-gnu.c test-vdprintf-posix.c test-vdzprintf-gnu.c \
 	test-vdzprintf-posix.c test-verify.c test-verify-try.c \
@@ -11266,22 +11307,23 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-expm1-ieee.c $(test_expm1f_SOURCES) test-expm1f-ieee.c \
 	$(test_expm1l_SOURCES) test-expm1l-ieee.c $(test_fabs_SOURCES) \
 	test-fabs-ieee.c $(test_fabsf_SOURCES) test-fabsf-ieee.c \
-	$(test_fabsl_SOURCES) test-fabsl-ieee.c test-fbufmode.c \
-	test-fchdir.c test-fchmodat.c test-fclose.c test-fcntl.c \
-	test-fcntl-h.c test-fcntl-safer.c test-fdatasync.c \
-	test-fdopen.c test-fdopendir.c test-fdutimensat.c \
-	test-fenv-env-1.c test-fenv-env-2.c test-fenv-env-3.c \
-	test-fenv-env-4.c test-fenv-env-5.c test-fenv-env-6.c \
-	test-fenv-except-state-1.c test-fenv-except-state-2.c \
-	test-fenv-except-state-3.c test-fenv-except-state-4.c \
-	test-fenv-except-tracking-1.c test-fenv-except-tracking-2.c \
-	test-fenv-except-tracking-3.c test-fenv-except-tracking-4.c \
-	test-fenv-except-tracking-5.c test-fenv-except-trapping-1.c \
-	test-fenv-except-trapping-2.c test-fenv-h.c test-fenv-round.c \
-	test-fflush.c test-fflush2.c test-ffs.c test-ffsl.c \
-	test-ffsll.c test-fgetc.c test-file-has-acl.c test-filemode.c \
-	test-filenamecat.c test-filevercmp.c test-float-h.c \
-	test-flock.c test-floor-ieee.c test-floor1.c test-floor2.c \
+	$(test_fabsl_SOURCES) test-fabsl-ieee.c test-faccessat.c \
+	test-fbufmode.c test-fchdir.c test-fchmodat.c test-fchownat.c \
+	test-fclose.c test-fcntl.c test-fcntl-h.c test-fcntl-safer.c \
+	test-fdatasync.c test-fdopen.c test-fdopendir.c \
+	test-fdutimensat.c test-fenv-env-1.c test-fenv-env-2.c \
+	test-fenv-env-3.c test-fenv-env-4.c test-fenv-env-5.c \
+	test-fenv-env-6.c test-fenv-except-state-1.c \
+	test-fenv-except-state-2.c test-fenv-except-state-3.c \
+	test-fenv-except-state-4.c test-fenv-except-tracking-1.c \
+	test-fenv-except-tracking-2.c test-fenv-except-tracking-3.c \
+	test-fenv-except-tracking-4.c test-fenv-except-tracking-5.c \
+	test-fenv-except-trapping-1.c test-fenv-except-trapping-2.c \
+	test-fenv-h.c test-fenv-round.c test-fflush.c test-fflush2.c \
+	test-ffs.c test-ffsl.c test-ffsll.c test-fgetc.c \
+	test-file-has-acl.c test-filemode.c test-filenamecat.c \
+	test-filevercmp.c test-float-h.c test-flock.c \
+	test-floor-ieee.c test-floor1.c test-floor2.c \
 	test-floorf-ieee.c test-floorf1.c test-floorf2.c test-floorl.c \
 	test-floorl-ieee.c test-fma-ieee.c test-fma1.c test-fma2.c \
 	test-fmaf-ieee.c test-fmaf1.c test-fmaf2.c test-fmal-ieee.c \
@@ -11289,13 +11331,13 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-fmod-ieee.c $(test_fmodf_SOURCES) test-fmodf-ieee.c \
 	$(test_fmodl_SOURCES) test-fmodl-ieee.c test-fnmatch.c \
 	test-fnmatch-h.c test-fnmatch-w32.c test-fopen.c \
-	test-fopen-gnu.c test-fopen-safer.c test-fpending.c \
-	test-fprintf-gnu.c test-fprintf-posix.c test-fprintf-posix2.c \
-	test-fprintf-posix3.c test-fpurge.c test-fputc.c test-fread.c \
-	test-freadable.c test-freadahead.c test-freading.c \
-	test-freadptr.c test-freadptr2.c test-freadseek.c test-free.c \
-	test-freelocale.c test-freopen.c test-freopen-safer.c \
-	$(test_frexp_SOURCES) test-frexp-ieee.c \
+	test-fopen-gnu.c test-fopen-safer.c test-forkpty.c \
+	test-fpending.c test-fprintf-gnu.c test-fprintf-posix.c \
+	test-fprintf-posix2.c test-fprintf-posix3.c test-fpurge.c \
+	test-fputc.c test-fread.c test-freadable.c test-freadahead.c \
+	test-freading.c test-freadptr.c test-freadptr2.c \
+	test-freadseek.c test-free.c test-freelocale.c test-freopen.c \
+	test-freopen-safer.c $(test_frexp_SOURCES) test-frexp-ieee.c \
 	$(test_frexp_nolibm_SOURCES) $(test_frexpf_SOURCES) \
 	test-frexpf-ieee.c $(test_frexpl_SOURCES) test-frexpl-ieee.c \
 	$(test_frexpl_nolibm_SOURCES) test-fseek.c test-fseeko.c \
@@ -11322,7 +11364,7 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-getrusage.c test-getsockname.c test-getsockopt.c \
 	test-gettext-h.c test-gettime-res.c test-gettimeofday.c \
 	test-getumask.c test-getusershell.c test-glob.c test-glob-h.c \
-	test-gmtime_r.c test-gmtime_r-mt.c test-hamt.c \
+	test-gmtime_r.c test-gmtime_r-mt.c test-grantpt.c test-hamt.c \
 	test-hard-locale.c test-hash.c test-hash_map.c test-hash_set.c \
 	test-hasmntopt.c test-hmac-md5.c test-hmac-sha1.c \
 	test-hmac-sha256.c test-hmac-sha512.c test-htonl.c \
@@ -11376,31 +11418,31 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-log2f-ieee.c $(test_log2l_SOURCES) test-log2l-ieee.c \
 	$(test_logb_SOURCES) test-logb-ieee.c $(test_logbf_SOURCES) \
 	test-logbf-ieee.c $(test_logbl_SOURCES) test-logbl-ieee.c \
-	$(test_logf_SOURCES) test-logf-ieee.c $(test_logl_SOURCES) \
-	test-logl-ieee.c $(test_logp1_SOURCES) $(test_logp1f_SOURCES) \
-	$(test_logp1l_SOURCES) test-lseek.c test-lstat.c \
-	test-malloc-gnu.c test-malloc-h.c test-malloc-posix.c \
-	test-malloca.c $(am__test_map_c___SOURCES_DIST) test-math-h.c \
-	test-mbfile.c test-mbmemcasecmp.c test-mbmemcasecoll.c \
-	test-mbrlen.c test-mbrlen-w32.c test-mbrtoc16.c \
-	test-mbrtoc16-w32.c test-mbrtoc32.c test-mbrtoc32-regular.c \
-	test-mbrtoc32-w32.c test-mbrtowc.c test-mbrtowc-w32.c \
-	test-mbrtowc-w32utf8.c test-mbs_endswith1.c \
-	test-mbs_endswith2.c test-mbs_endswith3.c test-mbscasecmp.c \
-	test-mbscasestr1.c test-mbscasestr2.c test-mbscasestr3.c \
-	test-mbscasestr4.c test-mbschr.c test-mbscspn.c test-mbsinit.c \
-	test-mbslen.c test-mbsncasecmp.c test-mbsnlen.c \
-	test-mbsnrtoc32s.c test-mbsnrtowcs.c test-mbspbrk.c \
-	test-mbspcasecmp.c test-mbsrchr.c test-mbsrtoc32s.c \
-	test-mbsrtowcs.c test-mbsspn.c test-mbsstr1.c test-mbsstr2.c \
-	test-mbsstr3.c test-mbstoc32s.c test-mbstowcs.c test-mcel.c \
-	test-md2-buffer.c test-md4-buffer.c test-md5-buffer.c \
-	test-md5-stream.c test-memalign.c test-memcasecmp.c \
-	test-memccpy.c test-memchr.c test-memchr2.c test-memcmp.c \
-	test-memcoll.c test-memcpy.c test-memmem.c test-memmove.c \
-	test-memrchr.c test-memset.c test-memset_explicit.c \
-	$(test_mirror_SOURCES) test-mkdir.c test-mkdirat.c \
-	test-mkfifo.c test-mkfifoat.c test-mknod.c \
+	$(test_logf_SOURCES) test-logf-ieee.c test-login_tty.c \
+	$(test_logl_SOURCES) test-logl-ieee.c $(test_logp1_SOURCES) \
+	$(test_logp1f_SOURCES) $(test_logp1l_SOURCES) test-lseek.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-h.c \
+	test-malloc-posix.c test-malloca.c \
+	$(am__test_map_c___SOURCES_DIST) test-math-h.c test-mbfile.c \
+	test-mbmemcasecmp.c test-mbmemcasecoll.c test-mbrlen.c \
+	test-mbrlen-w32.c test-mbrtoc16.c test-mbrtoc16-w32.c \
+	test-mbrtoc32.c test-mbrtoc32-regular.c test-mbrtoc32-w32.c \
+	test-mbrtowc.c test-mbrtowc-w32.c test-mbrtowc-w32utf8.c \
+	test-mbs_endswith1.c test-mbs_endswith2.c test-mbs_endswith3.c \
+	test-mbscasecmp.c test-mbscasestr1.c test-mbscasestr2.c \
+	test-mbscasestr3.c test-mbscasestr4.c test-mbschr.c \
+	test-mbscspn.c test-mbsinit.c test-mbslen.c test-mbsncasecmp.c \
+	test-mbsnlen.c test-mbsnrtoc32s.c test-mbsnrtowcs.c \
+	test-mbspbrk.c test-mbspcasecmp.c test-mbsrchr.c \
+	test-mbsrtoc32s.c test-mbsrtowcs.c test-mbsspn.c \
+	test-mbsstr1.c test-mbsstr2.c test-mbsstr3.c test-mbstoc32s.c \
+	test-mbstowcs.c test-mcel.c test-md2-buffer.c \
+	test-md4-buffer.c test-md5-buffer.c test-md5-stream.c \
+	test-memalign.c test-memcasecmp.c test-memccpy.c test-memchr.c \
+	test-memchr2.c test-memcmp.c test-memcoll.c test-memcpy.c \
+	test-memmem.c test-memmove.c test-memrchr.c test-memset.c \
+	test-memset_explicit.c $(test_mirror_SOURCES) test-mkdir.c \
+	test-mkdirat.c test-mkfifo.c test-mkfifoat.c test-mknod.c \
 	$(test_modf_SOURCES) test-modf-ieee.c $(test_modff_SOURCES) \
 	test-modff-ieee.c $(test_modfl_SOURCES) test-modfl-ieee.c \
 	test-monetary-h.c test-mountlist.c test-mtx.c test-mtx-type.c \
@@ -11429,7 +11471,7 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-pipe-filter-ii1.c test-pipe-filter-ii2-child.c \
 	test-pipe-filter-ii2-main.c test-pipe2.c test-poll.c \
 	test-poll-h.c test-popen.c test-popen-safer.c \
-	test-popen-safer2.c test-posix_memalign.c \
+	test-popen-safer2.c test-posix_memalign.c test-posix_openpt.c \
 	test-posix_spawn-chdir.c test-posix_spawn-dup2-stdin.c \
 	test-posix_spawn-dup2-stdout.c test-posix_spawn-fchdir.c \
 	test-posix_spawn-inherit0.c test-posix_spawn-inherit1.c \
@@ -11783,9 +11825,9 @@ DIST_SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-unistd-h.c $(test_unistdio_h_SOURCES) \
 	$(test_unistr_h_SOURCES) $(test_uniwbrk_h_SOURCES) \
 	$(test_uniwidth_h_SOURCES) test-unlink.c test-unlinkat.c \
-	test-unlockpt.c test-unsetenv.c test-usleep.c test-utime.c \
-	test-utime-h.c test-utimens.c test-utimensat.c test-utmp-h.c \
-	test-vasnprintf.c test-vasnprintf-gnu.c \
+	test-unlockpt.c test-unsetenv.c test-userspec.c test-usleep.c \
+	test-utime.c test-utime-h.c test-utimens.c test-utimensat.c \
+	test-utmp-h.c test-vasnprintf.c test-vasnprintf-gnu.c \
 	test-vasnprintf-posix.c test-vasnprintf-posix2.c \
 	test-vasnprintf-posix3.c test-vasnwprintf.c \
 	test-vasnwprintf-gnu.c test-vasnwprintf-posix.c \
@@ -15162,8 +15204,10 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	test-fabs.h signature.h minus-zero.h macros.h randomf.c \
 	test-fabsl-ieee.c test-fabs-ieee.h minus-zero.h infinity.h \
 	macros.h test-fabsl.c test-fabs.h signature.h minus-zero.h \
-	macros.h randoml.c test-fbufmode.c macros.h test-fchdir.c \
-	signature.h macros.h test-fchmodat.c signature.h macros.h \
+	macros.h randoml.c test-faccessat.c signature.h macros.h \
+	test-fbufmode.c macros.h test-fchdir.c signature.h macros.h \
+	test-fchmodat.c signature.h macros.h nap.h test-chown.h \
+	test-lchown.h test-fchownat.c signature.h macros.h \
 	test-fclose.c macros.h test-fcntl-h.c test-open.h \
 	test-fcntl-safer.c macros.h test-fcntl.c signature.h macros.h \
 	test-fdatasync.c signature.h macros.h test-fdopen.c \
@@ -15218,9 +15262,10 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	test-fnmatch-w32-8.sh test-fnmatch-w32.c signature.h macros.h \
 	test-fopen-gnu.c macros.h test-fopen.h test-fopen-safer.c \
 	macros.h test-fopen.h test-fopen.c signature.h macros.h \
-	test-fpending.c test-fpending.sh macros.h test-fprintf-gnu.sh \
-	test-fprintf-gnu.c test-fprintf-gnu.h test-printf-gnu.output \
-	macros.h test-fprintf-posix.sh test-fprintf-posix.c \
+	test-forkpty.c signature.h test-fpending.c test-fpending.sh \
+	macros.h test-fprintf-gnu.sh test-fprintf-gnu.c \
+	test-fprintf-gnu.h test-printf-gnu.output macros.h \
+	test-fprintf-posix.sh test-fprintf-posix.c \
 	test-fprintf-posix.h test-printf-posix.output \
 	test-fprintf-posix2.sh test-fprintf-posix2.c \
 	test-fprintf-posix3.sh test-fprintf-posix3.c infinity.h qemu.h \
@@ -15288,86 +15333,86 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	signature.h macros.h test-getusershell.c signature.h macros.h \
 	test-dynarray.c macros.h test-scratch-buffer.c macros.h \
 	test-glob-h.c macros.h test-glob.c signature.h macros.h \
-	test-hamt.c macros.h test-hard-locale.c locale.c \
-	test-hash_map.c macros.h test-hash_set.c macros.h test-hash.c \
-	macros.h test-hasmntopt.c macros.h test-htonl.c macros.h \
-	test-hypot-ieee.c test-hypot-ieee.h minus-zero.h infinity.h \
-	macros.h test-hypot.c test-hypot.h signature.h macros.h \
-	randomd.c test-hypotf-ieee.c test-hypot-ieee.h minus-zero.h \
-	infinity.h macros.h test-hypotf.c test-hypot.h signature.h \
-	macros.h randomf.c test-hypotl-ieee.c test-hypot-ieee.h \
-	minus-zero.h infinity.h macros.h test-hypotl.c test-hypot.h \
-	signature.h macros.h randoml.c test-i-ring.c macros.h \
-	test-iconv-h.c test-iconv.c signature.h macros.h \
-	test-iconv-utf.c macros.h test-ieee754-h.c test-ignore-value.c \
-	test-ilogb.c test-ilogb.h minus-zero.h infinity.h signature.h \
-	macros.h randomd.c test-ilogbf.c test-ilogb.h minus-zero.h \
-	infinity.h signature.h macros.h randomf.c test-ilogbl.c \
-	test-ilogb.h minus-zero.h infinity.h signature.h macros.h \
-	randoml.c test-imaxabs.c signature.h macros.h test-imaxdiv.c \
-	signature.h macros.h test-immutable.sh test-immutable.c \
-	macros.h test-inet_ntop.c signature.h macros.h \
-	test-inet_pton.c signature.h macros.h test-ino-map.c macros.h \
-	test-integer_length.c macros.h test-integer_length_l.c \
-	macros.h test-integer_length_ll.c macros.h test-intprops.c \
-	macros.h macros.h test-inttostr.c test-inttypes-h.c \
-	test-ioctl.c signature.h macros.h test-isalnum_l.c signature.h \
-	macros.h test-isalpha_l.c signature.h macros.h test-isatty.c \
-	signature.h macros.h test-isblank.c signature.h macros.h \
-	test-isblank_l.c signature.h macros.h test-iscntrl_l.c \
-	signature.h macros.h test-isdigit_l.c signature.h macros.h \
-	test-isfinite.c infinity.h macros.h test-isgraph_l.c \
-	signature.h macros.h test-isinf.c infinity.h macros.h \
-	test-islower_l.c signature.h macros.h test-isnan.c \
-	minus-zero.h infinity.h macros.h test-isnand-nolibm.c \
-	test-isnand.h minus-zero.h infinity.h macros.h test-isnand.c \
-	test-isnand.h minus-zero.h infinity.h macros.h \
-	test-isnanf-nolibm.c test-isnanf.h minus-zero.h infinity.h \
-	macros.h test-isnanf.c test-isnanf.h minus-zero.h infinity.h \
-	macros.h test-isnanl-nolibm.c test-isnanl.h minus-zero.h \
-	infinity.h macros.h test-isnanl.c test-isnanl.h minus-zero.h \
-	infinity.h macros.h test-isprint_l.c signature.h macros.h \
-	test-ispunct_l.c signature.h macros.h test-isspace_l.c \
-	signature.h macros.h test-isupper_l.c signature.h macros.h \
-	test-iswblank.c macros.h test-iswctype.c signature.h macros.h \
-	test-iswdigit.sh test-iswdigit.c signature.h macros.h \
-	test-iswpunct.sh test-iswpunct.c signature.h macros.h \
-	test-iswxdigit.sh test-iswxdigit.c signature.h macros.h \
-	test-isxdigit_l.c signature.h macros.h test-j0.c signature.h \
-	macros.h test-j1.c signature.h macros.h jit/test-cache.c \
-	macros.h test-jn.c signature.h macros.h test-kwset.c macros.h \
-	test-langinfo-h.c test-largefile.c test-lchmod.c signature.h \
-	macros.h nap.h test-lchown.h test-lchown.c signature.h \
-	macros.h test-ldexp-ieee.c test-ldexp-ieee.h minus-zero.h \
-	infinity.h macros.h test-ldexp.c test-ldexp.h minus-zero.h \
-	infinity.h signature.h macros.h randomd.c test-ldexpf-ieee.c \
+	test-grantpt.c signature.h macros.h test-hamt.c macros.h \
+	test-hard-locale.c locale.c test-hash_map.c macros.h \
+	test-hash_set.c macros.h test-hash.c macros.h test-hasmntopt.c \
+	macros.h test-htonl.c macros.h test-hypot-ieee.c \
+	test-hypot-ieee.h minus-zero.h infinity.h macros.h \
+	test-hypot.c test-hypot.h signature.h macros.h randomd.c \
+	test-hypotf-ieee.c test-hypot-ieee.h minus-zero.h infinity.h \
+	macros.h test-hypotf.c test-hypot.h signature.h macros.h \
+	randomf.c test-hypotl-ieee.c test-hypot-ieee.h minus-zero.h \
+	infinity.h macros.h test-hypotl.c test-hypot.h signature.h \
+	macros.h randoml.c test-i-ring.c macros.h test-iconv-h.c \
+	test-iconv.c signature.h macros.h test-iconv-utf.c macros.h \
+	test-ieee754-h.c test-ignore-value.c test-ilogb.c test-ilogb.h \
+	minus-zero.h infinity.h signature.h macros.h randomd.c \
+	test-ilogbf.c test-ilogb.h minus-zero.h infinity.h signature.h \
+	macros.h randomf.c test-ilogbl.c test-ilogb.h minus-zero.h \
+	infinity.h signature.h macros.h randoml.c test-imaxabs.c \
+	signature.h macros.h test-imaxdiv.c signature.h macros.h \
+	test-immutable.sh test-immutable.c macros.h test-inet_ntop.c \
+	signature.h macros.h test-inet_pton.c signature.h macros.h \
+	test-ino-map.c macros.h test-integer_length.c macros.h \
+	test-integer_length_l.c macros.h test-integer_length_ll.c \
+	macros.h test-intprops.c macros.h macros.h test-inttostr.c \
+	test-inttypes-h.c test-ioctl.c signature.h macros.h \
+	test-isalnum_l.c signature.h macros.h test-isalpha_l.c \
+	signature.h macros.h test-isatty.c signature.h macros.h \
+	test-isblank.c signature.h macros.h test-isblank_l.c \
+	signature.h macros.h test-iscntrl_l.c signature.h macros.h \
+	test-isdigit_l.c signature.h macros.h test-isfinite.c \
+	infinity.h macros.h test-isgraph_l.c signature.h macros.h \
+	test-isinf.c infinity.h macros.h test-islower_l.c signature.h \
+	macros.h test-isnan.c minus-zero.h infinity.h macros.h \
+	test-isnand-nolibm.c test-isnand.h minus-zero.h infinity.h \
+	macros.h test-isnand.c test-isnand.h minus-zero.h infinity.h \
+	macros.h test-isnanf-nolibm.c test-isnanf.h minus-zero.h \
+	infinity.h macros.h test-isnanf.c test-isnanf.h minus-zero.h \
+	infinity.h macros.h test-isnanl-nolibm.c test-isnanl.h \
+	minus-zero.h infinity.h macros.h test-isnanl.c test-isnanl.h \
+	minus-zero.h infinity.h macros.h test-isprint_l.c signature.h \
+	macros.h test-ispunct_l.c signature.h macros.h \
+	test-isspace_l.c signature.h macros.h test-isupper_l.c \
+	signature.h macros.h test-iswblank.c macros.h test-iswctype.c \
+	signature.h macros.h test-iswdigit.sh test-iswdigit.c \
+	signature.h macros.h test-iswpunct.sh test-iswpunct.c \
+	signature.h macros.h test-iswxdigit.sh test-iswxdigit.c \
+	signature.h macros.h test-isxdigit_l.c signature.h macros.h \
+	test-j0.c signature.h macros.h test-j1.c signature.h macros.h \
+	jit/test-cache.c macros.h test-jn.c signature.h macros.h \
+	test-kwset.c macros.h test-langinfo-h.c test-largefile.c \
+	test-lchmod.c signature.h macros.h nap.h test-lchown.h \
+	test-lchown.c signature.h macros.h test-ldexp-ieee.c \
 	test-ldexp-ieee.h minus-zero.h infinity.h macros.h \
-	test-ldexpf.c test-ldexp.h minus-zero.h infinity.h signature.h \
-	macros.h randomf.c test-ldexpl-ieee.c test-ldexp-ieee.h \
-	minus-zero.h infinity.h macros.h test-ldexpl.c test-ldexp.h \
-	minus-zero.h infinity.h signature.h macros.h randoml.c \
-	test-lgamma.c signature.h macros.h macros.h test-libgmp-mpq.c \
-	macros.h test-libgmp-mpz.c test-libtextstyle.c \
-	test-libtextstyle-default.css test-limits-h.c test-link.h \
-	test-link.c signature.h macros.h test-link.h test-linkat.c \
-	signature.h macros.h test-linked_list.c macros.h \
-	test-linkedhash_list.c macros.h test-linkedhash_map.c macros.h \
-	test-linkedhash_set.c macros.h test-list-c++.cc macros.h \
-	test-listen.c signature.h macros.h test-localcharset.c \
-	test-localcharset-w32utf8.sh test-localcharset-w32utf8.c \
-	windows-utf8.rc windows-utf8.manifest test-locale-h.c \
-	test-localeconv.c test-localeconv-mt.c signature.h macros.h \
-	test-localename.c test-localename-w32utf8.sh \
-	test-localename-w32utf8.c windows-utf8.rc \
-	windows-utf8.manifest macros.h test-rwlock1.c test-lock.c \
-	atomic-int-gnulib.h macros.h test-log-ieee.c test-log-ieee.h \
-	minus-zero.h infinity.h macros.h test-log.c test-log.h \
-	minus-zero.h signature.h macros.h randomd.c test-log10-ieee.c \
-	test-log10-ieee.h minus-zero.h infinity.h macros.h \
-	test-log10.c test-log10.h minus-zero.h signature.h macros.h \
-	randomd.c test-log10f-ieee.c test-log10-ieee.h minus-zero.h \
-	infinity.h macros.h test-log10f.c test-log10.h minus-zero.h \
-	signature.h macros.h randomf.c test-log10l-ieee.c \
+	test-ldexp.c test-ldexp.h minus-zero.h infinity.h signature.h \
+	macros.h randomd.c test-ldexpf-ieee.c test-ldexp-ieee.h \
+	minus-zero.h infinity.h macros.h test-ldexpf.c test-ldexp.h \
+	minus-zero.h infinity.h signature.h macros.h randomf.c \
+	test-ldexpl-ieee.c test-ldexp-ieee.h minus-zero.h infinity.h \
+	macros.h test-ldexpl.c test-ldexp.h minus-zero.h infinity.h \
+	signature.h macros.h randoml.c test-lgamma.c signature.h \
+	macros.h macros.h test-libgmp-mpq.c macros.h test-libgmp-mpz.c \
+	test-libtextstyle.c test-libtextstyle-default.css \
+	test-limits-h.c test-link.h test-link.c signature.h macros.h \
+	test-link.h test-linkat.c signature.h macros.h \
+	test-linked_list.c macros.h test-linkedhash_list.c macros.h \
+	test-linkedhash_map.c macros.h test-linkedhash_set.c macros.h \
+	test-list-c++.cc macros.h test-listen.c signature.h macros.h \
+	test-localcharset.c test-localcharset-w32utf8.sh \
+	test-localcharset-w32utf8.c windows-utf8.rc \
+	windows-utf8.manifest test-locale-h.c test-localeconv.c \
+	test-localeconv-mt.c signature.h macros.h test-localename.c \
+	test-localename-w32utf8.sh test-localename-w32utf8.c \
+	windows-utf8.rc windows-utf8.manifest macros.h test-rwlock1.c \
+	test-lock.c atomic-int-gnulib.h macros.h test-log-ieee.c \
+	test-log-ieee.h minus-zero.h infinity.h macros.h test-log.c \
+	test-log.h minus-zero.h signature.h macros.h randomd.c \
+	test-log10-ieee.c test-log10-ieee.h minus-zero.h infinity.h \
+	macros.h test-log10.c test-log10.h minus-zero.h signature.h \
+	macros.h randomd.c test-log10f-ieee.c test-log10-ieee.h \
+	minus-zero.h infinity.h macros.h test-log10f.c test-log10.h \
+	minus-zero.h signature.h macros.h randomf.c test-log10l-ieee.c \
 	test-log10-ieee.h minus-zero.h infinity.h macros.h \
 	test-log10l.c test-log10.h minus-zero.h signature.h macros.h \
 	randoml.c test-log1p-ieee.c test-log1p-ieee.h minus-zero.h \
@@ -15393,14 +15438,14 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	test-logb.h minus-zero.h signature.h macros.h randoml.c \
 	test-logf-ieee.c test-log-ieee.h minus-zero.h infinity.h \
 	macros.h test-logf.c test-log.h minus-zero.h signature.h \
-	macros.h randomf.c test-logl-ieee.c test-log-ieee.h \
-	minus-zero.h infinity.h macros.h test-logl.c test-log.h \
-	minus-zero.h signature.h macros.h randoml.c test-logp1.c \
-	test-log1p.h signature.h macros.h randomd.c test-logp1f.c \
-	test-log1p.h signature.h macros.h randomf.c test-logp1l.c \
-	test-log1p.h signature.h macros.h randoml.c test-lseek.c \
-	test-lseek.sh signature.h macros.h test-lstat.h test-lstat.c \
-	signature.h macros.h test-malloc-gnu.c macros.h \
+	macros.h randomf.c test-login_tty.c test-logl-ieee.c \
+	test-log-ieee.h minus-zero.h infinity.h macros.h test-logl.c \
+	test-log.h minus-zero.h signature.h macros.h randoml.c \
+	test-logp1.c test-log1p.h signature.h macros.h randomd.c \
+	test-logp1f.c test-log1p.h signature.h macros.h randomf.c \
+	test-logp1l.c test-log1p.h signature.h macros.h randoml.c \
+	test-lseek.c test-lseek.sh signature.h macros.h test-lstat.h \
+	test-lstat.c signature.h macros.h test-malloc-gnu.c macros.h \
 	test-malloc-h.c test-malloc-posix.c macros.h test-malloca.c \
 	test-map-c++.cc macros.h test-math-h.c macros.h test-mbfile.sh \
 	test-mbfile.c macros.h test-mbmemcasecmp-2.sh \
@@ -15531,7 +15576,8 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	test-poll.c signature.h macros.h test-popen.h \
 	test-popen-safer.c test-popen-safer2.c macros.h test-popen.h \
 	test-popen.c signature.h macros.h test-posix_memalign.c \
-	macros.h test-posix_spawn-open1.c test-posix_spawn-open2.c \
+	macros.h test-posix_openpt.c signature.h macros.h \
+	test-posix_spawn-open1.c test-posix_spawn-open2.c \
 	test-posix_spawn-inherit0.c test-posix_spawn-inherit1.c \
 	test-posix_spawn-script.c executable-script \
 	executable-script.sh executable-shell-script signature.h \
@@ -16490,9 +16536,9 @@ EXTRA_DIST = test-_Exit.sh test-_Exit.c test-accept.c signature.h \
 	test-unlink.c signature.h macros.h test-unlinkat.c \
 	test-rmdir.h test-unlink.h signature.h macros.h \
 	test-unlockpt.c signature.h macros.h test-unsetenv.c \
-	signature.h macros.h test-update-copyright.sh test-usleep.c \
-	signature.h macros.h test-utime-h.c test-utime.c nap.h \
-	test-utimens-common.h macros.h nap.h test-futimens.h \
+	signature.h macros.h test-update-copyright.sh test-userspec.c \
+	test-usleep.c signature.h macros.h test-utime-h.c test-utime.c \
+	nap.h test-utimens-common.h macros.h nap.h test-futimens.h \
 	test-lutimens.h test-utimens.h test-utimens-common.h \
 	test-utimens.c macros.h nap.h test-lutimens.h test-utimens.h \
 	test-utimens-common.h test-utimensat.c signature.h macros.h \
@@ -16865,8 +16911,10 @@ test_fabsf_LDADD = $(LDADD) @FABSF_LIBM@
 test_fabsl_ieee_LDADD = $(LDADD) @FABSL_LIBM@
 test_fabsl_SOURCES = test-fabsl.c randoml.c
 test_fabsl_LDADD = $(LDADD) @FABSL_LIBM@
+test_faccessat_LDADD = $(LDADD) $(EUIDACCESS_LIBGEN) @LIBINTL@
 test_fchdir_LDADD = $(LDADD) $(LIBINTL)
 test_fchmodat_LDADD = $(LDADD) @LIBINTL@
+test_fchownat_LDADD = $(LDADD) $(NANOSLEEP_LIB) @LIBINTL@
 test_fdatasync_LDADD = $(LDADD) $(FDATASYNC_LIB)
 test_fdopendir_LDADD = $(LDADD) @LIBINTL@
 test_fdutimensat_LDADD = $(LDADD) $(CLOCK_TIME_LIB) \
@@ -16921,6 +16969,7 @@ test_fmodl_SOURCES = test-fmodl.c randoml.c
 test_fmodl_LDADD = $(LDADD) @FMODL_LIBM@
 test_fnmatch_LDADD = $(LDADD) $(SETLOCALE_LIB) $(LIBUNISTRING) $(MBRTOWC_LIB)
 test_fnmatch_w32_LDADD = $(LDADD) $(SETLOCALE_LIB) $(LIBUNISTRING) $(MBRTOWC_LIB)
+test_forkpty_LDADD = $(LDADD) @PTY_LIB@
 test_freelocale_LDADD = $(LDADD) $(GETLOCALENAME_L_LIB)
 test_frexp_ieee_LDADD = $(LDADD) @FREXP_LIBM@
 test_frexp_nolibm_SOURCES = test-frexp.c randomd.c
@@ -17106,6 +17155,7 @@ test_logbl_LDADD = $(LDADD) @LOGBL_LIBM@
 test_logf_ieee_LDADD = $(LDADD) @LOGF_LIBM@
 test_logf_SOURCES = test-logf.c randomf.c
 test_logf_LDADD = $(LDADD) @LOGF_LIBM@
+test_login_tty_LDADD = $(LDADD) @PTY_LIB@
 test_logl_ieee_LDADD = $(LDADD) @LOGL_LIBM@
 test_logl_SOURCES = test-logl.c randoml.c
 test_logl_LDADD = $(LDADD) @LOGL_LIBM@
@@ -18382,6 +18432,7 @@ test_uc_width_LDADD = $(LDADD) $(LIBUNISTRING)
 test_uc_width2_SOURCES = uniwidth/test-uc_width2.c
 test_uc_width2_LDADD = $(LDADD) $(LIBUNISTRING)
 test_unlinkat_LDADD = $(LDADD) @LIBINTL@
+test_userspec_LDADD = $(LDADD) @LIBINTL@
 test_utime_LDADD = $(LDADD) $(CLOCK_TIME_LIB) $(NANOSLEEP_LIB) @LIBINTL@
 test_utimens_LDADD = $(LDADD) $(CLOCK_TIME_LIB) $(NANOSLEEP_LIB) @LIBINTL@
 test_utimensat_LDADD = $(LDADD) $(CLOCK_TIME_LIB) $(NANOSLEEP_LIB) @LIBINTL@
@@ -19918,6 +19969,10 @@ test-fabsl-ieee$(EXEEXT): $(test_fabsl_ieee_OBJECTS) $(test_fabsl_ieee_DEPENDENC
 	@rm -f test-fabsl-ieee$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_fabsl_ieee_OBJECTS) $(test_fabsl_ieee_LDADD) $(LIBS)
 
+test-faccessat$(EXEEXT): $(test_faccessat_OBJECTS) $(test_faccessat_DEPENDENCIES) $(EXTRA_test_faccessat_DEPENDENCIES) 
+	@rm -f test-faccessat$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_faccessat_OBJECTS) $(test_faccessat_LDADD) $(LIBS)
+
 test-fbufmode$(EXEEXT): $(test_fbufmode_OBJECTS) $(test_fbufmode_DEPENDENCIES) $(EXTRA_test_fbufmode_DEPENDENCIES) 
 	@rm -f test-fbufmode$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_fbufmode_OBJECTS) $(test_fbufmode_LDADD) $(LIBS)
@@ -19929,6 +19984,10 @@ test-fchdir$(EXEEXT): $(test_fchdir_OBJECTS) $(test_fchdir_DEPENDENCIES) $(EXTRA
 test-fchmodat$(EXEEXT): $(test_fchmodat_OBJECTS) $(test_fchmodat_DEPENDENCIES) $(EXTRA_test_fchmodat_DEPENDENCIES) 
 	@rm -f test-fchmodat$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_fchmodat_OBJECTS) $(test_fchmodat_LDADD) $(LIBS)
+
+test-fchownat$(EXEEXT): $(test_fchownat_OBJECTS) $(test_fchownat_DEPENDENCIES) $(EXTRA_test_fchownat_DEPENDENCIES) 
+	@rm -f test-fchownat$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_fchownat_OBJECTS) $(test_fchownat_LDADD) $(LIBS)
 
 test-fclose$(EXEEXT): $(test_fclose_OBJECTS) $(test_fclose_DEPENDENCIES) $(EXTRA_test_fclose_DEPENDENCIES) 
 	@rm -f test-fclose$(EXEEXT)
@@ -20201,6 +20260,10 @@ test-fopen-gnu$(EXEEXT): $(test_fopen_gnu_OBJECTS) $(test_fopen_gnu_DEPENDENCIES
 test-fopen-safer$(EXEEXT): $(test_fopen_safer_OBJECTS) $(test_fopen_safer_DEPENDENCIES) $(EXTRA_test_fopen_safer_DEPENDENCIES) 
 	@rm -f test-fopen-safer$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_fopen_safer_OBJECTS) $(test_fopen_safer_LDADD) $(LIBS)
+
+test-forkpty$(EXEEXT): $(test_forkpty_OBJECTS) $(test_forkpty_DEPENDENCIES) $(EXTRA_test_forkpty_DEPENDENCIES) 
+	@rm -f test-forkpty$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_forkpty_OBJECTS) $(test_forkpty_LDADD) $(LIBS)
 
 test-fpending$(EXEEXT): $(test_fpending_OBJECTS) $(test_fpending_DEPENDENCIES) $(EXTRA_test_fpending_DEPENDENCIES) 
 	@rm -f test-fpending$(EXEEXT)
@@ -20617,6 +20680,10 @@ test-gmtime_r$(EXEEXT): $(test_gmtime_r_OBJECTS) $(test_gmtime_r_DEPENDENCIES) $
 test-gmtime_r-mt$(EXEEXT): $(test_gmtime_r_mt_OBJECTS) $(test_gmtime_r_mt_DEPENDENCIES) $(EXTRA_test_gmtime_r_mt_DEPENDENCIES) 
 	@rm -f test-gmtime_r-mt$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_gmtime_r_mt_OBJECTS) $(test_gmtime_r_mt_LDADD) $(LIBS)
+
+test-grantpt$(EXEEXT): $(test_grantpt_OBJECTS) $(test_grantpt_DEPENDENCIES) $(EXTRA_test_grantpt_DEPENDENCIES) 
+	@rm -f test-grantpt$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_grantpt_OBJECTS) $(test_grantpt_LDADD) $(LIBS)
 
 test-hamt$(EXEEXT): $(test_hamt_OBJECTS) $(test_hamt_DEPENDENCIES) $(EXTRA_test_hamt_DEPENDENCIES) 
 	@rm -f test-hamt$(EXEEXT)
@@ -21217,6 +21284,10 @@ test-logf$(EXEEXT): $(test_logf_OBJECTS) $(test_logf_DEPENDENCIES) $(EXTRA_test_
 test-logf-ieee$(EXEEXT): $(test_logf_ieee_OBJECTS) $(test_logf_ieee_DEPENDENCIES) $(EXTRA_test_logf_ieee_DEPENDENCIES) 
 	@rm -f test-logf-ieee$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_logf_ieee_OBJECTS) $(test_logf_ieee_LDADD) $(LIBS)
+
+test-login_tty$(EXEEXT): $(test_login_tty_OBJECTS) $(test_login_tty_DEPENDENCIES) $(EXTRA_test_login_tty_DEPENDENCIES) 
+	@rm -f test-login_tty$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_login_tty_OBJECTS) $(test_login_tty_LDADD) $(LIBS)
 
 test-logl$(EXEEXT): $(test_logl_OBJECTS) $(test_logl_DEPENDENCIES) $(EXTRA_test_logl_DEPENDENCIES) 
 	@rm -f test-logl$(EXEEXT)
@@ -21869,6 +21940,10 @@ test-popen-safer2$(EXEEXT): $(test_popen_safer2_OBJECTS) $(test_popen_safer2_DEP
 test-posix_memalign$(EXEEXT): $(test_posix_memalign_OBJECTS) $(test_posix_memalign_DEPENDENCIES) $(EXTRA_test_posix_memalign_DEPENDENCIES) 
 	@rm -f test-posix_memalign$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_posix_memalign_OBJECTS) $(test_posix_memalign_LDADD) $(LIBS)
+
+test-posix_openpt$(EXEEXT): $(test_posix_openpt_OBJECTS) $(test_posix_openpt_DEPENDENCIES) $(EXTRA_test_posix_openpt_DEPENDENCIES) 
+	@rm -f test-posix_openpt$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_posix_openpt_OBJECTS) $(test_posix_openpt_LDADD) $(LIBS)
 
 test-posix_spawn-chdir$(EXEEXT): $(test_posix_spawn_chdir_OBJECTS) $(test_posix_spawn_chdir_DEPENDENCIES) $(EXTRA_test_posix_spawn_chdir_DEPENDENCIES) 
 	@rm -f test-posix_spawn-chdir$(EXEEXT)
@@ -25428,6 +25503,10 @@ test-unsetenv$(EXEEXT): $(test_unsetenv_OBJECTS) $(test_unsetenv_DEPENDENCIES) $
 	@rm -f test-unsetenv$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_unsetenv_OBJECTS) $(test_unsetenv_LDADD) $(LIBS)
 
+test-userspec$(EXEEXT): $(test_userspec_OBJECTS) $(test_userspec_DEPENDENCIES) $(EXTRA_test_userspec_DEPENDENCIES) 
+	@rm -f test-userspec$(EXEEXT)
+	$(AM_V_CCLD)$(LINK) $(test_userspec_OBJECTS) $(test_userspec_LDADD) $(LIBS)
+
 test-usleep$(EXEEXT): $(test_usleep_OBJECTS) $(test_usleep_DEPENDENCIES) $(EXTRA_test_usleep_DEPENDENCIES) 
 	@rm -f test-usleep$(EXEEXT)
 	$(AM_V_CCLD)$(LINK) $(test_usleep_OBJECTS) $(test_usleep_LDADD) $(LIBS)
@@ -26080,9 +26159,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fabsf.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fabsl-ieee.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fabsl.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-faccessat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fbufmode.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fchdir.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fchmodat.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fchownat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fclose.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl-safer.Po@am__quote@ # am--include-marker
@@ -26151,6 +26232,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fopen-gnu.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fopen-safer.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fopen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-forkpty.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fpending.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fprintf-gnu.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fprintf-posix.Po@am__quote@ # am--include-marker
@@ -26253,6 +26335,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-glob.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-gmtime_r-mt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-gmtime_r.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-grantpt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-hamt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-hard-locale.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-hash.Po@am__quote@ # am--include-marker
@@ -26384,6 +26467,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logbl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logf-ieee.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logf.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-login_tty.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logl-ieee.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-logp1.Po@am__quote@ # am--include-marker
@@ -26531,6 +26615,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-popen-safer2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-popen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-posix_memalign.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-posix_openpt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-posix_spawn-chdir.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-posix_spawn-dup2-stdin.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-posix_spawn-dup2-stdout.Po@am__quote@ # am--include-marker
@@ -26851,6 +26936,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unlinkat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unlockpt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unsetenv.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-userspec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-usleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-utime-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-utime.Po@am__quote@ # am--include-marker
@@ -30302,6 +30388,13 @@ test-fabsl.log: test-fabsl$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-faccessat.log: test-faccessat$(EXEEXT)
+	@p='test-faccessat$(EXEEXT)'; \
+	b='test-faccessat'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-fbufmode.log: test-fbufmode$(EXEEXT)
 	@p='test-fbufmode$(EXEEXT)'; \
 	b='test-fbufmode'; \
@@ -30319,6 +30412,13 @@ test-fchdir.log: test-fchdir$(EXEEXT)
 test-fchmodat.log: test-fchmodat$(EXEEXT)
 	@p='test-fchmodat$(EXEEXT)'; \
 	b='test-fchmodat'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-fchownat.log: test-fchownat$(EXEEXT)
+	@p='test-fchownat$(EXEEXT)'; \
+	b='test-fchownat'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -30879,6 +30979,13 @@ test-fopen-safer.log: test-fopen-safer$(EXEEXT)
 test-fopen.log: test-fopen$(EXEEXT)
 	@p='test-fopen$(EXEEXT)'; \
 	b='test-fopen'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-forkpty.log: test-forkpty$(EXEEXT)
+	@p='test-forkpty$(EXEEXT)'; \
+	b='test-forkpty'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -31502,6 +31609,13 @@ test-glob-h.log: test-glob-h$(EXEEXT)
 test-glob.log: test-glob$(EXEEXT)
 	@p='test-glob$(EXEEXT)'; \
 	b='test-glob'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-grantpt.log: test-grantpt$(EXEEXT)
+	@p='test-grantpt$(EXEEXT)'; \
+	b='test-grantpt'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -32391,6 +32505,13 @@ test-logf-ieee.log: test-logf-ieee$(EXEEXT)
 test-logf.log: test-logf$(EXEEXT)
 	@p='test-logf$(EXEEXT)'; \
 	b='test-logf'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-login_tty.log: test-login_tty$(EXEEXT)
+	@p='test-login_tty$(EXEEXT)'; \
+	b='test-login_tty'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -33882,6 +34003,13 @@ test-popen.log: test-popen$(EXEEXT)
 test-posix_memalign.log: test-posix_memalign$(EXEEXT)
 	@p='test-posix_memalign$(EXEEXT)'; \
 	b='test-posix_memalign'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-posix_openpt.log: test-posix_openpt$(EXEEXT)
+	@p='test-posix_openpt$(EXEEXT)'; \
+	b='test-posix_openpt'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -39332,6 +39460,13 @@ test-update-copyright.sh.log: test-update-copyright.sh
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-userspec.log: test-userspec$(EXEEXT)
+	@p='test-userspec$(EXEEXT)'; \
+	b='test-userspec'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-usleep.log: test-usleep$(EXEEXT)
 	@p='test-usleep$(EXEEXT)'; \
 	b='test-usleep'; \
@@ -40503,9 +40638,11 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-fabsf.Po
 	-rm -f ./$(DEPDIR)/test-fabsl-ieee.Po
 	-rm -f ./$(DEPDIR)/test-fabsl.Po
+	-rm -f ./$(DEPDIR)/test-faccessat.Po
 	-rm -f ./$(DEPDIR)/test-fbufmode.Po
 	-rm -f ./$(DEPDIR)/test-fchdir.Po
 	-rm -f ./$(DEPDIR)/test-fchmodat.Po
+	-rm -f ./$(DEPDIR)/test-fchownat.Po
 	-rm -f ./$(DEPDIR)/test-fclose.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-safer.Po
@@ -40574,6 +40711,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-fopen-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fopen-safer.Po
 	-rm -f ./$(DEPDIR)/test-fopen.Po
+	-rm -f ./$(DEPDIR)/test-forkpty.Po
 	-rm -f ./$(DEPDIR)/test-fpending.Po
 	-rm -f ./$(DEPDIR)/test-fprintf-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fprintf-posix.Po
@@ -40676,6 +40814,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-glob.Po
 	-rm -f ./$(DEPDIR)/test-gmtime_r-mt.Po
 	-rm -f ./$(DEPDIR)/test-gmtime_r.Po
+	-rm -f ./$(DEPDIR)/test-grantpt.Po
 	-rm -f ./$(DEPDIR)/test-hamt.Po
 	-rm -f ./$(DEPDIR)/test-hard-locale.Po
 	-rm -f ./$(DEPDIR)/test-hash.Po
@@ -40807,6 +40946,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-logbl.Po
 	-rm -f ./$(DEPDIR)/test-logf-ieee.Po
 	-rm -f ./$(DEPDIR)/test-logf.Po
+	-rm -f ./$(DEPDIR)/test-login_tty.Po
 	-rm -f ./$(DEPDIR)/test-logl-ieee.Po
 	-rm -f ./$(DEPDIR)/test-logl.Po
 	-rm -f ./$(DEPDIR)/test-logp1.Po
@@ -40954,6 +41094,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-popen-safer2.Po
 	-rm -f ./$(DEPDIR)/test-popen.Po
 	-rm -f ./$(DEPDIR)/test-posix_memalign.Po
+	-rm -f ./$(DEPDIR)/test-posix_openpt.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-chdir.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-dup2-stdin.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-dup2-stdout.Po
@@ -41274,6 +41415,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-unlinkat.Po
 	-rm -f ./$(DEPDIR)/test-unlockpt.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
+	-rm -f ./$(DEPDIR)/test-userspec.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po
 	-rm -f ./$(DEPDIR)/test-utime-h.Po
 	-rm -f ./$(DEPDIR)/test-utime.Po
@@ -42141,9 +42283,11 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-fabsf.Po
 	-rm -f ./$(DEPDIR)/test-fabsl-ieee.Po
 	-rm -f ./$(DEPDIR)/test-fabsl.Po
+	-rm -f ./$(DEPDIR)/test-faccessat.Po
 	-rm -f ./$(DEPDIR)/test-fbufmode.Po
 	-rm -f ./$(DEPDIR)/test-fchdir.Po
 	-rm -f ./$(DEPDIR)/test-fchmodat.Po
+	-rm -f ./$(DEPDIR)/test-fchownat.Po
 	-rm -f ./$(DEPDIR)/test-fclose.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-safer.Po
@@ -42212,6 +42356,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-fopen-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fopen-safer.Po
 	-rm -f ./$(DEPDIR)/test-fopen.Po
+	-rm -f ./$(DEPDIR)/test-forkpty.Po
 	-rm -f ./$(DEPDIR)/test-fpending.Po
 	-rm -f ./$(DEPDIR)/test-fprintf-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fprintf-posix.Po
@@ -42314,6 +42459,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-glob.Po
 	-rm -f ./$(DEPDIR)/test-gmtime_r-mt.Po
 	-rm -f ./$(DEPDIR)/test-gmtime_r.Po
+	-rm -f ./$(DEPDIR)/test-grantpt.Po
 	-rm -f ./$(DEPDIR)/test-hamt.Po
 	-rm -f ./$(DEPDIR)/test-hard-locale.Po
 	-rm -f ./$(DEPDIR)/test-hash.Po
@@ -42445,6 +42591,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-logbl.Po
 	-rm -f ./$(DEPDIR)/test-logf-ieee.Po
 	-rm -f ./$(DEPDIR)/test-logf.Po
+	-rm -f ./$(DEPDIR)/test-login_tty.Po
 	-rm -f ./$(DEPDIR)/test-logl-ieee.Po
 	-rm -f ./$(DEPDIR)/test-logl.Po
 	-rm -f ./$(DEPDIR)/test-logp1.Po
@@ -42592,6 +42739,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-popen-safer2.Po
 	-rm -f ./$(DEPDIR)/test-popen.Po
 	-rm -f ./$(DEPDIR)/test-posix_memalign.Po
+	-rm -f ./$(DEPDIR)/test-posix_openpt.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-chdir.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-dup2-stdin.Po
 	-rm -f ./$(DEPDIR)/test-posix_spawn-dup2-stdout.Po
@@ -42912,6 +43060,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-unlinkat.Po
 	-rm -f ./$(DEPDIR)/test-unlockpt.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
+	-rm -f ./$(DEPDIR)/test-userspec.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po
 	-rm -f ./$(DEPDIR)/test-utime-h.Po
 	-rm -f ./$(DEPDIR)/test-utime.Po

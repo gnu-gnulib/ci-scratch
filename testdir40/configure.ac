@@ -407,6 +407,7 @@ gl_m4_base='glm4'
   gl_CONDITIONAL([GL_COND_OBJ_FCHOWN_STUB],
                  [test $REPLACE_CHOWN = 1 && test $ac_cv_func_fchown = no])
   gl_UNISTD_MODULE_INDICATOR([chown])
+  gl_MODULE_INDICATOR([chownat]) dnl for lib/openat.h
   AC_DEFINE([SIGNAL_SAFE_LIST], [1], [Define if lists must be signal-safe.])
   gl_CLOCK_TIME
   gl_MODULE_INDICATOR_FOR_TESTS([cloexec])
@@ -698,6 +699,14 @@ gl_m4_base='glm4'
   gl_CONDITIONAL([GL_COND_OBJ_FABSL],
                  [test $HAVE_FABSL = 0 || test $REPLACE_FABSL = 1])
   gl_MATH_MODULE_INDICATOR([fabsl])
+  gl_FUNC_FACCESSAT
+  gl_CONDITIONAL([GL_COND_OBJ_FACCESSAT],
+                 [test $HAVE_FACCESSAT = 0 || test $REPLACE_FACCESSAT = 1])
+  AM_COND_IF([GL_COND_OBJ_FACCESSAT], [
+    gl_PREREQ_FACCESSAT
+  ])
+  gl_MODULE_INDICATOR([faccessat])
+  gl_UNISTD_MODULE_INDICATOR([faccessat])
   gl_FATAL_SIGNAL
   gl_FUNC_FBUFMODE
   gl_FUNC_FCHDIR
@@ -714,6 +723,10 @@ gl_m4_base='glm4'
     gl_PREREQ_FCHMODAT
   ])
   gl_SYS_STAT_MODULE_INDICATOR([fchmodat])
+  gl_FUNC_FCHOWNAT
+  gl_CONDITIONAL([GL_COND_OBJ_FCHOWNAT],
+                 [test $HAVE_FCHOWNAT = 0 || test $REPLACE_FCHOWNAT = 1])
+  gl_UNISTD_MODULE_INDICATOR([fchownat])
   gl_FUNC_FCLOSE
   gl_CONDITIONAL([GL_COND_OBJ_FCLOSE], [test $REPLACE_FCLOSE = 1])
   gl_STDIO_MODULE_INDICATOR([fclose])
@@ -920,6 +933,10 @@ gl_m4_base='glm4'
   gl_MODULE_INDICATOR([fopen-gnu])
   gl_STDIO_MODULE_INDICATOR([fopen-gnu])
   gl_MODULE_INDICATOR([fopen-safer])
+  gl_FUNC_FORKPTY
+  gl_CONDITIONAL([GL_COND_OBJ_FORKPTY],
+                 [test $HAVE_FORKPTY = 0 || test $REPLACE_FORKPTY = 1])
+  gl_PTY_MODULE_INDICATOR([forkpty])
   gl_FPE_TRAPPING
   gl_FUNC_FPENDING
   gl_CONDITIONAL([GL_COND_OBJ_FPENDING], [test $gl_cv_func___fpending = no])
@@ -1300,6 +1317,12 @@ AM_GNU_GETTEXT_VERSION([0.22])
           [GNUmakefile=$GNUmakefile])])
   AC_REQUIRE([gt_GOCOMP])
   AC_CONFIG_FILES([gocomp.sh:build-aux/gocomp.sh.in])
+  gl_FUNC_GRANTPT
+  gl_CONDITIONAL([GL_COND_OBJ_GRANTPT], [test $HAVE_GRANTPT = 0])
+  AM_COND_IF([GL_COND_OBJ_GRANTPT], [
+    gl_PREREQ_GRANTPT
+  ])
+  gl_STDLIB_MODULE_INDICATOR([grantpt])
   gl_FUNC_GROUP_MEMBER
   gl_CONDITIONAL([GL_COND_OBJ_GROUP_MEMBER], [test $HAVE_GROUP_MEMBER = 0])
   AM_COND_IF([GL_COND_OBJ_GROUP_MEMBER], [
@@ -1354,6 +1377,7 @@ AM_GNU_GETTEXT_VERSION([0.22])
   gl_CONDITIONAL([GL_COND_OBJ_ICONV_OPEN], [test $REPLACE_ICONV_OPEN = 1])
   gl_CONDITIONAL([GL_COND_OBJ_ICONV], [test $REPLACE_ICONV = 1])
   gl_FUNC_ICONV_OPEN_UTF
+  gl_IDCACHE
   gl_IDPRIV
   gl_IDPRIV
   gl_IEEE754_H
@@ -1717,6 +1741,9 @@ AM_GNU_GETTEXT_VERSION([0.22])
                  [test $HAVE_LOGF = 0 || test $REPLACE_LOGF = 1])
   gl_MATH_MODULE_INDICATOR([logf])
   gl_FUNC_LOGF_IEEE
+  gl_FUNC_LOGIN_TTY
+  gl_CONDITIONAL([GL_COND_OBJ_LOGIN_TTY], [test $HAVE_LOGIN_TTY = 0])
+  gl_UTMP_MODULE_INDICATOR([login_tty])
   gl_FUNC_LOGL
   gl_CONDITIONAL([GL_COND_OBJ_LOGL],
                  [test $HAVE_LOGL = 0 || test $REPLACE_LOGL = 1])
@@ -2215,6 +2242,10 @@ AM_GNU_GETTEXT_VERSION([0.22])
   gl_FUNC_POSIX_MEMALIGN
   gl_CONDITIONAL([GL_COND_OBJ_POSIX_MEMALIGN], [test $REPLACE_POSIX_MEMALIGN = 1])
   gl_STDLIB_MODULE_INDICATOR([posix_memalign])
+  gl_FUNC_POSIX_OPENPT
+  gl_CONDITIONAL([GL_COND_OBJ_POSIX_OPENPT],
+                 [test $HAVE_POSIX_OPENPT = 0 || test $REPLACE_POSIX_OPENPT = 1])
+  gl_STDLIB_MODULE_INDICATOR([posix_openpt])
   gl_POSIX_SPAWN
   gl_CONDITIONAL([GL_COND_OBJ_SPAWN],
                  [test $HAVE_POSIX_SPAWN = 0 || test $REPLACE_POSIX_SPAWN = 1])
@@ -4456,6 +4487,7 @@ AM_GNU_GETTEXT_VERSION([0.22])
   ])
   gl_STDLIB_MODULE_INDICATOR([unsetenv])
   gl_SYS_PROC_UPTIME
+  gl_USERSPEC
   gl_FUNC_USLEEP
   gl_CONDITIONAL([GL_COND_OBJ_USLEEP],
                  [test $HAVE_USLEEP = 0 || test $REPLACE_USLEEP = 1])
@@ -5014,6 +5046,7 @@ changequote([, ])dnl
   AC_CHECK_FUNCS_ONCE([geteuid])
   dnl Test for Linux system call close_range(), declared in <unistd.h>.
   gl_CHECK_FUNCS_ANDROID([close_range], [[#include <unistd.h>]])
+  AC_CHECK_FUNCS_ONCE([getgid getegid])
   AC_CHECK_DECLS_ONCE([alarm])
   gl_MUSL_LIBC
   gl_MUSL_LIBC

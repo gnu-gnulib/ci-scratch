@@ -253,6 +253,14 @@
    to 0 otherwise. */
 #undef ENABLE_VALGRIND_SUPPORT
 
+/* Define to 1 if your platform has fchownat, but it does not reject an empty
+   file name. */
+#undef FCHOWNAT_EMPTY_FILENAME_BUG
+
+/* Define to 1 if your platform has fchownat, but it cannot perform lchown
+   tasks. */
+#undef FCHOWNAT_NOFOLLOW_BUG
+
 /* Define this to 1 if F_DUPFD behavior does not match POSIX */
 #undef FCNTL_DUPFD_BUGGY
 
@@ -362,6 +370,10 @@
 #undef GNULIB_CHMODAT
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
+   whether the gnulib module chownat shall be considered present. */
+#undef GNULIB_CHOWNAT
+
+/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module close shall be considered present. */
 #undef GNULIB_CLOSE
 
@@ -380,6 +392,10 @@
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module dirname shall be considered present. */
 #undef GNULIB_DIRNAME
+
+/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
+   whether the gnulib module faccessat shall be considered present. */
+#undef GNULIB_FACCESSAT
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module fcntl-safer shall be considered present. */
@@ -1071,11 +1087,17 @@
 /* Define to 1 when the gnulib module fabsl should be tested. */
 #undef GNULIB_TEST_FABSL
 
+/* Define to 1 when the gnulib module faccessat should be tested. */
+#undef GNULIB_TEST_FACCESSAT
+
 /* Define to 1 when the gnulib module fchdir should be tested. */
 #undef GNULIB_TEST_FCHDIR
 
 /* Define to 1 when the gnulib module fchmodat should be tested. */
 #undef GNULIB_TEST_FCHMODAT
+
+/* Define to 1 when the gnulib module fchownat should be tested. */
+#undef GNULIB_TEST_FCHOWNAT
 
 /* Define to 1 when the gnulib module fclose should be tested. */
 #undef GNULIB_TEST_FCLOSE
@@ -1190,6 +1212,9 @@
 
 /* Define to 1 when the gnulib module fopen-gnu should be tested. */
 #undef GNULIB_TEST_FOPEN_GNU
+
+/* Define to 1 when the gnulib module forkpty should be tested. */
+#undef GNULIB_TEST_FORKPTY
 
 /* Define to 1 when the gnulib module fprintf should be tested. */
 #undef GNULIB_TEST_FPRINTF
@@ -1366,6 +1391,9 @@
 /* Define to 1 when the gnulib module glob should be tested. */
 #undef GNULIB_TEST_GLOB
 
+/* Define to 1 when the gnulib module grantpt should be tested. */
+#undef GNULIB_TEST_GRANTPT
+
 /* Define to 1 when the gnulib module group-member should be tested. */
 #undef GNULIB_TEST_GROUP_MEMBER
 
@@ -1506,6 +1534,9 @@
 
 /* Define to 1 when the gnulib module logf should be tested. */
 #undef GNULIB_TEST_LOGF
+
+/* Define to 1 when the gnulib module login_tty should be tested. */
+#undef GNULIB_TEST_LOGIN_TTY
 
 /* Define to 1 when the gnulib module logl should be tested. */
 #undef GNULIB_TEST_LOGL
@@ -1741,6 +1772,9 @@
 
 /* Define to 1 when the gnulib module posix_memalign should be tested. */
 #undef GNULIB_TEST_POSIX_MEMALIGN
+
+/* Define to 1 when the gnulib module posix_openpt should be tested. */
+#undef GNULIB_TEST_POSIX_OPENPT
 
 /* Define to 1 when the gnulib module posix_spawn should be tested. */
 #undef GNULIB_TEST_POSIX_SPAWN
@@ -2676,6 +2710,9 @@
 /* Define if your system defines TIOCGWINSZ in sys/ioctl.h. */
 #undef GWINSZ_IN_SYS_IOCTL
 
+/* Define to 1 if you have the 'access' function. */
+#undef HAVE_ACCESS
+
 /* Define to 1 if you have the 'aclsort' function. */
 #undef HAVE_ACLSORT
 
@@ -3058,6 +3095,10 @@
 /* Define to 1 if you have the declaration of 'fmodl', and to 0 if you don't.
    */
 #undef HAVE_DECL_FMODL
+
+/* Define to 1 if you have the declaration of 'forkpty', and to 0 if you
+   don't. */
+#undef HAVE_DECL_FORKPTY
 
 /* Define to 1 if you have the declaration of 'fpurge', and to 0 if you don't.
    */
@@ -3595,6 +3636,9 @@
 /* Define to 1 if you have the 'fchown' function. */
 #undef HAVE_FCHOWN
 
+/* Define to 1 if you have the 'fchownat' function. */
+#undef HAVE_FCHOWNAT
+
 /* Define to 1 if you have the 'fcntl' function. */
 #undef HAVE_FCNTL
 
@@ -3646,6 +3690,9 @@
 
 /* Define to 1 if you have the <fnmatch.h> header file. */
 #undef HAVE_FNMATCH_H
+
+/* Define to 1 if the system has the 'forkpty' function. */
+#undef HAVE_FORKPTY
 
 /* Define to 1 if you have the 'fpathconf' function. */
 #undef HAVE_FPATHCONF
@@ -4117,6 +4164,9 @@
 
 /* Define to 1 if you have the 'logf' function. */
 #undef HAVE_LOGF
+
+/* Define to 1 if you have the `login_tty' function. */
+#undef HAVE_LOGIN_TTY
 
 /* Define to 1 if you have the 'logp1' function. */
 #undef HAVE_LOGP1

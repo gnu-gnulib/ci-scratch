@@ -1218,6 +1218,12 @@ endif
 
 ## end   gnulib module chown
 
+## begin gnulib module chownat
+
+libgnu_a_SOURCES += chownat.c
+
+## end   gnulib module chownat
+
 ## begin gnulib module classpath
 
 libgnu_a_SOURCES += classpath.h classpath.c
@@ -2366,6 +2372,18 @@ endif
 
 ## end   gnulib module fabsl
 
+## begin gnulib module faccessat
+
+if GL_COND_OBJ_FACCESSAT
+libgnu_a_SOURCES += faccessat.c
+endif
+
+EXTRA_DIST += at-func.c
+
+EXTRA_libgnu_a_SOURCES += at-func.c
+
+## end   gnulib module faccessat
+
 ## begin gnulib module fatal-signal
 
 libgnu_a_SOURCES += fatal-signal.h fatal-signal.c
@@ -2399,6 +2417,18 @@ EXTRA_DIST += at-func.c
 EXTRA_libgnu_a_SOURCES += at-func.c
 
 ## end   gnulib module fchmodat
+
+## begin gnulib module fchownat
+
+if GL_COND_OBJ_FCHOWNAT
+libgnu_a_SOURCES += fchownat.c
+endif
+
+EXTRA_DIST += at-func.c
+
+EXTRA_libgnu_a_SOURCES += at-func.c
+
+## end   gnulib module fchownat
 
 ## begin gnulib module fclose
 
@@ -3027,6 +3057,14 @@ libgnu_a_SOURCES += fopen-safer.c
 EXTRA_DIST += stdio--.h stdio-safer.h
 
 ## end   gnulib module fopen-safer
+
+## begin gnulib module forkpty
+
+if GL_COND_OBJ_FORKPTY
+libgnu_a_SOURCES += forkpty.c
+endif
+
+## end   gnulib module forkpty
 
 ## begin gnulib module fpe-trapping
 
@@ -4019,6 +4057,16 @@ V_GPERF_0 = @echo "  GPERF   " $@;
 
 ## end   gnulib module gperf
 
+## begin gnulib module grantpt
+
+if GL_COND_OBJ_GRANTPT
+libgnu_a_SOURCES += grantpt.c
+endif
+
+EXTRA_DIST += pty-private.h
+
+## end   gnulib module grantpt
+
 ## begin gnulib module group-member
 
 if GL_COND_OBJ_GROUP_MEMBER
@@ -4246,6 +4294,14 @@ EXTRA_DIST           += iconv_open-aix.h iconv_open-hpux.h iconv_open-solaris.h 
 EXTRA_DIST += iconv_open-aix.gperf iconv_open-hpux.gperf iconv_open-solaris.gperf iconv_open-zos.gperf
 
 ## end   gnulib module iconv_open
+
+## begin gnulib module idcache
+
+libgnu_a_SOURCES += idcache.c
+
+EXTRA_DIST += idcache.h
+
+## end   gnulib module idcache
 
 ## begin gnulib module idpriv-drop
 
@@ -5324,6 +5380,14 @@ libgnu_a_SOURCES += logf.c
 endif
 
 ## end   gnulib module logf
+
+## begin gnulib module login_tty
+
+if GL_COND_OBJ_LOGIN_TTY
+libgnu_a_SOURCES += login_tty.c
+endif
+
+## end   gnulib module login_tty
 
 ## begin gnulib module logl
 
@@ -7115,6 +7179,14 @@ endif
 
 ## end   gnulib module posix_memalign
 
+## begin gnulib module posix_openpt
+
+if GL_COND_OBJ_POSIX_OPENPT
+libgnu_a_SOURCES += posix_openpt.c
+endif
+
+## end   gnulib module posix_openpt
+
 ## begin gnulib module posix_spawn
 
 if GL_COND_OBJ_SPAWN
@@ -7413,6 +7485,16 @@ libgnu_a_SOURCES += pselect.c
 endif
 
 ## end   gnulib module pselect
+
+## begin gnulib module pt_chown
+
+# TODO: Add rules for installing as setuid root (chown root, chmod a=rx,u+s).
+pkglibexec_PROGRAMS = pt_chown
+pt_chown_LDADD = libgnu.a
+
+EXTRA_DIST += pt_chown.c pty-private.h
+
+## end   gnulib module pt_chown
 
 ## begin gnulib module pthread-cond
 
@@ -17459,6 +17541,14 @@ EXTRA_DIST += $(top_srcdir)/build-aux/update-copyright
 EXTRA_DIST += $(top_srcdir)/build-aux/useless-if-before-free
 
 ## end   gnulib module useless-if-before-free
+
+## begin gnulib module userspec
+
+libgnu_a_SOURCES += userspec.c
+
+EXTRA_DIST += userspec.h
+
+## end   gnulib module userspec
 
 ## begin gnulib module usleep
 
