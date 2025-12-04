@@ -145,13 +145,15 @@ renameatu (int fd1, char const *src, int fd2, char const *dst,
          is defined, because RENAME_EXCL is buggy on macOS 11.2:
          renameatx_np (fd, "X", fd, "X", RENAME_EXCL) incorrectly
          succeeds when X exists.  */
-      struct stat dst_st;
-      if (fstatat (fd2, dst, &dst_st, AT_SYMLINK_NOFOLLOW) == 0
-          || errno == EOVERFLOW)
-        return errno_fail (EEXIST);
-      if (errno != ENOENT)
-        return -1;
-      dst_found_nonexistent = true;
+      {
+        struct stat dst_st;
+        if (fstatat (fd2, dst, &dst_st, AT_SYMLINK_NOFOLLOW) == 0
+            || errno == EOVERFLOW)
+          return errno_fail (EEXIST);
+        if (errno != ENOENT)
+          return -1;
+        dst_found_nonexistent = true;
+      }
       break;
 
     case RENAME_EXCHANGE:

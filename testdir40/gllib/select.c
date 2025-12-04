@@ -307,7 +307,7 @@ rpl_select (int nfds, fd_set *rfds, fd_set *wfds, fd_set *xfds,
     for (int i = 0; i < rfds->fd_count; i++)
       {
         int fd = rfds->fd_array[i];
-        h = (HANDLE) _get_osfhandle (fd);
+        HANDLE h = (HANDLE) _get_osfhandle (fd);
         DWORD nbuffer;
         if (!IsConsoleHandle (h)
             || GetNumberOfConsoleInputEvents (h, &nbuffer))
@@ -323,7 +323,7 @@ rpl_select (int nfds, fd_set *rfds, fd_set *wfds, fd_set *xfds,
     for (int i = 0; i < wfds->fd_count; i++)
       {
         int fd = wfds->fd_array[i];
-        h = (HANDLE) _get_osfhandle (fd);
+        HANDLE h = (HANDLE) _get_osfhandle (fd);
         DWORD nbuffer;
         if (!IsConsoleHandle (h)
             || !GetNumberOfConsoleInputEvents (h, &nbuffer))

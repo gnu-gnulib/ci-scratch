@@ -40,7 +40,7 @@ pthread_mutex_timedlock (pthread_mutex_t *mutex, const struct timespec *abstime)
      Therefore start the loop with a pthread_mutex_trylock call.  */
   for (;;)
     {
-      err = pthread_mutex_trylock (mutex);
+      int err = pthread_mutex_trylock (mutex);
       if (err != EBUSY)
         return err;
 
