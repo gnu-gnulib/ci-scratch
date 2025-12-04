@@ -82,7 +82,8 @@ done
 # testdir36: posix_spawn_file_actions_addclose
 # testdir37: boot-time, readutmp
 # testdir38: 200 modules
-cd testdir38 || exit 1
+# testdir39: 20 modules
+cd testdir39 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
