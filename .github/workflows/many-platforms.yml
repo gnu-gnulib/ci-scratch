@@ -205,7 +205,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [macos-13, macos-14, macos-15, macos-26]
+        os: [macos-14, macos-15, macos-26]
     runs-on: ${{ matrix.os }}
     steps:
       # This is needed because we run a script stored in this repository.
@@ -216,7 +216,7 @@ jobs:
       - run: pwd
       # Install Homebrew packages.
       # List of packages: https://formulae.brew.sh/
-      - run: ${{ (matrix.os == 'macos-14' || matrix.os == 'macos-15' || matrix.os == 'macos-26') && 'brew install libiconv' || ':' }}
+      - run: ${{ 'brew install libiconv' }}
       - run: |
           pwd
           wget -O macos-compile "${gnulib_url_prefix}build-aux/macos-compile"
