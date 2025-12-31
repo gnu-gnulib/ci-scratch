@@ -1,0 +1,46 @@
+The default merge driver of 'git' *always* produces conflicts when
+pulling public modifications into a privately modified ChangeLog file.
+This is because ChangeLog files are always modified at the top; the
+default merge driver has no clue how to deal with this. Furthermore
+the conflicts are presented with more <<<< ==== >>>> markers than
+necessary; this is because the default merge driver makes pointless
+efforts to look at the individual line changes inside a ChangeLog entry.
+
+This program serves as a 'git' merge driver that avoids these problems.
+1. It produces no conflict when ChangeLog entries have been inserted
+   at the top both in the public and in the private modification. It
+   puts the privately added entries above the publicly added entries.
+2. It respects the structure of ChangeLog files: entries are not split
+   into lines but kept together.
+3. It also handles the case of small modifications of past ChangeLog
+   entries, or of removed ChangeLog entries: they are merged as one
+   would expect it.
+4. Conflicts are presented at the top of the file, rather than where
+   they occurred, so that the user will see them immediately. (Unlike
+   for source code written in some programming language, conflict markers
+   that are located several hundreds lines from the top will not cause
+   any syntax error and therefore would be likely to remain unnoticed.)
+
+
+The homepage of this package is at
+
+           https://www.gnu.org/software/vc-changelog/
+
+The primary FTP site for its distribution is
+
+           https://ftp.gnu.org/pub/gnu/vc-changelog/
+
+
+Report bugs
+  - in the bug tracker at <https://savannah.gnu.org/projects/vc-changelog>
+  - or by email to <bug-vc-changelog@gnu.org>.
+
+
+Other files you might look into:
+
+COPYING      - copying conditions
+DEPENDENCIES - list of prerequisite packages, to be installed before this one
+INSTALL      - general compilation and installation rules
+NEWS         - major changes in the current version
+THANKS       - list of contributors
+JOIN-GNU     - invitation to join the GNU project

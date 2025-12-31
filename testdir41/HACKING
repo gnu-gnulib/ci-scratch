@@ -1,0 +1,66 @@
+All you need to know when hacking (modifying) GNU git-merge-changelog or when
+building it off a git checkout.
+
+
+Requirements
+============
+
+You will need reasonably recent versions of the build tools:
+
+  * A C compiler. Such as GNU GCC.
+    + Homepage:
+      https://gcc.gnu.org/
+
+  * GNU automake 1.16.4 or newer
+    + Homepage:
+      https://www.gnu.org/software/automake/
+
+  * GNU autoconf
+    + Homepage:
+      https://www.gnu.org/software/autoconf/
+
+  * GNU m4
+    + Homepage:
+      https://www.gnu.org/software/m4/
+
+  * GNU gperf
+    + Homepage:
+      https://www.gnu.org/software/gperf/
+
+  * GNU sed
+    + Homepage:
+      https://www.gnu.org/software/sed/
+
+  * Perl
+    + Homepage:
+      https://www.perl.org/
+
+  * Either an internet connection or a recent copy of GNU gnulib.
+    In order to work with the HEAD of git-merge-changelog development, you need
+    the HEAD of the gnulib development.
+    In order to work with the version of git-merge-changelog at a given date,
+    you need the version of gnulib of the same date.
+    In order to work with a released tarball of git-merge-changelog, you need
+    the particular version of gnulib which is indicated in the GNULIB_GIT_COMMIT
+    variable in version.sh.
+    + Homepage:
+      https://www.gnu.org/software/gnulib/
+
+And, of course, the packages listed in the DEPENDENCIES file.
+
+
+Building off the Git repository
+===============================
+
+Access to the Git repository is described at
+https://savannah.gnu.org/git/?group=vc-changelog .
+
+After fetching the sources from the Git repository, peek at the comments in
+autogen.sh, then run
+  ./autopull.sh
+  ./autogen.sh
+Then you can proceed with "./configure" as usual.
+
+Each time you want to update the source, do not only "git pull".  Instead do
+  git pull && ./autopull.sh
+  ./autogen.sh
