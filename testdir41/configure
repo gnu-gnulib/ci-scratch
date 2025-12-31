@@ -1517,8 +1517,12 @@ HAVE_SYS_CDEFS_H
 HAVE_GETOPT_H
 NEXT_AS_FIRST_DIRECTIVE_GETOPT_H
 NEXT_GETOPT_H
+GL_COND_OBJ_GETLINE_FALSE
+GL_COND_OBJ_GETLINE_TRUE
 GL_COND_OBJ_GETDTABLESIZE_FALSE
 GL_COND_OBJ_GETDTABLESIZE_TRUE
+GL_COND_OBJ_GETDELIM_FALSE
+GL_COND_OBJ_GETDELIM_TRUE
 GL_COND_OBJ_GETCWD_LGPL_FALSE
 GL_COND_OBJ_GETCWD_LGPL_TRUE
 GL_COND_OBJ_GETCWD_FALSE
@@ -8259,7 +8263,9 @@ esac
   # Code from module gen-header:
   # Code from module getcwd:
   # Code from module getcwd-lgpl:
+  # Code from module getdelim:
   # Code from module getdtablesize:
+  # Code from module getline:
   # Code from module getopt-gnu:
   # Code from module getopt-posix:
   # Code from module getprogname:
@@ -15297,6 +15303,16 @@ esac
 fi
 printf '%s\n' "#define HAVE_DECL_ALARM $ac_have_decl" >>confdefs.h
 
+ac_fn_check_decl "$LINENO" "getdelim" "ac_cv_have_decl_getdelim" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getdelim" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETDELIM $ac_have_decl" >>confdefs.h
+
 
 ac_fn_check_decl "$LINENO" "getdtablesize" "ac_cv_have_decl_getdtablesize" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
 if test "x$ac_cv_have_decl_getdtablesize" = xyes
@@ -15307,6 +15323,16 @@ else case e in #(
 esac
 fi
 printf '%s\n' "#define HAVE_DECL_GETDTABLESIZE $ac_have_decl" >>confdefs.h
+
+ac_fn_check_decl "$LINENO" "getline" "ac_cv_have_decl_getline" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getline" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETLINE $ac_have_decl" >>confdefs.h
 
 
 
@@ -16052,8 +16078,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:16055: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:16056: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:16081: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:16082: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -16082,7 +16108,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:16085: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:16111: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -16334,7 +16360,7 @@ fi
 fi
 
 fi
-      echo "$as_me:16337: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:16363: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -19205,8 +19231,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:19208: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:19209: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:19234: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:19235: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -19235,7 +19261,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:19238: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:19264: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -19487,7 +19513,7 @@ fi
 fi
 
 fi
-      echo "$as_me:19490: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:19516: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -19777,8 +19803,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:19780: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:19781: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:19806: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:19807: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -19807,7 +19833,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:19810: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:19836: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -20059,7 +20085,7 @@ fi
 fi
 
 fi
-      echo "$as_me:20062: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:20088: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -30846,6 +30872,255 @@ printf '%s\n' "#define GNULIB_TEST_GETCWD 1" >>confdefs.h
 
 
 
+
+
+
+
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for getdelim" >&5
+printf %s "checking for getdelim... " >&6; }
+if test ${gl_cv_onwards_func_getdelim+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "getdelim" "ac_cv_have_decl_getdelim" "#include <stdio.h>
+" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getdelim" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_getdelim = yes; then
+             ac_fn_c_check_func "$LINENO" "getdelim" "ac_cv_func_getdelim"
+if test "x$ac_cv_func_getdelim" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_getdelim = yes; then
+               gl_cv_onwards_func_getdelim=yes
+             else
+                                                            gl_cv_onwards_func_getdelim='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_getdelim='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "getdelim" "ac_cv_func_getdelim"
+if test "x$ac_cv_func_getdelim" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_getdelim=$ac_cv_func_getdelim
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_getdelim" >&5
+printf '%s\n' "$gl_cv_onwards_func_getdelim" >&6; }
+
+  case "$gl_cv_onwards_func_getdelim" in
+    future*) ac_cv_func_getdelim=no ;;
+    *)       ac_cv_func_getdelim=$gl_cv_onwards_func_getdelim ;;
+  esac
+  if test $ac_cv_func_getdelim = yes; then
+
+printf '%s\n' "#define HAVE_GETDELIM 1" >>confdefs.h
+
+  fi
+
+
+  if test $ac_cv_func_getdelim = yes; then
+    HAVE_GETDELIM=1
+        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for working getdelim function" >&5
+printf %s "checking for working getdelim function... " >&6; }
+if test ${gl_cv_func_working_getdelim+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) case "$host_os" in
+         darwin*)
+                                                                             gl_cv_func_working_getdelim=no ;;
+         *)
+           echo fooNbarN | tr -d '\012' | tr N '\012' > conftest.data
+           touch conftest.empty
+           if test "$cross_compiling" = yes
+then :
+  case "$host_os" in
+                                    # Guess yes on musl.
+                *-musl* | midipix*) gl_cv_func_working_getdelim="guessing yes" ;;
+                                    # Guess no on glibc.
+                *-gnu* | gnu*)      gl_cv_func_working_getdelim="guessing no" ;;
+                *)                  gl_cv_func_working_getdelim="$gl_cross_guess_normal" ;;
+              esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#    include <stdio.h>
+#    include <stdlib.h>
+#    include <string.h>
+    int main ()
+    {
+      FILE *in = fopen ("./conftest.data", "r");
+      int result = 0;
+      if (!in)
+        return 1;
+      {
+        /* Test result for a NULL buffer and a zero size.
+           Based on a test program from Karl Heuer.  */
+        char *line = NULL;
+        size_t siz = 0;
+        int len = getdelim (&line, &siz, '\n', in);
+        if (!(len == 4 && line && strcmp (line, "foo\n") == 0))
+          result |= 2;
+        free (line);
+      }
+      {
+        /* Test result for a NULL buffer and a non-zero size.
+           This crashes on FreeBSD 8.0.  */
+        char *line = NULL;
+        size_t siz = (size_t)(~0) / 4;
+        if (getdelim (&line, &siz, '\n', in) == -1)
+          result |= 4;
+        free (line);
+      }
+      fclose (in);
+      {
+        /* Test that reading EOF as the first character sets the first byte
+           in the buffer to NUL.  This fails on glibc 2.42 and earlier.  */
+        in = fopen ("./conftest.empty", "r");
+        if (!in)
+          return 1;
+        char *line = malloc (1);
+        line[0] = 'A';
+        size_t siz = 1;
+        if (getdelim (&line, &siz, '\n', in) != -1 || line[0] != '\0')
+          result |= 8;
+        free (line);
+      }
+      fclose (in);
+      return result;
+    }
+
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  gl_cv_func_working_getdelim=yes
+else case e in #(
+  e) gl_cv_func_working_getdelim=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+           ;;
+       esac
+       rm -f conftest.data conftest.empty
+       ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_working_getdelim" >&5
+printf '%s\n' "$gl_cv_func_working_getdelim" >&6; }
+    case "$gl_cv_func_working_getdelim" in
+      *yes) ;;
+      *) REPLACE_GETDELIM=1 ;;
+    esac
+  else
+    HAVE_GETDELIM=0
+    case "$gl_cv_onwards_func_getdelim" in
+      future*) REPLACE_GETDELIM=1 ;;
+    esac
+  fi
+
+  if test $ac_cv_have_decl_getdelim = no; then
+    HAVE_DECL_GETDELIM=0
+  fi
+
+
+     if test $HAVE_GETDELIM = 0 || test $REPLACE_GETDELIM = 1; then
+  GL_COND_OBJ_GETDELIM_TRUE=
+  GL_COND_OBJ_GETDELIM_FALSE='#'
+else
+  GL_COND_OBJ_GETDELIM_TRUE='#'
+  GL_COND_OBJ_GETDELIM_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_GETDELIM_TRUE}" && test -z "${GL_COND_OBJ_GETDELIM_FALSE}"; then
+    GL_COND_OBJ_GETDELIM_TRUE='#'
+    GL_COND_OBJ_GETDELIM_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_GETDELIM_TRUE"; then :
+
+
+  ac_fn_c_check_func "$LINENO" "flockfile" "ac_cv_func_flockfile"
+if test "x$ac_cv_func_flockfile" = xyes
+then :
+  printf '%s\n' "#define HAVE_FLOCKFILE 1" >>confdefs.h
+
+fi
+ac_fn_c_check_func "$LINENO" "funlockfile" "ac_cv_func_funlockfile"
+if test "x$ac_cv_func_funlockfile" = xyes
+then :
+  printf '%s\n' "#define HAVE_FUNLOCKFILE 1" >>confdefs.h
+
+fi
+
+  ac_fn_check_decl "$LINENO" "getc_unlocked" "ac_cv_have_decl_getc_unlocked" "$ac_includes_default" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getc_unlocked" = xyes
+then :
+  ac_have_decl=1
+else case e in #(
+  e) ac_have_decl=0 ;;
+esac
+fi
+printf '%s\n' "#define HAVE_DECL_GETC_UNLOCKED $ac_have_decl" >>confdefs.h
+
+
+
+fi
+
+
+
+
+
+
+
+
+
+          GL_GNULIB_GETDELIM=1
+
+
+
+
+
+printf '%s\n' "#define GNULIB_TEST_GETDELIM 1" >>confdefs.h
+
+
+
+
+
+
+
+
   if test $ac_cv_func_getdtablesize = yes &&
      test $ac_cv_have_decl_getdtablesize = yes; then
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether getdtablesize works" >&5
@@ -30950,6 +31225,228 @@ fi
 
 
 printf '%s\n' "#define GNULIB_TEST_GETDTABLESIZE 1" >>confdefs.h
+
+
+
+
+
+
+
+
+
+
+
+
+  { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for getline" >&5
+printf %s "checking for getline... " >&6; }
+if test ${gl_cv_onwards_func_getline+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)
+  exec 9>&6 6>/dev/null
+
+       case "$host_os" in
+
+         linux*-android*)
+           ac_fn_check_decl "$LINENO" "getline" "ac_cv_have_decl_getline" "#include <stdio.h>
+" "$ac_c_undeclared_builtin_options$ac_c_future_darwin_options" "CFLAGS"
+if test "x$ac_cv_have_decl_getline" = xyes
+then :
+
+fi
+           if test $ac_cv_have_decl_getline = yes; then
+             ac_fn_c_check_func "$LINENO" "getline" "ac_cv_func_getline"
+if test "x$ac_cv_func_getline" = xyes
+then :
+
+fi
+
+             if test $ac_cv_func_getline = yes; then
+               gl_cv_onwards_func_getline=yes
+             else
+                                                            gl_cv_onwards_func_getline='future OS version'
+             fi
+           else
+             gl_cv_onwards_func_getline='future OS version'
+           fi
+           ;;
+
+
+         *)
+           ac_fn_c_check_func "$LINENO" "getline" "ac_cv_func_getline"
+if test "x$ac_cv_func_getline" = xyes
+then :
+
+fi
+
+           gl_cv_onwards_func_getline=$ac_cv_func_getline
+           ;;
+
+       esac
+
+  exec 6>&9 9>&-
+
+     ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_onwards_func_getline" >&5
+printf '%s\n' "$gl_cv_onwards_func_getline" >&6; }
+
+  case "$gl_cv_onwards_func_getline" in
+    future*) ac_cv_func_getline=no ;;
+    *)       ac_cv_func_getline=$gl_cv_onwards_func_getline ;;
+  esac
+  if test $ac_cv_func_getline = yes; then
+
+printf '%s\n' "#define HAVE_GETLINE 1" >>confdefs.h
+
+  fi
+
+
+  if test $ac_cv_func_getline = yes; then
+        { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking for working getline function" >&5
+printf %s "checking for working getline function... " >&6; }
+if test ${am_cv_func_working_getline+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e) echo fooNbarN | tr -d '\012' | tr N '\012' > conftest.data
+       touch conftest.empty
+       if test "$cross_compiling" = yes
+then :
+  case "$host_os" in
+                                # Guess yes on musl.
+            *-musl* | midipix*) am_cv_func_working_getline="guessing yes" ;;
+                                # Guess no on glibc.
+            *-gnu* | gnu*)      am_cv_func_working_getline="guessing no" ;;
+            *)                  am_cv_func_working_getline="$gl_cross_guess_normal" ;;
+          esac
+
+else case e in #(
+  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+#    include <stdio.h>
+#    include <stdlib.h>
+#    include <string.h>
+    int main ()
+    {
+      FILE *in = fopen ("./conftest.data", "r");
+      int result = 0;
+      if (!in)
+        return 1;
+      {
+        /* Test result for a NULL buffer and a zero size.
+           Based on a test program from Karl Heuer.  */
+        char *line = NULL;
+        size_t siz = 0;
+        int len = getline (&line, &siz, in);
+        if (!(len == 4 && line && strcmp (line, "foo\n") == 0))
+          result |= 2;
+        free (line);
+      }
+      {
+        /* Test result for a NULL buffer and a non-zero size.
+           This crashes on FreeBSD 8.0.  */
+        char *line = NULL;
+        size_t siz = (size_t)(~0) / 4;
+        if (getline (&line, &siz, in) == -1)
+          result |= 4;
+        free (line);
+      }
+      fclose (in);
+      {
+        /* Test that reading EOF as the first character sets the first byte
+           in the buffer to NUL.  This fails on glibc 2.42 and earlier.  */
+        in = fopen ("./conftest.empty", "r");
+        if (!in)
+          return 1;
+        char *line = malloc (1);
+        line[0] = 'A';
+        size_t siz = 1;
+        if (getline (&line, &siz, in) != -1 || line[0] != '\0')
+          result |= 8;
+        free (line);
+      }
+      fclose (in);
+      return result;
+    }
+
+_ACEOF
+if ac_fn_c_try_run "$LINENO"
+then :
+  am_cv_func_working_getline=yes
+else case e in #(
+  e) am_cv_func_working_getline=no ;;
+esac
+fi
+rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
+  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+
+       rm -f conftest.data conftest.empty
+       ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $am_cv_func_working_getline" >&5
+printf '%s\n' "$am_cv_func_working_getline" >&6; }
+  else
+    am_cv_func_working_getline=no
+    case "$gl_cv_onwards_func_getline" in
+      future*) REPLACE_GETLINE=1 ;;
+    esac
+  fi
+
+  if test $ac_cv_have_decl_getline = no; then
+    HAVE_DECL_GETLINE=0
+  fi
+
+  case "$am_cv_func_working_getline" in
+    *yes) ;;
+    *)
+                        REPLACE_GETLINE=1
+      ;;
+  esac
+
+
+     if test $REPLACE_GETLINE = 1; then
+  GL_COND_OBJ_GETLINE_TRUE=
+  GL_COND_OBJ_GETLINE_FALSE='#'
+else
+  GL_COND_OBJ_GETLINE_TRUE='#'
+  GL_COND_OBJ_GETLINE_FALSE=
+fi
+:
+    if test -z "${GL_COND_OBJ_GETLINE_TRUE}" && test -z "${GL_COND_OBJ_GETLINE_FALSE}"; then
+    GL_COND_OBJ_GETLINE_TRUE='#'
+    GL_COND_OBJ_GETLINE_FALSE='#'
+  fi
+
+  if test -z "$GL_COND_OBJ_GETLINE_TRUE"; then :
+
+
+  :
+
+
+fi
+
+
+
+
+
+
+
+
+
+          GL_GNULIB_GETLINE=1
+
+
+
+
+
+printf '%s\n' "#define GNULIB_TEST_GETLINE 1" >>confdefs.h
 
 
 

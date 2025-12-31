@@ -77,6 +77,7 @@ if ! $skip_gnulib; then
     error
     read-file
     spawn-pipe
+    getline
     wait-process
     xlist
     array-list

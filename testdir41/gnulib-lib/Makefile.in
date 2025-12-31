@@ -55,6 +55,7 @@
 #  error \
 #  fstrcmp \
 #  fwriteerror \
+#  getline \
 #  getopt-gnu \
 #  gitlog-to-changelog \
 #  idx \
@@ -177,88 +178,90 @@ host_triplet = @host@
 @GL_COND_OBJ_FTELLO_TRUE@am__append_19 = ftello.c
 @GL_COND_OBJ_GETCWD_TRUE@am__append_20 = getcwd.c
 @GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_21 = getcwd-lgpl.c
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_22 = getdtablesize.c
-@GL_COND_OBJ_GETOPT_TRUE@am__append_23 = getopt.c getopt1.c
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_24 = getprogname.c
-@GL_COND_OBJ_ISWBLANK_TRUE@am__append_25 = iswblank.c
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_26 = iswdigit.c
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_27 = iswpunct.c
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_28 = iswxdigit.c
-@GL_COND_OBJ_LOCALECONV_TRUE@am__append_29 = localeconv.c
-@GL_COND_OBJ_LSEEK_TRUE@am__append_30 = lseek.c
-@GL_COND_OBJ_LSTAT_TRUE@am__append_31 = lstat.c
-@GL_COND_OBJ_MBRTOC32_TRUE@am__append_32 = mbrtoc32.c
-@GL_COND_OBJ_MBRTOWC_TRUE@am__append_33 = mbrtowc.c
-@GL_COND_OBJ_MBSINIT_TRUE@am__append_34 = mbsinit.c
-@GL_COND_OBJ_MEMCHR_TRUE@am__append_35 = memchr.c
-@GL_COND_OBJ_MEMCMP_TRUE@am__append_36 = memcmp.c
-@GL_COND_OBJ_MEMPCPY_TRUE@am__append_37 = mempcpy.c
-@GL_COND_OBJ_MEMRCHR_TRUE@am__append_38 = memrchr.c
-@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__append_39 = memset_explicit.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_40 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_41 = msvc-nothrow.c
-@GL_COND_OBJ_OPEN_TRUE@am__append_42 = open.c
-@GL_COND_OBJ_OPENAT_TRUE@am__append_43 = openat.c
-@GL_COND_OBJ_OPENDIR_TRUE@am__append_44 = opendir.c
-@GL_COND_OBJ_PIPE_TRUE@am__append_45 = pipe.c
-@GL_COND_OBJ_SPAWN_TRUE@am__append_46 = spawn.c
-@GL_COND_OBJ_SPAWNI_TRUE@am__append_47 = spawni.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__append_48 = spawn_faction_addchdir.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__append_49 = spawn_faction_addclose.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__append_50 = spawn_faction_adddup2.c
-@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__append_51 = spawn_faction_addopen.c
-@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__append_52 = spawn_faction_destroy.c
-@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__append_53 = spawn_faction_init.c
-@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__append_54 = spawnattr_destroy.c
-@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__append_55 = spawnattr_init.c
-@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__append_56 = spawnattr_setflags.c
-@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__append_57 = spawnattr_setpgroup.c
-@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__append_58 = spawnattr_setsigmask.c
-@GL_COND_OBJ_SPAWNP_TRUE@am__append_59 = spawnp.c
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_60 = pthread-once.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_61 = raise.c
-@GL_COND_OBJ_RAWMEMCHR_TRUE@am__append_62 = rawmemchr.c
-@GL_COND_OBJ_READDIR_TRUE@am__append_63 = readdir.c
-@GL_COND_OBJ_READLINK_TRUE@am__append_64 = readlink.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_65 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_66 = reallocarray.c
-@GL_COND_OBJ_REWINDDIR_TRUE@am__append_67 = rewinddir.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_68 = setlocale-lock.c
-@GL_COND_OBJ_SIGACTION_TRUE@am__append_69 = sigaction.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_70 = sigprocmask.c
-@GL_COND_OBJ_OS2_SPAWN_TRUE@am__append_71 = os2-spawn.c
-@GL_COND_OBJ_STAT_TRUE@am__append_72 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_73 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_74 = stdio-write.c
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_75 = stdio-consolesafe.c
-@GL_COND_OBJ_STPCPY_TRUE@am__append_76 = stpcpy.c
-@GL_COND_OBJ_STRCHRNUL_TRUE@am__append_77 = strchrnul.c
-@GL_COND_OBJ_STRDUP_TRUE@am__append_78 = strdup.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_79 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_80 = strerror-override.c
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_81 = unicase/tolower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_82 = unictype/ctype_alnum.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_83 = unictype/ctype_alpha.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_84 = unictype/ctype_blank.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_85 = unictype/ctype_cntrl.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_86 = unictype/ctype_digit.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_87 = unictype/ctype_graph.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_88 = unictype/ctype_lower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_89 = unictype/ctype_print.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_90 = unictype/ctype_punct.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_91 = unictype/ctype_space.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_92 = unictype/ctype_upper.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_93 = unictype/ctype_xdigit.c
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_94 = uniwidth/width.c
-@GL_COND_OBJ_WAITPID_TRUE@am__append_95 = waitpid.c
-@GL_COND_OBJ_WCWIDTH_TRUE@am__append_96 = wcwidth.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_97 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_98 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_99 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_100 = windows-rwlock.c
-@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__append_101 = windows-path.c
-@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__append_102 = windows-spawn.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_103 = windows-tls.c
+@GL_COND_OBJ_GETDELIM_TRUE@am__append_22 = getdelim.c
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_23 = getdtablesize.c
+@GL_COND_OBJ_GETLINE_TRUE@am__append_24 = getline.c
+@GL_COND_OBJ_GETOPT_TRUE@am__append_25 = getopt.c getopt1.c
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_26 = getprogname.c
+@GL_COND_OBJ_ISWBLANK_TRUE@am__append_27 = iswblank.c
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_28 = iswdigit.c
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_29 = iswpunct.c
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_30 = iswxdigit.c
+@GL_COND_OBJ_LOCALECONV_TRUE@am__append_31 = localeconv.c
+@GL_COND_OBJ_LSEEK_TRUE@am__append_32 = lseek.c
+@GL_COND_OBJ_LSTAT_TRUE@am__append_33 = lstat.c
+@GL_COND_OBJ_MBRTOC32_TRUE@am__append_34 = mbrtoc32.c
+@GL_COND_OBJ_MBRTOWC_TRUE@am__append_35 = mbrtowc.c
+@GL_COND_OBJ_MBSINIT_TRUE@am__append_36 = mbsinit.c
+@GL_COND_OBJ_MEMCHR_TRUE@am__append_37 = memchr.c
+@GL_COND_OBJ_MEMCMP_TRUE@am__append_38 = memcmp.c
+@GL_COND_OBJ_MEMPCPY_TRUE@am__append_39 = mempcpy.c
+@GL_COND_OBJ_MEMRCHR_TRUE@am__append_40 = memrchr.c
+@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__append_41 = memset_explicit.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_42 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_43 = msvc-nothrow.c
+@GL_COND_OBJ_OPEN_TRUE@am__append_44 = open.c
+@GL_COND_OBJ_OPENAT_TRUE@am__append_45 = openat.c
+@GL_COND_OBJ_OPENDIR_TRUE@am__append_46 = opendir.c
+@GL_COND_OBJ_PIPE_TRUE@am__append_47 = pipe.c
+@GL_COND_OBJ_SPAWN_TRUE@am__append_48 = spawn.c
+@GL_COND_OBJ_SPAWNI_TRUE@am__append_49 = spawni.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__append_50 = spawn_faction_addchdir.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__append_51 = spawn_faction_addclose.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__append_52 = spawn_faction_adddup2.c
+@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__append_53 = spawn_faction_addopen.c
+@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__append_54 = spawn_faction_destroy.c
+@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__append_55 = spawn_faction_init.c
+@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__append_56 = spawnattr_destroy.c
+@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__append_57 = spawnattr_init.c
+@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__append_58 = spawnattr_setflags.c
+@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__append_59 = spawnattr_setpgroup.c
+@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__append_60 = spawnattr_setsigmask.c
+@GL_COND_OBJ_SPAWNP_TRUE@am__append_61 = spawnp.c
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_62 = pthread-once.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_63 = raise.c
+@GL_COND_OBJ_RAWMEMCHR_TRUE@am__append_64 = rawmemchr.c
+@GL_COND_OBJ_READDIR_TRUE@am__append_65 = readdir.c
+@GL_COND_OBJ_READLINK_TRUE@am__append_66 = readlink.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_67 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_68 = reallocarray.c
+@GL_COND_OBJ_REWINDDIR_TRUE@am__append_69 = rewinddir.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_70 = setlocale-lock.c
+@GL_COND_OBJ_SIGACTION_TRUE@am__append_71 = sigaction.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_72 = sigprocmask.c
+@GL_COND_OBJ_OS2_SPAWN_TRUE@am__append_73 = os2-spawn.c
+@GL_COND_OBJ_STAT_TRUE@am__append_74 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_75 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_76 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_77 = stdio-consolesafe.c
+@GL_COND_OBJ_STPCPY_TRUE@am__append_78 = stpcpy.c
+@GL_COND_OBJ_STRCHRNUL_TRUE@am__append_79 = strchrnul.c
+@GL_COND_OBJ_STRDUP_TRUE@am__append_80 = strdup.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_81 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_82 = strerror-override.c
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_83 = unicase/tolower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_84 = unictype/ctype_alnum.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_85 = unictype/ctype_alpha.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_86 = unictype/ctype_blank.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_87 = unictype/ctype_cntrl.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_88 = unictype/ctype_digit.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_89 = unictype/ctype_graph.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_90 = unictype/ctype_lower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_91 = unictype/ctype_print.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_92 = unictype/ctype_punct.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_93 = unictype/ctype_space.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_94 = unictype/ctype_upper.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_95 = unictype/ctype_xdigit.c
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_96 = uniwidth/width.c
+@GL_COND_OBJ_WAITPID_TRUE@am__append_97 = waitpid.c
+@GL_COND_OBJ_WCWIDTH_TRUE@am__append_98 = wcwidth.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_99 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_100 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_101 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_102 = windows-rwlock.c
+@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__append_103 = windows-path.c
+@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__append_104 = windows-spawn.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_105 = windows-tls.c
 subdir = gnulib-lib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/gnulib-m4/00gnulib.m4 \
@@ -313,7 +316,9 @@ am__aclocal_m4_deps = $(top_srcdir)/gnulib-m4/00gnulib.m4 \
 	$(top_srcdir)/gnulib-m4/getcwd-abort-bug.m4 \
 	$(top_srcdir)/gnulib-m4/getcwd-path-max.m4 \
 	$(top_srcdir)/gnulib-m4/getcwd.m4 \
+	$(top_srcdir)/gnulib-m4/getdelim.m4 \
 	$(top_srcdir)/gnulib-m4/getdtablesize.m4 \
+	$(top_srcdir)/gnulib-m4/getline.m4 \
 	$(top_srcdir)/gnulib-m4/getopt.m4 \
 	$(top_srcdir)/gnulib-m4/getprogname.m4 \
 	$(top_srcdir)/gnulib-m4/gettext_h.m4 \
@@ -478,8 +483,8 @@ am__libgmc_a_SOURCES_DIST = access.c gl_array_list.h gl_array_list.c \
 	filenamecat-lgpl.c findprog.h findprog-in.c float.c itold.c \
 	free.c fseterr.c fstat.c fstatat.c fstrcmp.h fstrcmp.c ftell.c \
 	ftello.c fwriteerror.h fwriteerror.c getcwd.c getcwd-lgpl.c \
-	getdtablesize.c getopt.c getopt1.c getprogname.c gettext.h \
-	malloc/scratch_buffer_grow.c \
+	getdelim.c getdtablesize.c getline.c getopt.c getopt1.c \
+	getprogname.c gettext.h malloc/scratch_buffer_grow.c \
 	malloc/scratch_buffer_grow_preserve.c \
 	malloc/scratch_buffer_set_array_size.c hard-locale.c hash.c \
 	hashcode-named-file.c hashcode-string1.h hashcode-string1.c \
@@ -553,109 +558,112 @@ am__libgmc_a_SOURCES_DIST = access.c gl_array_list.h gl_array_list.c \
 @GL_COND_OBJ_GETCWD_TRUE@am__objects_20 = libgmc_a-getcwd.$(OBJEXT)
 @GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_21 =  \
 @GL_COND_OBJ_GETCWD_LGPL_TRUE@	libgmc_a-getcwd-lgpl.$(OBJEXT)
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_22 = libgmc_a-getdtablesize.$(OBJEXT)
-@GL_COND_OBJ_GETOPT_TRUE@am__objects_23 = libgmc_a-getopt.$(OBJEXT) \
+@GL_COND_OBJ_GETDELIM_TRUE@am__objects_22 =  \
+@GL_COND_OBJ_GETDELIM_TRUE@	libgmc_a-getdelim.$(OBJEXT)
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_23 = libgmc_a-getdtablesize.$(OBJEXT)
+@GL_COND_OBJ_GETLINE_TRUE@am__objects_24 = libgmc_a-getline.$(OBJEXT)
+@GL_COND_OBJ_GETOPT_TRUE@am__objects_25 = libgmc_a-getopt.$(OBJEXT) \
 @GL_COND_OBJ_GETOPT_TRUE@	libgmc_a-getopt1.$(OBJEXT)
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_24 =  \
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_26 =  \
 @GL_COND_OBJ_GETPROGNAME_TRUE@	libgmc_a-getprogname.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_25 =  \
+@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_27 =  \
 @GL_COND_OBJ_ISWBLANK_TRUE@	libgmc_a-iswblank.$(OBJEXT)
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_26 =  \
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_28 =  \
 @GL_COND_OBJ_ISWDIGIT_TRUE@	libgmc_a-iswdigit.$(OBJEXT)
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_27 =  \
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_29 =  \
 @GL_COND_OBJ_ISWPUNCT_TRUE@	libgmc_a-iswpunct.$(OBJEXT)
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_28 =  \
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_30 =  \
 @GL_COND_OBJ_ISWXDIGIT_TRUE@	libgmc_a-iswxdigit.$(OBJEXT)
-@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_29 =  \
+@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_31 =  \
 @GL_COND_OBJ_LOCALECONV_TRUE@	libgmc_a-localeconv.$(OBJEXT)
-@GL_COND_OBJ_LSEEK_TRUE@am__objects_30 = libgmc_a-lseek.$(OBJEXT)
-@GL_COND_OBJ_LSTAT_TRUE@am__objects_31 = libgmc_a-lstat.$(OBJEXT)
-@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_32 =  \
+@GL_COND_OBJ_LSEEK_TRUE@am__objects_32 = libgmc_a-lseek.$(OBJEXT)
+@GL_COND_OBJ_LSTAT_TRUE@am__objects_33 = libgmc_a-lstat.$(OBJEXT)
+@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_34 =  \
 @GL_COND_OBJ_MBRTOC32_TRUE@	libgmc_a-mbrtoc32.$(OBJEXT)
-@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_33 = libgmc_a-mbrtowc.$(OBJEXT)
-@GL_COND_OBJ_MBSINIT_TRUE@am__objects_34 = libgmc_a-mbsinit.$(OBJEXT)
-@GL_COND_OBJ_MEMCHR_TRUE@am__objects_35 = libgmc_a-memchr.$(OBJEXT)
-@GL_COND_OBJ_MEMCMP_TRUE@am__objects_36 = libgmc_a-memcmp.$(OBJEXT)
-@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_37 = libgmc_a-mempcpy.$(OBJEXT)
-@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_38 = libgmc_a-memrchr.$(OBJEXT)
-@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__objects_39 = libgmc_a-memset_explicit.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_40 =  \
+@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_35 = libgmc_a-mbrtowc.$(OBJEXT)
+@GL_COND_OBJ_MBSINIT_TRUE@am__objects_36 = libgmc_a-mbsinit.$(OBJEXT)
+@GL_COND_OBJ_MEMCHR_TRUE@am__objects_37 = libgmc_a-memchr.$(OBJEXT)
+@GL_COND_OBJ_MEMCMP_TRUE@am__objects_38 = libgmc_a-memcmp.$(OBJEXT)
+@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_39 = libgmc_a-mempcpy.$(OBJEXT)
+@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_40 = libgmc_a-memrchr.$(OBJEXT)
+@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__objects_41 = libgmc_a-memset_explicit.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_42 =  \
 @GL_COND_OBJ_MSVC_INVAL_TRUE@	libgmc_a-msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_41 = libgmc_a-msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_OPEN_TRUE@am__objects_42 = libgmc_a-open.$(OBJEXT)
-@GL_COND_OBJ_OPENAT_TRUE@am__objects_43 = libgmc_a-openat.$(OBJEXT)
-@GL_COND_OBJ_OPENDIR_TRUE@am__objects_44 = libgmc_a-opendir.$(OBJEXT)
-@GL_COND_OBJ_PIPE_TRUE@am__objects_45 = libgmc_a-pipe.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_TRUE@am__objects_46 = libgmc_a-spawn.$(OBJEXT)
-@GL_COND_OBJ_SPAWNI_TRUE@am__objects_47 = libgmc_a-spawni.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__objects_48 = libgmc_a-spawn_faction_addchdir.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__objects_49 = libgmc_a-spawn_faction_addclose.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__objects_50 = libgmc_a-spawn_faction_adddup2.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__objects_51 = libgmc_a-spawn_faction_addopen.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__objects_52 = libgmc_a-spawn_faction_destroy.$(OBJEXT)
-@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__objects_53 = libgmc_a-spawn_faction_init.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__objects_54 = libgmc_a-spawnattr_destroy.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__objects_55 = libgmc_a-spawnattr_init.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__objects_56 = libgmc_a-spawnattr_setflags.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__objects_57 = libgmc_a-spawnattr_setpgroup.$(OBJEXT)
-@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__objects_58 = libgmc_a-spawnattr_setsigmask.$(OBJEXT)
-@GL_COND_OBJ_SPAWNP_TRUE@am__objects_59 = libgmc_a-spawnp.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_60 = libgmc_a-pthread-once.$(OBJEXT)
-@GL_COND_OBJ_RAISE_TRUE@am__objects_61 = libgmc_a-raise.$(OBJEXT)
-@GL_COND_OBJ_RAWMEMCHR_TRUE@am__objects_62 =  \
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_43 = libgmc_a-msvc-nothrow.$(OBJEXT)
+@GL_COND_OBJ_OPEN_TRUE@am__objects_44 = libgmc_a-open.$(OBJEXT)
+@GL_COND_OBJ_OPENAT_TRUE@am__objects_45 = libgmc_a-openat.$(OBJEXT)
+@GL_COND_OBJ_OPENDIR_TRUE@am__objects_46 = libgmc_a-opendir.$(OBJEXT)
+@GL_COND_OBJ_PIPE_TRUE@am__objects_47 = libgmc_a-pipe.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_TRUE@am__objects_48 = libgmc_a-spawn.$(OBJEXT)
+@GL_COND_OBJ_SPAWNI_TRUE@am__objects_49 = libgmc_a-spawni.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDCHDIR_TRUE@am__objects_50 = libgmc_a-spawn_faction_addchdir.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDCLOSE_TRUE@am__objects_51 = libgmc_a-spawn_faction_addclose.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDDUP2_TRUE@am__objects_52 = libgmc_a-spawn_faction_adddup2.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_ADDOPEN_TRUE@am__objects_53 = libgmc_a-spawn_faction_addopen.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_DESTROY_TRUE@am__objects_54 = libgmc_a-spawn_faction_destroy.$(OBJEXT)
+@GL_COND_OBJ_SPAWN_FACTION_INIT_TRUE@am__objects_55 = libgmc_a-spawn_faction_init.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_DESTROY_TRUE@am__objects_56 = libgmc_a-spawnattr_destroy.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_INIT_TRUE@am__objects_57 = libgmc_a-spawnattr_init.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_SETFLAGS_TRUE@am__objects_58 = libgmc_a-spawnattr_setflags.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_SETPGROUP_TRUE@am__objects_59 = libgmc_a-spawnattr_setpgroup.$(OBJEXT)
+@GL_COND_OBJ_SPAWNATTR_SETSIGMASK_TRUE@am__objects_60 = libgmc_a-spawnattr_setsigmask.$(OBJEXT)
+@GL_COND_OBJ_SPAWNP_TRUE@am__objects_61 = libgmc_a-spawnp.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_62 = libgmc_a-pthread-once.$(OBJEXT)
+@GL_COND_OBJ_RAISE_TRUE@am__objects_63 = libgmc_a-raise.$(OBJEXT)
+@GL_COND_OBJ_RAWMEMCHR_TRUE@am__objects_64 =  \
 @GL_COND_OBJ_RAWMEMCHR_TRUE@	libgmc_a-rawmemchr.$(OBJEXT)
-@GL_COND_OBJ_READDIR_TRUE@am__objects_63 = libgmc_a-readdir.$(OBJEXT)
-@GL_COND_OBJ_READLINK_TRUE@am__objects_64 =  \
+@GL_COND_OBJ_READDIR_TRUE@am__objects_65 = libgmc_a-readdir.$(OBJEXT)
+@GL_COND_OBJ_READLINK_TRUE@am__objects_66 =  \
 @GL_COND_OBJ_READLINK_TRUE@	libgmc_a-readlink.$(OBJEXT)
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_65 =  \
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_67 =  \
 @GL_COND_OBJ_REALLOC_POSIX_TRUE@	libgmc_a-realloc.$(OBJEXT)
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_66 = libgmc_a-reallocarray.$(OBJEXT)
-@GL_COND_OBJ_REWINDDIR_TRUE@am__objects_67 =  \
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_68 = libgmc_a-reallocarray.$(OBJEXT)
+@GL_COND_OBJ_REWINDDIR_TRUE@am__objects_69 =  \
 @GL_COND_OBJ_REWINDDIR_TRUE@	libgmc_a-rewinddir.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_68 = libgmc_a-setlocale-lock.$(OBJEXT)
-@GL_COND_OBJ_SIGACTION_TRUE@am__objects_69 =  \
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_70 = libgmc_a-setlocale-lock.$(OBJEXT)
+@GL_COND_OBJ_SIGACTION_TRUE@am__objects_71 =  \
 @GL_COND_OBJ_SIGACTION_TRUE@	libgmc_a-sigaction.$(OBJEXT)
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_70 =  \
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_72 =  \
 @GL_COND_OBJ_SIGPROCMASK_TRUE@	libgmc_a-sigprocmask.$(OBJEXT)
-@GL_COND_OBJ_OS2_SPAWN_TRUE@am__objects_71 =  \
+@GL_COND_OBJ_OS2_SPAWN_TRUE@am__objects_73 =  \
 @GL_COND_OBJ_OS2_SPAWN_TRUE@	libgmc_a-os2-spawn.$(OBJEXT)
-@GL_COND_OBJ_STAT_TRUE@am__objects_72 = libgmc_a-stat.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_73 =  \
+@GL_COND_OBJ_STAT_TRUE@am__objects_74 = libgmc_a-stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_75 =  \
 @GL_COND_OBJ_STDIO_READ_TRUE@	libgmc_a-stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_74 =  \
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_76 =  \
 @GL_COND_OBJ_STDIO_WRITE_TRUE@	libgmc_a-stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_75 = libgmc_a-stdio-consolesafe.$(OBJEXT)
-@GL_COND_OBJ_STPCPY_TRUE@am__objects_76 = libgmc_a-stpcpy.$(OBJEXT)
-@GL_COND_OBJ_STRCHRNUL_TRUE@am__objects_77 =  \
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_77 = libgmc_a-stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STPCPY_TRUE@am__objects_78 = libgmc_a-stpcpy.$(OBJEXT)
+@GL_COND_OBJ_STRCHRNUL_TRUE@am__objects_79 =  \
 @GL_COND_OBJ_STRCHRNUL_TRUE@	libgmc_a-strchrnul.$(OBJEXT)
-@GL_COND_OBJ_STRDUP_TRUE@am__objects_78 = libgmc_a-strdup.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_TRUE@am__objects_79 =  \
+@GL_COND_OBJ_STRDUP_TRUE@am__objects_80 = libgmc_a-strdup.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_TRUE@am__objects_81 =  \
 @GL_COND_OBJ_STRERROR_TRUE@	libgmc_a-strerror.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_80 = libgmc_a-strerror-override.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_81 = unicase/libgmc_a-tolower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_82 = unictype/libgmc_a-ctype_alnum.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_83 = unictype/libgmc_a-ctype_alpha.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_84 = unictype/libgmc_a-ctype_blank.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_85 = unictype/libgmc_a-ctype_cntrl.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_86 = unictype/libgmc_a-ctype_digit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_87 = unictype/libgmc_a-ctype_graph.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_88 = unictype/libgmc_a-ctype_lower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_89 = unictype/libgmc_a-ctype_print.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_90 = unictype/libgmc_a-ctype_punct.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_91 = unictype/libgmc_a-ctype_space.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_92 = unictype/libgmc_a-ctype_upper.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_93 = unictype/libgmc_a-ctype_xdigit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_94 = uniwidth/libgmc_a-width.$(OBJEXT)
-@GL_COND_OBJ_WAITPID_TRUE@am__objects_95 = libgmc_a-waitpid.$(OBJEXT)
-@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_96 = libgmc_a-wcwidth.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_97 = libgmc_a-windows-mutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_98 = libgmc_a-windows-once.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_99 = libgmc_a-windows-recmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_100 = libgmc_a-windows-rwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__objects_101 = libgmc_a-windows-path.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__objects_102 = libgmc_a-windows-spawn.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_103 =  \
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_82 = libgmc_a-strerror-override.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_83 = unicase/libgmc_a-tolower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_84 = unictype/libgmc_a-ctype_alnum.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_85 = unictype/libgmc_a-ctype_alpha.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_86 = unictype/libgmc_a-ctype_blank.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_87 = unictype/libgmc_a-ctype_cntrl.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_88 = unictype/libgmc_a-ctype_digit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_89 = unictype/libgmc_a-ctype_graph.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_90 = unictype/libgmc_a-ctype_lower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_91 = unictype/libgmc_a-ctype_print.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_92 = unictype/libgmc_a-ctype_punct.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_93 = unictype/libgmc_a-ctype_space.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_94 = unictype/libgmc_a-ctype_upper.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_95 = unictype/libgmc_a-ctype_xdigit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_96 = uniwidth/libgmc_a-width.$(OBJEXT)
+@GL_COND_OBJ_WAITPID_TRUE@am__objects_97 = libgmc_a-waitpid.$(OBJEXT)
+@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_98 = libgmc_a-wcwidth.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_99 = libgmc_a-windows-mutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_100 = libgmc_a-windows-once.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_101 = libgmc_a-windows-recmutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_102 = libgmc_a-windows-rwlock.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_PATH_TRUE@am__objects_103 = libgmc_a-windows-path.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_SPAWN_TRUE@am__objects_104 = libgmc_a-windows-spawn.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_105 =  \
 @GL_COND_OBJ_WINDOWS_TLS_TRUE@	libgmc_a-windows-tls.$(OBJEXT)
 am_libgmc_a_OBJECTS = $(am__objects_1) \
 	libgmc_a-gl_array_list.$(OBJEXT) \
@@ -686,7 +694,7 @@ am_libgmc_a_OBJECTS = $(am__objects_1) \
 	$(am__objects_18) $(am__objects_19) \
 	libgmc_a-fwriteerror.$(OBJEXT) $(am__objects_20) \
 	$(am__objects_21) $(am__objects_22) $(am__objects_23) \
-	$(am__objects_24) \
+	$(am__objects_24) $(am__objects_25) $(am__objects_26) \
 	malloc/libgmc_a-scratch_buffer_grow.$(OBJEXT) \
 	malloc/libgmc_a-scratch_buffer_grow_preserve.$(OBJEXT) \
 	malloc/libgmc_a-scratch_buffer_set_array_size.$(OBJEXT) \
@@ -694,58 +702,58 @@ am_libgmc_a_OBJECTS = $(am__objects_1) \
 	libgmc_a-hashcode-named-file.$(OBJEXT) \
 	libgmc_a-hashcode-string1.$(OBJEXT) \
 	libgmc_a-hashcode-string2.$(OBJEXT) libgmc_a-ialloc.$(OBJEXT) \
-	$(am__objects_25) $(am__objects_26) $(am__objects_27) \
-	$(am__objects_28) libgmc_a-gl_linked_list.$(OBJEXT) \
+	$(am__objects_27) $(am__objects_28) $(am__objects_29) \
+	$(am__objects_30) libgmc_a-gl_linked_list.$(OBJEXT) \
 	libgmc_a-gl_linkedhash_list.$(OBJEXT) \
 	libgmc_a-gl_list.$(OBJEXT) libgmc_a-localcharset.$(OBJEXT) \
-	$(am__objects_29) glthread/libgmc_a-lock.$(OBJEXT) \
-	$(am__objects_30) $(am__objects_31) libgmc_a-malloca.$(OBJEXT) \
+	$(am__objects_31) glthread/libgmc_a-lock.$(OBJEXT) \
+	$(am__objects_32) $(am__objects_33) libgmc_a-malloca.$(OBJEXT) \
 	libgmc_a-mbchar.$(OBJEXT) libgmc_a-mbiterf.$(OBJEXT) \
-	$(am__objects_32) $(am__objects_33) $(am__objects_34) \
+	$(am__objects_34) $(am__objects_35) $(am__objects_36) \
 	libgmc_a-mbsnlen.$(OBJEXT) libgmc_a-mbszero.$(OBJEXT) \
-	$(am__objects_35) $(am__objects_36) $(am__objects_37) \
-	$(am__objects_38) $(am__objects_39) $(am__objects_40) \
-	$(am__objects_41) libgmc_a-next-prime.$(OBJEXT) \
-	glthread/libgmc_a-once.$(OBJEXT) $(am__objects_42) \
-	$(am__objects_43) libgmc_a-openat-die.$(OBJEXT) \
-	$(am__objects_44) libgmc_a-gl_oset.$(OBJEXT) $(am__objects_45) \
+	$(am__objects_37) $(am__objects_38) $(am__objects_39) \
+	$(am__objects_40) $(am__objects_41) $(am__objects_42) \
+	$(am__objects_43) libgmc_a-next-prime.$(OBJEXT) \
+	glthread/libgmc_a-once.$(OBJEXT) $(am__objects_44) \
+	$(am__objects_45) libgmc_a-openat-die.$(OBJEXT) \
+	$(am__objects_46) libgmc_a-gl_oset.$(OBJEXT) $(am__objects_47) \
 	libgmc_a-pipe2.$(OBJEXT) libgmc_a-pipe2-safer.$(OBJEXT) \
-	$(am__objects_46) $(am__objects_47) $(am__objects_48) \
-	$(am__objects_49) $(am__objects_50) $(am__objects_51) \
-	$(am__objects_52) $(am__objects_53) $(am__objects_54) \
-	$(am__objects_55) $(am__objects_56) $(am__objects_57) \
-	$(am__objects_58) $(am__objects_59) \
-	libgmc_a-progname.$(OBJEXT) $(am__objects_60) \
-	$(am__objects_61) $(am__objects_62) \
+	$(am__objects_48) $(am__objects_49) $(am__objects_50) \
+	$(am__objects_51) $(am__objects_52) $(am__objects_53) \
+	$(am__objects_54) $(am__objects_55) $(am__objects_56) \
+	$(am__objects_57) $(am__objects_58) $(am__objects_59) \
+	$(am__objects_60) $(am__objects_61) \
+	libgmc_a-progname.$(OBJEXT) $(am__objects_62) \
+	$(am__objects_63) $(am__objects_64) \
 	libgmc_a-gl_rbtree_oset.$(OBJEXT) \
 	libgmc_a-gl_rbtreehash_list.$(OBJEXT) \
-	libgmc_a-read-file.$(OBJEXT) $(am__objects_63) \
-	$(am__objects_64) $(am__objects_65) $(am__objects_66) \
-	$(am__objects_67) libgmc_a-same-inode.$(OBJEXT) \
+	libgmc_a-read-file.$(OBJEXT) $(am__objects_65) \
+	$(am__objects_66) $(am__objects_67) $(am__objects_68) \
+	$(am__objects_69) libgmc_a-same-inode.$(OBJEXT) \
 	libgmc_a-save-cwd.$(OBJEXT) libgmc_a-setlocale_null.$(OBJEXT) \
-	$(am__objects_68) libgmc_a-setlocale_null-unlocked.$(OBJEXT) \
-	$(am__objects_69) libgmc_a-sig-handler.$(OBJEXT) \
-	$(am__objects_70) libgmc_a-spawn-pipe.$(OBJEXT) \
-	$(am__objects_71) $(am__objects_72) \
-	libgmc_a-stat-time.$(OBJEXT) $(am__objects_73) \
-	$(am__objects_74) $(am__objects_75) libgmc_a-stdlib.$(OBJEXT) \
-	$(am__objects_76) libgmc_a-str_startswith.$(OBJEXT) \
-	$(am__objects_77) $(am__objects_78) $(am__objects_79) \
-	$(am__objects_80) libgmc_a-string.$(OBJEXT) \
+	$(am__objects_70) libgmc_a-setlocale_null-unlocked.$(OBJEXT) \
+	$(am__objects_71) libgmc_a-sig-handler.$(OBJEXT) \
+	$(am__objects_72) libgmc_a-spawn-pipe.$(OBJEXT) \
+	$(am__objects_73) $(am__objects_74) \
+	libgmc_a-stat-time.$(OBJEXT) $(am__objects_75) \
+	$(am__objects_76) $(am__objects_77) libgmc_a-stdlib.$(OBJEXT) \
+	$(am__objects_78) libgmc_a-str_startswith.$(OBJEXT) \
+	$(am__objects_79) $(am__objects_80) $(am__objects_81) \
+	$(am__objects_82) libgmc_a-string.$(OBJEXT) \
 	glthread/libgmc_a-threadlib.$(OBJEXT) \
-	glthread/libgmc_a-tls.$(OBJEXT) $(am__objects_81) \
-	$(am__objects_82) $(am__objects_83) $(am__objects_84) \
-	$(am__objects_85) $(am__objects_86) $(am__objects_87) \
-	$(am__objects_88) $(am__objects_89) $(am__objects_90) \
-	$(am__objects_91) $(am__objects_92) $(am__objects_93) \
+	glthread/libgmc_a-tls.$(OBJEXT) $(am__objects_83) \
+	$(am__objects_84) $(am__objects_85) $(am__objects_86) \
+	$(am__objects_87) $(am__objects_88) $(am__objects_89) \
+	$(am__objects_90) $(am__objects_91) $(am__objects_92) \
+	$(am__objects_93) $(am__objects_94) $(am__objects_95) \
 	libgmc_a-unistd.$(OBJEXT) libgmc_a-dup-safer.$(OBJEXT) \
 	libgmc_a-fd-safer.$(OBJEXT) libgmc_a-pipe-safer.$(OBJEXT) \
-	$(am__objects_94) libgmc_a-vaszprintf.$(OBJEXT) \
+	$(am__objects_96) libgmc_a-vaszprintf.$(OBJEXT) \
 	libgmc_a-aszprintf.$(OBJEXT) libgmc_a-wait-process.$(OBJEXT) \
-	$(am__objects_95) libgmc_a-wctype-h.$(OBJEXT) \
-	$(am__objects_96) $(am__objects_97) $(am__objects_98) \
-	$(am__objects_99) $(am__objects_100) $(am__objects_101) \
-	$(am__objects_102) $(am__objects_103) \
+	$(am__objects_97) libgmc_a-wctype-h.$(OBJEXT) \
+	$(am__objects_98) $(am__objects_99) $(am__objects_100) \
+	$(am__objects_101) $(am__objects_102) $(am__objects_103) \
+	$(am__objects_104) $(am__objects_105) \
 	libgmc_a-xmalloc.$(OBJEXT) libgmc_a-xalloc-die.$(OBJEXT) \
 	libgmc_a-gl_xlist.$(OBJEXT) libgmc_a-xmalloca.$(OBJEXT) \
 	libgmc_a-xsize.$(OBJEXT) libgmc_a-xvasprintf.$(OBJEXT) \
@@ -817,8 +825,10 @@ am__depfiles_remade = ./$(DEPDIR)/libgmc_a-access.Po \
 	./$(DEPDIR)/libgmc_a-fwriteerror.Po \
 	./$(DEPDIR)/libgmc_a-getcwd-lgpl.Po \
 	./$(DEPDIR)/libgmc_a-getcwd.Po \
+	./$(DEPDIR)/libgmc_a-getdelim.Po \
 	./$(DEPDIR)/libgmc_a-getdtablesize.Po \
-	./$(DEPDIR)/libgmc_a-getopt.Po ./$(DEPDIR)/libgmc_a-getopt1.Po \
+	./$(DEPDIR)/libgmc_a-getline.Po ./$(DEPDIR)/libgmc_a-getopt.Po \
+	./$(DEPDIR)/libgmc_a-getopt1.Po \
 	./$(DEPDIR)/libgmc_a-getprogname.Po \
 	./$(DEPDIR)/libgmc_a-gl_array_list.Po \
 	./$(DEPDIR)/libgmc_a-gl_linked_list.Po \
@@ -2689,57 +2699,57 @@ libgmc_a_SOURCES = $(am__append_1) gl_array_list.h gl_array_list.c \
 	$(am__append_16) $(am__append_17) fstrcmp.h fstrcmp.c \
 	$(am__append_18) $(am__append_19) fwriteerror.h fwriteerror.c \
 	$(am__append_20) $(am__append_21) $(am__append_22) \
-	$(am__append_23) $(am__append_24) gettext.h \
-	malloc/scratch_buffer_grow.c \
+	$(am__append_23) $(am__append_24) $(am__append_25) \
+	$(am__append_26) gettext.h malloc/scratch_buffer_grow.c \
 	malloc/scratch_buffer_grow_preserve.c \
 	malloc/scratch_buffer_set_array_size.c hard-locale.c hash.c \
 	hashcode-named-file.c hashcode-string1.h hashcode-string1.c \
 	hashcode-string2.h hashcode-string2.c ialloc.c idx.h \
-	$(am__append_25) $(am__append_26) $(am__append_27) \
-	$(am__append_28) gl_linked_list.h gl_linked_list.c \
+	$(am__append_27) $(am__append_28) $(am__append_29) \
+	$(am__append_30) gl_linked_list.h gl_linked_list.c \
 	gl_anylinked_list1.h gl_anylinked_list2.h gl_linkedhash_list.h \
 	gl_linkedhash_list.c gl_anyhash1.h gl_anyhash2.h \
 	gl_anyhash_primes.h gl_anylinked_list1.h gl_anylinked_list2.h \
-	gl_list.h gl_list.c localcharset.c $(am__append_29) \
-	glthread/lock.h glthread/lock.c $(am__append_30) \
-	$(am__append_31) malloca.c mbchar.c mbiterf.h mbiterf.c \
-	$(am__append_32) $(am__append_33) $(am__append_34) mbsnlen.c \
-	mbszero.c $(am__append_35) $(am__append_36) $(am__append_37) \
-	$(am__append_38) $(am__append_39) minmax.h $(am__append_40) \
-	$(am__append_41) next-prime.h next-prime.c glthread/once.h \
-	glthread/once.c $(am__append_42) $(am__append_43) openat-die.c \
-	$(am__append_44) gl_oset.h gl_oset.c $(am__append_45) pipe2.c \
-	pipe2-safer.c $(am__append_46) $(am__append_47) \
-	$(am__append_48) $(am__append_49) $(am__append_50) \
-	$(am__append_51) $(am__append_52) $(am__append_53) \
-	$(am__append_54) $(am__append_55) $(am__append_56) \
-	$(am__append_57) $(am__append_58) $(am__append_59) progname.h \
-	progname.c $(am__append_60) $(am__append_61) $(am__append_62) \
+	gl_list.h gl_list.c localcharset.c $(am__append_31) \
+	glthread/lock.h glthread/lock.c $(am__append_32) \
+	$(am__append_33) malloca.c mbchar.c mbiterf.h mbiterf.c \
+	$(am__append_34) $(am__append_35) $(am__append_36) mbsnlen.c \
+	mbszero.c $(am__append_37) $(am__append_38) $(am__append_39) \
+	$(am__append_40) $(am__append_41) minmax.h $(am__append_42) \
+	$(am__append_43) next-prime.h next-prime.c glthread/once.h \
+	glthread/once.c $(am__append_44) $(am__append_45) openat-die.c \
+	$(am__append_46) gl_oset.h gl_oset.c $(am__append_47) pipe2.c \
+	pipe2-safer.c $(am__append_48) $(am__append_49) \
+	$(am__append_50) $(am__append_51) $(am__append_52) \
+	$(am__append_53) $(am__append_54) $(am__append_55) \
+	$(am__append_56) $(am__append_57) $(am__append_58) \
+	$(am__append_59) $(am__append_60) $(am__append_61) progname.h \
+	progname.c $(am__append_62) $(am__append_63) $(am__append_64) \
 	gl_rbtree_oset.h gl_rbtree_oset.c gl_rbtree_ordered.h \
 	gl_anytree_oset.h gl_rbtreehash_list.h gl_rbtreehash_list.c \
 	gl_anyhash1.h gl_anyhash2.h gl_anyhash_primes.h \
 	gl_anyrbtree_list1.h gl_anyrbtree_list2.h gl_anytree_list1.h \
 	gl_anytree_list2.h gl_anytreehash_list1.h \
-	gl_anytreehash_list2.h read-file.c $(am__append_63) \
-	$(am__append_64) $(am__append_65) $(am__append_66) \
-	$(am__append_67) same-inode.h same-inode.c save-cwd.c \
-	setlocale_null.c $(am__append_68) setlocale_null-unlocked.c \
-	$(am__append_69) sig-handler.c $(am__append_70) size_max.h \
-	spawn-pipe.h spawn-pipe.c $(am__append_71) $(am__append_72) \
-	stat-time.c $(am__append_73) $(am__append_74) $(am__append_75) \
-	stdlib.c $(am__append_76) str_startswith.c $(am__append_77) \
-	$(am__append_78) $(am__append_79) $(am__append_80) string.c \
+	gl_anytreehash_list2.h read-file.c $(am__append_65) \
+	$(am__append_66) $(am__append_67) $(am__append_68) \
+	$(am__append_69) same-inode.h same-inode.c save-cwd.c \
+	setlocale_null.c $(am__append_70) setlocale_null-unlocked.c \
+	$(am__append_71) sig-handler.c $(am__append_72) size_max.h \
+	spawn-pipe.h spawn-pipe.c $(am__append_73) $(am__append_74) \
+	stat-time.c $(am__append_75) $(am__append_76) $(am__append_77) \
+	stdlib.c $(am__append_78) str_startswith.c $(am__append_79) \
+	$(am__append_80) $(am__append_81) $(am__append_82) string.c \
 	glthread/threadlib.c glthread/tls.h glthread/tls.c \
-	$(am__append_81) $(am__append_82) $(am__append_83) \
-	$(am__append_84) $(am__append_85) $(am__append_86) \
-	$(am__append_87) $(am__append_88) $(am__append_89) \
-	$(am__append_90) $(am__append_91) $(am__append_92) \
-	$(am__append_93) unistd.c dup-safer.c fd-safer.c pipe-safer.c \
-	$(am__append_94) vaszprintf.c aszprintf.c wait-process.h \
-	wait-process.c $(am__append_95) wctype-h.c $(am__append_96) \
-	$(am__append_97) $(am__append_98) $(am__append_99) \
-	$(am__append_100) $(am__append_101) $(am__append_102) \
-	$(am__append_103) xmalloc.c xalloc-die.c gl_xlist.h gl_xlist.c \
+	$(am__append_83) $(am__append_84) $(am__append_85) \
+	$(am__append_86) $(am__append_87) $(am__append_88) \
+	$(am__append_89) $(am__append_90) $(am__append_91) \
+	$(am__append_92) $(am__append_93) $(am__append_94) \
+	$(am__append_95) unistd.c dup-safer.c fd-safer.c pipe-safer.c \
+	$(am__append_96) vaszprintf.c aszprintf.c wait-process.h \
+	wait-process.c $(am__append_97) wctype-h.c $(am__append_98) \
+	$(am__append_99) $(am__append_100) $(am__append_101) \
+	$(am__append_102) $(am__append_103) $(am__append_104) \
+	$(am__append_105) xmalloc.c xalloc-die.c gl_xlist.h gl_xlist.c \
 	xmalloca.c xsize.h xsize.c xvasprintf.h xvasprintf.c \
 	xasprintf.c
 libgmc_a_CFLAGS = $(AM_CFLAGS) $(GL_CFLAG_GNULIB_WARNINGS) $(GL_CFLAG_ALLOW_WARNINGS)
@@ -2985,7 +2995,9 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-fwriteerror.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getcwd-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getcwd.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getdelim.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getdtablesize.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getline.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getopt.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getopt1.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/libgmc_a-getprogname.Po@am__quote@ # am--include-marker
@@ -3925,6 +3937,20 @@ libgmc_a-getcwd-lgpl.obj: getcwd-lgpl.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getcwd-lgpl.obj `if test -f 'getcwd-lgpl.c'; then $(CYGPATH_W) 'getcwd-lgpl.c'; else $(CYGPATH_W) '$(srcdir)/getcwd-lgpl.c'; fi`
 
+libgmc_a-getdelim.o: getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getdelim.o -MD -MP -MF $(DEPDIR)/libgmc_a-getdelim.Tpo -c -o libgmc_a-getdelim.o `test -f 'getdelim.c' || echo '$(srcdir)/'`getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgmc_a-getdelim.Tpo $(DEPDIR)/libgmc_a-getdelim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getdelim.c' object='libgmc_a-getdelim.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getdelim.o `test -f 'getdelim.c' || echo '$(srcdir)/'`getdelim.c
+
+libgmc_a-getdelim.obj: getdelim.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getdelim.obj -MD -MP -MF $(DEPDIR)/libgmc_a-getdelim.Tpo -c -o libgmc_a-getdelim.obj `if test -f 'getdelim.c'; then $(CYGPATH_W) 'getdelim.c'; else $(CYGPATH_W) '$(srcdir)/getdelim.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgmc_a-getdelim.Tpo $(DEPDIR)/libgmc_a-getdelim.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getdelim.c' object='libgmc_a-getdelim.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getdelim.obj `if test -f 'getdelim.c'; then $(CYGPATH_W) 'getdelim.c'; else $(CYGPATH_W) '$(srcdir)/getdelim.c'; fi`
+
 libgmc_a-getdtablesize.o: getdtablesize.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getdtablesize.o -MD -MP -MF $(DEPDIR)/libgmc_a-getdtablesize.Tpo -c -o libgmc_a-getdtablesize.o `test -f 'getdtablesize.c' || echo '$(srcdir)/'`getdtablesize.c
 @am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgmc_a-getdtablesize.Tpo $(DEPDIR)/libgmc_a-getdtablesize.Po
@@ -3938,6 +3964,20 @@ libgmc_a-getdtablesize.obj: getdtablesize.c
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getdtablesize.c' object='libgmc_a-getdtablesize.obj' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getdtablesize.obj `if test -f 'getdtablesize.c'; then $(CYGPATH_W) 'getdtablesize.c'; else $(CYGPATH_W) '$(srcdir)/getdtablesize.c'; fi`
+
+libgmc_a-getline.o: getline.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getline.o -MD -MP -MF $(DEPDIR)/libgmc_a-getline.Tpo -c -o libgmc_a-getline.o `test -f 'getline.c' || echo '$(srcdir)/'`getline.c
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgmc_a-getline.Tpo $(DEPDIR)/libgmc_a-getline.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getline.c' object='libgmc_a-getline.o' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getline.o `test -f 'getline.c' || echo '$(srcdir)/'`getline.c
+
+libgmc_a-getline.obj: getline.c
+@am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getline.obj -MD -MP -MF $(DEPDIR)/libgmc_a-getline.Tpo -c -o libgmc_a-getline.obj `if test -f 'getline.c'; then $(CYGPATH_W) 'getline.c'; else $(CYGPATH_W) '$(srcdir)/getline.c'; fi`
+@am__fastdepCC_TRUE@	$(AM_V_at)$(am__mv) $(DEPDIR)/libgmc_a-getline.Tpo $(DEPDIR)/libgmc_a-getline.Po
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_V_CC)source='getline.c' object='libgmc_a-getline.obj' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCC_FALSE@	$(AM_V_CC@am__nodep@)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -c -o libgmc_a-getline.obj `if test -f 'getline.c'; then $(CYGPATH_W) 'getline.c'; else $(CYGPATH_W) '$(srcdir)/getline.c'; fi`
 
 libgmc_a-getopt.o: getopt.c
 @am__fastdepCC_TRUE@	$(AM_V_CC)$(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) $(CPPFLAGS) $(libgmc_a_CFLAGS) $(CFLAGS) -MT libgmc_a-getopt.o -MD -MP -MF $(DEPDIR)/libgmc_a-getopt.Tpo -c -o libgmc_a-getopt.o `test -f 'getopt.c' || echo '$(srcdir)/'`getopt.c
@@ -6338,7 +6378,9 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/libgmc_a-fwriteerror.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getcwd.Po
+	-rm -f ./$(DEPDIR)/libgmc_a-getdelim.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getdtablesize.Po
+	-rm -f ./$(DEPDIR)/libgmc_a-getline.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getopt.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getopt1.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getprogname.Po
@@ -6589,7 +6631,9 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/libgmc_a-fwriteerror.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getcwd.Po
+	-rm -f ./$(DEPDIR)/libgmc_a-getdelim.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getdtablesize.Po
+	-rm -f ./$(DEPDIR)/libgmc_a-getline.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getopt.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getopt1.Po
 	-rm -f ./$(DEPDIR)/libgmc_a-getprogname.Po

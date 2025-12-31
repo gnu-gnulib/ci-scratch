@@ -324,8 +324,14 @@
 /* Define to 1 when the gnulib module getcwd should be tested. */
 #undef GNULIB_TEST_GETCWD
 
+/* Define to 1 when the gnulib module getdelim should be tested. */
+#undef GNULIB_TEST_GETDELIM
+
 /* Define to 1 when the gnulib module getdtablesize should be tested. */
 #undef GNULIB_TEST_GETDTABLESIZE
+
+/* Define to 1 when the gnulib module getline should be tested. */
+#undef GNULIB_TEST_GETLINE
 
 /* Define to 1 when the gnulib module getopt-posix should be tested. */
 #undef GNULIB_TEST_GETOPT_POSIX
@@ -626,9 +632,21 @@
    */
 #undef HAVE_DECL_GETCWD
 
+/* Define to 1 if you have the declaration of 'getc_unlocked', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETC_UNLOCKED
+
+/* Define to 1 if you have the declaration of 'getdelim', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETDELIM
+
 /* Define to 1 if you have the declaration of 'getdtablesize', and to 0 if you
    don't. */
 #undef HAVE_DECL_GETDTABLESIZE
+
+/* Define to 1 if you have the declaration of 'getline', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETLINE
 
 /* Define to 1 if you have the declaration of 'getw', and to 0 if you don't.
    */
@@ -735,6 +753,9 @@
 /* Define to 1 if you have the <features.h> header file. */
 #undef HAVE_FEATURES_H
 
+/* Define to 1 if you have the 'flockfile' function. */
+#undef HAVE_FLOCKFILE
+
 /* Define if the 'free' function is guaranteed to preserve errno. */
 #undef HAVE_FREE_POSIX
 
@@ -744,15 +765,24 @@
 /* Define to 1 if the system has the ftello function. */
 #undef HAVE_FTELLO
 
+/* Define to 1 if you have the 'funlockfile' function. */
+#undef HAVE_FUNLOCKFILE
+
 /* Define to 1 if getcwd works, but with shorter paths than is generally
    tested with the replacement. */
 #undef HAVE_GETCWD_SHORTER
+
+/* Define to 1 if you have the `getdelim' function. */
+#undef HAVE_GETDELIM
 
 /* Define to 1 if you have the 'getdtablesize' function. */
 #undef HAVE_GETDTABLESIZE
 
 /* Define to 1 if you have the 'getexecname' function. */
 #undef HAVE_GETEXECNAME
+
+/* Define to 1 if you have the `getline' function. */
+#undef HAVE_GETLINE
 
 /* Define to 1 if you have the <getopt.h> header file. */
 #undef HAVE_GETOPT_H

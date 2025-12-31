@@ -41,6 +41,7 @@
 #  error \
 #  fstrcmp \
 #  fwriteerror \
+#  getline \
 #  getopt-gnu \
 #  gitlog-to-changelog \
 #  idx \
@@ -821,6 +822,14 @@ endif
 
 ## end   gnulib module getcwd-lgpl
 
+## begin gnulib module getdelim
+
+if GL_COND_OBJ_GETDELIM
+libgmc_a_SOURCES += getdelim.c
+endif
+
+## end   gnulib module getdelim
+
 ## begin gnulib module getdtablesize
 
 if GL_COND_OBJ_GETDTABLESIZE
@@ -828,6 +837,14 @@ libgmc_a_SOURCES += getdtablesize.c
 endif
 
 ## end   gnulib module getdtablesize
+
+## begin gnulib module getline
+
+if GL_COND_OBJ_GETLINE
+libgmc_a_SOURCES += getline.c
+endif
+
+## end   gnulib module getline
 
 ## begin gnulib module getopt-posix
 

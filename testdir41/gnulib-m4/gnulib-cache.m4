@@ -46,6 +46,7 @@
 #  error \
 #  fstrcmp \
 #  fwriteerror \
+#  getline \
 #  getopt-gnu \
 #  gitlog-to-changelog \
 #  idx \
@@ -80,6 +81,7 @@ gl_MODULES([
   error
   fstrcmp
   fwriteerror
+  getline
   getopt-gnu
   gitlog-to-changelog
   idx
