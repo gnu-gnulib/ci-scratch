@@ -83,7 +83,7 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      - uses: addnab/docker-run-action@v3
+      - uses: maus007/docker-run-action-fork@v1
         with:
           image: centos:7
           options: -v ${{ github.workspace }}:/work
@@ -124,7 +124,7 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      - uses: addnab/docker-run-action@v3
+      - uses: maus007/docker-run-action-fork@v1
         with:
           image: almalinux:9
           options: -v ${{ github.workspace }}:/work
@@ -167,7 +167,7 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      - uses: addnab/docker-run-action@v3
+      - uses: maus007/docker-run-action-fork@v1
         with:
           image: alpine:3
           options: -v ${{ github.workspace }}:/work
@@ -779,7 +779,7 @@ jobs:
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
-      - uses: addnab/docker-run-action@v3
+      - uses: maus007/docker-run-action-fork@v1
         with:
           # A Docker container based on Debian 13.
           image: tuxmake/clang-21:latest
