@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Copyright (C) 2024-2025 Free Software Foundation, Inc.
+# Copyright (C) 2024-2026 Free Software Foundation, Inc.
 #
 # This file is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published
@@ -85,7 +85,8 @@ done
 # testdir39: 20 modules
 # testdir40: all
 # testdir41: git-merge-changelog
-cd testdir41 || exit 1
+# testdir42: libiconv-1.19
+cd testdir42 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
