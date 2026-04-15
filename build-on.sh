@@ -86,7 +86,8 @@ done
 # testdir40: all
 # testdir41: git-merge-changelog
 # testdir42: libiconv-1.19
-cd testdir42 || exit 1
+# testdir43: pthread_sigmask sigdelay
+cd testdir43 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
