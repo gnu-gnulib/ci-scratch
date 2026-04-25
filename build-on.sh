@@ -88,7 +88,8 @@ done
 # testdir42: libiconv-1.19
 # testdir43: pthread_sigmask sigdelay
 # testdir44: uchar-h
-cd testdir44 || exit 1
+# testdir45: regex
+cd testdir45 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
