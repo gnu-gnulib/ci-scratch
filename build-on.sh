@@ -97,7 +97,7 @@ cd testdir48 || exit 1
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
 sleep 1; touch `find . -name configure -type f`
-sleep 1; touch `find . -name config.h.in -type f`
+sleep 1; touch `find . -name config.h.in -type f` `find . -name config.hin -type f`
 sleep 1; touch `find . -name Makefile.in -type f`
 
 mkdir build
