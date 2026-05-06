@@ -99,6 +99,7 @@ sleep 1; touch `find . -name aclocal.m4 -type f`
 sleep 1; touch `find . -name configure -type f`
 sleep 1; touch `find . -name config.h.in -type f` `find . -name config.hin -type f`
 sleep 1; touch `find . -name Makefile.in -type f`
+sleep 1; touch . `find . -name '*.info' -type f`
 
 mkdir build
 cd build
