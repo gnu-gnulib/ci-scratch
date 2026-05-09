@@ -1,5 +1,5 @@
 # gnulib-common.m4
-# serial 121
+# serial 122
 dnl Copyright (C) 2007-2026 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
@@ -1281,7 +1281,8 @@ AC_DEFUN([AC_C_RESTRICT],
 [/* Define to the equivalent of the C99 'restrict' keyword, or to
    nothing if this is not supported.  Do not define if restrict is
    supported directly.  */
-#if ! (defined __STDC_VERSION__ && 199901L <= __STDC_VERSION__)
+#if ! (defined __STDC_VERSION__ && 199901L <= __STDC_VERSION__ \
+       && !defined _MSC_VER)
 #undef restrict
 #endif
 /* Work around a bug in older versions of Sun C++, which did not
