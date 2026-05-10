@@ -1,5 +1,5 @@
 # mbrtowc.m4
-# serial 48
+# serial 49
 dnl Copyright (C) 2001-2002, 2004-2005, 2008-2026 Free Software Foundation,
 dnl Inc.
 dnl This file is free software; the Free Software Foundation

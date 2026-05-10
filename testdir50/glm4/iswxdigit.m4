@@ -1,5 +1,5 @@
 # iswxdigit.m4
-# serial 10
+# serial 11
 dnl Copyright (C) 2020-2026 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,

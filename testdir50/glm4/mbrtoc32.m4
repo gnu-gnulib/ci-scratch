@@ -1,5 +1,5 @@
 # mbrtoc32.m4
-# serial 23
+# serial 24
 dnl Copyright (C) 2014-2026 Free Software Foundation, Inc.
 dnl This file is free software; the Free Software Foundation
 dnl gives unlimited permission to copy and/or distribute it,
