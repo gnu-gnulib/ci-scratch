@@ -3982,7 +3982,7 @@ test_function (wchar_t * (*my_asnwprintf) (wchar_t *, size_t *, const wchar_t *,
 
   /* Test that converting an invalid wchar_t[] to char[] fails with EILSEQ.  */
   {
-    static const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
+    const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
     size_t length;
     wchar_t *result = my_asnwprintf (NULL, &length, L"%ls %d", input, 99);
     if (result == NULL)
@@ -3991,7 +3991,7 @@ test_function (wchar_t * (*my_asnwprintf) (wchar_t *, size_t *, const wchar_t *,
       free (result);
   }
   {
-    static const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
+    const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
     size_t length;
     wchar_t *result = my_asnwprintf (NULL, &length, L"%3ls %d", input, 99);
     if (result == NULL)
@@ -4000,7 +4000,7 @@ test_function (wchar_t * (*my_asnwprintf) (wchar_t *, size_t *, const wchar_t *,
       free (result);
   }
   {
-    static const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
+    const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
     size_t length;
     wchar_t *result = my_asnwprintf (NULL, &length, L"%.1ls %d", input, 99);
     if (result == NULL)
@@ -4009,7 +4009,7 @@ test_function (wchar_t * (*my_asnwprintf) (wchar_t *, size_t *, const wchar_t *,
       free (result);
   }
   {
-    static const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
+    const wchar_t input[] = { (wchar_t) {1702057263}, 114, 0 };
     size_t length;
     wchar_t *result = my_asnwprintf (NULL, &length, L"%3.1ls %d", input, 99);
     if (result == NULL)
