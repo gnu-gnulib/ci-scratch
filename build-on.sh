@@ -94,7 +94,8 @@ done
 # testdir48: gzip-1.14.70
 # testdir49: crypto/gc crypto/rijndael
 # testdir50: iswdigit iswpunct iswxdigit mbrtowc mbsnrtowcs mbsrtowcs mbstowcs ...
-cd testdir50 || exit 1
+# testdir51: thread-optim
+cd testdir51 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
