@@ -86,12 +86,76 @@ main ()
   /* "\343\247" = 0xE3 0xA7 is incomplete, "\343\247\214" = U+39CC is valid.  */
   ASSERT (!mbs_startswith ("\301\247", "\343\247"));
   ASSERT (!mbs_startswith ("\343\247", "\301\247"));
+
   /* "\355\240\200" = 0xED 0xA0 0x80 = U+D800 is invalid.
      In fact, "\355\240" = 0xED 0xA0 is already invalid, see
-     https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf page 125 table 3-7.  */
+     https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf page 125 table 3-7
+     and page 128 table 3.9.  */
+#if 0
+  /* mbs_startswith ("\355\240\200", "\355\240") returns
+     - true on musl libc, macOS, Solaris 11.4, Cygwin, mingw, MSVC
+       and with GNULIB_MCEL_PREFER on newer glibc, FreeBSD, NetBSD, OpenBSD,
+     - false on older glibc (CentOS 5), Solaris 11 OpenIndiana/OmniOS,
+       and with !GNULIB_MCEL_PREFER on newer glibc, FreeBSD, NetBSD, OpenBSD. */
   ASSERT (!mbs_startswith ("\355\240\200", "\355\240"));
-  ASSERT (!mbs_startswith ("\355\240\200", "\355")); // FAIL
+#endif
+#if 0
+  /* mbs_startswith ("\355\240\200", "\355") returns
+     - true on newer glibc, musl libc, macOS, FreeBSD, NetBSD, OpenBSD,
+       Solaris 11.4, Cygwin, mingw, MSVC,
+     - false on older glibc (CentOS 5), Solaris 11 OpenIndiana/OmniOS.  */
+  ASSERT (!mbs_startswith ("\355\240\200", "\355"));
+#endif
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\355\240", "\355"));
+#elif 0
+  /* Multi-byte encoding error (MEE) */
+  /* mbs_startswith ("\355\240", "\355") returns
+     - true on musl libc, macOS, Solaris 11.4, Cygwin, mingw, MSVC,
+     - false on glibc, FreeBSD, NetBSD, OpenBSD,
+       Solaris 11 OpenIndiana, Solaris 11 OmniOS.  */
   ASSERT (!mbs_startswith ("\355\240", "\355"));
+#endif
+
+  /* Incomplete characters.  See
+     https://www.unicode.org/versions/Unicode15.0.0/ch03.pdf
+     page 128 table 3-11.  */
+  /* "\341\200\240" = 0xE1 0x80 0xA0 = U+1020.  */
+  ASSERT (!mbs_startswith ("\341\200\240", "\341\200"));
+  ASSERT (!mbs_startswith ("\341\200\240", "\341"));
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\341\200", "\341"));
+#else
+  /* Multi-byte encoding error (MEE) */
+  ASSERT (!mbs_startswith ("\341\200", "\341"));
+#endif
+  /* "\360\221\222\240" = 0xF0 0x91 0x92 0xA0 = U+114A0.  */
+  ASSERT (!mbs_startswith ("\360\221\222\240", "\360\221\222"));
+  ASSERT (!mbs_startswith ("\360\221\222\240", "\360\221"));
+  ASSERT (!mbs_startswith ("\360\221\222\240", "\360"));
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\360\221\222", "\360\221"));
+#else
+  /* Multi-byte encoding error (MEE) */
+  ASSERT (!mbs_startswith ("\360\221\222", "\360\221"));
+#endif
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\360\221\222", "\360"));
+#else
+  /* Multi-byte encoding error (MEE) */
+  ASSERT (!mbs_startswith ("\360\221\222", "\360"));
+#endif
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\360\221", "\360"));
+#else
+  /* Multi-byte encoding error (MEE) */
+  ASSERT (!mbs_startswith ("\360\221", "\360"));
+#endif
 
   /* Two invalid characters should match only if they are identical.  */
   /* "\301\246" = 0xC1 0xA6 is invalid.  */
@@ -106,7 +170,13 @@ main ()
   ASSERT (!mbs_startswith ("\343\246", "\343\247"));
   ASSERT (!mbs_startswith ("\343\247", "\343\246"));
   ASSERT (mbs_startswith ("\343\247", "\343\247"));
+#if GNULIB_MCEL_PREFER
+  /* Single-byte encoding error (SEE) */
+  ASSERT (mbs_startswith ("\343\247", "\343"));
+#else
+  /* Multi-byte encoding error (MEE) */
   ASSERT (!mbs_startswith ("\343\247", "\343"));
+#endif
 
   return test_exit_status;
 }
