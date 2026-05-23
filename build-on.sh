@@ -95,7 +95,8 @@ done
 # testdir49: crypto/gc crypto/rijndael
 # testdir50: iswdigit iswpunct iswxdigit mbrtowc mbsnrtowcs mbsrtowcs mbstowcs ...
 # testdir51: thread-optim
-cd testdir51 || exit 1
+# testdir52: mbs_startswith
+cd testdir52 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
