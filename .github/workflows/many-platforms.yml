@@ -509,6 +509,7 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /usr/bin
+      - run: make --version
       - name: Build in Cygwin
         run: |
           export CPPFLAGS="-Wall"
