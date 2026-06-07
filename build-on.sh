@@ -100,7 +100,8 @@ done
 # testdir54: mbslen
 # testdir55: mbrtowc mbrlen
 # testdir56: setlocale
-cd testdir56 || exit 1
+# testdir57: stdckdint-h
+cd testdir57 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
