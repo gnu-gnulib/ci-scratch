@@ -1417,7 +1417,7 @@ get_main_locale_with_same_territory (const char *locale)
 
 #  endif
 
-char *
+const char *
 setlocale_improved (int category, const char *locale)
 {
   if (locale != NULL && locale[0] == '\0')
