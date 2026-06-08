@@ -21,7 +21,11 @@
 #include <string.h>
 
 #include "signature.h"
+#if GNULIB_defined_strerror
+SIGNATURE_CHECK (strerror, const char *, (int));
+#else
 SIGNATURE_CHECK (strerror, char *, (int));
+#endif
 
 #include <errno.h>
 

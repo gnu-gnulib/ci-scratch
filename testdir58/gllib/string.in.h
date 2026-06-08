@@ -1653,6 +1653,7 @@ _GL_EXTERN_C bool mbs_endswith (const char *string, const char *suffix)
 #  if !(defined __cplusplus && defined GNULIB_NAMESPACE)
 #   undef strerror
 #   define strerror rpl_strerror
+#   define GNULIB_defined_strerror 1
 #  endif
 _GL_FUNCDECL_RPL (strerror, const char *, (int), );
 _GL_CXXALIAS_RPL (strerror, const char *, (int));
