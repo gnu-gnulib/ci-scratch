@@ -52,7 +52,8 @@ extern "C" {
 #define SD_ELF_NOTE_DLOPEN_PRIORITY_SUGGESTED   "suggested"
 
 #if defined __ELF__ && (defined __GNUC__ || defined __clang__) \
-        && defined HAVE_ASM_IFNDEF_ENDIF_BALIGN && HAVE_ASM_IFNDEF_ENDIF_BALIGN
+        && defined HAVE_ASM_IFNDEF_ENDIF_BALIGN && HAVE_ASM_IFNDEF_ENDIF_BALIGN \
+        && !defined __sun /* Avoid linker error "wrong ELF OSABI: ELFOSABI_GNU" */
 
 /* The "R" (SHF_GNU_RETAIN) flag is only understood by binutils >= 2.36, so it can be disabled by defining
  * _SD_ELF_NOTE_DLOPEN_SECTION_FLAGS as 'aG' manually, but note that if --gc-sections is used when linking,
@@ -182,7 +183,7 @@ extern "C" {
         _SD_ELF_NOTE_DLOPEN(_SD_DLOPEN_JSON(feature, description, priority, __VA_ARGS__))
 
 /* The anchored note requires LLVM >= 18 (see above). Fall back to the non-anchored note on older clang. */
-#if _SD_ELF_NOTE_SUPPORTS_REFERENCES
+#if (defined(__clang__) ? defined(__apple_build_version__) || __clang_major__ >= 18 ? _SD_ELF_NOTE_SUPPORTS_REFERENCES)
 #  define SD_ELF_NOTE_DLOPEN_ANCHORED(tag, feature, description, priority, ...) \
         _SD_ELF_NOTE_DLOPEN_ANCHORED(tag, _SD_DLOPEN_JSON(feature, description, priority, __VA_ARGS__))
 #else
