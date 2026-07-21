@@ -27,7 +27,8 @@
 extern "C" {
 #endif
 
-/* ELF note macros implementing the FDO .note.dlopen standard.
+/* ELF note macros implementing the UAPI Group's .note.dlopen specification
+ * https://uapi-group.org/specifications/specs/elf_dlopen_metadata/
  *
  * These macros embed metadata in an ELF binary's .note.dlopen section,
  * declaring optional shared library dependencies that are loaded via
@@ -44,7 +45,7 @@ extern "C" {
  * See SD_ELF_NOTE_DLOPEN(3) for details.
  */
 
-#define SD_ELF_NOTE_DLOPEN_VENDOR "FDO"
+#define SD_ELF_NOTE_DLOPEN_VENDOR "FDO" /* freedesktop.org */
 #define SD_ELF_NOTE_DLOPEN_TYPE 0x407c0c0a
 #define SD_ELF_NOTE_DLOPEN_PRIORITY_REQUIRED    "required"
 #define SD_ELF_NOTE_DLOPEN_PRIORITY_RECOMMENDED "recommended"
@@ -181,12 +182,12 @@ extern "C" {
         _SD_ELF_NOTE_DLOPEN(_SD_DLOPEN_JSON(feature, description, priority, __VA_ARGS__))
 
 /* The anchored note requires LLVM >= 18 (see above). Fall back to the non-anchored note on older clang. */
-#if defined(__clang__) && !defined(__apple_build_version__) && __clang_major__ < 18
-#  define SD_ELF_NOTE_DLOPEN_ANCHORED(tag, feature, description, priority, ...) \
-        SD_ELF_NOTE_DLOPEN(feature, description, priority, __VA_ARGS__)
-#else
+#if _SD_ELF_NOTE_SUPPORTS_REFERENCES
 #  define SD_ELF_NOTE_DLOPEN_ANCHORED(tag, feature, description, priority, ...) \
         _SD_ELF_NOTE_DLOPEN_ANCHORED(tag, _SD_DLOPEN_JSON(feature, description, priority, __VA_ARGS__))
+#else
+#  define SD_ELF_NOTE_DLOPEN_ANCHORED(tag, feature, description, priority, ...) \
+        SD_ELF_NOTE_DLOPEN(feature, description, priority, __VA_ARGS__)
 #endif
 
 #else

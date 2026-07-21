@@ -11543,6 +11543,69 @@ printf '%s\n' "$gl_cv_asm_ifndef_endif_balign" >&6; }
 
 printf '%s\n' "#define HAVE_ASM_IFNDEF_ENDIF_BALIGN 1" >>confdefs.h
 
+
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether the assembler supports the section flag o" >&5
+printf %s "checking whether the assembler supports the section flag o... " >&6; }
+if test ${gl_cv_asm_section_o+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+          __asm__ (".section .def; foobar:; .section .foo,\"ao\",%note,foobar");
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_asm_section_o=yes
+else case e in #(
+  e) gl_cv_asm_section_o=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_asm_section_o" >&5
+printf '%s\n' "$gl_cv_asm_section_o" >&6; }
+    if test $gl_cv_asm_section_o = yes; then
+
+printf '%s\n' "#define _SD_ELF_NOTE_SUPPORTS_REFERENCES 1" >>confdefs.h
+
+    fi
+
+    { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether the assembler supports the section flag R" >&5
+printf %s "checking whether the assembler supports the section flag R... " >&6; }
+if test ${gl_cv_asm_section_R+y}
+then :
+  printf %s "(cached) " >&6
+else case e in #(
+  e)        cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+/* end confdefs.h.  */
+
+          __asm__ (".section .foo,\"aR\"");
+
+_ACEOF
+if ac_fn_c_try_compile "$LINENO"
+then :
+  gl_cv_asm_section_R=yes
+else case e in #(
+  e) gl_cv_asm_section_R=no ;;
+esac
+fi
+rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
+esac
+fi
+{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_asm_section_R" >&5
+printf '%s\n' "$gl_cv_asm_section_R" >&6; }
+    if test $gl_cv_asm_section_R = yes; then
+      gl_sd_dlopen_section_flags='"aGR"'
+    else
+      gl_sd_dlopen_section_flags='"aG"'
+    fi
+
+printf '%s\n' "#define _SD_ELF_NOTE_DLOPEN_SECTION_FLAGS $gl_sd_dlopen_section_flags" >>confdefs.h
+
   fi
 
 

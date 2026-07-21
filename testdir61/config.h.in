@@ -460,6 +460,12 @@
 #endif
 
 
+/* Define to the section flags for sd-dlopen.h. */
+#undef _SD_ELF_NOTE_DLOPEN_SECTION_FLAGS
+
+/* Define to 1 if the ELF .section command supports the o flag. */
+#undef _SD_ELF_NOTE_SUPPORTS_REFERENCES
+
 /* For standard stat data types on VMS. */
 #undef _USE_STD_STAT
 
