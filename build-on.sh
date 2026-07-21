@@ -104,7 +104,8 @@ done
 # testdir58: strerror and dependents
 # testdir59: list sublist list-c++
 # testdir60: hashcode-mem ...
-cd testdir60 || exit 1
+# testdir61: sd-dlopen
+cd testdir61 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
