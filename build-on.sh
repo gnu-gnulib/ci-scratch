@@ -105,7 +105,8 @@ done
 # testdir59: list sublist list-c++
 # testdir60: hashcode-mem ...
 # testdir61: sd-dlopen
-cd testdir61 || exit 1
+# testdir62: array-omap array-oset hash-map linkedhash-map modechange acl-permissions file-has-acl dfa dirent-h alphasort
+cd testdir62 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
