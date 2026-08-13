@@ -46,7 +46,7 @@ jobs:
   # See https://docs.github.com/en/actions/learn-github-actions/usage-limits-billing-and-administration
   check-linux-gnu-ubuntu:
     name: make check on Ubuntu GNU/Linux
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -79,7 +79,7 @@ jobs:
           overwrite: true
   check-linux-gnu-centos:
     name: make check on CentOS GNU/Linux
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -120,7 +120,7 @@ jobs:
           overwrite: true
   check-linux-gnu-alma:
     name: make check on AlmaLinux GNU/Linux
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -163,7 +163,7 @@ jobs:
           overwrite: true
   check-linux-alpine:
     name: make check on Alpine Linux
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -248,7 +248,7 @@ jobs:
     name: make check on FreeBSD
     # The FreeBSD runners sometimes get stuck.
     timeout-minutes: 15
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -289,7 +289,7 @@ jobs:
           overwrite: true
   check-netbsd:
     name: make check on NetBSD
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -333,7 +333,7 @@ jobs:
           overwrite: true
   check-openbsd:
     name: make check on OpenBSD
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -380,7 +380,7 @@ jobs:
           overwrite: true
   check-solaris11:
     name: make check on Solaris 11
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -430,7 +430,7 @@ jobs:
           overwrite: true
   check-solaris11-omnios:
     name: make check on Solaris 11 OmniOS
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -733,7 +733,7 @@ jobs:
   check-clang-approach1:
     name: make check with clang 18 downloaded
     # Takes 1 min. longer than check-newest-clang.
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -776,7 +776,7 @@ jobs:
           overwrite: true
   check-newest-clang:
     name: make check with the newest clang release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
@@ -819,7 +819,7 @@ jobs:
   # This is not a platform-specific test, but very useful for finding cross-compilation bugs.
   check-cross:
     name: make check with a cross-compiler
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       # This is needed because we run a script stored in this repository.
       - uses: actions/checkout@v4
