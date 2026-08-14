@@ -744,18 +744,18 @@ jobs:
       # Takes 5 seconds for the download (1 GB, 200 MB/sec) and 1:12 min to uncompress.
       - run: |
           date
-          wget -O clang+llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.8/clang+llvm-18.1.8-x86_64-linux-gnu-ubuntu-18.04.tar.xz
+          wget -O clang+llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.8/LLVM-22.1.8-Linux-X64.tar.xz
           tar xf clang+llvm.tar.xz
-          mv clang+llvm-*-x86_64-linux-gnu-ubuntu-18.04 clang+llvm
+          mv LLVM-*-Linux-X64 clang+llvm
           date
       # Install Ubuntu packages.
       # List of packages: https://packages.ubuntu.com/
-      - run: sudo apt update; sudo apt install libtinfo5
+      - run: sudo apt update; sudo apt install libtinfo6
       - run: |
           pwd
           clangdir=`pwd`/clang+llvm
           export CC="$clangdir/bin/clang -Wl,-rpath,$clangdir/lib"
-          export CXX="$clangdir/bin/clang++ -I/usr/include/c++/11 -I/usr/include/x86_64-linux-gnu/c++/11 -L/usr/lib/gcc/x86_64-linux-gnu/11 -Wl,-rpath,$clangdir/lib"
+          export CXX="$clangdir/bin/clang++ -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -L/usr/lib/gcc/x86_64-linux-gnu/13 -Wl,-rpath,$clangdir/lib"
           export CPPFLAGS="-Wall"
           ./build-on.sh 'testdir-all' '' 'make' "$HOME" ''
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
