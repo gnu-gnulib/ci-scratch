@@ -219,6 +219,11 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       char *result =
         my_asnprintf (NULL, &length, "%-10s %d", locale_string, 33, 44, 55);
       ASSERT (result != NULL);
+      fprintf (stderr, "test-ulc-vasnprintf3.c:222 result = <<");
+      for (size_t i = 0; result[i]; i++)
+        fprintf (stderr, " 0x%02X", (unsigned char) result[i]);
+      fprintf (stderr, " >> = |%s|\n", result);
+      fflush (stderr);
       ASSERT (streq (result, "\303\204rger      33"));
       ASSERT (length == strlen (result));
       free (result);
@@ -228,6 +233,11 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       char *result =
         my_asnprintf (NULL, &length, "%010s %d", locale_string, 33, 44, 55);
       ASSERT (result != NULL);
+      fprintf (stderr, "test-ulc-vasnprintf3.c:231 result = <<");
+      for (size_t i = 0; result[i]; i++)
+        fprintf (stderr, " 0x%02X", (unsigned char) result[i]);
+      fprintf (stderr, " >> = |%s|\n", result);
+      fflush (stderr);
       ASSERT (streq (result, "     \303\204rger 33"));
       ASSERT (length == strlen (result));
       free (result);
