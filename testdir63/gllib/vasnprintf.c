@@ -3148,6 +3148,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                          because !has_width and therefore width==0.  */
                       characters = 0;
                     }
+                  fprintf (stderr, "vasnprintf.c %%s 64-bit: bytes=%u, characters=%u\n", (unsigned int) bytes, (unsigned int) characters);
 # endif
 
 # if !DCHAR_IS_TCHAR
@@ -7643,6 +7644,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
 
                     /* Perform padding.  */
 #if (WIDE_CHAR_VERSION && MUSL_LIBC) || NEED_PRINTF_FLAG_LEFTADJUST || !DCHAR_IS_TCHAR || ENABLE_UNISTDIO || NEED_PRINTF_FLAG_ZERO || NEED_PRINTF_FLAG_ALT_PRECISION_ZERO || NEED_PRINTF_UNBOUNDED_PRECISION || NEED_PRINTF_FLAG_GROUPING || NEED_PRINTF_FLAG_GROUPING_INT
+                    fprintf (stderr, "vasnprintf.c %%s 32-bit 1: pad_ourselves=%d has_width=%d\n", pad_ourselves, has_width);
                     if (pad_ourselves && has_width)
                       {
                         size_t w;
@@ -7673,6 +7675,7 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                            of the converted value, says POSIX.  */
                         w = count;
 # endif
+                        fprintf (stderr, "vasnprintf.c %%s 32-bit 2: w = %u\n", (unsigned int) w);
                         if (w < width)
                           {
                             size_t pad = width - w;
