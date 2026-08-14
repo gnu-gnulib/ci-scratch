@@ -200,6 +200,8 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%s %d", locale_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=1 has_width=0
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "\303\204rger 33"));
       ASSERT (length == strlen (result));
@@ -209,6 +211,9 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%10s %d", locale_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=1 has_width=1
+//vasnprintf.c %s 32-bit 2: w = 5
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "     \303\204rger 33"));
       ASSERT (length == strlen (result));
@@ -218,6 +223,10 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%-10s %d", locale_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=1 has_width=1
+//vasnprintf.c %s 32-bit 2: w = 6
+//test-ulc-vasnprintf3.c:222 result = << 0xC3 0x84 0x72 0x67 0x65 0x72 0x20 0x20 0x20 0x20 0x20 0x33 0x33 >> = |Ärger     33|
+//../../gltests/unistdio/test-ulc-vasnprintf3.c:227: assertion 'streq (result, "\303\204rger      33")' failed
       ASSERT (result != NULL);
       fprintf (stderr, "test-ulc-vasnprintf3.c:222 result = <<");
       for (size_t i = 0; result[i]; i++)
@@ -232,6 +241,9 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%010s %d", locale_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=1 has_width=1
+//vasnprintf.c %s 32-bit 2: w = 5
+//test-ulc-vasnprintf3.c:231 result = << 0x20 0x20 0x20 0x20 0x20 0xC3 0x84 0x72 0x67 0x65 0x72 0x20 0x33 0x33 >> = |     Ärger 33|
       ASSERT (result != NULL);
       fprintf (stderr, "test-ulc-vasnprintf3.c:231 result = <<");
       for (size_t i = 0; result[i]; i++)
@@ -254,6 +266,7 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%ls %d", wide_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "h\303\251t\303\251rog\303\251n\303\251it\303\251 33"));
       ASSERT (length == strlen (result));
@@ -263,6 +276,7 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%20ls %d", wide_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "       h\303\251t\303\251rog\303\251n\303\251it\303\251 33"));
       ASSERT (length == strlen (result));
@@ -272,6 +286,7 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%-20ls %d", wide_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "h\303\251t\303\251rog\303\251n\303\251it\303\251        33"));
       ASSERT (length == strlen (result));
@@ -281,6 +296,7 @@ test_function (char * (*my_asnprintf) (char *, size_t *, const char *, ...))
       size_t length;
       char *result =
         my_asnprintf (NULL, &length, "%020ls %d", wide_string, 33, 44, 55);
+//vasnprintf.c %s 32-bit 1: pad_ourselves=0 has_width=0
       ASSERT (result != NULL);
       ASSERT (streq (result, "       h\303\251t\303\251rog\303\251n\303\251it\303\251 33"));
       ASSERT (length == strlen (result));

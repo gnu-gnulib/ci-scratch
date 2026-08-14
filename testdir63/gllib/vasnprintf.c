@@ -7644,7 +7644,9 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
 
                     /* Perform padding.  */
 #if (WIDE_CHAR_VERSION && MUSL_LIBC) || NEED_PRINTF_FLAG_LEFTADJUST || !DCHAR_IS_TCHAR || ENABLE_UNISTDIO || NEED_PRINTF_FLAG_ZERO || NEED_PRINTF_FLAG_ALT_PRECISION_ZERO || NEED_PRINTF_UNBOUNDED_PRECISION || NEED_PRINTF_FLAG_GROUPING || NEED_PRINTF_FLAG_GROUPING_INT
+# if ENABLE_UNISTDIO
                     fprintf (stderr, "vasnprintf.c %%s 32-bit 1: pad_ourselves=%d has_width=%d\n", pad_ourselves, has_width);
+# endif
                     if (pad_ourselves && has_width)
                       {
                         size_t w;
@@ -7653,6 +7655,13 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                            against the number of _characters_ of the converted
                            value.  */
                         w = DCHAR_MBSNLEN (result + length, count);
+                        fprintf (stderr, "vasnprintf.c %%s 32-bit 2: MB_CUR_MAX = %d, count = %u, w = %u\n", MB_CUR_MAX, (unsigned int) count, (unsigned int) w);
+                        if (w < 10) {
+                          fprintf (stderr, "vasnprintf.c %%s 32-bit 3: <<");
+                          for (size_t iii = 0; (result + length)[iii]; iii++)
+                            fprintf (stderr, " 0x%02X", (unsigned char) (result + length)[iii]);
+                          fprintf (stderr, " >>\n");
+                        }
 # elif __GLIBC__ >= 2
                         /* glibc prefers to compare the width against the number
                            of characters as well, but only for numeric conversion
@@ -7675,7 +7684,6 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                            of the converted value, says POSIX.  */
                         w = count;
 # endif
-                        fprintf (stderr, "vasnprintf.c %%s 32-bit 2: w = %u\n", (unsigned int) w);
                         if (w < width)
                           {
                             size_t pad = width - w;
