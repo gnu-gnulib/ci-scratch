@@ -731,7 +731,7 @@ jobs:
           retention-days: 28
           overwrite: true
   check-clang-approach1:
-    name: make check with clang 18 downloaded
+    name: make check with clang 22 downloaded
     # Takes 1 min. longer than check-newest-clang.
     runs-on: ubuntu-24.04
     steps:
