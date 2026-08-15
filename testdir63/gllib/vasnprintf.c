@@ -7654,13 +7654,20 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                         /* Outside POSIX, it's preferable to compare the width
                            against the number of _characters_ of the converted
                            value.  */
-                        w = DCHAR_MBSNLEN (result + length, count);
-                        fprintf (stderr, "vasnprintf.c %%s 32-bit 2: MB_CUR_MAX = %d, count = %u, w = %u\n", MB_CUR_MAX, (unsigned int) count, (unsigned int) w);
-                        if (w < 10) {
-                          fprintf (stderr, "vasnprintf.c %%s 32-bit 3: <<");
-                          for (size_t iii = 0; (result + length)[iii]; iii++)
-                            fprintf (stderr, " 0x%02X", (unsigned char) (result + length)[iii]);
-                          fprintf (stderr, " >>\n");
+                        {
+#  if !DCHAR_IS_TCHAR || USE_SNPRINTF
+                          DCHAR_T * const rp = result + length;
+#  else
+                          DCHAR_T * const rp = tmp;
+#  endif
+                          w = DCHAR_MBSNLEN (rp, count);
+                          fprintf (stderr, "vasnprintf.c %%s 32-bit 2: MB_CUR_MAX = %d, count = %u, w = %u\n", MB_CUR_MAX, (unsigned int) count, (unsigned int) w);
+                          if (w < 10) {
+                            fprintf (stderr, "vasnprintf.c %%s 32-bit 3: <<");
+                            for (size_t iii = 0; rp[iii]; iii++)
+                              fprintf (stderr, " 0x%02X", (unsigned char) rp[iii]);
+                            fprintf (stderr, " >>\n");
+                          }
                         }
 # elif __GLIBC__ >= 2
                         /* glibc prefers to compare the width against the number
@@ -7673,7 +7680,14 @@ VASNPRINTF (DCHAR_T *resultbuf, size_t *lengthp,
                           {
                           case 'd': case 'i': case 'u':
                           case 'f': case 'F': case 'g': case 'G':
-                            w = DCHAR_MBSNLEN (result + length, count);
+                            {
+#  if !DCHAR_IS_TCHAR || USE_SNPRINTF
+                              DCHAR_T * const rp = result + length;
+#  else
+                              DCHAR_T * const rp = tmp;
+#  endif
+                              w = DCHAR_MBSNLEN (rp, count);
+                            }
                             break;
                           default:
                             w = count;
