@@ -107,7 +107,8 @@ done
 # testdir61: sd-dlopen
 # testdir62: array-omap array-oset hash-map linkedhash-map modechange acl-permissions file-has-acl dfa dirent-h alphasort
 # testdir63: unistdio/ulc-vasnprintf
-cd testdir63 || exit 1
+# testdir64: c32isprint
+cd testdir64 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
