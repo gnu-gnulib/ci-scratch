@@ -712,11 +712,14 @@ jobs:
       - run: git config --global core.autocrlf input
         shell: cmd
       - uses: actions/checkout@v5
+      # Doc: https://github.com/msys2/setup-msys2
       - uses: msys2/setup-msys2@v2
         with:
+          # Doc: https://www.msys2.org/docs/environments/
           msystem: MINGW64
           update: true
-          install: mingw-w64-x86_64-gcc make
+          # List of packages: https://packages.msys2.org/search
+          install: mingw-w64-x86_64-gcc make libiconv-devel
       - name: Windows version
         run: cmd /c ver
       - run: uname -a
@@ -725,7 +728,10 @@ jobs:
       - run: pwd
       - run: ls -l
       - run: echo "$PATH"
+      - run: ls -l /mingw64/bin
+      - run: ls -l /usr/local/bin
       - run: ls -l /usr/bin
+      - run: ls -l /bin
       - name: Build in MSYS2
         run: |
           set -x
@@ -762,6 +768,26 @@ jobs:
       - run: git config --global core.autocrlf input
         shell: cmd
       - uses: actions/checkout@v5
+      # Doc: https://github.com/msys2/setup-msys2
+      - uses: msys2/setup-msys2@v2
+        with:
+          # Doc: https://www.msys2.org/docs/environments/
+          msystem: UCRT64
+          update: true
+          # List of packages: https://packages.msys2.org/search
+          install: mingw-w64-ucrt-x86_64-gcc make libiconv-devel
+      - name: Windows version
+        run: cmd /c ver
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: ls -l
+      - run: echo "$PATH"
+      - run: ls -l /ucrt64/bin
+      - run: ls -l /usr/local/bin
+      - run: ls -l /usr/bin
+      - run: ls -l /bin
   check-x86-mingw-ucrt-clang:
     name: make check on mingw with UCRT and clang
     if: ${{ false }}
@@ -774,6 +800,26 @@ jobs:
       - run: git config --global core.autocrlf input
         shell: cmd
       - uses: actions/checkout@v5
+      # Doc: https://github.com/msys2/setup-msys2
+      - uses: msys2/setup-msys2@v2
+        with:
+          # Doc: https://www.msys2.org/docs/environments/
+          msystem: CLANG64
+          update: true
+          # List of packages: https://packages.msys2.org/search
+          install: mingw-w64-clang-x86_64-clang make libiconv-devel
+      - name: Windows version
+        run: cmd /c ver
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: ls -l
+      - run: echo "$PATH"
+      - run: ls -l /clang64/bin
+      - run: ls -l /usr/local/bin
+      - run: ls -l /usr/bin
+      - run: ls -l /bin
   check-arm64-mingw-ucrt-clang:
     name: make check on arm64 mingw with UCRT and clang
     if: ${{ false }}
@@ -786,6 +832,26 @@ jobs:
       - run: git config --global core.autocrlf input
         shell: cmd
       - uses: actions/checkout@v5
+      # Doc: https://github.com/msys2/setup-msys2
+      - uses: msys2/setup-msys2@v2
+        with:
+          # Doc: https://www.msys2.org/docs/environments/
+          msystem: CLANGARM64
+          update: true
+          # List of packages: https://packages.msys2.org/search
+          install: mingw-w64-clang-aarch64-clang make libiconv-devel
+      - name: Windows version
+        run: cmd /c ver
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: ls -l
+      - run: echo "$PATH"
+      - run: ls -l /clangarm64/bin
+      - run: ls -l /usr/local/bin
+      - run: ls -l /usr/bin
+      - run: ls -l /bin
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
