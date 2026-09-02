@@ -745,7 +745,8 @@ jobs:
       - run: ls -l /usr/bin
       - run: ls -l /bin
       - run: ${{ matrix.compiler }} -v -v
-      - run: echo | ${{ matrix.compiler }} -E -dM - | grep CRT
+      - run: echo '#include <stdio.h>' | ${{ matrix.compiler }} -E -dM - | grep UCRT
+      - run: echo 'int main () {}' > a.c; ${{ matrix.compiler }} a.c; objdump -p a.exe | grep DLL; rm a.exe
       - name: Build in MSYS2
         run: |
           set -x
