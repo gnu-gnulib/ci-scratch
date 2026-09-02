@@ -729,23 +729,22 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /mingw64/bin
-      - run: ls -l /usr/local/bin
       - run: ls -l /usr/bin
       - run: ls -l /bin
+      - run: gcc -v -v
       - name: Build in MSYS2
         run: |
           set -x
-          : PATH=/usr/x86_64-w64-mingw32/sys-root/mingw/bin:$PATH
-          : export CPPFLAGS="-Wall"
-          : export CC=x86_64-w64-mingw32-gcc
-          : export CXX=x86_64-w64-mingw32-g++
-          : ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/usr/x86_64-w64-mingw32/sys-root/mingw' 'libbacktrace'
+          export CPPFLAGS="-Wall"
+          export CC=gcc
+          export CXX=g++
+          ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/mingw64' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
-          name: logs-mingw${{ matrix.bitness }}
+          name: logs-x86-mingw-msvcrt-gcc
           path: |
             libbacktrace/log[124]
             */build/config.cache
@@ -758,7 +757,6 @@ jobs:
           overwrite: true
   check-x86-mingw-ucrt-gcc:
     name: make check on mingw with UCRT
-    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -785,12 +783,34 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /ucrt64/bin
-      - run: ls -l /usr/local/bin
       - run: ls -l /usr/bin
       - run: ls -l /bin
+      - run: gcc -v -v
+      - name: Build in MSYS2
+        run: |
+          set -x
+          export CPPFLAGS="-Wall"
+          export CC=gcc
+          export CXX=g++
+          ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/ucrt64' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-x86-mingw-ucrt-gcc
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 28
+          overwrite: true
   check-x86-mingw-ucrt-clang:
     name: make check on mingw with UCRT and clang
-    if: ${{ false }}
     runs-on: windows-2022
     defaults:
       run:
@@ -817,12 +837,34 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /clang64/bin
-      - run: ls -l /usr/local/bin
       - run: ls -l /usr/bin
       - run: ls -l /bin
+      - run: clang -v -v
+      - name: Build in MSYS2
+        run: |
+          set -x
+          export CPPFLAGS="-Wall"
+          export CC=clang
+          export CXX=clang++
+          ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/clang64' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-x86-mingw-ucrt-clang
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 28
+          overwrite: true
   check-arm64-mingw-ucrt-clang:
     name: make check on arm64 mingw with UCRT and clang
-    if: ${{ false }}
     runs-on: windows-11-arm
     defaults:
       run:
@@ -849,9 +891,32 @@ jobs:
       - run: ls -l
       - run: echo "$PATH"
       - run: ls -l /clangarm64/bin
-      - run: ls -l /usr/local/bin
       - run: ls -l /usr/bin
       - run: ls -l /bin
+      - run: clang -v -v
+      - name: Build in MSYS2
+        run: |
+          set -x
+          export CPPFLAGS="-Wall"
+          export CC=clang
+          export CXX=clang++
+          ./build-on.sh 'testdir-all-for-mingw' '--host=aarch64-w64-mingw32' 'make' '/clangarm64' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-arm64-mingw-ucrt-clang
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 28
+          overwrite: true
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
