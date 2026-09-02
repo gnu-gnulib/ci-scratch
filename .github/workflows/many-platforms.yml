@@ -751,7 +751,7 @@ jobs:
           export CPPFLAGS="-Wall"
           export CC=${{ matrix.compiler }}
           export CXX=${{ case(matrix.compiler == 'clang++', 'clang', 'g++') }}
-          ./build-on.sh 'testdir-all-for-mingw' '--host='${{ case(matrix.cpu == 'arm64', 'aarch64', 'x86_64') }}-w64-mingw32' 'make' '${{ case(matrix.cpu == 'arm64', '/clangarm64', matrix.compiler == 'clang', '/clang64', matrix.crt == 'ucrt', '/ucrt64', '/mingw64') }}' 'libbacktrace'
+          ./build-on.sh 'testdir-all-for-mingw' '--host=${{ case(matrix.cpu == 'arm64', 'aarch64', 'x86_64') }}-w64-mingw32' 'make' '${{ case(matrix.cpu == 'arm64', '/clangarm64', matrix.compiler == 'clang', '/clang64', matrix.crt == 'ucrt', '/ucrt64', '/mingw64') }}' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
