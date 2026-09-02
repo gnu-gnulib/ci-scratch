@@ -719,7 +719,7 @@ jobs:
           msystem: MINGW64
           update: true
           # List of packages: https://packages.msys2.org/search
-          install: mingw-w64-x86_64-gcc make libiconv-devel
+          install: mingw-w64-x86_64-gcc make diffutils libiconv-devel
       - name: Windows version
         run: cmd /c ver
       - run: uname -a
@@ -773,7 +773,7 @@ jobs:
           msystem: UCRT64
           update: true
           # List of packages: https://packages.msys2.org/search
-          install: mingw-w64-ucrt-x86_64-gcc make libiconv-devel
+          install: mingw-w64-ucrt-x86_64-gcc make diffutils libiconv-devel
       - name: Windows version
         run: cmd /c ver
       - run: uname -a
@@ -827,7 +827,7 @@ jobs:
           msystem: CLANG64
           update: true
           # List of packages: https://packages.msys2.org/search
-          install: mingw-w64-clang-x86_64-clang make libiconv-devel
+          install: mingw-w64-clang-x86_64-clang make diffutils libiconv-devel
       - name: Windows version
         run: cmd /c ver
       - run: uname -a
@@ -846,7 +846,7 @@ jobs:
           export CPPFLAGS="-Wall"
           export CC=clang
           export CXX=clang++
-          ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/clang64' 'libbacktrace'
+          ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-windows-gnu' 'make' '/clang64' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
@@ -881,7 +881,7 @@ jobs:
           msystem: CLANGARM64
           update: true
           # List of packages: https://packages.msys2.org/search
-          install: mingw-w64-clang-aarch64-clang make libiconv-devel
+          install: mingw-w64-clang-aarch64-clang make diffutils libiconv-devel
       - name: Windows version
         run: cmd /c ver
       - run: uname -a
@@ -900,7 +900,7 @@ jobs:
           export CPPFLAGS="-Wall"
           export CC=clang
           export CXX=clang++
-          ./build-on.sh 'testdir-all-for-mingw' '--host=aarch64-w64-mingw32' 'make' '/clangarm64' 'libbacktrace'
+          ./build-on.sh 'testdir-all-for-mingw' '--host=aarch64-w64-windows-gnu' 'make' '/clangarm64' 'libbacktrace'
       # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
       #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
       - if: ${{ always() }}
