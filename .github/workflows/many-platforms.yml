@@ -701,6 +701,91 @@ jobs:
             */build/gltests/test-*.log
           retention-days: 28
           overwrite: true
+  check-x86-mingw-msvcrt-gcc:
+    name: make check on mingw with msvcrt
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 '{0}'
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
+        shell: cmd
+      - uses: actions/checkout@v5
+      - uses: msys2/setup-msys2@v2
+        with:
+          msystem: MINGW64
+          update: true
+          install: mingw-w64-x86_64-gcc make
+      - name: Windows version
+        run: cmd /c ver
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: ls -l
+      - run: echo "$PATH"
+      - run: ls -l /usr/bin
+      - name: Build in MSYS2
+        run: |
+          set -x
+          : PATH=/usr/x86_64-w64-mingw32/sys-root/mingw/bin:$PATH
+          : export CPPFLAGS="-Wall"
+          : export CC=x86_64-w64-mingw32-gcc
+          : export CXX=x86_64-w64-mingw32-g++
+          : ./build-on.sh 'testdir-all-for-mingw' '--host=x86_64-w64-mingw32' 'make' '/usr/x86_64-w64-mingw32/sys-root/mingw' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-mingw${{ matrix.bitness }}
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 28
+          overwrite: true
+  check-x86-mingw-ucrt-gcc:
+    name: make check on mingw with UCRT
+    if: ${{ false }}
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 '{0}'
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
+        shell: cmd
+      - uses: actions/checkout@v5
+  check-x86-mingw-ucrt-clang:
+    name: make check on mingw with UCRT and clang
+    if: ${{ false }}
+    runs-on: windows-2022
+    defaults:
+      run:
+        shell: msys2 '{0}'
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
+        shell: cmd
+      - uses: actions/checkout@v5
+  check-arm64-mingw-ucrt-clang:
+    name: make check on arm64 mingw with UCRT and clang
+    if: ${{ false }}
+    runs-on: windows-11-arm
+    defaults:
+      run:
+        shell: msys2 '{0}'
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
+        shell: cmd
+      - uses: actions/checkout@v5
   # This is not a platform-specific test, but very useful for finding bugs.
   check-sanitized:
     name: make check with sanitizers
