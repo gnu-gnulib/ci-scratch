@@ -701,6 +701,73 @@ jobs:
             */build/gltests/test-*.log
           retention-days: 28
           overwrite: true
+  check-msys2:
+    name: make check on mingw on msys2
+    # Doc: https://docs.github.com/en/actions/using-jobs/using-a-matrix-for-your-jobs
+    strategy:
+      fail-fast: false
+      matrix:
+        cpu: [x86_64, arm64]
+        compiler: [gcc, clang]
+        crt: [msvcrt, ucrt]
+        exclude:
+          - cpu: arm64
+            compiler: gcc
+          - compiler: clang
+            crt: msvcrt
+    # Doc: https://docs.github.com/en/actions/reference/workflows-and-actions/expressions
+    runs-on: ${{ case(matrix.cpu == 'arm64', 'windows-11-arm', 'windows-2022') }}
+    defaults:
+      run:
+        shell: msys2 '{0}'
+    steps:
+      # This is needed because we run a script stored in this repository.
+      - run: git config --global core.autocrlf input
+        shell: cmd
+      - uses: actions/checkout@v5
+      # Doc: https://github.com/msys2/setup-msys2
+      - uses: msys2/setup-msys2@v2
+        with:
+          # Doc: https://www.msys2.org/docs/environments/
+          msystem: ${{ case(matrix.cpu == 'arm64', 'CLANGARM64', matrix.compiler == 'clang', 'CLANG64', matrix.crt == 'ucrt', 'UCRT64', 'MINGW64') }}
+          update: true
+          # List of packages: https://packages.msys2.org/search
+          install: ${{ matrix.compiler }} make diffutils libiconv-devel
+      - name: Windows version
+        run: cmd /c ver
+      - run: uname -a
+      - run: id
+      - run: env | LC_ALL=C sort
+      - run: pwd
+      - run: ls -l
+      - run: echo "$PATH"
+      - run: ls -l ${{ case(matrix.cpu == 'arm64', '/clangarm64', matrix.compiler == 'clang', '/clang64', matrix.crt == 'ucrt', '/ucrt64', '/mingw64') }}/bin
+      - run: ls -l /usr/bin
+      - run: ls -l /bin
+      - run: ${{ matrix.compiler }} -v -v
+      - name: Build in MSYS2
+        run: |
+          set -x
+          export CPPFLAGS="-Wall"
+          export CC=${{ matrix.compiler }}
+          export CXX=${{ case(matrix.compiler == 'clang++', 'clang', 'g++') }}
+          ./build-on.sh 'testdir-all-for-mingw' '--host=${{ case(matrix.cpu == 'arm64', 'aarch64', 'x86_64') }}-w64-${{ case(matrix.compiler == 'clang', 'windows-gnu', 'mingw32') }}' 'make' '${{ case(matrix.cpu == 'arm64', '/clangarm64', matrix.compiler == 'clang', '/clang64', matrix.crt == 'ucrt', '/ucrt64', '/mingw64') }}' 'libbacktrace'
+      # Doc: https://docs.github.com/en/actions/using-workflows/storing-workflow-data-as-artifacts
+      #      https://github.com/actions/upload-artifact?tab=readme-ov-file#usage
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: logs-${{ case(matrix.cpu == 'arm64', 'arm64', 'x86') }}-mingw-${{ matrix.crt }}-${{ matrix.compiler }}
+          path: |
+            libbacktrace/log[124]
+            */build/config.cache
+            */build/config.log
+            */build/config.status
+            */build/log[123]
+            */build/test-*.log
+            */build/gltests/test-*.log
+          retention-days: 28
+          overwrite: true
   check-x86-mingw-msvcrt-gcc:
     name: make check on mingw with msvcrt
     runs-on: windows-2022
