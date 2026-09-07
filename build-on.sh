@@ -110,7 +110,8 @@ done
 # testdir64: c32isprint
 # testdir65: localcharset
 # testdir66: dfa stat sys_stat-h timespec_get time-h gethostname
-cd testdir66 || exit 1
+# testdir67: coreutils-9.11.274
+cd testdir67 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
