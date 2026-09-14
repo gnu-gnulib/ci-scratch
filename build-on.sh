@@ -111,14 +111,14 @@ done
 # testdir65: localcharset
 # testdir66: dfa stat sys_stat-h timespec_get time-h gethostname
 # testdir67: coreutils-9.11.274
-cd testdir67 || exit 1
+# testdir68: c32rtomb
+cd testdir68 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
 sleep 1; touch `find . -name configure -type f`
 sleep 1; touch `find . -name config.h.in -type f` `find . -name config.hin -type f`
 sleep 1; touch `find . -name Makefile.in -type f`
-sleep 1; touch . `find . -name fs-is-local.h`
 sleep 1; touch . `find . -name '*.gperf' | sed -e 's/\.gperf$/.h/'`
 sleep 1; touch . `find . -name stamp-vti -type f`
 sleep 1; touch . `find . -name '*.info' -type f`
