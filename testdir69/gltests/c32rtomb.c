@@ -32,6 +32,14 @@
 # include "lc-charset-unicode.h"
 #endif
 
+#if (MBRTOC32_IN_C_LOCALE_MAYBE_LIKE_ISO_8859 \
+     || MBRTOC32_IN_C_LOCALE_MAYBE_EILSEQ \
+     || (HAVE_WORKING_MBRTOC32 && HAVE_WORKING_C32RTOMB && !_GL_WCHAR_T_IS_UCS4) \
+     || _GL_SMALL_WCHAR_T)
+# include "hard-locale.h"
+# include <locale.h>
+#endif
+
 size_t
 c32rtomb (char *s, char32_t wc, mbstate_t *ps)
 #undef c32rtomb
@@ -42,6 +50,27 @@ c32rtomb (char *s, char32_t wc, mbstate_t *ps)
   if (s == NULL)
     /* We know the NUL wide character corresponds to the NUL character.  */
     return 1;
+# endif
+
+# if MBRTOC32_IN_C_LOCALE_MAYBE_LIKE_ISO_8859 /* OpenBSD */ \
+     || !_GL_WCHAR_T_IS_UCS4 /* NetBSD ≥ 11 */
+  if ((wc >= 0xDF80 && wc <= 0xDFFF) && !hard_locale (LC_CTYPE))
+    {
+      /* In the "C" locale, map the code points U+DF80..U+DFFF back to the bytes
+         0x80..0xFF, for consistency with the mbrtoc32 and btoc32 functions.  */
+      s[0] = (unsigned char) (wc - 0xDF00);
+      return 1;
+    }
+# endif
+
+# if MBRTOC32_IN_C_LOCALE_MAYBE_EILSEQ
+  if ((wc >= 0x0080 && wc <= 0x00FF) && !hard_locale (LC_CTYPE))
+    {
+      /* In the "C" locale, map the code points U+0080..U+00FF back to the bytes
+         0x80..0xFF, for consistency with the mbrtoc32 and btoc32 functions.  */
+      s[0] = (unsigned char) wc;
+      return 1;
+    }
 # endif
 
   return c32rtomb (s, wc, ps);
@@ -98,6 +127,27 @@ c32rtomb (char *s, char32_t wc, mbstate_t *ps)
               /*case 1:*/ s[0] = wc;
                 }
               return count;
+            }
+        }
+      else if (!hard_locale (LC_CTYPE))
+        {
+          /* In the "C" locale, map the code points U+DF80..U+DFFF back
+             to the bytes 0x80..0xFF, for consistency with the mbrtoc32 and
+             btoc32 functions.  */
+          if (wc >= 0x00 && wc <= 0x7F)
+            {
+              s[0] = (unsigned char) wc;
+              return 1;
+            }
+          else if (wc >= 0xDF80 && wc <= 0xDFFF)
+            {
+              s[0] = (unsigned char) (wc - 0xDF00);
+              return 1;
+            }
+          else
+            {
+              errno = EILSEQ;
+              return (size_t)(-1);
             }
         }
       else
