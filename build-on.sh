@@ -112,7 +112,7 @@ done
 # testdir66: dfa stat sys_stat-h timespec_get time-h gethostname
 # testdir67: coreutils-9.11.274
 # testdir68: c32rtomb
-# testdir69: c32isprint
+# testdir69: c32isprint btoc32 c32tob
 cd testdir69 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.

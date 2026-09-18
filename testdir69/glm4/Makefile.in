@@ -123,27 +123,21 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/gettimeofday.m4 \
 	$(top_srcdir)/glm4/gnulib-common.m4 \
 	$(top_srcdir)/glm4/gnulib-i18n.m4 \
-	$(top_srcdir)/glm4/host-cpu-c-abi.m4 \
-	$(top_srcdir)/glm4/iconv.m4 $(top_srcdir)/glm4/iconv_h.m4 \
-	$(top_srcdir)/glm4/iconv_open.m4 \
 	$(top_srcdir)/glm4/include_next.m4 \
-	$(top_srcdir)/glm4/inet_pton.m4 $(top_srcdir)/glm4/inline.m4 \
+	$(top_srcdir)/glm4/inet_pton.m4 \
 	$(top_srcdir)/glm4/intl-thread-locale.m4 \
 	$(top_srcdir)/glm4/intlmacosx.m4 \
 	$(top_srcdir)/glm4/inttypes.m4 $(top_srcdir)/glm4/ioctl.m4 \
 	$(top_srcdir)/glm4/isblank.m4 $(top_srcdir)/glm4/isnand.m4 \
 	$(top_srcdir)/glm4/isnanf.m4 $(top_srcdir)/glm4/isnanl.m4 \
 	$(top_srcdir)/glm4/largefile.m4 \
-	$(top_srcdir)/glm4/lcmessage.m4 $(top_srcdir)/glm4/lib-ld.m4 \
-	$(top_srcdir)/glm4/lib-link.m4 \
-	$(top_srcdir)/glm4/lib-prefix.m4 \
+	$(top_srcdir)/glm4/lcmessage.m4 \
 	$(top_srcdir)/glm4/libunistring-base.m4 \
 	$(top_srcdir)/glm4/limits-h.m4 \
 	$(top_srcdir)/glm4/localcharset.m4 \
 	$(top_srcdir)/glm4/locale-en.m4 \
 	$(top_srcdir)/glm4/locale-fr.m4 \
 	$(top_srcdir)/glm4/locale-ja.m4 \
-	$(top_srcdir)/glm4/locale-tr.m4 \
 	$(top_srcdir)/glm4/locale-zh.m4 $(top_srcdir)/glm4/locale_h.m4 \
 	$(top_srcdir)/glm4/localename.m4 $(top_srcdir)/glm4/lock.m4 \
 	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
@@ -208,10 +202,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/sys_types_h.m4 \
 	$(top_srcdir)/glm4/sys_uio_h.m4 $(top_srcdir)/glm4/thread.m4 \
 	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time.m4 \
-	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/tls.m4 \
-	$(top_srcdir)/glm4/trunc.m4 $(top_srcdir)/glm4/truncl.m4 \
-	$(top_srcdir)/glm4/uchar_h-c23.m4 \
-	$(top_srcdir)/glm4/uchar_h.m4 $(top_srcdir)/glm4/unictype_h.m4 \
+	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/trunc.m4 \
+	$(top_srcdir)/glm4/truncl.m4 $(top_srcdir)/glm4/uchar_h.m4 \
+	$(top_srcdir)/glm4/unictype_h.m4 \
 	$(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/unitypes_h.m4 $(top_srcdir)/glm4/usleep.m4 \
 	$(top_srcdir)/glm4/visibility.m4 \
@@ -471,7 +464,6 @@ GL_GNULIB_GROUP_MEMBER = @GL_GNULIB_GROUP_MEMBER@
 GL_GNULIB_HYPOT = @GL_GNULIB_HYPOT@
 GL_GNULIB_HYPOTF = @GL_GNULIB_HYPOTF@
 GL_GNULIB_HYPOTL = @GL_GNULIB_HYPOTL@
-GL_GNULIB_ICONV = @GL_GNULIB_ICONV@
 GL_GNULIB_ILOGB = @GL_GNULIB_ILOGB@
 GL_GNULIB_ILOGBF = @GL_GNULIB_ILOGBF@
 GL_GNULIB_ILOGBL = @GL_GNULIB_ILOGBL@
@@ -1529,8 +1521,6 @@ HAVE_WORKING_MBRTOC32 = @HAVE_WORKING_MBRTOC32@
 HAVE_WS2TCPIP_H = @HAVE_WS2TCPIP_H@
 HAVE_XLOCALE_H = @HAVE_XLOCALE_H@
 HAVE__EXIT = @HAVE__EXIT@
-ICONV_CONST = @ICONV_CONST@
-ICONV_H = @ICONV_H@
 INCLUDE_NEXT = @INCLUDE_NEXT@
 INCLUDE_NEXT_AS_FIRST_DIRECTIVE = @INCLUDE_NEXT_AS_FIRST_DIRECTIVE@
 INET_PTON_LIB = @INET_PTON_LIB@
@@ -1547,10 +1537,8 @@ LC_MONETARY_IMPLEMENTED = @LC_MONETARY_IMPLEMENTED@
 LC_NUMERIC_IMPLEMENTED = @LC_NUMERIC_IMPLEMENTED@
 LC_TIME_IMPLEMENTED = @LC_TIME_IMPLEMENTED@
 LDFLAGS = @LDFLAGS@
-LIBC32CONV = @LIBC32CONV@
 LIBGNU_LIBDEPS = @LIBGNU_LIBDEPS@
 LIBGNU_LTLIBDEPS = @LIBGNU_LTLIBDEPS@
-LIBICONV = @LIBICONV@
 LIBINTL = @LIBINTL@
 LIBMULTITHREAD = @LIBMULTITHREAD@
 LIBOBJS = @LIBOBJS@
@@ -1562,7 +1550,6 @@ LIBSTDTHREAD = @LIBSTDTHREAD@
 LIBTESTS_LIBDEPS = @LIBTESTS_LIBDEPS@
 LIBTHREAD = @LIBTHREAD@
 LIBUNISTRING_UNICTYPE_H = @LIBUNISTRING_UNICTYPE_H@
-LIBUNISTRING_UNISTR_H = @LIBUNISTRING_UNISTR_H@
 LIBUNISTRING_UNITYPES_H = @LIBUNISTRING_UNITYPES_H@
 LIB_HARD_LOCALE = @LIB_HARD_LOCALE@
 LIB_MBRTOWC = @LIB_MBRTOWC@
@@ -1581,10 +1568,7 @@ LOCALE_EN_UTF8 = @LOCALE_EN_UTF8@
 LOCALE_FR = @LOCALE_FR@
 LOCALE_FR_UTF8 = @LOCALE_FR_UTF8@
 LOCALE_JA = @LOCALE_JA@
-LOCALE_TR_UTF8 = @LOCALE_TR_UTF8@
 LOCALE_ZH_CN = @LOCALE_ZH_CN@
-LTLIBC32CONV = @LTLIBC32CONV@
-LTLIBICONV = @LTLIBICONV@
 LTLIBINTL = @LTLIBINTL@
 LTLIBMULTITHREAD = @LTLIBMULTITHREAD@
 LTLIBOBJS = @LTLIBOBJS@
@@ -1603,7 +1587,6 @@ NEXT_AS_FIRST_DIRECTIVE_ERRNO_H = @NEXT_AS_FIRST_DIRECTIVE_ERRNO_H@
 NEXT_AS_FIRST_DIRECTIVE_ERROR_H = @NEXT_AS_FIRST_DIRECTIVE_ERROR_H@
 NEXT_AS_FIRST_DIRECTIVE_FCNTL_H = @NEXT_AS_FIRST_DIRECTIVE_FCNTL_H@
 NEXT_AS_FIRST_DIRECTIVE_FLOAT_H = @NEXT_AS_FIRST_DIRECTIVE_FLOAT_H@
-NEXT_AS_FIRST_DIRECTIVE_ICONV_H = @NEXT_AS_FIRST_DIRECTIVE_ICONV_H@
 NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H = @NEXT_AS_FIRST_DIRECTIVE_INTTYPES_H@
 NEXT_AS_FIRST_DIRECTIVE_LIMITS_H = @NEXT_AS_FIRST_DIRECTIVE_LIMITS_H@
 NEXT_AS_FIRST_DIRECTIVE_LOCALE_H = @NEXT_AS_FIRST_DIRECTIVE_LOCALE_H@
@@ -1637,7 +1620,6 @@ NEXT_ERRNO_H = @NEXT_ERRNO_H@
 NEXT_ERROR_H = @NEXT_ERROR_H@
 NEXT_FCNTL_H = @NEXT_FCNTL_H@
 NEXT_FLOAT_H = @NEXT_FLOAT_H@
-NEXT_ICONV_H = @NEXT_ICONV_H@
 NEXT_INTTYPES_H = @NEXT_INTTYPES_H@
 NEXT_LIMITS_H = @NEXT_LIMITS_H@
 NEXT_LOCALE_H = @NEXT_LOCALE_H@
@@ -1794,9 +1776,6 @@ REPLACE_HUGE_VAL = @REPLACE_HUGE_VAL@
 REPLACE_HYPOT = @REPLACE_HYPOT@
 REPLACE_HYPOTF = @REPLACE_HYPOTF@
 REPLACE_HYPOTL = @REPLACE_HYPOTL@
-REPLACE_ICONV = @REPLACE_ICONV@
-REPLACE_ICONV_OPEN = @REPLACE_ICONV_OPEN@
-REPLACE_ICONV_UTF = @REPLACE_ICONV_UTF@
 REPLACE_ILOGB = @REPLACE_ILOGB@
 REPLACE_ILOGBF = @REPLACE_ILOGBF@
 REPLACE_ILOGBL = @REPLACE_ILOGBL@
@@ -2181,13 +2160,11 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	fpieee.m4 free.m4 frexp.m4 frexpl.m4 fseterr.m4 fstat.m4 \
 	ftruncate.m4 getcwd.m4 getdtablesize.m4 getlocalename_l.m4 \
 	getprogname.m4 gettext_h.m4 gettimeofday.m4 gnulib-common.m4 \
-	gnulib-i18n.m4 host-cpu-c-abi.m4 iconv.m4 iconv_h.m4 \
-	iconv_open.m4 include_next.m4 inet_pton.m4 inline.m4 \
+	gnulib-i18n.m4 include_next.m4 inet_pton.m4 \
 	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
 	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 largefile.m4 \
-	lcmessage.m4 lib-ld.m4 lib-link.m4 lib-prefix.m4 \
-	libunistring-base.m4 limits-h.m4 localcharset.m4 locale-en.m4 \
-	locale-fr.m4 locale-ja.m4 locale-tr.m4 locale-zh.m4 \
+	lcmessage.m4 libunistring-base.m4 limits-h.m4 localcharset.m4 \
+	locale-en.m4 locale-fr.m4 locale-ja.m4 locale-zh.m4 \
 	locale_h.m4 localename.m4 lock.m4 lstat.m4 malloc.m4 \
 	malloca.m4 math_h.m4 mbrtoc32.m4 mbrtowc.m4 mbsinit.m4 \
 	mbstate_t.m4 mbtowc.m4 memeq.m4 minmax.m4 mkfifo.m4 \
@@ -2209,12 +2186,11 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	streq.m4 strerror.m4 strerror_r.m4 string_h.m4 strncpy.m4 \
 	symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 sys_select_h.m4 \
 	sys_socket_h.m4 sys_stat_h.m4 sys_time_h.m4 sys_types_h.m4 \
-	sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 time_h.m4 tls.m4 \
-	trunc.m4 truncl.m4 uchar_h-c23.m4 uchar_h.m4 unictype_h.m4 \
-	unistd_h.m4 unitypes_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
-	warn-on-use.m4 wchar_h.m4 wcrtomb.m4 wctob.m4 wctomb.m4 \
-	wctype_h.m4 windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 \
-	yield.m4 zzgnulib.m4
+	sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 time_h.m4 trunc.m4 \
+	truncl.m4 uchar_h.m4 unictype_h.m4 unistd_h.m4 unitypes_h.m4 \
+	usleep.m4 vararrays.m4 visibility.m4 warn-on-use.m4 wchar_h.m4 \
+	wcrtomb.m4 wctob.m4 wctomb.m4 wctype_h.m4 windows-rc.m4 \
+	wint_t.m4 xalloc.m4 xgetcwd.m4 yield.m4 zzgnulib.m4
 all: all-am
 
 .SUFFIXES:
