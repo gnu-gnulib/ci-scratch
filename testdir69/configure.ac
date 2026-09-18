@@ -191,7 +191,26 @@ gl_m4_base='glm4'
   gl_UCHAR_H
   gl_UCHAR_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_UCHAR_H_C23
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  AC_REQUIRE([AM_ICONV])
+  AC_DEFINE([GL_CHAR32_T_IS_UNICODE], [1],
+    [Define if gnulib's char32_t values are always Unicode code points.])
+  dnl On macOS, FreeBSD, NetBSD, Solaris, the functions mbrtoc32 and c32rtomb
+  dnl need to convert between the wchar_t encoding and Unicode.
+  case "$host_os" in
+    darwin* | freebsd* | dragonfly* | netbsd* | solaris*)
+      AC_DEFINE([GL_CHAR32_T_VS_WCHAR_T_NEEDS_CONVERSION], [1],
+        [Define if gnulib needs to convert between the wchar_t encoding and Unicode.])
+      LIBC32CONV="$LIBICONV"
+      LTLIBC32CONV="$LTLIBICONV"
+      ;;
+    *)
+      LIBC32CONV=
+      LTLIBC32CONV=
+      ;;
+  esac
+  AC_SUBST([LIBC32CONV])
+  AC_SUBST([LTLIBC32CONV])
   gl_LIBUNISTRING_LIBHEADER([1.4], [unictype.h])
   gl_UNICTYPE_H
   gl_UNICTYPE_H_REQUIRE_DEFAULTS

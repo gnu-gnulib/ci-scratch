@@ -1361,10 +1361,6 @@
    */
 #undef MBRTOC32_IN_C_LOCALE_MAYBE_EILSEQ
 
-/* Define if the mbrtoc32 function in the C locale may work like in an
-   ISO-8859-1 locale. */
-#undef MBRTOC32_IN_C_LOCALE_MAYBE_LIKE_ISO_8859
-
 /* Define if the mbrtoc32 function does not accept the input bytes one-by-one.
    */
 #undef MBRTOC32_MULTIBYTE_LOCALE_BUG
@@ -2147,8 +2143,9 @@
 #ifndef _GL_ATTRIBUTE_COUNTED_BY
 /* This attributes is supported
      - for fields of array type: by gcc >= 16, clang >= 18,
-     - for fields of pointer type: by gcc >= 16.2, clang >= 19.  */
-# if _GL_GNUC_PREREQ (16, 2) || (defined __clang__ && __clang_major__ >= 19)
+     - for fields of pointer type: by gcc when <https://gcc.gnu.org/PR125072>
+       will be fixed, clang >= 19.  */
+# if defined __clang__ && __clang_major__ >= 19
 #  define _GL_ATTRIBUTE_COUNTED_BY(c) __attribute__ ((__counted_by__ (c)))
 # else
 #  define _GL_ATTRIBUTE_COUNTED_BY(c)

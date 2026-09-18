@@ -177,7 +177,6 @@ EXTRA_DIST += time_h.m4
 EXTRA_DIST += tls.m4
 EXTRA_DIST += trunc.m4
 EXTRA_DIST += truncl.m4
-EXTRA_DIST += uchar_h-c23.m4
 EXTRA_DIST += uchar_h.m4
 EXTRA_DIST += unictype_h.m4
 EXTRA_DIST += unistd_h.m4

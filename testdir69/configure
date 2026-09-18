@@ -1954,6 +1954,8 @@ GL_GNULIB_UNICTYPE_CATEGORY_LC_DLL_VARIABLE
 GL_GNULIB_UNICTYPE_CATEGORY_L_DLL_VARIABLE
 LIBUNISTRING_UNICTYPE_H
 HAVE_UNISTRING_WOE32DLL_H
+LTLIBC32CONV
+LIBC32CONV
 GL_GNULIB_MDA_TZSET
 GL_GNULIB_TZSET
 GL_GNULIB_TZNAME
@@ -2269,8 +2271,6 @@ HAVE_VISIBILITY
 CFLAG_VISIBILITY
 GL_COND_OBJ_MBRTOC32_FALSE
 GL_COND_OBJ_MBRTOC32_TRUE
-LTLIBC32CONV
-LIBC32CONV
 GL_GNULIB_LOCALENAME_UNSAFE
 GL_GNULIB_GETLOCALENAME_L_UNSAFE
 GL_GNULIB_GETLOCALENAME_L
@@ -10179,7 +10179,7 @@ else case e in #(
   e)               cat > conftest.cpp <<\EOF
 #include <uchar.h>
 EOF
-       gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp > /dev/null"
+       gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp"
        if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$gl_command\""; } >&5
   (eval $gl_command) 2>&5
   ac_status=$?
@@ -10220,7 +10220,7 @@ else case e in #(
 char16_t a;
 char32_t b;
 EOF
-         gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp > /dev/null"
+         gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp"
          if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$gl_command\""; } >&5
   (eval $gl_command) 2>&5
   ac_status=$?
@@ -15976,30 +15976,6 @@ printf '%s\n' "$gl_cv_next_locale_h" >&6; }
 
 
 
-
-
-printf '%s\n' "#define GL_CHAR32_T_IS_UNICODE 1" >>confdefs.h
-
-      gl_char32_t_vs_wchar_t_needs_conversion=no
-  case "$host_os" in
-    darwin* | freebsd* | dragonfly* | netbsd* | solaris*)
-      gl_char32_t_vs_wchar_t_needs_conversion=yes
-
-printf '%s\n' "#define GL_CHAR32_T_VS_WCHAR_T_NEEDS_CONVERSION 1" >>confdefs.h
-
-      LIBC32CONV="$LIBICONV"
-      LTLIBC32CONV="$LTLIBICONV"
-      ;;
-    *)
-      LIBC32CONV=
-      LTLIBC32CONV=
-      ;;
-  esac
-
-
-
-
-
   case "$host_os" in
     *-musl* | midipix*)
 
@@ -16231,8 +16207,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:16234: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:16235: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:16210: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:16211: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -16261,7 +16237,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:16264: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:16240: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -16513,7 +16489,7 @@ fi
 fi
 
 fi
-      echo "$as_me:16516: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:16492: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -16803,8 +16779,8 @@ rm -f core conftest.err conftest.$ac_objext conftest.beam \
         LIBS="$saved_LIBS"
         test $gl_pthread_api = yes && break
       done
-      echo "$as_me:16806: gl_pthread_api=$gl_pthread_api" >&5
-      echo "$as_me:16807: LIBPTHREAD=$LIBPTHREAD" >&5
+      echo "$as_me:16782: gl_pthread_api=$gl_pthread_api" >&5
+      echo "$as_me:16783: LIBPTHREAD=$LIBPTHREAD" >&5
 
       gl_pthread_in_glibc=no
       # On Linux with glibc >= 2.34, libc contains the fully functional
@@ -16833,7 +16809,7 @@ rm -rf conftest*
   *) :
      ;;
 esac
-      echo "$as_me:16836: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
+      echo "$as_me:16812: gl_pthread_in_glibc=$gl_pthread_in_glibc" >&5
 
       # Test for libpthread by looking for pthread_kill.
       if test $gl_pthread_api = yes && test -z "$LIBPTHREAD"
@@ -17085,7 +17061,7 @@ fi
 fi
 
 fi
-      echo "$as_me:17088: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
+      echo "$as_me:17064: LIBPMULTITHREAD=$LIBPMULTITHREAD" >&5
 
 fi
     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether POSIX threads API is available" >&5
@@ -29431,7 +29407,7 @@ else case e in #(
   e)                   cat > conftest.cpp <<\EOF
 #include <stdckdint.h>
 EOF
-         gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp > /dev/null"
+         gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp"
          if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$gl_command\""; } >&5
   (eval $gl_command) 2>&5
   ac_status=$?
@@ -29466,7 +29442,7 @@ main (void)
   return !!(ckd_add (&r, a, b) || ckd_sub (&r, a, b) || ckd_mul (&r, a, b));
 }
 EOF
-           gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp > /dev/null"
+           gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp"
            if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$gl_command\""; } >&5
   (eval $gl_command) 2>&5
   ac_status=$?
@@ -29625,7 +29601,7 @@ else case e in #(
 int a = { 86, 47 };
 unsigned int a_n = countof (a);
 EOF
-       gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp > /dev/null"
+       gl_command="$CXX $CXXFLAGS $CPPFLAGS -c conftest.cpp"
        if { { eval echo "\"\$as_me\":${as_lineno-$LINENO}: \"$gl_command\""; } >&5
   (eval $gl_command) 2>&5
   ac_status=$?
@@ -31051,7 +31027,6 @@ fi
 
 
 
-
   if test $gl_cv_func_mbrtoc32 = no; then
     HAVE_MBRTOC32=0
   else
@@ -31114,8 +31089,8 @@ fi
 printf '%s\n' "$gl_cv_func_mbrtoc32_empty_input" >&6; }
 
 
-     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether mbrtoc32 in the C locale is free of encoding errors" >&5
-printf %s "checking whether mbrtoc32 in the C locale is free of encoding errors... " >&6; }
+     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether the C locale is free of encoding errors" >&5
+printf %s "checking whether the C locale is free of encoding errors... " >&6; }
 if test ${gl_cv_func_mbrtoc32_C_locale_sans_EILSEQ+y}
 then :
   printf %s "(cached) " >&6
@@ -31178,68 +31153,6 @@ esac
 fi
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_mbrtoc32_C_locale_sans_EILSEQ" >&5
 printf '%s\n' "$gl_cv_func_mbrtoc32_C_locale_sans_EILSEQ" >&6; }
-
-
-     { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether mbrtoc32 in the C locale works like in an ISO-8859-1 locale" >&5
-printf %s "checking whether mbrtoc32 in the C locale works like in an ISO-8859-1 locale... " >&6; }
-if test ${gl_cv_func_mbrtoc32_C_locale_like_iso_8859+y}
-then :
-  printf %s "(cached) " >&6
-else case e in #(
-  e) if test "$cross_compiling" = yes
-then :
-  case "$host_os" in
-          *-musl* | midipix*) gl_cv_func_mbrtoc32_C_locale_like_iso_8859="no" ;;
-          *)                  gl_cv_func_mbrtoc32_C_locale_like_iso_8859="possibly yes" ;;
-        esac
-
-else case e in #(
-  e) cat confdefs.h - <<_ACEOF >conftest.$ac_ext
-/* end confdefs.h.  */
-#include <limits.h>
-            #include <locale.h>
-            #ifdef __HAIKU__
-             #include <stdint.h>
-            #endif
-            #include <uchar.h>
-
-int
-main (void)
-{
-
-            int i;
-            const char *locale = setlocale (LC_ALL, "C");
-            if (! locale)
-              return 2;
-            char c = 0xE0;
-            char32_t wc;
-            mbstate_t mbs = { 0, };
-            size_t ss = mbrtoc32 (&wc, &c, 1, &mbs);
-            if (ss == 1 && wc == 0x00E0)
-              return 3;
-            return 0;
-
-  ;
-  return 0;
-}
-_ACEOF
-if ac_fn_c_try_run "$LINENO"
-then :
-  gl_cv_func_mbrtoc32_C_locale_like_iso_8859=no
-else case e in #(
-  e) gl_cv_func_mbrtoc32_C_locale_like_iso_8859=yes ;;
-esac
-fi
-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
-  conftest.$ac_objext conftest.beam conftest.$ac_ext ;;
-esac
-fi
-
-     ;;
-esac
-fi
-{ printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_mbrtoc32_C_locale_like_iso_8859" >&5
-printf '%s\n' "$gl_cv_func_mbrtoc32_C_locale_like_iso_8859" >&6; }
 
 
      { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether mbrtoc32 works in an UTF-8 locale" >&5
@@ -31327,24 +31240,6 @@ printf '%s\n' "#define MBRTOC32_IN_C_LOCALE_MAYBE_EILSEQ 1" >>confdefs.h
            REPLACE_MBRTOC32=1
            ;;
       esac
-      case "$gl_cv_func_mbrtoc32_C_locale_sans_EILSEQ" in
-        *yes)
-          case "$gl_cv_func_mbrtoc32_C_locale_like_iso_8859" in
-            *yes)
-              case "$host_os" in
-                solaris*)
-                                                                        ;;
-                *)
-
-printf '%s\n' "#define MBRTOC32_IN_C_LOCALE_MAYBE_LIKE_ISO_8859 1" >>confdefs.h
-
-                  REPLACE_MBRTOC32=1
-                  ;;
-              esac
-              ;;
-          esac
-          ;;
-      esac
       case "$gl_cv_func_mbrtoc32_utf8_locale_works" in
         *yes) ;;
         *)
@@ -31360,12 +31255,6 @@ printf '%s\n' "#define MBRTOC32_MULTIBYTE_LOCALE_BUG 1" >>confdefs.h
       case "$gl_cv_func_mbrtoc32_regular" in
         *no) REPLACE_MBRTOC32=1 ;;
       esac
-
-
-        if test $gl_char32_t_vs_wchar_t_needs_conversion = yes; then
-          REPLACE_MBRTOC32=1
-        fi
-
     fi
     if test $HAVE_WORKING_MBRTOC32 = 0; then
       REPLACE_MBRTOC32=1
@@ -33465,6 +33354,25 @@ printf '%s\n' "#define GNULIB_TEST_STREQ 1" >>confdefs.h
 
 
 
+
+
+
+
+printf '%s\n' "#define GL_CHAR32_T_IS_UNICODE 1" >>confdefs.h
+
+      case "$host_os" in
+    darwin* | freebsd* | dragonfly* | netbsd* | solaris*)
+
+printf '%s\n' "#define GL_CHAR32_T_VS_WCHAR_T_NEEDS_CONVERSION 1" >>confdefs.h
+
+      LIBC32CONV="$LIBICONV"
+      LTLIBC32CONV="$LTLIBICONV"
+      ;;
+    *)
+      LIBC32CONV=
+      LTLIBC32CONV=
+      ;;
+  esac
 
 
 

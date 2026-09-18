@@ -210,7 +210,6 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/threadlib.m4 $(top_srcdir)/glm4/time.m4 \
 	$(top_srcdir)/glm4/time_h.m4 $(top_srcdir)/glm4/tls.m4 \
 	$(top_srcdir)/glm4/trunc.m4 $(top_srcdir)/glm4/truncl.m4 \
-	$(top_srcdir)/glm4/uchar_h-c23.m4 \
 	$(top_srcdir)/glm4/uchar_h.m4 $(top_srcdir)/glm4/unictype_h.m4 \
 	$(top_srcdir)/glm4/unistd_h.m4 \
 	$(top_srcdir)/glm4/unitypes_h.m4 $(top_srcdir)/glm4/usleep.m4 \
@@ -2210,8 +2209,8 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 sys_select_h.m4 \
 	sys_socket_h.m4 sys_stat_h.m4 sys_time_h.m4 sys_types_h.m4 \
 	sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 time_h.m4 tls.m4 \
-	trunc.m4 truncl.m4 uchar_h-c23.m4 uchar_h.m4 unictype_h.m4 \
-	unistd_h.m4 unitypes_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
+	trunc.m4 truncl.m4 uchar_h.m4 unictype_h.m4 unistd_h.m4 \
+	unitypes_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
 	warn-on-use.m4 wchar_h.m4 wcrtomb.m4 wctob.m4 wctomb.m4 \
 	wctype_h.m4 windows-rc.m4 wint_t.m4 xalloc.m4 xgetcwd.m4 \
 	yield.m4 zzgnulib.m4

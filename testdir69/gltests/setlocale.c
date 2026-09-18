@@ -1503,7 +1503,7 @@ setlocale_improved (int category, const char *locale)
                        language or an existing locale with the same territory.
                        If we can't, print a warning, to limit user
                        expectations.  */
-                    bool warn = false;
+                    int warn = 0;
 
                     if (cat == LC_CTYPE)
                       warn = (setlocale_single (cat, "UTF-8") == NULL);
@@ -1551,7 +1551,7 @@ setlocale_improved (int category, const char *locale)
 
                                         if (last_try == NULL
                                             || setlocale_single (cat, last_try) == NULL)
-                                          warn = true;
+                                          warn = 1;
                                       }
                                   }
                               }
@@ -1566,7 +1566,7 @@ setlocale_improved (int category, const char *locale)
 
                         if (last_try == NULL
                             || setlocale_single (cat, last_try) == NULL)
-                          warn = true;
+                          warn = 1;
 #   endif
                       }
                     else
@@ -1590,7 +1590,7 @@ setlocale_improved (int category, const char *locale)
 
                         if (last_try == NULL
                             || setlocale_single (cat, last_try) == NULL)
-                          warn = true;
+                          warn = 1;
                       }
 
                     if (warn)
