@@ -62,6 +62,17 @@ gl_m4_base='glm4'
   gl_FCNTL_H
   gl_FCNTL_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  AC_REQUIRE([gl_FUNC_SETLOCALE_NULL])
+  HARD_LOCALE_LIB="$SETLOCALE_NULL_LIB"
+  AC_SUBST([HARD_LOCALE_LIB])
+  dnl For backward compatibility.
+  LIB_HARD_LOCALE="$HARD_LOCALE_LIB"
+  AC_SUBST([LIB_HARD_LOCALE])
+  AC_DEFUN([gl_HAVE_MODULE_HAVELIB])
+  AM_ICONV
+  m4_ifdef([gl_ICONV_MODULE_INDICATOR],
+    [gl_ICONV_MODULE_INDICATOR([iconv])])
+  gl_INLINE
   gl_INTTYPES_INCOMPLETE
   gl_INTTYPES_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -72,7 +83,51 @@ gl_m4_base='glm4'
   dnl For backward compatibility. Some packages still use this.
   LOCALCHARSET_TESTS_ENVIRONMENT=
   AC_SUBST([LOCALCHARSET_TESTS_ENVIRONMENT])
+  gl_LOCALE_H
+  gl_LOCALE_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_FUNC_MBRTOWC
+  gl_CONDITIONAL([GL_COND_OBJ_MBRTOWC],
+                 [test $HAVE_MBRTOWC = 0 || test $REPLACE_MBRTOWC = 1])
+  AM_COND_IF([GL_COND_OBJ_MBRTOWC], [
+    if test $REPLACE_MBSTATE_T = 1; then
+      AC_LIBOBJ([lc-charset-dispatch])
+      AC_LIBOBJ([mbtowc-lock])
+      gl_PREREQ_MBTOWC_LOCK
+    fi
+    gl_PREREQ_MBRTOWC
+  ])
+  gl_WCHAR_MODULE_INDICATOR([mbrtowc])
+  gl_FUNC_MBSINIT
+  gl_CONDITIONAL([GL_COND_OBJ_MBSINIT],
+                 [test $HAVE_MBSINIT = 0 || test $REPLACE_MBSINIT = 1])
+  AM_COND_IF([GL_COND_OBJ_MBSINIT], [
+    gl_PREREQ_MBSINIT
+  ])
+  gl_WCHAR_MODULE_INDICATOR([mbsinit])
+  AC_REQUIRE([AC_TYPE_MBSTATE_T])
+  gl_MBSTATE_T_BROKEN
+  gl_MUSL_LIBC
+  gl_WCHAR_MODULE_INDICATOR([mbszero])
   gl_MULTIARCH
+  gl_ONCE
+  gl_PTHREAD_H
+  gl_PTHREAD_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_PTHREAD_ONCE
+  gl_CONDITIONAL([GL_COND_OBJ_PTHREAD_ONCE],
+                 [test $HAVE_PTHREAD_ONCE = 0 || test $REPLACE_PTHREAD_ONCE = 1])
+  gl_PTHREAD_MODULE_INDICATOR([pthread-once])
+  gl_SCHED_H
+  gl_SCHED_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_FUNC_SETLOCALE_NULL
+  gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE_LOCK],
+                 [test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0])
+  AM_COND_IF([GL_COND_OBJ_SETLOCALE_LOCK], [
+    gl_PREREQ_SETLOCALE_LOCK
+  ])
+  gl_LOCALE_MODULE_INDICATOR([setlocale_null])
   gt_TYPE_SSIZE_T
   gl_STDDEF_H
   gl_STDDEF_H_REQUIRE_DEFAULTS
@@ -94,9 +149,15 @@ gl_m4_base='glm4'
   gl_SYS_TYPES_H
   gl_SYS_TYPES_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  AC_REQUIRE([gl_THREADLIB])
+  gl_TIME_H
+  gl_TIME_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_TLS
   gl_UCHAR_H
   gl_UCHAR_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_UCHAR_H_C23
   gl_LIBUNISTRING_LIBHEADER([1.4], [unictype.h])
   gl_UNICTYPE_H
   gl_UNICTYPE_H_REQUIRE_DEFAULTS
@@ -106,15 +167,34 @@ gl_m4_base='glm4'
   gl_UNISTD_H
   gl_UNISTD_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_LIBUNISTRING_LIBHEADER([1.2], [unistr.h])
+  AC_PROG_MKDIR_P
+  gl_MODULE_INDICATOR([unistr/u8-mbtouc])
+  gl_LIBUNISTRING_MODULE([1.2], [unistr/u8-mbtouc])
+  gl_MODULE_INDICATOR([unistr/u8-uctomb])
+  gl_LIBUNISTRING_MODULE([0.9], [unistr/u8-uctomb])
   gl_LIBUNISTRING_LIBHEADER([0.9.11], [unitypes.h])
   AC_PROG_MKDIR_P
   gl_UNITYPES_H
   gl_WCHAR_H
   gl_WCHAR_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_FUNC_WCRTOMB
+  gl_CONDITIONAL([GL_COND_OBJ_WCRTOMB],
+                 [test $HAVE_WCRTOMB = 0 || test $REPLACE_WCRTOMB = 1])
+  AM_COND_IF([GL_COND_OBJ_WCRTOMB], [
+    gl_PREREQ_WCRTOMB
+  ])
+  gl_WCHAR_MODULE_INDICATOR([wcrtomb])
   gl_WCTYPE_H
   gl_WCTYPE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_ONCE],
+                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
+  AC_REQUIRE([AC_CANONICAL_HOST])
+  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_TLS],
+                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
       for gl_file in ]gl_LIBSOURCES_LIST[ ; do
@@ -214,6 +294,8 @@ changequote([, ])dnl
   gt_LOCALE_EN_UTF8
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
+  gt_LOCALE_FR
+  gt_LOCALE_TR_UTF8
   gt_LOCALE_EN_UTF8
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
@@ -368,15 +450,18 @@ changequote([, ])dnl
   ])
   gl_SYS_TIME_MODULE_INDICATOR([gettimeofday])
   GNULIB_I18N
-  AC_REQUIRE([gl_FUNC_SETLOCALE_NULL])
-  HARD_LOCALE_LIB="$SETLOCALE_NULL_LIB"
-  AC_SUBST([HARD_LOCALE_LIB])
-  dnl For backward compatibility.
-  LIB_HARD_LOCALE="$HARD_LOCALE_LIB"
-  AC_SUBST([LIB_HARD_LOCALE])
   gl_MUSL_LIBC
   dnl Distinguish OpenBSD >= 6.2 from OpenBSD < 6.2.
   gl_CHECK_FUNCS_ANDROID([duplocale], [[#include <locale.h>]])
+  gl_ICONV_H
+  gl_ICONV_H_REQUIRE_DEFAULTS
+  gl_CONDITIONAL_HEADER([iconv.h])
+  AC_PROG_MKDIR_P
+  gl_FUNC_ICONV_OPEN
+  dnl Because of gl_REPLACE_ICONV_H:
+  gl_CONDITIONAL_HEADER([iconv.h])
+  gl_CONDITIONAL([GL_COND_OBJ_ICONV_OPEN], [test $REPLACE_ICONV_OPEN = 1])
+  gl_CONDITIONAL([GL_COND_OBJ_ICONV], [test $REPLACE_ICONV = 1])
   gl_FUNC_INET_PTON
   gl_CONDITIONAL([GL_COND_OBJ_INET_PTON],
                  [test $HAVE_INET_PTON = 0 || test $REPLACE_INET_PTON = 1])
@@ -418,9 +503,6 @@ changequote([, ])dnl
   gl_SYS_SOCKET_MODULE_INDICATOR([listen])
   gl_MODULE_INDICATOR([listen])
   gl_WINDOWS_RC
-  gl_LOCALE_H
-  gl_LOCALE_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_CHECK_FUNCS_ANDROID([newlocale], [[#include <locale.h>]])
   gl_LOCALENAME_ENVIRON
   gl_LOCALE_MODULE_INDICATOR([localename-environ])
@@ -478,37 +560,14 @@ changequote([, ])dnl
   gt_LOCALE_FR_UTF8
   gt_LOCALE_JA
   gt_LOCALE_ZH_CN
-  gl_FUNC_MBRTOWC
-  gl_CONDITIONAL([GL_COND_OBJ_MBRTOWC],
-                 [test $HAVE_MBRTOWC = 0 || test $REPLACE_MBRTOWC = 1])
-  AM_COND_IF([GL_COND_OBJ_MBRTOWC], [
-    if test $REPLACE_MBSTATE_T = 1; then
-      AC_LIBOBJ([lc-charset-dispatch])
-      AC_LIBOBJ([mbtowc-lock])
-      gl_PREREQ_MBTOWC_LOCK
-    fi
-    gl_PREREQ_MBRTOWC
-  ])
-  gl_WCHAR_MODULE_INDICATOR([mbrtowc])
   gt_LOCALE_EN_UTF8
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
   gt_LOCALE_JA
   gt_LOCALE_ZH_CN
   gl_WINDOWS_RC
-  gl_FUNC_MBSINIT
-  gl_CONDITIONAL([GL_COND_OBJ_MBSINIT],
-                 [test $HAVE_MBSINIT = 0 || test $REPLACE_MBSINIT = 1])
-  AM_COND_IF([GL_COND_OBJ_MBSINIT], [
-    gl_PREREQ_MBSINIT
-  ])
-  gl_WCHAR_MODULE_INDICATOR([mbsinit])
   gt_LOCALE_EN_UTF8
   gt_LOCALE_FR_UTF8
-  AC_REQUIRE([AC_TYPE_MBSTATE_T])
-  gl_MBSTATE_T_BROKEN
-  gl_MUSL_LIBC
-  gl_WCHAR_MODULE_INDICATOR([mbszero])
   gl_FUNC_MBTOWC
   gl_CONDITIONAL([GL_COND_OBJ_MBTOWC],
                  [test $HAVE_MBTOWC = 0 || test $REPLACE_MBTOWC = 1])
@@ -538,7 +597,6 @@ changequote([, ])dnl
   gl_HEADER_NETINET_IN
   gl_CONDITIONAL_HEADER([netinet/in.h])
   AC_PROG_MKDIR_P
-  gl_ONCE
   gl_FUNC_OPEN
   gl_CONDITIONAL([GL_COND_OBJ_OPEN], [test $REPLACE_OPEN = 1])
   AM_COND_IF([GL_COND_OBJ_OPEN], [
@@ -563,9 +621,6 @@ changequote([, ])dnl
                  [test $HAVE_PTHREAD_COND_INIT = 0 || test $REPLACE_PTHREAD_COND_INIT = 1])
   gl_PTHREAD_MODULE_INDICATOR([pthread-cond])
   AC_CHECK_DECLS_ONCE([alarm])
-  gl_PTHREAD_H
-  gl_PTHREAD_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_PTHREAD_MUTEX
   gl_CONDITIONAL([GL_COND_OBJ_PTHREAD_MUTEX],
                  [test $HAVE_PTHREAD_MUTEX_INIT = 0 || test $REPLACE_PTHREAD_MUTEX_INIT = 1 || test $HAVE_PTHREAD_MUTEXATTR_GETROBUST = 0 || test $REPLACE_PTHREAD_MUTEXATTR_GETROBUST = 1])
@@ -573,10 +628,6 @@ changequote([, ])dnl
   AC_CHECK_HEADERS_ONCE([semaphore.h])
   AC_CHECK_DECLS_ONCE([alarm])
   AC_REQUIRE([gl_SEMAPHORE])
-  gl_PTHREAD_ONCE
-  gl_CONDITIONAL([GL_COND_OBJ_PTHREAD_ONCE],
-                 [test $HAVE_PTHREAD_ONCE = 0 || test $REPLACE_PTHREAD_ONCE = 1])
-  gl_PTHREAD_MODULE_INDICATOR([pthread-once])
   AC_CHECK_DECLS_ONCE([alarm])
   gl_PTHREAD_RWLOCK
   gl_CONDITIONAL([GL_COND_OBJ_PTHREAD_RWLOCK],
@@ -640,9 +691,6 @@ changequote([, ])dnl
   ])
   gl_MODULE_INDICATOR([reallocarray])
   gl_STDLIB_MODULE_INDICATOR([reallocarray])
-  gl_SCHED_H
-  gl_SCHED_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_FUNC_SCHED_YIELD
   gl_CONDITIONAL([GL_COND_OBJ_SCHED_YIELD],
                  [test $HAVE_SCHED_YIELD = 0 || test $REPLACE_SCHED_YIELD = 1])
@@ -665,13 +713,6 @@ changequote([, ])dnl
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE_FIXES],
                  [case "$host_os" in mingw* | windows* | *-android*) true;; *) false;; esac])
-  gl_FUNC_SETLOCALE_NULL
-  gl_CONDITIONAL([GL_COND_OBJ_SETLOCALE_LOCK],
-                 [test $SETLOCALE_NULL_ALL_MTSAFE = 0 || test $SETLOCALE_NULL_ONE_MTSAFE = 0])
-  AM_COND_IF([GL_COND_OBJ_SETLOCALE_LOCK], [
-    gl_PREREQ_SETLOCALE_LOCK
-  ])
-  gl_LOCALE_MODULE_INDICATOR([setlocale_null])
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
   gt_LOCALE_JA
@@ -902,16 +943,13 @@ changequote([, ])dnl
   dnl Haiku has dl_iterate_phdr in a separate library libbsd.
   dnl We don't want a link dependency here.
   AC_CHECK_FUNCS([dl_iterate_phdr])
-  AC_REQUIRE([gl_THREADLIB])
   gl_FUNC_TIME
   gl_CONDITIONAL([GL_COND_OBJ_TIME], [test $REPLACE_TIME = 1])
   AM_COND_IF([GL_COND_OBJ_TIME], [
     gl_PREREQ_TIME
   ])
   gl_TIME_MODULE_INDICATOR([time])
-  gl_TIME_H
-  gl_TIME_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
+  AC_CHECK_DECLS_ONCE([alarm])
   gl_FUNC_TRUNC
   gl_CONDITIONAL([GL_COND_OBJ_TRUNC],
                  [test $HAVE_DECL_TRUNC = 0 || test $REPLACE_TRUNC = 1])
@@ -920,6 +958,8 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_TRUNCL],
                  [test $HAVE_DECL_TRUNCL = 0 || test $REPLACE_TRUNCL = 1])
   gl_MATH_MODULE_INDICATOR([truncl])
+  gl_MODULE_INDICATOR([unistr/u8-mbtoucr])
+  gl_LIBUNISTRING_MODULE([0.9], [unistr/u8-mbtoucr])
   gl_FUNC_UNSETENV
   gl_CONDITIONAL([GL_COND_OBJ_UNSETENV],
                  [test $HAVE_UNSETENV = 0 || test $REPLACE_UNSETENV = 1])
@@ -932,13 +972,6 @@ changequote([, ])dnl
                  [test $HAVE_USLEEP = 0 || test $REPLACE_USLEEP = 1])
   gl_UNISTD_MODULE_INDICATOR([usleep])
   AC_C_VARARRAYS
-  gl_FUNC_WCRTOMB
-  gl_CONDITIONAL([GL_COND_OBJ_WCRTOMB],
-                 [test $HAVE_WCRTOMB = 0 || test $REPLACE_WCRTOMB = 1])
-  AM_COND_IF([GL_COND_OBJ_WCRTOMB], [
-    gl_PREREQ_WCRTOMB
-  ])
-  gl_WCHAR_MODULE_INDICATOR([wcrtomb])
   gt_LOCALE_EN_UTF8
   gt_LOCALE_FR
   gt_LOCALE_FR_UTF8
@@ -964,9 +997,6 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_MUTEX],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   AC_REQUIRE([AC_CANONICAL_HOST])
-  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_ONCE],
-                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
-  AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_RECMUTEX],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   AC_REQUIRE([AC_CANONICAL_HOST])
@@ -986,9 +1016,6 @@ changequote([, ])dnl
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_TIMEDRWLOCK],
-                 [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
-  AC_REQUIRE([AC_CANONICAL_HOST])
-  gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_TLS],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   gl_XALLOC
   gl_MODULE_INDICATOR([xalloc])
