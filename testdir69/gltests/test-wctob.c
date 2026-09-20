@@ -18,10 +18,10 @@
 
 #include <config.h>
 
-#include <uchar.h>
+#include <wchar.h>
 
 #include "signature.h"
-SIGNATURE_CHECK (c32tob, int, (wint_t));
+SIGNATURE_CHECK (wctob, int, (wint_t));
 
 #include <locale.h>
 #include <stdlib.h>
@@ -33,9 +33,9 @@ SIGNATURE_CHECK (c32tob, int, (wint_t));
 static void
 check_character (unsigned char c)
 {
-  char32_t wc = btoc32 (c);
+  wint_t wc = btowc (c);
   ASSERT (wc != WEOF);
-  int cc = c32tob (wc);
+  int cc = wctob (wc);
   ASSERT (cc == c);
 }
 
@@ -47,7 +47,7 @@ main (int argc, char *argv[])
     return 1;
 
   /* Test NUL character.  */
-  ASSERT (c32tob (0) == 0);
+  ASSERT (wctob (0) == 0);
 
   /* Test single bytes.  */
   for (int c = 0; c < 0x100; c++)
@@ -89,7 +89,7 @@ main (int argc, char *argv[])
            "C" locale.  Furthermore, when you attempt to set the "C" or "POSIX"
            locale via setlocale(), what you get is a "C" locale with UTF-8
            encoding, that is, effectively the "C.UTF-8" locale.  */
-        /* Check that c32tob does the inverse of btoc32, in the C locale.
+        /* Check that wctob does the inverse of btowc, in the C locale.
            Above we have only tested the ISO C "basic character set".  */
         for (int c = 0; c < 0x100; c++)
           check_character (c);
@@ -98,41 +98,22 @@ main (int argc, char *argv[])
 
       case '2':
         /* Locale encoding is ISO-8859-1 or ISO-8859-15.  */
-#if GL_CHAR32_T_IS_UNICODE
-        ASSERT (c32tob (0x00DF) == (unsigned char) '\337');
-        ASSERT (c32tob (0x00FC) == (unsigned char) '\374');
-#endif
         return test_exit_status;
 
       case '3':
         /* Locale encoding is UTF-8.  */
-        ASSERT (c32tob (0x0091) == EOF);
-        ASSERT (c32tob (0x00DF) == EOF);
-        ASSERT (c32tob (0x00FC) == EOF);
-        ASSERT (c32tob (0x1F60B) == EOF);
+        ASSERT (wctob (0x0091) == EOF);
+        ASSERT (wctob (0x00DF) == EOF);
+        ASSERT (wctob (0x00FC) == EOF);
+        ASSERT (wctob (0x1F60B) == EOF);
         return test_exit_status;
 
       case '4':
         /* Locale encoding is EUC-JP.  */
-#if GL_CHAR32_T_IS_UNICODE
-        ASSERT (c32tob (0x65E5) == EOF);
-        ASSERT (c32tob (0x672C) == EOF);
-        ASSERT (c32tob (0x8A9E) == EOF);
-#endif
         return test_exit_status;
 
       case '5':
         /* Locale encoding is GB18030.  */
-        #if (defined __GLIBC__ && __GLIBC__ == 2 && __GLIBC_MINOR__ >= 13 && __GLIBC_MINOR__ <= 15) || (GL_CHAR32_T_IS_UNICODE && (defined __FreeBSD__ || defined __NetBSD__ || defined __sun))
-        if (test_exit_status != EXIT_SUCCESS)
-          return test_exit_status;
-        fputs ("Skipping test: The GB18030 converter in this system's iconv is broken.\n", stderr);
-        return 77;
-        #endif
-        ASSERT (c32tob (0x0091) == EOF);
-        ASSERT (c32tob (0x00DF) == EOF);
-        ASSERT (c32tob (0x00FC) == EOF);
-        ASSERT (c32tob (0x1F60B) == EOF);
         return test_exit_status;
       }
 

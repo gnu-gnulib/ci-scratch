@@ -80,13 +80,6 @@
    declaration of the second argument to gettimeofday. */
 #undef GETTIMEOFDAY_TIMEZONE
 
-/* Define if gnulib's char32_t values are always Unicode code points. */
-#undef GL_CHAR32_T_IS_UNICODE
-
-/* Define if gnulib needs to convert between the wchar_t encoding and Unicode.
-   */
-#undef GL_CHAR32_T_VS_WCHAR_T_NEEDS_CONVERSION
-
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module accept shall be considered present. */
 #undef GNULIB_ACCEPT
@@ -490,18 +483,6 @@
 #undef GNULIB_TEST_WCTOMB
 
 /* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module unistr/u8-mbtouc shall be considered present. */
-#undef GNULIB_UNISTR_U8_MBTOUC
-
-/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module unistr/u8-mbtoucr shall be considered present. */
-#undef GNULIB_UNISTR_U8_MBTOUCR
-
-/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
-   whether the gnulib module unistr/u8-uctomb shall be considered present. */
-#undef GNULIB_UNISTR_U8_UCTOMB
-
-/* Define to a C preprocessor expression that evaluates to 1 or 0, depending
    whether the gnulib module xalloc shall be considered present. */
 #undef GNULIB_XALLOC
 
@@ -761,22 +742,11 @@
    sufficient information. */
 #undef HAVE_GOOD_USELOCALE
 
-/* Define if you have the iconv() function and it works. */
-#undef HAVE_ICONV
-
-/* Define to 1 if you have the <iconv.h> header file. */
-#undef HAVE_ICONV_H
-
 /* Define to 1 if you have the 'inet_pton' function. */
 #undef HAVE_INET_PTON
 
 /* Define to 1 if you have the `initstate' function. */
 #undef HAVE_INITSTATE
-
-/* Define to 1 if the compiler supports one of the keywords 'inline',
-   '__inline__', '__inline' and effectively inlines functions marked as such.
-   */
-#undef HAVE_INLINE
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #undef HAVE_INTTYPES_H
@@ -1322,13 +1292,6 @@
 /* Define to 1 if you have the '__xpg_strerror_r' function. */
 #undef HAVE___XPG_STRERROR_R
 
-/* Define as const if the declaration of iconv() needs const. */
-#undef ICONV_CONST
-
-/* Define to a symbolic name denoting the flavor of iconv_open()
-   implementation. */
-#undef ICONV_FLAVOR
-
 /* Define as the bit index in the word where to find bit 0 of the exponent of
    'long double'. */
 #undef LDBL_EXPBIT0_BIT
@@ -1360,6 +1323,10 @@
 /* Define if the mbrtoc32 function may signal encoding errors in the C locale.
    */
 #undef MBRTOC32_IN_C_LOCALE_MAYBE_EILSEQ
+
+/* Define if the mbrtoc32 function in the C locale may work like in an
+   ISO-8859-1 locale. */
+#undef MBRTOC32_IN_C_LOCALE_MAYBE_LIKE_ISO_8859
 
 /* Define if the mbrtoc32 function does not accept the input bytes one-by-one.
    */
@@ -2143,9 +2110,8 @@
 #ifndef _GL_ATTRIBUTE_COUNTED_BY
 /* This attributes is supported
      - for fields of array type: by gcc >= 16, clang >= 18,
-     - for fields of pointer type: by gcc when <https://gcc.gnu.org/PR125072>
-       will be fixed, clang >= 19.  */
-# if defined __clang__ && __clang_major__ >= 19
+     - for fields of pointer type: by gcc >= 16.2, clang >= 19.  */
+# if _GL_GNUC_PREREQ (16, 2) || (defined __clang__ && __clang_major__ >= 19)
 #  define _GL_ATTRIBUTE_COUNTED_BY(c) __attribute__ ((__counted_by__ (c)))
 # else
 #  define _GL_ATTRIBUTE_COUNTED_BY(c)
