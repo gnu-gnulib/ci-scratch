@@ -31048,6 +31048,8 @@ printf '%s\n' "#define GNULIB_TEST_C32RTOMB 1" >>confdefs.h
 
 
 
+
+
           GL_GNULIB_C32TOB=1
 
 
