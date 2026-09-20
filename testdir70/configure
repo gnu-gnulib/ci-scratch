@@ -29145,28 +29145,31 @@ printf '%s\n' "#define GNULIB_TEST_WCRTOMB 1" >>confdefs.h
   else
     HAVE_WCTOB=1
 
+    if test $GNULIBHEADERS_OVERRIDE_WINT_T = 1; then
+      REPLACE_WCTOB=1
+    else
 
 
-         { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether wctob works" >&5
+             { printf '%s\n' "$as_me:${as_lineno-$LINENO}: checking whether wctob works" >&5
 printf %s "checking whether wctob works... " >&6; }
 if test ${gl_cv_func_wctob_works+y}
 then :
   printf %s "(cached) " >&6
 else case e in #(
   e)
-                        case "$host_os" in
-            # Guess no on Solaris <= 9 and Cygwin.
-          solaris2.[1-9] | solaris2.[1-9].* | cygwin*)
-            gl_cv_func_wctob_works="guessing no" ;;
-            # Guess no on native Windows.
-          mingw* | windows*)
-            gl_cv_func_wctob_works="guessing no" ;;
-            # Guess yes otherwise.
-          *) gl_cv_func_wctob_works="guessing yes" ;;
-        esac
-        case "$host_os" in
-          cygwin*)
-            if test "$cross_compiling" = yes
+                              case "$host_os" in
+              # Guess no on Solaris <= 9 and Cygwin.
+            solaris2.[1-9] | solaris2.[1-9].* | cygwin*)
+              gl_cv_func_wctob_works="guessing no" ;;
+              # Guess no on native Windows.
+            mingw* | windows*)
+              gl_cv_func_wctob_works="guessing no" ;;
+              # Guess yes otherwise.
+            *) gl_cv_func_wctob_works="guessing yes" ;;
+          esac
+          case "$host_os" in
+            cygwin*)
+              if test "$cross_compiling" = yes
 then :
   :
 else case e in #(
@@ -29202,10 +29205,10 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
 esac
 fi
 
-            ;;
-        esac
-        if test "$gl_cv_func_wctob_works" != no && test $LOCALE_FR != none; then
-          if test "$cross_compiling" = yes
+              ;;
+          esac
+          if test "$gl_cv_func_wctob_works" != no && test $LOCALE_FR != none; then
+            if test "$cross_compiling" = yes
 then :
   :
 else case e in #(
@@ -29240,22 +29243,22 @@ rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext \
 esac
 fi
 
-        fi
-       ;;
+          fi
+         ;;
 esac
 fi
 { printf '%s\n' "$as_me:${as_lineno-$LINENO}: result: $gl_cv_func_wctob_works" >&5
 printf '%s\n' "$gl_cv_func_wctob_works" >&6; }
-    case "$gl_cv_func_wctob_works" in
-      *yes) ;;
-      *) REPLACE_WCTOB=1 ;;
-    esac
+      case "$gl_cv_func_wctob_works" in
+        *yes) ;;
+        *) REPLACE_WCTOB=1 ;;
+      esac
 
-    case "$gl_cv_func_mbrtowc_C_locale_sans_EILSEQ" in
-      *yes) ;;
-      *) REPLACE_WCTOB=1
-         ;;
-    esac
+      case "$gl_cv_func_mbrtowc_C_locale_sans_EILSEQ" in
+        *yes) ;;
+        *) REPLACE_WCTOB=1 ;;
+      esac
+    fi
   fi
 
 
