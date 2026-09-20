@@ -29080,6 +29080,15 @@ printf '%s\n' "#define WCRTOMB_RETVAL_BUG 1" >>confdefs.h
            REPLACE_WCRTOMB=1 ;;
       esac
     fi
+
+    case "$gl_cv_func_mbrtowc_C_locale_sans_EILSEQ" in
+      *yes) ;;
+      *)
+printf '%s\n' "#define MBRTOWC_IN_C_LOCALE_MAYBE_EILSEQ 1" >>confdefs.h
+
+         REPLACE_WCRTOMB=1
+         ;;
+    esac
   fi
 
 
@@ -29241,6 +29250,12 @@ printf '%s\n' "$gl_cv_func_wctob_works" >&6; }
       *yes) ;;
       *) REPLACE_WCTOB=1 ;;
     esac
+
+    case "$gl_cv_func_mbrtowc_C_locale_sans_EILSEQ" in
+      *yes) ;;
+      *) REPLACE_WCTOB=1
+         ;;
+    esac
   fi
 
 
@@ -29258,6 +29273,7 @@ fi
   fi
 
   if test -z "$GL_COND_OBJ_WCTOB_TRUE"; then :
+
 
 
   :
