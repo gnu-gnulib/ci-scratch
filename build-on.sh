@@ -114,7 +114,8 @@ done
 # testdir68: c32rtomb
 # testdir69: c32isprint btoc32 c32tob
 # testdir70: mbrtowc wcrtomb btowc wctob
-cd testdir69 || exit 1
+# testdir71: mktime localtime time_r
+cd testdir71 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
