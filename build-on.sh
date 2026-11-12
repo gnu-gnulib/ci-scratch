@@ -116,7 +116,8 @@ done
 # testdir70: mbrtowc wcrtomb btowc wctob
 # testdir71: mktime localtime time_r
 # testdir72: c-strtof c-strtod c-strtold
-cd testdir72 || exit 1
+# testdir73: libsigsgev
+cd testdir73 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`

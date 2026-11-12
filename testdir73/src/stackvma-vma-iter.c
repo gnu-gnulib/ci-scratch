@@ -1,0 +1,331 @@
+/* Iterate through the virtual memory areas of the current process,
+   by reading from the /proc file system.
+   Copyright (C) 2002-2025  Bruno Haible <bruno@clisp.org>
+
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
+
+/* This code is a simplified copy (no handling of protection flags) of the
+   code in gnulib's lib/vma-iter.c.  */
+
+
+#if defined __linux__ || defined __ANDROID__ || (defined __FreeBSD_kernel__ && !defined __FreeBSD__) || defined __CYGWIN__
+/* GNU/kFreeBSD mounts /proc as linprocfs, which looks like a Linux /proc
+   file system.  */
+
+static int
+vma_iterate_proc (struct callback_locals *locals)
+{
+  struct rofile rof;
+
+  /* Open the current process' maps file.  It describes one VMA per line.  */
+  if (rof_open (&rof, "/proc/self/maps") >= 0)
+    {
+      uintptr_t auxmap_start = rof.auxmap_start;
+      uintptr_t auxmap_end = rof.auxmap_end;
+
+      for (;;)
+        {
+          /* Parse one line.  First start and end.  */
+          uintptr_t start, end;
+          if (!(rof_scanf_lx (&rof, &start) >= 0
+                && rof_getchar (&rof) == '-'
+                && rof_scanf_lx (&rof, &end) >= 0))
+            break;
+
+          {
+            int c;
+            while (c = rof_getchar (&rof), c != -1 && c != '\n')
+              ;
+          }
+
+          if (start <= auxmap_start && auxmap_end - 1 <= end - 1)
+            {
+              /* Consider [start,end-1] \ [auxmap_start,auxmap_end-1]
+                 = [start,auxmap_start-1] u [auxmap_end,end-1].  */
+              if (start < auxmap_start)
+                if (callback (locals, start, auxmap_start))
+                  break;
+              if (auxmap_end - 1 < end - 1)
+                if (callback (locals, auxmap_end, end))
+                  break;
+            }
+          else
+            {
+              if (callback (locals, start, end))
+                break;
+            }
+        }
+      rof_close (&rof);
+      return 0;
+    }
+
+  return -1;
+}
+
+#elif defined __FreeBSD__ || defined __DragonFly__ || defined __NetBSD__
+
+static int
+vma_iterate_proc (struct callback_locals *locals)
+{
+  struct rofile rof;
+
+  /* Open the current process' maps file.  It describes one VMA per line.
+     On FreeBSD:
+       Cf. <https://www.freebsd.org/cgi/cvsweb.cgi/src/sys/fs/procfs/procfs_map.c?annotate=HEAD>
+     On NetBSD, there are two such files:
+       - /proc/curproc/map in near-FreeBSD syntax,
+       - /proc/curproc/maps in Linux syntax.
+       Cf. <http://cvsweb.netbsd.org/bsdweb.cgi/src/sys/miscfs/procfs/procfs_map.c?rev=HEAD> */
+  if (rof_open (&rof, "/proc/curproc/map") >= 0)
+    {
+      uintptr_t auxmap_start = rof.auxmap_start;
+      uintptr_t auxmap_end = rof.auxmap_end;
+
+      for (;;)
+        {
+          /* Parse one line.  First start.  */
+          uintptr_t start;
+          if (!(rof_getchar (&rof) == '0'
+                && rof_getchar (&rof) == 'x'
+                && rof_scanf_lx (&rof, &start) >= 0))
+            break;
+          {
+            int c;
+            while (c = rof_peekchar (&rof), c == ' ' || c == '\t')
+              rof_getchar (&rof);
+          }
+          /* Then end.  */
+          uintptr_t end;
+          if (!(rof_getchar (&rof) == '0'
+                && rof_getchar (&rof) == 'x'
+                && rof_scanf_lx (&rof, &end) >= 0))
+            break;
+          {
+            int c;
+            while (c = rof_getchar (&rof), c != -1 && c != '\n')
+              ;
+          }
+
+          if (start <= auxmap_start && auxmap_end - 1 <= end - 1)
+            {
+              /* Consider [start,end-1] \ [auxmap_start,auxmap_end-1]
+                 = [start,auxmap_start-1] u [auxmap_end,end-1].  */
+              if (start < auxmap_start)
+                if (callback (locals, start, auxmap_start))
+                  break;
+              if (auxmap_end - 1 < end - 1)
+                if (callback (locals, auxmap_end, end))
+                  break;
+            }
+          else
+            {
+              if (callback (locals, start, end))
+                break;
+            }
+        }
+      rof_close (&rof);
+      return 0;
+    }
+
+  return -1;
+}
+
+#endif
+
+
+#if (defined __FreeBSD__ || defined __FreeBSD_kernel__) && defined KERN_PROC_VMMAP /* FreeBSD >= 7.1 */
+
+static int
+vma_iterate_bsd (struct callback_locals *locals)
+{
+  /* Documentation: https://www.freebsd.org/cgi/man.cgi?sysctl(3)  */
+  int info_path[] = { CTL_KERN, KERN_PROC, KERN_PROC_VMMAP, getpid () };
+  size_t len = 0;
+  if (sysctl (info_path, 4, NULL, &len, NULL, 0) < 0)
+    return -1;
+  /* Allow for small variations over time.  In a multithreaded program
+     new VMAs can be allocated at any moment.  */
+  len = 2 * len + 200;
+  /* Allocate memneed bytes of memory.
+     We cannot use alloca here, because not much stack space is guaranteed.
+     We also cannot use malloc here, because a malloc() call may call mmap()
+     and thus pre-allocate available memory.
+     So use mmap(), and ignore the resulting VMA.  */
+  size_t pagesize = getpagesize ();
+  size_t memneed = len;
+  memneed = ((memneed - 1) / pagesize + 1) * pagesize;
+  void *auxmap = (void *) mmap ((void *) 0, memneed, PROT_READ | PROT_WRITE,
+                                MAP_ANONYMOUS | MAP_PRIVATE, -1, 0);
+  if (auxmap == (void *) -1)
+    return -1;
+  unsigned long auxmap_start = (unsigned long) auxmap;
+  unsigned long auxmap_end = auxmap_start + memneed;
+  char *mem = (char *) auxmap;
+  if (sysctl (info_path, 4, mem, &len, NULL, 0) < 0)
+    {
+      munmap (auxmap, memneed);
+      return -1;
+    }
+  {
+    char *p = mem;
+    char *p_end = mem + len;
+    while (p < p_end)
+      {
+        struct kinfo_vmentry *kve = (struct kinfo_vmentry *) p;
+        unsigned long start = kve->kve_start;
+        unsigned long end = kve->kve_end;
+        if (start <= auxmap_start && auxmap_end - 1 <= end - 1)
+          {
+            /* Consider [start,end-1] \ [auxmap_start,auxmap_end-1]
+               = [start,auxmap_start-1] u [auxmap_end,end-1].  */
+            if (start < auxmap_start)
+              if (callback (locals, start, auxmap_start))
+                break;
+            if (auxmap_end - 1 < end - 1)
+              if (callback (locals, auxmap_end, end))
+                break;
+          }
+        else
+          {
+            if (callback (locals, start, end))
+              break;
+          }
+        p += kve->kve_structsize;
+      }
+  }
+  munmap (auxmap, memneed);
+  return 0;
+}
+
+#else
+
+# define vma_iterate_bsd(locals) (-1)
+
+#endif
+
+
+/* Support for reading the info from the Linux ioctl() PROCMAP_QUERY
+   system call.  */
+
+#if (defined __linux__ || defined __ANDROID__) && defined PROCMAP_QUERY /* Linux >= 6.11 */
+
+static int
+vma_iterate_procmap_query (struct callback_locals *locals)
+{
+  /* Documentation: <linux/fs.h>
+     This implementation is more than twice as fast as vma_iterate_proc.
+     It does not return the [vsyscall] memory area at 0xFFFFFFFFFF600000,
+     but this is not a serious drawback, since that memory area is not
+     controlled by userspace anyway.  */
+  int fd = open ("/proc/self/maps", O_RDONLY | O_CLOEXEC);
+  if (fd < 0)
+    return -1;
+
+  unsigned long addr = 0;
+  do
+    {
+      /* Clear all fields, just in case some 'in' fields are added later.  */
+      struct procmap_query pq = {0};
+      pq.size = sizeof (pq);
+      pq.query_flags = PROCMAP_QUERY_COVERING_OR_NEXT_VMA;
+      pq.query_addr = addr;
+      pq.vma_name_size = 0;
+      pq.vma_name_addr = 0;
+
+      int ret = ioctl (fd, PROCMAP_QUERY, &pq);
+      if (ret == -1)
+        {
+          if (addr == 0)
+            {
+              /* Likely errno == ENOTTY.  */
+              close (fd);
+              return -1;
+            }
+          else
+            /* Likely errno == ENOENT.  */
+            break;
+        }
+
+      if (callback (locals, pq.vma_start, pq.vma_end))
+        break;
+
+      addr = pq.vma_end;
+    }
+  while (addr != 0);
+
+  close (fd);
+  return 0;
+}
+
+#else
+
+# define vma_iterate_procmap_query(locals) (-1)
+
+#endif
+
+
+/* Iterate over the virtual memory areas of the current process.
+   If such iteration is supported, the callback is called once for every
+   virtual memory area, in ascending order, with the following arguments:
+     - LOCALS is the same argument as passed to vma_iterate.
+     - START is the address of the first byte in the area, page-aligned.
+     - END is the address of the last byte in the area plus 1, page-aligned.
+       Note that it may be 0 for the last area in the address space.
+   If the callback returns 0, the iteration continues.  If it returns 1,
+   the iteration terminates prematurely.
+   This function may open file descriptors, but does not call malloc().
+   Return 0 if all went well, or -1 in case of error.  */
+static int
+vma_iterate (struct callback_locals *locals)
+{
+#if defined __linux__ || defined __ANDROID__
+  /* This implementation is more than twice as fast as vma_iterate_proc,
+     when supported by the kernel.  Therefore try it first.  */
+  {
+    int retval = vma_iterate_procmap_query (locals);
+    if (retval == 0)
+      return 0;
+  }
+#endif
+
+#if defined __linux__ || defined __ANDROID__ || defined __FreeBSD_kernel__ || defined __FreeBSD__ || defined __DragonFly__ || defined __NetBSD__ || defined __CYGWIN__
+
+# if defined __FreeBSD__
+  /* On FreeBSD with procfs (but not GNU/kFreeBSD, which uses linprocfs), the
+     function vma_iterate_proc does not return the virtual memory areas that
+     were created by anonymous mmap.  See
+     <https://svnweb.freebsd.org/base/head/sys/fs/procfs/procfs_map.c?view=markup>
+     So use vma_iterate_proc only as a fallback.  */
+  int retval = vma_iterate_bsd (locals);
+  if (retval == 0)
+    return 0;
+
+  return vma_iterate_proc (locals);
+# else
+  /* On the other platforms, try the /proc approach first, and the sysctl()
+     as a fallback.  */
+  int retval = vma_iterate_proc (locals);
+  if (retval == 0)
+    return 0;
+
+  return vma_iterate_bsd (locals);
+# endif
+
+#else
+
+  /* Not implemented.  */
+  return -1;
+
+#endif
+}
