@@ -139,7 +139,7 @@ main ()
       printf ("emergency exit\n"); exit (1);
     case 0: case 1:
       printf ("In test: setjmp completed\n"); fflush (stdout);
-      printf ("Starting recursion pass %d.\n", pass + 1);
+      printf ("Starting recursion pass %d.\n", pass + 1); fflush (stdout);
       recurse (0);
       printf ("no endless recursion?!\n"); exit (1);
     case 2:

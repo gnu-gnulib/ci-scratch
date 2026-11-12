@@ -146,7 +146,7 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
 
   /* We can put the new guard page on the first existing page.  It would also be
      possible to put it at the second or third existing page, for instance.  */
-  uintptr_t guard_page = address;
+  uintptr_t guard_page = address + 2 * 0x1000;
   printf ("guard_page = 0x%llx\n", guard_page); fflush (stdout);
 
   /* TODO: Consider the minimum thread stack size.
@@ -432,7 +432,7 @@ do_install_main_exception_filter ()
 static void
 do_install_main_exception_filter ()
 {
-# ifdef _WIN64
+# if 1 // def _WIN64
   /* Should we use SetUnhandledExceptionFilter or AddVectoredExceptionHandler?
      For SIGSEGV handling, either of these works.  For catching stack overflow,
      SetUnhandledExceptionFilter works the first time, but not also the second
