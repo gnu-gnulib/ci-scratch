@@ -543,6 +543,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
+            */build/tests/test-*.log
           retention-days: 28
           overwrite: true
   check-mingw:
@@ -605,6 +606,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
+            */build/tests/test-*.log
           retention-days: 28
           overwrite: true
   check-msvc:
@@ -703,6 +705,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
+            */build/tests/test-*.log
           retention-days: 28
           overwrite: true
   check-msys2:
@@ -777,6 +780,7 @@ jobs:
             */build/log[123]
             */build/test-*.log
             */build/gltests/test-*.log
+            */build/tests/test-*.log
           retention-days: 28
           overwrite: true
   # This is not a platform-specific test, but very useful for finding bugs.

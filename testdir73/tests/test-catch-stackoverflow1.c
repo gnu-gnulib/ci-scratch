@@ -69,18 +69,20 @@ static void
 stackoverflow_handler_continuation (void *arg1, void *arg2, void *arg3)
 {
   int arg = (int) (long) arg1;
+  printf ("In test: stackoverflow_handler_continuation, before longjmp\n"); fflush (stdout);
   stackoverflow_longjmp (mainloop, arg);
 }
 
 static void
 stackoverflow_handler (int emergency, stackoverflow_context_t scp)
 {
+  printf ("In test: stackoverflow_handler\n"); fflush (stdout);
   char dummy;
   volatile char *addr = &dummy;
   if (!(addr >= stack_lower_bound && addr <= stack_upper_bound))
     abort ();
   pass++;
-  printf ("Stack overflow %d caught.\n", pass);
+  printf ("Stack overflow %d caught.\n", pass); fflush (stdout);
   sigprocmask (SIG_SETMASK, &mainsigset, NULL);
   sigsegv_leave_handler (stackoverflow_handler_continuation,
                          (void *) (long) (emergency ? -1 : pass), NULL, NULL);
@@ -130,15 +132,18 @@ main ()
   sigprocmask (SIG_BLOCK, &emptyset, &mainsigset);
 
   /* Provoke two stack overflows in a row.  */
+  printf ("In test: before setjmp\n"); fflush (stdout);
   switch (setjmp (mainloop))
     {
     case -1:
       printf ("emergency exit\n"); exit (1);
     case 0: case 1:
+      printf ("In test: setjmp completed\n"); fflush (stdout);
       printf ("Starting recursion pass %d.\n", pass + 1);
       recurse (0);
       printf ("no endless recursion?!\n"); exit (1);
     case 2:
+      printf ("In test: setjmp completed\n"); fflush (stdout);
       break;
     default:
       abort ();
@@ -147,7 +152,7 @@ main ()
   /* Validate that the alternate stack did not overflow.  */
   check_alternate_stack_no_overflow ();
 
-  printf ("Test passed.\n");
+  printf ("Test passed.\n"); fflush (stdout);
   exit (0);
 }
 

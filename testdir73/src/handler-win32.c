@@ -17,7 +17,7 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 #include "sigsegv.h"
-
+#include <stdio.h>
 #define WIN32_LEAN_AND_MEAN /* avoid including junk */
 #include <windows.h>
 #include <winerror.h>
@@ -114,6 +114,7 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
      But we cannot use it here, because it does not take a parameter.
      By design, it works only after the longjmp() back into the normal thread
      has been executed.  */
+  printf ("In stack_overflow_handler.\n"); fflush (stdout);
 
   /* First get stack's base address.  */
   MEMORY_BASIC_INFORMATION info;
@@ -146,6 +147,7 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
   /* We can put the new guard page on the first existing page.  It would also be
      possible to put it at the second or third existing page, for instance.  */
   uintptr_t guard_page = address;
+  printf ("guard_page = 0x%llx\n", guard_page); fflush (stdout);
 
   /* TODO: Consider the minimum thread stack size.
      <https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadstackguarantee>
@@ -166,9 +168,11 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
     if (VirtualProtect ((void *) guard_page, 0x1000, PAGE_NOACCESS, &oldprot))
       goto ok;
  failed:
+  printf ("stack_overflow_handler:failed.\n"); fflush (stdout);
   for (;;)
     (*stk_user_handler) (1, context);
  ok:
+  printf ("stack_overflow_handler:ok.\n"); fflush (stdout);
   for (;;)
     (*stk_user_handler) (0, context);
 }
@@ -183,6 +187,7 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
+  printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
   if ((stk_user_handler
        && ExceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_STACK_OVERFLOW
       )
@@ -196,7 +201,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 #endif
      )
     {
-#if 0 /* for debugging only */
+#if 1 /* for debugging only */
       printf ("Exception!\n");
       printf ("Code = 0x%x\n",
               ExceptionInfo->ExceptionRecord->ExceptionCode);
@@ -328,6 +333,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
               ExceptionInfo->ContextRecord->X0 = faulting_page_address;
               ExceptionInfo->ContextRecord->X1 = (uintptr_t) safe_context;
 #endif
+              printf ("In main_exception_filter, before CONTINUE\n"); fflush (stdout);
               return EXCEPTION_CONTINUE_EXECUTION;
             }
 #if !MIXING_UNIX_SIGSEGV_AND_WIN32_STACKOVERFLOW_HANDLING || OLD_CYGWIN_WORKAROUND
