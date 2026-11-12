@@ -287,12 +287,30 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 # endif
       fflush (stdout);
 #endif
-      if (ExceptionInfo->ExceptionRecord->NumberParameters == 2)
+      if (ExceptionInfo->ExceptionRecord->NumberParameters == 2
+          || (stk_user_handler
+              && ExceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_STACK_OVERFLOW))
         {
           if (stk_user_handler
               && ExceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_STACK_OVERFLOW)
             {
-              char *address = (char *) ExceptionInfo->ExceptionRecord->ExceptionInformation[1];
+              char *address;
+              if (ExceptionInfo->ExceptionRecord->NumberParameters >= 2)
+                address = (char *) ExceptionInfo->ExceptionRecord->ExceptionInformation[1];
+              else
+                {
+                  /* Some stack overflow exceptions have no parameters.  Use the
+                     stack pointer from the saved context in that case.  */
+#if defined _M_IX86
+                  address = (char *) ExceptionInfo->ContextRecord->Esp;
+#elif defined _M_X64
+                  address = (char *) ExceptionInfo->ContextRecord->Rsp;
+#elif defined _M_ARM64
+                  address = (char *) ExceptionInfo->ContextRecord->Sp;
+#else
+                  return EXCEPTION_CONTINUE_SEARCH;
+#endif
+                }
               /* Restart the program, giving it a sane value for the stack pointer.
                  At the same time, copy the contents of
                  ExceptionInfo->ContextRecord (which, on Windows XP, happens
