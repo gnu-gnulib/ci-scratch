@@ -187,7 +187,8 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
-#if 0 /* for debugging only */
+#if 1 /* for debugging only */
+  puts ("In main_exception_filter"); fflush (stdout);
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
 #endif
   if ((stk_user_handler
@@ -203,7 +204,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 #endif
      )
     {
-#if 0 /* for debugging only */
+#if 1 /* for debugging only */
       printf ("Exception!\n");
       printf ("Code = 0x%x\n",
               ExceptionInfo->ExceptionRecord->ExceptionCode);
@@ -335,7 +336,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
               ExceptionInfo->ContextRecord->X0 = faulting_page_address;
               ExceptionInfo->ContextRecord->X1 = (uintptr_t) safe_context;
 #endif
-#if 0 /* for debugging only */
+#if 1 /* for debugging only */
               printf ("In main_exception_filter, before CONTINUE\n"); fflush (stdout);
 #endif
               return EXCEPTION_CONTINUE_EXECUTION;
