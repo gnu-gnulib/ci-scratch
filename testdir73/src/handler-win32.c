@@ -114,7 +114,7 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
      But we cannot use it here, because it does not take a parameter.
      By design, it works only after the longjmp() back into the normal thread
      has been executed.  */
-  printf ("In stack_overflow_handler.\n"); fflush (stdout);
+  puts ("In stack_overflow_handler."); fflush (stdout);
 
   /* First get stack's base address.  */
   MEMORY_BASIC_INFORMATION info;
@@ -187,7 +187,7 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
-#if 1 /* for debugging only */
+#if !defined _WIN64 /* for debugging only */
   puts ("In main_exception_filter"); fflush (stdout);
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
 #endif
@@ -204,7 +204,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 #endif
      )
     {
-#if 1 /* for debugging only */
+#if !defined _WIN64 /* for debugging only */
       printf ("Exception!\n");
       printf ("Code = 0x%x\n",
               ExceptionInfo->ExceptionRecord->ExceptionCode);
@@ -336,7 +336,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
               ExceptionInfo->ContextRecord->X0 = faulting_page_address;
               ExceptionInfo->ContextRecord->X1 = (uintptr_t) safe_context;
 #endif
-#if 1 /* for debugging only */
+#if !defined _WIN64 /* for debugging only */
               printf ("In main_exception_filter, before CONTINUE\n"); fflush (stdout);
 #endif
               return EXCEPTION_CONTINUE_EXECUTION;
