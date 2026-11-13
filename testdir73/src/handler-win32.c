@@ -18,6 +18,7 @@
 
 #include "sigsegv.h"
 #include <stdio.h>
+#include <stdlib.h>
 #define WIN32_LEAN_AND_MEAN /* avoid including junk */
 #include <windows.h>
 #include <winerror.h>
@@ -188,7 +189,7 @@ static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
   if (ExceptionInfo->ExceptionRecord->ExceptionCode)
-    abort ();
+    exit (24);
   puts ("In main_exception_filter"); fflush (stdout);
 #if 0 && defined _WIN64 /* for debugging only */
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
