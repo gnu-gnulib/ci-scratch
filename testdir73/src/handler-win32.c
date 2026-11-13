@@ -449,7 +449,7 @@ do_install_main_exception_filter ()
      If we were to use both SetUnhandledExceptionFilter and
      AddVectoredExceptionHandler, only the handler passed to
      AddVectoredExceptionHandler would get used.  */
-  SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
+  //SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
   AddVectoredExceptionHandler (1, (LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
 # else
   SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
