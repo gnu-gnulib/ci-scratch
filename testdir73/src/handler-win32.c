@@ -187,6 +187,9 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
+  if (ExceptionInfo->ExceptionRecord->ExceptionCode)
+    abort ();
+  puts ("In main_exception_filter"); fflush (stdout);
 #if 0 && defined _WIN64 /* for debugging only */
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
 #endif
