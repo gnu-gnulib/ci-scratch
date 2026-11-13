@@ -437,7 +437,7 @@ do_install_main_exception_filter ()
 static void
 do_install_main_exception_filter ()
 {
-# if 1 // def _WIN64
+# ifdef _WIN64
   /* Should we use SetUnhandledExceptionFilter or AddVectoredExceptionHandler?
      For SIGSEGV handling, either of these works.  For catching stack overflow,
      SetUnhandledExceptionFilter works the first time, but not also the second
