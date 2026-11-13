@@ -17,8 +17,14 @@
    along with this program.  If not, see <https://www.gnu.org/licenses/>.  */
 
 #include "sigsegv.h"
-#include <stdio.h>
-#include <stdlib.h>
+
+/* Whether to enable debugging output.  */
+#define DEBUG_HANDLER       1
+/* Whether to enable debugging output in the main_exception_filter function.
+   In 32-bit mode, this can often make the main_exception_filter function
+   crash.  Therefore, enable it only in 64-bit mode.  */
+#define DEBUG_MAIN_HANDLER  (DEBUG_HANDLER && defined _WIN64)
+
 #define WIN32_LEAN_AND_MEAN /* avoid including junk */
 #include <windows.h>
 #include <winerror.h>
@@ -29,6 +35,10 @@
  * extern BOOL VirtualProtect (LPVOID Address, DWORD Size, DWORD NewProtect, PDWORD OldProtect);
  * extern DWORD GetLastError (void);
  */
+
+#if DEBUG_HANDLER
+# include <stdio.h>
+#endif
 
 /* On Cygwin, the "system calls" are actually library calls.  If the user
    asks for them to return with errno = EFAULT, we do this by combining
@@ -109,13 +119,16 @@ static size_t stk_extra_stack_size;
 static void
 stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t context)
 {
+#if DEBUG_HANDLER
+  puts ("In stack_overflow_handler"); fflush (stdout);
+#endif
+
   /* The Microsoft library has a function _resetstkoflw() for reinstalling the
      guard page.
      <https://learn.microsoft.com/en-us/cpp/c-runtime-library/reference/resetstkoflw>
      But we cannot use it here, because it does not take a parameter.
      By design, it works only after the longjmp() back into the normal thread
      has been executed.  */
-  puts ("In stack_overflow_handler."); fflush (stdout);
 
   /* First get stack's base address.  */
   MEMORY_BASIC_INFORMATION info;
@@ -146,9 +159,10 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
   }
 
   /* We can put the new guard page on the first existing page.  It would also be
-     possible to put it at the second or third existing page, for instance.  */
-  uintptr_t guard_page = address; // + 2 * 0x1000;
-  printf ("guard_page = 0x%llx\n", guard_page); fflush (stdout);
+     possible to put it at the second or third existing page, for instance.
+     In fact, in some 64-bit configurations (especially when DEBUG_HANDLER is 1)
+     the first existing page does not work; the third one works much better.  */
+  uintptr_t guard_page = address + 2 * 0x1000;
 
   /* TODO: Consider the minimum thread stack size.
      <https://learn.microsoft.com/en-us/windows/win32/api/processthreadsapi/nf-processthreadsapi-setthreadstackguarantee>
@@ -169,11 +183,15 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
     if (VirtualProtect ((void *) guard_page, 0x1000, PAGE_NOACCESS, &oldprot))
       goto ok;
  failed:
-  printf ("stack_overflow_handler:failed.\n"); fflush (stdout);
+#if DEBUG_HANDLER
+  puts ("In stack_overflow_handler: failed."); fflush (stdout);
+#endif
   for (;;)
     (*stk_user_handler) (1, context);
  ok:
-  printf ("stack_overflow_handler:ok.\n"); fflush (stdout);
+#if DEBUG_HANDLER
+  puts ("In stack_overflow_handler: ok."); fflush (stdout);
+#endif
   for (;;)
     (*stk_user_handler) (0, context);
 }
@@ -188,11 +206,11 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
-  if (ExceptionInfo->ExceptionRecord->ExceptionCode)
-    exit (24);
-  puts ("In main_exception_filter"); fflush (stdout);
-#if 0 && defined _WIN64 /* for debugging only */
-  printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
+#if DEBUG_MAIN_HANDLER
+  printf ("In main_exception_filter: Code = 0x%x, NumberParameters = %u\n",
+          ExceptionInfo->ExceptionRecord->ExceptionCode,
+          ExceptionInfo->ExceptionRecord->NumberParameters);
+  fflush (stdout);
 #endif
   if ((stk_user_handler
        && ExceptionInfo->ExceptionRecord->ExceptionCode == EXCEPTION_STACK_OVERFLOW
@@ -207,7 +225,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 #endif
      )
     {
-#if 0 && defined _WIN64 /* for debugging only */
+#if DEBUG_MAIN_HANDLER
       printf ("Exception!\n");
       printf ("Code = 0x%x\n",
               ExceptionInfo->ExceptionRecord->ExceptionCode);
@@ -339,8 +357,8 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
               ExceptionInfo->ContextRecord->X0 = faulting_page_address;
               ExceptionInfo->ContextRecord->X1 = (uintptr_t) safe_context;
 #endif
-#if 0 && defined _WIN64 /* for debugging only */
-              printf ("In main_exception_filter, before CONTINUE\n"); fflush (stdout);
+#if DEBUG_MAIN_HANDLER
+              puts ("In main_exception_filter: returning CONTINUE_EXECUTION."); fflush (stdout);
 #endif
               return EXCEPTION_CONTINUE_EXECUTION;
             }
@@ -453,7 +471,6 @@ do_install_main_exception_filter ()
      If we were to use both SetUnhandledExceptionFilter and
      AddVectoredExceptionHandler, only the handler passed to
      AddVectoredExceptionHandler would get used.  */
-  SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
   AddVectoredExceptionHandler (1, (LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
 # else
   SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
