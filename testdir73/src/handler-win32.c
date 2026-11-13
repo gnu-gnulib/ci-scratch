@@ -146,7 +146,7 @@ stack_overflow_handler (uintptr_t faulting_page_address, stackoverflow_context_t
 
   /* We can put the new guard page on the first existing page.  It would also be
      possible to put it at the second or third existing page, for instance.  */
-  uintptr_t guard_page = address + 2 * 0x1000;
+  uintptr_t guard_page = address; // + 2 * 0x1000;
   printf ("guard_page = 0x%llx\n", guard_page); fflush (stdout);
 
   /* TODO: Consider the minimum thread stack size.
@@ -187,7 +187,7 @@ extern void setsp_trampoline (void);
 static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
-#if 0 && defined _WIN64 /* for debugging only */
+#if defined _WIN64 /* for debugging only */
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
 #endif
   if ((stk_user_handler
@@ -203,7 +203,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 #endif
      )
     {
-#if 0 && defined _WIN64 /* for debugging only */
+#if defined _WIN64 /* for debugging only */
       printf ("Exception!\n");
       printf ("Code = 0x%x\n",
               ExceptionInfo->ExceptionRecord->ExceptionCode);
@@ -335,7 +335,7 @@ main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
               ExceptionInfo->ContextRecord->X0 = faulting_page_address;
               ExceptionInfo->ContextRecord->X1 = (uintptr_t) safe_context;
 #endif
-#if 0 && defined _WIN64 /* for debugging only */
+#if defined _WIN64 /* for debugging only */
               printf ("In main_exception_filter, before CONTINUE\n"); fflush (stdout);
 #endif
               return EXCEPTION_CONTINUE_EXECUTION;
@@ -449,7 +449,7 @@ do_install_main_exception_filter ()
      If we were to use both SetUnhandledExceptionFilter and
      AddVectoredExceptionHandler, only the handler passed to
      AddVectoredExceptionHandler would get used.  */
-  //SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
+  SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
   AddVectoredExceptionHandler (1, (LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
 # else
   SetUnhandledExceptionFilter ((LPTOP_LEVEL_EXCEPTION_FILTER) &main_exception_filter);
