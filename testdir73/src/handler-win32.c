@@ -188,7 +188,6 @@ static LONG WINAPI
 main_exception_filter (EXCEPTION_POINTERS *ExceptionInfo)
 {
 #if defined _WIN64 /* for debugging only */
-  puts ("In main_exception_filter"); fflush (stdout);
   printf ("In main_exception_filter, code = 0x%x\n", (unsigned int) ExceptionInfo->ExceptionRecord->ExceptionCode); fflush (stdout);
 #endif
   if ((stk_user_handler
