@@ -19,7 +19,7 @@
 #include "sigsegv.h"
 
 /* Whether to enable debugging output.  */
-#define DEBUG_HANDLER        1
+#define DEBUG_HANDLER         1
 /* Whether to enable debugging output in the main_exception_filter function.
    In 32-bit mode, this can often make the main_exception_filter function
    crash.  Therefore, enable it only in 64-bit mode.  */
