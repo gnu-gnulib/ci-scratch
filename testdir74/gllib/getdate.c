@@ -36,6 +36,9 @@
 #include <ctype.h>
 
 #ifndef _LIBC
+# undef __isleap
+# define __isleap(year)  \
+   ((year) % 4 == 0 && ((year) % 100 != 0 || (year) % 400 == 0))
 # define __getdate_r _gl_getdate_r
 # define __time64_t time_t
 # define __stat64_t64 stat
@@ -214,8 +217,12 @@ __getdate_r (const char *string, struct tm *tp)
       tp->tm_year = tp->tm_mon = tp->tm_mday = tp->tm_wday = INT_MIN;
       tp->tm_hour = tp->tm_sec = tp->tm_min = INT_MIN;
       tp->tm_isdst = -1;
+#if defined _LIBC || HAVE_STRUCT_TM_TM_GMTOFF
       tp->tm_gmtoff = 0;
+#endif
+#if defined _LIBC || HAVE_STRUCT_TM_TM_ZONE
       tp->tm_zone = NULL;
+#endif
       result = strptime (string, line, tp);
       if ((found = (result && *result == '\0')))
 	break;

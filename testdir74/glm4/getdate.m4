@@ -101,5 +101,6 @@ EOF
 # Prerequisites of lib/getdate.c.
 AC_DEFUN([gl_PREREQ_GETDATE],
 [
+  AC_REQUIRE([gl_TM_GMTOFF])
   :
 ])

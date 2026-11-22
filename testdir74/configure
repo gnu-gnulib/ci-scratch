@@ -9704,6 +9704,36 @@ esac
 
 
 
+  ac_fn_c_check_member "$LINENO" "struct tm" "tm_gmtoff" "ac_cv_member_struct_tm_tm_gmtoff" "#include <time.h>
+
+"
+if test "x$ac_cv_member_struct_tm_tm_gmtoff" = xyes
+then :
+
+printf '%s\n' "#define HAVE_STRUCT_TM_TM_GMTOFF 1" >>confdefs.h
+
+
+fi
+ac_fn_c_check_member "$LINENO" "struct tm" "tm_zone" "ac_cv_member_struct_tm_tm_zone" "#include <time.h>
+
+"
+if test "x$ac_cv_member_struct_tm_tm_zone" = xyes
+then :
+
+printf '%s\n' "#define HAVE_STRUCT_TM_TM_ZONE 1" >>confdefs.h
+
+
+fi
+
+
+    if test "$ac_cv_member_struct_tm_tm_gmtoff" = yes
+then :
+
+printf '%s\n' "#define HAVE_TM_GMTOFF 1" >>confdefs.h
+
+fi
+
+
 
   GL_GNULIB_CTIME=0
 
@@ -14747,36 +14777,6 @@ esac
 fi
 printf '%s\n' "#define HAVE_DECL_STRNLEN $ac_have_decl" >>confdefs.h
 
-
-
-  ac_fn_c_check_member "$LINENO" "struct tm" "tm_gmtoff" "ac_cv_member_struct_tm_tm_gmtoff" "#include <time.h>
-
-"
-if test "x$ac_cv_member_struct_tm_tm_gmtoff" = xyes
-then :
-
-printf '%s\n' "#define HAVE_STRUCT_TM_TM_GMTOFF 1" >>confdefs.h
-
-
-fi
-ac_fn_c_check_member "$LINENO" "struct tm" "tm_zone" "ac_cv_member_struct_tm_tm_zone" "#include <time.h>
-
-"
-if test "x$ac_cv_member_struct_tm_tm_zone" = xyes
-then :
-
-printf '%s\n' "#define HAVE_STRUCT_TM_TM_ZONE 1" >>confdefs.h
-
-
-fi
-
-
-    if test "$ac_cv_member_struct_tm_tm_gmtoff" = yes
-then :
-
-printf '%s\n' "#define HAVE_TM_GMTOFF 1" >>confdefs.h
-
-fi
 
 
     HAVE_GETTIMEOFDAY=1;
@@ -27651,6 +27651,7 @@ fi
   fi
 
   if test -z "$GL_COND_OBJ_GETDATE_TRUE"; then :
+
 
 
   :
