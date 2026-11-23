@@ -37,6 +37,7 @@ AC_DEFUN([gl_FUNC_GETDATE],
 %b %H:%S
 %H:%M
 EOF
+       DATEMSK=config.msk
        export DATEMSK
        AC_RUN_IFELSE(
          [AC_LANG_PROGRAM(

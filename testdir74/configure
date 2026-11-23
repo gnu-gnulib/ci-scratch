@@ -28590,6 +28590,7 @@ else case e in #(
 %b %H:%S
 %H:%M
 EOF
+       DATEMSK=config.msk
        export DATEMSK
        if test "$cross_compiling" = yes
 then :
