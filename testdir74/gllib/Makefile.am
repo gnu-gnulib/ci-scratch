@@ -112,6 +112,30 @@ EXTRA_DIST += assert.in.h verify.h
 
 ## end   gnulib module assert-h
 
+## begin gnulib module cloexec
+
+libgnu_a_SOURCES += cloexec.c
+
+EXTRA_DIST += cloexec.h
+
+## end   gnulib module cloexec
+
+## begin gnulib module close
+
+if GL_COND_OBJ_CLOSE
+libgnu_a_SOURCES += close.c
+endif
+
+## end   gnulib module close
+
+## begin gnulib module dup2
+
+if GL_COND_OBJ_DUP2
+libgnu_a_SOURCES += dup2.c
+endif
+
+## end   gnulib module dup2
+
 ## begin gnulib module errno-h
 
 BUILT_SOURCES += $(ERRNO_H)
@@ -137,6 +161,14 @@ MOSTLYCLEANFILES += errno.h errno.h-t
 EXTRA_DIST += errno.in.h
 
 ## end   gnulib module errno-h
+
+## begin gnulib module fcntl
+
+if GL_COND_OBJ_FCNTL
+libgnu_a_SOURCES += fcntl.c
+endif
+
+## end   gnulib module fcntl
 
 ## begin gnulib module fcntl-h
 
@@ -178,12 +210,38 @@ EXTRA_DIST += fcntl.in.h
 
 ## end   gnulib module fcntl-h
 
+## begin gnulib module fd-hook
+
+libgnu_a_SOURCES += fd-hook.c
+
+EXTRA_DIST += fd-hook.h
+
+## end   gnulib module fd-hook
+
 ## begin gnulib module filename
 
 
 EXTRA_DIST += filename.h
 
 ## end   gnulib module filename
+
+## begin gnulib module fopen
+
+
+EXTRA_DIST += fopen.c
+
+EXTRA_libgnu_a_SOURCES += fopen.c
+
+## end   gnulib module fopen
+
+## begin gnulib module fopen-gnu
+
+
+EXTRA_DIST += fopen.c
+
+EXTRA_libgnu_a_SOURCES += fopen.c
+
+## end   gnulib module fopen-gnu
 
 ## begin gnulib module fseterr
 
@@ -194,6 +252,18 @@ endif
 EXTRA_DIST += fseterr.h stdio-impl.h
 
 ## end   gnulib module fseterr
+
+## begin gnulib module fstat
+
+if GL_COND_OBJ_FSTAT
+libgnu_a_SOURCES += fstat.c
+endif
+
+EXTRA_DIST += stat-w32.c stat-w32.h
+
+EXTRA_libgnu_a_SOURCES += stat-w32.c
+
+## end   gnulib module fstat
 
 ## begin gnulib module gen-header
 
@@ -230,6 +300,14 @@ libgnu_a_SOURCES += getdelim.c
 endif
 
 ## end   gnulib module getdelim
+
+## begin gnulib module getdtablesize
+
+if GL_COND_OBJ_GETDTABLESIZE
+libgnu_a_SOURCES += getdtablesize.c
+endif
+
+## end   gnulib module getdtablesize
 
 ## begin gnulib module getline
 
@@ -293,6 +371,14 @@ endif
 
 ## end   gnulib module localtime
 
+## begin gnulib module lstat
+
+if GL_COND_OBJ_LSTAT
+libgnu_a_SOURCES += lstat.c
+endif
+
+## end   gnulib module lstat
+
 ## begin gnulib module malloca
 
 libgnu_a_SOURCES += malloca.c
@@ -309,6 +395,34 @@ EXTRA_DIST += mktime-internal.h mktime.c
 EXTRA_libgnu_a_SOURCES += mktime.c
 
 ## end   gnulib module mktime
+
+## begin gnulib module msvc-inval
+
+if GL_COND_OBJ_MSVC_INVAL
+libgnu_a_SOURCES += msvc-inval.c
+endif
+
+EXTRA_DIST += msvc-inval.h
+
+## end   gnulib module msvc-inval
+
+## begin gnulib module msvc-nothrow
+
+if GL_COND_OBJ_MSVC_NOTHROW
+libgnu_a_SOURCES += msvc-nothrow.c
+endif
+
+EXTRA_DIST += msvc-nothrow.h
+
+## end   gnulib module msvc-nothrow
+
+## begin gnulib module open
+
+if GL_COND_OBJ_OPEN
+libgnu_a_SOURCES += open.c
+endif
+
+## end   gnulib module open
 
 ## begin gnulib module pathmax
 

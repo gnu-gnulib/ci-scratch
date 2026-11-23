@@ -109,14 +109,16 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/extensions-aix.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
 	$(top_srcdir)/glm4/extern-inline.m4 \
-	$(top_srcdir)/glm4/fcntl-o.m4 $(top_srcdir)/glm4/fcntl.m4 \
-	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
+	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
+	$(top_srcdir)/glm4/fcntl.m4 $(top_srcdir)/glm4/fcntl_h.m4 \
+	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fflush.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
-	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/frexp.m4 $(top_srcdir)/glm4/frexpl.m4 \
-	$(top_srcdir)/glm4/fseterr.m4 $(top_srcdir)/glm4/fstat.m4 \
-	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/getcwd.m4 \
-	$(top_srcdir)/glm4/getdate.m4 $(top_srcdir)/glm4/getdelim.m4 \
+	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpieee.m4 \
+	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/frexp.m4 \
+	$(top_srcdir)/glm4/frexpl.m4 $(top_srcdir)/glm4/fseterr.m4 \
+	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/ftruncate.m4 \
+	$(top_srcdir)/glm4/getcwd.m4 $(top_srcdir)/glm4/getdate.m4 \
+	$(top_srcdir)/glm4/getdelim.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
 	$(top_srcdir)/glm4/getline.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
@@ -1961,24 +1963,25 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	calloc.m4 close.m4 codeset.m4 ctype_h.m4 double-slash-root.m4 \
 	dup2.m4 environ.m4 errno_h.m4 error.m4 error_h.m4 exponentd.m4 \
 	exponentf.m4 exponentl.m4 extensions-aix.m4 extensions.m4 \
-	extern-inline.m4 fcntl-o.m4 fcntl.m4 fcntl_h.m4 fdopen.m4 \
-	flexmember.m4 float_h.m4 fpieee.m4 free.m4 frexp.m4 frexpl.m4 \
-	fseterr.m4 fstat.m4 ftruncate.m4 getcwd.m4 getdate.m4 \
-	getdelim.m4 getdtablesize.m4 getline.m4 getlocalename_l.m4 \
-	getprogname.m4 gettext_h.m4 gettimeofday.m4 gnulib-common.m4 \
-	gnulib-i18n.m4 include_next.m4 inet_pton.m4 \
-	intl-thread-locale.m4 intlmacosx.m4 inttypes.m4 ioctl.m4 \
-	isblank.m4 isnand.m4 isnanf.m4 isnanl.m4 largefile.m4 \
-	lcmessage.m4 limits-h.m4 locale-en.m4 locale-fr.m4 \
-	locale-ja.m4 locale-zh.m4 locale_h.m4 localename.m4 \
-	localtime.m4 lock.m4 lstat.m4 malloc.m4 malloca.m4 math_h.m4 \
-	memeq.m4 minmax.m4 mkfifo.m4 mktime.m4 mmap-anon.m4 mode_t.m4 \
-	msvc-inval.m4 msvc-nothrow.m4 multiarch.m4 musl.m4 nan-mips.m4 \
-	nanosleep.m4 netinet_in_h.m4 off64_t.m4 off_t.m4 once.m4 \
-	open-cloexec.m4 open-slash.m4 open.m4 pathmax.m4 perror.m4 \
-	pid_t.m4 pipe.m4 pselect.m4 pthread-cond.m4 pthread-mutex.m4 \
-	pthread-once.m4 pthread-rwlock.m4 pthread-spin.m4 \
-	pthread-thread.m4 pthread_h.m4 pthread_mutex_timedlock.m4 \
+	extern-inline.m4 fclose.m4 fcntl-o.m4 fcntl.m4 fcntl_h.m4 \
+	fdopen.m4 fflush.m4 flexmember.m4 float_h.m4 fopen.m4 \
+	fpieee.m4 free.m4 frexp.m4 frexpl.m4 fseterr.m4 fstat.m4 \
+	ftruncate.m4 getcwd.m4 getdate.m4 getdelim.m4 getdtablesize.m4 \
+	getline.m4 getlocalename_l.m4 getprogname.m4 gettext_h.m4 \
+	gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
+	include_next.m4 inet_pton.m4 intl-thread-locale.m4 \
+	intlmacosx.m4 inttypes.m4 ioctl.m4 isblank.m4 isnand.m4 \
+	isnanf.m4 isnanl.m4 largefile.m4 lcmessage.m4 limits-h.m4 \
+	locale-en.m4 locale-fr.m4 locale-ja.m4 locale-zh.m4 \
+	locale_h.m4 localename.m4 localtime.m4 lock.m4 lstat.m4 \
+	malloc.m4 malloca.m4 math_h.m4 memeq.m4 minmax.m4 mkfifo.m4 \
+	mktime.m4 mmap-anon.m4 mode_t.m4 msvc-inval.m4 msvc-nothrow.m4 \
+	multiarch.m4 musl.m4 nan-mips.m4 nanosleep.m4 netinet_in_h.m4 \
+	off64_t.m4 off_t.m4 once.m4 open-cloexec.m4 open-slash.m4 \
+	open.m4 pathmax.m4 perror.m4 pid_t.m4 pipe.m4 pselect.m4 \
+	pthread-cond.m4 pthread-mutex.m4 pthread-once.m4 \
+	pthread-rwlock.m4 pthread-spin.m4 pthread-thread.m4 \
+	pthread_h.m4 pthread_mutex_timedlock.m4 \
 	pthread_rwlock_rdlock.m4 pthread_sigmask.m4 putenv.m4 raise.m4 \
 	random.m4 random_r.m4 realloc.m4 reallocarray.m4 sched_h.m4 \
 	sched_yield.m4 select.m4 semaphore.m4 setenv.m4 setlocale.m4 \

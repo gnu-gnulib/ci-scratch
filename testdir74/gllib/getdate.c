@@ -168,7 +168,11 @@ __getdate_r (const char *string, struct tm *tp)
     return 2;
 
   /* Open the template file.  */
+#if defined _LIBC
   fp = fopen (datemsk, "rce");
+#else
+  fp = fopen (datemsk, "re");
+#endif
   if (fp == NULL)
     return 2;
 

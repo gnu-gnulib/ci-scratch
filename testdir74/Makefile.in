@@ -109,14 +109,16 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/extensions-aix.m4 \
 	$(top_srcdir)/glm4/extensions.m4 \
 	$(top_srcdir)/glm4/extern-inline.m4 \
-	$(top_srcdir)/glm4/fcntl-o.m4 $(top_srcdir)/glm4/fcntl.m4 \
-	$(top_srcdir)/glm4/fcntl_h.m4 $(top_srcdir)/glm4/fdopen.m4 \
+	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
+	$(top_srcdir)/glm4/fcntl.m4 $(top_srcdir)/glm4/fcntl_h.m4 \
+	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fflush.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
-	$(top_srcdir)/glm4/fpieee.m4 $(top_srcdir)/glm4/free.m4 \
-	$(top_srcdir)/glm4/frexp.m4 $(top_srcdir)/glm4/frexpl.m4 \
-	$(top_srcdir)/glm4/fseterr.m4 $(top_srcdir)/glm4/fstat.m4 \
-	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/getcwd.m4 \
-	$(top_srcdir)/glm4/getdate.m4 $(top_srcdir)/glm4/getdelim.m4 \
+	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpieee.m4 \
+	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/frexp.m4 \
+	$(top_srcdir)/glm4/frexpl.m4 $(top_srcdir)/glm4/fseterr.m4 \
+	$(top_srcdir)/glm4/fstat.m4 $(top_srcdir)/glm4/ftruncate.m4 \
+	$(top_srcdir)/glm4/getcwd.m4 $(top_srcdir)/glm4/getdate.m4 \
+	$(top_srcdir)/glm4/getdelim.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
 	$(top_srcdir)/glm4/getline.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \

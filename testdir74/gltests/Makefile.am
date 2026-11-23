@@ -275,14 +275,6 @@ EXTRA_DIST += test-calloc-posix.c macros.h
 
 ## end   gnulib module calloc-posix-tests
 
-## begin gnulib module cloexec
-
-libtests_a_SOURCES += cloexec.c
-
-EXTRA_DIST += cloexec.h
-
-## end   gnulib module cloexec
-
 ## begin gnulib module cloexec-tests
 
 TESTS += test-cloexec
@@ -290,14 +282,6 @@ noinst_PROGRAMS += test-cloexec
 EXTRA_DIST += test-cloexec.c macros.h
 
 ## end   gnulib module cloexec-tests
-
-## begin gnulib module close
-
-if GL_COND_OBJ_CLOSE
-libtests_a_SOURCES += close.c
-endif
-
-## end   gnulib module close
 
 ## begin gnulib module close-tests
 
@@ -396,14 +380,6 @@ EXTRA_DIST += test-ctype-h.c
 
 ## end   gnulib module ctype-h-tests
 
-## begin gnulib module dup2
-
-if GL_COND_OBJ_DUP2
-libtests_a_SOURCES += dup2.c
-endif
-
-## end   gnulib module dup2
-
 ## begin gnulib module dup2-tests
 
 TESTS += test-dup2
@@ -478,14 +454,6 @@ EXTRA_DIST += exitfail.h
 
 ## end   gnulib module exitfail
 
-## begin gnulib module fcntl
-
-if GL_COND_OBJ_FCNTL
-libtests_a_SOURCES += fcntl.c
-endif
-
-## end   gnulib module fcntl
-
 ## begin gnulib module fcntl-h-tests
 
 TESTS += test-fcntl-h
@@ -501,14 +469,6 @@ noinst_PROGRAMS += test-fcntl
 EXTRA_DIST += test-fcntl.c signature.h macros.h
 
 ## end   gnulib module fcntl-tests
-
-## begin gnulib module fd-hook
-
-libtests_a_SOURCES += fd-hook.c
-
-EXTRA_DIST += fd-hook.h
-
-## end   gnulib module fd-hook
 
 ## begin gnulib module fdopen
 
@@ -583,6 +543,23 @@ test_float_h_LDADD = $(LDADD) @FREXPL_LIBM@ @TRUNCL_LIBM@
 EXTRA_DIST += test-float-h.c macros.h
 
 ## end   gnulib module float-h-tests
+
+## begin gnulib module fopen-gnu-tests
+
+TESTS += test-fopen-gnu
+noinst_PROGRAMS += test-fopen-gnu
+EXTRA_DIST += test-fopen-gnu.c macros.h
+
+## end   gnulib module fopen-gnu-tests
+
+## begin gnulib module fopen-tests
+
+TESTS += test-fopen
+noinst_PROGRAMS += test-fopen
+
+EXTRA_DIST += test-fopen.h test-fopen.c signature.h macros.h
+
+## end   gnulib module fopen-tests
 
 ## begin gnulib module fpucw
 
@@ -670,18 +647,6 @@ EXTRA_DIST += test-fseterr.c
 
 ## end   gnulib module fseterr-tests
 
-## begin gnulib module fstat
-
-if GL_COND_OBJ_FSTAT
-libtests_a_SOURCES += fstat.c
-endif
-
-EXTRA_DIST += stat-w32.c stat-w32.h
-
-EXTRA_libtests_a_SOURCES += stat-w32.c
-
-## end   gnulib module fstat
-
 ## begin gnulib module fstat-tests
 
 TESTS += test-fstat
@@ -767,14 +732,6 @@ MOSTLYCLEANFILES += test-getdelim.txt
 EXTRA_DIST += test-getdelim.c signature.h macros.h
 
 ## end   gnulib module getdelim-tests
-
-## begin gnulib module getdtablesize
-
-if GL_COND_OBJ_GETDTABLESIZE
-libtests_a_SOURCES += getdtablesize.c
-endif
-
-## end   gnulib module getdtablesize
 
 ## begin gnulib module getdtablesize-tests
 
@@ -1240,14 +1197,6 @@ EXTRA_DIST += test-rwlock1.c test-lock.c atomic-int-gnulib.h macros.h
 
 ## end   gnulib module lock-tests
 
-## begin gnulib module lstat
-
-if GL_COND_OBJ_LSTAT
-libtests_a_SOURCES += lstat.c
-endif
-
-## end   gnulib module lstat
-
 ## begin gnulib module lstat-tests
 
 TESTS += test-lstat
@@ -1707,26 +1656,6 @@ EXTRA_DIST += test-mktime-w32.c macros.h
 
 ## end   gnulib module mktime-tests
 
-## begin gnulib module msvc-inval
-
-if GL_COND_OBJ_MSVC_INVAL
-libtests_a_SOURCES += msvc-inval.c
-endif
-
-EXTRA_DIST += msvc-inval.h
-
-## end   gnulib module msvc-inval
-
-## begin gnulib module msvc-nothrow
-
-if GL_COND_OBJ_MSVC_NOTHROW
-libtests_a_SOURCES += msvc-nothrow.c
-endif
-
-EXTRA_DIST += msvc-nothrow.h
-
-## end   gnulib module msvc-nothrow
-
 ## begin gnulib module nan
 
 libtests_a_SOURCES += nan.h
@@ -1804,14 +1733,6 @@ test_once2_LDADD = $(LDADD) @LIBMULTITHREAD@
 EXTRA_DIST += test-once.c macros.h
 
 ## end   gnulib module once-tests
-
-## begin gnulib module open
-
-if GL_COND_OBJ_OPEN
-libtests_a_SOURCES += open.c
-endif
-
-## end   gnulib module open
 
 ## begin gnulib module open-tests
 
