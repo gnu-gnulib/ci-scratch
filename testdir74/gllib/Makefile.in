@@ -115,11 +115,21 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
-@GL_COND_OBJ_LOCALTIME_TRUE@am__append_1 = localtime.c
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_2 = strncasecmp.c
-@GL_COND_OBJ_STRPTIME_TRUE@am__append_3 = strptime.c
-@GL_COND_OBJ_TIME_R_TRUE@am__append_4 = time_r.c
-@GL_COND_OBJ_TZSANITIZE_TRUE@am__append_5 = tzsanitize.c
+@GL_COND_OBJ_FSETERR_TRUE@am__append_1 = fseterr.c
+@GL_COND_OBJ_GETDATE_TRUE@am__append_2 = getdate.c
+@GL_COND_OBJ_GETDELIM_TRUE@am__append_3 = getdelim.c
+@GL_COND_OBJ_GETLINE_TRUE@am__append_4 = getline.c
+@GL_COND_OBJ_LOCALTIME_TRUE@am__append_5 = localtime.c
+@GL_COND_OBJ_STAT_TRUE@am__append_6 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_7 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_8 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_9 = stdio-consolesafe.c
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_10 = strncasecmp.c
+@GL_COND_OBJ_STRNDUP_TRUE@am__append_11 = strndup.c
+@GL_COND_OBJ_STRNLEN_TRUE@am__append_12 = strnlen.c
+@GL_COND_OBJ_STRPTIME_TRUE@am__append_13 = strptime.c
+@GL_COND_OBJ_TIME_R_TRUE@am__append_14 = time_r.c
+@GL_COND_OBJ_TZSANITIZE_TRUE@am__append_15 = tzsanitize.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -147,7 +157,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/frexp.m4 $(top_srcdir)/glm4/frexpl.m4 \
 	$(top_srcdir)/glm4/fseterr.m4 $(top_srcdir)/glm4/fstat.m4 \
 	$(top_srcdir)/glm4/ftruncate.m4 $(top_srcdir)/glm4/getcwd.m4 \
+	$(top_srcdir)/glm4/getdate.m4 $(top_srcdir)/glm4/getdelim.m4 \
 	$(top_srcdir)/glm4/getdtablesize.m4 \
+	$(top_srcdir)/glm4/getline.m4 \
 	$(top_srcdir)/glm4/getlocalename_l.m4 \
 	$(top_srcdir)/glm4/getprogname.m4 \
 	$(top_srcdir)/glm4/gettext_h.m4 \
@@ -172,8 +184,9 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/lstat.m4 $(top_srcdir)/glm4/malloc.m4 \
 	$(top_srcdir)/glm4/malloca.m4 $(top_srcdir)/glm4/math_h.m4 \
 	$(top_srcdir)/glm4/memeq.m4 $(top_srcdir)/glm4/minmax.m4 \
-	$(top_srcdir)/glm4/mkfifo.m4 $(top_srcdir)/glm4/mmap-anon.m4 \
-	$(top_srcdir)/glm4/mode_t.m4 $(top_srcdir)/glm4/msvc-inval.m4 \
+	$(top_srcdir)/glm4/mkfifo.m4 $(top_srcdir)/glm4/mktime.m4 \
+	$(top_srcdir)/glm4/mmap-anon.m4 $(top_srcdir)/glm4/mode_t.m4 \
+	$(top_srcdir)/glm4/msvc-inval.m4 \
 	$(top_srcdir)/glm4/msvc-nothrow.m4 \
 	$(top_srcdir)/glm4/multiarch.m4 $(top_srcdir)/glm4/musl.m4 \
 	$(top_srcdir)/glm4/nan-mips.m4 $(top_srcdir)/glm4/nanosleep.m4 \
@@ -219,7 +232,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/strncasecmp.m4 \
-	$(top_srcdir)/glm4/strncpy.m4 $(top_srcdir)/glm4/strptime.m4 \
+	$(top_srcdir)/glm4/strncpy.m4 $(top_srcdir)/glm4/strndup.m4 \
+	$(top_srcdir)/glm4/strnlen.m4 $(top_srcdir)/glm4/strptime.m4 \
 	$(top_srcdir)/glm4/symlink.m4 \
 	$(top_srcdir)/glm4/sys_cdefs_h.m4 \
 	$(top_srcdir)/glm4/sys_ioctl_h.m4 \
@@ -255,16 +269,33 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
-am__libgnu_a_SOURCES_DIST = localtime.c stdlib.c strncasecmp.c \
-	strptime.c time_r.c tzsanitize.c unistd.c
-@GL_COND_OBJ_LOCALTIME_TRUE@am__objects_1 = localtime.$(OBJEXT)
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_2 = strncasecmp.$(OBJEXT)
-@GL_COND_OBJ_STRPTIME_TRUE@am__objects_3 = strptime.$(OBJEXT)
-@GL_COND_OBJ_TIME_R_TRUE@am__objects_4 = time_r.$(OBJEXT)
-@GL_COND_OBJ_TZSANITIZE_TRUE@am__objects_5 = tzsanitize.$(OBJEXT)
-am_libgnu_a_OBJECTS = $(am__objects_1) stdlib.$(OBJEXT) \
-	$(am__objects_2) $(am__objects_3) $(am__objects_4) \
-	$(am__objects_5) unistd.$(OBJEXT)
+am__libgnu_a_SOURCES_DIST = fseterr.c getdate.c getdelim.c getline.c \
+	idx.h localtime.c malloca.c stat.c stat-time.c stdio-read.c \
+	stdio-write.c stdio-consolesafe.c stdlib.c streq.c \
+	strncasecmp.c strndup.c strnlen.c strptime.c time_r.c \
+	tzsanitize.c unistd.c
+@GL_COND_OBJ_FSETERR_TRUE@am__objects_1 = fseterr.$(OBJEXT)
+@GL_COND_OBJ_GETDATE_TRUE@am__objects_2 = getdate.$(OBJEXT)
+@GL_COND_OBJ_GETDELIM_TRUE@am__objects_3 = getdelim.$(OBJEXT)
+@GL_COND_OBJ_GETLINE_TRUE@am__objects_4 = getline.$(OBJEXT)
+@GL_COND_OBJ_LOCALTIME_TRUE@am__objects_5 = localtime.$(OBJEXT)
+@GL_COND_OBJ_STAT_TRUE@am__objects_6 = stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_7 = stdio-read.$(OBJEXT)
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_8 = stdio-write.$(OBJEXT)
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_9 = stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_10 = strncasecmp.$(OBJEXT)
+@GL_COND_OBJ_STRNDUP_TRUE@am__objects_11 = strndup.$(OBJEXT)
+@GL_COND_OBJ_STRNLEN_TRUE@am__objects_12 = strnlen.$(OBJEXT)
+@GL_COND_OBJ_STRPTIME_TRUE@am__objects_13 = strptime.$(OBJEXT)
+@GL_COND_OBJ_TIME_R_TRUE@am__objects_14 = time_r.$(OBJEXT)
+@GL_COND_OBJ_TZSANITIZE_TRUE@am__objects_15 = tzsanitize.$(OBJEXT)
+am_libgnu_a_OBJECTS = $(am__objects_1) $(am__objects_2) \
+	$(am__objects_3) $(am__objects_4) $(am__objects_5) \
+	malloca.$(OBJEXT) $(am__objects_6) stat-time.$(OBJEXT) \
+	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
+	stdlib.$(OBJEXT) streq.$(OBJEXT) $(am__objects_10) \
+	$(am__objects_11) $(am__objects_12) $(am__objects_13) \
+	$(am__objects_14) $(am__objects_15) unistd.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 am__DEPENDENCIES_1 =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -282,10 +313,17 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/localtime.Po ./$(DEPDIR)/stdlib.Po \
-	./$(DEPDIR)/strncasecmp.Po ./$(DEPDIR)/strptime.Po \
-	./$(DEPDIR)/time_r.Po ./$(DEPDIR)/tzsanitize.Po \
-	./$(DEPDIR)/unistd.Po
+am__depfiles_remade = ./$(DEPDIR)/fseterr.Po ./$(DEPDIR)/getdate.Po \
+	./$(DEPDIR)/getdelim.Po ./$(DEPDIR)/getline.Po \
+	./$(DEPDIR)/localtime.Po ./$(DEPDIR)/malloca.Po \
+	./$(DEPDIR)/mktime.Po ./$(DEPDIR)/stat-time.Po \
+	./$(DEPDIR)/stat-w32.Po ./$(DEPDIR)/stat.Po \
+	./$(DEPDIR)/stdio-consolesafe.Po ./$(DEPDIR)/stdio-read.Po \
+	./$(DEPDIR)/stdio-write.Po ./$(DEPDIR)/stdlib.Po \
+	./$(DEPDIR)/streq.Po ./$(DEPDIR)/strncasecmp.Po \
+	./$(DEPDIR)/strndup.Po ./$(DEPDIR)/strnlen.Po \
+	./$(DEPDIR)/strptime.Po ./$(DEPDIR)/time_r.Po \
+	./$(DEPDIR)/tzsanitize.Po ./$(DEPDIR)/unistd.Po
 am__mv = mv -f
 AM_JOBSERVER_no =
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -560,6 +598,7 @@ GL_GNULIB_FZPRINTF = @GL_GNULIB_FZPRINTF@
 GL_GNULIB_GETC = @GL_GNULIB_GETC@
 GL_GNULIB_GETCHAR = @GL_GNULIB_GETCHAR@
 GL_GNULIB_GETCWD = @GL_GNULIB_GETCWD@
+GL_GNULIB_GETDATE = @GL_GNULIB_GETDATE@
 GL_GNULIB_GETDELIM = @GL_GNULIB_GETDELIM@
 GL_GNULIB_GETDOMAINNAME = @GL_GNULIB_GETDOMAINNAME@
 GL_GNULIB_GETDTABLESIZE = @GL_GNULIB_GETDTABLESIZE@
@@ -1163,6 +1202,7 @@ HAVE_FSYNC = @HAVE_FSYNC@
 HAVE_FTELLO = @HAVE_FTELLO@
 HAVE_FTRUNCATE = @HAVE_FTRUNCATE@
 HAVE_FUTIMENS = @HAVE_FUTIMENS@
+HAVE_GETDATE = @HAVE_GETDATE@
 HAVE_GETDTABLESIZE = @HAVE_GETDTABLESIZE@
 HAVE_GETENTROPY = @HAVE_GETENTROPY@
 HAVE_GETGROUPS = @HAVE_GETGROUPS@
@@ -1716,6 +1756,7 @@ REPLACE_FTELLO = @REPLACE_FTELLO@
 REPLACE_FTRUNCATE = @REPLACE_FTRUNCATE@
 REPLACE_FUTIMENS = @REPLACE_FUTIMENS@
 REPLACE_GETCWD = @REPLACE_GETCWD@
+REPLACE_GETDATE = @REPLACE_GETDATE@
 REPLACE_GETDELIM = @REPLACE_GETDELIM@
 REPLACE_GETDOMAINNAME = @REPLACE_GETDOMAINNAME@
 REPLACE_GETDTABLESIZE = @REPLACE_GETDTABLESIZE@
@@ -2117,31 +2158,45 @@ noinst_HEADERS =
 noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
-EXTRA_DIST = fcntl.in.h _Noreturn.h arg-nonnull.h c++defs.h \
-	warn-on-use.h stddef.in.h stdlib.in.h string.in.h strings.in.h \
-	sys_time.in.h sys_types.in.h time.in.h tzsanitize.h \
-	unistd.in.h
-BUILT_SOURCES = fcntl.h $(STDDEF_H) stdlib.h string.h strings.h \
-	sys/time.h sys/types.h time.h unistd.h
+EXTRA_DIST = alloca.in.h assert.in.h verify.h errno.in.h fcntl.in.h \
+	filename.h fseterr.h stdio-impl.h intprops-internal.h \
+	intprops.h cdefs.h libc-config.h limits.in.h malloca.h \
+	mktime-internal.h mktime.c pathmax.h _Noreturn.h arg-nonnull.h \
+	c++defs.h warn-on-use.h stat-w32.c stat-w32.h stat-time.h \
+	intprops-internal.h stdckdint.in.h stdcountof.in.h stddef.in.h \
+	stdint.in.h stdio.in.h stdlib.in.h string.in.h strings.in.h \
+	sys_stat.in.h sys_time.in.h sys_types.in.h time.in.h \
+	tzsanitize.h unistd.in.h xalloc-oversized.h
+BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) $(ERRNO_H) fcntl.h $(LIMITS_H) \
+	$(STDCKDINT_H) $(STDCOUNTOF_H) $(STDDEF_H) $(STDINT_H) stdio.h \
+	stdlib.h string.h strings.h sys/stat.h sys/time.h sys/types.h \
+	time.h unistd.h
 SUFFIXES = 
-MOSTLYCLEANFILES = core *.stackdump fcntl.h fcntl.h-t stddef.h \
-	stddef.h-t stdlib.h stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 \
-	string.h string.h-t1 string.h-t2 strings.h strings.h-t \
-	sys/time.h sys/time.h-t sys/types.h sys/types.h-t time.h \
-	time.h-t unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 \
-	unistd.h-t4
-MOSTLYCLEANDIRS = sys sys
+MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t assert.h \
+	assert.h-t errno.h errno.h-t fcntl.h fcntl.h-t limits.h \
+	limits.h-t stdckdint.h stdckdint.h-t stdcountof.h \
+	stdcountof.h-t stddef.h stddef.h-t stdint.h stdint.h-t stdio.h \
+	stdio.h-t1 stdio.h-t2 stdio.h-t3 stdlib.h stdlib.h-t1 \
+	stdlib.h-t2 stdlib.h-t3 string.h string.h-t1 string.h-t2 \
+	strings.h strings.h-t sys/stat.h sys/stat.h-t sys/time.h \
+	sys/time.h-t sys/types.h sys/types.h-t time.h time.h-t \
+	unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 unistd.h-t4
+MOSTLYCLEANDIRS = sys sys sys
 CLEANFILES = 
 DISTCLEANFILES = 
 MAINTAINERCLEANFILES = 
 # No GNU Make output.
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
-libgnu_a_SOURCES = $(am__append_1) stdlib.c $(am__append_2) \
-	$(am__append_3) $(am__append_4) $(am__append_5) unistd.c
+libgnu_a_SOURCES = $(am__append_1) $(am__append_2) $(am__append_3) \
+	$(am__append_4) idx.h $(am__append_5) malloca.c \
+	$(am__append_6) stat-time.c $(am__append_7) $(am__append_8) \
+	$(am__append_9) stdlib.c streq.c $(am__append_10) \
+	$(am__append_11) $(am__append_12) $(am__append_13) \
+	$(am__append_14) $(am__append_15) unistd.c
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
-EXTRA_libgnu_a_SOURCES = 
+EXTRA_libgnu_a_SOURCES = mktime.c stat-w32.c
 
 # Use this preprocessor expression to decide whether #include_next works.
 # Do not rely on a 'configure'-time test for this, since the expression
@@ -2241,9 +2296,24 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fseterr.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdate.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdelim.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getline.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localtime.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloca.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mktime.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-time.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-w32.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-consolesafe.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-read.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-write.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdlib.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/streq.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strncasecmp.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strndup.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strnlen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strptime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/time_r.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/tzsanitize.Po@am__quote@ # am--include-marker
@@ -2554,9 +2624,24 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 	mostlyclean-am
 
 distclean: distclean-recursive
+	-rm -f ./$(DEPDIR)/fseterr.Po
+	-rm -f ./$(DEPDIR)/getdate.Po
+	-rm -f ./$(DEPDIR)/getdelim.Po
+	-rm -f ./$(DEPDIR)/getline.Po
 	-rm -f ./$(DEPDIR)/localtime.Po
+	-rm -f ./$(DEPDIR)/malloca.Po
+	-rm -f ./$(DEPDIR)/mktime.Po
+	-rm -f ./$(DEPDIR)/stat-time.Po
+	-rm -f ./$(DEPDIR)/stat-w32.Po
+	-rm -f ./$(DEPDIR)/stat.Po
+	-rm -f ./$(DEPDIR)/stdio-consolesafe.Po
+	-rm -f ./$(DEPDIR)/stdio-read.Po
+	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strncasecmp.Po
+	-rm -f ./$(DEPDIR)/strndup.Po
+	-rm -f ./$(DEPDIR)/strnlen.Po
 	-rm -f ./$(DEPDIR)/strptime.Po
 	-rm -f ./$(DEPDIR)/time_r.Po
 	-rm -f ./$(DEPDIR)/tzsanitize.Po
@@ -2606,9 +2691,24 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
+	-rm -f ./$(DEPDIR)/fseterr.Po
+	-rm -f ./$(DEPDIR)/getdate.Po
+	-rm -f ./$(DEPDIR)/getdelim.Po
+	-rm -f ./$(DEPDIR)/getline.Po
 	-rm -f ./$(DEPDIR)/localtime.Po
+	-rm -f ./$(DEPDIR)/malloca.Po
+	-rm -f ./$(DEPDIR)/mktime.Po
+	-rm -f ./$(DEPDIR)/stat-time.Po
+	-rm -f ./$(DEPDIR)/stat-w32.Po
+	-rm -f ./$(DEPDIR)/stat.Po
+	-rm -f ./$(DEPDIR)/stdio-consolesafe.Po
+	-rm -f ./$(DEPDIR)/stdio-read.Po
+	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strncasecmp.Po
+	-rm -f ./$(DEPDIR)/strndup.Po
+	-rm -f ./$(DEPDIR)/strnlen.Po
 	-rm -f ./$(DEPDIR)/strptime.Po
 	-rm -f ./$(DEPDIR)/time_r.Po
 	-rm -f ./$(DEPDIR)/tzsanitize.Po
@@ -2654,6 +2754,49 @@ uninstall-am: uninstall-pkgdataDATA
 .PRECIOUS: Makefile
 
 
+# We need the following in order to create <alloca.h> when the system
+# doesn't have one that works with the given compiler.
+@GL_GENERATE_ALLOCA_H_TRUE@alloca.h: alloca.in.h $(top_builddir)/config.status
+@GL_GENERATE_ALLOCA_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_ALLOCA_H_TRUE@	  -e 's|@''HAVE_ALLOCA_H''@|$(HAVE_ALLOCA_H)|g' \
+@GL_GENERATE_ALLOCA_H_TRUE@	  $(srcdir)/alloca.in.h > $@-t
+@GL_GENERATE_ALLOCA_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_ALLOCA_H_FALSE@alloca.h: $(top_builddir)/config.status
+@GL_GENERATE_ALLOCA_H_FALSE@	rm -f $@
+
+# We need the following in order to create <assert.h> when the system
+# doesn't have one that works with the given compiler.
+@GL_GENERATE_ASSERT_H_TRUE@assert.h: assert.in.h verify.h $(top_builddir)/config.status
+@GL_GENERATE_ASSERT_H_TRUE@	$(gl_V_at){ $(SED_HEADER_STDOUT) \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|@''NEXT_ASSERT_H''@|$(NEXT_ASSERT_H)|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      < $(srcdir)/assert.in.h && \
+@GL_GENERATE_ASSERT_H_TRUE@	  sed -e '/@assert.h omit start@/,/@assert.h omit end@/d' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|_gl_verify|_gl_static_assert|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|_GL_VERIFY|_GL_STATIC_ASSERT|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      -e 's|_GL\(_STATIC_ASSERT_H\)|_GL\1|g' \
+@GL_GENERATE_ASSERT_H_TRUE@	      < $(srcdir)/verify.h; \
+@GL_GENERATE_ASSERT_H_TRUE@	} > $@-t
+@GL_GENERATE_ASSERT_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_ASSERT_H_FALSE@assert.h: $(top_builddir)/config.status
+@GL_GENERATE_ASSERT_H_FALSE@	rm -f $@
+
+# We need the following in order to create <errno.h> when the system
+# doesn't have one that is POSIX compliant.
+@GL_GENERATE_ERRNO_H_TRUE@errno.h: errno.in.h $(top_builddir)/config.status
+@GL_GENERATE_ERRNO_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_ERRNO_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+@GL_GENERATE_ERRNO_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_ERRNO_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_ERRNO_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_ERRNO_H_TRUE@	      -e 's|@''NEXT_ERRNO_H''@|$(NEXT_ERRNO_H)|g' \
+@GL_GENERATE_ERRNO_H_TRUE@	      $(srcdir)/errno.in.h > $@-t
+@GL_GENERATE_ERRNO_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_ERRNO_H_FALSE@errno.h: $(top_builddir)/config.status
+@GL_GENERATE_ERRNO_H_FALSE@	rm -f $@
+
 # We need the following in order to create <fcntl.h> when the system
 # doesn't have one that works with the given compiler.
 fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
@@ -2685,6 +2828,54 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) 
 	      $(srcdir)/fcntl.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 
+# We need the following in order to create <limits.h> when the system
+# doesn't have one that is compatible with GNU.
+@GL_GENERATE_LIMITS_H_TRUE@limits.h: limits.in.h $(top_builddir)/config.status
+@GL_GENERATE_LIMITS_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_LIMITS_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+@GL_GENERATE_LIMITS_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_LIMITS_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_LIMITS_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_LIMITS_H_TRUE@	      -e 's|@''NEXT_LIMITS_H''@|$(NEXT_LIMITS_H)|g' \
+@GL_GENERATE_LIMITS_H_TRUE@	      $(srcdir)/limits.in.h > $@-t
+@GL_GENERATE_LIMITS_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_LIMITS_H_FALSE@limits.h: $(top_builddir)/config.status
+@GL_GENERATE_LIMITS_H_FALSE@	rm -f $@
+
+# We need the following in order to create <stdckdint.h> when the system
+# doesn't have one that works with the given compiler.
+@GL_GENERATE_STDCKDINT_H_TRUE@stdckdint.h: stdckdint.in.h $(top_builddir)/config.status
+@GL_GENERATE_STDCKDINT_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''NEXT_STDCKDINT_H''@|$(NEXT_STDCKDINT_H)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''HAVE_C_STDCKDINT_H''@|$(HAVE_C_STDCKDINT_H)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''HAVE_WORKING_C_STDCKDINT_H''@|$(HAVE_WORKING_C_STDCKDINT_H)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''HAVE_CXX_STDCKDINT_H''@|$(HAVE_CXX_STDCKDINT_H)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	      -e 's|@''HAVE_WORKING_CXX_STDCKDINT_H''@|$(HAVE_WORKING_CXX_STDCKDINT_H)|g' \
+@GL_GENERATE_STDCKDINT_H_TRUE@	  $(srcdir)/stdckdint.in.h > $@-t
+@GL_GENERATE_STDCKDINT_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_STDCKDINT_H_FALSE@stdckdint.h: $(top_builddir)/config.status
+@GL_GENERATE_STDCKDINT_H_FALSE@	rm -f $@
+
+# We need the following in order to create <stdcountof.h> when the system
+# doesn't have one that works with the given compiler.
+@GL_GENERATE_STDCOUNTOF_H_TRUE@stdcountof.h: stdcountof.in.h $(top_builddir)/config.status
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's/@''HAVE_STDCOUNTOF_H''@/$(HAVE_STDCOUNTOF_H)/g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's/@''CXX_HAVE_STDCOUNTOF_H''@/$(CXX_HAVE_STDCOUNTOF_H)/g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      -e 's|@''NEXT_STDCOUNTOF_H''@|$(NEXT_STDCOUNTOF_H)|g' \
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	      $(srcdir)/stdcountof.in.h > $@-t
+@GL_GENERATE_STDCOUNTOF_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_STDCOUNTOF_H_FALSE@stdcountof.h: $(top_builddir)/config.status
+@GL_GENERATE_STDCOUNTOF_H_FALSE@	rm -f $@
+
 # We need the following in order to create <stddef.h> when the system
 # doesn't have one that works with the given compiler.
 @GL_GENERATE_STDDEF_H_TRUE@stddef.h: stddef.in.h $(top_builddir)/config.status
@@ -2703,6 +2894,190 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) 
 @GL_GENERATE_STDDEF_H_TRUE@	$(AM_V_at)mv $@-t $@
 @GL_GENERATE_STDDEF_H_FALSE@stddef.h: $(top_builddir)/config.status
 @GL_GENERATE_STDDEF_H_FALSE@	rm -f $@
+
+# We need the following in order to create <stdint.h> when the system
+# doesn't have one that works with the given compiler.
+@GL_GENERATE_STDINT_H_TRUE@stdint.h: stdint.in.h $(top_builddir)/config.status
+@GL_GENERATE_STDINT_H_TRUE@	$(gl_V_at)$(SED_HEADER_STDOUT) \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_STDINT_H''@/$(HAVE_STDINT_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's|@''NEXT_STDINT_H''@|$(NEXT_STDINT_H)|g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_C99_STDINT_H''@/$(HAVE_C99_STDINT_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SYS_TYPES_H''@/$(HAVE_SYS_TYPES_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_INTTYPES_H''@/$(HAVE_INTTYPES_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SYS_INTTYPES_H''@/$(HAVE_SYS_INTTYPES_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SYS_BITYPES_H''@/$(HAVE_SYS_BITYPES_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_WCHAR_H''@/$(HAVE_WCHAR_H)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''APPLE_UNIVERSAL_BUILD''@/$(APPLE_UNIVERSAL_BUILD)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''BITSIZEOF_PTRDIFF_T''@/$(BITSIZEOF_PTRDIFF_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''PTRDIFF_T_SUFFIX''@/$(PTRDIFF_T_SUFFIX)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''BITSIZEOF_SIG_ATOMIC_T''@/$(BITSIZEOF_SIG_ATOMIC_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SIGNED_SIG_ATOMIC_T''@/$(HAVE_SIGNED_SIG_ATOMIC_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''SIG_ATOMIC_T_SUFFIX''@/$(SIG_ATOMIC_T_SUFFIX)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''BITSIZEOF_SIZE_T''@/$(BITSIZEOF_SIZE_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''SIZE_T_SUFFIX''@/$(SIZE_T_SUFFIX)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''BITSIZEOF_WCHAR_T''@/$(BITSIZEOF_WCHAR_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SIGNED_WCHAR_T''@/$(HAVE_SIGNED_WCHAR_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''WCHAR_T_SUFFIX''@/$(WCHAR_T_SUFFIX)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''BITSIZEOF_WINT_T''@/$(BITSIZEOF_WINT_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''HAVE_SIGNED_WINT_T''@/$(HAVE_SIGNED_WINT_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''WINT_T_SUFFIX''@/$(WINT_T_SUFFIX)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/$(GNULIBHEADERS_OVERRIDE_WINT_T)/g' \
+@GL_GENERATE_STDINT_H_TRUE@	      $(srcdir)/stdint.in.h > $@-t
+@GL_GENERATE_STDINT_H_TRUE@	$(AM_V_at)mv $@-t $@
+@GL_GENERATE_STDINT_H_FALSE@stdint.h: $(top_builddir)/config.status
+@GL_GENERATE_STDINT_H_FALSE@	rm -f $@
+
+# We need the following in order to create <stdio.h> when the system
+# doesn't have one that works with the given compiler.
+stdio.h: stdio.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
+	$(gl_V_at)$(SED_HEADER_STDOUT) \
+	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+	      -e 's|@''NEXT_STDIO_H''@|$(NEXT_STDIO_H)|g' \
+	      -e 's/@''GNULIB_DPRINTF''@/$(GL_GNULIB_DPRINTF)/g' \
+	      -e 's/@''GNULIB_DZPRINTF''@/$(GL_GNULIB_DZPRINTF)/g' \
+	      -e 's/@''GNULIB_FCLOSE''@/$(GL_GNULIB_FCLOSE)/g' \
+	      -e 's/@''GNULIB_FDOPEN''@/$(GL_GNULIB_FDOPEN)/g' \
+	      -e 's/@''GNULIB_FFLUSH''@/$(GL_GNULIB_FFLUSH)/g' \
+	      -e 's/@''GNULIB_FGETC''@/$(GL_GNULIB_FGETC)/g' \
+	      -e 's/@''GNULIB_FGETS''@/$(GL_GNULIB_FGETS)/g' \
+	      -e 's/@''GNULIB_FOPEN''@/$(GL_GNULIB_FOPEN)/g' \
+	      -e 's/@''GNULIB_FOPEN_GNU''@/$(GL_GNULIB_FOPEN_GNU)/g' \
+	      -e 's/@''GNULIB_FPRINTF''@/$(GL_GNULIB_FPRINTF)/g' \
+	      -e 's/@''GNULIB_FPRINTF_POSIX''@/$(GL_GNULIB_FPRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_FPURGE''@/$(GL_GNULIB_FPURGE)/g' \
+	      -e 's/@''GNULIB_FPUTC''@/$(GL_GNULIB_FPUTC)/g' \
+	      -e 's/@''GNULIB_FPUTS''@/$(GL_GNULIB_FPUTS)/g' \
+	      -e 's/@''GNULIB_FREAD''@/$(GL_GNULIB_FREAD)/g' \
+	      -e 's/@''GNULIB_FREOPEN''@/$(GL_GNULIB_FREOPEN)/g' \
+	      -e 's/@''GNULIB_FSCANF''@/$(GL_GNULIB_FSCANF)/g' \
+	      -e 's/@''GNULIB_FSEEK''@/$(GL_GNULIB_FSEEK)/g' \
+	      -e 's/@''GNULIB_FSEEKO''@/$(GL_GNULIB_FSEEKO)/g' \
+	      -e 's/@''GNULIB_FTELL''@/$(GL_GNULIB_FTELL)/g' \
+	      -e 's/@''GNULIB_FTELLO''@/$(GL_GNULIB_FTELLO)/g' \
+	      -e 's/@''GNULIB_FWRITE''@/$(GL_GNULIB_FWRITE)/g' \
+	      -e 's/@''GNULIB_FZPRINTF''@/$(GL_GNULIB_FZPRINTF)/g' \
+	      -e 's/@''GNULIB_GETC''@/$(GL_GNULIB_GETC)/g' \
+	      -e 's/@''GNULIB_GETCHAR''@/$(GL_GNULIB_GETCHAR)/g' \
+	      -e 's/@''GNULIB_GETDELIM''@/$(GL_GNULIB_GETDELIM)/g' \
+	      -e 's/@''GNULIB_GETLINE''@/$(GL_GNULIB_GETLINE)/g' \
+	      -e 's/@''GNULIB_OBSTACK_PRINTF''@/$(GL_GNULIB_OBSTACK_PRINTF)/g' \
+	      -e 's/@''GNULIB_OBSTACK_PRINTF_POSIX''@/$(GL_GNULIB_OBSTACK_PRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_OBSTACK_ZPRINTF''@/$(GL_GNULIB_OBSTACK_ZPRINTF)/g' \
+	      -e 's/@''GNULIB_PCLOSE''@/$(GL_GNULIB_PCLOSE)/g' \
+	      -e 's/@''GNULIB_PERROR''@/$(GL_GNULIB_PERROR)/g' \
+	      -e 's/@''GNULIB_POPEN''@/$(GL_GNULIB_POPEN)/g' \
+	      -e 's/@''GNULIB_PRINTF''@/$(GL_GNULIB_PRINTF)/g' \
+	      -e 's/@''GNULIB_PRINTF_POSIX''@/$(GL_GNULIB_PRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_PUTC''@/$(GL_GNULIB_PUTC)/g' \
+	      -e 's/@''GNULIB_PUTCHAR''@/$(GL_GNULIB_PUTCHAR)/g' \
+	      -e 's/@''GNULIB_PUTS''@/$(GL_GNULIB_PUTS)/g' \
+	      -e 's/@''GNULIB_REMOVE''@/$(GL_GNULIB_REMOVE)/g' \
+	      -e 's/@''GNULIB_RENAME''@/$(GL_GNULIB_RENAME)/g' \
+	      -e 's/@''GNULIB_RENAMEAT''@/$(GL_GNULIB_RENAMEAT)/g' \
+	      -e 's/@''GNULIB_SCANF''@/$(GL_GNULIB_SCANF)/g' \
+	      -e 's/@''GNULIB_SNPRINTF''@/$(GL_GNULIB_SNPRINTF)/g' \
+	      -e 's/@''GNULIB_SNZPRINTF''@/$(GL_GNULIB_SNZPRINTF)/g' \
+	      -e 's/@''GNULIB_SPRINTF_POSIX''@/$(GL_GNULIB_SPRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_STDIO_H_NONBLOCKING''@/$(GL_GNULIB_STDIO_H_NONBLOCKING)/g' \
+	      -e 's/@''GNULIB_STDIO_H_SIGPIPE''@/$(GL_GNULIB_STDIO_H_SIGPIPE)/g' \
+	      -e 's/@''GNULIB_SZPRINTF''@/$(GL_GNULIB_SZPRINTF)/g' \
+	      -e 's/@''GNULIB_TMPFILE''@/$(GL_GNULIB_TMPFILE)/g' \
+	      -e 's/@''GNULIB_VAPRINTF''@/$(GL_GNULIB_VAPRINTF)/g' \
+	      -e 's/@''GNULIB_VASPRINTF''@/$(GL_GNULIB_VASPRINTF)/g' \
+	      -e 's/@''GNULIB_VASZPRINTF''@/$(GL_GNULIB_VASZPRINTF)/g' \
+	      -e 's/@''GNULIB_VDPRINTF''@/$(GL_GNULIB_VDPRINTF)/g' \
+	      -e 's/@''GNULIB_VDZPRINTF''@/$(GL_GNULIB_VDZPRINTF)/g' \
+	      -e 's/@''GNULIB_VFPRINTF''@/$(GL_GNULIB_VFPRINTF)/g' \
+	      -e 's/@''GNULIB_VFPRINTF_POSIX''@/$(GL_GNULIB_VFPRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_VFZPRINTF''@/$(GL_GNULIB_VFZPRINTF)/g' \
+	      -e 's/@''GNULIB_VFSCANF''@/$(GL_GNULIB_VFSCANF)/g' \
+	      -e 's/@''GNULIB_VSCANF''@/$(GL_GNULIB_VSCANF)/g' \
+	      -e 's/@''GNULIB_VPRINTF''@/$(GL_GNULIB_VPRINTF)/g' \
+	      -e 's/@''GNULIB_VPRINTF_POSIX''@/$(GL_GNULIB_VPRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_VSNPRINTF''@/$(GL_GNULIB_VSNPRINTF)/g' \
+	      -e 's/@''GNULIB_VSNZPRINTF''@/$(GL_GNULIB_VSNZPRINTF)/g' \
+	      -e 's/@''GNULIB_VSPRINTF_POSIX''@/$(GL_GNULIB_VSPRINTF_POSIX)/g' \
+	      -e 's/@''GNULIB_VSZPRINTF''@/$(GL_GNULIB_VSZPRINTF)/g' \
+	      -e 's/@''GNULIB_VZPRINTF''@/$(GL_GNULIB_VZPRINTF)/g' \
+	      -e 's/@''GNULIB_ZPRINTF''@/$(GL_GNULIB_ZPRINTF)/g' \
+	      -e 's/@''GNULIB_MDA_FCLOSEALL''@/$(GL_GNULIB_MDA_FCLOSEALL)/g' \
+	      -e 's/@''GNULIB_MDA_FDOPEN''@/$(GL_GNULIB_MDA_FDOPEN)/g' \
+	      -e 's/@''GNULIB_MDA_FILENO''@/$(GL_GNULIB_MDA_FILENO)/g' \
+	      -e 's/@''GNULIB_MDA_GETW''@/$(GL_GNULIB_MDA_GETW)/g' \
+	      -e 's/@''GNULIB_MDA_PUTW''@/$(GL_GNULIB_MDA_PUTW)/g' \
+	      -e 's/@''GNULIB_MDA_TEMPNAM''@/$(GL_GNULIB_MDA_TEMPNAM)/g' \
+	      -e 's/@''GNULIB_FREE_POSIX''@/$(GL_GNULIB_FREE_POSIX)/g' \
+	      < $(srcdir)/stdio.in.h > $@-t1
+	$(AM_V_at)sed \
+	      -e 's|@''HAVE_DECL_FCLOSEALL''@|$(HAVE_DECL_FCLOSEALL)|g' \
+	      -e 's|@''HAVE_DECL_FPURGE''@|$(HAVE_DECL_FPURGE)|g' \
+	      -e 's|@''HAVE_DECL_FSEEKO''@|$(HAVE_DECL_FSEEKO)|g' \
+	      -e 's|@''HAVE_DECL_FTELLO''@|$(HAVE_DECL_FTELLO)|g' \
+	      -e 's|@''HAVE_DECL_GETDELIM''@|$(HAVE_DECL_GETDELIM)|g' \
+	      -e 's|@''HAVE_DECL_GETLINE''@|$(HAVE_DECL_GETLINE)|g' \
+	      -e 's|@''HAVE_DECL_GETW''@|$(HAVE_DECL_GETW)|g' \
+	      -e 's|@''HAVE_DECL_OBSTACK_PRINTF''@|$(HAVE_DECL_OBSTACK_PRINTF)|g' \
+	      -e 's|@''HAVE_DECL_PUTW''@|$(HAVE_DECL_PUTW)|g' \
+	      -e 's|@''HAVE_DECL_SNPRINTF''@|$(HAVE_DECL_SNPRINTF)|g' \
+	      -e 's|@''HAVE_DECL_VSNPRINTF''@|$(HAVE_DECL_VSNPRINTF)|g' \
+	      -e 's|@''HAVE_DPRINTF''@|$(HAVE_DPRINTF)|g' \
+	      -e 's|@''HAVE_FSEEKO''@|$(HAVE_FSEEKO)|g' \
+	      -e 's|@''HAVE_FTELLO''@|$(HAVE_FTELLO)|g' \
+	      -e 's|@''HAVE_PCLOSE''@|$(HAVE_PCLOSE)|g' \
+	      -e 's|@''HAVE_POPEN''@|$(HAVE_POPEN)|g' \
+	      -e 's|@''HAVE_RENAMEAT''@|$(HAVE_RENAMEAT)|g' \
+	      -e 's|@''HAVE_VASPRINTF''@|$(HAVE_VASPRINTF)|g' \
+	      -e 's|@''HAVE_VDPRINTF''@|$(HAVE_VDPRINTF)|g' \
+	      < $@-t1 > $@-t2
+	$(AM_V_at)sed \
+	      -e 's|@''REPLACE_DPRINTF''@|$(REPLACE_DPRINTF)|g' \
+	      -e 's|@''REPLACE_FCLOSE''@|$(REPLACE_FCLOSE)|g' \
+	      -e 's|@''REPLACE_FDOPEN''@|$(REPLACE_FDOPEN)|g' \
+	      -e 's|@''REPLACE_FFLUSH''@|$(REPLACE_FFLUSH)|g' \
+	      -e 's|@''REPLACE_FOPEN''@|$(REPLACE_FOPEN)|g' \
+	      -e 's|@''REPLACE_FOPEN_FOR_FOPEN_GNU''@|$(REPLACE_FOPEN_FOR_FOPEN_GNU)|g' \
+	      -e 's|@''REPLACE_FPRINTF''@|$(REPLACE_FPRINTF)|g' \
+	      -e 's|@''REPLACE_FPURGE''@|$(REPLACE_FPURGE)|g' \
+	      -e 's|@''REPLACE_FREE''@|$(REPLACE_FREE)|g' \
+	      -e 's|@''REPLACE_FREOPEN''@|$(REPLACE_FREOPEN)|g' \
+	      -e 's|@''REPLACE_FSEEK''@|$(REPLACE_FSEEK)|g' \
+	      -e 's|@''REPLACE_FSEEKO''@|$(REPLACE_FSEEKO)|g' \
+	      -e 's|@''REPLACE_FTELL''@|$(REPLACE_FTELL)|g' \
+	      -e 's|@''REPLACE_FTELLO''@|$(REPLACE_FTELLO)|g' \
+	      -e 's|@''REPLACE_GETDELIM''@|$(REPLACE_GETDELIM)|g' \
+	      -e 's|@''REPLACE_GETLINE''@|$(REPLACE_GETLINE)|g' \
+	      -e 's|@''REPLACE_OBSTACK_PRINTF''@|$(REPLACE_OBSTACK_PRINTF)|g' \
+	      -e 's|@''REPLACE_PERROR''@|$(REPLACE_PERROR)|g' \
+	      -e 's|@''REPLACE_POPEN''@|$(REPLACE_POPEN)|g' \
+	      -e 's|@''REPLACE_PRINTF''@|$(REPLACE_PRINTF)|g' \
+	      -e 's|@''REPLACE_REMOVE''@|$(REPLACE_REMOVE)|g' \
+	      -e 's|@''REPLACE_RENAME''@|$(REPLACE_RENAME)|g' \
+	      -e 's|@''REPLACE_RENAMEAT''@|$(REPLACE_RENAMEAT)|g' \
+	      -e 's|@''REPLACE_SNPRINTF''@|$(REPLACE_SNPRINTF)|g' \
+	      -e 's|@''REPLACE_SPRINTF''@|$(REPLACE_SPRINTF)|g' \
+	      -e 's|@''REPLACE_STDIO_READ_FUNCS''@|$(REPLACE_STDIO_READ_FUNCS)|g' \
+	      -e 's|@''REPLACE_STDIO_WRITE_FUNCS''@|$(REPLACE_STDIO_WRITE_FUNCS)|g' \
+	      -e 's|@''REPLACE_TMPFILE''@|$(REPLACE_TMPFILE)|g' \
+	      -e 's|@''REPLACE_VASPRINTF''@|$(REPLACE_VASPRINTF)|g' \
+	      -e 's|@''REPLACE_VDPRINTF''@|$(REPLACE_VDPRINTF)|g' \
+	      -e 's|@''REPLACE_VFPRINTF''@|$(REPLACE_VFPRINTF)|g' \
+	      -e 's|@''REPLACE_VPRINTF''@|$(REPLACE_VPRINTF)|g' \
+	      -e 's|@''REPLACE_VSNPRINTF''@|$(REPLACE_VSNPRINTF)|g' \
+	      -e 's|@''REPLACE_VSPRINTF''@|$(REPLACE_VSPRINTF)|g' \
+	      -e 's|@''ASM_SYMBOL_PREFIX''@|$(ASM_SYMBOL_PREFIX)|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
+	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
+	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
+	      < $@-t2 > $@-t3
+	$(AM_V_at)rm -f $@-t1 $@-t2
+	$(AM_V_at)mv $@-t3 $@
 
 stdlib.h: stdlib.in.h $(top_builddir)/config.status $(CXXDEFS_H) \
   $(_NORETURN_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
@@ -3021,6 +3396,69 @@ strings.h: strings.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE
 	      $(srcdir)/strings.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 
+# We need the following in order to create <sys/stat.h> when the system
+# has one that is incomplete.
+sys/stat.h: sys_stat.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
+	$(AM_V_GEN)$(MKDIR_P) 'sys'
+	$(AM_V_at)$(SED_HEADER_STDOUT) \
+	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+	      -e 's|@''NEXT_SYS_STAT_H''@|$(NEXT_SYS_STAT_H)|g' \
+	      -e 's|@''WINDOWS_64_BIT_ST_SIZE''@|$(WINDOWS_64_BIT_ST_SIZE)|g' \
+	      -e 's|@''WINDOWS_STAT_TIMESPEC''@|$(WINDOWS_STAT_TIMESPEC)|g' \
+	      -e 's/@''GNULIB_CHMOD''@/$(GL_GNULIB_CHMOD)/g' \
+	      -e 's/@''GNULIB_FCHMODAT''@/$(GL_GNULIB_FCHMODAT)/g' \
+	      -e 's/@''GNULIB_FSTAT''@/$(GL_GNULIB_FSTAT)/g' \
+	      -e 's/@''GNULIB_FSTATAT''@/$(GL_GNULIB_FSTATAT)/g' \
+	      -e 's/@''GNULIB_FUTIMENS''@/$(GL_GNULIB_FUTIMENS)/g' \
+	      -e 's/@''GNULIB_GETUMASK''@/$(GL_GNULIB_GETUMASK)/g' \
+	      -e 's/@''GNULIB_LCHMOD''@/$(GL_GNULIB_LCHMOD)/g' \
+	      -e 's/@''GNULIB_LSTAT''@/$(GL_GNULIB_LSTAT)/g' \
+	      -e 's/@''GNULIB_MKDIR''@/$(GL_GNULIB_MKDIR)/g' \
+	      -e 's/@''GNULIB_MKDIRAT''@/$(GL_GNULIB_MKDIRAT)/g' \
+	      -e 's/@''GNULIB_MKFIFO''@/$(GL_GNULIB_MKFIFO)/g' \
+	      -e 's/@''GNULIB_MKFIFOAT''@/$(GL_GNULIB_MKFIFOAT)/g' \
+	      -e 's/@''GNULIB_MKNOD''@/$(GL_GNULIB_MKNOD)/g' \
+	      -e 's/@''GNULIB_MKNODAT''@/$(GL_GNULIB_MKNODAT)/g' \
+	      -e 's/@''GNULIB_STAT''@/$(GL_GNULIB_STAT)/g' \
+	      -e 's/@''GNULIB_UTIMENSAT''@/$(GL_GNULIB_UTIMENSAT)/g' \
+	      -e 's/@''GNULIB_OVERRIDES_STRUCT_STAT''@/$(GL_GNULIB_OVERRIDES_STRUCT_STAT)/g' \
+	      -e 's/@''GNULIB_MDA_CHMOD''@/$(GL_GNULIB_MDA_CHMOD)/g' \
+	      -e 's/@''GNULIB_MDA_MKDIR''@/$(GL_GNULIB_MDA_MKDIR)/g' \
+	      -e 's/@''GNULIB_MDA_UMASK''@/$(GL_GNULIB_MDA_UMASK)/g' \
+	      -e 's|@''HAVE_FCHMODAT''@|$(HAVE_FCHMODAT)|g' \
+	      -e 's|@''HAVE_FSTATAT''@|$(HAVE_FSTATAT)|g' \
+	      -e 's|@''HAVE_FUTIMENS''@|$(HAVE_FUTIMENS)|g' \
+	      -e 's|@''HAVE_GETUMASK''@|$(HAVE_GETUMASK)|g' \
+	      -e 's|@''HAVE_LCHMOD''@|$(HAVE_LCHMOD)|g' \
+	      -e 's|@''HAVE_LSTAT''@|$(HAVE_LSTAT)|g' \
+	      -e 's|@''HAVE_MKDIRAT''@|$(HAVE_MKDIRAT)|g' \
+	      -e 's|@''HAVE_MKFIFO''@|$(HAVE_MKFIFO)|g' \
+	      -e 's|@''HAVE_MKFIFOAT''@|$(HAVE_MKFIFOAT)|g' \
+	      -e 's|@''HAVE_MKNOD''@|$(HAVE_MKNOD)|g' \
+	      -e 's|@''HAVE_MKNODAT''@|$(HAVE_MKNODAT)|g' \
+	      -e 's|@''HAVE_UTIMENSAT''@|$(HAVE_UTIMENSAT)|g' \
+	      -e 's|@''REPLACE_CHMOD''@|$(REPLACE_CHMOD)|g' \
+	      -e 's|@''REPLACE_FCHMODAT''@|$(REPLACE_FCHMODAT)|g' \
+	      -e 's|@''REPLACE_FSTAT''@|$(REPLACE_FSTAT)|g' \
+	      -e 's|@''REPLACE_FSTATAT''@|$(REPLACE_FSTATAT)|g' \
+	      -e 's|@''REPLACE_FUTIMENS''@|$(REPLACE_FUTIMENS)|g' \
+	      -e 's|@''REPLACE_LSTAT''@|$(REPLACE_LSTAT)|g' \
+	      -e 's|@''REPLACE_MKDIR''@|$(REPLACE_MKDIR)|g' \
+	      -e 's|@''REPLACE_MKFIFO''@|$(REPLACE_MKFIFO)|g' \
+	      -e 's|@''REPLACE_MKFIFOAT''@|$(REPLACE_MKFIFOAT)|g' \
+	      -e 's|@''REPLACE_MKNOD''@|$(REPLACE_MKNOD)|g' \
+	      -e 's|@''REPLACE_MKNODAT''@|$(REPLACE_MKNODAT)|g' \
+	      -e 's|@''REPLACE_STAT''@|$(REPLACE_STAT)|g' \
+	      -e 's|@''REPLACE_UTIMENSAT''@|$(REPLACE_UTIMENSAT)|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
+	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
+	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
+	      $(srcdir)/sys_stat.in.h > $@-t
+	$(AM_V_at)mv $@-t $@
+
 # We need the following in order to create <sys/time.h> when the system
 # doesn't have one that works with the given compiler.
 sys/time.h: sys_time.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
@@ -3072,6 +3510,7 @@ time.h: time.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(
 	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
 	      -e 's|@''NEXT_TIME_H''@|$(NEXT_TIME_H)|g' \
 	      -e 's/@''GNULIB_CTIME''@/$(GL_GNULIB_CTIME)/g' \
+	      -e 's/@''GNULIB_GETDATE''@/$(GL_GNULIB_GETDATE)/g' \
 	      -e 's/@''GNULIB_LOCALTIME''@/$(GL_GNULIB_LOCALTIME)/g' \
 	      -e 's/@''GNULIB_MKTIME''@/$(GL_GNULIB_MKTIME)/g' \
 	      -e 's/@''GNULIB_NANOSLEEP''@/$(GL_GNULIB_NANOSLEEP)/g' \
@@ -3087,6 +3526,7 @@ time.h: time.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(
 	      -e 's/@''GNULIB_TZSET''@/$(GL_GNULIB_TZSET)/g' \
 	      -e 's/@''GNULIB_MDA_TZSET''@/$(GL_GNULIB_MDA_TZSET)/g' \
 	      -e 's|@''HAVE_DECL_LOCALTIME_R''@|$(HAVE_DECL_LOCALTIME_R)|g' \
+	      -e 's|@''HAVE_GETDATE''@|$(HAVE_GETDATE)|g' \
 	      -e 's|@''HAVE_NANOSLEEP''@|$(HAVE_NANOSLEEP)|g' \
 	      -e 's|@''HAVE_STRPTIME''@|$(HAVE_STRPTIME)|g' \
 	      -e 's|@''HAVE_TIMEGM''@|$(HAVE_TIMEGM)|g' \
@@ -3095,6 +3535,7 @@ time.h: time.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(
 	      -e 's|@''HAVE_TIMEZONE_T''@|$(HAVE_TIMEZONE_T)|g' \
 	      -e 's|@''HAVE_TZALLOC''@|$(HAVE_TZALLOC)|g' \
 	      -e 's|@''REPLACE_CTIME''@|$(REPLACE_CTIME)|g' \
+	      -e 's|@''REPLACE_GETDATE''@|$(REPLACE_GETDATE)|g' \
 	      -e 's|@''REPLACE_GMTIME''@|$(REPLACE_GMTIME)|g' \
 	      -e 's|@''REPLACE_LOCALTIME''@|$(REPLACE_LOCALTIME)|g' \
 	      -e 's|@''REPLACE_LOCALTIME_R''@|$(REPLACE_LOCALTIME_R)|g' \

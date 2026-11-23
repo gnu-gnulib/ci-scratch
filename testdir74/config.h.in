@@ -246,8 +246,17 @@
 /* Define to 1 when the gnulib module getcwd should be tested. */
 #undef GNULIB_TEST_GETCWD
 
+/* Define to 1 when the gnulib module getdate should be tested. */
+#undef GNULIB_TEST_GETDATE
+
+/* Define to 1 when the gnulib module getdelim should be tested. */
+#undef GNULIB_TEST_GETDELIM
+
 /* Define to 1 when the gnulib module getdtablesize should be tested. */
 #undef GNULIB_TEST_GETDTABLESIZE
+
+/* Define to 1 when the gnulib module getline should be tested. */
+#undef GNULIB_TEST_GETLINE
 
 /* Define to 1 when the gnulib module getlocalename_l-unsafe should be tested.
    */
@@ -288,6 +297,9 @@
 
 /* Define to 1 when the gnulib module mkfifo should be tested. */
 #undef GNULIB_TEST_MKFIFO
+
+/* Define to 1 when the gnulib module mktime should be tested. */
+#undef GNULIB_TEST_MKTIME
 
 /* Define to 1 when the gnulib module nanosleep should be tested. */
 #undef GNULIB_TEST_NANOSLEEP
@@ -409,6 +421,12 @@
 
 /* Define to 1 when the gnulib module strncpy should be tested. */
 #undef GNULIB_TEST_STRNCPY
+
+/* Define to 1 when the gnulib module strndup should be tested. */
+#undef GNULIB_TEST_STRNDUP
+
+/* Define to 1 when the gnulib module strnlen should be tested. */
+#undef GNULIB_TEST_STRNLEN
 
 /* Define to 1 when the gnulib module strnul should be tested. */
 #undef GNULIB_TEST_STRNUL
@@ -551,9 +569,21 @@
    */
 #undef HAVE_DECL_GCVT
 
+/* Define to 1 if you have the declaration of 'getc_unlocked', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETC_UNLOCKED
+
+/* Define to 1 if you have the declaration of 'getdelim', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETDELIM
+
 /* Define to 1 if you have the declaration of 'getdtablesize', and to 0 if you
    don't. */
 #undef HAVE_DECL_GETDTABLESIZE
+
+/* Define to 1 if you have the declaration of 'getline', and to 0 if you
+   don't. */
+#undef HAVE_DECL_GETLINE
 
 /* Define to 1 if you have the declaration of 'getw', and to 0 if you don't.
    */
@@ -615,6 +645,14 @@
    don't. */
 #undef HAVE_DECL_STRNCASECMP
 
+/* Define to 1 if you have the declaration of 'strndup', and to 0 if you
+   don't. */
+#undef HAVE_DECL_STRNDUP
+
+/* Define to 1 if you have the declaration of 'strnlen', and to 0 if you
+   don't. */
+#undef HAVE_DECL_STRNLEN
+
 /* Define to 1 if you have the declaration of 'trunc', and to 0 if you don't.
    */
 #undef HAVE_DECL_TRUNC
@@ -664,6 +702,9 @@
 /* Define to 1 if you have the <features.h> header file. */
 #undef HAVE_FEATURES_H
 
+/* Define to 1 if you have the 'flockfile' function. */
+#undef HAVE_FLOCKFILE
+
 /* Define to 1 if you have the `freelocale' function. */
 #undef HAVE_FREELOCALE
 
@@ -679,11 +720,23 @@
 /* Define to 1 if you have the `ftruncate' function. */
 #undef HAVE_FTRUNCATE
 
+/* Define to 1 if you have the 'funlockfile' function. */
+#undef HAVE_FUNLOCKFILE
+
+/* Define to 1 if you have the 'getdate' function. */
+#undef HAVE_GETDATE
+
+/* Define to 1 if you have the `getdelim' function. */
+#undef HAVE_GETDELIM
+
 /* Define to 1 if you have the 'getdtablesize' function. */
 #undef HAVE_GETDTABLESIZE
 
 /* Define to 1 if you have the 'getexecname' function. */
 #undef HAVE_GETEXECNAME
+
+/* Define to 1 if you have the `getline' function. */
+#undef HAVE_GETLINE
 
 /* Define to 1 if you have the 'getlocalename_l' function. */
 #undef HAVE_GETLOCALENAME_L
@@ -938,6 +991,9 @@
 
 /* Define to 1 if you have the 'strncasecmp' function. */
 #undef HAVE_STRNCASECMP
+
+/* Define to 1 if you have the 'strndup' function. */
+#undef HAVE_STRNDUP
 
 /* Define to 1 if you have the 'strptime' function. */
 #undef HAVE_STRPTIME
@@ -1276,6 +1332,14 @@
 /* Define to 1 on musl libc. */
 #undef MUSL_LIBC
 
+/* Define if the compilation of mktime.c should define 'mktime' with the
+   native Windows TZ workaround. */
+#undef NEED_MKTIME_WINDOWS
+
+/* Define if the compilation of mktime.c should define 'mktime' with the
+   algorithmic workarounds. */
+#undef NEED_MKTIME_WORKING
+
 /* Define to 1 if realloc should abort upon undefined behaviour. */
 #undef NEED_SANITIZED_REALLOC
 
@@ -1385,6 +1449,9 @@
 
 /* Define to 1 if strerror_r returns char *. */
 #undef STRERROR_R_CHAR_P
+
+/* Define to 1 if time_t is signed. */
+#undef TIME_T_IS_SIGNED
 
 /* Define to 1 if the type of the st_atim member of a struct stat is struct
    timespec. */
