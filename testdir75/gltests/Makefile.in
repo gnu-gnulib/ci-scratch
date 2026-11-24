@@ -116,16 +116,18 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
-	test-alloca-opt$(EXEEXT) test-arpa_inet-h$(EXEEXT) \
-	test-assert$(EXEEXT) test-binary-io.sh test-bind$(EXEEXT) \
-	test-bool$(EXEEXT) test-byteswap$(EXEEXT) \
+	test-alloca-opt$(EXEEXT) $(am__EXEEXT_1) \
+	test-arpa_inet-h$(EXEEXT) $(am__EXEEXT_2) test-assert$(EXEEXT) \
+	test-binary-io.sh test-bind$(EXEEXT) $(am__EXEEXT_3) \
+	test-bool$(EXEEXT) $(am__EXEEXT_4) test-byteswap$(EXEEXT) \
 	test-c-ctype$(EXEEXT) test-calloc-gnu$(EXEEXT) \
 	test-calloc-posix$(EXEEXT) test-cloexec$(EXEEXT) \
-	test-close$(EXEEXT) test-connect$(EXEEXT) \
-	test-ctype-h$(EXEEXT) test-dup2$(EXEEXT) test-endian$(EXEEXT) \
-	test-environ$(EXEEXT) test-errno-h$(EXEEXT) test-error.sh \
+	test-close$(EXEEXT) test-connect$(EXEEXT) $(am__EXEEXT_5) \
+	test-ctype-h$(EXEEXT) test-dup2$(EXEEXT) $(am__EXEEXT_6) \
+	test-endian$(EXEEXT) test-environ$(EXEEXT) $(am__EXEEXT_7) \
+	test-errno-h$(EXEEXT) test-error.sh $(am__EXEEXT_8) \
 	test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) \
-	test-fgetc$(EXEEXT) test-float-h$(EXEEXT) \
+	test-fgetc$(EXEEXT) $(am__EXEEXT_9) test-float-h$(EXEEXT) \
 	test-fopen-gnu$(EXEEXT) test-fopen$(EXEEXT) \
 	test-fputc$(EXEEXT) test-fread$(EXEEXT) test-free$(EXEEXT) \
 	test-frexp$(EXEEXT) test-frexpl$(EXEEXT) test-fseterr$(EXEEXT) \
@@ -134,20 +136,22 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-getprogname$(EXEEXT) test-gettext-h$(EXEEXT) \
 	test-gettimeofday$(EXEEXT) test-htonl$(EXEEXT) \
 	test-ignore-value$(EXEEXT) test-inet_pton$(EXEEXT) \
-	test-intprops$(EXEEXT) test-inttypes-h$(EXEEXT) \
-	test-ioctl$(EXEEXT) test-isblank$(EXEEXT) \
-	test-isnand-nolibm$(EXEEXT) test-isnanf-nolibm$(EXEEXT) \
-	test-isnanl-nolibm$(EXEEXT) test-largefile$(EXEEXT) \
+	test-intprops$(EXEEXT) $(am__EXEEXT_10) \
+	test-inttypes-h$(EXEEXT) test-ioctl$(EXEEXT) \
+	test-isblank$(EXEEXT) test-isnand-nolibm$(EXEEXT) \
+	test-isnanf-nolibm$(EXEEXT) test-isnanl-nolibm$(EXEEXT) \
+	test-largefile$(EXEEXT) $(am__EXEEXT_11) \
 	test-limits-h$(EXEEXT) test-listen$(EXEEXT) \
 	test-rwlock1$(EXEEXT) test-lock$(EXEEXT) test-lstat$(EXEEXT) \
 	test-malloc-gnu$(EXEEXT) test-malloc-posix$(EXEEXT) \
-	test-malloca$(EXEEXT) test-math-h$(EXEEXT) \
-	test-mkfifo$(EXEEXT) test-nanosleep$(EXEEXT) \
-	test-netdb-h$(EXEEXT) test-netinet_in-h$(EXEEXT) \
-	test-once1$(EXEEXT) test-once2$(EXEEXT) test-open$(EXEEXT) \
-	test-pathmax$(EXEEXT) test-perror.sh test-perror2$(EXEEXT) \
-	test-pipe$(EXEEXT) test-pselect$(EXEEXT) \
-	test-pthread-cond$(EXEEXT) test-pthread$(EXEEXT) \
+	test-malloca$(EXEEXT) $(am__EXEEXT_12) test-math-h$(EXEEXT) \
+	test-mkfifo$(EXEEXT) test-nanosleep$(EXEEXT) $(am__EXEEXT_13) \
+	test-netdb-h$(EXEEXT) $(am__EXEEXT_14) \
+	test-netinet_in-h$(EXEEXT) test-once1$(EXEEXT) \
+	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
+	test-perror.sh test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
+	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
+	$(am__EXEEXT_15) test-pthread$(EXEEXT) \
 	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
 	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
 	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
@@ -155,43 +159,50 @@ TESTS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
-	test-sched-h$(EXEEXT) test-select$(EXEEXT) test-select-in.sh \
-	test-select-out.sh test-servent$(EXEEXT) \
-	test-setsockopt$(EXEEXT) test-signal-h$(EXEEXT) \
-	test-signbit$(EXEEXT) $(am__EXEEXT_1) test-sleep$(EXEEXT) \
-	test-sockets$(EXEEXT) test-stat$(EXEEXT) \
-	test-stat-time$(EXEEXT) test-stdbit-h$(EXEEXT) \
-	test-stdc_memreverse8u$(EXEEXT) test-stdckdint-h$(EXEEXT) \
-	test-stdcountof-h$(EXEEXT) test-stddef-h$(EXEEXT) \
-	test-stdint-h$(EXEEXT) test-stdio-h$(EXEEXT) \
+	$(am__EXEEXT_16) test-sched-h$(EXEEXT) test-select$(EXEEXT) \
+	test-select-in.sh test-select-out.sh test-servent$(EXEEXT) \
+	test-setsockopt$(EXEEXT) $(am__EXEEXT_17) \
+	test-signal-h$(EXEEXT) test-signbit$(EXEEXT) $(am__EXEEXT_37) \
+	test-sleep$(EXEEXT) test-sockets$(EXEEXT) test-stat$(EXEEXT) \
+	$(am__EXEEXT_18) test-stat-time$(EXEEXT) $(am__EXEEXT_19) \
+	test-stdbit-h$(EXEEXT) test-stdc_memreverse8u$(EXEEXT) \
+	$(am__EXEEXT_20) test-stdckdint-h$(EXEEXT) $(am__EXEEXT_21) \
+	test-stdcountof-h$(EXEEXT) $(am__EXEEXT_22) \
+	test-stddef-h$(EXEEXT) $(am__EXEEXT_23) test-stdint-h$(EXEEXT) \
+	$(am__EXEEXT_24) test-stdio-h$(EXEEXT) $(am__EXEEXT_25) \
 	test-stdlib-h$(EXEEXT) test-str_startswith$(EXEEXT) \
 	test-strerror$(EXEEXT) test-strerror_r$(EXEEXT) \
-	test-string-h$(EXEEXT) test-symlink$(EXEEXT) \
-	test-sys_ioctl-h$(EXEEXT) test-sys_select-h$(EXEEXT) \
-	test-sys_socket-h$(EXEEXT) test-sys_stat-h$(EXEEXT) \
-	test-sys_time-h$(EXEEXT) test-sys_types-h$(EXEEXT) \
+	$(am__EXEEXT_26) test-string-h$(EXEEXT) test-symlink$(EXEEXT) \
+	$(am__EXEEXT_27) test-sys_ioctl-h$(EXEEXT) $(am__EXEEXT_28) \
+	test-sys_select-h$(EXEEXT) $(am__EXEEXT_29) \
+	test-sys_socket-h$(EXEEXT) $(am__EXEEXT_30) \
+	test-sys_stat-h$(EXEEXT) $(am__EXEEXT_31) \
+	test-sys_time-h$(EXEEXT) $(am__EXEEXT_32) \
+	test-sys_types-h$(EXEEXT) $(am__EXEEXT_33) \
 	test-sys_uio-h$(EXEEXT) test-init.sh test-thread_self$(EXEEXT) \
-	test-thread_create$(EXEEXT) test-time-h$(EXEEXT) \
-	test-time$(EXEEXT) test-trunc1$(EXEEXT) test-trunc2$(EXEEXT) \
-	test-truncl$(EXEEXT) test-unistd-h$(EXEEXT) \
-	test-unsetenv$(EXEEXT) $(am__EXEEXT_2) test-verify$(EXEEXT) \
-	test-verify.sh test-wchar-h$(EXEEXT) \
-	test-windows-mutex-type$(EXEEXT) \
+	test-thread_create$(EXEEXT) $(am__EXEEXT_34) \
+	test-time-h$(EXEEXT) test-time$(EXEEXT) test-trunc1$(EXEEXT) \
+	test-trunc2$(EXEEXT) test-truncl$(EXEEXT) $(am__EXEEXT_35) \
+	test-unistd-h$(EXEEXT) test-unsetenv$(EXEEXT) $(am__EXEEXT_38) \
+	test-verify$(EXEEXT) test-verify.sh $(am__EXEEXT_36) \
+	test-wchar-h$(EXEEXT) test-windows-mutex-type$(EXEEXT) \
 	test-windows-recmutex-type$(EXEEXT) \
 	test-windows-timedmutex-type$(EXEEXT) \
 	test-windows-timedrecmutex-type$(EXEEXT) test-xalloc-die.sh
 XFAIL_TESTS =
 noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
-	test-alloca-opt$(EXEEXT) test-arpa_inet-h$(EXEEXT) \
-	test-assert$(EXEEXT) test-binary-io$(EXEEXT) \
-	test-bind$(EXEEXT) test-bool$(EXEEXT) test-byteswap$(EXEEXT) \
+	test-alloca-opt$(EXEEXT) $(am__EXEEXT_1) \
+	test-arpa_inet-h$(EXEEXT) $(am__EXEEXT_2) test-assert$(EXEEXT) \
+	test-binary-io$(EXEEXT) test-bind$(EXEEXT) $(am__EXEEXT_3) \
+	test-bool$(EXEEXT) $(am__EXEEXT_4) test-byteswap$(EXEEXT) \
 	test-c-ctype$(EXEEXT) test-calloc-gnu$(EXEEXT) \
 	test-calloc-posix$(EXEEXT) test-cloexec$(EXEEXT) \
-	test-close$(EXEEXT) test-connect$(EXEEXT) \
-	test-ctype-h$(EXEEXT) test-dup2$(EXEEXT) test-endian$(EXEEXT) \
-	test-environ$(EXEEXT) test-errno-h$(EXEEXT) \
-	test-error$(EXEEXT) test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) \
-	test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) test-float-h$(EXEEXT) \
+	test-close$(EXEEXT) test-connect$(EXEEXT) $(am__EXEEXT_5) \
+	test-ctype-h$(EXEEXT) test-dup2$(EXEEXT) $(am__EXEEXT_6) \
+	test-endian$(EXEEXT) test-environ$(EXEEXT) $(am__EXEEXT_7) \
+	test-errno-h$(EXEEXT) test-error$(EXEEXT) $(am__EXEEXT_8) \
+	test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) \
+	test-fgetc$(EXEEXT) $(am__EXEEXT_9) test-float-h$(EXEEXT) \
 	test-fopen-gnu$(EXEEXT) test-fopen$(EXEEXT) \
 	test-fputc$(EXEEXT) test-fread$(EXEEXT) test-free$(EXEEXT) \
 	test-frexp$(EXEEXT) test-frexpl$(EXEEXT) test-fseterr$(EXEEXT) \
@@ -201,129 +212,208 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-alignasof$(EXEEXT) \
 	test-gettext-h$(EXEEXT) test-gettimeofday$(EXEEXT) \
 	test-htonl$(EXEEXT) test-ignore-value$(EXEEXT) \
 	test-inet_pton$(EXEEXT) test-intprops$(EXEEXT) \
-	test-inttypes-h$(EXEEXT) test-ioctl$(EXEEXT) \
+	$(am__EXEEXT_10) test-inttypes-h$(EXEEXT) test-ioctl$(EXEEXT) \
 	test-isblank$(EXEEXT) test-isnand-nolibm$(EXEEXT) \
 	test-isnanf-nolibm$(EXEEXT) test-isnanl-nolibm$(EXEEXT) \
-	test-largefile$(EXEEXT) test-limits-h$(EXEEXT) \
-	test-listen$(EXEEXT) test-rwlock1$(EXEEXT) test-lock$(EXEEXT) \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
-	test-malloc-posix$(EXEEXT) test-malloca$(EXEEXT) \
-	test-math-h$(EXEEXT) test-mkfifo$(EXEEXT) \
-	test-nanosleep$(EXEEXT) test-netdb-h$(EXEEXT) \
+	test-largefile$(EXEEXT) $(am__EXEEXT_11) \
+	test-limits-h$(EXEEXT) test-listen$(EXEEXT) \
+	test-rwlock1$(EXEEXT) test-lock$(EXEEXT) test-lstat$(EXEEXT) \
+	test-malloc-gnu$(EXEEXT) test-malloc-posix$(EXEEXT) \
+	test-malloca$(EXEEXT) $(am__EXEEXT_12) test-math-h$(EXEEXT) \
+	test-mkfifo$(EXEEXT) test-nanosleep$(EXEEXT) $(am__EXEEXT_13) \
+	test-netdb-h$(EXEEXT) $(am__EXEEXT_14) \
 	test-netinet_in-h$(EXEEXT) test-once1$(EXEEXT) \
 	test-once2$(EXEEXT) test-open$(EXEEXT) test-pathmax$(EXEEXT) \
 	test-perror$(EXEEXT) test-perror2$(EXEEXT) test-pipe$(EXEEXT) \
 	test-pselect$(EXEEXT) test-pthread-cond$(EXEEXT) \
-	test-pthread$(EXEEXT) test-pthread-mutex$(EXEEXT) \
-	test-pthread-mutex-type$(EXEEXT) test-pthread-once1$(EXEEXT) \
-	test-pthread-once2$(EXEEXT) test-pthread-rwlock$(EXEEXT) \
-	test-pthread-thread$(EXEEXT) test-pthread_sigmask1$(EXEEXT) \
-	test-pthread_sigmask2$(EXEEXT) test-putenv$(EXEEXT) \
-	test-raise$(EXEEXT) test-random$(EXEEXT) \
+	$(am__EXEEXT_15) test-pthread$(EXEEXT) \
+	test-pthread-mutex$(EXEEXT) test-pthread-mutex-type$(EXEEXT) \
+	test-pthread-once1$(EXEEXT) test-pthread-once2$(EXEEXT) \
+	test-pthread-rwlock$(EXEEXT) test-pthread-thread$(EXEEXT) \
+	test-pthread_sigmask1$(EXEEXT) test-pthread_sigmask2$(EXEEXT) \
+	test-putenv$(EXEEXT) test-raise$(EXEEXT) test-random$(EXEEXT) \
 	test-random-mt$(EXEEXT) test-random_r$(EXEEXT) \
 	test-realloc-posix$(EXEEXT) test-reallocarray$(EXEEXT) \
-	test-sched-h$(EXEEXT) test-select$(EXEEXT) \
+	$(am__EXEEXT_16) test-sched-h$(EXEEXT) test-select$(EXEEXT) \
 	test-select-fd$(EXEEXT) test-select-stdin$(EXEEXT) \
 	test-servent$(EXEEXT) test-setsockopt$(EXEEXT) \
-	test-signal-h$(EXEEXT) test-signbit$(EXEEXT) \
+	$(am__EXEEXT_17) test-signal-h$(EXEEXT) test-signbit$(EXEEXT) \
 	test-sigprocmask$(EXEEXT) test-sleep$(EXEEXT) \
-	test-sockets$(EXEEXT) test-stat$(EXEEXT) \
-	test-stat-time$(EXEEXT) test-stdbit-h$(EXEEXT) \
-	test-stdc_memreverse8u$(EXEEXT) test-stdckdint-h$(EXEEXT) \
-	test-stdcountof-h$(EXEEXT) test-stddef-h$(EXEEXT) \
-	test-stdint-h$(EXEEXT) test-stdio-h$(EXEEXT) \
+	test-sockets$(EXEEXT) test-stat$(EXEEXT) $(am__EXEEXT_18) \
+	test-stat-time$(EXEEXT) $(am__EXEEXT_19) \
+	test-stdbit-h$(EXEEXT) test-stdc_memreverse8u$(EXEEXT) \
+	$(am__EXEEXT_20) test-stdckdint-h$(EXEEXT) $(am__EXEEXT_21) \
+	test-stdcountof-h$(EXEEXT) $(am__EXEEXT_22) \
+	test-stddef-h$(EXEEXT) $(am__EXEEXT_23) test-stdint-h$(EXEEXT) \
+	$(am__EXEEXT_24) test-stdio-h$(EXEEXT) $(am__EXEEXT_25) \
 	test-stdlib-h$(EXEEXT) test-str_startswith$(EXEEXT) \
 	test-strerror$(EXEEXT) test-strerror_r$(EXEEXT) \
-	test-string-h$(EXEEXT) test-symlink$(EXEEXT) \
-	test-sys_ioctl-h$(EXEEXT) test-sys_select-h$(EXEEXT) \
-	test-sys_socket-h$(EXEEXT) test-sys_stat-h$(EXEEXT) \
-	test-sys_time-h$(EXEEXT) test-sys_types-h$(EXEEXT) \
+	$(am__EXEEXT_26) test-string-h$(EXEEXT) test-symlink$(EXEEXT) \
+	$(am__EXEEXT_27) test-sys_ioctl-h$(EXEEXT) $(am__EXEEXT_28) \
+	test-sys_select-h$(EXEEXT) $(am__EXEEXT_29) \
+	test-sys_socket-h$(EXEEXT) $(am__EXEEXT_30) \
+	test-sys_stat-h$(EXEEXT) $(am__EXEEXT_31) \
+	test-sys_time-h$(EXEEXT) $(am__EXEEXT_32) \
+	test-sys_types-h$(EXEEXT) $(am__EXEEXT_33) \
 	test-sys_uio-h$(EXEEXT) test-thread_self$(EXEEXT) \
-	test-thread_create$(EXEEXT) test-time-h$(EXEEXT) \
-	test-time$(EXEEXT) test-trunc1$(EXEEXT) test-trunc2$(EXEEXT) \
-	test-truncl$(EXEEXT) test-unistd-h$(EXEEXT) \
-	test-unsetenv$(EXEEXT) test-usleep$(EXEEXT) \
-	test-verify$(EXEEXT) test-wchar-h$(EXEEXT) \
-	test-windows-mutex-type$(EXEEXT) \
+	test-thread_create$(EXEEXT) $(am__EXEEXT_34) \
+	test-time-h$(EXEEXT) test-time$(EXEEXT) test-trunc1$(EXEEXT) \
+	test-trunc2$(EXEEXT) test-truncl$(EXEEXT) $(am__EXEEXT_35) \
+	test-unistd-h$(EXEEXT) test-unsetenv$(EXEEXT) \
+	test-usleep$(EXEEXT) test-verify$(EXEEXT) $(am__EXEEXT_36) \
+	test-wchar-h$(EXEEXT) test-windows-mutex-type$(EXEEXT) \
 	test-windows-recmutex-type$(EXEEXT) \
 	test-windows-timedmutex-type$(EXEEXT) \
 	test-windows-timedrecmutex-type$(EXEEXT) \
 	test-xalloc-die$(EXEEXT)
 EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @GL_COND_OBJ_ACCEPT_TRUE@am__append_1 = accept.c
-@GL_COND_OBJ_BIND_TRUE@am__append_2 = bind.c
-@GL_GENERATE_BYTESWAP_H_TRUE@am__append_3 = byteswap.c
-@GL_COND_OBJ_CONNECT_TRUE@am__append_4 = connect.c
-@GL_GENERATE_ENDIAN_H_TRUE@am__append_5 = endian.c
-@GL_COND_OBJ_ERROR_TRUE@am__append_6 = error.c
-@GL_COND_OBJ_FDOPEN_TRUE@am__append_7 = fdopen.c
-@GL_COND_OBJ_FLOAT_TRUE@am__append_8 = float.c
-@GL_COND_OBJ_ITOLD_TRUE@am__append_9 = itold.c
-@GL_COND_OBJ_FREE_TRUE@am__append_10 = free.c
-@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_11 = ftruncate.c
-@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_12 = getcwd-lgpl.c
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_13 = getprogname.c
-@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_14 = gettimeofday.c
-@GL_COND_OBJ_INET_PTON_TRUE@am__append_15 = inet_pton.c
-@GL_COND_OBJ_IOCTL_TRUE@am__append_16 = ioctl.c
-@GL_COND_OBJ_ISBLANK_TRUE@am__append_17 = isblank.c
-@GL_COND_OBJ_LISTEN_TRUE@am__append_18 = listen.c
-@GL_COND_OBJ_MKFIFO_TRUE@am__append_19 = mkfifo.c
-@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_20 = nanosleep.c
-@GL_COND_OBJ_PERROR_TRUE@am__append_21 = perror.c
-@GL_COND_OBJ_PIPE_TRUE@am__append_22 = pipe.c
-@GL_COND_OBJ_PSELECT_TRUE@am__append_23 = pselect.c
-@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_24 = pthread-cond.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_25 = pthread-mutex.c
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_26 = pthread-once.c
-@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_27 = pthread-rwlock.c
-@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_28 = pthread-thread.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_29 = pthread_mutex_timedlock.c
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_30 = pthread_sigmask.c
-@GL_COND_OBJ_PUTENV_TRUE@am__append_31 = putenv.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_32 = raise.c
-@GL_COND_OBJ_RANDOM_TRUE@am__append_33 = random.c
-@GL_COND_OBJ_RANDOM_R_TRUE@am__append_34 = random_r.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_35 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_36 = reallocarray.c
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_37 = sched_yield.c
-@GL_COND_OBJ_SELECT_TRUE@am__append_38 = select.c
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_39 = setsockopt.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_40 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_41 = sigprocmask.c
+@ANSICXX_TRUE@am__append_2 = test-arpa_inet-h-c++
+@ANSICXX_TRUE@am__append_3 = test-arpa_inet-h-c++
+@ANSICXX_TRUE@am__append_4 = test-assert-h-c++
+@ANSICXX_TRUE@am__append_5 = test-assert-h-c++
+@GL_COND_OBJ_BIND_TRUE@am__append_6 = bind.c
+@ANSICXX_TRUE@am__append_7 = test-bool-c++
+@ANSICXX_TRUE@am__append_8 = test-bool-c++
+@GL_GENERATE_BYTESWAP_H_TRUE@am__append_9 = byteswap.c
+@ANSICXX_TRUE@am__append_10 = test-byteswap-c++
+@ANSICXX_TRUE@am__append_11 = test-byteswap-c++
+@GL_COND_OBJ_CONNECT_TRUE@am__append_12 = connect.c
+@ANSICXX_TRUE@am__append_13 = test-ctype-h-c++
+@ANSICXX_TRUE@am__append_14 = test-ctype-h-c++
+@GL_GENERATE_ENDIAN_H_TRUE@am__append_15 = endian.c
+@ANSICXX_TRUE@am__append_16 = test-endian-c++
+@ANSICXX_TRUE@am__append_17 = test-endian-c++
+@ANSICXX_TRUE@am__append_18 = test-errno-h-c++
+@ANSICXX_TRUE@am__append_19 = test-errno-h-c++
+@GL_COND_OBJ_ERROR_TRUE@am__append_20 = error.c
+@ANSICXX_TRUE@am__append_21 = test-fcntl-h-c++
+@ANSICXX_TRUE@am__append_22 = test-fcntl-h-c++
+@GL_COND_OBJ_FDOPEN_TRUE@am__append_23 = fdopen.c
+@GL_COND_OBJ_FLOAT_TRUE@am__append_24 = float.c
+@GL_COND_OBJ_ITOLD_TRUE@am__append_25 = itold.c
+@ANSICXX_TRUE@am__append_26 = test-float-h-c++
+@ANSICXX_TRUE@am__append_27 = test-float-h-c++
+@GL_COND_OBJ_FREE_TRUE@am__append_28 = free.c
+@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_29 = ftruncate.c
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_30 = getcwd-lgpl.c
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_31 = getprogname.c
+@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_32 = gettimeofday.c
+@GL_COND_OBJ_INET_PTON_TRUE@am__append_33 = inet_pton.c
+@ANSICXX_TRUE@am__append_34 = test-inttypes-h-c++
+@ANSICXX_TRUE@am__append_35 = test-inttypes-h-c++
+@GL_COND_OBJ_IOCTL_TRUE@am__append_36 = ioctl.c
+@GL_COND_OBJ_ISBLANK_TRUE@am__append_37 = isblank.c
+@ANSICXX_TRUE@am__append_38 = test-limits-h-c++
+@ANSICXX_TRUE@am__append_39 = test-limits-h-c++
+@GL_COND_OBJ_LISTEN_TRUE@am__append_40 = listen.c
+@ANSICXX_TRUE@am__append_41 = test-math-h-c++
+@ANSICXX_TRUE@am__append_42 = test-math-h-c++
+@GL_COND_OBJ_MKFIFO_TRUE@am__append_43 = mkfifo.c
+@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_44 = nanosleep.c
+@ANSICXX_TRUE@am__append_45 = test-netdb-h-c++
+@ANSICXX_TRUE@am__append_46 = test-netdb-h-c++
+@ANSICXX_TRUE@am__append_47 = test-netinet_in-h-c++
+@ANSICXX_TRUE@am__append_48 = test-netinet_in-h-c++
+@GL_COND_OBJ_PERROR_TRUE@am__append_49 = perror.c
+@GL_COND_OBJ_PIPE_TRUE@am__append_50 = pipe.c
+@GL_COND_OBJ_PSELECT_TRUE@am__append_51 = pselect.c
+@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_52 = pthread-cond.c
+@ANSICXX_TRUE@am__append_53 = test-pthread-c++
+@ANSICXX_TRUE@am__append_54 = test-pthread-c++
+@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_55 = pthread-mutex.c
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_56 = pthread-once.c
+@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_57 = pthread-rwlock.c
+@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_58 = pthread-thread.c
+@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_59 = pthread_mutex_timedlock.c
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_60 = pthread_sigmask.c
+@GL_COND_OBJ_PUTENV_TRUE@am__append_61 = putenv.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_62 = raise.c
+@GL_COND_OBJ_RANDOM_TRUE@am__append_63 = random.c
+@GL_COND_OBJ_RANDOM_R_TRUE@am__append_64 = random_r.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_65 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_66 = reallocarray.c
+@ANSICXX_TRUE@am__append_67 = test-sched-h-c++
+@ANSICXX_TRUE@am__append_68 = test-sched-h-c++
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_69 = sched_yield.c
+@GL_COND_OBJ_SELECT_TRUE@am__append_70 = select.c
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_71 = setsockopt.c
+@ANSICXX_TRUE@am__append_72 = test-signal-h-c++
+@ANSICXX_TRUE@am__append_73 = test-signal-h-c++
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_74 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_75 = sigprocmask.c
 
 # Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57213
-@OS_IS_NETBSD_FALSE@am__append_42 = test-sigprocmask
-@GL_COND_OBJ_SLEEP_TRUE@am__append_43 = sleep.c
-@GL_COND_OBJ_SOCKET_TRUE@am__append_44 = socket.c
-@GL_GENERATE_STDBIT_H_TRUE@am__append_45 = stdc_memreverse8u.c
-@GL_COND_OBJ_STPCPY_TRUE@am__append_46 = stpcpy.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_47 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_48 = strerror-override.c
-@GL_COND_OBJ_SYMLINK_TRUE@am__append_49 = symlink.c
-@GL_COND_OBJ_TIME_TRUE@am__append_50 = time.c
-@GL_COND_OBJ_TRUNC_TRUE@am__append_51 = trunc.c
-@GL_COND_OBJ_TRUNCL_TRUE@am__append_52 = truncl.c
-@GL_COND_OBJ_UNSETENV_TRUE@am__append_53 = unsetenv.c
-@GL_COND_OBJ_USLEEP_TRUE@am__append_54 = usleep.c
-@OS_IS_CYGWIN_FALSE@am__append_55 = test-usleep
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_56 = windows-cond.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_57 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_58 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_59 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_60 = windows-rwlock.c
-@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_61 = windows-spin.c
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_62 = windows-thread.c
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_63 = windows-timedmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_64 = windows-timedrecmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_65 = windows-timedrwlock.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_66 = windows-tls.c
+@OS_IS_NETBSD_FALSE@am__append_76 = test-sigprocmask
+@GL_COND_OBJ_SLEEP_TRUE@am__append_77 = sleep.c
+@GL_COND_OBJ_SOCKET_TRUE@am__append_78 = socket.c
+@ANSICXX_TRUE@am__append_79 = test-stat-time-c++
+@ANSICXX_TRUE@am__append_80 = test-stat-time-c++
+@ANSICXX_TRUE@am__append_81 = test-stdbit-h-c++
+@ANSICXX_TRUE@am__append_82 = test-stdbit-h-c++
+@GL_GENERATE_STDBIT_H_TRUE@am__append_83 = stdc_memreverse8u.c
+@ANSICXX_TRUE@am__append_84 = test-stdckdint-h-c++
+@ANSICXX_TRUE@am__append_85 = test-stdckdint-h-c++
+@ANSICXX_TRUE@am__append_86 = test-stdcountof-h-c++
+@ANSICXX_TRUE@am__append_87 = test-stdcountof-h-c++
+@ANSICXX_TRUE@am__append_88 = test-stddef-h-c++
+@ANSICXX_TRUE@am__append_89 = test-stddef-h-c++
+@ANSICXX_TRUE@am__append_90 = test-stdint-h-c++
+@ANSICXX_TRUE@am__append_91 = test-stdint-h-c++
+@ANSICXX_TRUE@am__append_92 = test-stdio-h-c++
+@ANSICXX_TRUE@am__append_93 = test-stdio-h-c++
+@ANSICXX_TRUE@am__append_94 = test-stdlib-h-c++
+@ANSICXX_TRUE@am__append_95 = test-stdlib-h-c++
+@GL_COND_OBJ_STPCPY_TRUE@am__append_96 = stpcpy.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_97 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_98 = strerror-override.c
+@ANSICXX_TRUE@am__append_99 = test-string-h-c++
+@ANSICXX_TRUE@am__append_100 = test-string-h-c++
+@GL_COND_OBJ_SYMLINK_TRUE@am__append_101 = symlink.c
+@ANSICXX_TRUE@am__append_102 = test-sys_ioctl-h-c++
+@ANSICXX_TRUE@am__append_103 = test-sys_ioctl-h-c++
+@ANSICXX_TRUE@am__append_104 = test-sys_select-h-c++
+@ANSICXX_TRUE@am__append_105 = test-sys_select-h-c++
+@ANSICXX_TRUE@am__append_106 = test-sys_socket-h-c++
+@ANSICXX_TRUE@am__append_107 = test-sys_socket-h-c++
+@ANSICXX_TRUE@am__append_108 = test-sys_stat-h-c++
+@ANSICXX_TRUE@am__append_109 = test-sys_stat-h-c++
+@ANSICXX_TRUE@am__append_110 = test-sys_time-h-c++
+@ANSICXX_TRUE@am__append_111 = test-sys_time-h-c++
+@ANSICXX_TRUE@am__append_112 = test-sys_types-h-c++
+@ANSICXX_TRUE@am__append_113 = test-sys_types-h-c++
+@ANSICXX_TRUE@am__append_114 = test-sys_uio-h-c++
+@ANSICXX_TRUE@am__append_115 = test-sys_uio-h-c++
+@GL_COND_OBJ_TIME_TRUE@am__append_116 = time.c
+@ANSICXX_TRUE@am__append_117 = test-time-h-c++
+@ANSICXX_TRUE@am__append_118 = test-time-h-c++
+@GL_COND_OBJ_TRUNC_TRUE@am__append_119 = trunc.c
+@GL_COND_OBJ_TRUNCL_TRUE@am__append_120 = truncl.c
+@ANSICXX_TRUE@am__append_121 = test-unistd-h-c++
+@ANSICXX_TRUE@am__append_122 = test-unistd-h-c++
+@GL_COND_OBJ_UNSETENV_TRUE@am__append_123 = unsetenv.c
+@GL_COND_OBJ_USLEEP_TRUE@am__append_124 = usleep.c
+@OS_IS_CYGWIN_FALSE@am__append_125 = test-usleep
+@ANSICXX_TRUE@am__append_126 = test-wchar-h-c++
+@ANSICXX_TRUE@am__append_127 = test-wchar-h-c++
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_128 = windows-cond.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_129 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_130 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_131 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_132 = windows-rwlock.c
+@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_133 = windows-spin.c
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_134 = windows-thread.c
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_135 = windows-timedmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_136 = windows-timedrecmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_137 = windows-timedrwlock.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_138 = windows-tls.c
 subdir = gltests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
-	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
+	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/ansi-c++.m4 \
+	$(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
 	$(top_srcdir)/glm4/byteswap.m4 $(top_srcdir)/glm4/c-bool.m4 \
@@ -431,6 +521,42 @@ mkinstalldirs = $(install_sh) -d
 CONFIG_HEADER = $(top_builddir)/config.h
 CONFIG_CLEAN_FILES =
 CONFIG_CLEAN_VPATH_FILES =
+@ANSICXX_TRUE@am__EXEEXT_1 = test-arpa_inet-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_2 = test-assert-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_3 = test-bool-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_4 = test-byteswap-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_5 = test-ctype-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_6 = test-endian-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_7 = test-errno-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_8 = test-fcntl-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_9 = test-float-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_10 = test-inttypes-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_11 = test-limits-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_12 = test-math-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_13 = test-netdb-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_14 = test-netinet_in-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_15 = test-pthread-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_16 = test-sched-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_17 = test-signal-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_18 = test-stat-time-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_19 = test-stdbit-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_20 = test-stdckdint-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_21 = test-stdcountof-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_22 = test-stddef-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_23 = test-stdint-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_24 = test-stdio-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_25 = test-stdlib-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_26 = test-string-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_27 = test-sys_ioctl-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_28 = test-sys_select-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_29 = test-sys_socket-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_30 = test-sys_stat-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_31 = test-sys_time-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_32 = test-sys_types-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_33 = test-sys_uio-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_34 = test-time-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_35 = test-unistd-h-c++$(EXEEXT)
+@ANSICXX_TRUE@am__EXEEXT_36 = test-wchar-h-c++$(EXEEXT)
 PROGRAMS = $(noinst_PROGRAMS)
 LIBRARIES = $(noinst_LIBRARIES)
 AM_V_AR = $(am__v_AR_@AM_V@)
@@ -452,16 +578,15 @@ am__libtests_a_SOURCES_DIST = accept.c arpa_inet.c basename-lgpl.c \
 	putenv.c raise.c random.c random_r.c realloc.c reallocarray.c \
 	same-inode.h same-inode.c sched_yield.c select.c setsockopt.c \
 	signbitf.c signbitd.c signbitl.c signed-nan.h signed-snan.h \
-	sigprocmask.c sleep.c snan.h socket.c sockets.h sockets.c \
-	stdc_memreverse8u.c stpcpy.c str_startswith.c strerror.c \
-	strerror-override.c symlink.c glthread/thread.h \
-	glthread/thread.c glthread/threadlib.c time.c trunc.c truncl.c \
-	unsetenv.c usleep.c windows-cond.c windows-mutex.c \
-	windows-once.c windows-recmutex.c windows-rwlock.c \
-	windows-spin.c windows-thread.c windows-timedmutex.c \
-	windows-timedrecmutex.c windows-timedrwlock.c windows-tls.c \
-	xmalloc.c xalloc-die.c xconcat-filename.c xgetcwd.c \
-	glthread/yield.h
+	sigprocmask.c sleep.c snan.h socket.c stdc_memreverse8u.c \
+	stpcpy.c str_startswith.c strerror.c strerror-override.c \
+	symlink.c glthread/thread.h glthread/thread.c \
+	glthread/threadlib.c time.c trunc.c truncl.c unsetenv.c \
+	usleep.c windows-cond.c windows-mutex.c windows-once.c \
+	windows-recmutex.c windows-rwlock.c windows-spin.c \
+	windows-thread.c windows-timedmutex.c windows-timedrecmutex.c \
+	windows-timedrwlock.c windows-tls.c xmalloc.c xalloc-die.c \
+	xconcat-filename.c xgetcwd.c glthread/yield.h
 @GL_COND_OBJ_ACCEPT_TRUE@am__objects_1 = accept.$(OBJEXT)
 @GL_COND_OBJ_BIND_TRUE@am__objects_2 = bind.$(OBJEXT)
 @GL_GENERATE_BYTESWAP_H_TRUE@am__objects_3 = byteswap.$(OBJEXT)
@@ -563,16 +688,16 @@ am_libtests_a_OBJECTS = $(am__objects_1) arpa_inet.$(OBJEXT) \
 	$(am__objects_34) $(am__objects_35) $(am__objects_36) \
 	same-inode.$(OBJEXT) $(am__objects_37) $(am__objects_38) \
 	$(am__objects_39) $(am__objects_40) $(am__objects_41) \
-	$(am__objects_42) $(am__objects_43) sockets.$(OBJEXT) \
-	$(am__objects_44) $(am__objects_45) str_startswith.$(OBJEXT) \
-	$(am__objects_46) $(am__objects_47) $(am__objects_48) \
-	glthread/thread.$(OBJEXT) glthread/threadlib.$(OBJEXT) \
-	$(am__objects_49) $(am__objects_50) $(am__objects_51) \
-	$(am__objects_52) $(am__objects_53) $(am__objects_54) \
-	$(am__objects_55) $(am__objects_56) $(am__objects_57) \
-	$(am__objects_58) $(am__objects_59) $(am__objects_60) \
-	$(am__objects_61) $(am__objects_62) $(am__objects_63) \
-	$(am__objects_64) xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT) \
+	$(am__objects_42) $(am__objects_43) $(am__objects_44) \
+	$(am__objects_45) str_startswith.$(OBJEXT) $(am__objects_46) \
+	$(am__objects_47) $(am__objects_48) glthread/thread.$(OBJEXT) \
+	glthread/threadlib.$(OBJEXT) $(am__objects_49) \
+	$(am__objects_50) $(am__objects_51) $(am__objects_52) \
+	$(am__objects_53) $(am__objects_54) $(am__objects_55) \
+	$(am__objects_56) $(am__objects_57) $(am__objects_58) \
+	$(am__objects_59) $(am__objects_60) $(am__objects_61) \
+	$(am__objects_62) $(am__objects_63) $(am__objects_64) \
+	xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT) \
 	xconcat-filename.$(OBJEXT) xgetcwd.$(OBJEXT)
 libtests_a_OBJECTS = $(am_libtests_a_OBJECTS)
 test_accept_SOURCES = test-accept.c
@@ -586,9 +711,20 @@ test_alloca_opt_LDADD = $(LDADD)
 test_arpa_inet_h_SOURCES = test-arpa_inet-h.c
 test_arpa_inet_h_OBJECTS = test-arpa_inet-h.$(OBJEXT)
 test_arpa_inet_h_LDADD = $(LDADD)
+am__test_arpa_inet_h_c___SOURCES_DIST = test-arpa_inet-h-c++.cc
+@ANSICXX_TRUE@am_test_arpa_inet_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-arpa_inet-h-c++.$(OBJEXT)
+test_arpa_inet_h_c___OBJECTS = $(am_test_arpa_inet_h_c___OBJECTS)
 test_assert_SOURCES = test-assert.c
 test_assert_OBJECTS = test-assert.$(OBJEXT)
 test_assert_LDADD = $(LDADD)
+am__test_assert_h_c___SOURCES_DIST = test-assert-h-c++.cc \
+	test-assert-h-c++2.cc
+@ANSICXX_TRUE@am_test_assert_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-assert-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-assert-h-c++2.$(OBJEXT)
+test_assert_h_c___OBJECTS = $(am_test_assert_h_c___OBJECTS)
+test_assert_h_c___LDADD = $(LDADD)
 test_binary_io_SOURCES = test-binary-io.c
 test_binary_io_OBJECTS = test-binary-io.$(OBJEXT)
 test_binary_io_LDADD = $(LDADD)
@@ -599,9 +735,19 @@ test_bind_LINK = $(CCLD) $(AM_CFLAGS) $(CFLAGS) $(test_bind_LDFLAGS) \
 test_bool_SOURCES = test-bool.c
 test_bool_OBJECTS = test-bool.$(OBJEXT)
 test_bool_LDADD = $(LDADD)
+am__test_bool_c___SOURCES_DIST = test-bool-c++.cc test-bool-c++2.cc
+@ANSICXX_TRUE@am_test_bool_c___OBJECTS = test-bool-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-bool-c++2.$(OBJEXT)
+test_bool_c___OBJECTS = $(am_test_bool_c___OBJECTS)
+test_bool_c___LDADD = $(LDADD)
 test_byteswap_SOURCES = test-byteswap.c
 test_byteswap_OBJECTS = test-byteswap.$(OBJEXT)
 test_byteswap_LDADD = $(LDADD)
+am__test_byteswap_c___SOURCES_DIST = test-byteswap-c++.cc
+@ANSICXX_TRUE@am_test_byteswap_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-byteswap-c++.$(OBJEXT)
+test_byteswap_c___OBJECTS = $(am_test_byteswap_c___OBJECTS)
+test_byteswap_c___LDADD = $(LDADD)
 test_c_ctype_SOURCES = test-c-ctype.c
 test_c_ctype_OBJECTS = test-c-ctype.$(OBJEXT)
 test_calloc_gnu_SOURCES = test-calloc-gnu.c
@@ -621,18 +767,36 @@ test_connect_OBJECTS = test-connect.$(OBJEXT)
 test_ctype_h_SOURCES = test-ctype-h.c
 test_ctype_h_OBJECTS = test-ctype-h.$(OBJEXT)
 test_ctype_h_LDADD = $(LDADD)
+am__test_ctype_h_c___SOURCES_DIST = test-ctype-h-c++.cc \
+	test-ctype-h-c++2.cc
+@ANSICXX_TRUE@am_test_ctype_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-ctype-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-ctype-h-c++2.$(OBJEXT)
+test_ctype_h_c___OBJECTS = $(am_test_ctype_h_c___OBJECTS)
+test_ctype_h_c___LDADD = $(LDADD)
 test_dup2_SOURCES = test-dup2.c
 test_dup2_OBJECTS = test-dup2.$(OBJEXT)
 test_dup2_LDADD = $(LDADD)
 test_endian_SOURCES = test-endian.c
 test_endian_OBJECTS = test-endian.$(OBJEXT)
 test_endian_LDADD = $(LDADD)
+am__test_endian_c___SOURCES_DIST = test-endian-c++.cc
+@ANSICXX_TRUE@am_test_endian_c___OBJECTS = test-endian-c++.$(OBJEXT)
+test_endian_c___OBJECTS = $(am_test_endian_c___OBJECTS)
+test_endian_c___LDADD = $(LDADD)
 test_environ_SOURCES = test-environ.c
 test_environ_OBJECTS = test-environ.$(OBJEXT)
 test_environ_LDADD = $(LDADD)
 test_errno_h_SOURCES = test-errno-h.c
 test_errno_h_OBJECTS = test-errno-h.$(OBJEXT)
 test_errno_h_LDADD = $(LDADD)
+am__test_errno_h_c___SOURCES_DIST = test-errno-h-c++.cc \
+	test-errno-h-c++2.cc
+@ANSICXX_TRUE@am_test_errno_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-errno-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-errno-h-c++2.$(OBJEXT)
+test_errno_h_c___OBJECTS = $(am_test_errno_h_c___OBJECTS)
+test_errno_h_c___LDADD = $(LDADD)
 test_error_SOURCES = test-error.c
 test_error_OBJECTS = test-error.$(OBJEXT)
 test_fcntl_SOURCES = test-fcntl.c
@@ -641,6 +805,10 @@ test_fcntl_LDADD = $(LDADD)
 test_fcntl_h_SOURCES = test-fcntl-h.c
 test_fcntl_h_OBJECTS = test-fcntl-h.$(OBJEXT)
 test_fcntl_h_LDADD = $(LDADD)
+am__test_fcntl_h_c___SOURCES_DIST = test-fcntl-h-c++.cc
+@ANSICXX_TRUE@am_test_fcntl_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-fcntl-h-c++.$(OBJEXT)
+test_fcntl_h_c___OBJECTS = $(am_test_fcntl_h_c___OBJECTS)
 test_fdopen_SOURCES = test-fdopen.c
 test_fdopen_OBJECTS = test-fdopen.$(OBJEXT)
 test_fdopen_LDADD = $(LDADD)
@@ -649,6 +817,13 @@ test_fgetc_OBJECTS = test-fgetc.$(OBJEXT)
 test_fgetc_LDADD = $(LDADD)
 test_float_h_SOURCES = test-float-h.c
 test_float_h_OBJECTS = test-float-h.$(OBJEXT)
+am__test_float_h_c___SOURCES_DIST = test-float-h-c++.cc \
+	test-float-h-c++2.cc
+@ANSICXX_TRUE@am_test_float_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-float-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-float-h-c++2.$(OBJEXT)
+test_float_h_c___OBJECTS = $(am_test_float_h_c___OBJECTS)
+test_float_h_c___LDADD = $(LDADD)
 test_fopen_SOURCES = test-fopen.c
 test_fopen_OBJECTS = test-fopen.$(OBJEXT)
 test_fopen_LDADD = $(LDADD)
@@ -705,6 +880,13 @@ test_intprops_LDADD = $(LDADD)
 test_inttypes_h_SOURCES = test-inttypes-h.c
 test_inttypes_h_OBJECTS = test-inttypes-h.$(OBJEXT)
 test_inttypes_h_LDADD = $(LDADD)
+am__test_inttypes_h_c___SOURCES_DIST = test-inttypes-h-c++.cc \
+	test-inttypes-h-c++2.cc
+@ANSICXX_TRUE@am_test_inttypes_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-inttypes-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-inttypes-h-c++2.$(OBJEXT)
+test_inttypes_h_c___OBJECTS = $(am_test_inttypes_h_c___OBJECTS)
+test_inttypes_h_c___LDADD = $(LDADD)
 test_ioctl_SOURCES = test-ioctl.c
 test_ioctl_OBJECTS = test-ioctl.$(OBJEXT)
 test_ioctl_LDADD = $(LDADD)
@@ -726,6 +908,13 @@ test_largefile_LDADD = $(LDADD)
 test_limits_h_SOURCES = test-limits-h.c
 test_limits_h_OBJECTS = test-limits-h.$(OBJEXT)
 test_limits_h_LDADD = $(LDADD)
+am__test_limits_h_c___SOURCES_DIST = test-limits-h-c++.cc \
+	test-limits-h-c++2.cc
+@ANSICXX_TRUE@am_test_limits_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-limits-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-limits-h-c++2.$(OBJEXT)
+test_limits_h_c___OBJECTS = $(am_test_limits_h_c___OBJECTS)
+test_limits_h_c___LDADD = $(LDADD)
 test_listen_SOURCES = test-listen.c
 test_listen_OBJECTS = test-listen.$(OBJEXT)
 test_lock_SOURCES = test-lock.c
@@ -745,6 +934,12 @@ test_malloca_LDADD = $(LDADD)
 test_math_h_SOURCES = test-math-h.c
 test_math_h_OBJECTS = test-math-h.$(OBJEXT)
 test_math_h_LDADD = $(LDADD)
+am__test_math_h_c___SOURCES_DIST = test-math-h-c++.cc \
+	test-math-h-c++2.cc
+@ANSICXX_TRUE@am_test_math_h_c___OBJECTS = test-math-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-math-h-c++2.$(OBJEXT)
+test_math_h_c___OBJECTS = $(am_test_math_h_c___OBJECTS)
+test_math_h_c___LDADD = $(LDADD)
 test_mkfifo_SOURCES = test-mkfifo.c
 test_mkfifo_OBJECTS = test-mkfifo.$(OBJEXT)
 test_mkfifo_LDADD = $(LDADD)
@@ -753,9 +948,18 @@ test_nanosleep_OBJECTS = test-nanosleep.$(OBJEXT)
 test_netdb_h_SOURCES = test-netdb-h.c
 test_netdb_h_OBJECTS = test-netdb-h.$(OBJEXT)
 test_netdb_h_LDADD = $(LDADD)
+am__test_netdb_h_c___SOURCES_DIST = test-netdb-h-c++.cc
+@ANSICXX_TRUE@am_test_netdb_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-netdb-h-c++.$(OBJEXT)
+test_netdb_h_c___OBJECTS = $(am_test_netdb_h_c___OBJECTS)
 test_netinet_in_h_SOURCES = test-netinet_in-h.c
 test_netinet_in_h_OBJECTS = test-netinet_in-h.$(OBJEXT)
 test_netinet_in_h_LDADD = $(LDADD)
+am__test_netinet_in_h_c___SOURCES_DIST = test-netinet_in-h-c++.cc
+@ANSICXX_TRUE@am_test_netinet_in_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-netinet_in-h-c++.$(OBJEXT)
+test_netinet_in_h_c___OBJECTS = $(am_test_netinet_in_h_c___OBJECTS)
+test_netinet_in_h_c___LDADD = $(LDADD)
 am_test_once1_OBJECTS = test-once.$(OBJEXT)
 test_once1_OBJECTS = $(am_test_once1_OBJECTS)
 am_test_once2_OBJECTS = test-once.$(OBJEXT)
@@ -780,6 +984,10 @@ test_pselect_OBJECTS = test-pselect.$(OBJEXT)
 test_pthread_SOURCES = test-pthread.c
 test_pthread_OBJECTS = test-pthread.$(OBJEXT)
 test_pthread_LDADD = $(LDADD)
+am__test_pthread_c___SOURCES_DIST = test-pthread-c++.cc
+@ANSICXX_TRUE@am_test_pthread_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-pthread-c++.$(OBJEXT)
+test_pthread_c___OBJECTS = $(am_test_pthread_c___OBJECTS)
 test_pthread_cond_SOURCES = test-pthread-cond.c
 test_pthread_cond_OBJECTS = test-pthread-cond.$(OBJEXT)
 test_pthread_mutex_SOURCES = test-pthread-mutex.c
@@ -823,6 +1031,10 @@ test_rwlock1_OBJECTS = test-rwlock1.$(OBJEXT)
 test_sched_h_SOURCES = test-sched-h.c
 test_sched_h_OBJECTS = test-sched-h.$(OBJEXT)
 test_sched_h_LDADD = $(LDADD)
+am__test_sched_h_c___SOURCES_DIST = test-sched-h-c++.cc
+@ANSICXX_TRUE@am_test_sched_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sched-h-c++.$(OBJEXT)
+test_sched_h_c___OBJECTS = $(am_test_sched_h_c___OBJECTS)
 test_select_SOURCES = test-select.c
 test_select_OBJECTS = test-select.$(OBJEXT)
 test_select_fd_SOURCES = test-select-fd.c
@@ -836,6 +1048,12 @@ test_setsockopt_OBJECTS = test-setsockopt.$(OBJEXT)
 test_signal_h_SOURCES = test-signal-h.c
 test_signal_h_OBJECTS = test-signal-h.$(OBJEXT)
 test_signal_h_LDADD = $(LDADD)
+am__test_signal_h_c___SOURCES_DIST = test-signal-h-c++.cc \
+	test-signal-h-c++2.cc
+@ANSICXX_TRUE@am_test_signal_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-signal-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-signal-h-c++2.$(OBJEXT)
+test_signal_h_c___OBJECTS = $(am_test_signal_h_c___OBJECTS)
 test_signbit_SOURCES = test-signbit.c
 test_signbit_OBJECTS = test-signbit.$(OBJEXT)
 test_signbit_LDADD = $(LDADD)
@@ -851,30 +1069,76 @@ test_stat_SOURCES = test-stat.c
 test_stat_OBJECTS = test-stat.$(OBJEXT)
 test_stat_time_SOURCES = test-stat-time.c
 test_stat_time_OBJECTS = test-stat-time.$(OBJEXT)
+am__test_stat_time_c___SOURCES_DIST = test-stat-time-c++.cc
+@ANSICXX_TRUE@am_test_stat_time_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stat-time-c++.$(OBJEXT)
+test_stat_time_c___OBJECTS = $(am_test_stat_time_c___OBJECTS)
 test_stdbit_h_SOURCES = test-stdbit-h.c
 test_stdbit_h_OBJECTS = test-stdbit-h.$(OBJEXT)
 test_stdbit_h_LDADD = $(LDADD)
+am__test_stdbit_h_c___SOURCES_DIST = test-stdbit-h-c++.cc
+@ANSICXX_TRUE@am_test_stdbit_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdbit-h-c++.$(OBJEXT)
+test_stdbit_h_c___OBJECTS = $(am_test_stdbit_h_c___OBJECTS)
+test_stdbit_h_c___LDADD = $(LDADD)
 test_stdc_memreverse8u_SOURCES = test-stdc_memreverse8u.c
 test_stdc_memreverse8u_OBJECTS = test-stdc_memreverse8u.$(OBJEXT)
 test_stdc_memreverse8u_LDADD = $(LDADD)
 test_stdckdint_h_SOURCES = test-stdckdint-h.c
 test_stdckdint_h_OBJECTS = test-stdckdint-h.$(OBJEXT)
 test_stdckdint_h_LDADD = $(LDADD)
+am__test_stdckdint_h_c___SOURCES_DIST = test-stdckdint-h-c++.cc
+@ANSICXX_TRUE@am_test_stdckdint_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdckdint-h-c++.$(OBJEXT)
+test_stdckdint_h_c___OBJECTS = $(am_test_stdckdint_h_c___OBJECTS)
+test_stdckdint_h_c___LDADD = $(LDADD)
 test_stdcountof_h_SOURCES = test-stdcountof-h.c
 test_stdcountof_h_OBJECTS = test-stdcountof-h.$(OBJEXT)
 test_stdcountof_h_LDADD = $(LDADD)
+am__test_stdcountof_h_c___SOURCES_DIST = test-stdcountof-h-c++.cc
+@ANSICXX_TRUE@am_test_stdcountof_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdcountof-h-c++.$(OBJEXT)
+test_stdcountof_h_c___OBJECTS = $(am_test_stdcountof_h_c___OBJECTS)
+test_stdcountof_h_c___LDADD = $(LDADD)
 test_stddef_h_SOURCES = test-stddef-h.c
 test_stddef_h_OBJECTS = test-stddef-h.$(OBJEXT)
 test_stddef_h_LDADD = $(LDADD)
+am__test_stddef_h_c___SOURCES_DIST = test-stddef-h-c++.cc \
+	test-stddef-h-c++2.cc test-stddef-h-c++3.cc
+@ANSICXX_TRUE@am_test_stddef_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stddef-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stddef-h-c++2.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stddef-h-c++3.$(OBJEXT)
+test_stddef_h_c___OBJECTS = $(am_test_stddef_h_c___OBJECTS)
+test_stddef_h_c___LDADD = $(LDADD)
 test_stdint_h_SOURCES = test-stdint-h.c
 test_stdint_h_OBJECTS = test-stdint-h.$(OBJEXT)
 test_stdint_h_LDADD = $(LDADD)
+am__test_stdint_h_c___SOURCES_DIST = test-stdint-h-c++.cc \
+	test-stdint-h-c++2.cc
+@ANSICXX_TRUE@am_test_stdint_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdint-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stdint-h-c++2.$(OBJEXT)
+test_stdint_h_c___OBJECTS = $(am_test_stdint_h_c___OBJECTS)
+test_stdint_h_c___LDADD = $(LDADD)
 test_stdio_h_SOURCES = test-stdio-h.c
 test_stdio_h_OBJECTS = test-stdio-h.$(OBJEXT)
 test_stdio_h_LDADD = $(LDADD)
+am__test_stdio_h_c___SOURCES_DIST = test-stdio-h-c++.cc \
+	test-stdio-h-c++2.cc
+@ANSICXX_TRUE@am_test_stdio_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdio-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stdio-h-c++2.$(OBJEXT)
+test_stdio_h_c___OBJECTS = $(am_test_stdio_h_c___OBJECTS)
 test_stdlib_h_SOURCES = test-stdlib-h.c
 test_stdlib_h_OBJECTS = test-stdlib-h.$(OBJEXT)
 test_stdlib_h_LDADD = $(LDADD)
+am__test_stdlib_h_c___SOURCES_DIST = test-stdlib-h-c++.cc \
+	test-stdlib-h-c++2.cc
+@ANSICXX_TRUE@am_test_stdlib_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-stdlib-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-stdlib-h-c++2.$(OBJEXT)
+test_stdlib_h_c___OBJECTS = $(am_test_stdlib_h_c___OBJECTS)
 test_str_startswith_SOURCES = test-str_startswith.c
 test_str_startswith_OBJECTS = test-str_startswith.$(OBJEXT)
 test_str_startswith_LDADD = $(LDADD)
@@ -887,30 +1151,66 @@ test_strerror_r_LDADD = $(LDADD)
 test_string_h_SOURCES = test-string-h.c
 test_string_h_OBJECTS = test-string-h.$(OBJEXT)
 test_string_h_LDADD = $(LDADD)
+am__test_string_h_c___SOURCES_DIST = test-string-h-c++.cc \
+	test-string-h-c++2.cc
+@ANSICXX_TRUE@am_test_string_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-string-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-string-h-c++2.$(OBJEXT)
+test_string_h_c___OBJECTS = $(am_test_string_h_c___OBJECTS)
 test_symlink_SOURCES = test-symlink.c
 test_symlink_OBJECTS = test-symlink.$(OBJEXT)
 test_symlink_LDADD = $(LDADD)
 test_sys_ioctl_h_SOURCES = test-sys_ioctl-h.c
 test_sys_ioctl_h_OBJECTS = test-sys_ioctl-h.$(OBJEXT)
 test_sys_ioctl_h_LDADD = $(LDADD)
+am__test_sys_ioctl_h_c___SOURCES_DIST = test-sys_ioctl-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_ioctl_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_ioctl-h-c++.$(OBJEXT)
+test_sys_ioctl_h_c___OBJECTS = $(am_test_sys_ioctl_h_c___OBJECTS)
 test_sys_select_h_SOURCES = test-sys_select-h.c
 test_sys_select_h_OBJECTS = test-sys_select-h.$(OBJEXT)
 test_sys_select_h_LDADD = $(LDADD)
+am__test_sys_select_h_c___SOURCES_DIST = test-sys_select-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_select_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_select-h-c++.$(OBJEXT)
+test_sys_select_h_c___OBJECTS = $(am_test_sys_select_h_c___OBJECTS)
 test_sys_socket_h_SOURCES = test-sys_socket-h.c
 test_sys_socket_h_OBJECTS = test-sys_socket-h.$(OBJEXT)
 test_sys_socket_h_LDADD = $(LDADD)
+am__test_sys_socket_h_c___SOURCES_DIST = test-sys_socket-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_socket_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_socket-h-c++.$(OBJEXT)
+test_sys_socket_h_c___OBJECTS = $(am_test_sys_socket_h_c___OBJECTS)
 test_sys_stat_h_SOURCES = test-sys_stat-h.c
 test_sys_stat_h_OBJECTS = test-sys_stat-h.$(OBJEXT)
 test_sys_stat_h_LDADD = $(LDADD)
+am__test_sys_stat_h_c___SOURCES_DIST = test-sys_stat-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_stat_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_stat-h-c++.$(OBJEXT)
+test_sys_stat_h_c___OBJECTS = $(am_test_sys_stat_h_c___OBJECTS)
 test_sys_time_h_SOURCES = test-sys_time-h.c
 test_sys_time_h_OBJECTS = test-sys_time-h.$(OBJEXT)
 test_sys_time_h_LDADD = $(LDADD)
+am__test_sys_time_h_c___SOURCES_DIST = test-sys_time-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_time_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_time-h-c++.$(OBJEXT)
+test_sys_time_h_c___OBJECTS = $(am_test_sys_time_h_c___OBJECTS)
 test_sys_types_h_SOURCES = test-sys_types-h.c
 test_sys_types_h_OBJECTS = test-sys_types-h.$(OBJEXT)
 test_sys_types_h_LDADD = $(LDADD)
+am__test_sys_types_h_c___SOURCES_DIST = test-sys_types-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_types_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_types-h-c++.$(OBJEXT)
+test_sys_types_h_c___OBJECTS = $(am_test_sys_types_h_c___OBJECTS)
+test_sys_types_h_c___LDADD = $(LDADD)
 test_sys_uio_h_SOURCES = test-sys_uio-h.c
 test_sys_uio_h_OBJECTS = test-sys_uio-h.$(OBJEXT)
 test_sys_uio_h_LDADD = $(LDADD)
+am__test_sys_uio_h_c___SOURCES_DIST = test-sys_uio-h-c++.cc
+@ANSICXX_TRUE@am_test_sys_uio_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-sys_uio-h-c++.$(OBJEXT)
+test_sys_uio_h_c___OBJECTS = $(am_test_sys_uio_h_c___OBJECTS)
+test_sys_uio_h_c___LDADD = $(LDADD)
 test_thread_create_SOURCES = test-thread_create.c
 test_thread_create_OBJECTS = test-thread_create.$(OBJEXT)
 test_thread_self_SOURCES = test-thread_self.c
@@ -921,6 +1221,11 @@ test_time_LDADD = $(LDADD)
 test_time_h_SOURCES = test-time-h.c
 test_time_h_OBJECTS = test-time-h.$(OBJEXT)
 test_time_h_LDADD = $(LDADD)
+am__test_time_h_c___SOURCES_DIST = test-time-h-c++.cc \
+	test-time-h-c++2.cc
+@ANSICXX_TRUE@am_test_time_h_c___OBJECTS = test-time-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-time-h-c++2.$(OBJEXT)
+test_time_h_c___OBJECTS = $(am_test_time_h_c___OBJECTS)
 test_trunc1_SOURCES = test-trunc1.c
 test_trunc1_OBJECTS = test-trunc1.$(OBJEXT)
 test_trunc2_SOURCES = test-trunc2.c
@@ -930,6 +1235,10 @@ test_truncl_OBJECTS = test-truncl.$(OBJEXT)
 test_unistd_h_SOURCES = test-unistd-h.c
 test_unistd_h_OBJECTS = test-unistd-h.$(OBJEXT)
 test_unistd_h_LDADD = $(LDADD)
+am__test_unistd_h_c___SOURCES_DIST = test-unistd-h-c++.cc
+@ANSICXX_TRUE@am_test_unistd_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-unistd-h-c++.$(OBJEXT)
+test_unistd_h_c___OBJECTS = $(am_test_unistd_h_c___OBJECTS)
 test_unsetenv_SOURCES = test-unsetenv.c
 test_unsetenv_OBJECTS = test-unsetenv.$(OBJEXT)
 test_unsetenv_LDADD = $(LDADD)
@@ -945,6 +1254,13 @@ test_verify_try_LDADD = $(LDADD)
 test_wchar_h_SOURCES = test-wchar-h.c
 test_wchar_h_OBJECTS = test-wchar-h.$(OBJEXT)
 test_wchar_h_LDADD = $(LDADD)
+am__test_wchar_h_c___SOURCES_DIST = test-wchar-h-c++.cc \
+	test-wchar-h-c++2.cc test-wchar-h-c++3.cc
+@ANSICXX_TRUE@am_test_wchar_h_c___OBJECTS =  \
+@ANSICXX_TRUE@	test-wchar-h-c++.$(OBJEXT) \
+@ANSICXX_TRUE@	test-wchar-h-c++2.$(OBJEXT) \
+@ANSICXX_TRUE@	test-wchar-h-c++3.$(OBJEXT)
+test_wchar_h_c___OBJECTS = $(am_test_wchar_h_c___OBJECTS)
 test_windows_mutex_type_SOURCES = test-windows-mutex-type.c
 test_windows_mutex_type_OBJECTS = test-windows-mutex-type.$(OBJEXT)
 test_windows_mutex_type_LDADD = $(LDADD)
@@ -973,15 +1289,24 @@ test_alloca_opt_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_arpa_inet_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_arpa_inet_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_assert_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_assert_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_binary_io_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_bind_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_bool_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_bool_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_byteswap_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_byteswap_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_c_ctype_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_calloc_gnu_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
@@ -995,24 +1320,34 @@ test_connect_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
 test_ctype_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_ctype_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_dup2_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_endian_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_endian_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_environ_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_errno_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_errno_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_error_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_fcntl_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_fcntl_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_fcntl_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_fdopen_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_fgetc_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_float_h_DEPENDENCIES = $(am__DEPENDENCIES_2)
+test_float_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_fopen_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_fopen_gnu_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -1050,6 +1385,8 @@ test_intprops_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_inttypes_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_inttypes_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_ioctl_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_isblank_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -1064,6 +1401,8 @@ test_largefile_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_limits_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_limits_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_listen_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_lock_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_lstat_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -1076,13 +1415,19 @@ test_malloca_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_math_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_math_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
+	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_mkfifo_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_nanosleep_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
 test_netdb_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_netdb_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_netinet_in_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_netinet_in_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_once1_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_once2_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1100,6 +1445,8 @@ test_pselect_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
 test_pthread_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_pthread_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_pthread_cond_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_pthread_mutex_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_pthread_mutex_type_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1127,6 +1474,8 @@ test_reallocarray_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 test_rwlock1_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_sched_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sched_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_select_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_select_fd_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_select_stdin_DEPENDENCIES = $(am__DEPENDENCIES_2)
@@ -1135,6 +1484,9 @@ test_servent_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 test_setsockopt_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_signal_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_signal_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_signbit_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_sigprocmask_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
@@ -1145,22 +1497,38 @@ test_sockets_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_stat_DEPENDENCIES = $(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_stat_time_DEPENDENCIES = $(am__DEPENDENCIES_2) \
 	$(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_stat_time_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_stdbit_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_stdbit_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stdc_memreverse8u_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stdckdint_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_stdckdint_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stdcountof_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_stdcountof_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stddef_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_stddef_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stdint_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_stdint_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_stdio_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_stdio_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_stdlib_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_stdlib_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_str_startswith_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_strerror_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -1169,33 +1537,57 @@ test_strerror_r_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_string_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_string_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_symlink_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_sys_ioctl_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sys_ioctl_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_sys_select_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sys_select_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_sys_socket_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sys_socket_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_sys_stat_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sys_stat_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1)
 test_sys_time_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_sys_time_h_c___DEPENDENCIES =  \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_2) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_sys_types_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_sys_types_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_sys_uio_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+test_sys_uio_h_c___DEPENDENCIES = libtests.a ../gllib/libgnu.a \
+	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_thread_create_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_thread_self_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_time_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_time_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_time_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_trunc1_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_trunc2_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_truncl_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_unistd_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_unistd_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1)
 test_unsetenv_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_usleep_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -1206,6 +1598,9 @@ test_verify_try_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_wchar_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
+@ANSICXX_TRUE@test_wchar_h_c___DEPENDENCIES = $(am__DEPENDENCIES_2) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1) $(am__DEPENDENCIES_1) \
+@ANSICXX_TRUE@	$(am__DEPENDENCIES_1)
 test_windows_mutex_type_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
 	libtests.a ../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_windows_recmutex_type_DEPENDENCIES = libtests.a ../gllib/libgnu.a \
@@ -1264,49 +1659,66 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/setsockopt.Po ./$(DEPDIR)/signbitd.Po \
 	./$(DEPDIR)/signbitf.Po ./$(DEPDIR)/signbitl.Po \
 	./$(DEPDIR)/sigprocmask.Po ./$(DEPDIR)/sleep.Po \
-	./$(DEPDIR)/socket.Po ./$(DEPDIR)/sockets.Po \
-	./$(DEPDIR)/stdc_memreverse8u.Po ./$(DEPDIR)/stpcpy.Po \
-	./$(DEPDIR)/str_startswith.Po ./$(DEPDIR)/strerror-override.Po \
-	./$(DEPDIR)/strerror.Po ./$(DEPDIR)/strerror_r.Po \
-	./$(DEPDIR)/symlink.Po ./$(DEPDIR)/test-accept.Po \
-	./$(DEPDIR)/test-alignasof.Po ./$(DEPDIR)/test-alloca-opt.Po \
-	./$(DEPDIR)/test-arpa_inet-h.Po ./$(DEPDIR)/test-assert.Po \
+	./$(DEPDIR)/socket.Po ./$(DEPDIR)/stdc_memreverse8u.Po \
+	./$(DEPDIR)/stpcpy.Po ./$(DEPDIR)/str_startswith.Po \
+	./$(DEPDIR)/strerror-override.Po ./$(DEPDIR)/strerror.Po \
+	./$(DEPDIR)/strerror_r.Po ./$(DEPDIR)/symlink.Po \
+	./$(DEPDIR)/test-accept.Po ./$(DEPDIR)/test-alignasof.Po \
+	./$(DEPDIR)/test-alloca-opt.Po \
+	./$(DEPDIR)/test-arpa_inet-h-c++.Po \
+	./$(DEPDIR)/test-arpa_inet-h.Po \
+	./$(DEPDIR)/test-assert-h-c++.Po \
+	./$(DEPDIR)/test-assert-h-c++2.Po ./$(DEPDIR)/test-assert.Po \
 	./$(DEPDIR)/test-binary-io.Po ./$(DEPDIR)/test-bind.Po \
-	./$(DEPDIR)/test-bool.Po ./$(DEPDIR)/test-byteswap.Po \
-	./$(DEPDIR)/test-c-ctype.Po ./$(DEPDIR)/test-calloc-gnu.Po \
+	./$(DEPDIR)/test-bool-c++.Po ./$(DEPDIR)/test-bool-c++2.Po \
+	./$(DEPDIR)/test-bool.Po ./$(DEPDIR)/test-byteswap-c++.Po \
+	./$(DEPDIR)/test-byteswap.Po ./$(DEPDIR)/test-c-ctype.Po \
+	./$(DEPDIR)/test-calloc-gnu.Po \
 	./$(DEPDIR)/test-calloc-posix.Po ./$(DEPDIR)/test-cloexec.Po \
 	./$(DEPDIR)/test-close.Po ./$(DEPDIR)/test-connect.Po \
-	./$(DEPDIR)/test-ctype-h.Po ./$(DEPDIR)/test-dup2.Po \
+	./$(DEPDIR)/test-ctype-h-c++.Po \
+	./$(DEPDIR)/test-ctype-h-c++2.Po ./$(DEPDIR)/test-ctype-h.Po \
+	./$(DEPDIR)/test-dup2.Po ./$(DEPDIR)/test-endian-c++.Po \
 	./$(DEPDIR)/test-endian.Po ./$(DEPDIR)/test-environ.Po \
-	./$(DEPDIR)/test-errno-h.Po ./$(DEPDIR)/test-error.Po \
+	./$(DEPDIR)/test-errno-h-c++.Po \
+	./$(DEPDIR)/test-errno-h-c++2.Po ./$(DEPDIR)/test-errno-h.Po \
+	./$(DEPDIR)/test-error.Po ./$(DEPDIR)/test-fcntl-h-c++.Po \
 	./$(DEPDIR)/test-fcntl-h.Po ./$(DEPDIR)/test-fcntl.Po \
 	./$(DEPDIR)/test-fdopen.Po ./$(DEPDIR)/test-fgetc.Po \
-	./$(DEPDIR)/test-float-h.Po ./$(DEPDIR)/test-fopen-gnu.Po \
-	./$(DEPDIR)/test-fopen.Po ./$(DEPDIR)/test-fputc.Po \
-	./$(DEPDIR)/test-fread.Po ./$(DEPDIR)/test-free.Po \
-	./$(DEPDIR)/test-frexp.Po ./$(DEPDIR)/test-frexpl.Po \
-	./$(DEPDIR)/test-fseterr.Po ./$(DEPDIR)/test-fstat.Po \
-	./$(DEPDIR)/test-ftruncate.Po ./$(DEPDIR)/test-fwrite.Po \
-	./$(DEPDIR)/test-getcwd-lgpl.Po \
+	./$(DEPDIR)/test-float-h-c++.Po \
+	./$(DEPDIR)/test-float-h-c++2.Po ./$(DEPDIR)/test-float-h.Po \
+	./$(DEPDIR)/test-fopen-gnu.Po ./$(DEPDIR)/test-fopen.Po \
+	./$(DEPDIR)/test-fputc.Po ./$(DEPDIR)/test-fread.Po \
+	./$(DEPDIR)/test-free.Po ./$(DEPDIR)/test-frexp.Po \
+	./$(DEPDIR)/test-frexpl.Po ./$(DEPDIR)/test-fseterr.Po \
+	./$(DEPDIR)/test-fstat.Po ./$(DEPDIR)/test-ftruncate.Po \
+	./$(DEPDIR)/test-fwrite.Po ./$(DEPDIR)/test-getcwd-lgpl.Po \
 	./$(DEPDIR)/test-getdtablesize.Po \
 	./$(DEPDIR)/test-getprogname.Po ./$(DEPDIR)/test-gettext-h.Po \
 	./$(DEPDIR)/test-gettimeofday.Po ./$(DEPDIR)/test-htonl.Po \
 	./$(DEPDIR)/test-ignore-value.Po ./$(DEPDIR)/test-inet_pton.Po \
-	./$(DEPDIR)/test-intprops.Po ./$(DEPDIR)/test-inttypes-h.Po \
-	./$(DEPDIR)/test-ioctl.Po ./$(DEPDIR)/test-isblank.Po \
-	./$(DEPDIR)/test-isnand-nolibm.Po \
+	./$(DEPDIR)/test-intprops.Po \
+	./$(DEPDIR)/test-inttypes-h-c++.Po \
+	./$(DEPDIR)/test-inttypes-h-c++2.Po \
+	./$(DEPDIR)/test-inttypes-h.Po ./$(DEPDIR)/test-ioctl.Po \
+	./$(DEPDIR)/test-isblank.Po ./$(DEPDIR)/test-isnand-nolibm.Po \
 	./$(DEPDIR)/test-isnanf-nolibm.Po \
 	./$(DEPDIR)/test-isnanl-nolibm.Po \
-	./$(DEPDIR)/test-largefile.Po ./$(DEPDIR)/test-limits-h.Po \
+	./$(DEPDIR)/test-largefile.Po ./$(DEPDIR)/test-limits-h-c++.Po \
+	./$(DEPDIR)/test-limits-h-c++2.Po ./$(DEPDIR)/test-limits-h.Po \
 	./$(DEPDIR)/test-listen.Po ./$(DEPDIR)/test-lock.Po \
 	./$(DEPDIR)/test-lstat.Po ./$(DEPDIR)/test-malloc-gnu.Po \
 	./$(DEPDIR)/test-malloc-posix.Po ./$(DEPDIR)/test-malloca.Po \
+	./$(DEPDIR)/test-math-h-c++.Po ./$(DEPDIR)/test-math-h-c++2.Po \
 	./$(DEPDIR)/test-math-h.Po ./$(DEPDIR)/test-mkfifo.Po \
-	./$(DEPDIR)/test-nanosleep.Po ./$(DEPDIR)/test-netdb-h.Po \
+	./$(DEPDIR)/test-nanosleep.Po ./$(DEPDIR)/test-netdb-h-c++.Po \
+	./$(DEPDIR)/test-netdb-h.Po \
+	./$(DEPDIR)/test-netinet_in-h-c++.Po \
 	./$(DEPDIR)/test-netinet_in-h.Po ./$(DEPDIR)/test-once.Po \
 	./$(DEPDIR)/test-open.Po ./$(DEPDIR)/test-pathmax.Po \
 	./$(DEPDIR)/test-perror.Po ./$(DEPDIR)/test-perror2.Po \
 	./$(DEPDIR)/test-pipe.Po ./$(DEPDIR)/test-pselect.Po \
+	./$(DEPDIR)/test-pthread-c++.Po \
 	./$(DEPDIR)/test-pthread-cond.Po \
 	./$(DEPDIR)/test-pthread-mutex-type.Po \
 	./$(DEPDIR)/test-pthread-mutex.Po \
@@ -1320,33 +1732,61 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-random-mt.Po ./$(DEPDIR)/test-random.Po \
 	./$(DEPDIR)/test-random_r.Po ./$(DEPDIR)/test-realloc-posix.Po \
 	./$(DEPDIR)/test-reallocarray.Po ./$(DEPDIR)/test-rwlock1.Po \
-	./$(DEPDIR)/test-sched-h.Po ./$(DEPDIR)/test-select-fd.Po \
-	./$(DEPDIR)/test-select-stdin.Po ./$(DEPDIR)/test-select.Po \
-	./$(DEPDIR)/test-servent.Po ./$(DEPDIR)/test-setsockopt.Po \
-	./$(DEPDIR)/test-signal-h.Po ./$(DEPDIR)/test-signbit.Po \
-	./$(DEPDIR)/test-sigprocmask.Po ./$(DEPDIR)/test-sleep.Po \
-	./$(DEPDIR)/test-sockets.Po ./$(DEPDIR)/test-stat-time.Po \
-	./$(DEPDIR)/test-stat.Po ./$(DEPDIR)/test-stdbit-h.Po \
+	./$(DEPDIR)/test-sched-h-c++.Po ./$(DEPDIR)/test-sched-h.Po \
+	./$(DEPDIR)/test-select-fd.Po ./$(DEPDIR)/test-select-stdin.Po \
+	./$(DEPDIR)/test-select.Po ./$(DEPDIR)/test-servent.Po \
+	./$(DEPDIR)/test-setsockopt.Po \
+	./$(DEPDIR)/test-signal-h-c++.Po \
+	./$(DEPDIR)/test-signal-h-c++2.Po ./$(DEPDIR)/test-signal-h.Po \
+	./$(DEPDIR)/test-signbit.Po ./$(DEPDIR)/test-sigprocmask.Po \
+	./$(DEPDIR)/test-sleep.Po ./$(DEPDIR)/test-sockets.Po \
+	./$(DEPDIR)/test-stat-time-c++.Po \
+	./$(DEPDIR)/test-stat-time.Po ./$(DEPDIR)/test-stat.Po \
+	./$(DEPDIR)/test-stdbit-h-c++.Po ./$(DEPDIR)/test-stdbit-h.Po \
 	./$(DEPDIR)/test-stdc_memreverse8u.Po \
+	./$(DEPDIR)/test-stdckdint-h-c++.Po \
 	./$(DEPDIR)/test-stdckdint-h.Po \
-	./$(DEPDIR)/test-stdcountof-h.Po ./$(DEPDIR)/test-stddef-h.Po \
-	./$(DEPDIR)/test-stdint-h.Po ./$(DEPDIR)/test-stdio-h.Po \
-	./$(DEPDIR)/test-stdlib-h.Po \
+	./$(DEPDIR)/test-stdcountof-h-c++.Po \
+	./$(DEPDIR)/test-stdcountof-h.Po \
+	./$(DEPDIR)/test-stddef-h-c++.Po \
+	./$(DEPDIR)/test-stddef-h-c++2.Po \
+	./$(DEPDIR)/test-stddef-h-c++3.Po ./$(DEPDIR)/test-stddef-h.Po \
+	./$(DEPDIR)/test-stdint-h-c++.Po \
+	./$(DEPDIR)/test-stdint-h-c++2.Po ./$(DEPDIR)/test-stdint-h.Po \
+	./$(DEPDIR)/test-stdio-h-c++.Po \
+	./$(DEPDIR)/test-stdio-h-c++2.Po ./$(DEPDIR)/test-stdio-h.Po \
+	./$(DEPDIR)/test-stdlib-h-c++.Po \
+	./$(DEPDIR)/test-stdlib-h-c++2.Po ./$(DEPDIR)/test-stdlib-h.Po \
 	./$(DEPDIR)/test-str_startswith.Po \
 	./$(DEPDIR)/test-strerror.Po ./$(DEPDIR)/test-strerror_r.Po \
-	./$(DEPDIR)/test-string-h.Po ./$(DEPDIR)/test-symlink.Po \
+	./$(DEPDIR)/test-string-h-c++.Po \
+	./$(DEPDIR)/test-string-h-c++2.Po ./$(DEPDIR)/test-string-h.Po \
+	./$(DEPDIR)/test-symlink.Po \
+	./$(DEPDIR)/test-sys_ioctl-h-c++.Po \
 	./$(DEPDIR)/test-sys_ioctl-h.Po \
+	./$(DEPDIR)/test-sys_select-h-c++.Po \
 	./$(DEPDIR)/test-sys_select-h.Po \
+	./$(DEPDIR)/test-sys_socket-h-c++.Po \
 	./$(DEPDIR)/test-sys_socket-h.Po \
-	./$(DEPDIR)/test-sys_stat-h.Po ./$(DEPDIR)/test-sys_time-h.Po \
-	./$(DEPDIR)/test-sys_types-h.Po ./$(DEPDIR)/test-sys_uio-h.Po \
+	./$(DEPDIR)/test-sys_stat-h-c++.Po \
+	./$(DEPDIR)/test-sys_stat-h.Po \
+	./$(DEPDIR)/test-sys_time-h-c++.Po \
+	./$(DEPDIR)/test-sys_time-h.Po \
+	./$(DEPDIR)/test-sys_types-h-c++.Po \
+	./$(DEPDIR)/test-sys_types-h.Po \
+	./$(DEPDIR)/test-sys_uio-h-c++.Po \
+	./$(DEPDIR)/test-sys_uio-h.Po \
 	./$(DEPDIR)/test-thread_create.Po \
-	./$(DEPDIR)/test-thread_self.Po ./$(DEPDIR)/test-time-h.Po \
+	./$(DEPDIR)/test-thread_self.Po ./$(DEPDIR)/test-time-h-c++.Po \
+	./$(DEPDIR)/test-time-h-c++2.Po ./$(DEPDIR)/test-time-h.Po \
 	./$(DEPDIR)/test-time.Po ./$(DEPDIR)/test-trunc1.Po \
 	./$(DEPDIR)/test-trunc2.Po ./$(DEPDIR)/test-truncl.Po \
-	./$(DEPDIR)/test-unistd-h.Po ./$(DEPDIR)/test-unsetenv.Po \
-	./$(DEPDIR)/test-usleep.Po ./$(DEPDIR)/test-verify-try.Po \
-	./$(DEPDIR)/test-verify.Po ./$(DEPDIR)/test-wchar-h.Po \
+	./$(DEPDIR)/test-unistd-h-c++.Po ./$(DEPDIR)/test-unistd-h.Po \
+	./$(DEPDIR)/test-unsetenv.Po ./$(DEPDIR)/test-usleep.Po \
+	./$(DEPDIR)/test-verify-try.Po ./$(DEPDIR)/test-verify.Po \
+	./$(DEPDIR)/test-wchar-h-c++.Po \
+	./$(DEPDIR)/test-wchar-h-c++2.Po \
+	./$(DEPDIR)/test-wchar-h-c++3.Po ./$(DEPDIR)/test-wchar-h.Po \
 	./$(DEPDIR)/test-windows-mutex-type.Po \
 	./$(DEPDIR)/test-windows-recmutex-type.Po \
 	./$(DEPDIR)/test-windows-timedmutex-type.Po \
@@ -1379,98 +1819,158 @@ AM_V_CCLD = $(am__v_CCLD_@AM_V@)
 am__v_CCLD_ = $(am__v_CCLD_@AM_DEFAULT_V@)
 am__v_CCLD_0 = @echo "  CCLD    " $@;
 am__v_CCLD_1 = 
+CXXCOMPILE = $(CXX) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) \
+	$(AM_CPPFLAGS) $(CPPFLAGS) $(AM_CXXFLAGS) $(CXXFLAGS)
+AM_V_CXX = $(am__v_CXX_@AM_V@)
+am__v_CXX_ = $(am__v_CXX_@AM_DEFAULT_V@)
+am__v_CXX_0 = @echo "  CXX     " $@;
+am__v_CXX_1 = 
+CXXLD = $(CXX)
+CXXLINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) $(AM_LDFLAGS) $(LDFLAGS) \
+	-o $@
+AM_V_CXXLD = $(am__v_CXXLD_@AM_V@)
+am__v_CXXLD_ = $(am__v_CXXLD_@AM_DEFAULT_V@)
+am__v_CXXLD_0 = @echo "  CXXLD   " $@;
+am__v_CXXLD_1 = 
 SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	test-accept.c test-alignasof.c test-alloca-opt.c \
-	test-arpa_inet-h.c test-assert.c test-binary-io.c test-bind.c \
-	test-bool.c test-byteswap.c test-c-ctype.c test-calloc-gnu.c \
-	test-calloc-posix.c test-cloexec.c test-close.c test-connect.c \
-	test-ctype-h.c test-dup2.c test-endian.c test-environ.c \
-	test-errno-h.c test-error.c test-fcntl.c test-fcntl-h.c \
-	test-fdopen.c test-fgetc.c test-float-h.c test-fopen.c \
+	test-arpa_inet-h.c $(test_arpa_inet_h_c___SOURCES) \
+	test-assert.c $(test_assert_h_c___SOURCES) test-binary-io.c \
+	test-bind.c test-bool.c $(test_bool_c___SOURCES) \
+	test-byteswap.c $(test_byteswap_c___SOURCES) test-c-ctype.c \
+	test-calloc-gnu.c test-calloc-posix.c test-cloexec.c \
+	test-close.c test-connect.c test-ctype-h.c \
+	$(test_ctype_h_c___SOURCES) test-dup2.c test-endian.c \
+	$(test_endian_c___SOURCES) test-environ.c test-errno-h.c \
+	$(test_errno_h_c___SOURCES) test-error.c test-fcntl.c \
+	test-fcntl-h.c $(test_fcntl_h_c___SOURCES) test-fdopen.c \
+	test-fgetc.c test-float-h.c $(test_float_h_c___SOURCES) \
+	test-fopen.c test-fopen-gnu.c test-fputc.c test-fread.c \
+	test-free.c $(test_frexp_SOURCES) $(test_frexpl_SOURCES) \
+	test-fseterr.c test-fstat.c test-ftruncate.c test-fwrite.c \
+	test-getcwd-lgpl.c test-getdtablesize.c test-getprogname.c \
+	test-gettext-h.c test-gettimeofday.c test-htonl.c \
+	test-ignore-value.c test-inet_pton.c test-intprops.c \
+	test-inttypes-h.c $(test_inttypes_h_c___SOURCES) test-ioctl.c \
+	test-isblank.c test-isnand-nolibm.c test-isnanf-nolibm.c \
+	test-isnanl-nolibm.c test-largefile.c test-limits-h.c \
+	$(test_limits_h_c___SOURCES) test-listen.c test-lock.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-malloca.c test-math-h.c $(test_math_h_c___SOURCES) \
+	test-mkfifo.c test-nanosleep.c test-netdb-h.c \
+	$(test_netdb_h_c___SOURCES) test-netinet_in-h.c \
+	$(test_netinet_in_h_c___SOURCES) $(test_once1_SOURCES) \
+	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
+	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
+	$(test_pthread_c___SOURCES) test-pthread-cond.c \
+	test-pthread-mutex.c test-pthread-mutex-type.c \
+	test-pthread-once1.c test-pthread-once2.c \
+	test-pthread-rwlock.c test-pthread-thread.c \
+	test-pthread_sigmask1.c test-pthread_sigmask2.c test-putenv.c \
+	test-raise.c test-random.c test-random-mt.c test-random_r.c \
+	test-realloc-posix.c test-reallocarray.c test-rwlock1.c \
+	test-sched-h.c $(test_sched_h_c___SOURCES) test-select.c \
+	test-select-fd.c test-select-stdin.c test-servent.c \
+	test-setsockopt.c test-signal-h.c $(test_signal_h_c___SOURCES) \
+	test-signbit.c test-sigprocmask.c test-sleep.c test-sockets.c \
+	test-stat.c test-stat-time.c $(test_stat_time_c___SOURCES) \
+	test-stdbit-h.c $(test_stdbit_h_c___SOURCES) \
+	test-stdc_memreverse8u.c test-stdckdint-h.c \
+	$(test_stdckdint_h_c___SOURCES) test-stdcountof-h.c \
+	$(test_stdcountof_h_c___SOURCES) test-stddef-h.c \
+	$(test_stddef_h_c___SOURCES) test-stdint-h.c \
+	$(test_stdint_h_c___SOURCES) test-stdio-h.c \
+	$(test_stdio_h_c___SOURCES) test-stdlib-h.c \
+	$(test_stdlib_h_c___SOURCES) test-str_startswith.c \
+	test-strerror.c test-strerror_r.c test-string-h.c \
+	$(test_string_h_c___SOURCES) test-symlink.c test-sys_ioctl-h.c \
+	$(test_sys_ioctl_h_c___SOURCES) test-sys_select-h.c \
+	$(test_sys_select_h_c___SOURCES) test-sys_socket-h.c \
+	$(test_sys_socket_h_c___SOURCES) test-sys_stat-h.c \
+	$(test_sys_stat_h_c___SOURCES) test-sys_time-h.c \
+	$(test_sys_time_h_c___SOURCES) test-sys_types-h.c \
+	$(test_sys_types_h_c___SOURCES) test-sys_uio-h.c \
+	$(test_sys_uio_h_c___SOURCES) test-thread_create.c \
+	test-thread_self.c test-time.c test-time-h.c \
+	$(test_time_h_c___SOURCES) test-trunc1.c test-trunc2.c \
+	test-truncl.c test-unistd-h.c $(test_unistd_h_c___SOURCES) \
+	test-unsetenv.c test-usleep.c test-verify.c test-verify-try.c \
+	test-wchar-h.c $(test_wchar_h_c___SOURCES) \
+	test-windows-mutex-type.c test-windows-recmutex-type.c \
+	test-windows-timedmutex-type.c \
+	test-windows-timedrecmutex-type.c test-xalloc-die.c
+DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
+	$(EXTRA_libtests_a_SOURCES) test-accept.c test-alignasof.c \
+	test-alloca-opt.c test-arpa_inet-h.c \
+	$(am__test_arpa_inet_h_c___SOURCES_DIST) test-assert.c \
+	$(am__test_assert_h_c___SOURCES_DIST) test-binary-io.c \
+	test-bind.c test-bool.c $(am__test_bool_c___SOURCES_DIST) \
+	test-byteswap.c $(am__test_byteswap_c___SOURCES_DIST) \
+	test-c-ctype.c test-calloc-gnu.c test-calloc-posix.c \
+	test-cloexec.c test-close.c test-connect.c test-ctype-h.c \
+	$(am__test_ctype_h_c___SOURCES_DIST) test-dup2.c test-endian.c \
+	$(am__test_endian_c___SOURCES_DIST) test-environ.c \
+	test-errno-h.c $(am__test_errno_h_c___SOURCES_DIST) \
+	test-error.c test-fcntl.c test-fcntl-h.c \
+	$(am__test_fcntl_h_c___SOURCES_DIST) test-fdopen.c \
+	test-fgetc.c test-float-h.c \
+	$(am__test_float_h_c___SOURCES_DIST) test-fopen.c \
 	test-fopen-gnu.c test-fputc.c test-fread.c test-free.c \
 	$(test_frexp_SOURCES) $(test_frexpl_SOURCES) test-fseterr.c \
 	test-fstat.c test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
 	test-getdtablesize.c test-getprogname.c test-gettext-h.c \
 	test-gettimeofday.c test-htonl.c test-ignore-value.c \
 	test-inet_pton.c test-intprops.c test-inttypes-h.c \
-	test-ioctl.c test-isblank.c test-isnand-nolibm.c \
-	test-isnanf-nolibm.c test-isnanl-nolibm.c test-largefile.c \
-	test-limits-h.c test-listen.c test-lock.c test-lstat.c \
-	test-malloc-gnu.c test-malloc-posix.c test-malloca.c \
-	test-math-h.c test-mkfifo.c test-nanosleep.c test-netdb-h.c \
-	test-netinet_in-h.c $(test_once1_SOURCES) \
-	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
-	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
-	test-pthread-cond.c test-pthread-mutex.c \
-	test-pthread-mutex-type.c test-pthread-once1.c \
-	test-pthread-once2.c test-pthread-rwlock.c \
-	test-pthread-thread.c test-pthread_sigmask1.c \
-	test-pthread_sigmask2.c test-putenv.c test-raise.c \
-	test-random.c test-random-mt.c test-random_r.c \
+	$(am__test_inttypes_h_c___SOURCES_DIST) test-ioctl.c \
+	test-isblank.c test-isnand-nolibm.c test-isnanf-nolibm.c \
+	test-isnanl-nolibm.c test-largefile.c test-limits-h.c \
+	$(am__test_limits_h_c___SOURCES_DIST) test-listen.c \
+	test-lock.c test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-malloca.c test-math-h.c \
+	$(am__test_math_h_c___SOURCES_DIST) test-mkfifo.c \
+	test-nanosleep.c test-netdb-h.c \
+	$(am__test_netdb_h_c___SOURCES_DIST) test-netinet_in-h.c \
+	$(am__test_netinet_in_h_c___SOURCES_DIST) \
+	$(test_once1_SOURCES) $(test_once2_SOURCES) test-open.c \
+	test-pathmax.c test-perror.c test-perror2.c test-pipe.c \
+	test-pselect.c test-pthread.c \
+	$(am__test_pthread_c___SOURCES_DIST) test-pthread-cond.c \
+	test-pthread-mutex.c test-pthread-mutex-type.c \
+	test-pthread-once1.c test-pthread-once2.c \
+	test-pthread-rwlock.c test-pthread-thread.c \
+	test-pthread_sigmask1.c test-pthread_sigmask2.c test-putenv.c \
+	test-raise.c test-random.c test-random-mt.c test-random_r.c \
 	test-realloc-posix.c test-reallocarray.c test-rwlock1.c \
-	test-sched-h.c test-select.c test-select-fd.c \
-	test-select-stdin.c test-servent.c test-setsockopt.c \
-	test-signal-h.c test-signbit.c test-sigprocmask.c test-sleep.c \
-	test-sockets.c test-stat.c test-stat-time.c test-stdbit-h.c \
+	test-sched-h.c $(am__test_sched_h_c___SOURCES_DIST) \
+	test-select.c test-select-fd.c test-select-stdin.c \
+	test-servent.c test-setsockopt.c test-signal-h.c \
+	$(am__test_signal_h_c___SOURCES_DIST) test-signbit.c \
+	test-sigprocmask.c test-sleep.c test-sockets.c test-stat.c \
+	test-stat-time.c $(am__test_stat_time_c___SOURCES_DIST) \
+	test-stdbit-h.c $(am__test_stdbit_h_c___SOURCES_DIST) \
 	test-stdc_memreverse8u.c test-stdckdint-h.c \
-	test-stdcountof-h.c test-stddef-h.c test-stdint-h.c \
-	test-stdio-h.c test-stdlib-h.c test-str_startswith.c \
+	$(am__test_stdckdint_h_c___SOURCES_DIST) test-stdcountof-h.c \
+	$(am__test_stdcountof_h_c___SOURCES_DIST) test-stddef-h.c \
+	$(am__test_stddef_h_c___SOURCES_DIST) test-stdint-h.c \
+	$(am__test_stdint_h_c___SOURCES_DIST) test-stdio-h.c \
+	$(am__test_stdio_h_c___SOURCES_DIST) test-stdlib-h.c \
+	$(am__test_stdlib_h_c___SOURCES_DIST) test-str_startswith.c \
 	test-strerror.c test-strerror_r.c test-string-h.c \
-	test-symlink.c test-sys_ioctl-h.c test-sys_select-h.c \
-	test-sys_socket-h.c test-sys_stat-h.c test-sys_time-h.c \
-	test-sys_types-h.c test-sys_uio-h.c test-thread_create.c \
-	test-thread_self.c test-time.c test-time-h.c test-trunc1.c \
-	test-trunc2.c test-truncl.c test-unistd-h.c test-unsetenv.c \
+	$(am__test_string_h_c___SOURCES_DIST) test-symlink.c \
+	test-sys_ioctl-h.c $(am__test_sys_ioctl_h_c___SOURCES_DIST) \
+	test-sys_select-h.c $(am__test_sys_select_h_c___SOURCES_DIST) \
+	test-sys_socket-h.c $(am__test_sys_socket_h_c___SOURCES_DIST) \
+	test-sys_stat-h.c $(am__test_sys_stat_h_c___SOURCES_DIST) \
+	test-sys_time-h.c $(am__test_sys_time_h_c___SOURCES_DIST) \
+	test-sys_types-h.c $(am__test_sys_types_h_c___SOURCES_DIST) \
+	test-sys_uio-h.c $(am__test_sys_uio_h_c___SOURCES_DIST) \
+	test-thread_create.c test-thread_self.c test-time.c \
+	test-time-h.c $(am__test_time_h_c___SOURCES_DIST) \
+	test-trunc1.c test-trunc2.c test-truncl.c test-unistd-h.c \
+	$(am__test_unistd_h_c___SOURCES_DIST) test-unsetenv.c \
 	test-usleep.c test-verify.c test-verify-try.c test-wchar-h.c \
-	test-windows-mutex-type.c test-windows-recmutex-type.c \
-	test-windows-timedmutex-type.c \
-	test-windows-timedrecmutex-type.c test-xalloc-die.c
-DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
-	$(EXTRA_libtests_a_SOURCES) test-accept.c test-alignasof.c \
-	test-alloca-opt.c test-arpa_inet-h.c test-assert.c \
-	test-binary-io.c test-bind.c test-bool.c test-byteswap.c \
-	test-c-ctype.c test-calloc-gnu.c test-calloc-posix.c \
-	test-cloexec.c test-close.c test-connect.c test-ctype-h.c \
-	test-dup2.c test-endian.c test-environ.c test-errno-h.c \
-	test-error.c test-fcntl.c test-fcntl-h.c test-fdopen.c \
-	test-fgetc.c test-float-h.c test-fopen.c test-fopen-gnu.c \
-	test-fputc.c test-fread.c test-free.c $(test_frexp_SOURCES) \
-	$(test_frexpl_SOURCES) test-fseterr.c test-fstat.c \
-	test-ftruncate.c test-fwrite.c test-getcwd-lgpl.c \
-	test-getdtablesize.c test-getprogname.c test-gettext-h.c \
-	test-gettimeofday.c test-htonl.c test-ignore-value.c \
-	test-inet_pton.c test-intprops.c test-inttypes-h.c \
-	test-ioctl.c test-isblank.c test-isnand-nolibm.c \
-	test-isnanf-nolibm.c test-isnanl-nolibm.c test-largefile.c \
-	test-limits-h.c test-listen.c test-lock.c test-lstat.c \
-	test-malloc-gnu.c test-malloc-posix.c test-malloca.c \
-	test-math-h.c test-mkfifo.c test-nanosleep.c test-netdb-h.c \
-	test-netinet_in-h.c $(test_once1_SOURCES) \
-	$(test_once2_SOURCES) test-open.c test-pathmax.c test-perror.c \
-	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
-	test-pthread-cond.c test-pthread-mutex.c \
-	test-pthread-mutex-type.c test-pthread-once1.c \
-	test-pthread-once2.c test-pthread-rwlock.c \
-	test-pthread-thread.c test-pthread_sigmask1.c \
-	test-pthread_sigmask2.c test-putenv.c test-raise.c \
-	test-random.c test-random-mt.c test-random_r.c \
-	test-realloc-posix.c test-reallocarray.c test-rwlock1.c \
-	test-sched-h.c test-select.c test-select-fd.c \
-	test-select-stdin.c test-servent.c test-setsockopt.c \
-	test-signal-h.c test-signbit.c test-sigprocmask.c test-sleep.c \
-	test-sockets.c test-stat.c test-stat-time.c test-stdbit-h.c \
-	test-stdc_memreverse8u.c test-stdckdint-h.c \
-	test-stdcountof-h.c test-stddef-h.c test-stdint-h.c \
-	test-stdio-h.c test-stdlib-h.c test-str_startswith.c \
-	test-strerror.c test-strerror_r.c test-string-h.c \
-	test-symlink.c test-sys_ioctl-h.c test-sys_select-h.c \
-	test-sys_socket-h.c test-sys_stat-h.c test-sys_time-h.c \
-	test-sys_types-h.c test-sys_uio-h.c test-thread_create.c \
-	test-thread_self.c test-time.c test-time-h.c test-trunc1.c \
-	test-trunc2.c test-truncl.c test-unistd-h.c test-unsetenv.c \
-	test-usleep.c test-verify.c test-verify-try.c test-wchar-h.c \
-	test-windows-mutex-type.c test-windows-recmutex-type.c \
-	test-windows-timedmutex-type.c \
+	$(am__test_wchar_h_c___SOURCES_DIST) test-windows-mutex-type.c \
+	test-windows-recmutex-type.c test-windows-timedmutex-type.c \
 	test-windows-timedrecmutex-type.c test-xalloc-die.c
 RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \
 	ctags-recursive dvi-recursive html-recursive info-recursive \
@@ -1703,8 +2203,8 @@ am__set_TESTS_bases = \
   bases=`echo $$bases`
 AM_TESTSUITE_SUMMARY_HEADER = ' for $(PACKAGE_STRING)'
 RECHECK_LOGS = $(TEST_LOGS)
-@OS_IS_NETBSD_FALSE@am__EXEEXT_1 = test-sigprocmask$(EXEEXT)
-@OS_IS_CYGWIN_FALSE@am__EXEEXT_2 = test-usleep$(EXEEXT)
+@OS_IS_NETBSD_FALSE@am__EXEEXT_37 = test-sigprocmask$(EXEEXT)
+@OS_IS_CYGWIN_FALSE@am__EXEEXT_38 = test-usleep$(EXEEXT)
 TEST_SUITE_LOG = test-suite.log
 TEST_EXTENSIONS = @EXEEXT@ .test
 LOG_DRIVER = $(SHELL) $(top_srcdir)/build-aux/test-driver
@@ -1785,6 +2285,10 @@ CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CSCOPE = @CSCOPE@
 CTAGS = @CTAGS@
+CXX = @CXX@
+CXXDEPMODE = @CXXDEPMODE@
+CXXFLAGS = @GL_CXXFLAG_ALLOW_WARNINGS@ @CXXFLAGS@
+CXX_CHOICE = @CXX_CHOICE@
 CXX_HAVE_STDCOUNTOF_H = @CXX_HAVE_STDCOUNTOF_H@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@ -DEXEEXT=\"@EXEEXT@\"
@@ -3370,6 +3874,7 @@ abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
 ac_ct_CC = @ac_ct_CC@
+ac_ct_CXX = @ac_ct_CXX@
 am__include = @am__include@
 am__leading_dot = @am__leading_dot@
 am__quote = @am__quote@
@@ -3447,56 +3952,67 @@ noinst_LIBRARIES = libtests.a
 pkgdata_DATA = 
 EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-alignasof.c macros.h alloca.c test-alloca-opt.c \
-	arpa_inet.in.h test-arpa_inet-h.c test-assert.c attribute.h \
-	basename-lgpl.h test-binary-io.sh test-binary-io.c macros.h \
-	w32sock.h test-bind.c signature.h macros.h test-bool.c \
-	byteswap.in.h test-byteswap.c macros.h test-c-ctype.c macros.h \
-	calloc.c test-calloc-gnu.c macros.h calloc.c \
-	test-calloc-posix.c macros.h test-cloexec.c macros.h \
+	arpa_inet.in.h test-arpa_inet-h-c++.cc signature.h \
+	test-arpa_inet-h.c test-assert-h-c++.cc test-assert-h-c++2.cc \
+	test-assert.c attribute.h basename-lgpl.h test-binary-io.sh \
+	test-binary-io.c macros.h w32sock.h test-bind.c signature.h \
+	macros.h test-bool-c++.cc test-bool-c++2.cc test-bool.c \
+	byteswap.in.h test-byteswap-c++.cc test-byteswap.c macros.h \
+	test-c-ctype.c macros.h calloc.c test-calloc-gnu.c macros.h \
+	calloc.c test-calloc-posix.c macros.h test-cloexec.c macros.h \
 	test-close.c signature.h macros.h concat-filename.h w32sock.h \
-	test-connect.c signature.h macros.h ctype.in.h test-ctype-h.c \
-	test-dup2.c signature.h macros.h endian.in.h test-endian.c \
-	macros.h test-environ.c test-errno-h.c error.in.h \
-	test-error.sh test-error.c macros.h exitfail.h test-fcntl-h.c \
-	test-fcntl.c signature.h macros.h test-fdopen.c signature.h \
-	macros.h test-fgetc.c signature.h macros.h float.in.h \
-	test-float-h.c macros.h test-fopen-gnu.c macros.h test-fopen.h \
-	test-fopen.c signature.h macros.h fpucw.h test-fputc.c \
-	signature.h macros.h test-fread.c signature.h macros.h \
-	test-free.c macros.h frexp.c test-frexp.c test-frexp.h \
-	minus-zero.h infinity.h signature.h macros.h randomd.c frexp.c \
-	frexpl.c test-frexpl.c test-frexp.h minus-zero.h infinity.h \
-	signature.h macros.h randoml.c test-fseterr.c test-fstat.c \
-	signature.h macros.h test-ftruncate.c test-ftruncate.sh \
-	signature.h macros.h test-fwrite.c signature.h macros.h \
-	test-getcwd-lgpl.c signature.h macros.h test-getdtablesize.c \
-	signature.h macros.h getprogname.h test-getprogname.c \
-	test-gettext-h.c test-gettimeofday.c signature.h macros.h \
-	test-htonl.c macros.h ialloc.h ignore-value.h \
-	test-ignore-value.c test-inet_pton.c signature.h macros.h \
-	intprops-internal.h intprops.h test-intprops.c macros.h \
-	inttypes.in.h test-inttypes-h.c w32sock.h test-ioctl.c \
-	signature.h macros.h test-isblank.c signature.h macros.h \
-	float+.h isnan.c isnand-nolibm.h isnand.c test-isnand-nolibm.c \
-	test-isnand.h minus-zero.h infinity.h macros.h float+.h \
-	isnan.c isnanf-nolibm.h isnanf.c test-isnanf-nolibm.c \
-	test-isnanf.h minus-zero.h infinity.h macros.h float+.h \
-	isnan.c isnanl-nolibm.h isnanl.c test-isnanl-nolibm.c \
-	test-isnanl.h minus-zero.h infinity.h macros.h \
-	test-largefile.c cdefs.h libc-config.h test-limits-h.c \
-	w32sock.h test-listen.c signature.h macros.h test-rwlock1.c \
-	test-lock.c atomic-int-gnulib.h macros.h test-lstat.h \
-	test-lstat.c signature.h macros.h malloc.c test-malloc-gnu.c \
-	macros.h malloc.c test-malloc-posix.c macros.h test-malloca.c \
-	math.in.h test-math-h.c macros.h test-mkfifo.h test-mkfifo.c \
-	signature.h macros.h test-nanosleep.c signature.h macros.h \
-	test-netdb-h.c netinet_in.in.h test-netinet_in-h.c test-once.c \
+	test-connect.c signature.h macros.h ctype.in.h \
+	test-ctype-h-c++.cc test-ctype-h-c++2.cc signature.h \
+	test-ctype-h.c test-dup2.c signature.h macros.h endian.in.h \
+	test-endian-c++.cc test-endian.c macros.h test-environ.c \
+	test-errno-h-c++.cc test-errno-h-c++2.cc test-errno-h.c \
+	error.in.h test-error.sh test-error.c macros.h exitfail.h \
+	test-fcntl-h-c++.cc signature.h test-fcntl-h.c test-fcntl.c \
+	signature.h macros.h test-fdopen.c signature.h macros.h \
+	test-fgetc.c signature.h macros.h float.in.h \
+	test-float-h-c++.cc test-float-h-c++2.cc test-float-h.c \
+	macros.h test-fopen-gnu.c macros.h test-fopen.h test-fopen.c \
+	signature.h macros.h fpucw.h test-fputc.c signature.h macros.h \
+	test-fread.c signature.h macros.h test-free.c macros.h frexp.c \
+	test-frexp.c test-frexp.h minus-zero.h infinity.h signature.h \
+	macros.h randomd.c frexp.c frexpl.c test-frexpl.c test-frexp.h \
+	minus-zero.h infinity.h signature.h macros.h randoml.c \
+	test-fseterr.c test-fstat.c signature.h macros.h \
+	test-ftruncate.c test-ftruncate.sh signature.h macros.h \
+	test-fwrite.c signature.h macros.h test-getcwd-lgpl.c \
+	signature.h macros.h test-getdtablesize.c signature.h macros.h \
+	getprogname.h test-getprogname.c test-gettext-h.c \
+	test-gettimeofday.c signature.h macros.h test-htonl.c macros.h \
+	ialloc.h ignore-value.h test-ignore-value.c test-inet_pton.c \
+	signature.h macros.h intprops-internal.h intprops.h \
+	test-intprops.c macros.h test-inttypes-h-c++.cc \
+	test-inttypes-h-c++2.cc signature.h inttypes.in.h \
+	test-inttypes-h.c w32sock.h test-ioctl.c signature.h macros.h \
+	test-isblank.c signature.h macros.h float+.h isnan.c \
+	isnand-nolibm.h isnand.c test-isnand-nolibm.c test-isnand.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanf-nolibm.h isnanf.c test-isnanf-nolibm.c test-isnanf.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanl-nolibm.h isnanl.c test-isnanl-nolibm.c test-isnanl.h \
+	minus-zero.h infinity.h macros.h test-largefile.c cdefs.h \
+	libc-config.h test-limits-h-c++.cc test-limits-h-c++2.cc \
+	test-limits-h.c w32sock.h test-listen.c signature.h macros.h \
+	test-rwlock1.c test-lock.c atomic-int-gnulib.h macros.h \
+	test-lstat.h test-lstat.c signature.h macros.h malloc.c \
+	test-malloc-gnu.c macros.h malloc.c test-malloc-posix.c \
+	macros.h test-malloca.c math.in.h test-math-h-c++.cc \
+	test-math-h-c++2.cc signature.h test-math-h.c macros.h \
+	test-mkfifo.h test-mkfifo.c signature.h macros.h \
+	test-nanosleep.c signature.h macros.h test-netdb-h-c++.cc \
+	signature.h test-netdb-h.c netinet_in.in.h \
+	test-netinet_in-h-c++.cc test-netinet_in-h.c test-once.c \
 	macros.h test-open.h test-open.c signature.h macros.h \
 	test-pathmax.c macros.h signature.h test-perror.c \
 	test-perror2.c test-perror.sh test-pipe.c signature.h macros.h \
 	test-pselect.c test-select.h macros.h signature.h \
 	test-pthread-cond.c virtualbox.h macros.h pthread.in.h \
-	test-pthread.c test-pthread-mutex.c test-pthread-mutex-type.c \
+	test-pthread-c++.cc signature.h test-pthread.c \
+	test-pthread-mutex.c test-pthread-mutex-type.c \
 	atomic-int-posix.h macros.h test-pthread-once1.c \
 	test-pthread-once2.c macros.h test-pthread-rwlock.c \
 	atomic-int-posix.h macros.h test-pthread-thread.c macros.h \
@@ -3506,38 +4022,54 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-random-mt.c signature.h macros.h test-random_r.c \
 	signature.h macros.h test-realloc-posix.c macros.h \
 	test-reallocarray.c signature.h macros.h sched.in.h \
-	test-sched-h.c macros.h signature.h test-select.c \
-	test-select.h test-select-fd.c test-select-in.sh \
-	test-select-out.sh test-select-stdin.c test-servent.c \
-	signature.h macros.h w32sock.h test-setsockopt.c signature.h \
-	macros.h signal.in.h test-signal-h.c float+.h test-signbit.c \
-	minus-zero.h infinity.h macros.h test-sigprocmask.c \
-	signature.h virtualbox.h macros.h test-sleep.c signature.h \
-	macros.h _Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h \
-	w32sock.h w32sock.h test-sockets.c test-stat.h test-stat.c \
-	signature.h macros.h test-stat-time.c macros.h nap.h \
-	stdbit.in.h test-stdbit-h.c macros.h test-stdc_memreverse8u.c \
-	macros.h macros.h test-intprops.c test-stdckdint-h.c \
-	test-stdcountof-h.c macros.h test-stddef-h.c test-stdint-h.c \
-	test-stdio-h.c macros.h test-stdlib-h.c test-sys_wait-h.h \
-	test-str_startswith.c macros.h strerror-override.h \
-	test-strerror.c signature.h macros.h strerror_r.c \
-	test-strerror_r.c signature.h macros.h test-string-h.c \
-	test-symlink.h test-symlink.c signature.h macros.h \
-	sys_ioctl.in.h test-sys_ioctl-h.c sys_select.in.h \
-	test-sys_select-h.c signature.h test-sys_socket-h.c macros.h \
-	test-sys_stat-h.c sys_time.in.h test-sys_time-h.c \
-	test-sys_types-h.c test-sys_uio-h.c init.sh test-init.sh \
-	test-thread_self.c test-thread_create.c macros.h test-time-h.c \
-	test-time.c signature.h macros.h test-trunc1.c test-trunc2.c \
-	minus-zero.h infinity.h signature.h macros.h trunc.c \
-	test-truncl.c minus-zero.h infinity.h signature.h macros.h \
-	test-unistd-h.c test-unsetenv.c signature.h macros.h \
-	test-usleep.c signature.h macros.h verify.h test-verify.c \
-	test-verify-try.c test-verify.sh wchar.in.h test-wchar-h.c \
-	windows-cond.h windows-initguard.h windows-initguard.h \
-	windows-mutex.h test-windows-mutex-type.c macros.h \
-	windows-once.h windows-initguard.h windows-recmutex.h \
+	test-sched-h-c++.cc signature.h test-sched-h.c macros.h \
+	signature.h test-select.c test-select.h test-select-fd.c \
+	test-select-in.sh test-select-out.sh test-select-stdin.c \
+	test-servent.c signature.h macros.h w32sock.h \
+	test-setsockopt.c signature.h macros.h signal.in.h \
+	test-signal-h-c++.cc test-signal-h-c++2.cc signature.h \
+	test-signal-h.c float+.h test-signbit.c minus-zero.h \
+	infinity.h macros.h test-sigprocmask.c signature.h \
+	virtualbox.h macros.h test-sleep.c signature.h macros.h \
+	_Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h w32sock.h \
+	test-sockets.c test-stat.h test-stat.c signature.h macros.h \
+	test-stat-time-c++.cc signature.h test-stat-time.c macros.h \
+	nap.h stdbit.in.h test-stdbit-h-c++.cc test-stdbit-h.c \
+	macros.h test-stdc_memreverse8u.c macros.h \
+	test-stdckdint-h-c++.cc macros.h test-intprops.c \
+	test-stdckdint-h.c test-stdcountof-h-c++.cc \
+	test-stdcountof-h.c macros.h test-stddef-h-c++.cc \
+	test-stddef-h-c++2.cc test-stddef-h-c++3.cc test-stddef-h.c \
+	test-stdint-h-c++.cc test-stdint-h-c++2.cc test-stdint-h.c \
+	test-stdio-h-c++.cc test-stdio-h-c++2.cc signature.h \
+	test-stdio-h.c macros.h test-stdlib-h-c++.cc \
+	test-stdlib-h-c++2.cc signature.h test-stdlib-h.c \
+	test-sys_wait-h.h test-str_startswith.c macros.h \
+	strerror-override.h test-strerror.c signature.h macros.h \
+	strerror_r.c test-strerror_r.c signature.h macros.h \
+	test-string-h-c++.cc test-string-h-c++2.cc signature.h \
+	test-string-h.c test-symlink.h test-symlink.c signature.h \
+	macros.h sys_ioctl.in.h test-sys_ioctl-h-c++.cc signature.h \
+	test-sys_ioctl-h.c sys_select.in.h test-sys_select-h-c++.cc \
+	signature.h test-sys_select-h.c signature.h \
+	test-sys_socket-h-c++.cc signature.h test-sys_socket-h.c \
+	macros.h test-sys_stat-h-c++.cc signature.h test-sys_stat-h.c \
+	sys_time.in.h test-sys_time-h-c++.cc signature.h \
+	test-sys_time-h.c test-sys_types-h-c++.cc test-sys_types-h.c \
+	test-sys_uio-h-c++.cc test-sys_uio-h.c init.sh test-init.sh \
+	test-thread_self.c test-thread_create.c macros.h \
+	test-time-h-c++.cc test-time-h-c++2.cc signature.h \
+	test-time-h.c test-time.c signature.h macros.h test-trunc1.c \
+	test-trunc2.c minus-zero.h infinity.h signature.h macros.h \
+	trunc.c test-truncl.c minus-zero.h infinity.h signature.h \
+	macros.h test-unistd-h-c++.cc signature.h test-unistd-h.c \
+	test-unsetenv.c signature.h macros.h test-usleep.c signature.h \
+	macros.h verify.h test-verify.c test-verify-try.c \
+	test-verify.sh wchar.in.h test-wchar-h-c++.cc \
+	test-wchar-h-c++2.cc test-wchar-h-c++3.cc signature.h \
+	test-wchar-h.c windows-cond.h windows-initguard.h \
+	windows-initguard.h windows-mutex.h test-windows-mutex-type.c \
+	macros.h windows-once.h windows-initguard.h windows-recmutex.h \
 	test-windows-recmutex-type.c macros.h windows-initguard.h \
 	windows-rwlock.h windows-spin.h windows-thread.h \
 	windows-initguard.h windows-timedmutex.h \
@@ -3570,6 +4102,7 @@ CLEANFILES =
 DISTCLEANFILES = 
 MAINTAINERCLEANFILES = 
 AM_CFLAGS = @GL_CFLAG_ALLOW_WARNINGS@
+AM_CXXFLAGS = @GL_CXXFLAG_ALLOW_WARNINGS@
 AM_CPPFLAGS = \
   -DGNULIB_STRICT_CHECKING=1 \
   -D@gltests_WITNESS@=1 \
@@ -3579,33 +4112,33 @@ AM_CPPFLAGS = \
 
 LDADD = libtests.a ../gllib/libgnu.a libtests.a ../gllib/libgnu.a libtests.a $(LIBTESTS_LIBDEPS)
 libtests_a_SOURCES = $(am__append_1) arpa_inet.c basename-lgpl.c \
-	binary-io.h binary-io.c $(am__append_2) $(am__append_3) \
-	c-ctype.h c-ctype.c concat-filename.c $(am__append_4) \
-	$(am__append_5) $(am__append_6) exitfail.c $(am__append_7) \
-	$(am__append_8) $(am__append_9) $(am__append_10) \
-	$(am__append_11) $(am__append_12) $(am__append_13) gettext.h \
-	$(am__append_14) ialloc.c $(am__append_15) $(am__append_16) \
-	$(am__append_17) $(am__append_18) glthread/lock.h \
-	glthread/lock.c math.c memeq.c minmax.h $(am__append_19) nan.h \
-	$(am__append_20) glthread/once.h glthread/once.c \
-	$(am__append_21) $(am__append_22) $(am__append_23) \
-	$(am__append_24) $(am__append_25) $(am__append_26) \
-	$(am__append_27) $(am__append_28) $(am__append_29) \
-	$(am__append_30) $(am__append_31) $(am__append_32) \
-	$(am__append_33) $(am__append_34) $(am__append_35) \
-	$(am__append_36) same-inode.h same-inode.c $(am__append_37) \
-	$(am__append_38) $(am__append_39) $(am__append_40) \
-	signed-nan.h signed-snan.h $(am__append_41) $(am__append_43) \
-	snan.h $(am__append_44) sockets.h sockets.c $(am__append_45) \
-	$(am__append_46) str_startswith.c $(am__append_47) \
-	$(am__append_48) $(am__append_49) glthread/thread.h \
-	glthread/thread.c glthread/threadlib.c $(am__append_50) \
-	$(am__append_51) $(am__append_52) $(am__append_53) \
-	$(am__append_54) $(am__append_56) $(am__append_57) \
-	$(am__append_58) $(am__append_59) $(am__append_60) \
-	$(am__append_61) $(am__append_62) $(am__append_63) \
-	$(am__append_64) $(am__append_65) $(am__append_66) xmalloc.c \
-	xalloc-die.c xconcat-filename.c xgetcwd.c glthread/yield.h
+	binary-io.h binary-io.c $(am__append_6) $(am__append_9) \
+	c-ctype.h c-ctype.c concat-filename.c $(am__append_12) \
+	$(am__append_15) $(am__append_20) exitfail.c $(am__append_23) \
+	$(am__append_24) $(am__append_25) $(am__append_28) \
+	$(am__append_29) $(am__append_30) $(am__append_31) gettext.h \
+	$(am__append_32) ialloc.c $(am__append_33) $(am__append_36) \
+	$(am__append_37) $(am__append_40) glthread/lock.h \
+	glthread/lock.c math.c memeq.c minmax.h $(am__append_43) nan.h \
+	$(am__append_44) glthread/once.h glthread/once.c \
+	$(am__append_49) $(am__append_50) $(am__append_51) \
+	$(am__append_52) $(am__append_55) $(am__append_56) \
+	$(am__append_57) $(am__append_58) $(am__append_59) \
+	$(am__append_60) $(am__append_61) $(am__append_62) \
+	$(am__append_63) $(am__append_64) $(am__append_65) \
+	$(am__append_66) same-inode.h same-inode.c $(am__append_69) \
+	$(am__append_70) $(am__append_71) $(am__append_74) \
+	signed-nan.h signed-snan.h $(am__append_75) $(am__append_77) \
+	snan.h $(am__append_78) $(am__append_83) $(am__append_96) \
+	str_startswith.c $(am__append_97) $(am__append_98) \
+	$(am__append_101) glthread/thread.h glthread/thread.c \
+	glthread/threadlib.c $(am__append_116) $(am__append_119) \
+	$(am__append_120) $(am__append_123) $(am__append_124) \
+	$(am__append_128) $(am__append_129) $(am__append_130) \
+	$(am__append_131) $(am__append_132) $(am__append_133) \
+	$(am__append_134) $(am__append_135) $(am__append_136) \
+	$(am__append_137) $(am__append_138) xmalloc.c xalloc-die.c \
+	xconcat-filename.c xgetcwd.c glthread/yield.h
 libtests_a_LIBADD = $(gltests_LIBOBJS) @ALLOCA@
 libtests_a_DEPENDENCIES = $(gltests_LIBOBJS) @ALLOCA@
 EXTRA_libtests_a_SOURCES = alloca.c calloc.c calloc.c frexp.c frexp.c \
@@ -3614,11 +4147,22 @@ EXTRA_libtests_a_SOURCES = alloca.c calloc.c calloc.c frexp.c frexp.c \
 AM_LIBTOOLFLAGS = --preserve-dup-deps
 IGNORE_SKIPPED_LOGS = 1
 test_accept_LDADD = $(LDADD) @LIBSOCKET@
+@ANSICXX_TRUE@test_arpa_inet_h_c___SOURCES = test-arpa_inet-h-c++.cc
+@ANSICXX_TRUE@test_arpa_inet_h_c___LDADD = $(LDADD) $(INET_NTOP_LIB) $(INET_PTON_LIB) $(LIBSOCKET)
+@ANSICXX_TRUE@test_assert_h_c___SOURCES = test-assert-h-c++.cc test-assert-h-c++2.cc
 test_bind_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
 test_bind_LDFLAGS = $(LDFLAGS)  @LIBSOCKET@ $(INET_PTON_LIB)
+@ANSICXX_TRUE@test_bool_c___SOURCES = test-bool-c++.cc test-bool-c++2.cc
+@ANSICXX_TRUE@test_byteswap_c___SOURCES = test-byteswap-c++.cc
 test_c_ctype_LDADD = $(LDADD) $(SETLOCALE_LIB)
 test_connect_LDADD = $(LDADD) @LIBSOCKET@ $(INET_PTON_LIB)
+@ANSICXX_TRUE@test_ctype_h_c___SOURCES = test-ctype-h-c++.cc test-ctype-h-c++2.cc
+@ANSICXX_TRUE@test_endian_c___SOURCES = test-endian-c++.cc
+@ANSICXX_TRUE@test_errno_h_c___SOURCES = test-errno-h-c++.cc test-errno-h-c++2.cc
 test_error_LDADD = $(LDADD) $(LIBINTL)
+@ANSICXX_TRUE@test_fcntl_h_c___SOURCES = test-fcntl-h-c++.cc
+@ANSICXX_TRUE@test_fcntl_h_c___LDADD = $(LDADD) $(LIBINTL) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(LIBSOCKET)
+@ANSICXX_TRUE@test_float_h_c___SOURCES = test-float-h-c++.cc test-float-h-c++2.cc
 test_float_h_LDADD = $(LDADD) @FREXPL_LIBM@ @TRUNCL_LIBM@
 test_frexp_SOURCES = test-frexp.c randomd.c
 test_frexp_LDADD = $(LDADD) @FREXP_LIBM@
@@ -3645,16 +4189,24 @@ test_getprogname_LDADD = $(LDADD)
 test_gettext_h_LDADD = $(LDADD) $(LIBINTL)
 test_htonl_LDADD = $(LDADD) @HTONL_LIB@
 test_inet_pton_LDADD = $(LDADD) @INET_PTON_LIB@
+@ANSICXX_TRUE@test_inttypes_h_c___SOURCES = test-inttypes-h-c++.cc test-inttypes-h-c++2.cc
+@ANSICXX_TRUE@test_limits_h_c___SOURCES = test-limits-h-c++.cc test-limits-h-c++2.cc
 test_listen_LDADD = $(LDADD) @LIBSOCKET@
 test_rwlock1_LDADD = $(LDADD) @LIBMULTITHREAD@ @YIELD_LIB@
 test_lock_LDADD = $(LDADD) @LIBMULTITHREAD@ @YIELD_LIB@ @LIB_SEMAPHORE@
+@ANSICXX_TRUE@test_math_h_c___SOURCES = test-math-h-c++.cc test-math-h-c++2.cc
 test_nanosleep_LDADD = $(LDADD) $(NANOSLEEP_LIB)
+@ANSICXX_TRUE@test_netdb_h_c___SOURCES = test-netdb-h-c++.cc
+@ANSICXX_TRUE@test_netdb_h_c___LDADD = $(LDADD) $(LIBINTL) $(GETADDRINFO_LIB) $(SERVENT_LIB)
+@ANSICXX_TRUE@test_netinet_in_h_c___SOURCES = test-netinet_in-h-c++.cc
 test_once1_SOURCES = test-once.c
 test_once1_LDADD = $(LDADD) @LIBTHREAD@
 test_once2_SOURCES = test-once.c
 test_once2_LDADD = $(LDADD) @LIBMULTITHREAD@
 test_pselect_LDADD = $(LDADD) @SELECT_LIB@ @LIBSOCKET@ @PTHREAD_SIGMASK_LIB@ $(INET_PTON_LIB)
 test_pthread_cond_LDADD = $(LDADD) @LIBPMULTITHREAD@ @SCHED_YIELD_LIB@
+@ANSICXX_TRUE@test_pthread_c___SOURCES = test-pthread-c++.cc
+@ANSICXX_TRUE@test_pthread_c___LDADD = $(LDADD) $(LIBPMULTITHREAD)
 test_pthread_mutex_LDADD = $(LDADD) @LIBPMULTITHREAD@ @SCHED_YIELD_LIB@ @LIB_SEMAPHORE@
 # If we were to link test-pthread-mutex-type only with @LIBPTHREAD@ instead of
 # @LIBPMULTITHREAD@, this test would fail on FreeBSD and NetBSD.
@@ -3666,11 +4218,15 @@ test_pthread_thread_LDADD = $(LDADD) @LIBPMULTITHREAD@
 test_pthread_sigmask1_LDADD = $(LDADD) @PTHREAD_SIGMASK_LIB@
 test_pthread_sigmask2_LDADD = $(LDADD) @PTHREAD_SIGMASK_LIB@ @LIBMULTITHREAD@
 test_random_mt_LDADD = $(LDADD) $(LIBINTL) $(LIBMULTITHREAD) $(YIELD_LIB)
+@ANSICXX_TRUE@test_sched_h_c___SOURCES = test-sched-h-c++.cc
+@ANSICXX_TRUE@test_sched_h_c___LDADD = $(LDADD) $(SCHED_YIELD_LIB)
 test_select_LDADD = $(LDADD) @SELECT_LIB@ @LIBSOCKET@ $(INET_PTON_LIB)
 test_select_fd_LDADD = $(LDADD) @SELECT_LIB@
 test_select_stdin_LDADD = $(LDADD) @SELECT_LIB@
 test_servent_LDADD = $(LDADD) $(SERVENT_LIB) $(HTONL_LIB)
 test_setsockopt_LDADD = $(LDADD) @LIBSOCKET@
+@ANSICXX_TRUE@test_signal_h_c___SOURCES = test-signal-h-c++.cc test-signal-h-c++2.cc
+@ANSICXX_TRUE@test_signal_h_c___LDADD = $(LDADD) $(LIBINTL) $(NANOSLEEP_LIB) $(PTHREAD_SIGMASK_LIB)
 
 # Because this Makefile snippet defines a variable used by other
 # gnulib Makefile snippets, it must be present in all makefiles that
@@ -3693,18 +4249,49 @@ CXXDEFS_H = $(srcdir)/c++defs.h
 WARN_ON_USE_H = $(srcdir)/warn-on-use.h
 test_sockets_LDADD = $(LDADD) @LIBSOCKET@
 test_stat_LDADD = $(LDADD) $(LIBINTL)
+@ANSICXX_TRUE@test_stat_time_c___SOURCES = test-stat-time-c++.cc
+@ANSICXX_TRUE@test_stat_time_c___LDADD = $(LDADD) $(LIBINTL) $(NANOSLEEP_LIB) $(CLOCK_TIME_LIB) $(MBRTOWC_LIB) $(GETRANDOM_LIB)
 test_stat_time_LDADD = $(LDADD) $(NANOSLEEP_LIB) @LIBINTL@
+@ANSICXX_TRUE@test_stdbit_h_c___SOURCES = test-stdbit-h-c++.cc
+@ANSICXX_TRUE@test_stdckdint_h_c___SOURCES = test-stdckdint-h-c++.cc
+@ANSICXX_TRUE@test_stdcountof_h_c___SOURCES = test-stdcountof-h-c++.cc
+@ANSICXX_TRUE@test_stddef_h_c___SOURCES = test-stddef-h-c++.cc test-stddef-h-c++2.cc test-stddef-h-c++3.cc
+@ANSICXX_TRUE@test_stdint_h_c___SOURCES = test-stdint-h-c++.cc test-stdint-h-c++2.cc
+@ANSICXX_TRUE@test_stdio_h_c___SOURCES = test-stdio-h-c++.cc test-stdio-h-c++2.cc
+@ANSICXX_TRUE@test_stdio_h_c___LDADD = $(LDADD) $(LIBINTL) $(NANOSLEEP_LIB) $(EUIDACCESS_LIBGEN) $(GETRANDOM_LIB)
+@ANSICXX_TRUE@test_stdlib_h_c___SOURCES = test-stdlib-h-c++.cc test-stdlib-h-c++2.cc
+@ANSICXX_TRUE@test_stdlib_h_c___LDADD = $(LDADD) $(LIBUNISTRING) $(LIBINTL) $(GETLOADAVG_LIBS) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(GETRANDOM_LIB)
+@ANSICXX_TRUE@test_string_h_c___SOURCES = test-string-h-c++.cc test-string-h-c++2.cc
+@ANSICXX_TRUE@test_string_h_c___LDADD = $(LDADD) $(LIBUNISTRING) $(LIBINTL) $(LIBC32CONV) $(LIBTHREAD)
+@ANSICXX_TRUE@test_sys_ioctl_h_c___SOURCES = test-sys_ioctl-h-c++.cc
+@ANSICXX_TRUE@test_sys_ioctl_h_c___LDADD = $(LDADD) $(LIBINTL) $(LIBSOCKET) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN)
+@ANSICXX_TRUE@test_sys_select_h_c___SOURCES = test-sys_select-h-c++.cc
+@ANSICXX_TRUE@test_sys_select_h_c___LDADD = $(LDADD) $(LIBINTL) $(SELECT_LIB) $(NANOSLEEP_LIB)
+@ANSICXX_TRUE@test_sys_socket_h_c___SOURCES = test-sys_socket-h-c++.cc
+@ANSICXX_TRUE@test_sys_socket_h_c___LDADD = $(LDADD) $(LIBINTL) $(LIBSOCKET) $(NANOSLEEP_LIB)
+@ANSICXX_TRUE@test_sys_stat_h_c___SOURCES = test-sys_stat-h-c++.cc
+@ANSICXX_TRUE@test_sys_stat_h_c___LDADD = $(LDADD) $(LIBINTL) $(CLOCK_TIME_LIB) $(MBRTOWC_LIB) $(GETRANDOM_LIB)
+@ANSICXX_TRUE@test_sys_time_h_c___SOURCES = test-sys_time-h-c++.cc
+@ANSICXX_TRUE@test_sys_time_h_c___LDADD = $(LDADD) $(LIBINTL) $(NANOSLEEP_LIB)
+@ANSICXX_TRUE@test_sys_types_h_c___SOURCES = test-sys_types-h-c++.cc
+@ANSICXX_TRUE@test_sys_uio_h_c___SOURCES = test-sys_uio-h-c++.cc
 test_thread_self_LDADD = $(LDADD) @LIBTHREAD@
 test_thread_create_LDADD = $(LDADD) @LIBMULTITHREAD@
+@ANSICXX_TRUE@test_time_h_c___SOURCES = test-time-h-c++.cc test-time-h-c++2.cc
+@ANSICXX_TRUE@test_time_h_c___LDADD = $(LDADD) $(LIBINTL) $(NANOSLEEP_LIB) $(CLOCK_TIME_LIB)
 test_trunc1_LDADD = $(LDADD) @TRUNC_LIBM@
 test_trunc2_LDADD = $(LDADD) @TRUNC_LIBM@
 test_truncl_LDADD = $(LDADD) @TRUNCL_LIBM@
+@ANSICXX_TRUE@test_unistd_h_c___SOURCES = test-unistd-h-c++.cc
+@ANSICXX_TRUE@test_unistd_h_c___LDADD = $(LDADD) $(LIBINTL) $(CLOCK_TIME_LIB) $(EUIDACCESS_LIBGEN) $(LIBSOCKET) $(GETLOGIN_LIB) $(GETRANDOM_LIB)
+@ANSICXX_TRUE@test_wchar_h_c___SOURCES = test-wchar-h-c++.cc test-wchar-h-c++2.cc test-wchar-h-c++3.cc
+@ANSICXX_TRUE@test_wchar_h_c___LDADD = $(LDADD) $(LIBUNISTRING) $(LIBINTL) $(NANOSLEEP_LIB) $(EUIDACCESS_LIBGEN) $(LIBTHREAD)
 test_xalloc_die_LDADD = $(LDADD) @LIBINTL@
 all: $(BUILT_SOURCES)
 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
 
 .SUFFIXES:
-.SUFFIXES: .c .log .o .obj .test .test$(EXEEXT) .trs
+.SUFFIXES: .c .cc .log .o .obj .test .test$(EXEEXT) .trs
 $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
@@ -3776,9 +4363,17 @@ test-arpa_inet-h$(EXEEXT): $(test_arpa_inet_h_OBJECTS) $(test_arpa_inet_h_DEPEND
 	$(AM_JOBSERVER)@rm -f test-arpa_inet-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_arpa_inet_h_OBJECTS) $(test_arpa_inet_h_LDADD) $(LIBS)
 
+test-arpa_inet-h-c++$(EXEEXT): $(test_arpa_inet_h_c___OBJECTS) $(test_arpa_inet_h_c___DEPENDENCIES) $(EXTRA_test_arpa_inet_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-arpa_inet-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_arpa_inet_h_c___OBJECTS) $(test_arpa_inet_h_c___LDADD) $(LIBS)
+
 test-assert$(EXEEXT): $(test_assert_OBJECTS) $(test_assert_DEPENDENCIES) $(EXTRA_test_assert_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-assert$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_assert_OBJECTS) $(test_assert_LDADD) $(LIBS)
+
+test-assert-h-c++$(EXEEXT): $(test_assert_h_c___OBJECTS) $(test_assert_h_c___DEPENDENCIES) $(EXTRA_test_assert_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-assert-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_assert_h_c___OBJECTS) $(test_assert_h_c___LDADD) $(LIBS)
 
 test-binary-io$(EXEEXT): $(test_binary_io_OBJECTS) $(test_binary_io_DEPENDENCIES) $(EXTRA_test_binary_io_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-binary-io$(EXEEXT)
@@ -3792,9 +4387,17 @@ test-bool$(EXEEXT): $(test_bool_OBJECTS) $(test_bool_DEPENDENCIES) $(EXTRA_test_
 	$(AM_JOBSERVER)@rm -f test-bool$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_bool_OBJECTS) $(test_bool_LDADD) $(LIBS)
 
+test-bool-c++$(EXEEXT): $(test_bool_c___OBJECTS) $(test_bool_c___DEPENDENCIES) $(EXTRA_test_bool_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-bool-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_bool_c___OBJECTS) $(test_bool_c___LDADD) $(LIBS)
+
 test-byteswap$(EXEEXT): $(test_byteswap_OBJECTS) $(test_byteswap_DEPENDENCIES) $(EXTRA_test_byteswap_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-byteswap$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_byteswap_OBJECTS) $(test_byteswap_LDADD) $(LIBS)
+
+test-byteswap-c++$(EXEEXT): $(test_byteswap_c___OBJECTS) $(test_byteswap_c___DEPENDENCIES) $(EXTRA_test_byteswap_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-byteswap-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_byteswap_c___OBJECTS) $(test_byteswap_c___LDADD) $(LIBS)
 
 test-c-ctype$(EXEEXT): $(test_c_ctype_OBJECTS) $(test_c_ctype_DEPENDENCIES) $(EXTRA_test_c_ctype_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-c-ctype$(EXEEXT)
@@ -3824,6 +4427,10 @@ test-ctype-h$(EXEEXT): $(test_ctype_h_OBJECTS) $(test_ctype_h_DEPENDENCIES) $(EX
 	$(AM_JOBSERVER)@rm -f test-ctype-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_ctype_h_OBJECTS) $(test_ctype_h_LDADD) $(LIBS)
 
+test-ctype-h-c++$(EXEEXT): $(test_ctype_h_c___OBJECTS) $(test_ctype_h_c___DEPENDENCIES) $(EXTRA_test_ctype_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-ctype-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_ctype_h_c___OBJECTS) $(test_ctype_h_c___LDADD) $(LIBS)
+
 test-dup2$(EXEEXT): $(test_dup2_OBJECTS) $(test_dup2_DEPENDENCIES) $(EXTRA_test_dup2_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-dup2$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_dup2_OBJECTS) $(test_dup2_LDADD) $(LIBS)
@@ -3832,6 +4439,10 @@ test-endian$(EXEEXT): $(test_endian_OBJECTS) $(test_endian_DEPENDENCIES) $(EXTRA
 	$(AM_JOBSERVER)@rm -f test-endian$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_endian_OBJECTS) $(test_endian_LDADD) $(LIBS)
 
+test-endian-c++$(EXEEXT): $(test_endian_c___OBJECTS) $(test_endian_c___DEPENDENCIES) $(EXTRA_test_endian_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-endian-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_endian_c___OBJECTS) $(test_endian_c___LDADD) $(LIBS)
+
 test-environ$(EXEEXT): $(test_environ_OBJECTS) $(test_environ_DEPENDENCIES) $(EXTRA_test_environ_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-environ$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_environ_OBJECTS) $(test_environ_LDADD) $(LIBS)
@@ -3839,6 +4450,10 @@ test-environ$(EXEEXT): $(test_environ_OBJECTS) $(test_environ_DEPENDENCIES) $(EX
 test-errno-h$(EXEEXT): $(test_errno_h_OBJECTS) $(test_errno_h_DEPENDENCIES) $(EXTRA_test_errno_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-errno-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_errno_h_OBJECTS) $(test_errno_h_LDADD) $(LIBS)
+
+test-errno-h-c++$(EXEEXT): $(test_errno_h_c___OBJECTS) $(test_errno_h_c___DEPENDENCIES) $(EXTRA_test_errno_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-errno-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_errno_h_c___OBJECTS) $(test_errno_h_c___LDADD) $(LIBS)
 
 test-error$(EXEEXT): $(test_error_OBJECTS) $(test_error_DEPENDENCIES) $(EXTRA_test_error_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-error$(EXEEXT)
@@ -3852,6 +4467,10 @@ test-fcntl-h$(EXEEXT): $(test_fcntl_h_OBJECTS) $(test_fcntl_h_DEPENDENCIES) $(EX
 	$(AM_JOBSERVER)@rm -f test-fcntl-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_fcntl_h_OBJECTS) $(test_fcntl_h_LDADD) $(LIBS)
 
+test-fcntl-h-c++$(EXEEXT): $(test_fcntl_h_c___OBJECTS) $(test_fcntl_h_c___DEPENDENCIES) $(EXTRA_test_fcntl_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-fcntl-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_fcntl_h_c___OBJECTS) $(test_fcntl_h_c___LDADD) $(LIBS)
+
 test-fdopen$(EXEEXT): $(test_fdopen_OBJECTS) $(test_fdopen_DEPENDENCIES) $(EXTRA_test_fdopen_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-fdopen$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_fdopen_OBJECTS) $(test_fdopen_LDADD) $(LIBS)
@@ -3863,6 +4482,10 @@ test-fgetc$(EXEEXT): $(test_fgetc_OBJECTS) $(test_fgetc_DEPENDENCIES) $(EXTRA_te
 test-float-h$(EXEEXT): $(test_float_h_OBJECTS) $(test_float_h_DEPENDENCIES) $(EXTRA_test_float_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-float-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_float_h_OBJECTS) $(test_float_h_LDADD) $(LIBS)
+
+test-float-h-c++$(EXEEXT): $(test_float_h_c___OBJECTS) $(test_float_h_c___DEPENDENCIES) $(EXTRA_test_float_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-float-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_float_h_c___OBJECTS) $(test_float_h_c___LDADD) $(LIBS)
 
 test-fopen$(EXEEXT): $(test_fopen_OBJECTS) $(test_fopen_DEPENDENCIES) $(EXTRA_test_fopen_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-fopen$(EXEEXT)
@@ -3948,6 +4571,10 @@ test-inttypes-h$(EXEEXT): $(test_inttypes_h_OBJECTS) $(test_inttypes_h_DEPENDENC
 	$(AM_JOBSERVER)@rm -f test-inttypes-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_inttypes_h_OBJECTS) $(test_inttypes_h_LDADD) $(LIBS)
 
+test-inttypes-h-c++$(EXEEXT): $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c___DEPENDENCIES) $(EXTRA_test_inttypes_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-inttypes-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_inttypes_h_c___OBJECTS) $(test_inttypes_h_c___LDADD) $(LIBS)
+
 test-ioctl$(EXEEXT): $(test_ioctl_OBJECTS) $(test_ioctl_DEPENDENCIES) $(EXTRA_test_ioctl_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-ioctl$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_ioctl_OBJECTS) $(test_ioctl_LDADD) $(LIBS)
@@ -3975,6 +4602,10 @@ test-largefile$(EXEEXT): $(test_largefile_OBJECTS) $(test_largefile_DEPENDENCIES
 test-limits-h$(EXEEXT): $(test_limits_h_OBJECTS) $(test_limits_h_DEPENDENCIES) $(EXTRA_test_limits_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-limits-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_limits_h_OBJECTS) $(test_limits_h_LDADD) $(LIBS)
+
+test-limits-h-c++$(EXEEXT): $(test_limits_h_c___OBJECTS) $(test_limits_h_c___DEPENDENCIES) $(EXTRA_test_limits_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-limits-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_limits_h_c___OBJECTS) $(test_limits_h_c___LDADD) $(LIBS)
 
 test-listen$(EXEEXT): $(test_listen_OBJECTS) $(test_listen_DEPENDENCIES) $(EXTRA_test_listen_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-listen$(EXEEXT)
@@ -4004,6 +4635,10 @@ test-math-h$(EXEEXT): $(test_math_h_OBJECTS) $(test_math_h_DEPENDENCIES) $(EXTRA
 	$(AM_JOBSERVER)@rm -f test-math-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_math_h_OBJECTS) $(test_math_h_LDADD) $(LIBS)
 
+test-math-h-c++$(EXEEXT): $(test_math_h_c___OBJECTS) $(test_math_h_c___DEPENDENCIES) $(EXTRA_test_math_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-math-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_math_h_c___OBJECTS) $(test_math_h_c___LDADD) $(LIBS)
+
 test-mkfifo$(EXEEXT): $(test_mkfifo_OBJECTS) $(test_mkfifo_DEPENDENCIES) $(EXTRA_test_mkfifo_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-mkfifo$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_mkfifo_OBJECTS) $(test_mkfifo_LDADD) $(LIBS)
@@ -4016,9 +4651,17 @@ test-netdb-h$(EXEEXT): $(test_netdb_h_OBJECTS) $(test_netdb_h_DEPENDENCIES) $(EX
 	$(AM_JOBSERVER)@rm -f test-netdb-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_netdb_h_OBJECTS) $(test_netdb_h_LDADD) $(LIBS)
 
+test-netdb-h-c++$(EXEEXT): $(test_netdb_h_c___OBJECTS) $(test_netdb_h_c___DEPENDENCIES) $(EXTRA_test_netdb_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-netdb-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_netdb_h_c___OBJECTS) $(test_netdb_h_c___LDADD) $(LIBS)
+
 test-netinet_in-h$(EXEEXT): $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_DEPENDENCIES) $(EXTRA_test_netinet_in_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-netinet_in-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_netinet_in_h_OBJECTS) $(test_netinet_in_h_LDADD) $(LIBS)
+
+test-netinet_in-h-c++$(EXEEXT): $(test_netinet_in_h_c___OBJECTS) $(test_netinet_in_h_c___DEPENDENCIES) $(EXTRA_test_netinet_in_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-netinet_in-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_netinet_in_h_c___OBJECTS) $(test_netinet_in_h_c___LDADD) $(LIBS)
 
 test-once1$(EXEEXT): $(test_once1_OBJECTS) $(test_once1_DEPENDENCIES) $(EXTRA_test_once1_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-once1$(EXEEXT)
@@ -4055,6 +4698,10 @@ test-pselect$(EXEEXT): $(test_pselect_OBJECTS) $(test_pselect_DEPENDENCIES) $(EX
 test-pthread$(EXEEXT): $(test_pthread_OBJECTS) $(test_pthread_DEPENDENCIES) $(EXTRA_test_pthread_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-pthread$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_pthread_OBJECTS) $(test_pthread_LDADD) $(LIBS)
+
+test-pthread-c++$(EXEEXT): $(test_pthread_c___OBJECTS) $(test_pthread_c___DEPENDENCIES) $(EXTRA_test_pthread_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-pthread-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_pthread_c___OBJECTS) $(test_pthread_c___LDADD) $(LIBS)
 
 test-pthread-cond$(EXEEXT): $(test_pthread_cond_OBJECTS) $(test_pthread_cond_DEPENDENCIES) $(EXTRA_test_pthread_cond_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-pthread-cond$(EXEEXT)
@@ -4128,6 +4775,10 @@ test-sched-h$(EXEEXT): $(test_sched_h_OBJECTS) $(test_sched_h_DEPENDENCIES) $(EX
 	$(AM_JOBSERVER)@rm -f test-sched-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sched_h_OBJECTS) $(test_sched_h_LDADD) $(LIBS)
 
+test-sched-h-c++$(EXEEXT): $(test_sched_h_c___OBJECTS) $(test_sched_h_c___DEPENDENCIES) $(EXTRA_test_sched_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sched-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sched_h_c___OBJECTS) $(test_sched_h_c___LDADD) $(LIBS)
+
 test-select$(EXEEXT): $(test_select_OBJECTS) $(test_select_DEPENDENCIES) $(EXTRA_test_select_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-select$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_select_OBJECTS) $(test_select_LDADD) $(LIBS)
@@ -4151,6 +4802,10 @@ test-setsockopt$(EXEEXT): $(test_setsockopt_OBJECTS) $(test_setsockopt_DEPENDENC
 test-signal-h$(EXEEXT): $(test_signal_h_OBJECTS) $(test_signal_h_DEPENDENCIES) $(EXTRA_test_signal_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-signal-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_signal_h_OBJECTS) $(test_signal_h_LDADD) $(LIBS)
+
+test-signal-h-c++$(EXEEXT): $(test_signal_h_c___OBJECTS) $(test_signal_h_c___DEPENDENCIES) $(EXTRA_test_signal_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-signal-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_signal_h_c___OBJECTS) $(test_signal_h_c___LDADD) $(LIBS)
 
 test-signbit$(EXEEXT): $(test_signbit_OBJECTS) $(test_signbit_DEPENDENCIES) $(EXTRA_test_signbit_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-signbit$(EXEEXT)
@@ -4176,9 +4831,17 @@ test-stat-time$(EXEEXT): $(test_stat_time_OBJECTS) $(test_stat_time_DEPENDENCIES
 	$(AM_JOBSERVER)@rm -f test-stat-time$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stat_time_OBJECTS) $(test_stat_time_LDADD) $(LIBS)
 
+test-stat-time-c++$(EXEEXT): $(test_stat_time_c___OBJECTS) $(test_stat_time_c___DEPENDENCIES) $(EXTRA_test_stat_time_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stat-time-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stat_time_c___OBJECTS) $(test_stat_time_c___LDADD) $(LIBS)
+
 test-stdbit-h$(EXEEXT): $(test_stdbit_h_OBJECTS) $(test_stdbit_h_DEPENDENCIES) $(EXTRA_test_stdbit_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdbit-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdbit_h_OBJECTS) $(test_stdbit_h_LDADD) $(LIBS)
+
+test-stdbit-h-c++$(EXEEXT): $(test_stdbit_h_c___OBJECTS) $(test_stdbit_h_c___DEPENDENCIES) $(EXTRA_test_stdbit_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdbit-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdbit_h_c___OBJECTS) $(test_stdbit_h_c___LDADD) $(LIBS)
 
 test-stdc_memreverse8u$(EXEEXT): $(test_stdc_memreverse8u_OBJECTS) $(test_stdc_memreverse8u_DEPENDENCIES) $(EXTRA_test_stdc_memreverse8u_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdc_memreverse8u$(EXEEXT)
@@ -4188,25 +4851,49 @@ test-stdckdint-h$(EXEEXT): $(test_stdckdint_h_OBJECTS) $(test_stdckdint_h_DEPEND
 	$(AM_JOBSERVER)@rm -f test-stdckdint-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdckdint_h_OBJECTS) $(test_stdckdint_h_LDADD) $(LIBS)
 
+test-stdckdint-h-c++$(EXEEXT): $(test_stdckdint_h_c___OBJECTS) $(test_stdckdint_h_c___DEPENDENCIES) $(EXTRA_test_stdckdint_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdckdint-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdckdint_h_c___OBJECTS) $(test_stdckdint_h_c___LDADD) $(LIBS)
+
 test-stdcountof-h$(EXEEXT): $(test_stdcountof_h_OBJECTS) $(test_stdcountof_h_DEPENDENCIES) $(EXTRA_test_stdcountof_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdcountof-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdcountof_h_OBJECTS) $(test_stdcountof_h_LDADD) $(LIBS)
+
+test-stdcountof-h-c++$(EXEEXT): $(test_stdcountof_h_c___OBJECTS) $(test_stdcountof_h_c___DEPENDENCIES) $(EXTRA_test_stdcountof_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdcountof-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdcountof_h_c___OBJECTS) $(test_stdcountof_h_c___LDADD) $(LIBS)
 
 test-stddef-h$(EXEEXT): $(test_stddef_h_OBJECTS) $(test_stddef_h_DEPENDENCIES) $(EXTRA_test_stddef_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stddef-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stddef_h_OBJECTS) $(test_stddef_h_LDADD) $(LIBS)
 
+test-stddef-h-c++$(EXEEXT): $(test_stddef_h_c___OBJECTS) $(test_stddef_h_c___DEPENDENCIES) $(EXTRA_test_stddef_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stddef-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stddef_h_c___OBJECTS) $(test_stddef_h_c___LDADD) $(LIBS)
+
 test-stdint-h$(EXEEXT): $(test_stdint_h_OBJECTS) $(test_stdint_h_DEPENDENCIES) $(EXTRA_test_stdint_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdint-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdint_h_OBJECTS) $(test_stdint_h_LDADD) $(LIBS)
+
+test-stdint-h-c++$(EXEEXT): $(test_stdint_h_c___OBJECTS) $(test_stdint_h_c___DEPENDENCIES) $(EXTRA_test_stdint_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdint-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdint_h_c___OBJECTS) $(test_stdint_h_c___LDADD) $(LIBS)
 
 test-stdio-h$(EXEEXT): $(test_stdio_h_OBJECTS) $(test_stdio_h_DEPENDENCIES) $(EXTRA_test_stdio_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdio-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdio_h_OBJECTS) $(test_stdio_h_LDADD) $(LIBS)
 
+test-stdio-h-c++$(EXEEXT): $(test_stdio_h_c___OBJECTS) $(test_stdio_h_c___DEPENDENCIES) $(EXTRA_test_stdio_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdio-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdio_h_c___OBJECTS) $(test_stdio_h_c___LDADD) $(LIBS)
+
 test-stdlib-h$(EXEEXT): $(test_stdlib_h_OBJECTS) $(test_stdlib_h_DEPENDENCIES) $(EXTRA_test_stdlib_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-stdlib-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_stdlib_h_OBJECTS) $(test_stdlib_h_LDADD) $(LIBS)
+
+test-stdlib-h-c++$(EXEEXT): $(test_stdlib_h_c___OBJECTS) $(test_stdlib_h_c___DEPENDENCIES) $(EXTRA_test_stdlib_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-stdlib-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_stdlib_h_c___OBJECTS) $(test_stdlib_h_c___LDADD) $(LIBS)
 
 test-str_startswith$(EXEEXT): $(test_str_startswith_OBJECTS) $(test_str_startswith_DEPENDENCIES) $(EXTRA_test_str_startswith_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-str_startswith$(EXEEXT)
@@ -4224,6 +4911,10 @@ test-string-h$(EXEEXT): $(test_string_h_OBJECTS) $(test_string_h_DEPENDENCIES) $
 	$(AM_JOBSERVER)@rm -f test-string-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_string_h_OBJECTS) $(test_string_h_LDADD) $(LIBS)
 
+test-string-h-c++$(EXEEXT): $(test_string_h_c___OBJECTS) $(test_string_h_c___DEPENDENCIES) $(EXTRA_test_string_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-string-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_string_h_c___OBJECTS) $(test_string_h_c___LDADD) $(LIBS)
+
 test-symlink$(EXEEXT): $(test_symlink_OBJECTS) $(test_symlink_DEPENDENCIES) $(EXTRA_test_symlink_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-symlink$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_symlink_OBJECTS) $(test_symlink_LDADD) $(LIBS)
@@ -4232,29 +4923,57 @@ test-sys_ioctl-h$(EXEEXT): $(test_sys_ioctl_h_OBJECTS) $(test_sys_ioctl_h_DEPEND
 	$(AM_JOBSERVER)@rm -f test-sys_ioctl-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_ioctl_h_OBJECTS) $(test_sys_ioctl_h_LDADD) $(LIBS)
 
+test-sys_ioctl-h-c++$(EXEEXT): $(test_sys_ioctl_h_c___OBJECTS) $(test_sys_ioctl_h_c___DEPENDENCIES) $(EXTRA_test_sys_ioctl_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_ioctl-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_ioctl_h_c___OBJECTS) $(test_sys_ioctl_h_c___LDADD) $(LIBS)
+
 test-sys_select-h$(EXEEXT): $(test_sys_select_h_OBJECTS) $(test_sys_select_h_DEPENDENCIES) $(EXTRA_test_sys_select_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_select-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_select_h_OBJECTS) $(test_sys_select_h_LDADD) $(LIBS)
+
+test-sys_select-h-c++$(EXEEXT): $(test_sys_select_h_c___OBJECTS) $(test_sys_select_h_c___DEPENDENCIES) $(EXTRA_test_sys_select_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_select-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_select_h_c___OBJECTS) $(test_sys_select_h_c___LDADD) $(LIBS)
 
 test-sys_socket-h$(EXEEXT): $(test_sys_socket_h_OBJECTS) $(test_sys_socket_h_DEPENDENCIES) $(EXTRA_test_sys_socket_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_socket-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_socket_h_OBJECTS) $(test_sys_socket_h_LDADD) $(LIBS)
 
+test-sys_socket-h-c++$(EXEEXT): $(test_sys_socket_h_c___OBJECTS) $(test_sys_socket_h_c___DEPENDENCIES) $(EXTRA_test_sys_socket_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_socket-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_socket_h_c___OBJECTS) $(test_sys_socket_h_c___LDADD) $(LIBS)
+
 test-sys_stat-h$(EXEEXT): $(test_sys_stat_h_OBJECTS) $(test_sys_stat_h_DEPENDENCIES) $(EXTRA_test_sys_stat_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_stat-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_stat_h_OBJECTS) $(test_sys_stat_h_LDADD) $(LIBS)
+
+test-sys_stat-h-c++$(EXEEXT): $(test_sys_stat_h_c___OBJECTS) $(test_sys_stat_h_c___DEPENDENCIES) $(EXTRA_test_sys_stat_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_stat-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_stat_h_c___OBJECTS) $(test_sys_stat_h_c___LDADD) $(LIBS)
 
 test-sys_time-h$(EXEEXT): $(test_sys_time_h_OBJECTS) $(test_sys_time_h_DEPENDENCIES) $(EXTRA_test_sys_time_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_time-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_time_h_OBJECTS) $(test_sys_time_h_LDADD) $(LIBS)
 
+test-sys_time-h-c++$(EXEEXT): $(test_sys_time_h_c___OBJECTS) $(test_sys_time_h_c___DEPENDENCIES) $(EXTRA_test_sys_time_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_time-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_time_h_c___OBJECTS) $(test_sys_time_h_c___LDADD) $(LIBS)
+
 test-sys_types-h$(EXEEXT): $(test_sys_types_h_OBJECTS) $(test_sys_types_h_DEPENDENCIES) $(EXTRA_test_sys_types_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_types-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_types_h_OBJECTS) $(test_sys_types_h_LDADD) $(LIBS)
 
+test-sys_types-h-c++$(EXEEXT): $(test_sys_types_h_c___OBJECTS) $(test_sys_types_h_c___DEPENDENCIES) $(EXTRA_test_sys_types_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_types-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_types_h_c___OBJECTS) $(test_sys_types_h_c___LDADD) $(LIBS)
+
 test-sys_uio-h$(EXEEXT): $(test_sys_uio_h_OBJECTS) $(test_sys_uio_h_DEPENDENCIES) $(EXTRA_test_sys_uio_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-sys_uio-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_sys_uio_h_OBJECTS) $(test_sys_uio_h_LDADD) $(LIBS)
+
+test-sys_uio-h-c++$(EXEEXT): $(test_sys_uio_h_c___OBJECTS) $(test_sys_uio_h_c___DEPENDENCIES) $(EXTRA_test_sys_uio_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-sys_uio-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_sys_uio_h_c___OBJECTS) $(test_sys_uio_h_c___LDADD) $(LIBS)
 
 test-thread_create$(EXEEXT): $(test_thread_create_OBJECTS) $(test_thread_create_DEPENDENCIES) $(EXTRA_test_thread_create_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-thread_create$(EXEEXT)
@@ -4272,6 +4991,10 @@ test-time-h$(EXEEXT): $(test_time_h_OBJECTS) $(test_time_h_DEPENDENCIES) $(EXTRA
 	$(AM_JOBSERVER)@rm -f test-time-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_time_h_OBJECTS) $(test_time_h_LDADD) $(LIBS)
 
+test-time-h-c++$(EXEEXT): $(test_time_h_c___OBJECTS) $(test_time_h_c___DEPENDENCIES) $(EXTRA_test_time_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-time-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_time_h_c___OBJECTS) $(test_time_h_c___LDADD) $(LIBS)
+
 test-trunc1$(EXEEXT): $(test_trunc1_OBJECTS) $(test_trunc1_DEPENDENCIES) $(EXTRA_test_trunc1_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-trunc1$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_trunc1_OBJECTS) $(test_trunc1_LDADD) $(LIBS)
@@ -4287,6 +5010,10 @@ test-truncl$(EXEEXT): $(test_truncl_OBJECTS) $(test_truncl_DEPENDENCIES) $(EXTRA
 test-unistd-h$(EXEEXT): $(test_unistd_h_OBJECTS) $(test_unistd_h_DEPENDENCIES) $(EXTRA_test_unistd_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-unistd-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_unistd_h_OBJECTS) $(test_unistd_h_LDADD) $(LIBS)
+
+test-unistd-h-c++$(EXEEXT): $(test_unistd_h_c___OBJECTS) $(test_unistd_h_c___DEPENDENCIES) $(EXTRA_test_unistd_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-unistd-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_unistd_h_c___OBJECTS) $(test_unistd_h_c___LDADD) $(LIBS)
 
 test-unsetenv$(EXEEXT): $(test_unsetenv_OBJECTS) $(test_unsetenv_DEPENDENCIES) $(EXTRA_test_unsetenv_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-unsetenv$(EXEEXT)
@@ -4307,6 +5034,10 @@ test-verify-try$(EXEEXT): $(test_verify_try_OBJECTS) $(test_verify_try_DEPENDENC
 test-wchar-h$(EXEEXT): $(test_wchar_h_OBJECTS) $(test_wchar_h_DEPENDENCIES) $(EXTRA_test_wchar_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-wchar-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_wchar_h_OBJECTS) $(test_wchar_h_LDADD) $(LIBS)
+
+test-wchar-h-c++$(EXEEXT): $(test_wchar_h_c___OBJECTS) $(test_wchar_h_c___DEPENDENCIES) $(EXTRA_test_wchar_h_c___DEPENDENCIES) 
+	$(AM_JOBSERVER)@rm -f test-wchar-h-c++$(EXEEXT)
+	$(AM_JOBSERVER)$(AM_V_CXXLD)$(CXXLINK) $(test_wchar_h_c___OBJECTS) $(test_wchar_h_c___LDADD) $(LIBS)
 
 test-windows-mutex-type$(EXEEXT): $(test_windows_mutex_type_OBJECTS) $(test_windows_mutex_type_DEPENDENCIES) $(EXTRA_test_windows_mutex_type_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-windows-mutex-type$(EXEEXT)
@@ -4401,7 +5132,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sigprocmask.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/socket.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sockets.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdc_memreverse8u.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stpcpy.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/str_startswith.Po@am__quote@ # am--include-marker
@@ -4412,11 +5142,17 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-accept.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-alignasof.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-alloca-opt.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-arpa_inet-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-arpa_inet-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-assert-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-assert-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-assert.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-binary-io.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bind.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bool-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bool-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-bool.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-byteswap-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-byteswap.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-c-ctype.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-calloc-gnu.Po@am__quote@ # am--include-marker
@@ -4424,16 +5160,24 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-cloexec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-close.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-connect.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ctype-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ctype-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ctype-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-dup2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-endian-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-endian.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-environ.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-errno-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-errno-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-errno-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-error.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fcntl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fdopen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fgetc.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-float-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-float-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-float-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fopen-gnu.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-fopen.Po@am__quote@ # am--include-marker
@@ -4455,6 +5199,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ignore-value.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inet_pton.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-intprops.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-inttypes-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ioctl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-isblank.Po@am__quote@ # am--include-marker
@@ -4462,6 +5208,8 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-isnanf-nolibm.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-isnanl-nolibm.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-largefile.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-limits-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-listen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-lock.Po@am__quote@ # am--include-marker
@@ -4469,10 +5217,14 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-malloc-gnu.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-malloc-posix.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-malloca.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-math-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-math-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-math-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-mkfifo.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-nanosleep.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netdb-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netdb-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netinet_in-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-netinet_in-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-once.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-open.Po@am__quote@ # am--include-marker
@@ -4481,6 +5233,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-perror2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pipe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pselect.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pthread-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pthread-cond.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pthread-mutex-type.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-pthread-mutex.Po@am__quote@ # am--include-marker
@@ -4499,51 +5252,82 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-realloc-posix.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-reallocarray.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-rwlock1.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sched-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sched-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-select-fd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-select-stdin.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-select.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-servent.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-setsockopt.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-signal-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-signal-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-signal-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-signbit.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sigprocmask.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sockets.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stat-time-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stat-time.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stat.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdbit-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdbit-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdc_memreverse8u.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdckdint-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdckdint-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdcountof-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdcountof-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h-c++3.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stddef-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdint-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdint-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdint-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdio-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdio-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdio-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-stdlib-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-str_startswith.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strerror.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-strerror_r.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-string-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-string-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-string-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-symlink.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_ioctl-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_ioctl-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_select-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_select-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_socket-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_socket-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_stat-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_stat-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_time-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_time-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_types-h.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_uio-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-sys_uio-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-thread_create.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-thread_self.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time-h-c++2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-time.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-trunc1.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-trunc2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-truncl.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h-c++.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unistd-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-unsetenv.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-usleep.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-verify-try.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-verify.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-wchar-h-c++.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-wchar-h-c++2.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-wchar-h-c++3.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-wchar-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-windows-mutex-type.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-windows-recmutex-type.Po@am__quote@ # am--include-marker
@@ -4596,6 +5380,22 @@ am--depfiles: $(am__depfiles_remade)
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	$(AM_JOBSERVER)$(AM_V_CC)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
 @AMDEP_TRUE@@am__fastdepCC_FALSE@	DEPDIR=$(DEPDIR) $(CCDEPMODE) $(depcomp) @AMDEPBACKSLASH@
 @am__fastdepCC_FALSE@	$(AM_JOBSERVER@am__nodep@)$(AM_V_CC@am__nodep@)$(COMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
+
+.cc.o:
+@am__fastdepCXX_TRUE@	$(AM_JOBSERVER)$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
+@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ $< &&\
+@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_JOBSERVER)$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_JOBSERVER@am__nodep@)$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ $<
+
+.cc.obj:
+@am__fastdepCXX_TRUE@	$(AM_JOBSERVER)$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.obj$$||'`;\
+@am__fastdepCXX_TRUE@	$(CXXCOMPILE) -MT $@ -MD -MP -MF $$depbase.Tpo -c -o $@ `$(CYGPATH_W) '$<'` &&\
+@am__fastdepCXX_TRUE@	$(am__mv) $$depbase.Tpo $$depbase.Po
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	$(AM_JOBSERVER)$(AM_V_CXX)source='$<' object='$@' libtool=no @AMDEPBACKSLASH@
+@AMDEP_TRUE@@am__fastdepCXX_FALSE@	DEPDIR=$(DEPDIR) $(CXXDEPMODE) $(depcomp) @AMDEPBACKSLASH@
+@am__fastdepCXX_FALSE@	$(AM_JOBSERVER@am__nodep@)$(AM_V_CXX@am__nodep@)$(CXXCOMPILE) -c -o $@ `$(CYGPATH_W) '$<'`
 install-pkgdataDATA: $(pkgdata_DATA)
 	@$(NORMAL_INSTALL)
 	@list='$(pkgdata_DATA)'; test -n "$(pkgdatadir)" || list=; \
@@ -4904,9 +5704,23 @@ test-alloca-opt.log: test-alloca-opt$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-arpa_inet-h-c++.log: test-arpa_inet-h-c++$(EXEEXT)
+	@p='test-arpa_inet-h-c++$(EXEEXT)'; \
+	b='test-arpa_inet-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-arpa_inet-h.log: test-arpa_inet-h$(EXEEXT)
 	@p='test-arpa_inet-h$(EXEEXT)'; \
 	b='test-arpa_inet-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-assert-h-c++.log: test-assert-h-c++$(EXEEXT)
+	@p='test-assert-h-c++$(EXEEXT)'; \
+	b='test-assert-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -4932,9 +5746,23 @@ test-bind.log: test-bind$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-bool-c++.log: test-bool-c++$(EXEEXT)
+	@p='test-bool-c++$(EXEEXT)'; \
+	b='test-bool-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-bool.log: test-bool$(EXEEXT)
 	@p='test-bool$(EXEEXT)'; \
 	b='test-bool'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-byteswap-c++.log: test-byteswap-c++$(EXEEXT)
+	@p='test-byteswap-c++$(EXEEXT)'; \
+	b='test-byteswap-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -4988,6 +5816,13 @@ test-connect.log: test-connect$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-ctype-h-c++.log: test-ctype-h-c++$(EXEEXT)
+	@p='test-ctype-h-c++$(EXEEXT)'; \
+	b='test-ctype-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-ctype-h.log: test-ctype-h$(EXEEXT)
 	@p='test-ctype-h$(EXEEXT)'; \
 	b='test-ctype-h'; \
@@ -4998,6 +5833,13 @@ test-ctype-h.log: test-ctype-h$(EXEEXT)
 test-dup2.log: test-dup2$(EXEEXT)
 	@p='test-dup2$(EXEEXT)'; \
 	b='test-dup2'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-endian-c++.log: test-endian-c++$(EXEEXT)
+	@p='test-endian-c++$(EXEEXT)'; \
+	b='test-endian-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5016,6 +5858,13 @@ test-environ.log: test-environ$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-errno-h-c++.log: test-errno-h-c++$(EXEEXT)
+	@p='test-errno-h-c++$(EXEEXT)'; \
+	b='test-errno-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-errno-h.log: test-errno-h$(EXEEXT)
 	@p='test-errno-h$(EXEEXT)'; \
 	b='test-errno-h'; \
@@ -5026,6 +5875,13 @@ test-errno-h.log: test-errno-h$(EXEEXT)
 test-error.sh.log: test-error.sh
 	@p='test-error.sh'; \
 	b='test-error.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-fcntl-h-c++.log: test-fcntl-h-c++$(EXEEXT)
+	@p='test-fcntl-h-c++$(EXEEXT)'; \
+	b='test-fcntl-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5054,6 +5910,13 @@ test-fdopen.log: test-fdopen$(EXEEXT)
 test-fgetc.log: test-fgetc$(EXEEXT)
 	@p='test-fgetc$(EXEEXT)'; \
 	b='test-fgetc'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-float-h-c++.log: test-float-h-c++$(EXEEXT)
+	@p='test-float-h-c++$(EXEEXT)'; \
+	b='test-float-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5205,6 +6068,13 @@ test-intprops.log: test-intprops$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-inttypes-h-c++.log: test-inttypes-h-c++$(EXEEXT)
+	@p='test-inttypes-h-c++$(EXEEXT)'; \
+	b='test-inttypes-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-inttypes-h.log: test-inttypes-h$(EXEEXT)
 	@p='test-inttypes-h$(EXEEXT)'; \
 	b='test-inttypes-h'; \
@@ -5250,6 +6120,13 @@ test-isnanl-nolibm.log: test-isnanl-nolibm$(EXEEXT)
 test-largefile.log: test-largefile$(EXEEXT)
 	@p='test-largefile$(EXEEXT)'; \
 	b='test-largefile'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-limits-h-c++.log: test-limits-h-c++$(EXEEXT)
+	@p='test-limits-h-c++$(EXEEXT)'; \
+	b='test-limits-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5310,6 +6187,13 @@ test-malloca.log: test-malloca$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-math-h-c++.log: test-math-h-c++$(EXEEXT)
+	@p='test-math-h-c++$(EXEEXT)'; \
+	b='test-math-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-math-h.log: test-math-h$(EXEEXT)
 	@p='test-math-h$(EXEEXT)'; \
 	b='test-math-h'; \
@@ -5331,9 +6215,23 @@ test-nanosleep.log: test-nanosleep$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-netdb-h-c++.log: test-netdb-h-c++$(EXEEXT)
+	@p='test-netdb-h-c++$(EXEEXT)'; \
+	b='test-netdb-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-netdb-h.log: test-netdb-h$(EXEEXT)
 	@p='test-netdb-h$(EXEEXT)'; \
 	b='test-netdb-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-netinet_in-h-c++.log: test-netinet_in-h-c++$(EXEEXT)
+	@p='test-netinet_in-h-c++$(EXEEXT)'; \
+	b='test-netinet_in-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5404,6 +6302,13 @@ test-pselect.log: test-pselect$(EXEEXT)
 test-pthread-cond.log: test-pthread-cond$(EXEEXT)
 	@p='test-pthread-cond$(EXEEXT)'; \
 	b='test-pthread-cond'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-pthread-c++.log: test-pthread-c++$(EXEEXT)
+	@p='test-pthread-c++$(EXEEXT)'; \
+	b='test-pthread-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5520,6 +6425,13 @@ test-reallocarray.log: test-reallocarray$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sched-h-c++.log: test-sched-h-c++$(EXEEXT)
+	@p='test-sched-h-c++$(EXEEXT)'; \
+	b='test-sched-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sched-h.log: test-sched-h$(EXEEXT)
 	@p='test-sched-h$(EXEEXT)'; \
 	b='test-sched-h'; \
@@ -5558,6 +6470,13 @@ test-servent.log: test-servent$(EXEEXT)
 test-setsockopt.log: test-setsockopt$(EXEEXT)
 	@p='test-setsockopt$(EXEEXT)'; \
 	b='test-setsockopt'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-signal-h-c++.log: test-signal-h-c++$(EXEEXT)
+	@p='test-signal-h-c++$(EXEEXT)'; \
+	b='test-signal-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5604,9 +6523,23 @@ test-stat.log: test-stat$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stat-time-c++.log: test-stat-time-c++$(EXEEXT)
+	@p='test-stat-time-c++$(EXEEXT)'; \
+	b='test-stat-time-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-stat-time.log: test-stat-time$(EXEEXT)
 	@p='test-stat-time$(EXEEXT)'; \
 	b='test-stat-time'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdbit-h-c++.log: test-stdbit-h-c++$(EXEEXT)
+	@p='test-stdbit-h-c++$(EXEEXT)'; \
+	b='test-stdbit-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5625,9 +6558,23 @@ test-stdc_memreverse8u.log: test-stdc_memreverse8u$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdckdint-h-c++.log: test-stdckdint-h-c++$(EXEEXT)
+	@p='test-stdckdint-h-c++$(EXEEXT)'; \
+	b='test-stdckdint-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-stdckdint-h.log: test-stdckdint-h$(EXEEXT)
 	@p='test-stdckdint-h$(EXEEXT)'; \
 	b='test-stdckdint-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdcountof-h-c++.log: test-stdcountof-h-c++$(EXEEXT)
+	@p='test-stdcountof-h-c++$(EXEEXT)'; \
+	b='test-stdcountof-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5639,9 +6586,23 @@ test-stdcountof-h.log: test-stdcountof-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stddef-h-c++.log: test-stddef-h-c++$(EXEEXT)
+	@p='test-stddef-h-c++$(EXEEXT)'; \
+	b='test-stddef-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-stddef-h.log: test-stddef-h$(EXEEXT)
 	@p='test-stddef-h$(EXEEXT)'; \
 	b='test-stddef-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdint-h-c++.log: test-stdint-h-c++$(EXEEXT)
+	@p='test-stdint-h-c++$(EXEEXT)'; \
+	b='test-stdint-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5653,9 +6614,23 @@ test-stdint-h.log: test-stdint-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdio-h-c++.log: test-stdio-h-c++$(EXEEXT)
+	@p='test-stdio-h-c++$(EXEEXT)'; \
+	b='test-stdio-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-stdio-h.log: test-stdio-h$(EXEEXT)
 	@p='test-stdio-h$(EXEEXT)'; \
 	b='test-stdio-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-stdlib-h-c++.log: test-stdlib-h-c++$(EXEEXT)
+	@p='test-stdlib-h-c++$(EXEEXT)'; \
+	b='test-stdlib-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5688,6 +6663,13 @@ test-strerror_r.log: test-strerror_r$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-string-h-c++.log: test-string-h-c++$(EXEEXT)
+	@p='test-string-h-c++$(EXEEXT)'; \
+	b='test-string-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-string-h.log: test-string-h$(EXEEXT)
 	@p='test-string-h$(EXEEXT)'; \
 	b='test-string-h'; \
@@ -5702,9 +6684,23 @@ test-symlink.log: test-symlink$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_ioctl-h-c++.log: test-sys_ioctl-h-c++$(EXEEXT)
+	@p='test-sys_ioctl-h-c++$(EXEEXT)'; \
+	b='test-sys_ioctl-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sys_ioctl-h.log: test-sys_ioctl-h$(EXEEXT)
 	@p='test-sys_ioctl-h$(EXEEXT)'; \
 	b='test-sys_ioctl-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_select-h-c++.log: test-sys_select-h-c++$(EXEEXT)
+	@p='test-sys_select-h-c++$(EXEEXT)'; \
+	b='test-sys_select-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5716,9 +6712,23 @@ test-sys_select-h.log: test-sys_select-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_socket-h-c++.log: test-sys_socket-h-c++$(EXEEXT)
+	@p='test-sys_socket-h-c++$(EXEEXT)'; \
+	b='test-sys_socket-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sys_socket-h.log: test-sys_socket-h$(EXEEXT)
 	@p='test-sys_socket-h$(EXEEXT)'; \
 	b='test-sys_socket-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_stat-h-c++.log: test-sys_stat-h-c++$(EXEEXT)
+	@p='test-sys_stat-h-c++$(EXEEXT)'; \
+	b='test-sys_stat-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5730,6 +6740,13 @@ test-sys_stat-h.log: test-sys_stat-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_time-h-c++.log: test-sys_time-h-c++$(EXEEXT)
+	@p='test-sys_time-h-c++$(EXEEXT)'; \
+	b='test-sys_time-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sys_time-h.log: test-sys_time-h$(EXEEXT)
 	@p='test-sys_time-h$(EXEEXT)'; \
 	b='test-sys_time-h'; \
@@ -5737,9 +6754,23 @@ test-sys_time-h.log: test-sys_time-h$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_types-h-c++.log: test-sys_types-h-c++$(EXEEXT)
+	@p='test-sys_types-h-c++$(EXEEXT)'; \
+	b='test-sys_types-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-sys_types-h.log: test-sys_types-h$(EXEEXT)
 	@p='test-sys_types-h$(EXEEXT)'; \
 	b='test-sys_types-h'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-sys_uio-h-c++.log: test-sys_uio-h-c++$(EXEEXT)
+	@p='test-sys_uio-h-c++$(EXEEXT)'; \
+	b='test-sys_uio-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5768,6 +6799,13 @@ test-thread_self.log: test-thread_self$(EXEEXT)
 test-thread_create.log: test-thread_create$(EXEEXT)
 	@p='test-thread_create$(EXEEXT)'; \
 	b='test-thread_create'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-time-h-c++.log: test-time-h-c++$(EXEEXT)
+	@p='test-time-h-c++$(EXEEXT)'; \
+	b='test-time-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -5807,6 +6845,13 @@ test-truncl.log: test-truncl$(EXEEXT)
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
 	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-unistd-h-c++.log: test-unistd-h-c++$(EXEEXT)
+	@p='test-unistd-h-c++$(EXEEXT)'; \
+	b='test-unistd-h-c++'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
 test-unistd-h.log: test-unistd-h$(EXEEXT)
 	@p='test-unistd-h$(EXEEXT)'; \
 	b='test-unistd-h'; \
@@ -5838,6 +6883,13 @@ test-verify.log: test-verify$(EXEEXT)
 test-verify.sh.log: test-verify.sh
 	@p='test-verify.sh'; \
 	b='test-verify.sh'; \
+	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
+	--log-file $$b.log --trs-file $$b.trs \
+	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
+	"$$tst" $(AM_TESTS_FD_REDIRECT)
+test-wchar-h-c++.log: test-wchar-h-c++$(EXEEXT)
+	@p='test-wchar-h-c++$(EXEEXT)'; \
+	b='test-wchar-h-c++'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -6136,7 +7188,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/sigprocmask.Po
 	-rm -f ./$(DEPDIR)/sleep.Po
 	-rm -f ./$(DEPDIR)/socket.Po
-	-rm -f ./$(DEPDIR)/sockets.Po
 	-rm -f ./$(DEPDIR)/stdc_memreverse8u.Po
 	-rm -f ./$(DEPDIR)/stpcpy.Po
 	-rm -f ./$(DEPDIR)/str_startswith.Po
@@ -6147,11 +7198,17 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-accept.Po
 	-rm -f ./$(DEPDIR)/test-alignasof.Po
 	-rm -f ./$(DEPDIR)/test-alloca-opt.Po
+	-rm -f ./$(DEPDIR)/test-arpa_inet-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-arpa_inet-h.Po
+	-rm -f ./$(DEPDIR)/test-assert-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-assert-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-assert.Po
 	-rm -f ./$(DEPDIR)/test-binary-io.Po
 	-rm -f ./$(DEPDIR)/test-bind.Po
+	-rm -f ./$(DEPDIR)/test-bool-c++.Po
+	-rm -f ./$(DEPDIR)/test-bool-c++2.Po
 	-rm -f ./$(DEPDIR)/test-bool.Po
+	-rm -f ./$(DEPDIR)/test-byteswap-c++.Po
 	-rm -f ./$(DEPDIR)/test-byteswap.Po
 	-rm -f ./$(DEPDIR)/test-c-ctype.Po
 	-rm -f ./$(DEPDIR)/test-calloc-gnu.Po
@@ -6159,16 +7216,24 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-cloexec.Po
 	-rm -f ./$(DEPDIR)/test-close.Po
 	-rm -f ./$(DEPDIR)/test-connect.Po
+	-rm -f ./$(DEPDIR)/test-ctype-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-ctype-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-ctype-h.Po
 	-rm -f ./$(DEPDIR)/test-dup2.Po
+	-rm -f ./$(DEPDIR)/test-endian-c++.Po
 	-rm -f ./$(DEPDIR)/test-endian.Po
 	-rm -f ./$(DEPDIR)/test-environ.Po
+	-rm -f ./$(DEPDIR)/test-errno-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-errno-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-errno-h.Po
 	-rm -f ./$(DEPDIR)/test-error.Po
+	-rm -f ./$(DEPDIR)/test-fcntl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl.Po
 	-rm -f ./$(DEPDIR)/test-fdopen.Po
 	-rm -f ./$(DEPDIR)/test-fgetc.Po
+	-rm -f ./$(DEPDIR)/test-float-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-float-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-float-h.Po
 	-rm -f ./$(DEPDIR)/test-fopen-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fopen.Po
@@ -6190,6 +7255,8 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-ignore-value.Po
 	-rm -f ./$(DEPDIR)/test-inet_pton.Po
 	-rm -f ./$(DEPDIR)/test-intprops.Po
+	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
 	-rm -f ./$(DEPDIR)/test-ioctl.Po
 	-rm -f ./$(DEPDIR)/test-isblank.Po
@@ -6197,6 +7264,8 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-isnanf-nolibm.Po
 	-rm -f ./$(DEPDIR)/test-isnanl-nolibm.Po
 	-rm -f ./$(DEPDIR)/test-largefile.Po
+	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
 	-rm -f ./$(DEPDIR)/test-listen.Po
 	-rm -f ./$(DEPDIR)/test-lock.Po
@@ -6204,10 +7273,14 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-malloc-gnu.Po
 	-rm -f ./$(DEPDIR)/test-malloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-malloca.Po
+	-rm -f ./$(DEPDIR)/test-math-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-math-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-math-h.Po
 	-rm -f ./$(DEPDIR)/test-mkfifo.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
+	-rm -f ./$(DEPDIR)/test-netdb-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-netdb-h.Po
+	-rm -f ./$(DEPDIR)/test-netinet_in-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
@@ -6216,6 +7289,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-perror2.Po
 	-rm -f ./$(DEPDIR)/test-pipe.Po
 	-rm -f ./$(DEPDIR)/test-pselect.Po
+	-rm -f ./$(DEPDIR)/test-pthread-c++.Po
 	-rm -f ./$(DEPDIR)/test-pthread-cond.Po
 	-rm -f ./$(DEPDIR)/test-pthread-mutex-type.Po
 	-rm -f ./$(DEPDIR)/test-pthread-mutex.Po
@@ -6234,51 +7308,82 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-realloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-reallocarray.Po
 	-rm -f ./$(DEPDIR)/test-rwlock1.Po
+	-rm -f ./$(DEPDIR)/test-sched-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sched-h.Po
 	-rm -f ./$(DEPDIR)/test-select-fd.Po
 	-rm -f ./$(DEPDIR)/test-select-stdin.Po
 	-rm -f ./$(DEPDIR)/test-select.Po
 	-rm -f ./$(DEPDIR)/test-servent.Po
 	-rm -f ./$(DEPDIR)/test-setsockopt.Po
+	-rm -f ./$(DEPDIR)/test-signal-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-signal-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-signal-h.Po
 	-rm -f ./$(DEPDIR)/test-signbit.Po
 	-rm -f ./$(DEPDIR)/test-sigprocmask.Po
 	-rm -f ./$(DEPDIR)/test-sleep.Po
 	-rm -f ./$(DEPDIR)/test-sockets.Po
+	-rm -f ./$(DEPDIR)/test-stat-time-c++.Po
 	-rm -f ./$(DEPDIR)/test-stat-time.Po
 	-rm -f ./$(DEPDIR)/test-stat.Po
+	-rm -f ./$(DEPDIR)/test-stdbit-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdbit-h.Po
 	-rm -f ./$(DEPDIR)/test-stdc_memreverse8u.Po
+	-rm -f ./$(DEPDIR)/test-stdckdint-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdckdint-h.Po
+	-rm -f ./$(DEPDIR)/test-stdcountof-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdcountof-h.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h.Po
+	-rm -f ./$(DEPDIR)/test-stdint-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdint-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h.Po
+	-rm -f ./$(DEPDIR)/test-stdio-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdio-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdio-h.Po
+	-rm -f ./$(DEPDIR)/test-stdlib-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdlib-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-str_startswith.Po
 	-rm -f ./$(DEPDIR)/test-strerror.Po
 	-rm -f ./$(DEPDIR)/test-strerror_r.Po
+	-rm -f ./$(DEPDIR)/test-string-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-string-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-string-h.Po
 	-rm -f ./$(DEPDIR)/test-symlink.Po
+	-rm -f ./$(DEPDIR)/test-sys_ioctl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_select-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_select-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_socket-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_socket-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_stat-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_stat-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_time-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_time-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_uio-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_uio-h.Po
 	-rm -f ./$(DEPDIR)/test-thread_create.Po
 	-rm -f ./$(DEPDIR)/test-thread_self.Po
+	-rm -f ./$(DEPDIR)/test-time-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-time-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-time-h.Po
 	-rm -f ./$(DEPDIR)/test-time.Po
 	-rm -f ./$(DEPDIR)/test-trunc1.Po
 	-rm -f ./$(DEPDIR)/test-trunc2.Po
 	-rm -f ./$(DEPDIR)/test-truncl.Po
+	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
 	-rm -f ./$(DEPDIR)/test-verify.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-wchar-h.Po
 	-rm -f ./$(DEPDIR)/test-windows-mutex-type.Po
 	-rm -f ./$(DEPDIR)/test-windows-recmutex-type.Po
@@ -6420,7 +7525,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/sigprocmask.Po
 	-rm -f ./$(DEPDIR)/sleep.Po
 	-rm -f ./$(DEPDIR)/socket.Po
-	-rm -f ./$(DEPDIR)/sockets.Po
 	-rm -f ./$(DEPDIR)/stdc_memreverse8u.Po
 	-rm -f ./$(DEPDIR)/stpcpy.Po
 	-rm -f ./$(DEPDIR)/str_startswith.Po
@@ -6431,11 +7535,17 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-accept.Po
 	-rm -f ./$(DEPDIR)/test-alignasof.Po
 	-rm -f ./$(DEPDIR)/test-alloca-opt.Po
+	-rm -f ./$(DEPDIR)/test-arpa_inet-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-arpa_inet-h.Po
+	-rm -f ./$(DEPDIR)/test-assert-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-assert-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-assert.Po
 	-rm -f ./$(DEPDIR)/test-binary-io.Po
 	-rm -f ./$(DEPDIR)/test-bind.Po
+	-rm -f ./$(DEPDIR)/test-bool-c++.Po
+	-rm -f ./$(DEPDIR)/test-bool-c++2.Po
 	-rm -f ./$(DEPDIR)/test-bool.Po
+	-rm -f ./$(DEPDIR)/test-byteswap-c++.Po
 	-rm -f ./$(DEPDIR)/test-byteswap.Po
 	-rm -f ./$(DEPDIR)/test-c-ctype.Po
 	-rm -f ./$(DEPDIR)/test-calloc-gnu.Po
@@ -6443,16 +7553,24 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-cloexec.Po
 	-rm -f ./$(DEPDIR)/test-close.Po
 	-rm -f ./$(DEPDIR)/test-connect.Po
+	-rm -f ./$(DEPDIR)/test-ctype-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-ctype-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-ctype-h.Po
 	-rm -f ./$(DEPDIR)/test-dup2.Po
+	-rm -f ./$(DEPDIR)/test-endian-c++.Po
 	-rm -f ./$(DEPDIR)/test-endian.Po
 	-rm -f ./$(DEPDIR)/test-environ.Po
+	-rm -f ./$(DEPDIR)/test-errno-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-errno-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-errno-h.Po
 	-rm -f ./$(DEPDIR)/test-error.Po
+	-rm -f ./$(DEPDIR)/test-fcntl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-fcntl-h.Po
 	-rm -f ./$(DEPDIR)/test-fcntl.Po
 	-rm -f ./$(DEPDIR)/test-fdopen.Po
 	-rm -f ./$(DEPDIR)/test-fgetc.Po
+	-rm -f ./$(DEPDIR)/test-float-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-float-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-float-h.Po
 	-rm -f ./$(DEPDIR)/test-fopen-gnu.Po
 	-rm -f ./$(DEPDIR)/test-fopen.Po
@@ -6474,6 +7592,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-ignore-value.Po
 	-rm -f ./$(DEPDIR)/test-inet_pton.Po
 	-rm -f ./$(DEPDIR)/test-intprops.Po
+	-rm -f ./$(DEPDIR)/test-inttypes-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-inttypes-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-inttypes-h.Po
 	-rm -f ./$(DEPDIR)/test-ioctl.Po
 	-rm -f ./$(DEPDIR)/test-isblank.Po
@@ -6481,6 +7601,8 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-isnanf-nolibm.Po
 	-rm -f ./$(DEPDIR)/test-isnanl-nolibm.Po
 	-rm -f ./$(DEPDIR)/test-largefile.Po
+	-rm -f ./$(DEPDIR)/test-limits-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-limits-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-limits-h.Po
 	-rm -f ./$(DEPDIR)/test-listen.Po
 	-rm -f ./$(DEPDIR)/test-lock.Po
@@ -6488,10 +7610,14 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-malloc-gnu.Po
 	-rm -f ./$(DEPDIR)/test-malloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-malloca.Po
+	-rm -f ./$(DEPDIR)/test-math-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-math-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-math-h.Po
 	-rm -f ./$(DEPDIR)/test-mkfifo.Po
 	-rm -f ./$(DEPDIR)/test-nanosleep.Po
+	-rm -f ./$(DEPDIR)/test-netdb-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-netdb-h.Po
+	-rm -f ./$(DEPDIR)/test-netinet_in-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-netinet_in-h.Po
 	-rm -f ./$(DEPDIR)/test-once.Po
 	-rm -f ./$(DEPDIR)/test-open.Po
@@ -6500,6 +7626,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-perror2.Po
 	-rm -f ./$(DEPDIR)/test-pipe.Po
 	-rm -f ./$(DEPDIR)/test-pselect.Po
+	-rm -f ./$(DEPDIR)/test-pthread-c++.Po
 	-rm -f ./$(DEPDIR)/test-pthread-cond.Po
 	-rm -f ./$(DEPDIR)/test-pthread-mutex-type.Po
 	-rm -f ./$(DEPDIR)/test-pthread-mutex.Po
@@ -6518,51 +7645,82 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-realloc-posix.Po
 	-rm -f ./$(DEPDIR)/test-reallocarray.Po
 	-rm -f ./$(DEPDIR)/test-rwlock1.Po
+	-rm -f ./$(DEPDIR)/test-sched-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sched-h.Po
 	-rm -f ./$(DEPDIR)/test-select-fd.Po
 	-rm -f ./$(DEPDIR)/test-select-stdin.Po
 	-rm -f ./$(DEPDIR)/test-select.Po
 	-rm -f ./$(DEPDIR)/test-servent.Po
 	-rm -f ./$(DEPDIR)/test-setsockopt.Po
+	-rm -f ./$(DEPDIR)/test-signal-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-signal-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-signal-h.Po
 	-rm -f ./$(DEPDIR)/test-signbit.Po
 	-rm -f ./$(DEPDIR)/test-sigprocmask.Po
 	-rm -f ./$(DEPDIR)/test-sleep.Po
 	-rm -f ./$(DEPDIR)/test-sockets.Po
+	-rm -f ./$(DEPDIR)/test-stat-time-c++.Po
 	-rm -f ./$(DEPDIR)/test-stat-time.Po
 	-rm -f ./$(DEPDIR)/test-stat.Po
+	-rm -f ./$(DEPDIR)/test-stdbit-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdbit-h.Po
 	-rm -f ./$(DEPDIR)/test-stdc_memreverse8u.Po
+	-rm -f ./$(DEPDIR)/test-stdckdint-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdckdint-h.Po
+	-rm -f ./$(DEPDIR)/test-stdcountof-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-stdcountof-h.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-stddef-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-stddef-h.Po
+	-rm -f ./$(DEPDIR)/test-stdint-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdint-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdint-h.Po
+	-rm -f ./$(DEPDIR)/test-stdio-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdio-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdio-h.Po
+	-rm -f ./$(DEPDIR)/test-stdlib-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-stdlib-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-stdlib-h.Po
 	-rm -f ./$(DEPDIR)/test-str_startswith.Po
 	-rm -f ./$(DEPDIR)/test-strerror.Po
 	-rm -f ./$(DEPDIR)/test-strerror_r.Po
+	-rm -f ./$(DEPDIR)/test-string-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-string-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-string-h.Po
 	-rm -f ./$(DEPDIR)/test-symlink.Po
+	-rm -f ./$(DEPDIR)/test-sys_ioctl-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_ioctl-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_select-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_select-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_socket-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_socket-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_stat-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_stat-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_time-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_time-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_types-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_types-h.Po
+	-rm -f ./$(DEPDIR)/test-sys_uio-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-sys_uio-h.Po
 	-rm -f ./$(DEPDIR)/test-thread_create.Po
 	-rm -f ./$(DEPDIR)/test-thread_self.Po
+	-rm -f ./$(DEPDIR)/test-time-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-time-h-c++2.Po
 	-rm -f ./$(DEPDIR)/test-time-h.Po
 	-rm -f ./$(DEPDIR)/test-time.Po
 	-rm -f ./$(DEPDIR)/test-trunc1.Po
 	-rm -f ./$(DEPDIR)/test-trunc2.Po
 	-rm -f ./$(DEPDIR)/test-truncl.Po
+	-rm -f ./$(DEPDIR)/test-unistd-h-c++.Po
 	-rm -f ./$(DEPDIR)/test-unistd-h.Po
 	-rm -f ./$(DEPDIR)/test-unsetenv.Po
 	-rm -f ./$(DEPDIR)/test-usleep.Po
 	-rm -f ./$(DEPDIR)/test-verify-try.Po
 	-rm -f ./$(DEPDIR)/test-verify.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++2.Po
+	-rm -f ./$(DEPDIR)/test-wchar-h-c++3.Po
 	-rm -f ./$(DEPDIR)/test-wchar-h.Po
 	-rm -f ./$(DEPDIR)/test-windows-mutex-type.Po
 	-rm -f ./$(DEPDIR)/test-windows-recmutex-type.Po

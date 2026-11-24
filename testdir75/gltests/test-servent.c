@@ -22,15 +22,8 @@
 #include <netdb.h>
 
 #include "signature.h"
-
-#if !(defined _WIN32 && !defined _WIN64 && !defined __CYGWIN__)
-/* On 32-bit native Windows, these two functions may have the __stdcall calling
-   convention.  But the SIGNATURE_CHECK works only for functions with __cdecl
-   calling convention.  */
-SIGNATURE_CHECK (getservbyname, struct servent *,
-                 (char const *, char const *));
-SIGNATURE_CHECK (getservbyport, struct servent *, (int, char const *));
-#endif
+SIGNATURE_CHECK (getservbyname, struct servent *, (const char *, const char *));
+SIGNATURE_CHECK (getservbyport, struct servent *, (int, const char *));
 
 #include <stdio.h>
 #include <string.h>

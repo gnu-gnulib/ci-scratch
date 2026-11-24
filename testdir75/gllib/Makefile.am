@@ -468,6 +468,14 @@ EXTRA_DIST += warn-on-use.h
 
 ## end   gnulib module snippet/warn-on-use
 
+## begin gnulib module sockets
+
+libgnu_a_SOURCES += sockets.h sockets.c
+
+EXTRA_DIST += w32sock.h
+
+## end   gnulib module sockets
+
 ## begin gnulib module stat
 
 if GL_COND_OBJ_STAT

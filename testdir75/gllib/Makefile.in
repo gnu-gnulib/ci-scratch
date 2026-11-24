@@ -135,7 +135,8 @@ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/__inline.m4 \
 	$(top_srcdir)/glm4/absolute-header.m4 \
-	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/arpa_inet_h.m4 \
+	$(top_srcdir)/glm4/alloca.m4 $(top_srcdir)/glm4/ansi-c++.m4 \
+	$(top_srcdir)/glm4/arpa_inet_h.m4 \
 	$(top_srcdir)/glm4/assert_h.m4 \
 	$(top_srcdir)/glm4/build-to-host.m4 \
 	$(top_srcdir)/glm4/byteswap.m4 $(top_srcdir)/glm4/c-bool.m4 \
@@ -253,9 +254,9 @@ libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
 am__libgnu_a_SOURCES_DIST = cloexec.c close.c dup2.c fcntl.c fd-hook.c \
 	fseterr.c fstat.c getdtablesize.c idx.h lstat.c malloca.c \
-	msvc-inval.c msvc-nothrow.c open.c servent.c stat.c \
-	stat-time.c stdio-read.c stdio-write.c stdio-consolesafe.c \
-	stdlib.c streq.c sys_socket.c unistd.c
+	msvc-inval.c msvc-nothrow.c open.c servent.c sockets.h \
+	sockets.c stat.c stat-time.c stdio-read.c stdio-write.c \
+	stdio-consolesafe.c stdlib.c streq.c sys_socket.c unistd.c
 @GL_COND_OBJ_CLOSE_TRUE@am__objects_1 = close.$(OBJEXT)
 @GL_COND_OBJ_DUP2_TRUE@am__objects_2 = dup2.$(OBJEXT)
 @GL_COND_OBJ_FCNTL_TRUE@am__objects_3 = fcntl.$(OBJEXT)
@@ -277,9 +278,10 @@ am_libgnu_a_OBJECTS = cloexec.$(OBJEXT) $(am__objects_1) \
 	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
 	$(am__objects_7) malloca.$(OBJEXT) $(am__objects_8) \
 	$(am__objects_9) $(am__objects_10) $(am__objects_11) \
-	$(am__objects_12) stat-time.$(OBJEXT) $(am__objects_13) \
-	$(am__objects_14) $(am__objects_15) stdlib.$(OBJEXT) \
-	streq.$(OBJEXT) sys_socket.$(OBJEXT) unistd.$(OBJEXT)
+	sockets.$(OBJEXT) $(am__objects_12) stat-time.$(OBJEXT) \
+	$(am__objects_13) $(am__objects_14) $(am__objects_15) \
+	stdlib.$(OBJEXT) streq.$(OBJEXT) sys_socket.$(OBJEXT) \
+	unistd.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 am__DEPENDENCIES_1 =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -304,12 +306,12 @@ am__depfiles_remade = ./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
 	./$(DEPDIR)/getdtablesize.Po ./$(DEPDIR)/lstat.Po \
 	./$(DEPDIR)/malloca.Po ./$(DEPDIR)/msvc-inval.Po \
 	./$(DEPDIR)/msvc-nothrow.Po ./$(DEPDIR)/open.Po \
-	./$(DEPDIR)/servent.Po ./$(DEPDIR)/stat-time.Po \
-	./$(DEPDIR)/stat-w32.Po ./$(DEPDIR)/stat.Po \
-	./$(DEPDIR)/stdio-consolesafe.Po ./$(DEPDIR)/stdio-read.Po \
-	./$(DEPDIR)/stdio-write.Po ./$(DEPDIR)/stdlib.Po \
-	./$(DEPDIR)/streq.Po ./$(DEPDIR)/sys_socket.Po \
-	./$(DEPDIR)/unistd.Po
+	./$(DEPDIR)/servent.Po ./$(DEPDIR)/sockets.Po \
+	./$(DEPDIR)/stat-time.Po ./$(DEPDIR)/stat-w32.Po \
+	./$(DEPDIR)/stat.Po ./$(DEPDIR)/stdio-consolesafe.Po \
+	./$(DEPDIR)/stdio-read.Po ./$(DEPDIR)/stdio-write.Po \
+	./$(DEPDIR)/stdlib.Po ./$(DEPDIR)/streq.Po \
+	./$(DEPDIR)/sys_socket.Po ./$(DEPDIR)/unistd.Po
 am__mv = mv -f
 AM_JOBSERVER_no =
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -452,6 +454,10 @@ CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CSCOPE = @CSCOPE@
 CTAGS = @CTAGS@
+CXX = @CXX@
+CXXDEPMODE = @CXXDEPMODE@
+CXXFLAGS = @CXXFLAGS@
+CXX_CHOICE = @CXX_CHOICE@
 CXX_HAVE_STDCOUNTOF_H = @CXX_HAVE_STDCOUNTOF_H@
 CYGPATH_W = @CYGPATH_W@
 DEFS = @DEFS@
@@ -2037,6 +2043,7 @@ abs_srcdir = @abs_srcdir@
 abs_top_builddir = @abs_top_builddir@
 abs_top_srcdir = @abs_top_srcdir@
 ac_ct_CC = @ac_ct_CC@
+ac_ct_CXX = @ac_ct_CXX@
 am__include = @am__include@
 am__leading_dot = @am__leading_dot@
 am__quote = @am__quote@
@@ -2110,11 +2117,11 @@ EXTRA_DIST = alloca.in.h assert.in.h verify.h cloexec.h errno.in.h \
 	fcntl.in.h fd-hook.h filename.h fopen.c fopen.c fseterr.h \
 	stdio-impl.h stat-w32.c stat-w32.h limits.in.h malloca.h \
 	msvc-inval.h msvc-nothrow.h netdb.in.h pathmax.h _Noreturn.h \
-	arg-nonnull.h c++defs.h warn-on-use.h stat-w32.c stat-w32.h \
-	stat-time.h intprops-internal.h stdckdint.in.h stdcountof.in.h \
-	stddef.in.h stdint.in.h stdio.in.h stdlib.in.h string.in.h \
-	sys_socket.in.h sys_stat.in.h sys_types.in.h sys_uio.in.h \
-	time.in.h unistd.in.h xalloc-oversized.h
+	arg-nonnull.h c++defs.h warn-on-use.h w32sock.h stat-w32.c \
+	stat-w32.h stat-time.h intprops-internal.h stdckdint.in.h \
+	stdcountof.in.h stddef.in.h stdint.in.h stdio.in.h stdlib.in.h \
+	string.in.h sys_socket.in.h sys_stat.in.h sys_types.in.h \
+	sys_uio.in.h time.in.h unistd.in.h xalloc-oversized.h
 BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) $(ERRNO_H) fcntl.h $(LIMITS_H) \
 	netdb.h $(STDCKDINT_H) $(STDCOUNTOF_H) $(STDDEF_H) $(STDINT_H) \
 	stdio.h stdlib.h string.h sys/socket.h sys/stat.h sys/types.h \
@@ -2141,9 +2148,9 @@ libgnu_a_SOURCES = cloexec.c $(am__append_1) $(am__append_2) \
 	$(am__append_3) fd-hook.c $(am__append_4) $(am__append_5) \
 	$(am__append_6) idx.h $(am__append_7) malloca.c \
 	$(am__append_8) $(am__append_9) $(am__append_10) \
-	$(am__append_11) $(am__append_12) stat-time.c $(am__append_13) \
-	$(am__append_14) $(am__append_15) stdlib.c streq.c \
-	sys_socket.c unistd.c
+	$(am__append_11) sockets.h sockets.c $(am__append_12) \
+	stat-time.c $(am__append_13) $(am__append_14) $(am__append_15) \
+	stdlib.c streq.c sys_socket.c unistd.c
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES = fopen.c fopen.c stat-w32.c stat-w32.c
@@ -2261,6 +2268,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvc-nothrow.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/servent.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/sockets.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-time.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-w32.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat.Po@am__quote@ # am--include-marker
@@ -2592,6 +2600,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/servent.Po
+	-rm -f ./$(DEPDIR)/sockets.Po
 	-rm -f ./$(DEPDIR)/stat-time.Po
 	-rm -f ./$(DEPDIR)/stat-w32.Po
 	-rm -f ./$(DEPDIR)/stat.Po
@@ -2662,6 +2671,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/open.Po
 	-rm -f ./$(DEPDIR)/servent.Po
+	-rm -f ./$(DEPDIR)/sockets.Po
 	-rm -f ./$(DEPDIR)/stat-time.Po
 	-rm -f ./$(DEPDIR)/stat-w32.Po
 	-rm -f ./$(DEPDIR)/stat.Po

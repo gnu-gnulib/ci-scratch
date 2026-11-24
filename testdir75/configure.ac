@@ -22,6 +22,7 @@ m4_pattern_allow([^gl_LTLIBOBJS$])dnl a variable
 gl_USE_SYSTEM_EXTENSIONS
 gl_PROG_AR_RANLIB
 
+gl_ANSI_CXX
 # This is actually already done in the pre-early phase.
 # gl_USE_SYSTEM_EXTENSIONS
 gl_USE_AIX_EXTENSIONS
@@ -145,6 +146,8 @@ gl_m4_base='glm4'
   gl_CONDITIONAL([GL_COND_OBJ_SERVENT],
                  [test $REPLACE_GETSERVBYNAME = 1 || test $REPLACE_GETSERVBYPORT = 1])
   gl_NETDB_MODULE_INDICATOR([servent])
+  AC_REQUIRE([gl_SOCKETLIB])
+  AC_REQUIRE([gl_SOCKETS])
   gl_TYPE_SOCKLEN_T
   gt_TYPE_SSIZE_T
   gl_FUNC_STAT
@@ -640,8 +643,6 @@ changequote([, ])dnl
   fi
   gl_SYS_SOCKET_MODULE_INDICATOR([socket])
   gl_MODULE_INDICATOR([socket])
-  AC_REQUIRE([gl_SOCKETLIB])
-  AC_REQUIRE([gl_SOCKETS])
   gl_STDBIT_H
   gl_CONDITIONAL_HEADER([stdbit.h])
   AC_PROG_MKDIR_P

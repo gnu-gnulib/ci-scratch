@@ -21,10 +21,33 @@
 /* Specification.  */
 #include <netdb.h>
 
-#include <arpa/inet.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#if defined _WIN32 && !defined __CYGWIN__
+
+# include "sockets.h"
+# include <winsock2.h>
+
+struct servent *
+getservbyname (const char *name, const char *protocol)
+# undef getservbyname
+{
+  (void) gl_sockets_startup (SOCKETS_1_1);
+  return getservbyname (name, protocol);
+}
+
+struct servent *
+getservbyport (int n_port, const char *protocol)
+# undef getservbyport
+{
+  (void) gl_sockets_startup (SOCKETS_1_1);
+  return getservbyport (n_port, protocol);
+}
+
+#else
+
+# include <arpa/inet.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
 
 /* Cache of the contents of /etc/services.  */
 static struct servent *db /* = NULL */;
@@ -52,7 +75,17 @@ initialize (void)
           int ret;
 
           /* Parse a line.  */
-          ret = fscanf (fp, "%32s%*[ \t]%u/%32s%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n]%*[ \t]%32[^ \t#\n%*[ \t]%32[^ \t#\n]%*[ \t]%256[^#\n]",
+          ret = fscanf (fp, "%32s"
+                            "%*[ \t]%u/%32s"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%32[^ \t#\n]"
+                            "%*[ \t]%256[^#\n]",
                         name, &num, proto,
                         aliases[0], aliases[1], aliases[2], aliases[3],
                         aliases[4], aliases[5], aliases[6], aliases[7],
@@ -78,8 +111,9 @@ initialize (void)
                     }
                   db_allocated = new_allocated;
                 }
-              size_t need = (n_aliases + 1) * sizeof (char *)
-                            + (strlen (name) + 1) + (strlen (proto) + 1);
+              size_t need =
+                (n_aliases > 0 ? n_aliases + 1 : 0) * sizeof (char *)
+                + (strlen (name) + 1) + (strlen (proto) + 1);
               for (int i = 0; i < n_aliases; i++)
                 need += strlen (aliases[i]) + 1;
               char *memory = (char *) malloc (need);
@@ -94,8 +128,16 @@ initialize (void)
               /* Fill the new 'struct servent'.  */
               struct servent *se = &db[db_length++];
 
-              se->s_aliases = (char **) memory;
-              memory += (n_aliases + 1) * sizeof (char *);
+              if (n_aliases > 0)
+                {
+                  se->s_aliases = (char **) memory;
+                  memory += (n_aliases + 1) * sizeof (char *);
+                }
+              else
+                {
+                  static char *no_aliases /* = NULL */;
+                  se->s_aliases = &no_aliases;
+                }
 
               memcpy (memory, name, strlen (name) + 1);
               se->s_name = memory;
@@ -171,3 +213,5 @@ getservbyport (int n_port, const char *protocol)
     }
   return NULL;
 }
+
+#endif
