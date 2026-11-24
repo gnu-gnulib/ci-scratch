@@ -43,7 +43,7 @@ for prereq in $prerequisites; do
 done
 
 # Plain compilation of a single program.
-${CC-gcc} -Wall -o foo foo.c || exit 1; ./foo; exit $?
+#${CC-gcc} -Wall -o foo foo.c || exit 1; ./foo; exit $?
 
 # We expect to find the sources in the repository.
 # testdir1: iconv problem on macOS 14.
@@ -121,7 +121,8 @@ ${CC-gcc} -Wall -o foo foo.c || exit 1; ./foo; exit $?
 # testdir72: c-strtof c-strtod c-strtold
 # testdir73: libsigsgev
 # testdir74: getdate, strptime-gnu
-cd testdir74 || exit 1
+# testdir75: servent
+cd testdir75 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
