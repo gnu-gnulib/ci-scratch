@@ -43,7 +43,7 @@ for prereq in $prerequisites; do
 done
 
 # Plain compilation of a single program.
-#${CC-gcc} -Wall -o foo foo.c || exit 1; ./foo; exit $?
+${CC-gcc} -Wall -o foo foo.c || exit 1; ./foo; exit $?
 
 # We expect to find the sources in the repository.
 # testdir1: iconv problem on macOS 14.
