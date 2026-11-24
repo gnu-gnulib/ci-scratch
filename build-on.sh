@@ -122,7 +122,8 @@ done
 # testdir73: libsigsgev
 # testdir74: getdate, strptime-gnu
 # testdir75: servent
-cd testdir75 || exit 1
+# testdir76: copy-file
+cd testdir76 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`
