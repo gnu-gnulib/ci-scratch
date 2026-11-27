@@ -188,13 +188,6 @@ EXTRA_DIST += test-assert.c
 
 ## end   gnulib module assert-h-tests
 
-## begin gnulib module assure
-
-
-EXTRA_DIST += assure.h
-
-## end   gnulib module assure
-
 ## begin gnulib module at-internal
 
 libtests_a_SOURCES += openat-priv.h openat-proc.c
@@ -805,24 +798,6 @@ EXTRA_DIST += test-dirent-h.c
 
 ## end   gnulib module dirent-h-tests
 
-## begin gnulib module dirfd
-
-if GL_COND_OBJ_DIRFD
-libtests_a_SOURCES += dirfd.c
-endif
-
-EXTRA_DIST += dirent-private.h
-
-## end   gnulib module dirfd
-
-## begin gnulib module dirfd-tests
-
-TESTS += test-dirfd
-noinst_PROGRAMS += test-dirfd
-EXTRA_DIST += test-dirfd.c macros.h
-
-## end   gnulib module dirfd-tests
-
 ## begin gnulib module dirname-lgpl
 
 libtests_a_SOURCES += dirname-lgpl.c stripslash.c
@@ -956,14 +931,6 @@ test_file_has_acl_LDADD = $(LDADD) $(FILE_HAS_ACL_LIB)
 EXTRA_DIST += test-file-has-acl.sh test-file-has-acl-1.sh test-file-has-acl-2.sh test-file-has-acl.c macros.h
 
 ## end   gnulib module file-has-acl-tests
-
-## begin gnulib module filenamecat-lgpl
-
-libtests_a_SOURCES += filenamecat-lgpl.c
-
-EXTRA_DIST += filenamecat.h
-
-## end   gnulib module filenamecat-lgpl
 
 ## begin gnulib module flexmember
 
@@ -1236,14 +1203,6 @@ SED_HEADER_TO_AT_t = $(SED_HEADER_STDOUT) -n -e 'w $@-t'
 gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
-
-## begin gnulib module getcwd-lgpl
-
-if GL_COND_OBJ_GETCWD_LGPL
-libtests_a_SOURCES += getcwd-lgpl.c
-endif
-
-## end   gnulib module getcwd-lgpl
 
 ## begin gnulib module getcwd-lgpl-tests
 
@@ -3517,14 +3476,6 @@ EXTRA_DIST += test-str_startswith.c macros.h
 
 ## end   gnulib module str_startswith-tests
 
-## begin gnulib module strdup-posix
-
-if GL_COND_OBJ_STRDUP
-libtests_a_SOURCES += strdup.c
-endif
-
-## end   gnulib module strdup-posix
-
 ## begin gnulib module strerror-tests
 
 TESTS += test-strerror
@@ -4427,13 +4378,6 @@ noinst_PROGRAMS += test-vasnprintf
 EXTRA_DIST += test-vasnprintf.c macros.h
 
 ## end   gnulib module vasnprintf-tests
-
-## begin gnulib module verify
-
-
-EXTRA_DIST += verify.h
-
-## end   gnulib module verify
 
 ## begin gnulib module verify-tests
 

@@ -123,6 +123,13 @@ EXTRA_DIST += assert.in.h verify.h
 
 ## end   gnulib module assert-h
 
+## begin gnulib module assure
+
+
+EXTRA_DIST += assure.h
+
+## end   gnulib module assure
+
 ## begin gnulib module attribute
 
 
@@ -250,6 +257,26 @@ MOSTLYCLEANFILES += dirent.h dirent.h-t
 EXTRA_DIST += dirent.in.h
 
 ## end   gnulib module dirent-h
+
+## begin gnulib module dirinfo-abstract
+
+if GL_COND_OBJ_DIRINFO_ABSTRACT
+libgnu_a_SOURCES += dirinfo-abstract.c
+endif
+
+EXTRA_DIST += dirinfo-abstract.h
+
+## end   gnulib module dirinfo-abstract
+
+## begin gnulib module dirinfo-impl
+
+if GL_COND_OBJ_DIRINFO_IMPL
+libgnu_a_SOURCES += dirinfo-impl.c
+endif
+
+EXTRA_DIST += dirinfo-impl.h
+
+## end   gnulib module dirinfo-impl
 
 ## begin gnulib module dup2
 
@@ -396,6 +423,14 @@ EXTRA_DIST += filename.h
 
 ## end   gnulib module filename
 
+## begin gnulib module filenamecat-lgpl
+
+libgnu_a_SOURCES += filenamecat-lgpl.c
+
+EXTRA_DIST += filenamecat.h
+
+## end   gnulib module filenamecat-lgpl
+
 ## begin gnulib module free-posix
 
 if GL_COND_OBJ_FREE
@@ -451,6 +486,14 @@ SED_HEADER_TO_AT_t = $(SED_HEADER_STDOUT) -n -e 'w $@-t'
 gl_V_at = $(AM_V_GEN)
 
 ## end   gnulib module gen-header
+
+## begin gnulib module getcwd-lgpl
+
+if GL_COND_OBJ_GETCWD_LGPL
+libgnu_a_SOURCES += getcwd-lgpl.c
+endif
+
+## end   gnulib module getcwd-lgpl
 
 ## begin gnulib module getdtablesize
 
@@ -1468,6 +1511,14 @@ EXTRA_DIST += stdlib.in.h
 
 ## end   gnulib module stdlib-h
 
+## begin gnulib module strdup-posix
+
+if GL_COND_OBJ_STRDUP
+libgnu_a_SOURCES += strdup.c
+endif
+
+## end   gnulib module strdup-posix
+
 ## begin gnulib module streq
 
 libgnu_a_SOURCES += streq.c
@@ -2376,6 +2427,13 @@ libgnu_a_SOURCES += utimens.c
 EXTRA_DIST += utimens.h
 
 ## end   gnulib module utimens
+
+## begin gnulib module verify
+
+
+EXTRA_DIST += verify.h
+
+## end   gnulib module verify
 
 ## begin gnulib module wchar-h
 

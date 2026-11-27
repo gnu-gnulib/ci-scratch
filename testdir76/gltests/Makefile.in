@@ -136,35 +136,34 @@ TESTS = test-accept$(EXEEXT) test-set-mode-acl.sh \
 	test-cloexec$(EXEEXT) test-close$(EXEEXT) \
 	test-connect$(EXEEXT) test-copy-file.sh test-copy-file-1.sh \
 	test-copy-file-2.sh test-ctype-h$(EXEEXT) \
-	test-dirent-h$(EXEEXT) test-dirfd$(EXEEXT) test-dup$(EXEEXT) \
-	test-dup2$(EXEEXT) test-environ$(EXEEXT) test-errno-h$(EXEEXT) \
-	test-error.sh test-fchdir$(EXEEXT) test-fcntl-h$(EXEEXT) \
-	test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) \
-	test-file-has-acl.sh test-file-has-acl-1.sh \
-	test-file-has-acl-2.sh test-float-h$(EXEEXT) \
-	test-fopen-gnu$(EXEEXT) test-fopen$(EXEEXT) \
-	test-fputc$(EXEEXT) test-fread$(EXEEXT) test-free$(EXEEXT) \
-	test-frexp$(EXEEXT) test-frexpl$(EXEEXT) test-fseterr$(EXEEXT) \
-	test-fstat$(EXEEXT) test-fstatat$(EXEEXT) test-ftell.sh \
-	test-ftell2.sh test-ftell3$(EXEEXT) test-ftello.sh \
-	test-ftello2.sh test-ftello3$(EXEEXT) test-ftello4.sh \
-	test-ftruncate.sh test-fwrite$(EXEEXT) \
-	test-getcwd-lgpl$(EXEEXT) test-getdtablesize$(EXEEXT) \
-	test-getprogname$(EXEEXT) test-gettext-h$(EXEEXT) \
-	test-gettimeofday$(EXEEXT) test-hard-locale$(EXEEXT) \
-	test-hash$(EXEEXT) test-ignore-value$(EXEEXT) \
-	test-inet_pton$(EXEEXT) test-intprops$(EXEEXT) \
-	test-inttostr$(EXEEXT) test-inttypes-h$(EXEEXT) \
-	test-ioctl$(EXEEXT) test-isblank$(EXEEXT) \
-	test-isnand-nolibm$(EXEEXT) test-isnanf-nolibm$(EXEEXT) \
-	test-isnanl-nolibm$(EXEEXT) test-iswblank$(EXEEXT) \
-	test-iswdigit.sh test-iswpunct.sh test-iswxdigit.sh \
-	test-largefile$(EXEEXT) test-limits-h$(EXEEXT) \
-	test-listen$(EXEEXT) $(am__append_29) test-locale-h$(EXEEXT) \
-	test-localeconv$(EXEEXT) test-localeconv-mt$(EXEEXT) \
-	test-localename$(EXEEXT) $(am__append_33) \
-	test-rwlock1$(EXEEXT) test-lock$(EXEEXT) test-lseek.sh \
-	test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
+	test-dirent-h$(EXEEXT) test-dup$(EXEEXT) test-dup2$(EXEEXT) \
+	test-environ$(EXEEXT) test-errno-h$(EXEEXT) test-error.sh \
+	test-fchdir$(EXEEXT) test-fcntl-h$(EXEEXT) test-fcntl$(EXEEXT) \
+	test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) test-file-has-acl.sh \
+	test-file-has-acl-1.sh test-file-has-acl-2.sh \
+	test-float-h$(EXEEXT) test-fopen-gnu$(EXEEXT) \
+	test-fopen$(EXEEXT) test-fputc$(EXEEXT) test-fread$(EXEEXT) \
+	test-free$(EXEEXT) test-frexp$(EXEEXT) test-frexpl$(EXEEXT) \
+	test-fseterr$(EXEEXT) test-fstat$(EXEEXT) \
+	test-fstatat$(EXEEXT) test-ftell.sh test-ftell2.sh \
+	test-ftell3$(EXEEXT) test-ftello.sh test-ftello2.sh \
+	test-ftello3$(EXEEXT) test-ftello4.sh test-ftruncate.sh \
+	test-fwrite$(EXEEXT) test-getcwd-lgpl$(EXEEXT) \
+	test-getdtablesize$(EXEEXT) test-getprogname$(EXEEXT) \
+	test-gettext-h$(EXEEXT) test-gettimeofday$(EXEEXT) \
+	test-hard-locale$(EXEEXT) test-hash$(EXEEXT) \
+	test-ignore-value$(EXEEXT) test-inet_pton$(EXEEXT) \
+	test-intprops$(EXEEXT) test-inttostr$(EXEEXT) \
+	test-inttypes-h$(EXEEXT) test-ioctl$(EXEEXT) \
+	test-isblank$(EXEEXT) test-isnand-nolibm$(EXEEXT) \
+	test-isnanf-nolibm$(EXEEXT) test-isnanl-nolibm$(EXEEXT) \
+	test-iswblank$(EXEEXT) test-iswdigit.sh test-iswpunct.sh \
+	test-iswxdigit.sh test-largefile$(EXEEXT) \
+	test-limits-h$(EXEEXT) test-listen$(EXEEXT) $(am__append_27) \
+	test-locale-h$(EXEEXT) test-localeconv$(EXEEXT) \
+	test-localeconv-mt$(EXEEXT) test-localename$(EXEEXT) \
+	$(am__append_31) test-rwlock1$(EXEEXT) test-lock$(EXEEXT) \
+	test-lseek.sh test-lstat$(EXEEXT) test-malloc-gnu$(EXEEXT) \
 	test-malloc-posix$(EXEEXT) test-malloca$(EXEEXT) \
 	test-math-h$(EXEEXT) test-mbrtoc32-1.sh test-mbrtoc32-2.sh \
 	test-mbrtoc32-3.sh test-mbrtoc32-4.sh test-mbrtoc32-5.sh \
@@ -176,7 +175,7 @@ TESTS = test-accept$(EXEEXT) test-set-mode-acl.sh \
 	test-mbrtowc-w32-2.sh test-mbrtowc-w32-3.sh \
 	test-mbrtowc-w32-4.sh test-mbrtowc-w32-5.sh \
 	test-mbrtowc-w32-6.sh test-mbrtowc-w32-7.sh \
-	test-mbrtowc-w32-8.sh $(am__append_38) test-mbsinit.sh \
+	test-mbrtowc-w32-8.sh $(am__append_36) test-mbsinit.sh \
 	test-mbsnlen.sh test-memchr$(EXEEXT) test-memrchr$(EXEEXT) \
 	test-memset_explicit$(EXEEXT) test-mkfifo$(EXEEXT) \
 	test-nanosleep$(EXEEXT) test-netinet_in-h$(EXEEXT) \
@@ -201,7 +200,7 @@ TESTS = test-accept$(EXEEXT) test-set-mode-acl.sh \
 	test-setlocale_null-mt-all$(EXEEXT) \
 	test-setlocale_null-unlocked$(EXEEXT) test-setlocale1.sh \
 	test-setlocale2.sh test-setlocale-w32$(EXEEXT) \
-	$(am__append_67) test-setsockopt$(EXEEXT) \
+	$(am__append_65) test-setsockopt$(EXEEXT) \
 	test-signal-h$(EXEEXT) test-signbit$(EXEEXT) $(am__EXEEXT_5) \
 	test-sleep$(EXEEXT) test-snprintf$(EXEEXT) \
 	test-sockets$(EXEEXT) test-stat$(EXEEXT) \
@@ -265,9 +264,8 @@ noinst_PROGRAMS = test-accept$(EXEEXT) test-set-mode-acl$(EXEEXT) \
 	test-calloc-posix$(EXEEXT) test-chdir$(EXEEXT) \
 	test-cloexec$(EXEEXT) test-close$(EXEEXT) \
 	test-connect$(EXEEXT) test-copy-file$(EXEEXT) \
-	test-ctype-h$(EXEEXT) test-dirent-h$(EXEEXT) \
-	test-dirfd$(EXEEXT) test-dup$(EXEEXT) test-dup2$(EXEEXT) \
-	test-environ$(EXEEXT) test-errno-h$(EXEEXT) \
+	test-ctype-h$(EXEEXT) test-dirent-h$(EXEEXT) test-dup$(EXEEXT) \
+	test-dup2$(EXEEXT) test-environ$(EXEEXT) test-errno-h$(EXEEXT) \
 	test-error$(EXEEXT) test-fchdir$(EXEEXT) test-fcntl-h$(EXEEXT) \
 	test-fcntl$(EXEEXT) test-fdopen$(EXEEXT) test-fgetc$(EXEEXT) \
 	test-file-has-acl$(EXEEXT) test-float-h$(EXEEXT) \
@@ -375,120 +373,117 @@ EXTRA_PROGRAMS = test-verify-try$(EXEEXT)
 @GL_COND_OBJ_C32RTOMB_TRUE@am__append_4 = c32rtomb.c
 @GL_COND_OBJ_CHDIR_LONG_TRUE@am__append_5 = chdir-long.c
 @GL_COND_OBJ_CONNECT_TRUE@am__append_6 = connect.c
-@GL_COND_OBJ_DIRFD_TRUE@am__append_7 = dirfd.c
-@GL_COND_OBJ_DUP_TRUE@am__append_8 = dup.c
-@GL_COND_OBJ_FCHDIR_TRUE@am__append_9 = fchdir.c
-@GL_COND_OBJ_FDOPEN_TRUE@am__append_10 = fdopen.c
-@GL_COND_OBJ_FLOAT_TRUE@am__append_11 = float.c
-@GL_COND_OBJ_ITOLD_TRUE@am__append_12 = itold.c
-@GL_COND_OBJ_FSTATAT_TRUE@am__append_13 = fstatat.c
-@GL_COND_OBJ_FTELL_TRUE@am__append_14 = ftell.c
-@GL_COND_OBJ_FTELLO_TRUE@am__append_15 = ftello.c
-@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_16 = ftruncate.c
-@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_17 = getcwd-lgpl.c
-@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_FALSE@am__append_18 = getlocalename_l-unsafe.c
-@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_TRUE@am__append_19 = getlocalename_l-unsafe.c
-@GL_COND_OBJ_GETPAGESIZE_TRUE@am__append_20 = getpagesize.c
-@GL_COND_OBJ_INET_PTON_TRUE@am__append_21 = inet_pton.c
-@GL_COND_OBJ_IOCTL_TRUE@am__append_22 = ioctl.c
-@GL_COND_OBJ_ISBLANK_TRUE@am__append_23 = isblank.c
-@GL_COND_OBJ_ISWBLANK_TRUE@am__append_24 = iswblank.c
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_25 = iswdigit.c
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_26 = iswpunct.c
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_27 = iswxdigit.c
-@GL_COND_OBJ_LISTEN_TRUE@am__append_28 = listen.c
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_29 = test-localcharset-w32utf8.sh
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_30 = test-localcharset-w32utf8
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_31 =  \
+@GL_COND_OBJ_DUP_TRUE@am__append_7 = dup.c
+@GL_COND_OBJ_FCHDIR_TRUE@am__append_8 = fchdir.c
+@GL_COND_OBJ_FDOPEN_TRUE@am__append_9 = fdopen.c
+@GL_COND_OBJ_FLOAT_TRUE@am__append_10 = float.c
+@GL_COND_OBJ_ITOLD_TRUE@am__append_11 = itold.c
+@GL_COND_OBJ_FSTATAT_TRUE@am__append_12 = fstatat.c
+@GL_COND_OBJ_FTELL_TRUE@am__append_13 = ftell.c
+@GL_COND_OBJ_FTELLO_TRUE@am__append_14 = ftello.c
+@GL_COND_OBJ_FTRUNCATE_TRUE@am__append_15 = ftruncate.c
+@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_FALSE@am__append_16 = getlocalename_l-unsafe.c
+@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_TRUE@am__append_17 = getlocalename_l-unsafe.c
+@GL_COND_OBJ_GETPAGESIZE_TRUE@am__append_18 = getpagesize.c
+@GL_COND_OBJ_INET_PTON_TRUE@am__append_19 = inet_pton.c
+@GL_COND_OBJ_IOCTL_TRUE@am__append_20 = ioctl.c
+@GL_COND_OBJ_ISBLANK_TRUE@am__append_21 = isblank.c
+@GL_COND_OBJ_ISWBLANK_TRUE@am__append_22 = iswblank.c
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__append_23 = iswdigit.c
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__append_24 = iswpunct.c
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__append_25 = iswxdigit.c
+@GL_COND_OBJ_LISTEN_TRUE@am__append_26 = listen.c
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_27 = test-localcharset-w32utf8.sh
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_28 = test-localcharset-w32utf8
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_29 =  \
 @OS_IS_NATIVE_WINDOWS_TRUE@	test-localcharset-windows-utf8.res \
 @OS_IS_NATIVE_WINDOWS_TRUE@	test-localename-windows-utf8.res
-@GL_COND_OBJ_LOCALECONV_TRUE@am__append_32 = localeconv.c
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_33 = test-localename-w32utf8.sh
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_34 = test-localename-w32utf8
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__append_35 = localename-unsafe.c
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__append_36 = localename-unsafe.c
-@GL_COND_OBJ_LSEEK_TRUE@am__append_37 = lseek.c
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_38 = test-mbrtowc-w32utf8.sh
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_39 = test-mbrtowc-w32utf8
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_40 = test-mbrtowc-windows-utf8.res
-@GL_COND_OBJ_MBTOWC_TRUE@am__append_41 = mbtowc.c
-@GL_COND_OBJ_MEMCHR_TRUE@am__append_42 = memchr.c
-@GL_COND_OBJ_MEMPCPY_TRUE@am__append_43 = mempcpy.c
-@GL_COND_OBJ_MEMRCHR_TRUE@am__append_44 = memrchr.c
-@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__append_45 = memset_explicit.c
-@GL_COND_OBJ_MKFIFO_TRUE@am__append_46 = mkfifo.c
-@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_47 = nanosleep.c
-@GL_COND_OBJ_OPENAT_TRUE@am__append_48 = openat.c
-@GL_COND_OBJ_PERROR_TRUE@am__append_49 = perror.c
-@GL_COND_OBJ_PIPE_TRUE@am__append_50 = pipe.c
-@GL_COND_OBJ_PSELECT_TRUE@am__append_51 = pselect.c
-@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_52 = pthread-cond.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_53 = pthread-mutex.c
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_54 = pthread-once.c
-@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_55 = pthread-rwlock.c
-@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_56 = pthread-thread.c
-@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_57 = pthread_mutex_timedlock.c
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_58 = pthread_sigmask.c
-@GL_COND_OBJ_PUTENV_TRUE@am__append_59 = putenv.c
-@GL_COND_OBJ_RANDOM_TRUE@am__append_60 = random.c
-@GL_COND_OBJ_RANDOM_R_TRUE@am__append_61 = random_r.c
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_62 = sched_yield.c
-@GL_COND_OBJ_SELECT_TRUE@am__append_63 = select.c
-@GL_COND_OBJ_SETENV_TRUE@am__append_64 = setenv.c
-@GL_COND_OBJ_SETLOCALE_TRUE@am__append_65 = setlocale.c
-@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__append_66 = setlocale-fixes.c
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_67 = test-setlocale-w32utf8.sh
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_68 = test-setlocale-w32utf8
-@OS_IS_NATIVE_WINDOWS_TRUE@am__append_69 = test-setlocale-windows-utf8.res
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_70 = setsockopt.c
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_71 = signbitf.c signbitd.c signbitl.c
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_72 = sigprocmask.c
+@GL_COND_OBJ_LOCALECONV_TRUE@am__append_30 = localeconv.c
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_31 = test-localename-w32utf8.sh
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_32 = test-localename-w32utf8
+@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__append_33 = localename-unsafe.c
+@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__append_34 = localename-unsafe.c
+@GL_COND_OBJ_LSEEK_TRUE@am__append_35 = lseek.c
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_36 = test-mbrtowc-w32utf8.sh
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_37 = test-mbrtowc-w32utf8
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_38 = test-mbrtowc-windows-utf8.res
+@GL_COND_OBJ_MBTOWC_TRUE@am__append_39 = mbtowc.c
+@GL_COND_OBJ_MEMCHR_TRUE@am__append_40 = memchr.c
+@GL_COND_OBJ_MEMPCPY_TRUE@am__append_41 = mempcpy.c
+@GL_COND_OBJ_MEMRCHR_TRUE@am__append_42 = memrchr.c
+@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__append_43 = memset_explicit.c
+@GL_COND_OBJ_MKFIFO_TRUE@am__append_44 = mkfifo.c
+@GL_COND_OBJ_NANOSLEEP_TRUE@am__append_45 = nanosleep.c
+@GL_COND_OBJ_OPENAT_TRUE@am__append_46 = openat.c
+@GL_COND_OBJ_PERROR_TRUE@am__append_47 = perror.c
+@GL_COND_OBJ_PIPE_TRUE@am__append_48 = pipe.c
+@GL_COND_OBJ_PSELECT_TRUE@am__append_49 = pselect.c
+@GL_COND_OBJ_PTHREAD_COND_TRUE@am__append_50 = pthread-cond.c
+@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__append_51 = pthread-mutex.c
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__append_52 = pthread-once.c
+@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__append_53 = pthread-rwlock.c
+@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__append_54 = pthread-thread.c
+@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__append_55 = pthread_mutex_timedlock.c
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__append_56 = pthread_sigmask.c
+@GL_COND_OBJ_PUTENV_TRUE@am__append_57 = putenv.c
+@GL_COND_OBJ_RANDOM_TRUE@am__append_58 = random.c
+@GL_COND_OBJ_RANDOM_R_TRUE@am__append_59 = random_r.c
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__append_60 = sched_yield.c
+@GL_COND_OBJ_SELECT_TRUE@am__append_61 = select.c
+@GL_COND_OBJ_SETENV_TRUE@am__append_62 = setenv.c
+@GL_COND_OBJ_SETLOCALE_TRUE@am__append_63 = setlocale.c
+@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__append_64 = setlocale-fixes.c
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_65 = test-setlocale-w32utf8.sh
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_66 = test-setlocale-w32utf8
+@OS_IS_NATIVE_WINDOWS_TRUE@am__append_67 = test-setlocale-windows-utf8.res
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__append_68 = setsockopt.c
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__append_69 = signbitf.c signbitd.c signbitl.c
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__append_70 = sigprocmask.c
 
 # Work around https://gnats.netbsd.org/cgi-bin/query-pr-single.pl?number=57213
-@OS_IS_NETBSD_FALSE@am__append_73 = test-sigprocmask
-@GL_COND_OBJ_SLEEP_TRUE@am__append_74 = sleep.c
-@GL_COND_OBJ_SOCKET_TRUE@am__append_75 = socket.c
-@GL_GENERATE_STDBIT_H_TRUE@am__append_76 = stdc_rotate_left.c \
+@OS_IS_NETBSD_FALSE@am__append_71 = test-sigprocmask
+@GL_COND_OBJ_SLEEP_TRUE@am__append_72 = sleep.c
+@GL_COND_OBJ_SOCKET_TRUE@am__append_73 = socket.c
+@GL_GENERATE_STDBIT_H_TRUE@am__append_74 = stdc_rotate_left.c \
 @GL_GENERATE_STDBIT_H_TRUE@	stdc_rotate_right.c
-@GL_COND_OBJ_STPCPY_TRUE@am__append_77 = stpcpy.c
-@GL_COND_OBJ_STRDUP_TRUE@am__append_78 = strdup.c
-@GL_COND_OBJ_STRNCPY_TRUE@am__append_79 = strncpy.c
-@GL_COND_OBJ_SYMLINK_TRUE@am__append_80 = symlink.c
-@GL_COND_OBJ_TIME_TRUE@am__append_81 = time.c
-@GL_COND_OBJ_TRUNC_TRUE@am__append_82 = trunc.c
-@GL_COND_OBJ_TRUNCL_TRUE@am__append_83 = truncl.c
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_84 = unicase/tolower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_85 = unictype/ctype_alnum.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_86 = unictype/ctype_alpha.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_87 = unictype/ctype_blank.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_88 = unictype/ctype_cntrl.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_89 = unictype/ctype_digit.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_90 = unictype/ctype_graph.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_91 = unictype/ctype_lower.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_92 = unictype/ctype_punct.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_93 = unictype/ctype_space.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_94 = unictype/ctype_upper.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_95 = unictype/ctype_xdigit.c
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_96 = uniwidth/width.c
-@GL_COND_OBJ_UNSETENV_TRUE@am__append_97 = unsetenv.c
-@GL_COND_OBJ_USLEEP_TRUE@am__append_98 = usleep.c
-@OS_IS_CYGWIN_FALSE@am__append_99 = test-usleep
-@GL_COND_OBJ_UTIMENSAT_TRUE@am__append_100 = utimensat.c
-@GL_COND_OBJ_WCRTOMB_TRUE@am__append_101 = wcrtomb.c
-@GL_COND_OBJ_WCTOB_TRUE@am__append_102 = wctob.c
-@GL_COND_OBJ_WCTOMB_TRUE@am__append_103 = wctomb.c
-@GL_COND_OBJ_WCWIDTH_TRUE@am__append_104 = wcwidth.c
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_105 = windows-cond.c
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_106 = windows-mutex.c
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_107 = windows-once.c
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_108 = windows-recmutex.c
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_109 = windows-rwlock.c
-@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_110 = windows-spin.c
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_111 = windows-thread.c
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_112 = windows-timedmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_113 = windows-timedrecmutex.c
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_114 = windows-timedrwlock.c
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_115 = windows-tls.c
+@GL_COND_OBJ_STPCPY_TRUE@am__append_75 = stpcpy.c
+@GL_COND_OBJ_STRNCPY_TRUE@am__append_76 = strncpy.c
+@GL_COND_OBJ_SYMLINK_TRUE@am__append_77 = symlink.c
+@GL_COND_OBJ_TIME_TRUE@am__append_78 = time.c
+@GL_COND_OBJ_TRUNC_TRUE@am__append_79 = trunc.c
+@GL_COND_OBJ_TRUNCL_TRUE@am__append_80 = truncl.c
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__append_81 = unicase/tolower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__append_82 = unictype/ctype_alnum.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__append_83 = unictype/ctype_alpha.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__append_84 = unictype/ctype_blank.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__append_85 = unictype/ctype_cntrl.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__append_86 = unictype/ctype_digit.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__append_87 = unictype/ctype_graph.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__append_88 = unictype/ctype_lower.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__append_89 = unictype/ctype_punct.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__append_90 = unictype/ctype_space.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__append_91 = unictype/ctype_upper.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__append_92 = unictype/ctype_xdigit.c
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__append_93 = uniwidth/width.c
+@GL_COND_OBJ_UNSETENV_TRUE@am__append_94 = unsetenv.c
+@GL_COND_OBJ_USLEEP_TRUE@am__append_95 = usleep.c
+@OS_IS_CYGWIN_FALSE@am__append_96 = test-usleep
+@GL_COND_OBJ_UTIMENSAT_TRUE@am__append_97 = utimensat.c
+@GL_COND_OBJ_WCRTOMB_TRUE@am__append_98 = wcrtomb.c
+@GL_COND_OBJ_WCTOB_TRUE@am__append_99 = wctob.c
+@GL_COND_OBJ_WCTOMB_TRUE@am__append_100 = wctomb.c
+@GL_COND_OBJ_WCWIDTH_TRUE@am__append_101 = wcwidth.c
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__append_102 = windows-cond.c
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__append_103 = windows-mutex.c
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__append_104 = windows-once.c
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__append_105 = windows-recmutex.c
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__append_106 = windows-rwlock.c
+@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__append_107 = windows-spin.c
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__append_108 = windows-thread.c
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__append_109 = windows-timedmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__append_110 = windows-timedrecmutex.c
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__append_111 = windows-timedrwlock.c
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__append_112 = windows-tls.c
 subdir = gltests
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -504,7 +499,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/codeset.m4 \
 	$(top_srcdir)/glm4/copy-file-range.m4 \
 	$(top_srcdir)/glm4/copy-file.m4 $(top_srcdir)/glm4/ctype_h.m4 \
-	$(top_srcdir)/glm4/dirent_h.m4 $(top_srcdir)/glm4/dirfd.m4 \
+	$(top_srcdir)/glm4/dirent_h.m4 \
 	$(top_srcdir)/glm4/double-slash-root.m4 \
 	$(top_srcdir)/glm4/dup.m4 $(top_srcdir)/glm4/dup2.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \
@@ -682,167 +677,164 @@ am__libtests_a_SOURCES_DIST = accept.c copy-acl.c set-acl.c \
 	c32isblank.c c32iscntrl.c c32isdigit.c c32isgraph.c \
 	c32islower.c c32ispunct.c c32isspace.c c32isupper.c \
 	c32isxdigit.c c32rtomb.c c32tob.c c32tolower.c c32width.c \
-	chdir-long.c concat-filename.c connect.c dirfd.c \
-	dirname-lgpl.c stripslash.c dtotimespec.c dup.c fchdir.c \
-	fdopen.c filenamecat-lgpl.c float.c itold.c fstatat.c ftell.c \
-	ftello.c ftruncate.c getcwd-lgpl.c getlocalename_l-unsafe.c \
-	localename-table.c getpagesize.c hash.c hashcode-string1.h \
-	hashcode-string1.c hashcode-string2.h hashcode-string2.c \
-	inet_pton.c imaxtostr.c inttostr.c offtostr.c uinttostr.c \
-	umaxtostr.c ioctl.c isblank.c iswblank.c iswdigit.c iswpunct.c \
-	iswxdigit.c listen.c localeconv.c localename.c \
-	localename-environ.c localename-unsafe.c glthread/lock.h \
-	glthread/lock.c lseek.c math.c mbchar.c mbiter-aux.h \
-	mbiter-aux.c mbiterf.h mbiterf.c mbsnlen.c mbtowc.c memchr.c \
-	mempcpy.c memrchr.c memset_explicit.c mkfifo.c nan.h \
-	nanosleep.c next-prime.h next-prime.c glthread/once.h \
-	glthread/once.c openat.c openat-die.c perror.c pipe.c \
-	pselect.c pthread-cond.c pthread-mutex.c pthread-once.c \
-	pthread-rwlock.c pthread-thread.c pthread_mutex_timedlock.c \
-	pthread_sigmask.c putenv.c qset-acl.c random.c random_r.c \
-	read-file.c same-inode.h same-inode.c save-cwd.c sched_yield.c \
-	select.c setenv.c setlocale.c setlocale-fixes.c setsockopt.c \
-	signbitf.c signbitd.c signbitl.c signed-nan.h signed-snan.h \
-	sigprocmask.c size_max.h sleep.c snan.h socket.c sockets.h \
-	sockets.c stdc_rotate_left.c stdc_rotate_right.c stpcpy.c \
-	str_endswith.c str_startswith.c strdup.c strncpy.c symlink.c \
-	sys_socket.c glthread/thread.h glthread/thread.c \
-	thread-optim.c glthread/threadlib.c time.c timespec-add.c \
-	timespec-sub.c trunc.c truncl.c unicase/tolower.c \
-	unictype/ctype_alnum.c unictype/ctype_alpha.c \
-	unictype/ctype_blank.c unictype/ctype_cntrl.c \
-	unictype/ctype_digit.c unictype/ctype_graph.c \
-	unictype/ctype_lower.c unictype/ctype_punct.c \
-	unictype/ctype_space.c unictype/ctype_upper.c \
-	unictype/ctype_xdigit.c uniwidth/width.c unsetenv.c usleep.c \
-	utimecmp.c utimensat.c vma-iter.c vsnzprintf.c wcrtomb.c \
-	wctob.c wctomb.c wcwidth.c windows-cond.c windows-mutex.c \
-	windows-once.c windows-recmutex.c windows-rwlock.c \
-	windows-spin.c windows-thread.c windows-timedmutex.c \
-	windows-timedrecmutex.c windows-timedrwlock.c windows-tls.c \
-	xconcat-filename.c xgetcwd.c xsize.h xsize.c glthread/yield.h
+	chdir-long.c concat-filename.c connect.c dirname-lgpl.c \
+	stripslash.c dtotimespec.c dup.c fchdir.c fdopen.c float.c \
+	itold.c fstatat.c ftell.c ftello.c ftruncate.c \
+	getlocalename_l-unsafe.c localename-table.c getpagesize.c \
+	hash.c hashcode-string1.h hashcode-string1.c \
+	hashcode-string2.h hashcode-string2.c inet_pton.c imaxtostr.c \
+	inttostr.c offtostr.c uinttostr.c umaxtostr.c ioctl.c \
+	isblank.c iswblank.c iswdigit.c iswpunct.c iswxdigit.c \
+	listen.c localeconv.c localename.c localename-environ.c \
+	localename-unsafe.c glthread/lock.h glthread/lock.c lseek.c \
+	math.c mbchar.c mbiter-aux.h mbiter-aux.c mbiterf.h mbiterf.c \
+	mbsnlen.c mbtowc.c memchr.c mempcpy.c memrchr.c \
+	memset_explicit.c mkfifo.c nan.h nanosleep.c next-prime.h \
+	next-prime.c glthread/once.h glthread/once.c openat.c \
+	openat-die.c perror.c pipe.c pselect.c pthread-cond.c \
+	pthread-mutex.c pthread-once.c pthread-rwlock.c \
+	pthread-thread.c pthread_mutex_timedlock.c pthread_sigmask.c \
+	putenv.c qset-acl.c random.c random_r.c read-file.c \
+	same-inode.h same-inode.c save-cwd.c sched_yield.c select.c \
+	setenv.c setlocale.c setlocale-fixes.c setsockopt.c signbitf.c \
+	signbitd.c signbitl.c signed-nan.h signed-snan.h sigprocmask.c \
+	size_max.h sleep.c snan.h socket.c sockets.h sockets.c \
+	stdc_rotate_left.c stdc_rotate_right.c stpcpy.c str_endswith.c \
+	str_startswith.c strncpy.c symlink.c sys_socket.c \
+	glthread/thread.h glthread/thread.c thread-optim.c \
+	glthread/threadlib.c time.c timespec-add.c timespec-sub.c \
+	trunc.c truncl.c unicase/tolower.c unictype/ctype_alnum.c \
+	unictype/ctype_alpha.c unictype/ctype_blank.c \
+	unictype/ctype_cntrl.c unictype/ctype_digit.c \
+	unictype/ctype_graph.c unictype/ctype_lower.c \
+	unictype/ctype_punct.c unictype/ctype_space.c \
+	unictype/ctype_upper.c unictype/ctype_xdigit.c \
+	uniwidth/width.c unsetenv.c usleep.c utimecmp.c utimensat.c \
+	vma-iter.c vsnzprintf.c wcrtomb.c wctob.c wctomb.c wcwidth.c \
+	windows-cond.c windows-mutex.c windows-once.c \
+	windows-recmutex.c windows-rwlock.c windows-spin.c \
+	windows-thread.c windows-timedmutex.c windows-timedrecmutex.c \
+	windows-timedrwlock.c windows-tls.c xconcat-filename.c \
+	xgetcwd.c xsize.h xsize.c glthread/yield.h
 @GL_COND_OBJ_ACCEPT_TRUE@am__objects_1 = accept.$(OBJEXT)
 @GL_COND_OBJ_BIND_TRUE@am__objects_2 = bind.$(OBJEXT)
 @GL_COND_OBJ_BTOWC_TRUE@am__objects_3 = btowc.$(OBJEXT)
 @GL_COND_OBJ_C32RTOMB_TRUE@am__objects_4 = c32rtomb.$(OBJEXT)
 @GL_COND_OBJ_CHDIR_LONG_TRUE@am__objects_5 = chdir-long.$(OBJEXT)
 @GL_COND_OBJ_CONNECT_TRUE@am__objects_6 = connect.$(OBJEXT)
-@GL_COND_OBJ_DIRFD_TRUE@am__objects_7 = dirfd.$(OBJEXT)
-@GL_COND_OBJ_DUP_TRUE@am__objects_8 = dup.$(OBJEXT)
-@GL_COND_OBJ_FCHDIR_TRUE@am__objects_9 = fchdir.$(OBJEXT)
-@GL_COND_OBJ_FDOPEN_TRUE@am__objects_10 = fdopen.$(OBJEXT)
-@GL_COND_OBJ_FLOAT_TRUE@am__objects_11 = float.$(OBJEXT)
-@GL_COND_OBJ_ITOLD_TRUE@am__objects_12 = itold.$(OBJEXT)
-@GL_COND_OBJ_FSTATAT_TRUE@am__objects_13 = fstatat.$(OBJEXT)
-@GL_COND_OBJ_FTELL_TRUE@am__objects_14 = ftell.$(OBJEXT)
-@GL_COND_OBJ_FTELLO_TRUE@am__objects_15 = ftello.$(OBJEXT)
-@GL_COND_OBJ_FTRUNCATE_TRUE@am__objects_16 = ftruncate.$(OBJEXT)
-@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_17 = getcwd-lgpl.$(OBJEXT)
-@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_FALSE@am__objects_18 = getlocalename_l-unsafe.$(OBJEXT)
-@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_TRUE@am__objects_19 = getlocalename_l-unsafe.$(OBJEXT)
-@GL_COND_OBJ_GETPAGESIZE_TRUE@am__objects_20 = getpagesize.$(OBJEXT)
-@GL_COND_OBJ_INET_PTON_TRUE@am__objects_21 = inet_pton.$(OBJEXT)
-@GL_COND_OBJ_IOCTL_TRUE@am__objects_22 = ioctl.$(OBJEXT)
-@GL_COND_OBJ_ISBLANK_TRUE@am__objects_23 = isblank.$(OBJEXT)
-@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_24 = iswblank.$(OBJEXT)
-@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_25 = iswdigit.$(OBJEXT)
-@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_26 = iswpunct.$(OBJEXT)
-@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_27 = iswxdigit.$(OBJEXT)
-@GL_COND_OBJ_LISTEN_TRUE@am__objects_28 = listen.$(OBJEXT)
-@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_29 = localeconv.$(OBJEXT)
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__objects_30 = localename-unsafe.$(OBJEXT)
-@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__objects_31 = localename-unsafe.$(OBJEXT)
+@GL_COND_OBJ_DUP_TRUE@am__objects_7 = dup.$(OBJEXT)
+@GL_COND_OBJ_FCHDIR_TRUE@am__objects_8 = fchdir.$(OBJEXT)
+@GL_COND_OBJ_FDOPEN_TRUE@am__objects_9 = fdopen.$(OBJEXT)
+@GL_COND_OBJ_FLOAT_TRUE@am__objects_10 = float.$(OBJEXT)
+@GL_COND_OBJ_ITOLD_TRUE@am__objects_11 = itold.$(OBJEXT)
+@GL_COND_OBJ_FSTATAT_TRUE@am__objects_12 = fstatat.$(OBJEXT)
+@GL_COND_OBJ_FTELL_TRUE@am__objects_13 = ftell.$(OBJEXT)
+@GL_COND_OBJ_FTELLO_TRUE@am__objects_14 = ftello.$(OBJEXT)
+@GL_COND_OBJ_FTRUNCATE_TRUE@am__objects_15 = ftruncate.$(OBJEXT)
+@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_FALSE@am__objects_16 = getlocalename_l-unsafe.$(OBJEXT)
+@GL_COND_OBJ_GETLOCALENAME_L_UNSAFE_LIMITED_TRUE@am__objects_17 = getlocalename_l-unsafe.$(OBJEXT)
+@GL_COND_OBJ_GETPAGESIZE_TRUE@am__objects_18 = getpagesize.$(OBJEXT)
+@GL_COND_OBJ_INET_PTON_TRUE@am__objects_19 = inet_pton.$(OBJEXT)
+@GL_COND_OBJ_IOCTL_TRUE@am__objects_20 = ioctl.$(OBJEXT)
+@GL_COND_OBJ_ISBLANK_TRUE@am__objects_21 = isblank.$(OBJEXT)
+@GL_COND_OBJ_ISWBLANK_TRUE@am__objects_22 = iswblank.$(OBJEXT)
+@GL_COND_OBJ_ISWDIGIT_TRUE@am__objects_23 = iswdigit.$(OBJEXT)
+@GL_COND_OBJ_ISWPUNCT_TRUE@am__objects_24 = iswpunct.$(OBJEXT)
+@GL_COND_OBJ_ISWXDIGIT_TRUE@am__objects_25 = iswxdigit.$(OBJEXT)
+@GL_COND_OBJ_LISTEN_TRUE@am__objects_26 = listen.$(OBJEXT)
+@GL_COND_OBJ_LOCALECONV_TRUE@am__objects_27 = localeconv.$(OBJEXT)
+@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_FALSE@am__objects_28 = localename-unsafe.$(OBJEXT)
+@GL_COND_OBJ_LOCALENAME_UNSAFE_LIMITED_TRUE@am__objects_29 = localename-unsafe.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@GL_COND_OBJ_LSEEK_TRUE@am__objects_32 = lseek.$(OBJEXT)
-@GL_COND_OBJ_MBTOWC_TRUE@am__objects_33 = mbtowc.$(OBJEXT)
-@GL_COND_OBJ_MEMCHR_TRUE@am__objects_34 = memchr.$(OBJEXT)
-@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_35 = mempcpy.$(OBJEXT)
-@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_36 = memrchr.$(OBJEXT)
-@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__objects_37 =  \
+@GL_COND_OBJ_LSEEK_TRUE@am__objects_30 = lseek.$(OBJEXT)
+@GL_COND_OBJ_MBTOWC_TRUE@am__objects_31 = mbtowc.$(OBJEXT)
+@GL_COND_OBJ_MEMCHR_TRUE@am__objects_32 = memchr.$(OBJEXT)
+@GL_COND_OBJ_MEMPCPY_TRUE@am__objects_33 = mempcpy.$(OBJEXT)
+@GL_COND_OBJ_MEMRCHR_TRUE@am__objects_34 = memrchr.$(OBJEXT)
+@GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@am__objects_35 =  \
 @GL_COND_OBJ_MEMSET_EXPLICIT_TRUE@	memset_explicit.$(OBJEXT)
-@GL_COND_OBJ_MKFIFO_TRUE@am__objects_38 = mkfifo.$(OBJEXT)
-@GL_COND_OBJ_NANOSLEEP_TRUE@am__objects_39 = nanosleep.$(OBJEXT)
-@GL_COND_OBJ_OPENAT_TRUE@am__objects_40 = openat.$(OBJEXT)
-@GL_COND_OBJ_PERROR_TRUE@am__objects_41 = perror.$(OBJEXT)
-@GL_COND_OBJ_PIPE_TRUE@am__objects_42 = pipe.$(OBJEXT)
-@GL_COND_OBJ_PSELECT_TRUE@am__objects_43 = pselect.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_COND_TRUE@am__objects_44 =  \
+@GL_COND_OBJ_MKFIFO_TRUE@am__objects_36 = mkfifo.$(OBJEXT)
+@GL_COND_OBJ_NANOSLEEP_TRUE@am__objects_37 = nanosleep.$(OBJEXT)
+@GL_COND_OBJ_OPENAT_TRUE@am__objects_38 = openat.$(OBJEXT)
+@GL_COND_OBJ_PERROR_TRUE@am__objects_39 = perror.$(OBJEXT)
+@GL_COND_OBJ_PIPE_TRUE@am__objects_40 = pipe.$(OBJEXT)
+@GL_COND_OBJ_PSELECT_TRUE@am__objects_41 = pselect.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_COND_TRUE@am__objects_42 =  \
 @GL_COND_OBJ_PTHREAD_COND_TRUE@	pthread-cond.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__objects_45 =  \
+@GL_COND_OBJ_PTHREAD_MUTEX_TRUE@am__objects_43 =  \
 @GL_COND_OBJ_PTHREAD_MUTEX_TRUE@	pthread-mutex.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_46 =  \
+@GL_COND_OBJ_PTHREAD_ONCE_TRUE@am__objects_44 =  \
 @GL_COND_OBJ_PTHREAD_ONCE_TRUE@	pthread-once.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__objects_47 =  \
+@GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@am__objects_45 =  \
 @GL_COND_OBJ_PTHREAD_RWLOCK_TRUE@	pthread-rwlock.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__objects_48 =  \
+@GL_COND_OBJ_PTHREAD_THREAD_TRUE@am__objects_46 =  \
 @GL_COND_OBJ_PTHREAD_THREAD_TRUE@	pthread-thread.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__objects_49 = pthread_mutex_timedlock.$(OBJEXT)
-@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_50 =  \
+@GL_COND_OBJ_PTHREAD_MUTEX_TIMEDLOCK_TRUE@am__objects_47 = pthread_mutex_timedlock.$(OBJEXT)
+@GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@am__objects_48 =  \
 @GL_COND_OBJ_PTHREAD_SIGMASK_TRUE@	pthread_sigmask.$(OBJEXT)
-@GL_COND_OBJ_PUTENV_TRUE@am__objects_51 = putenv.$(OBJEXT)
-@GL_COND_OBJ_RANDOM_TRUE@am__objects_52 = random.$(OBJEXT)
-@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_53 = random_r.$(OBJEXT)
-@GL_COND_OBJ_SCHED_YIELD_TRUE@am__objects_54 = sched_yield.$(OBJEXT)
-@GL_COND_OBJ_SELECT_TRUE@am__objects_55 = select.$(OBJEXT)
-@GL_COND_OBJ_SETENV_TRUE@am__objects_56 = setenv.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_TRUE@am__objects_57 = setlocale.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__objects_58 =  \
+@GL_COND_OBJ_PUTENV_TRUE@am__objects_49 = putenv.$(OBJEXT)
+@GL_COND_OBJ_RANDOM_TRUE@am__objects_50 = random.$(OBJEXT)
+@GL_COND_OBJ_RANDOM_R_TRUE@am__objects_51 = random_r.$(OBJEXT)
+@GL_COND_OBJ_SCHED_YIELD_TRUE@am__objects_52 = sched_yield.$(OBJEXT)
+@GL_COND_OBJ_SELECT_TRUE@am__objects_53 = select.$(OBJEXT)
+@GL_COND_OBJ_SETENV_TRUE@am__objects_54 = setenv.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_TRUE@am__objects_55 = setlocale.$(OBJEXT)
+@GL_COND_OBJ_SETLOCALE_FIXES_TRUE@am__objects_56 =  \
 @GL_COND_OBJ_SETLOCALE_FIXES_TRUE@	setlocale-fixes.$(OBJEXT)
-@GL_COND_OBJ_SETSOCKOPT_TRUE@am__objects_59 = setsockopt.$(OBJEXT)
-@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_60 = signbitf.$(OBJEXT) \
+@GL_COND_OBJ_SETSOCKOPT_TRUE@am__objects_57 = setsockopt.$(OBJEXT)
+@GL_COND_OBJ_SIGNBIT3_TRUE@am__objects_58 = signbitf.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitd.$(OBJEXT) \
 @GL_COND_OBJ_SIGNBIT3_TRUE@	signbitl.$(OBJEXT)
-@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_61 = sigprocmask.$(OBJEXT)
-@GL_COND_OBJ_SLEEP_TRUE@am__objects_62 = sleep.$(OBJEXT)
-@GL_COND_OBJ_SOCKET_TRUE@am__objects_63 = socket.$(OBJEXT)
-@GL_GENERATE_STDBIT_H_TRUE@am__objects_64 =  \
+@GL_COND_OBJ_SIGPROCMASK_TRUE@am__objects_59 = sigprocmask.$(OBJEXT)
+@GL_COND_OBJ_SLEEP_TRUE@am__objects_60 = sleep.$(OBJEXT)
+@GL_COND_OBJ_SOCKET_TRUE@am__objects_61 = socket.$(OBJEXT)
+@GL_GENERATE_STDBIT_H_TRUE@am__objects_62 =  \
 @GL_GENERATE_STDBIT_H_TRUE@	stdc_rotate_left.$(OBJEXT) \
 @GL_GENERATE_STDBIT_H_TRUE@	stdc_rotate_right.$(OBJEXT)
-@GL_COND_OBJ_STPCPY_TRUE@am__objects_65 = stpcpy.$(OBJEXT)
-@GL_COND_OBJ_STRDUP_TRUE@am__objects_66 = strdup.$(OBJEXT)
-@GL_COND_OBJ_STRNCPY_TRUE@am__objects_67 = strncpy.$(OBJEXT)
-@GL_COND_OBJ_SYMLINK_TRUE@am__objects_68 = symlink.$(OBJEXT)
-@GL_COND_OBJ_TIME_TRUE@am__objects_69 = time.$(OBJEXT)
-@GL_COND_OBJ_TRUNC_TRUE@am__objects_70 = trunc.$(OBJEXT)
-@GL_COND_OBJ_TRUNCL_TRUE@am__objects_71 = truncl.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_72 = unicase/tolower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_73 = unictype/ctype_alnum.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_74 = unictype/ctype_alpha.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_75 = unictype/ctype_blank.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_76 = unictype/ctype_cntrl.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_77 = unictype/ctype_digit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_78 = unictype/ctype_graph.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_79 = unictype/ctype_lower.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_80 = unictype/ctype_punct.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_81 = unictype/ctype_space.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_82 = unictype/ctype_upper.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_83 = unictype/ctype_xdigit.$(OBJEXT)
-@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_84 = uniwidth/width.$(OBJEXT)
-@GL_COND_OBJ_UNSETENV_TRUE@am__objects_85 = unsetenv.$(OBJEXT)
-@GL_COND_OBJ_USLEEP_TRUE@am__objects_86 = usleep.$(OBJEXT)
-@GL_COND_OBJ_UTIMENSAT_TRUE@am__objects_87 = utimensat.$(OBJEXT)
-@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_88 = wcrtomb.$(OBJEXT)
-@GL_COND_OBJ_WCTOB_TRUE@am__objects_89 = wctob.$(OBJEXT)
-@GL_COND_OBJ_WCTOMB_TRUE@am__objects_90 = wctomb.$(OBJEXT)
-@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_91 = wcwidth.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_92 =  \
+@GL_COND_OBJ_STPCPY_TRUE@am__objects_63 = stpcpy.$(OBJEXT)
+@GL_COND_OBJ_STRNCPY_TRUE@am__objects_64 = strncpy.$(OBJEXT)
+@GL_COND_OBJ_SYMLINK_TRUE@am__objects_65 = symlink.$(OBJEXT)
+@GL_COND_OBJ_TIME_TRUE@am__objects_66 = time.$(OBJEXT)
+@GL_COND_OBJ_TRUNC_TRUE@am__objects_67 = trunc.$(OBJEXT)
+@GL_COND_OBJ_TRUNCL_TRUE@am__objects_68 = truncl.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICASE_TOLOWER_TRUE@am__objects_69 = unicase/tolower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALNUM_TRUE@am__objects_70 = unictype/ctype_alnum.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_ALPHA_TRUE@am__objects_71 = unictype/ctype_alpha.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_BLANK_TRUE@am__objects_72 = unictype/ctype_blank.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_CNTRL_TRUE@am__objects_73 = unictype/ctype_cntrl.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_DIGIT_TRUE@am__objects_74 = unictype/ctype_digit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_GRAPH_TRUE@am__objects_75 = unictype/ctype_graph.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_LOWER_TRUE@am__objects_76 = unictype/ctype_lower.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PUNCT_TRUE@am__objects_77 = unictype/ctype_punct.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_SPACE_TRUE@am__objects_78 = unictype/ctype_space.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_UPPER_TRUE@am__objects_79 = unictype/ctype_upper.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_XDIGIT_TRUE@am__objects_80 = unictype/ctype_xdigit.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNIWIDTH_WIDTH_TRUE@am__objects_81 = uniwidth/width.$(OBJEXT)
+@GL_COND_OBJ_UNSETENV_TRUE@am__objects_82 = unsetenv.$(OBJEXT)
+@GL_COND_OBJ_USLEEP_TRUE@am__objects_83 = usleep.$(OBJEXT)
+@GL_COND_OBJ_UTIMENSAT_TRUE@am__objects_84 = utimensat.$(OBJEXT)
+@GL_COND_OBJ_WCRTOMB_TRUE@am__objects_85 = wcrtomb.$(OBJEXT)
+@GL_COND_OBJ_WCTOB_TRUE@am__objects_86 = wctob.$(OBJEXT)
+@GL_COND_OBJ_WCTOMB_TRUE@am__objects_87 = wctomb.$(OBJEXT)
+@GL_COND_OBJ_WCWIDTH_TRUE@am__objects_88 = wcwidth.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_COND_TRUE@am__objects_89 =  \
 @GL_COND_OBJ_WINDOWS_COND_TRUE@	windows-cond.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_93 =  \
+@GL_COND_OBJ_WINDOWS_MUTEX_TRUE@am__objects_90 =  \
 @GL_COND_OBJ_WINDOWS_MUTEX_TRUE@	windows-mutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_94 =  \
+@GL_COND_OBJ_WINDOWS_ONCE_TRUE@am__objects_91 =  \
 @GL_COND_OBJ_WINDOWS_ONCE_TRUE@	windows-once.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_95 =  \
+@GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@am__objects_92 =  \
 @GL_COND_OBJ_WINDOWS_RECMUTEX_TRUE@	windows-recmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_96 =  \
+@GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@am__objects_93 =  \
 @GL_COND_OBJ_WINDOWS_RWLOCK_TRUE@	windows-rwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__objects_97 =  \
+@GL_COND_OBJ_WINDOWS_SPIN_TRUE@am__objects_94 =  \
 @GL_COND_OBJ_WINDOWS_SPIN_TRUE@	windows-spin.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__objects_98 =  \
+@GL_COND_OBJ_WINDOWS_THREAD_TRUE@am__objects_95 =  \
 @GL_COND_OBJ_WINDOWS_THREAD_TRUE@	windows-thread.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__objects_99 = windows-timedmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__objects_100 = windows-timedrecmutex.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_101 = windows-timedrwlock.$(OBJEXT)
-@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_102 = windows-tls.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDMUTEX_TRUE@am__objects_96 = windows-timedmutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDRECMUTEX_TRUE@am__objects_97 = windows-timedrecmutex.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TIMEDRWLOCK_TRUE@am__objects_98 = windows-timedrwlock.$(OBJEXT)
+@GL_COND_OBJ_WINDOWS_TLS_TRUE@am__objects_99 = windows-tls.$(OBJEXT)
 am_libtests_a_OBJECTS = $(am__objects_1) copy-acl.$(OBJEXT) \
 	set-acl.$(OBJEXT) arpa_inet.$(OBJEXT) openat-proc.$(OBJEXT) \
 	$(am__objects_2) btoc32.$(OBJEXT) $(am__objects_3) \
@@ -852,56 +844,55 @@ am_libtests_a_OBJECTS = $(am__objects_1) copy-acl.$(OBJEXT) \
 	c32isspace.$(OBJEXT) c32isupper.$(OBJEXT) \
 	c32isxdigit.$(OBJEXT) $(am__objects_4) c32tob.$(OBJEXT) \
 	c32tolower.$(OBJEXT) c32width.$(OBJEXT) $(am__objects_5) \
-	concat-filename.$(OBJEXT) $(am__objects_6) $(am__objects_7) \
+	concat-filename.$(OBJEXT) $(am__objects_6) \
 	dirname-lgpl.$(OBJEXT) stripslash.$(OBJEXT) \
-	dtotimespec.$(OBJEXT) $(am__objects_8) $(am__objects_9) \
-	$(am__objects_10) filenamecat-lgpl.$(OBJEXT) $(am__objects_11) \
+	dtotimespec.$(OBJEXT) $(am__objects_7) $(am__objects_8) \
+	$(am__objects_9) $(am__objects_10) $(am__objects_11) \
 	$(am__objects_12) $(am__objects_13) $(am__objects_14) \
-	$(am__objects_15) $(am__objects_16) $(am__objects_17) \
-	$(am__objects_18) localename-table.$(OBJEXT) $(am__objects_19) \
-	$(am__objects_20) hash.$(OBJEXT) hashcode-string1.$(OBJEXT) \
-	hashcode-string2.$(OBJEXT) $(am__objects_21) \
-	imaxtostr.$(OBJEXT) inttostr.$(OBJEXT) offtostr.$(OBJEXT) \
-	uinttostr.$(OBJEXT) umaxtostr.$(OBJEXT) $(am__objects_22) \
+	$(am__objects_15) $(am__objects_16) localename-table.$(OBJEXT) \
+	$(am__objects_17) $(am__objects_18) hash.$(OBJEXT) \
+	hashcode-string1.$(OBJEXT) hashcode-string2.$(OBJEXT) \
+	$(am__objects_19) imaxtostr.$(OBJEXT) inttostr.$(OBJEXT) \
+	offtostr.$(OBJEXT) uinttostr.$(OBJEXT) umaxtostr.$(OBJEXT) \
+	$(am__objects_20) $(am__objects_21) $(am__objects_22) \
 	$(am__objects_23) $(am__objects_24) $(am__objects_25) \
-	$(am__objects_26) $(am__objects_27) $(am__objects_28) \
-	$(am__objects_29) localename.$(OBJEXT) \
-	localename-environ.$(OBJEXT) $(am__objects_30) \
-	$(am__objects_31) glthread/lock.$(OBJEXT) $(am__objects_32) \
+	$(am__objects_26) $(am__objects_27) localename.$(OBJEXT) \
+	localename-environ.$(OBJEXT) $(am__objects_28) \
+	$(am__objects_29) glthread/lock.$(OBJEXT) $(am__objects_30) \
 	math.$(OBJEXT) mbchar.$(OBJEXT) mbiter-aux.$(OBJEXT) \
-	mbiterf.$(OBJEXT) mbsnlen.$(OBJEXT) $(am__objects_33) \
-	$(am__objects_34) $(am__objects_35) $(am__objects_36) \
-	$(am__objects_37) $(am__objects_38) $(am__objects_39) \
-	next-prime.$(OBJEXT) glthread/once.$(OBJEXT) $(am__objects_40) \
-	openat-die.$(OBJEXT) $(am__objects_41) $(am__objects_42) \
-	$(am__objects_43) $(am__objects_44) $(am__objects_45) \
-	$(am__objects_46) $(am__objects_47) $(am__objects_48) \
-	$(am__objects_49) $(am__objects_50) $(am__objects_51) \
-	qset-acl.$(OBJEXT) $(am__objects_52) $(am__objects_53) \
+	mbiterf.$(OBJEXT) mbsnlen.$(OBJEXT) $(am__objects_31) \
+	$(am__objects_32) $(am__objects_33) $(am__objects_34) \
+	$(am__objects_35) $(am__objects_36) $(am__objects_37) \
+	next-prime.$(OBJEXT) glthread/once.$(OBJEXT) $(am__objects_38) \
+	openat-die.$(OBJEXT) $(am__objects_39) $(am__objects_40) \
+	$(am__objects_41) $(am__objects_42) $(am__objects_43) \
+	$(am__objects_44) $(am__objects_45) $(am__objects_46) \
+	$(am__objects_47) $(am__objects_48) $(am__objects_49) \
+	qset-acl.$(OBJEXT) $(am__objects_50) $(am__objects_51) \
 	read-file.$(OBJEXT) same-inode.$(OBJEXT) save-cwd.$(OBJEXT) \
-	$(am__objects_54) $(am__objects_55) $(am__objects_56) \
-	$(am__objects_57) $(am__objects_58) $(am__objects_59) \
-	$(am__objects_60) $(am__objects_61) $(am__objects_62) \
-	$(am__objects_63) sockets.$(OBJEXT) $(am__objects_64) \
-	$(am__objects_65) str_endswith.$(OBJEXT) \
-	str_startswith.$(OBJEXT) $(am__objects_66) $(am__objects_67) \
-	$(am__objects_68) sys_socket.$(OBJEXT) \
-	glthread/thread.$(OBJEXT) thread-optim.$(OBJEXT) \
-	glthread/threadlib.$(OBJEXT) $(am__objects_69) \
-	timespec-add.$(OBJEXT) timespec-sub.$(OBJEXT) \
-	$(am__objects_70) $(am__objects_71) $(am__objects_72) \
-	$(am__objects_73) $(am__objects_74) $(am__objects_75) \
-	$(am__objects_76) $(am__objects_77) $(am__objects_78) \
-	$(am__objects_79) $(am__objects_80) $(am__objects_81) \
-	$(am__objects_82) $(am__objects_83) $(am__objects_84) \
-	$(am__objects_85) $(am__objects_86) utimecmp.$(OBJEXT) \
-	$(am__objects_87) vma-iter.$(OBJEXT) vsnzprintf.$(OBJEXT) \
-	$(am__objects_88) $(am__objects_89) $(am__objects_90) \
-	$(am__objects_91) $(am__objects_92) $(am__objects_93) \
-	$(am__objects_94) $(am__objects_95) $(am__objects_96) \
-	$(am__objects_97) $(am__objects_98) $(am__objects_99) \
-	$(am__objects_100) $(am__objects_101) $(am__objects_102) \
-	xconcat-filename.$(OBJEXT) xgetcwd.$(OBJEXT) xsize.$(OBJEXT)
+	$(am__objects_52) $(am__objects_53) $(am__objects_54) \
+	$(am__objects_55) $(am__objects_56) $(am__objects_57) \
+	$(am__objects_58) $(am__objects_59) $(am__objects_60) \
+	$(am__objects_61) sockets.$(OBJEXT) $(am__objects_62) \
+	$(am__objects_63) str_endswith.$(OBJEXT) \
+	str_startswith.$(OBJEXT) $(am__objects_64) $(am__objects_65) \
+	sys_socket.$(OBJEXT) glthread/thread.$(OBJEXT) \
+	thread-optim.$(OBJEXT) glthread/threadlib.$(OBJEXT) \
+	$(am__objects_66) timespec-add.$(OBJEXT) \
+	timespec-sub.$(OBJEXT) $(am__objects_67) $(am__objects_68) \
+	$(am__objects_69) $(am__objects_70) $(am__objects_71) \
+	$(am__objects_72) $(am__objects_73) $(am__objects_74) \
+	$(am__objects_75) $(am__objects_76) $(am__objects_77) \
+	$(am__objects_78) $(am__objects_79) $(am__objects_80) \
+	$(am__objects_81) $(am__objects_82) $(am__objects_83) \
+	utimecmp.$(OBJEXT) $(am__objects_84) vma-iter.$(OBJEXT) \
+	vsnzprintf.$(OBJEXT) $(am__objects_85) $(am__objects_86) \
+	$(am__objects_87) $(am__objects_88) $(am__objects_89) \
+	$(am__objects_90) $(am__objects_91) $(am__objects_92) \
+	$(am__objects_93) $(am__objects_94) $(am__objects_95) \
+	$(am__objects_96) $(am__objects_97) $(am__objects_98) \
+	$(am__objects_99) xconcat-filename.$(OBJEXT) xgetcwd.$(OBJEXT) \
+	xsize.$(OBJEXT)
 libtests_a_OBJECTS = $(am_libtests_a_OBJECTS)
 am_current_locale_OBJECTS = locale.$(OBJEXT)
 current_locale_OBJECTS = $(am_current_locale_OBJECTS)
@@ -1022,9 +1013,6 @@ test_ctype_xdigit_OBJECTS = $(am_test_ctype_xdigit_OBJECTS)
 test_dirent_h_SOURCES = test-dirent-h.c
 test_dirent_h_OBJECTS = test-dirent-h.$(OBJEXT)
 test_dirent_h_LDADD = $(LDADD)
-test_dirfd_SOURCES = test-dirfd.c
-test_dirfd_OBJECTS = test-dirfd.$(OBJEXT)
-test_dirfd_LDADD = $(LDADD)
 test_dup_SOURCES = test-dup.c
 test_dup_OBJECTS = test-dup.$(OBJEXT)
 test_dup_LDADD = $(LDADD)
@@ -1643,8 +1631,6 @@ test_ctype_upper_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_ctype_xdigit_DEPENDENCIES = $(am__DEPENDENCIES_2)
 test_dirent_h_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
-test_dirfd_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
-	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_dup_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
 	../gllib/libgnu.a libtests.a $(am__DEPENDENCIES_1)
 test_dup2_DEPENDENCIES = libtests.a ../gllib/libgnu.a libtests.a \
@@ -2039,15 +2025,12 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/c32tolower.Po ./$(DEPDIR)/c32width.Po \
 	./$(DEPDIR)/chdir-long.Po ./$(DEPDIR)/concat-filename.Po \
 	./$(DEPDIR)/connect.Po ./$(DEPDIR)/copy-acl.Po \
-	./$(DEPDIR)/dirfd.Po ./$(DEPDIR)/dirname-lgpl.Po \
-	./$(DEPDIR)/dtotimespec.Po ./$(DEPDIR)/dup.Po \
-	./$(DEPDIR)/fchdir.Po ./$(DEPDIR)/fdopen.Po \
-	./$(DEPDIR)/filenamecat-lgpl.Po ./$(DEPDIR)/float.Po \
-	./$(DEPDIR)/fopen.Po ./$(DEPDIR)/frexp.Po \
+	./$(DEPDIR)/dirname-lgpl.Po ./$(DEPDIR)/dtotimespec.Po \
+	./$(DEPDIR)/dup.Po ./$(DEPDIR)/fchdir.Po ./$(DEPDIR)/fdopen.Po \
+	./$(DEPDIR)/float.Po ./$(DEPDIR)/fopen.Po ./$(DEPDIR)/frexp.Po \
 	./$(DEPDIR)/frexpl.Po ./$(DEPDIR)/fstatat.Po \
 	./$(DEPDIR)/ftell.Po ./$(DEPDIR)/ftello.Po \
-	./$(DEPDIR)/ftruncate.Po ./$(DEPDIR)/getcwd-lgpl.Po \
-	./$(DEPDIR)/getlocalename_l-unsafe.Po \
+	./$(DEPDIR)/ftruncate.Po ./$(DEPDIR)/getlocalename_l-unsafe.Po \
 	./$(DEPDIR)/getpagesize.Po ./$(DEPDIR)/hash.Po \
 	./$(DEPDIR)/hashcode-string1.Po \
 	./$(DEPDIR)/hashcode-string2.Po ./$(DEPDIR)/imaxtostr.Po \
@@ -2092,21 +2075,20 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/sockets.Po ./$(DEPDIR)/stdc_rotate_left.Po \
 	./$(DEPDIR)/stdc_rotate_right.Po ./$(DEPDIR)/stpcpy.Po \
 	./$(DEPDIR)/str_endswith.Po ./$(DEPDIR)/str_startswith.Po \
-	./$(DEPDIR)/strdup.Po ./$(DEPDIR)/strerror_r.Po \
-	./$(DEPDIR)/stripslash.Po ./$(DEPDIR)/strncpy.Po \
-	./$(DEPDIR)/symlink.Po ./$(DEPDIR)/sys_socket.Po \
-	./$(DEPDIR)/test-accept.Po ./$(DEPDIR)/test-alignasof.Po \
-	./$(DEPDIR)/test-alloca-opt.Po ./$(DEPDIR)/test-arpa_inet-h.Po \
-	./$(DEPDIR)/test-assert.Po ./$(DEPDIR)/test-binary-io.Po \
-	./$(DEPDIR)/test-bind.Po ./$(DEPDIR)/test-bool.Po \
-	./$(DEPDIR)/test-btoc32.Po ./$(DEPDIR)/test-btowc.Po \
-	./$(DEPDIR)/test-c-ctype.Po ./$(DEPDIR)/test-c32isalnum.Po \
-	./$(DEPDIR)/test-c32isalpha.Po ./$(DEPDIR)/test-c32isblank.Po \
-	./$(DEPDIR)/test-c32iscntrl.Po ./$(DEPDIR)/test-c32isdigit.Po \
-	./$(DEPDIR)/test-c32isgraph.Po ./$(DEPDIR)/test-c32islower.Po \
-	./$(DEPDIR)/test-c32isprint.Po ./$(DEPDIR)/test-c32ispunct.Po \
-	./$(DEPDIR)/test-c32isspace.Po ./$(DEPDIR)/test-c32isupper.Po \
-	./$(DEPDIR)/test-c32isxdigit.Po \
+	./$(DEPDIR)/strerror_r.Po ./$(DEPDIR)/stripslash.Po \
+	./$(DEPDIR)/strncpy.Po ./$(DEPDIR)/symlink.Po \
+	./$(DEPDIR)/sys_socket.Po ./$(DEPDIR)/test-accept.Po \
+	./$(DEPDIR)/test-alignasof.Po ./$(DEPDIR)/test-alloca-opt.Po \
+	./$(DEPDIR)/test-arpa_inet-h.Po ./$(DEPDIR)/test-assert.Po \
+	./$(DEPDIR)/test-binary-io.Po ./$(DEPDIR)/test-bind.Po \
+	./$(DEPDIR)/test-bool.Po ./$(DEPDIR)/test-btoc32.Po \
+	./$(DEPDIR)/test-btowc.Po ./$(DEPDIR)/test-c-ctype.Po \
+	./$(DEPDIR)/test-c32isalnum.Po ./$(DEPDIR)/test-c32isalpha.Po \
+	./$(DEPDIR)/test-c32isblank.Po ./$(DEPDIR)/test-c32iscntrl.Po \
+	./$(DEPDIR)/test-c32isdigit.Po ./$(DEPDIR)/test-c32isgraph.Po \
+	./$(DEPDIR)/test-c32islower.Po ./$(DEPDIR)/test-c32isprint.Po \
+	./$(DEPDIR)/test-c32ispunct.Po ./$(DEPDIR)/test-c32isspace.Po \
+	./$(DEPDIR)/test-c32isupper.Po ./$(DEPDIR)/test-c32isxdigit.Po \
 	./$(DEPDIR)/test-c32rtomb-w32.Po ./$(DEPDIR)/test-c32rtomb.Po \
 	./$(DEPDIR)/test-c32tob.Po ./$(DEPDIR)/test-c32tolower.Po \
 	./$(DEPDIR)/test-c32width.Po ./$(DEPDIR)/test-calloc-gnu.Po \
@@ -2114,22 +2096,22 @@ am__depfiles_remade = ./$(DEPDIR)/accept.Po ./$(DEPDIR)/alloca.Po \
 	./$(DEPDIR)/test-cloexec.Po ./$(DEPDIR)/test-close.Po \
 	./$(DEPDIR)/test-connect.Po ./$(DEPDIR)/test-copy-acl.Po \
 	./$(DEPDIR)/test-copy-file.Po ./$(DEPDIR)/test-ctype-h.Po \
-	./$(DEPDIR)/test-dirent-h.Po ./$(DEPDIR)/test-dirfd.Po \
-	./$(DEPDIR)/test-dup.Po ./$(DEPDIR)/test-dup2.Po \
-	./$(DEPDIR)/test-environ.Po ./$(DEPDIR)/test-errno-h.Po \
-	./$(DEPDIR)/test-error.Po ./$(DEPDIR)/test-fchdir.Po \
-	./$(DEPDIR)/test-fcntl-h.Po ./$(DEPDIR)/test-fcntl.Po \
-	./$(DEPDIR)/test-fdopen.Po ./$(DEPDIR)/test-fgetc.Po \
-	./$(DEPDIR)/test-file-has-acl.Po ./$(DEPDIR)/test-float-h.Po \
-	./$(DEPDIR)/test-fopen-gnu.Po ./$(DEPDIR)/test-fopen.Po \
-	./$(DEPDIR)/test-fputc.Po ./$(DEPDIR)/test-fread.Po \
-	./$(DEPDIR)/test-free.Po ./$(DEPDIR)/test-frexp.Po \
-	./$(DEPDIR)/test-frexpl.Po ./$(DEPDIR)/test-fseterr.Po \
-	./$(DEPDIR)/test-fstat.Po ./$(DEPDIR)/test-fstatat.Po \
-	./$(DEPDIR)/test-ftell.Po ./$(DEPDIR)/test-ftell3.Po \
-	./$(DEPDIR)/test-ftello.Po ./$(DEPDIR)/test-ftello3.Po \
-	./$(DEPDIR)/test-ftello4.Po ./$(DEPDIR)/test-ftruncate.Po \
-	./$(DEPDIR)/test-fwrite.Po ./$(DEPDIR)/test-getcwd-lgpl.Po \
+	./$(DEPDIR)/test-dirent-h.Po ./$(DEPDIR)/test-dup.Po \
+	./$(DEPDIR)/test-dup2.Po ./$(DEPDIR)/test-environ.Po \
+	./$(DEPDIR)/test-errno-h.Po ./$(DEPDIR)/test-error.Po \
+	./$(DEPDIR)/test-fchdir.Po ./$(DEPDIR)/test-fcntl-h.Po \
+	./$(DEPDIR)/test-fcntl.Po ./$(DEPDIR)/test-fdopen.Po \
+	./$(DEPDIR)/test-fgetc.Po ./$(DEPDIR)/test-file-has-acl.Po \
+	./$(DEPDIR)/test-float-h.Po ./$(DEPDIR)/test-fopen-gnu.Po \
+	./$(DEPDIR)/test-fopen.Po ./$(DEPDIR)/test-fputc.Po \
+	./$(DEPDIR)/test-fread.Po ./$(DEPDIR)/test-free.Po \
+	./$(DEPDIR)/test-frexp.Po ./$(DEPDIR)/test-frexpl.Po \
+	./$(DEPDIR)/test-fseterr.Po ./$(DEPDIR)/test-fstat.Po \
+	./$(DEPDIR)/test-fstatat.Po ./$(DEPDIR)/test-ftell.Po \
+	./$(DEPDIR)/test-ftell3.Po ./$(DEPDIR)/test-ftello.Po \
+	./$(DEPDIR)/test-ftello3.Po ./$(DEPDIR)/test-ftello4.Po \
+	./$(DEPDIR)/test-ftruncate.Po ./$(DEPDIR)/test-fwrite.Po \
+	./$(DEPDIR)/test-getcwd-lgpl.Po \
 	./$(DEPDIR)/test-getdtablesize.Po \
 	./$(DEPDIR)/test-getprogname.Po ./$(DEPDIR)/test-gettext-h.Po \
 	./$(DEPDIR)/test-gettimeofday.Po \
@@ -2318,35 +2300,35 @@ SOURCES = $(libtests_a_SOURCES) $(EXTRA_libtests_a_SOURCES) \
 	$(test_ctype_lower_SOURCES) $(test_ctype_print_SOURCES) \
 	$(test_ctype_punct_SOURCES) $(test_ctype_space_SOURCES) \
 	$(test_ctype_upper_SOURCES) $(test_ctype_xdigit_SOURCES) \
-	test-dirent-h.c test-dirfd.c test-dup.c test-dup2.c \
-	test-environ.c test-errno-h.c test-error.c test-fchdir.c \
-	test-fcntl.c test-fcntl-h.c test-fdopen.c test-fgetc.c \
-	test-file-has-acl.c test-float-h.c test-fopen.c \
-	test-fopen-gnu.c test-fputc.c test-fread.c test-free.c \
-	$(test_frexp_SOURCES) $(test_frexpl_SOURCES) test-fseterr.c \
-	test-fstat.c test-fstatat.c test-ftell.c test-ftell3.c \
-	test-ftello.c test-ftello3.c test-ftello4.c test-ftruncate.c \
-	test-fwrite.c test-getcwd-lgpl.c test-getdtablesize.c \
-	test-getprogname.c test-gettext-h.c test-gettimeofday.c \
-	test-hard-locale.c test-hash.c test-ignore-value.c \
-	test-inet_pton.c test-intprops.c test-inttostr.c \
-	test-inttypes-h.c test-ioctl.c test-isblank.c \
-	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
-	test-iswblank.c test-iswdigit.c test-iswpunct.c \
-	test-iswxdigit.c test-largefile.c test-limits-h.c \
-	test-listen.c test-localcharset.c test-localcharset-w32utf8.c \
-	test-locale-h.c test-localeconv.c test-localeconv-mt.c \
-	test-localename.c test-localename-w32utf8.c test-lock.c \
-	test-lseek.c test-lstat.c test-malloc-gnu.c \
-	test-malloc-posix.c test-malloca.c test-math-h.c \
-	test-mbrtoc32.c test-mbrtoc32-w32.c test-mbrtowc.c \
-	test-mbrtowc-w32.c test-mbrtowc-w32utf8.c test-mbsinit.c \
-	test-mbsnlen.c test-memchr.c test-memrchr.c \
-	test-memset_explicit.c test-mkfifo.c test-nanosleep.c \
-	test-netinet_in-h.c test-next-prime.c $(test_once1_SOURCES) \
-	$(test_once2_SOURCES) test-open.c test-openat.c test-pathmax.c \
-	test-perror.c test-perror2.c test-pipe.c test-pselect.c \
-	test-pthread.c test-pthread-cond.c test-pthread-mutex.c \
+	test-dirent-h.c test-dup.c test-dup2.c test-environ.c \
+	test-errno-h.c test-error.c test-fchdir.c test-fcntl.c \
+	test-fcntl-h.c test-fdopen.c test-fgetc.c test-file-has-acl.c \
+	test-float-h.c test-fopen.c test-fopen-gnu.c test-fputc.c \
+	test-fread.c test-free.c $(test_frexp_SOURCES) \
+	$(test_frexpl_SOURCES) test-fseterr.c test-fstat.c \
+	test-fstatat.c test-ftell.c test-ftell3.c test-ftello.c \
+	test-ftello3.c test-ftello4.c test-ftruncate.c test-fwrite.c \
+	test-getcwd-lgpl.c test-getdtablesize.c test-getprogname.c \
+	test-gettext-h.c test-gettimeofday.c test-hard-locale.c \
+	test-hash.c test-ignore-value.c test-inet_pton.c \
+	test-intprops.c test-inttostr.c test-inttypes-h.c test-ioctl.c \
+	test-isblank.c test-isnand-nolibm.c test-isnanf-nolibm.c \
+	test-isnanl-nolibm.c test-iswblank.c test-iswdigit.c \
+	test-iswpunct.c test-iswxdigit.c test-largefile.c \
+	test-limits-h.c test-listen.c test-localcharset.c \
+	test-localcharset-w32utf8.c test-locale-h.c test-localeconv.c \
+	test-localeconv-mt.c test-localename.c \
+	test-localename-w32utf8.c test-lock.c test-lseek.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-malloca.c test-math-h.c test-mbrtoc32.c \
+	test-mbrtoc32-w32.c test-mbrtowc.c test-mbrtowc-w32.c \
+	test-mbrtowc-w32utf8.c test-mbsinit.c test-mbsnlen.c \
+	test-memchr.c test-memrchr.c test-memset_explicit.c \
+	test-mkfifo.c test-nanosleep.c test-netinet_in-h.c \
+	test-next-prime.c $(test_once1_SOURCES) $(test_once2_SOURCES) \
+	test-open.c test-openat.c test-pathmax.c test-perror.c \
+	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
+	test-pthread-cond.c test-pthread-mutex.c \
 	test-pthread-mutex-type.c test-pthread-once1.c \
 	test-pthread-once2.c test-pthread-rwlock.c \
 	test-pthread-thread.c test-pthread_sigmask1.c \
@@ -2405,35 +2387,35 @@ DIST_SOURCES = $(am__libtests_a_SOURCES_DIST) \
 	$(test_ctype_lower_SOURCES) $(test_ctype_print_SOURCES) \
 	$(test_ctype_punct_SOURCES) $(test_ctype_space_SOURCES) \
 	$(test_ctype_upper_SOURCES) $(test_ctype_xdigit_SOURCES) \
-	test-dirent-h.c test-dirfd.c test-dup.c test-dup2.c \
-	test-environ.c test-errno-h.c test-error.c test-fchdir.c \
-	test-fcntl.c test-fcntl-h.c test-fdopen.c test-fgetc.c \
-	test-file-has-acl.c test-float-h.c test-fopen.c \
-	test-fopen-gnu.c test-fputc.c test-fread.c test-free.c \
-	$(test_frexp_SOURCES) $(test_frexpl_SOURCES) test-fseterr.c \
-	test-fstat.c test-fstatat.c test-ftell.c test-ftell3.c \
-	test-ftello.c test-ftello3.c test-ftello4.c test-ftruncate.c \
-	test-fwrite.c test-getcwd-lgpl.c test-getdtablesize.c \
-	test-getprogname.c test-gettext-h.c test-gettimeofday.c \
-	test-hard-locale.c test-hash.c test-ignore-value.c \
-	test-inet_pton.c test-intprops.c test-inttostr.c \
-	test-inttypes-h.c test-ioctl.c test-isblank.c \
-	test-isnand-nolibm.c test-isnanf-nolibm.c test-isnanl-nolibm.c \
-	test-iswblank.c test-iswdigit.c test-iswpunct.c \
-	test-iswxdigit.c test-largefile.c test-limits-h.c \
-	test-listen.c test-localcharset.c test-localcharset-w32utf8.c \
-	test-locale-h.c test-localeconv.c test-localeconv-mt.c \
-	test-localename.c test-localename-w32utf8.c test-lock.c \
-	test-lseek.c test-lstat.c test-malloc-gnu.c \
-	test-malloc-posix.c test-malloca.c test-math-h.c \
-	test-mbrtoc32.c test-mbrtoc32-w32.c test-mbrtowc.c \
-	test-mbrtowc-w32.c test-mbrtowc-w32utf8.c test-mbsinit.c \
-	test-mbsnlen.c test-memchr.c test-memrchr.c \
-	test-memset_explicit.c test-mkfifo.c test-nanosleep.c \
-	test-netinet_in-h.c test-next-prime.c $(test_once1_SOURCES) \
-	$(test_once2_SOURCES) test-open.c test-openat.c test-pathmax.c \
-	test-perror.c test-perror2.c test-pipe.c test-pselect.c \
-	test-pthread.c test-pthread-cond.c test-pthread-mutex.c \
+	test-dirent-h.c test-dup.c test-dup2.c test-environ.c \
+	test-errno-h.c test-error.c test-fchdir.c test-fcntl.c \
+	test-fcntl-h.c test-fdopen.c test-fgetc.c test-file-has-acl.c \
+	test-float-h.c test-fopen.c test-fopen-gnu.c test-fputc.c \
+	test-fread.c test-free.c $(test_frexp_SOURCES) \
+	$(test_frexpl_SOURCES) test-fseterr.c test-fstat.c \
+	test-fstatat.c test-ftell.c test-ftell3.c test-ftello.c \
+	test-ftello3.c test-ftello4.c test-ftruncate.c test-fwrite.c \
+	test-getcwd-lgpl.c test-getdtablesize.c test-getprogname.c \
+	test-gettext-h.c test-gettimeofday.c test-hard-locale.c \
+	test-hash.c test-ignore-value.c test-inet_pton.c \
+	test-intprops.c test-inttostr.c test-inttypes-h.c test-ioctl.c \
+	test-isblank.c test-isnand-nolibm.c test-isnanf-nolibm.c \
+	test-isnanl-nolibm.c test-iswblank.c test-iswdigit.c \
+	test-iswpunct.c test-iswxdigit.c test-largefile.c \
+	test-limits-h.c test-listen.c test-localcharset.c \
+	test-localcharset-w32utf8.c test-locale-h.c test-localeconv.c \
+	test-localeconv-mt.c test-localename.c \
+	test-localename-w32utf8.c test-lock.c test-lseek.c \
+	test-lstat.c test-malloc-gnu.c test-malloc-posix.c \
+	test-malloca.c test-math-h.c test-mbrtoc32.c \
+	test-mbrtoc32-w32.c test-mbrtowc.c test-mbrtowc-w32.c \
+	test-mbrtowc-w32utf8.c test-mbsinit.c test-mbsnlen.c \
+	test-memchr.c test-memrchr.c test-memset_explicit.c \
+	test-mkfifo.c test-nanosleep.c test-netinet_in-h.c \
+	test-next-prime.c $(test_once1_SOURCES) $(test_once2_SOURCES) \
+	test-open.c test-openat.c test-pathmax.c test-perror.c \
+	test-perror2.c test-pipe.c test-pselect.c test-pthread.c \
+	test-pthread-cond.c test-pthread-mutex.c \
 	test-pthread-mutex-type.c test-pthread-once1.c \
 	test-pthread-once2.c test-pthread-rwlock.c \
 	test-pthread-thread.c test-pthread_sigmask1.c \
@@ -4813,9 +4795,9 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-copy-acl-2.sh test-set-mode-acl.c test-copy-acl.c \
 	test-sameacls.c macros.h test-alignasof.c macros.h alloca.c \
 	test-alloca-opt.c arpa_inet.in.h test-arpa_inet-h.c \
-	test-assert.c assure.h test-binary-io.sh test-binary-io.c \
-	macros.h w32sock.h test-bind.c signature.h macros.h \
-	test-bool.c test-btoc32-1.sh test-btoc32-2.sh test-btoc32-3.sh \
+	test-assert.c test-binary-io.sh test-binary-io.c macros.h \
+	w32sock.h test-bind.c signature.h macros.h test-bool.c \
+	test-btoc32-1.sh test-btoc32-2.sh test-btoc32-3.sh \
 	test-btoc32.c signature.h macros.h test-btowc-1.sh \
 	test-btowc-2.sh test-btowc-3.sh test-btowc.c signature.h \
 	macros.h test-c-ctype.c macros.h c32is-impl.h \
@@ -4847,45 +4829,44 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	w32sock.h test-connect.c signature.h macros.h \
 	test-copy-file.sh test-copy-file-1.sh test-copy-file-2.sh \
 	test-copy-file.c macros.h ctype.in.h test-ctype-h.c \
-	test-dirent-h.c dirent-private.h test-dirfd.c macros.h \
-	dirname.h test-dup.c signature.h macros.h test-dup2.c \
-	signature.h macros.h test-environ.c test-errno-h.c \
+	test-dirent-h.c dirname.h test-dup.c signature.h macros.h \
+	test-dup2.c signature.h macros.h test-environ.c test-errno-h.c \
 	test-error.sh test-error.c macros.h test-fchdir.c signature.h \
 	macros.h test-fcntl-h.c test-fcntl.c signature.h macros.h \
 	test-fdopen.c signature.h macros.h test-fgetc.c signature.h \
 	macros.h test-file-has-acl.sh test-file-has-acl-1.sh \
 	test-file-has-acl-2.sh test-file-has-acl.c macros.h \
-	filenamecat.h flexmember.h float.in.h test-float-h.c macros.h \
-	fopen.c fopen.c test-fopen-gnu.c macros.h test-fopen.h \
-	test-fopen.c signature.h macros.h fpucw.h test-fputc.c \
-	signature.h macros.h test-fread.c signature.h macros.h \
-	test-free.c macros.h frexp.c test-frexp.c test-frexp.h \
-	minus-zero.h infinity.h signature.h macros.h randomd.c frexp.c \
-	frexpl.c test-frexpl.c test-frexp.h minus-zero.h infinity.h \
-	signature.h macros.h randoml.c test-fseterr.c test-fstat.c \
-	signature.h macros.h at-func.c test-fstatat.c test-lstat.h \
-	test-stat.h signature.h macros.h test-ftell.c test-ftell.sh \
-	test-ftell2.sh test-ftell3.c signature.h macros.h stdio-impl.h \
-	test-ftello.c test-ftello.sh test-ftello2.sh test-ftello3.c \
-	test-ftello4.c test-ftello4.sh signature.h macros.h \
-	test-ftruncate.c test-ftruncate.sh signature.h macros.h \
-	test-fwrite.c signature.h macros.h test-getcwd-lgpl.c \
-	signature.h macros.h test-getdtablesize.c signature.h macros.h \
-	getlocalename_l-unsafe.h localename-table.h struniq.h \
-	getlocalename_l-unsafe.h test-getprogname.c test-gettext-h.c \
-	test-gettimeofday.c signature.h macros.h test-hard-locale.c \
-	locale.c hash.h test-hash.c macros.h hash-pjw.h \
-	test-ignore-value.c test-inet_pton.c signature.h macros.h \
-	test-intprops.c macros.h anytostr.c inttostr.h macros.h \
-	test-inttostr.c test-inttypes-h.c w32sock.h test-ioctl.c \
-	signature.h macros.h test-isblank.c signature.h macros.h \
-	float+.h isnan.c isnand-nolibm.h isnand.c test-isnand-nolibm.c \
-	test-isnand.h minus-zero.h infinity.h macros.h float+.h \
-	isnan.c isnanf-nolibm.h isnanf.c test-isnanf-nolibm.c \
-	test-isnanf.h minus-zero.h infinity.h macros.h float+.h \
-	isnan.c isnanl-nolibm.h isnanl.c test-isnanl-nolibm.c \
-	test-isnanl.h minus-zero.h infinity.h macros.h test-iswblank.c \
-	macros.h test-iswdigit.sh test-iswdigit.c signature.h macros.h \
+	flexmember.h float.in.h test-float-h.c macros.h fopen.c \
+	fopen.c test-fopen-gnu.c macros.h test-fopen.h test-fopen.c \
+	signature.h macros.h fpucw.h test-fputc.c signature.h macros.h \
+	test-fread.c signature.h macros.h test-free.c macros.h frexp.c \
+	test-frexp.c test-frexp.h minus-zero.h infinity.h signature.h \
+	macros.h randomd.c frexp.c frexpl.c test-frexpl.c test-frexp.h \
+	minus-zero.h infinity.h signature.h macros.h randoml.c \
+	test-fseterr.c test-fstat.c signature.h macros.h at-func.c \
+	test-fstatat.c test-lstat.h test-stat.h signature.h macros.h \
+	test-ftell.c test-ftell.sh test-ftell2.sh test-ftell3.c \
+	signature.h macros.h stdio-impl.h test-ftello.c test-ftello.sh \
+	test-ftello2.sh test-ftello3.c test-ftello4.c test-ftello4.sh \
+	signature.h macros.h test-ftruncate.c test-ftruncate.sh \
+	signature.h macros.h test-fwrite.c signature.h macros.h \
+	test-getcwd-lgpl.c signature.h macros.h test-getdtablesize.c \
+	signature.h macros.h getlocalename_l-unsafe.h \
+	localename-table.h struniq.h getlocalename_l-unsafe.h \
+	test-getprogname.c test-gettext-h.c test-gettimeofday.c \
+	signature.h macros.h test-hard-locale.c locale.c hash.h \
+	test-hash.c macros.h hash-pjw.h test-ignore-value.c \
+	test-inet_pton.c signature.h macros.h test-intprops.c macros.h \
+	anytostr.c inttostr.h macros.h test-inttostr.c \
+	test-inttypes-h.c w32sock.h test-ioctl.c signature.h macros.h \
+	test-isblank.c signature.h macros.h float+.h isnan.c \
+	isnand-nolibm.h isnand.c test-isnand-nolibm.c test-isnand.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanf-nolibm.h isnanf.c test-isnanf-nolibm.c test-isnanf.h \
+	minus-zero.h infinity.h macros.h float+.h isnan.c \
+	isnanl-nolibm.h isnanl.c test-isnanl-nolibm.c test-isnanl.h \
+	minus-zero.h infinity.h macros.h test-iswblank.c macros.h \
+	test-iswdigit.sh test-iswdigit.c signature.h macros.h \
 	test-iswpunct.sh test-iswpunct.c signature.h macros.h \
 	test-iswxdigit.sh test-iswxdigit.c signature.h macros.h \
 	test-largefile.c cdefs.h libc-config.h test-limits-h.c \
@@ -5033,17 +5014,17 @@ EXTRA_DIST = w32sock.h test-accept.c signature.h macros.h \
 	test-utimens-common.h test-utimensat.c signature.h macros.h \
 	asnprintf.c float+.h printf-args.c printf-args.h \
 	printf-parse.c printf-parse.h vasnprintf.c vasnprintf.h \
-	test-vasnprintf.c macros.h verify.h test-verify.c \
-	test-verify-try.c test-verify.sh vma-iter.h test-wchar-h.c \
-	test-wcrtomb.sh test-wcrtomb.c test-wcrtomb-w32-2.sh \
-	test-wcrtomb-w32-3.sh test-wcrtomb-w32-4.sh \
-	test-wcrtomb-w32-5.sh test-wcrtomb-w32-6.sh \
-	test-wcrtomb-w32-7.sh test-wcrtomb-w32-8.sh test-wcrtomb-w32.c \
-	signature.h macros.h test-wctob.sh test-wctob.c signature.h \
-	macros.h wctomb-impl.h test-wctype-h.c macros.h test-wcwidth.c \
-	signature.h macros.h windows-cond.h windows-initguard.h \
-	windows-initguard.h windows-mutex.h test-windows-mutex-type.c \
-	macros.h windows-once.h windows-initguard.h windows-recmutex.h \
+	test-vasnprintf.c macros.h test-verify.c test-verify-try.c \
+	test-verify.sh vma-iter.h test-wchar-h.c test-wcrtomb.sh \
+	test-wcrtomb.c test-wcrtomb-w32-2.sh test-wcrtomb-w32-3.sh \
+	test-wcrtomb-w32-4.sh test-wcrtomb-w32-5.sh \
+	test-wcrtomb-w32-6.sh test-wcrtomb-w32-7.sh \
+	test-wcrtomb-w32-8.sh test-wcrtomb-w32.c signature.h macros.h \
+	test-wctob.sh test-wctob.c signature.h macros.h wctomb-impl.h \
+	test-wctype-h.c macros.h test-wcwidth.c signature.h macros.h \
+	windows-cond.h windows-initguard.h windows-initguard.h \
+	windows-mutex.h test-windows-mutex-type.c macros.h \
+	windows-once.h windows-initguard.h windows-recmutex.h \
 	test-windows-recmutex-type.c macros.h windows-initguard.h \
 	windows-rwlock.h windows-spin.h windows-thread.h \
 	windows-initguard.h windows-timedmutex.h \
@@ -5065,10 +5046,10 @@ SUFFIXES =
 #  "mv -f $name.Tpo $name.po, so tell make clean to remove that file.
 MOSTLYCLEANFILES = core *.stackdump arpa/inet.h arpa/inet.h-t ctype.h \
 	ctype.h-t float.h float.h-t t-ftell3.tmp t-ftello3.tmp \
-	$(am__append_31) math.h math.h-t1 math.h-t2 math.h-t3 \
-	math.h-t4 math.h-t5 math.h-t6 $(am__append_40) netinet/in.h \
+	$(am__append_29) math.h math.h-t1 math.h-t2 math.h-t3 \
+	math.h-t4 math.h-t5 math.h-t6 $(am__append_38) netinet/in.h \
 	netinet/in.h-t pthread.h pthread.h-t1 pthread.h-t2 \
-	pthread.h-t3 pthread.h-t4 sched.h sched.h-t $(am__append_69) \
+	pthread.h-t3 pthread.h-t4 sched.h sched.h-t $(am__append_67) \
 	stdbit.h stdbit.h-t sys/ioctl.h sys/ioctl.h-t sys/select.h \
 	sys/select.h-t sys/socket.h sys/socket.h-t sys/uio.h \
 	sys/uio.h-t thread-creators.h-t1 thread-creators.h-t2 \
@@ -5094,51 +5075,50 @@ libtests_a_SOURCES = $(am__append_1) copy-acl.c set-acl.c arpa_inet.c \
 	c32islower.c c32ispunct.c c32isspace.c c32isupper.c \
 	c32isxdigit.c $(am__append_4) c32tob.c c32tolower.c c32width.c \
 	$(am__append_5) concat-filename.c $(am__append_6) \
-	$(am__append_7) dirname-lgpl.c stripslash.c dtotimespec.c \
+	dirname-lgpl.c stripslash.c dtotimespec.c $(am__append_7) \
 	$(am__append_8) $(am__append_9) $(am__append_10) \
-	filenamecat-lgpl.c $(am__append_11) $(am__append_12) \
-	$(am__append_13) $(am__append_14) $(am__append_15) \
-	$(am__append_16) $(am__append_17) $(am__append_18) \
-	localename-table.c $(am__append_19) $(am__append_20) hash.c \
+	$(am__append_11) $(am__append_12) $(am__append_13) \
+	$(am__append_14) $(am__append_15) $(am__append_16) \
+	localename-table.c $(am__append_17) $(am__append_18) hash.c \
 	hashcode-string1.h hashcode-string1.c hashcode-string2.h \
-	hashcode-string2.c $(am__append_21) imaxtostr.c inttostr.c \
-	offtostr.c uinttostr.c umaxtostr.c $(am__append_22) \
-	$(am__append_23) $(am__append_24) $(am__append_25) \
-	$(am__append_26) $(am__append_27) $(am__append_28) \
-	$(am__append_32) localename.c localename-environ.c \
-	$(am__append_35) $(am__append_36) glthread/lock.h \
-	glthread/lock.c $(am__append_37) math.c mbchar.c mbiter-aux.h \
-	mbiter-aux.c mbiterf.h mbiterf.c mbsnlen.c $(am__append_41) \
-	$(am__append_42) $(am__append_43) $(am__append_44) \
-	$(am__append_45) $(am__append_46) nan.h $(am__append_47) \
+	hashcode-string2.c $(am__append_19) imaxtostr.c inttostr.c \
+	offtostr.c uinttostr.c umaxtostr.c $(am__append_20) \
+	$(am__append_21) $(am__append_22) $(am__append_23) \
+	$(am__append_24) $(am__append_25) $(am__append_26) \
+	$(am__append_30) localename.c localename-environ.c \
+	$(am__append_33) $(am__append_34) glthread/lock.h \
+	glthread/lock.c $(am__append_35) math.c mbchar.c mbiter-aux.h \
+	mbiter-aux.c mbiterf.h mbiterf.c mbsnlen.c $(am__append_39) \
+	$(am__append_40) $(am__append_41) $(am__append_42) \
+	$(am__append_43) $(am__append_44) nan.h $(am__append_45) \
 	next-prime.h next-prime.c glthread/once.h glthread/once.c \
-	$(am__append_48) openat-die.c $(am__append_49) \
-	$(am__append_50) $(am__append_51) $(am__append_52) \
-	$(am__append_53) $(am__append_54) $(am__append_55) \
-	$(am__append_56) $(am__append_57) $(am__append_58) \
-	$(am__append_59) qset-acl.c $(am__append_60) $(am__append_61) \
+	$(am__append_46) openat-die.c $(am__append_47) \
+	$(am__append_48) $(am__append_49) $(am__append_50) \
+	$(am__append_51) $(am__append_52) $(am__append_53) \
+	$(am__append_54) $(am__append_55) $(am__append_56) \
+	$(am__append_57) qset-acl.c $(am__append_58) $(am__append_59) \
 	read-file.c same-inode.h same-inode.c save-cwd.c \
-	$(am__append_62) $(am__append_63) $(am__append_64) \
-	$(am__append_65) $(am__append_66) $(am__append_70) \
-	$(am__append_71) signed-nan.h signed-snan.h $(am__append_72) \
-	size_max.h $(am__append_74) snan.h $(am__append_75) sockets.h \
-	sockets.c $(am__append_76) $(am__append_77) str_endswith.c \
-	str_startswith.c $(am__append_78) $(am__append_79) \
-	$(am__append_80) sys_socket.c glthread/thread.h \
-	glthread/thread.c thread-optim.c glthread/threadlib.c \
-	$(am__append_81) timespec-add.c timespec-sub.c \
-	$(am__append_82) $(am__append_83) $(am__append_84) \
-	$(am__append_85) $(am__append_86) $(am__append_87) \
-	$(am__append_88) $(am__append_89) $(am__append_90) \
-	$(am__append_91) $(am__append_92) $(am__append_93) \
-	$(am__append_94) $(am__append_95) $(am__append_96) \
-	$(am__append_97) $(am__append_98) utimecmp.c $(am__append_100) \
-	vma-iter.c vsnzprintf.c $(am__append_101) $(am__append_102) \
+	$(am__append_60) $(am__append_61) $(am__append_62) \
+	$(am__append_63) $(am__append_64) $(am__append_68) \
+	$(am__append_69) signed-nan.h signed-snan.h $(am__append_70) \
+	size_max.h $(am__append_72) snan.h $(am__append_73) sockets.h \
+	sockets.c $(am__append_74) $(am__append_75) str_endswith.c \
+	str_startswith.c $(am__append_76) $(am__append_77) \
+	sys_socket.c glthread/thread.h glthread/thread.c \
+	thread-optim.c glthread/threadlib.c $(am__append_78) \
+	timespec-add.c timespec-sub.c $(am__append_79) \
+	$(am__append_80) $(am__append_81) $(am__append_82) \
+	$(am__append_83) $(am__append_84) $(am__append_85) \
+	$(am__append_86) $(am__append_87) $(am__append_88) \
+	$(am__append_89) $(am__append_90) $(am__append_91) \
+	$(am__append_92) $(am__append_93) $(am__append_94) \
+	$(am__append_95) utimecmp.c $(am__append_97) vma-iter.c \
+	vsnzprintf.c $(am__append_98) $(am__append_99) \
+	$(am__append_100) $(am__append_101) $(am__append_102) \
 	$(am__append_103) $(am__append_104) $(am__append_105) \
 	$(am__append_106) $(am__append_107) $(am__append_108) \
 	$(am__append_109) $(am__append_110) $(am__append_111) \
-	$(am__append_112) $(am__append_113) $(am__append_114) \
-	$(am__append_115) xconcat-filename.c xgetcwd.c xsize.h xsize.c \
+	$(am__append_112) xconcat-filename.c xgetcwd.c xsize.h xsize.c \
 	glthread/yield.h
 libtests_a_LIBADD = $(gltests_LIBOBJS) @ALLOCA@
 libtests_a_DEPENDENCIES = $(gltests_LIBOBJS) @ALLOCA@
@@ -5667,10 +5647,6 @@ test-ctype_xdigit$(EXEEXT): $(test_ctype_xdigit_OBJECTS) $(test_ctype_xdigit_DEP
 test-dirent-h$(EXEEXT): $(test_dirent_h_OBJECTS) $(test_dirent_h_DEPENDENCIES) $(EXTRA_test_dirent_h_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-dirent-h$(EXEEXT)
 	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_dirent_h_OBJECTS) $(test_dirent_h_LDADD) $(LIBS)
-
-test-dirfd$(EXEEXT): $(test_dirfd_OBJECTS) $(test_dirfd_DEPENDENCIES) $(EXTRA_test_dirfd_DEPENDENCIES) 
-	$(AM_JOBSERVER)@rm -f test-dirfd$(EXEEXT)
-	$(AM_JOBSERVER)$(AM_V_CCLD)$(LINK) $(test_dirfd_OBJECTS) $(test_dirfd_LDADD) $(LIBS)
 
 test-dup$(EXEEXT): $(test_dup_OBJECTS) $(test_dup_DEPENDENCIES) $(EXTRA_test_dup_DEPENDENCIES) 
 	$(AM_JOBSERVER)@rm -f test-dup$(EXEEXT)
@@ -6545,13 +6521,11 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/concat-filename.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/connect.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/copy-acl.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirfd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirname-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dtotimespec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fchdir.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fdopen.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filenamecat-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/float.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fopen.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/frexp.Po@am__quote@ # am--include-marker
@@ -6560,7 +6534,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ftell.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ftello.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/ftruncate.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getcwd-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getlocalename_l-unsafe.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getpagesize.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/hash.Po@am__quote@ # am--include-marker
@@ -6646,7 +6619,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stpcpy.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/str_endswith.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/str_startswith.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strdup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strerror_r.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stripslash.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strncpy.Po@am__quote@ # am--include-marker
@@ -6690,7 +6662,6 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-copy-file.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-ctype-h.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-dirent-h.Po@am__quote@ # am--include-marker
-@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-dirfd.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-dup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-dup2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/test-environ.Po@am__quote@ # am--include-marker
@@ -7671,13 +7642,6 @@ test-ctype-h.log: test-ctype-h$(EXEEXT)
 test-dirent-h.log: test-dirent-h$(EXEEXT)
 	@p='test-dirent-h$(EXEEXT)'; \
 	b='test-dirent-h'; \
-	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
-	--log-file $$b.log --trs-file $$b.trs \
-	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
-	"$$tst" $(AM_TESTS_FD_REDIRECT)
-test-dirfd.log: test-dirfd$(EXEEXT)
-	@p='test-dirfd$(EXEEXT)'; \
-	b='test-dirfd'; \
 	$(am__check_pre) $(LOG_DRIVER) --test-name "$$f" \
 	--log-file $$b.log --trs-file $$b.trs \
 	$(am__common_driver_flags) $(AM_LOG_DRIVER_FLAGS) $(LOG_DRIVER_FLAGS) -- $(LOG_COMPILE) \
@@ -9587,13 +9551,11 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/concat-filename.Po
 	-rm -f ./$(DEPDIR)/connect.Po
 	-rm -f ./$(DEPDIR)/copy-acl.Po
-	-rm -f ./$(DEPDIR)/dirfd.Po
 	-rm -f ./$(DEPDIR)/dirname-lgpl.Po
 	-rm -f ./$(DEPDIR)/dtotimespec.Po
 	-rm -f ./$(DEPDIR)/dup.Po
 	-rm -f ./$(DEPDIR)/fchdir.Po
 	-rm -f ./$(DEPDIR)/fdopen.Po
-	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/float.Po
 	-rm -f ./$(DEPDIR)/fopen.Po
 	-rm -f ./$(DEPDIR)/frexp.Po
@@ -9602,7 +9564,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/ftell.Po
 	-rm -f ./$(DEPDIR)/ftello.Po
 	-rm -f ./$(DEPDIR)/ftruncate.Po
-	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l-unsafe.Po
 	-rm -f ./$(DEPDIR)/getpagesize.Po
 	-rm -f ./$(DEPDIR)/hash.Po
@@ -9688,7 +9649,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/stpcpy.Po
 	-rm -f ./$(DEPDIR)/str_endswith.Po
 	-rm -f ./$(DEPDIR)/str_startswith.Po
-	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/strerror_r.Po
 	-rm -f ./$(DEPDIR)/stripslash.Po
 	-rm -f ./$(DEPDIR)/strncpy.Po
@@ -9732,7 +9692,6 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/test-copy-file.Po
 	-rm -f ./$(DEPDIR)/test-ctype-h.Po
 	-rm -f ./$(DEPDIR)/test-dirent-h.Po
-	-rm -f ./$(DEPDIR)/test-dirfd.Po
 	-rm -f ./$(DEPDIR)/test-dup.Po
 	-rm -f ./$(DEPDIR)/test-dup2.Po
 	-rm -f ./$(DEPDIR)/test-environ.Po
@@ -10069,13 +10028,11 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/concat-filename.Po
 	-rm -f ./$(DEPDIR)/connect.Po
 	-rm -f ./$(DEPDIR)/copy-acl.Po
-	-rm -f ./$(DEPDIR)/dirfd.Po
 	-rm -f ./$(DEPDIR)/dirname-lgpl.Po
 	-rm -f ./$(DEPDIR)/dtotimespec.Po
 	-rm -f ./$(DEPDIR)/dup.Po
 	-rm -f ./$(DEPDIR)/fchdir.Po
 	-rm -f ./$(DEPDIR)/fdopen.Po
-	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/float.Po
 	-rm -f ./$(DEPDIR)/fopen.Po
 	-rm -f ./$(DEPDIR)/frexp.Po
@@ -10084,7 +10041,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/ftell.Po
 	-rm -f ./$(DEPDIR)/ftello.Po
 	-rm -f ./$(DEPDIR)/ftruncate.Po
-	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getlocalename_l-unsafe.Po
 	-rm -f ./$(DEPDIR)/getpagesize.Po
 	-rm -f ./$(DEPDIR)/hash.Po
@@ -10170,7 +10126,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/stpcpy.Po
 	-rm -f ./$(DEPDIR)/str_endswith.Po
 	-rm -f ./$(DEPDIR)/str_startswith.Po
-	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/strerror_r.Po
 	-rm -f ./$(DEPDIR)/stripslash.Po
 	-rm -f ./$(DEPDIR)/strncpy.Po
@@ -10214,7 +10169,6 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/test-copy-file.Po
 	-rm -f ./$(DEPDIR)/test-ctype-h.Po
 	-rm -f ./$(DEPDIR)/test-dirent-h.Po
-	-rm -f ./$(DEPDIR)/test-dirfd.Po
 	-rm -f ./$(DEPDIR)/test-dup.Po
 	-rm -f ./$(DEPDIR)/test-dup2.Po
 	-rm -f ./$(DEPDIR)/test-environ.Po

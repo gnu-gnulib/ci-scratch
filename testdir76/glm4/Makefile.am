@@ -21,7 +21,6 @@ EXTRA_DIST += copy-file-range.m4
 EXTRA_DIST += copy-file.m4
 EXTRA_DIST += ctype_h.m4
 EXTRA_DIST += dirent_h.m4
-EXTRA_DIST += dirfd.m4
 EXTRA_DIST += double-slash-root.m4
 EXTRA_DIST += dup.m4
 EXTRA_DIST += dup2.m4

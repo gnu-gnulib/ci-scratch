@@ -104,7 +104,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/codeset.m4 \
 	$(top_srcdir)/glm4/copy-file-range.m4 \
 	$(top_srcdir)/glm4/copy-file.m4 $(top_srcdir)/glm4/ctype_h.m4 \
-	$(top_srcdir)/glm4/dirent_h.m4 $(top_srcdir)/glm4/dirfd.m4 \
+	$(top_srcdir)/glm4/dirent_h.m4 \
 	$(top_srcdir)/glm4/double-slash-root.m4 \
 	$(top_srcdir)/glm4/dup.m4 $(top_srcdir)/glm4/dup2.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \

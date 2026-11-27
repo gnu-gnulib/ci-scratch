@@ -50,16 +50,6 @@
 /* Define as the word index where to find the sign of 'double'. */
 #undef DBL_SIGNBIT_WORD
 
-/* the name of the file descriptor member of DIR */
-#undef DIR_FD_MEMBER_NAME
-
-#ifdef DIR_FD_MEMBER_NAME
-# define DIR_TO_FD(Dir_p) ((Dir_p)->DIR_FD_MEMBER_NAME)
-#else
-# define DIR_TO_FD(Dir_p) -1
-#endif
-
-
 /* Define to 1 if // is a file system root distinct from /. */
 #undef DOUBLE_SLASH_IS_DISTINCT_ROOT
 
@@ -305,9 +295,6 @@
 
 /* Define to 1 when the gnulib module copy-file-range should be tested. */
 #undef GNULIB_TEST_COPY_FILE_RANGE
-
-/* Define to 1 when the gnulib module dirfd should be tested. */
-#undef GNULIB_TEST_DIRFD
 
 /* Define to 1 when the gnulib module dup should be tested. */
 #undef GNULIB_TEST_DUP
@@ -864,10 +851,6 @@
    don't. */
 #undef HAVE_DECL_COPYSIGNL
 
-/* Define to 1 if you have the declaration of 'dirfd', and to 0 if you don't.
-   */
-#undef HAVE_DECL_DIRFD
-
 /* Define to 1 if you have the declaration of 'ecvt', and to 0 if you don't.
    */
 #undef HAVE_DECL_ECVT
@@ -1018,9 +1001,6 @@
 
 /* Define to 1 if you have the <dirent.h> header file. */
 #undef HAVE_DIRENT_H
-
-/* Define to 1 if you have the 'dirfd' function. */
-#undef HAVE_DIRFD
 
 /* Define to 1 if you have the 'dl_iterate_phdr' function. */
 #undef HAVE_DL_ITERATE_PHDR

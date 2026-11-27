@@ -118,37 +118,41 @@ host_triplet = @host@
 @GL_COND_OBJ_ACL_ENTRIES_TRUE@am__append_1 = acl_entries.c
 @GL_COND_OBJ_CLOSE_TRUE@am__append_2 = close.c
 @GL_COND_OBJ_COPY_FILE_RANGE_TRUE@am__append_3 = copy-file-range.c
-@GL_COND_OBJ_DUP2_TRUE@am__append_4 = dup2.c
-@GL_COND_OBJ_ERROR_TRUE@am__append_5 = error.c
-@GL_COND_OBJ_FCNTL_TRUE@am__append_6 = fcntl.c
-@GL_COND_OBJ_FREE_TRUE@am__append_7 = free.c
-@GL_COND_OBJ_FSETERR_TRUE@am__append_8 = fseterr.c
-@GL_COND_OBJ_FSTAT_TRUE@am__append_9 = fstat.c
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_10 = getdtablesize.c
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_11 = getprogname.c
-@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_12 = gettimeofday.c
-@GL_COND_OBJ_LSTAT_TRUE@am__append_13 = lstat.c
-@GL_COND_OBJ_MBRTOC32_TRUE@am__append_14 = mbrtoc32.c
-@GL_COND_OBJ_MBRTOWC_TRUE@am__append_15 = mbrtowc.c
-@GL_COND_OBJ_MBSINIT_TRUE@am__append_16 = mbsinit.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_17 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_18 = msvc-nothrow.c
-@GL_COND_OBJ_OPEN_TRUE@am__append_19 = open.c
-@GL_COND_OBJ_RAISE_TRUE@am__append_20 = raise.c
-@GL_COND_OBJ_READ_TRUE@am__append_21 = read.c
-@GL_COND_OBJ_READLINK_TRUE@am__append_22 = readlink.c
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_23 = realloc.c
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_24 = reallocarray.c
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_25 = setlocale-lock.c
-@GL_COND_OBJ_STAT_TRUE@am__append_26 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_27 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_28 = stdio-write.c
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_29 = stdio-consolesafe.c
-@GL_COND_OBJ_STRERROR_TRUE@am__append_30 = strerror.c
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_31 = strerror-override.c
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_32 = unictype/ctype_print.c
-@GL_COND_OBJ_UTIME_TRUE@am__append_33 = utime.c
-@GL_COND_OBJ_WRITE_TRUE@am__append_34 = write.c
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@am__append_4 = dirinfo-abstract.c
+@GL_COND_OBJ_DIRINFO_IMPL_TRUE@am__append_5 = dirinfo-impl.c
+@GL_COND_OBJ_DUP2_TRUE@am__append_6 = dup2.c
+@GL_COND_OBJ_ERROR_TRUE@am__append_7 = error.c
+@GL_COND_OBJ_FCNTL_TRUE@am__append_8 = fcntl.c
+@GL_COND_OBJ_FREE_TRUE@am__append_9 = free.c
+@GL_COND_OBJ_FSETERR_TRUE@am__append_10 = fseterr.c
+@GL_COND_OBJ_FSTAT_TRUE@am__append_11 = fstat.c
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_12 = getcwd-lgpl.c
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_13 = getdtablesize.c
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__append_14 = getprogname.c
+@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__append_15 = gettimeofday.c
+@GL_COND_OBJ_LSTAT_TRUE@am__append_16 = lstat.c
+@GL_COND_OBJ_MBRTOC32_TRUE@am__append_17 = mbrtoc32.c
+@GL_COND_OBJ_MBRTOWC_TRUE@am__append_18 = mbrtowc.c
+@GL_COND_OBJ_MBSINIT_TRUE@am__append_19 = mbsinit.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_20 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_21 = msvc-nothrow.c
+@GL_COND_OBJ_OPEN_TRUE@am__append_22 = open.c
+@GL_COND_OBJ_RAISE_TRUE@am__append_23 = raise.c
+@GL_COND_OBJ_READ_TRUE@am__append_24 = read.c
+@GL_COND_OBJ_READLINK_TRUE@am__append_25 = readlink.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_26 = realloc.c
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__append_27 = reallocarray.c
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__append_28 = setlocale-lock.c
+@GL_COND_OBJ_STAT_TRUE@am__append_29 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_30 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_31 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_32 = stdio-consolesafe.c
+@GL_COND_OBJ_STRDUP_TRUE@am__append_33 = strdup.c
+@GL_COND_OBJ_STRERROR_TRUE@am__append_34 = strerror.c
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__append_35 = strerror-override.c
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__append_36 = unictype/ctype_print.c
+@GL_COND_OBJ_UTIME_TRUE@am__append_37 = utime.c
+@GL_COND_OBJ_WRITE_TRUE@am__append_38 = write.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -164,7 +168,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/codeset.m4 \
 	$(top_srcdir)/glm4/copy-file-range.m4 \
 	$(top_srcdir)/glm4/copy-file.m4 $(top_srcdir)/glm4/ctype_h.m4 \
-	$(top_srcdir)/glm4/dirent_h.m4 $(top_srcdir)/glm4/dirfd.m4 \
+	$(top_srcdir)/glm4/dirent_h.m4 \
 	$(top_srcdir)/glm4/double-slash-root.m4 \
 	$(top_srcdir)/glm4/dup.m4 $(top_srcdir)/glm4/dup2.m4 \
 	$(top_srcdir)/glm4/environ.m4 $(top_srcdir)/glm4/errno_h.m4 \
@@ -331,17 +335,19 @@ libgnu_a_RANLIB = $(RANLIB)
 am__libgnu_a_SOURCES_DIST = acl-errno-valid.c acl-internal.c \
 	get-permissions.c set-permissions.c acl_entries.c \
 	basename-lgpl.c binary-io.h binary-io.c c32isprint.c cloexec.c \
-	close.c copy-file.h copy-file.c copy-file-range.c dup2.c \
-	error.c exitfail.c fcntl.c fd-hook.c file-has-acl.c free.c \
-	fseterr.c fstat.c full-write.h full-write.c getdtablesize.c \
-	getprogname.c gettext.h gettime.c gettimeofday.c hard-locale.c \
-	ialloc.c idx.h issymlink.c localcharset.c lstat.c malloca.c \
-	mbrtoc32.c mbrtowc.c mbsinit.c mbszero.c memeq.c minmax.h \
-	msvc-inval.c msvc-nothrow.c open.c qcopy-acl.c quotearg.c \
-	raise.c read.c readlink.c realloc.c reallocarray.c safe-read.c \
-	safe-write.c setlocale_null.c setlocale-lock.c \
-	setlocale_null-unlocked.c stat.c stat-time.c stdio-read.c \
-	stdio-write.c stdio-consolesafe.c stdlib.c streq.c strerror.c \
+	close.c copy-file.h copy-file.c copy-file-range.c \
+	dirinfo-abstract.c dirinfo-impl.c dup2.c error.c exitfail.c \
+	fcntl.c fd-hook.c file-has-acl.c filenamecat-lgpl.c free.c \
+	fseterr.c fstat.c full-write.h full-write.c getcwd-lgpl.c \
+	getdtablesize.c getprogname.c gettext.h gettime.c \
+	gettimeofday.c hard-locale.c ialloc.c idx.h issymlink.c \
+	localcharset.c lstat.c malloca.c mbrtoc32.c mbrtowc.c \
+	mbsinit.c mbszero.c memeq.c minmax.h msvc-inval.c \
+	msvc-nothrow.c open.c qcopy-acl.c quotearg.c raise.c read.c \
+	readlink.c realloc.c reallocarray.c safe-read.c safe-write.c \
+	setlocale_null.c setlocale-lock.c setlocale_null-unlocked.c \
+	stat.c stat-time.c stdio-read.c stdio-write.c \
+	stdio-consolesafe.c stdlib.c strdup.c streq.c strerror.c \
 	strerror-override.c strnul.c timespec.c unictype/ctype_print.c \
 	unistd.c utime.c utimens.c wctype-h.c write.c xmalloc.c \
 	xalloc-die.c
@@ -349,68 +355,76 @@ am__libgnu_a_SOURCES_DIST = acl-errno-valid.c acl-internal.c \
 @GL_COND_OBJ_CLOSE_TRUE@am__objects_2 = close.$(OBJEXT)
 @GL_COND_OBJ_COPY_FILE_RANGE_TRUE@am__objects_3 =  \
 @GL_COND_OBJ_COPY_FILE_RANGE_TRUE@	copy-file-range.$(OBJEXT)
-@GL_COND_OBJ_DUP2_TRUE@am__objects_4 = dup2.$(OBJEXT)
-@GL_COND_OBJ_ERROR_TRUE@am__objects_5 = error.$(OBJEXT)
-@GL_COND_OBJ_FCNTL_TRUE@am__objects_6 = fcntl.$(OBJEXT)
-@GL_COND_OBJ_FREE_TRUE@am__objects_7 = free.$(OBJEXT)
-@GL_COND_OBJ_FSETERR_TRUE@am__objects_8 = fseterr.$(OBJEXT)
-@GL_COND_OBJ_FSTAT_TRUE@am__objects_9 = fstat.$(OBJEXT)
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_10 =  \
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@am__objects_4 =  \
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@	dirinfo-abstract.$(OBJEXT)
+@GL_COND_OBJ_DIRINFO_IMPL_TRUE@am__objects_5 = dirinfo-impl.$(OBJEXT)
+@GL_COND_OBJ_DUP2_TRUE@am__objects_6 = dup2.$(OBJEXT)
+@GL_COND_OBJ_ERROR_TRUE@am__objects_7 = error.$(OBJEXT)
+@GL_COND_OBJ_FCNTL_TRUE@am__objects_8 = fcntl.$(OBJEXT)
+@GL_COND_OBJ_FREE_TRUE@am__objects_9 = free.$(OBJEXT)
+@GL_COND_OBJ_FSETERR_TRUE@am__objects_10 = fseterr.$(OBJEXT)
+@GL_COND_OBJ_FSTAT_TRUE@am__objects_11 = fstat.$(OBJEXT)
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_12 = getcwd-lgpl.$(OBJEXT)
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_13 =  \
 @GL_COND_OBJ_GETDTABLESIZE_TRUE@	getdtablesize.$(OBJEXT)
-@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_11 = getprogname.$(OBJEXT)
-@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__objects_12 =  \
+@GL_COND_OBJ_GETPROGNAME_TRUE@am__objects_14 = getprogname.$(OBJEXT)
+@GL_COND_OBJ_GETTIMEOFDAY_TRUE@am__objects_15 =  \
 @GL_COND_OBJ_GETTIMEOFDAY_TRUE@	gettimeofday.$(OBJEXT)
-@GL_COND_OBJ_LSTAT_TRUE@am__objects_13 = lstat.$(OBJEXT)
-@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_14 = mbrtoc32.$(OBJEXT)
-@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_15 = mbrtowc.$(OBJEXT)
-@GL_COND_OBJ_MBSINIT_TRUE@am__objects_16 = mbsinit.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_17 = msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_18 =  \
+@GL_COND_OBJ_LSTAT_TRUE@am__objects_16 = lstat.$(OBJEXT)
+@GL_COND_OBJ_MBRTOC32_TRUE@am__objects_17 = mbrtoc32.$(OBJEXT)
+@GL_COND_OBJ_MBRTOWC_TRUE@am__objects_18 = mbrtowc.$(OBJEXT)
+@GL_COND_OBJ_MBSINIT_TRUE@am__objects_19 = mbsinit.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_20 = msvc-inval.$(OBJEXT)
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_21 =  \
 @GL_COND_OBJ_MSVC_NOTHROW_TRUE@	msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_OPEN_TRUE@am__objects_19 = open.$(OBJEXT)
-@GL_COND_OBJ_RAISE_TRUE@am__objects_20 = raise.$(OBJEXT)
-@GL_COND_OBJ_READ_TRUE@am__objects_21 = read.$(OBJEXT)
-@GL_COND_OBJ_READLINK_TRUE@am__objects_22 = readlink.$(OBJEXT)
-@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_23 = realloc.$(OBJEXT)
-@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_24 =  \
+@GL_COND_OBJ_OPEN_TRUE@am__objects_22 = open.$(OBJEXT)
+@GL_COND_OBJ_RAISE_TRUE@am__objects_23 = raise.$(OBJEXT)
+@GL_COND_OBJ_READ_TRUE@am__objects_24 = read.$(OBJEXT)
+@GL_COND_OBJ_READLINK_TRUE@am__objects_25 = readlink.$(OBJEXT)
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_26 = realloc.$(OBJEXT)
+@GL_COND_OBJ_REALLOCARRAY_TRUE@am__objects_27 =  \
 @GL_COND_OBJ_REALLOCARRAY_TRUE@	reallocarray.$(OBJEXT)
-@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_25 =  \
+@GL_COND_OBJ_SETLOCALE_LOCK_TRUE@am__objects_28 =  \
 @GL_COND_OBJ_SETLOCALE_LOCK_TRUE@	setlocale-lock.$(OBJEXT)
-@GL_COND_OBJ_STAT_TRUE@am__objects_26 = stat.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_27 = stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_28 = stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_29 = stdio-consolesafe.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_TRUE@am__objects_30 = strerror.$(OBJEXT)
-@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_31 = strerror-override.$(OBJEXT)
+@GL_COND_OBJ_STAT_TRUE@am__objects_29 = stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_30 = stdio-read.$(OBJEXT)
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_31 = stdio-write.$(OBJEXT)
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_32 = stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STRDUP_TRUE@am__objects_33 = strdup.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_TRUE@am__objects_34 = strerror.$(OBJEXT)
+@GL_COND_OBJ_STRERROR_OVERRIDE_TRUE@am__objects_35 = strerror-override.$(OBJEXT)
 am__dirstamp = $(am__leading_dot)dirstamp
-@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_32 = unictype/ctype_print.$(OBJEXT)
-@GL_COND_OBJ_UTIME_TRUE@am__objects_33 = utime.$(OBJEXT)
-@GL_COND_OBJ_WRITE_TRUE@am__objects_34 = write.$(OBJEXT)
+@LIBUNISTRING_COMPILE_UNICTYPE_CTYPE_PRINT_TRUE@am__objects_36 = unictype/ctype_print.$(OBJEXT)
+@GL_COND_OBJ_UTIME_TRUE@am__objects_37 = utime.$(OBJEXT)
+@GL_COND_OBJ_WRITE_TRUE@am__objects_38 = write.$(OBJEXT)
 am_libgnu_a_OBJECTS = acl-errno-valid.$(OBJEXT) acl-internal.$(OBJEXT) \
 	get-permissions.$(OBJEXT) set-permissions.$(OBJEXT) \
 	$(am__objects_1) basename-lgpl.$(OBJEXT) binary-io.$(OBJEXT) \
 	c32isprint.$(OBJEXT) cloexec.$(OBJEXT) $(am__objects_2) \
 	copy-file.$(OBJEXT) $(am__objects_3) $(am__objects_4) \
-	$(am__objects_5) exitfail.$(OBJEXT) $(am__objects_6) \
-	fd-hook.$(OBJEXT) file-has-acl.$(OBJEXT) $(am__objects_7) \
-	$(am__objects_8) $(am__objects_9) full-write.$(OBJEXT) \
-	$(am__objects_10) $(am__objects_11) gettime.$(OBJEXT) \
-	$(am__objects_12) hard-locale.$(OBJEXT) ialloc.$(OBJEXT) \
-	issymlink.$(OBJEXT) localcharset.$(OBJEXT) $(am__objects_13) \
-	malloca.$(OBJEXT) $(am__objects_14) $(am__objects_15) \
-	$(am__objects_16) mbszero.$(OBJEXT) memeq.$(OBJEXT) \
+	$(am__objects_5) $(am__objects_6) $(am__objects_7) \
+	exitfail.$(OBJEXT) $(am__objects_8) fd-hook.$(OBJEXT) \
+	file-has-acl.$(OBJEXT) filenamecat-lgpl.$(OBJEXT) \
+	$(am__objects_9) $(am__objects_10) $(am__objects_11) \
+	full-write.$(OBJEXT) $(am__objects_12) $(am__objects_13) \
+	$(am__objects_14) gettime.$(OBJEXT) $(am__objects_15) \
+	hard-locale.$(OBJEXT) ialloc.$(OBJEXT) issymlink.$(OBJEXT) \
+	localcharset.$(OBJEXT) $(am__objects_16) malloca.$(OBJEXT) \
 	$(am__objects_17) $(am__objects_18) $(am__objects_19) \
-	qcopy-acl.$(OBJEXT) quotearg.$(OBJEXT) $(am__objects_20) \
-	$(am__objects_21) $(am__objects_22) $(am__objects_23) \
-	$(am__objects_24) safe-read.$(OBJEXT) safe-write.$(OBJEXT) \
-	setlocale_null.$(OBJEXT) $(am__objects_25) \
-	setlocale_null-unlocked.$(OBJEXT) $(am__objects_26) \
-	stat-time.$(OBJEXT) $(am__objects_27) $(am__objects_28) \
-	$(am__objects_29) stdlib.$(OBJEXT) streq.$(OBJEXT) \
-	$(am__objects_30) $(am__objects_31) strnul.$(OBJEXT) \
-	timespec.$(OBJEXT) $(am__objects_32) unistd.$(OBJEXT) \
-	$(am__objects_33) utimens.$(OBJEXT) wctype-h.$(OBJEXT) \
-	$(am__objects_34) xmalloc.$(OBJEXT) xalloc-die.$(OBJEXT)
+	mbszero.$(OBJEXT) memeq.$(OBJEXT) $(am__objects_20) \
+	$(am__objects_21) $(am__objects_22) qcopy-acl.$(OBJEXT) \
+	quotearg.$(OBJEXT) $(am__objects_23) $(am__objects_24) \
+	$(am__objects_25) $(am__objects_26) $(am__objects_27) \
+	safe-read.$(OBJEXT) safe-write.$(OBJEXT) \
+	setlocale_null.$(OBJEXT) $(am__objects_28) \
+	setlocale_null-unlocked.$(OBJEXT) $(am__objects_29) \
+	stat-time.$(OBJEXT) $(am__objects_30) $(am__objects_31) \
+	$(am__objects_32) stdlib.$(OBJEXT) $(am__objects_33) \
+	streq.$(OBJEXT) $(am__objects_34) $(am__objects_35) \
+	strnul.$(OBJEXT) timespec.$(OBJEXT) $(am__objects_36) \
+	unistd.$(OBJEXT) $(am__objects_37) utimens.$(OBJEXT) \
+	wctype-h.$(OBJEXT) $(am__objects_38) xmalloc.$(OBJEXT) \
+	xalloc-die.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 am__DEPENDENCIES_1 =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -434,12 +448,14 @@ am__depfiles_remade = ./$(DEPDIR)/acl-errno-valid.Po \
 	./$(DEPDIR)/c32isprint.Po ./$(DEPDIR)/calloc.Po \
 	./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
 	./$(DEPDIR)/copy-file-range.Po ./$(DEPDIR)/copy-file.Po \
+	./$(DEPDIR)/dirinfo-abstract.Po ./$(DEPDIR)/dirinfo-impl.Po \
 	./$(DEPDIR)/dup2.Po ./$(DEPDIR)/error.Po \
 	./$(DEPDIR)/exitfail.Po ./$(DEPDIR)/fcntl.Po \
 	./$(DEPDIR)/fd-hook.Po ./$(DEPDIR)/file-has-acl.Po \
-	./$(DEPDIR)/free.Po ./$(DEPDIR)/fseterr.Po \
-	./$(DEPDIR)/fstat.Po ./$(DEPDIR)/full-write.Po \
-	./$(DEPDIR)/get-permissions.Po ./$(DEPDIR)/getdtablesize.Po \
+	./$(DEPDIR)/filenamecat-lgpl.Po ./$(DEPDIR)/free.Po \
+	./$(DEPDIR)/fseterr.Po ./$(DEPDIR)/fstat.Po \
+	./$(DEPDIR)/full-write.Po ./$(DEPDIR)/get-permissions.Po \
+	./$(DEPDIR)/getcwd-lgpl.Po ./$(DEPDIR)/getdtablesize.Po \
 	./$(DEPDIR)/getprogname.Po ./$(DEPDIR)/gettime.Po \
 	./$(DEPDIR)/gettimeofday.Po ./$(DEPDIR)/hard-locale.Po \
 	./$(DEPDIR)/ialloc.Po ./$(DEPDIR)/issymlink.Po \
@@ -461,13 +477,13 @@ am__depfiles_remade = ./$(DEPDIR)/acl-errno-valid.Po \
 	./$(DEPDIR)/stat-w32.Po ./$(DEPDIR)/stat.Po \
 	./$(DEPDIR)/stdio-consolesafe.Po ./$(DEPDIR)/stdio-read.Po \
 	./$(DEPDIR)/stdio-write.Po ./$(DEPDIR)/stdlib.Po \
-	./$(DEPDIR)/streq.Po ./$(DEPDIR)/strerror-override.Po \
-	./$(DEPDIR)/strerror.Po ./$(DEPDIR)/strnul.Po \
-	./$(DEPDIR)/timespec.Po ./$(DEPDIR)/unistd.Po \
-	./$(DEPDIR)/utime.Po ./$(DEPDIR)/utimens.Po \
-	./$(DEPDIR)/wctype-h.Po ./$(DEPDIR)/write.Po \
-	./$(DEPDIR)/xalloc-die.Po ./$(DEPDIR)/xmalloc.Po \
-	unictype/$(DEPDIR)/ctype_print.Po
+	./$(DEPDIR)/strdup.Po ./$(DEPDIR)/streq.Po \
+	./$(DEPDIR)/strerror-override.Po ./$(DEPDIR)/strerror.Po \
+	./$(DEPDIR)/strnul.Po ./$(DEPDIR)/timespec.Po \
+	./$(DEPDIR)/unistd.Po ./$(DEPDIR)/utime.Po \
+	./$(DEPDIR)/utimens.Po ./$(DEPDIR)/wctype-h.Po \
+	./$(DEPDIR)/write.Po ./$(DEPDIR)/xalloc-die.Po \
+	./$(DEPDIR)/xmalloc.Po unictype/$(DEPDIR)/ctype_print.Po
 am__mv = mv -f
 AM_JOBSERVER_no =
 COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \
@@ -2553,30 +2569,30 @@ noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
 EXTRA_DIST = acl-internal.h acl.h alloca.in.h assert.in.h verify.h \
-	attribute.h basename-lgpl.h c32is-impl.h calloc.c calloc.c \
-	cloexec.h sys-limits.h dirent.in.h errno.in.h error.in.h \
-	exitfail.h fcntl.in.h fd-hook.h acl-internal.h filename.h \
-	fseterr.h stdio-impl.h stat-w32.c stat-w32.h getprogname.h \
-	hard-locale.h ialloc.h ignore-value.h intprops-internal.h \
-	intprops.h inttypes.in.h issymlink.h limits.in.h \
-	localcharset.h locale.in.h malloc.c malloc.c malloca.h \
+	assure.h attribute.h basename-lgpl.h c32is-impl.h calloc.c \
+	calloc.c cloexec.h sys-limits.h dirent.in.h dirinfo-abstract.h \
+	dirinfo-impl.h errno.in.h error.in.h exitfail.h fcntl.in.h \
+	fd-hook.h acl-internal.h filename.h filenamecat.h fseterr.h \
+	stdio-impl.h stat-w32.c stat-w32.h getprogname.h hard-locale.h \
+	ialloc.h ignore-value.h intprops-internal.h intprops.h \
+	inttypes.in.h issymlink.h limits.in.h localcharset.h \
+	locale.in.h malloc.c malloc.c malloca.h lc-charset-dispatch.c \
+	lc-charset-dispatch.h mbrtowc-impl-utf8.h mbrtowc-impl.h \
+	mbtowc-lock.c mbtowc-lock.h windows-initguard.h \
 	lc-charset-dispatch.c lc-charset-dispatch.h \
 	mbrtowc-impl-utf8.h mbrtowc-impl.h mbtowc-lock.c mbtowc-lock.h \
-	windows-initguard.h lc-charset-dispatch.c \
-	lc-charset-dispatch.h mbrtowc-impl-utf8.h mbrtowc-impl.h \
-	mbtowc-lock.c mbtowc-lock.h windows-initguard.h msvc-inval.h \
-	msvc-nothrow.h pathmax.h quote.h quote.h quotearg.h \
-	safe-read.h sys-limits.h safe-read.c safe-write.h sys-limits.h \
-	setlocale_null.h windows-initguard.h setlocale_null.h \
-	signal.in.h _Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h \
-	stat-w32.c stat-w32.h stat-time.h intprops-internal.h \
-	stdckdint.in.h stdcountof.in.h stddef.in.h stdint.in.h \
-	stdio.in.h stdlib.in.h streq-opt.h strerror-override.h \
-	string.in.h sys_stat.in.h sys_time.in.h sys_types.in.h \
-	time.in.h timespec.h uchar.in.h unictype.in.h \
+	windows-initguard.h msvc-inval.h msvc-nothrow.h pathmax.h \
+	quote.h quote.h quotearg.h safe-read.h sys-limits.h \
+	safe-read.c safe-write.h sys-limits.h setlocale_null.h \
+	windows-initguard.h setlocale_null.h signal.in.h _Noreturn.h \
+	arg-nonnull.h c++defs.h warn-on-use.h stat-w32.c stat-w32.h \
+	stat-time.h intprops-internal.h stdckdint.in.h stdcountof.in.h \
+	stddef.in.h stdint.in.h stdio.in.h stdlib.in.h streq-opt.h \
+	strerror-override.h string.in.h sys_stat.in.h sys_time.in.h \
+	sys_types.in.h time.in.h timespec.h uchar.in.h unictype.in.h \
 	unictype/bitmap.h unictype/ctype_print.h unistd.in.h \
-	unitypes.in.h utime.in.h utimens.h wchar.in.h wctype.in.h \
-	xalloc.h xalloc.h xalloc-oversized.h
+	unitypes.in.h utime.in.h utimens.h verify.h wchar.in.h \
+	wctype.in.h xalloc.h xalloc.h xalloc-oversized.h
 BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) dirent.h $(ERRNO_H) error.h \
 	fcntl.h inttypes.h $(LIMITS_H) locale.h signal.h \
 	$(STDCKDINT_H) $(STDCOUNTOF_H) $(STDDEF_H) $(STDINT_H) stdio.h \
@@ -2608,21 +2624,23 @@ libgnu_a_SOURCES = acl-errno-valid.c acl-internal.c get-permissions.c \
 	set-permissions.c $(am__append_1) basename-lgpl.c binary-io.h \
 	binary-io.c c32isprint.c cloexec.c $(am__append_2) copy-file.h \
 	copy-file.c $(am__append_3) $(am__append_4) $(am__append_5) \
-	exitfail.c $(am__append_6) fd-hook.c file-has-acl.c \
-	$(am__append_7) $(am__append_8) $(am__append_9) full-write.h \
-	full-write.c $(am__append_10) $(am__append_11) gettext.h \
-	gettime.c $(am__append_12) hard-locale.c ialloc.c idx.h \
-	issymlink.c localcharset.c $(am__append_13) malloca.c \
-	$(am__append_14) $(am__append_15) $(am__append_16) mbszero.c \
-	memeq.c minmax.h $(am__append_17) $(am__append_18) \
-	$(am__append_19) qcopy-acl.c quotearg.c $(am__append_20) \
-	$(am__append_21) $(am__append_22) $(am__append_23) \
-	$(am__append_24) safe-read.c safe-write.c setlocale_null.c \
-	$(am__append_25) setlocale_null-unlocked.c $(am__append_26) \
-	stat-time.c $(am__append_27) $(am__append_28) $(am__append_29) \
-	stdlib.c streq.c $(am__append_30) $(am__append_31) strnul.c \
-	timespec.c $(am__append_32) unistd.c $(am__append_33) \
-	utimens.c wctype-h.c $(am__append_34) xmalloc.c xalloc-die.c
+	$(am__append_6) $(am__append_7) exitfail.c $(am__append_8) \
+	fd-hook.c file-has-acl.c filenamecat-lgpl.c $(am__append_9) \
+	$(am__append_10) $(am__append_11) full-write.h full-write.c \
+	$(am__append_12) $(am__append_13) $(am__append_14) gettext.h \
+	gettime.c $(am__append_15) hard-locale.c ialloc.c idx.h \
+	issymlink.c localcharset.c $(am__append_16) malloca.c \
+	$(am__append_17) $(am__append_18) $(am__append_19) mbszero.c \
+	memeq.c minmax.h $(am__append_20) $(am__append_21) \
+	$(am__append_22) qcopy-acl.c quotearg.c $(am__append_23) \
+	$(am__append_24) $(am__append_25) $(am__append_26) \
+	$(am__append_27) safe-read.c safe-write.c setlocale_null.c \
+	$(am__append_28) setlocale_null-unlocked.c $(am__append_29) \
+	stat-time.c $(am__append_30) $(am__append_31) $(am__append_32) \
+	stdlib.c $(am__append_33) streq.c $(am__append_34) \
+	$(am__append_35) strnul.c timespec.c $(am__append_36) unistd.c \
+	$(am__append_37) utimens.c wctype-h.c $(am__append_38) \
+	xmalloc.c xalloc-die.c
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
 EXTRA_libgnu_a_SOURCES = calloc.c calloc.c stat-w32.c malloc.c \
@@ -2747,17 +2765,21 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/close.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/copy-file-range.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/copy-file.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirinfo-abstract.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirinfo-impl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dup2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/error.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/exitfail.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fcntl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fd-hook.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/file-has-acl.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filenamecat-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/free.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fseterr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fstat.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/full-write.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/get-permissions.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getcwd-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdtablesize.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getprogname.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/gettime.Po@am__quote@ # am--include-marker
@@ -2799,6 +2821,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-read.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-write.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdlib.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strdup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/streq.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strerror-override.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strerror.Po@am__quote@ # am--include-marker
@@ -3133,17 +3156,21 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/close.Po
 	-rm -f ./$(DEPDIR)/copy-file-range.Po
 	-rm -f ./$(DEPDIR)/copy-file.Po
+	-rm -f ./$(DEPDIR)/dirinfo-abstract.Po
+	-rm -f ./$(DEPDIR)/dirinfo-impl.Po
 	-rm -f ./$(DEPDIR)/dup2.Po
 	-rm -f ./$(DEPDIR)/error.Po
 	-rm -f ./$(DEPDIR)/exitfail.Po
 	-rm -f ./$(DEPDIR)/fcntl.Po
 	-rm -f ./$(DEPDIR)/fd-hook.Po
 	-rm -f ./$(DEPDIR)/file-has-acl.Po
+	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/fseterr.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
 	-rm -f ./$(DEPDIR)/full-write.Po
 	-rm -f ./$(DEPDIR)/get-permissions.Po
+	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getdtablesize.Po
 	-rm -f ./$(DEPDIR)/getprogname.Po
 	-rm -f ./$(DEPDIR)/gettime.Po
@@ -3185,6 +3212,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/stdio-read.Po
 	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strerror-override.Po
 	-rm -f ./$(DEPDIR)/strerror.Po
@@ -3254,17 +3282,21 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/close.Po
 	-rm -f ./$(DEPDIR)/copy-file-range.Po
 	-rm -f ./$(DEPDIR)/copy-file.Po
+	-rm -f ./$(DEPDIR)/dirinfo-abstract.Po
+	-rm -f ./$(DEPDIR)/dirinfo-impl.Po
 	-rm -f ./$(DEPDIR)/dup2.Po
 	-rm -f ./$(DEPDIR)/error.Po
 	-rm -f ./$(DEPDIR)/exitfail.Po
 	-rm -f ./$(DEPDIR)/fcntl.Po
 	-rm -f ./$(DEPDIR)/fd-hook.Po
 	-rm -f ./$(DEPDIR)/file-has-acl.Po
+	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/fseterr.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
 	-rm -f ./$(DEPDIR)/full-write.Po
 	-rm -f ./$(DEPDIR)/get-permissions.Po
+	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getdtablesize.Po
 	-rm -f ./$(DEPDIR)/getprogname.Po
 	-rm -f ./$(DEPDIR)/gettime.Po
@@ -3306,6 +3338,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/stdio-read.Po
 	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strerror-override.Po
 	-rm -f ./$(DEPDIR)/strerror.Po
