@@ -123,7 +123,7 @@ done
 # testdir74: getdate, strptime-gnu
 # testdir75: servent
 # testdir76: copy-file
-cd testdir76 || exit 1
+cd testdir74 || exit 1
 
 # Bring the time stamps into an order that will not require autoconf, automake, etc. to run again.
 sleep 1; touch `find . -name aclocal.m4 -type f`

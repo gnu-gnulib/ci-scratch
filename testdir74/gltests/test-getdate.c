@@ -1,4 +1,4 @@
-/* Test of time() function.
+/* Test of getdate() function.
    Copyright (C) 2023-2026 Free Software Foundation, Inc.
 
    This program is free software: you can redistribute it and/or modify

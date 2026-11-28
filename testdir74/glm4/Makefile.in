@@ -112,6 +112,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl.m4 $(top_srcdir)/glm4/fcntl_h.m4 \
 	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fflush.m4 \
+	$(top_srcdir)/glm4/filenamecat.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpieee.m4 \
 	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/frexp.m4 \
@@ -189,7 +190,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stddef_h.m4 $(top_srcdir)/glm4/stdint.m4 \
 	$(top_srcdir)/glm4/stdio_h.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/stpcpy.m4 $(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/streq.m4 $(top_srcdir)/glm4/strerror.m4 \
+	$(top_srcdir)/glm4/strdup.m4 $(top_srcdir)/glm4/streq.m4 \
+	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/strncasecmp.m4 \
@@ -1964,11 +1966,11 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	dup2.m4 environ.m4 errno_h.m4 error.m4 error_h.m4 exponentd.m4 \
 	exponentf.m4 exponentl.m4 extensions-aix.m4 extensions.m4 \
 	extern-inline.m4 fclose.m4 fcntl-o.m4 fcntl.m4 fcntl_h.m4 \
-	fdopen.m4 fflush.m4 flexmember.m4 float_h.m4 fopen.m4 \
-	fpieee.m4 free.m4 frexp.m4 frexpl.m4 fseterr.m4 fstat.m4 \
-	ftruncate.m4 getcwd.m4 getdate.m4 getdelim.m4 getdtablesize.m4 \
-	getline.m4 getlocalename_l.m4 getprogname.m4 gettext_h.m4 \
-	gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
+	fdopen.m4 fflush.m4 filenamecat.m4 flexmember.m4 float_h.m4 \
+	fopen.m4 fpieee.m4 free.m4 frexp.m4 frexpl.m4 fseterr.m4 \
+	fstat.m4 ftruncate.m4 getcwd.m4 getdate.m4 getdelim.m4 \
+	getdtablesize.m4 getline.m4 getlocalename_l.m4 getprogname.m4 \
+	gettext_h.m4 gettimeofday.m4 gnulib-common.m4 gnulib-i18n.m4 \
 	include_next.m4 inet_pton.m4 intl-thread-locale.m4 \
 	intlmacosx.m4 inttypes.m4 ioctl.m4 isblank.m4 isnand.m4 \
 	isnanf.m4 isnanl.m4 largefile.m4 lcmessage.m4 limits-h.m4 \
@@ -1990,13 +1992,13 @@ EXTRA_DIST = 00gnulib.m4 __inline.m4 absolute-header.m4 alloca.m4 \
 	sockpfaf.m4 ssize_t.m4 stat-time.m4 stat.m4 std-gnu11.m4 \
 	stdalign.m4 stdbit_h.m4 stdckdint_h.m4 stdcountof_h.m4 \
 	stddef_h.m4 stdint.m4 stdio_h.m4 stdlib_h.m4 stpcpy.m4 \
-	strcasecmp.m4 streq.m4 strerror.m4 strerror_r.m4 string_h.m4 \
-	strings_h.m4 strncasecmp.m4 strncpy.m4 strndup.m4 strnlen.m4 \
-	strptime.m4 symlink.m4 sys_cdefs_h.m4 sys_ioctl_h.m4 \
-	sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 sys_time_h.m4 \
-	sys_types_h.m4 sys_uio_h.m4 thread.m4 threadlib.m4 time.m4 \
-	time_h.m4 time_r.m4 tm_gmtoff.m4 trunc.m4 truncl.m4 \
-	unistd_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
+	strcasecmp.m4 strdup.m4 streq.m4 strerror.m4 strerror_r.m4 \
+	string_h.m4 strings_h.m4 strncasecmp.m4 strncpy.m4 strndup.m4 \
+	strnlen.m4 strptime.m4 symlink.m4 sys_cdefs_h.m4 \
+	sys_ioctl_h.m4 sys_select_h.m4 sys_socket_h.m4 sys_stat_h.m4 \
+	sys_time_h.m4 sys_types_h.m4 sys_uio_h.m4 thread.m4 \
+	threadlib.m4 time.m4 time_h.m4 time_r.m4 tm_gmtoff.m4 trunc.m4 \
+	truncl.m4 unistd_h.m4 usleep.m4 vararrays.m4 visibility.m4 \
 	warn-on-use.m4 wchar_h.m4 windows-rc.m4 wint_t.m4 xalloc.m4 \
 	xgetcwd.m4 yield.m4 zzgnulib.m4
 all: all-am

@@ -112,6 +112,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl.m4 $(top_srcdir)/glm4/fcntl_h.m4 \
 	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fflush.m4 \
+	$(top_srcdir)/glm4/filenamecat.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpieee.m4 \
 	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/frexp.m4 \
@@ -189,7 +190,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stddef_h.m4 $(top_srcdir)/glm4/stdint.m4 \
 	$(top_srcdir)/glm4/stdio_h.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/stpcpy.m4 $(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/streq.m4 $(top_srcdir)/glm4/strerror.m4 \
+	$(top_srcdir)/glm4/strdup.m4 $(top_srcdir)/glm4/streq.m4 \
+	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/strncasecmp.m4 \

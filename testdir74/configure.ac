@@ -59,6 +59,21 @@ gl_m4_base='glm4'
   gl_CONDITIONAL([GL_COND_OBJ_CLOSE], [test $REPLACE_CLOSE = 1])
   gl_UNISTD_MODULE_INDICATOR([close])
   gl_MODULE_INDICATOR([close])
+  m4_ifdef([gl_FUNC_FCHDIR], [
+    AC_REQUIRE([gl_FUNC_FCHDIR])
+    gl_CONDITIONAL([GL_COND_OBJ_DIRINFO_ABSTRACT],
+                   [test $HAVE_FCHDIR = 0 || test $REPLACE_FCHDIR = 1])
+  ], [
+    gl_CONDITIONAL([GL_COND_OBJ_DIRINFO_ABSTRACT], [false])
+  ])
+  m4_ifdef([gl_FUNC_FCHDIR], [
+    AC_REQUIRE([gl_FUNC_FCHDIR])
+    gl_CONDITIONAL([GL_COND_OBJ_DIRINFO_IMPL],
+                   [test $HAVE_FCHDIR = 0 || test $REPLACE_FCHDIR = 1])
+  ], [
+    gl_CONDITIONAL([GL_COND_OBJ_DIRINFO_IMPL], [false])
+  ])
+  gl_DOUBLE_SLASH_ROOT
   gl_FUNC_DUP2
   gl_CONDITIONAL([GL_COND_OBJ_DUP2], [test $REPLACE_DUP2 = 1])
   AM_COND_IF([GL_COND_OBJ_DUP2], [
@@ -76,6 +91,7 @@ gl_m4_base='glm4'
   gl_FCNTL_H
   gl_FCNTL_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_FILE_NAME_CONCAT_LGPL
   gl_FUNC_FOPEN
   if test $REPLACE_FOPEN = 1; then
     AC_LIBOBJ([fopen])
@@ -89,6 +105,12 @@ gl_m4_base='glm4'
   fi
   gl_MODULE_INDICATOR([fopen-gnu])
   gl_STDIO_MODULE_INDICATOR([fopen-gnu])
+  gl_FUNC_FREE
+  gl_CONDITIONAL([GL_COND_OBJ_FREE], [test $REPLACE_FREE = 1])
+  AM_COND_IF([GL_COND_OBJ_FREE], [
+    gl_PREREQ_FREE
+  ])
+  gl_STDLIB_MODULE_INDICATOR([free-posix])
   gl_FUNC_FSETERR
   gl_CONDITIONAL([GL_COND_OBJ_FSETERR], [test $ac_cv_func___fseterr = no])
   gl_FUNC_FSTAT
@@ -103,6 +125,9 @@ gl_m4_base='glm4'
   ])
   gl_SYS_STAT_MODULE_INDICATOR([fstat])
   gl_MODULE_INDICATOR([fstat])
+  gl_FUNC_GETCWD_LGPL
+  gl_CONDITIONAL([GL_COND_OBJ_GETCWD_LGPL], [test $REPLACE_GETCWD = 1])
+  gl_UNISTD_MODULE_INDICATOR([getcwd])
   gl_FUNC_GETDATE
   gl_CONDITIONAL([GL_COND_OBJ_GETDATE],
                  [test $HAVE_GETDATE = 0 || test $REPLACE_GETDATE = 1])
@@ -130,6 +155,9 @@ gl_m4_base='glm4'
     gl_PREREQ_GETLINE
   ])
   gl_STDIO_MODULE_INDICATOR([getline])
+  gl_INTTYPES_INCOMPLETE
+  gl_INTTYPES_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
   AC_REQUIRE([gl_LARGEFILE])
   gl___INLINE
   gl_LIMITS_H
@@ -145,6 +173,11 @@ gl_m4_base='glm4'
   ])
   gl_SYS_STAT_MODULE_INDICATOR([lstat])
   gl_MODULE_INDICATOR([lstat])
+  AC_REQUIRE([gl_FUNC_MALLOC_POSIX])
+  if test $REPLACE_MALLOC_FOR_MALLOC_POSIX = 1; then
+    AC_LIBOBJ([malloc])
+  fi
+  gl_STDLIB_MODULE_INDICATOR([malloc-posix])
   gl_MALLOCA
   gl_FUNC_MKTIME
   if test $REPLACE_MKTIME = 1; then
@@ -167,6 +200,11 @@ gl_m4_base='glm4'
   ])
   gl_FCNTL_MODULE_INDICATOR([open])
   gl_PATHMAX
+  gl_FUNC_REALLOC_POSIX
+  gl_FUNC_REALLOC_0_NONNULL
+  gl_CONDITIONAL([GL_COND_OBJ_REALLOC_POSIX],
+                 [test $REPLACE_REALLOC_FOR_REALLOC_POSIX != 0])
+  gl_STDLIB_MODULE_INDICATOR([realloc-posix])
   gt_TYPE_SSIZE_T
   gl_FUNC_STAT
   gl_CONDITIONAL([GL_COND_OBJ_STAT], [test $REPLACE_STAT = 1])
@@ -243,6 +281,12 @@ gl_m4_base='glm4'
   gl_STDLIB_H
   gl_STDLIB_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
+  gl_FUNC_STRDUP_POSIX
+  gl_CONDITIONAL([GL_COND_OBJ_STRDUP], [test $REPLACE_STRDUP = 1])
+  AM_COND_IF([GL_COND_OBJ_STRDUP], [
+    gl_PREREQ_STRDUP
+  ])
+  gl_STRING_MODULE_INDICATOR([strdup])
   gl_FUNC_STREQ
   gl_STRING_MODULE_INDICATOR([streq])
   gl_STRING_H
@@ -301,6 +345,9 @@ gl_m4_base='glm4'
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])
   gl_UNISTD_H
   gl_UNISTD_H_REQUIRE_DEFAULTS
+  AC_PROG_MKDIR_P
+  gl_WCHAR_H
+  gl_WCHAR_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
   m4_ifval(gl_LIBSOURCES_LIST, [
     m4_syscmd([test ! -d ]m4_defn([gl_LIBSOURCES_DIR])[ ||
@@ -401,7 +448,6 @@ changequote([, ])dnl
   gl_CTYPE_H
   gl_CTYPE_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
-  gl_DOUBLE_SLASH_ROOT
   gl_ENVIRON
   gl_UNISTD_MODULE_INDICATOR([environ])
   AC_REQUIRE([gl_ERROR_H])
@@ -430,12 +476,6 @@ changequote([, ])dnl
   gl_CONDITIONAL([GL_COND_OBJ_ITOLD], [test $REPLACE_ITOLD = 1])
   dnl Prerequisites of lib/float.c.
   AC_REQUIRE([gl_BIGENDIAN])
-  gl_FUNC_FREE
-  gl_CONDITIONAL([GL_COND_OBJ_FREE], [test $REPLACE_FREE = 1])
-  AM_COND_IF([GL_COND_OBJ_FREE], [
-    gl_PREREQ_FREE
-  ])
-  gl_STDLIB_MODULE_INDICATOR([free-posix])
   AC_REQUIRE([gl_FUNC_FREXP])
   if test $gl_func_frexp != yes; then
     AC_LIBOBJ([frexp])
@@ -453,9 +493,6 @@ changequote([, ])dnl
     gl_PREREQ_FTRUNCATE
   ])
   gl_UNISTD_MODULE_INDICATOR([ftruncate])
-  gl_FUNC_GETCWD_LGPL
-  gl_CONDITIONAL([GL_COND_OBJ_GETCWD_LGPL], [test $REPLACE_GETCWD = 1])
-  gl_UNISTD_MODULE_INDICATOR([getcwd])
   gl_FUNC_GETLOCALENAME_L_UNSAFE
   gl_PREREQ_GETLOCALENAME_L_UNSAFE
   gl_LOCALE_MODULE_INDICATOR([getlocalename_l-unsafe])
@@ -490,9 +527,6 @@ changequote([, ])dnl
   gl_ARPA_INET_MODULE_INDICATOR([inet_pton])
   AC_C_BIGENDIAN
   gl_INTTYPES_H
-  gl_INTTYPES_INCOMPLETE
-  gl_INTTYPES_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   gl_FUNC_IOCTL
   gl_CONDITIONAL([GL_COND_OBJ_IOCTL],
                  [test $HAVE_IOCTL = 0 || test $REPLACE_IOCTL = 1])
@@ -549,11 +583,6 @@ changequote([, ])dnl
     AC_LIBOBJ([malloc])
   fi
   gl_STDLIB_MODULE_INDICATOR([malloc-gnu])
-  AC_REQUIRE([gl_FUNC_MALLOC_POSIX])
-  if test $REPLACE_MALLOC_FOR_MALLOC_POSIX = 1; then
-    AC_LIBOBJ([malloc])
-  fi
-  gl_STDLIB_MODULE_INDICATOR([malloc-posix])
   gl_MATH_H
   gl_MATH_H_REQUIRE_DEFAULTS
   AC_PROG_MKDIR_P
@@ -654,11 +683,6 @@ changequote([, ])dnl
     gl_PREREQ_RANDOM_R
   ])
   gl_STDLIB_MODULE_INDICATOR([random_r])
-  gl_FUNC_REALLOC_POSIX
-  gl_FUNC_REALLOC_0_NONNULL
-  gl_CONDITIONAL([GL_COND_OBJ_REALLOC_POSIX],
-                 [test $REPLACE_REALLOC_FOR_REALLOC_POSIX != 0])
-  gl_STDLIB_MODULE_INDICATOR([realloc-posix])
   gl_FUNC_REALLOCARRAY
   gl_CONDITIONAL([GL_COND_OBJ_REALLOCARRAY],
                  [test $HAVE_REALLOCARRAY = 0 || test $REPLACE_REALLOCARRAY = 1])
@@ -895,9 +919,6 @@ changequote([, ])dnl
                  [test $HAVE_USLEEP = 0 || test $REPLACE_USLEEP = 1])
   gl_UNISTD_MODULE_INDICATOR([usleep])
   AC_C_VARARRAYS
-  gl_WCHAR_H
-  gl_WCHAR_H_REQUIRE_DEFAULTS
-  AC_PROG_MKDIR_P
   AC_REQUIRE([AC_CANONICAL_HOST])
   gl_CONDITIONAL([GL_COND_OBJ_WINDOWS_COND],
                  [case "$host_os" in mingw* | windows*) true;; *) false;; esac])

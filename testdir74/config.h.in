@@ -427,6 +427,9 @@
 /* Define to 1 when the gnulib module stpcpy should be tested. */
 #undef GNULIB_TEST_STPCPY
 
+/* Define to 1 when the gnulib module strdup should be tested. */
+#undef GNULIB_TEST_STRDUP
+
 /* Define to 1 when the gnulib module streq should be tested. */
 #undef GNULIB_TEST_STREQ
 
@@ -650,6 +653,10 @@
    if you don't. */
 #undef HAVE_DECL_STDC_ROTATE_LEFT_UC
 
+/* Define to 1 if you have the declaration of 'strdup', and to 0 if you don't.
+   */
+#undef HAVE_DECL_STRDUP
+
 /* Define to 1 if you have the declaration of 'streq', and to 0 if you don't.
    */
 #undef HAVE_DECL_STREQ
@@ -834,6 +841,9 @@
 
 /* Define to 1 if you have the <math.h> header file. */
 #undef HAVE_MATH_H
+
+/* Define to 1 if you have the `mempcpy' function. */
+#undef HAVE_MEMPCPY
 
 /* Define to 1 if you have the <minix/config.h> header file. */
 #undef HAVE_MINIX_CONFIG_H

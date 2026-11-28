@@ -116,29 +116,35 @@ POST_UNINSTALL = :
 build_triplet = @build@
 host_triplet = @host@
 @GL_COND_OBJ_CLOSE_TRUE@am__append_1 = close.c
-@GL_COND_OBJ_DUP2_TRUE@am__append_2 = dup2.c
-@GL_COND_OBJ_FCNTL_TRUE@am__append_3 = fcntl.c
-@GL_COND_OBJ_FSETERR_TRUE@am__append_4 = fseterr.c
-@GL_COND_OBJ_FSTAT_TRUE@am__append_5 = fstat.c
-@GL_COND_OBJ_GETDATE_TRUE@am__append_6 = getdate.c
-@GL_COND_OBJ_GETDELIM_TRUE@am__append_7 = getdelim.c
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_8 = getdtablesize.c
-@GL_COND_OBJ_GETLINE_TRUE@am__append_9 = getline.c
-@GL_COND_OBJ_LOCALTIME_TRUE@am__append_10 = localtime.c
-@GL_COND_OBJ_LSTAT_TRUE@am__append_11 = lstat.c
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_12 = msvc-inval.c
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_13 = msvc-nothrow.c
-@GL_COND_OBJ_OPEN_TRUE@am__append_14 = open.c
-@GL_COND_OBJ_STAT_TRUE@am__append_15 = stat.c
-@GL_COND_OBJ_STDIO_READ_TRUE@am__append_16 = stdio-read.c
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_17 = stdio-write.c
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_18 = stdio-consolesafe.c
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_19 = strncasecmp.c
-@GL_COND_OBJ_STRNDUP_TRUE@am__append_20 = strndup.c
-@GL_COND_OBJ_STRNLEN_TRUE@am__append_21 = strnlen.c
-@GL_COND_OBJ_STRPTIME_TRUE@am__append_22 = strptime.c
-@GL_COND_OBJ_TIME_R_TRUE@am__append_23 = time_r.c
-@GL_COND_OBJ_TZSANITIZE_TRUE@am__append_24 = tzsanitize.c
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@am__append_2 = dirinfo-abstract.c
+@GL_COND_OBJ_DIRINFO_IMPL_TRUE@am__append_3 = dirinfo-impl.c
+@GL_COND_OBJ_DUP2_TRUE@am__append_4 = dup2.c
+@GL_COND_OBJ_FCNTL_TRUE@am__append_5 = fcntl.c
+@GL_COND_OBJ_FREE_TRUE@am__append_6 = free.c
+@GL_COND_OBJ_FSETERR_TRUE@am__append_7 = fseterr.c
+@GL_COND_OBJ_FSTAT_TRUE@am__append_8 = fstat.c
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__append_9 = getcwd-lgpl.c
+@GL_COND_OBJ_GETDATE_TRUE@am__append_10 = getdate.c
+@GL_COND_OBJ_GETDELIM_TRUE@am__append_11 = getdelim.c
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__append_12 = getdtablesize.c
+@GL_COND_OBJ_GETLINE_TRUE@am__append_13 = getline.c
+@GL_COND_OBJ_LOCALTIME_TRUE@am__append_14 = localtime.c
+@GL_COND_OBJ_LSTAT_TRUE@am__append_15 = lstat.c
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__append_16 = msvc-inval.c
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__append_17 = msvc-nothrow.c
+@GL_COND_OBJ_OPEN_TRUE@am__append_18 = open.c
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__append_19 = realloc.c
+@GL_COND_OBJ_STAT_TRUE@am__append_20 = stat.c
+@GL_COND_OBJ_STDIO_READ_TRUE@am__append_21 = stdio-read.c
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__append_22 = stdio-write.c
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__append_23 = stdio-consolesafe.c
+@GL_COND_OBJ_STRDUP_TRUE@am__append_24 = strdup.c
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__append_25 = strncasecmp.c
+@GL_COND_OBJ_STRNDUP_TRUE@am__append_26 = strndup.c
+@GL_COND_OBJ_STRNLEN_TRUE@am__append_27 = strnlen.c
+@GL_COND_OBJ_STRPTIME_TRUE@am__append_28 = strptime.c
+@GL_COND_OBJ_TIME_R_TRUE@am__append_29 = time_r.c
+@GL_COND_OBJ_TZSANITIZE_TRUE@am__append_30 = tzsanitize.c
 subdir = gllib
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
@@ -162,6 +168,7 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/fclose.m4 $(top_srcdir)/glm4/fcntl-o.m4 \
 	$(top_srcdir)/glm4/fcntl.m4 $(top_srcdir)/glm4/fcntl_h.m4 \
 	$(top_srcdir)/glm4/fdopen.m4 $(top_srcdir)/glm4/fflush.m4 \
+	$(top_srcdir)/glm4/filenamecat.m4 \
 	$(top_srcdir)/glm4/flexmember.m4 $(top_srcdir)/glm4/float_h.m4 \
 	$(top_srcdir)/glm4/fopen.m4 $(top_srcdir)/glm4/fpieee.m4 \
 	$(top_srcdir)/glm4/free.m4 $(top_srcdir)/glm4/frexp.m4 \
@@ -239,7 +246,8 @@ am__aclocal_m4_deps = $(top_srcdir)/glm4/00gnulib.m4 \
 	$(top_srcdir)/glm4/stddef_h.m4 $(top_srcdir)/glm4/stdint.m4 \
 	$(top_srcdir)/glm4/stdio_h.m4 $(top_srcdir)/glm4/stdlib_h.m4 \
 	$(top_srcdir)/glm4/stpcpy.m4 $(top_srcdir)/glm4/strcasecmp.m4 \
-	$(top_srcdir)/glm4/streq.m4 $(top_srcdir)/glm4/strerror.m4 \
+	$(top_srcdir)/glm4/strdup.m4 $(top_srcdir)/glm4/streq.m4 \
+	$(top_srcdir)/glm4/strerror.m4 \
 	$(top_srcdir)/glm4/strerror_r.m4 \
 	$(top_srcdir)/glm4/string_h.m4 $(top_srcdir)/glm4/strings_h.m4 \
 	$(top_srcdir)/glm4/strncasecmp.m4 \
@@ -280,50 +288,61 @@ am__v_AR_0 = @echo "  AR      " $@;
 am__v_AR_1 = 
 libgnu_a_AR = $(AR) $(ARFLAGS)
 libgnu_a_RANLIB = $(RANLIB)
-am__libgnu_a_SOURCES_DIST = cloexec.c close.c dup2.c fcntl.c fd-hook.c \
-	fseterr.c fstat.c getdate.c getdelim.c getdtablesize.c \
-	getline.c idx.h localtime.c lstat.c malloca.c msvc-inval.c \
-	msvc-nothrow.c open.c stat.c stat-time.c stdio-read.c \
-	stdio-write.c stdio-consolesafe.c stdlib.c streq.c \
-	strncasecmp.c strndup.c strnlen.c strptime.c time_r.c \
-	tzsanitize.c unistd.c
+am__libgnu_a_SOURCES_DIST = basename-lgpl.c cloexec.c close.c \
+	dirinfo-abstract.c dirinfo-impl.c dup2.c fcntl.c fd-hook.c \
+	filenamecat-lgpl.c free.c fseterr.c fstat.c getcwd-lgpl.c \
+	getdate.c getdelim.c getdtablesize.c getline.c idx.h \
+	localtime.c lstat.c malloca.c msvc-inval.c msvc-nothrow.c \
+	open.c realloc.c stat.c stat-time.c stdio-read.c stdio-write.c \
+	stdio-consolesafe.c stdlib.c strdup.c streq.c strncasecmp.c \
+	strndup.c strnlen.c strptime.c time_r.c tzsanitize.c unistd.c
 @GL_COND_OBJ_CLOSE_TRUE@am__objects_1 = close.$(OBJEXT)
-@GL_COND_OBJ_DUP2_TRUE@am__objects_2 = dup2.$(OBJEXT)
-@GL_COND_OBJ_FCNTL_TRUE@am__objects_3 = fcntl.$(OBJEXT)
-@GL_COND_OBJ_FSETERR_TRUE@am__objects_4 = fseterr.$(OBJEXT)
-@GL_COND_OBJ_FSTAT_TRUE@am__objects_5 = fstat.$(OBJEXT)
-@GL_COND_OBJ_GETDATE_TRUE@am__objects_6 = getdate.$(OBJEXT)
-@GL_COND_OBJ_GETDELIM_TRUE@am__objects_7 = getdelim.$(OBJEXT)
-@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_8 =  \
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@am__objects_2 =  \
+@GL_COND_OBJ_DIRINFO_ABSTRACT_TRUE@	dirinfo-abstract.$(OBJEXT)
+@GL_COND_OBJ_DIRINFO_IMPL_TRUE@am__objects_3 = dirinfo-impl.$(OBJEXT)
+@GL_COND_OBJ_DUP2_TRUE@am__objects_4 = dup2.$(OBJEXT)
+@GL_COND_OBJ_FCNTL_TRUE@am__objects_5 = fcntl.$(OBJEXT)
+@GL_COND_OBJ_FREE_TRUE@am__objects_6 = free.$(OBJEXT)
+@GL_COND_OBJ_FSETERR_TRUE@am__objects_7 = fseterr.$(OBJEXT)
+@GL_COND_OBJ_FSTAT_TRUE@am__objects_8 = fstat.$(OBJEXT)
+@GL_COND_OBJ_GETCWD_LGPL_TRUE@am__objects_9 = getcwd-lgpl.$(OBJEXT)
+@GL_COND_OBJ_GETDATE_TRUE@am__objects_10 = getdate.$(OBJEXT)
+@GL_COND_OBJ_GETDELIM_TRUE@am__objects_11 = getdelim.$(OBJEXT)
+@GL_COND_OBJ_GETDTABLESIZE_TRUE@am__objects_12 =  \
 @GL_COND_OBJ_GETDTABLESIZE_TRUE@	getdtablesize.$(OBJEXT)
-@GL_COND_OBJ_GETLINE_TRUE@am__objects_9 = getline.$(OBJEXT)
-@GL_COND_OBJ_LOCALTIME_TRUE@am__objects_10 = localtime.$(OBJEXT)
-@GL_COND_OBJ_LSTAT_TRUE@am__objects_11 = lstat.$(OBJEXT)
-@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_12 = msvc-inval.$(OBJEXT)
-@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_13 =  \
+@GL_COND_OBJ_GETLINE_TRUE@am__objects_13 = getline.$(OBJEXT)
+@GL_COND_OBJ_LOCALTIME_TRUE@am__objects_14 = localtime.$(OBJEXT)
+@GL_COND_OBJ_LSTAT_TRUE@am__objects_15 = lstat.$(OBJEXT)
+@GL_COND_OBJ_MSVC_INVAL_TRUE@am__objects_16 = msvc-inval.$(OBJEXT)
+@GL_COND_OBJ_MSVC_NOTHROW_TRUE@am__objects_17 =  \
 @GL_COND_OBJ_MSVC_NOTHROW_TRUE@	msvc-nothrow.$(OBJEXT)
-@GL_COND_OBJ_OPEN_TRUE@am__objects_14 = open.$(OBJEXT)
-@GL_COND_OBJ_STAT_TRUE@am__objects_15 = stat.$(OBJEXT)
-@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_16 = stdio-read.$(OBJEXT)
-@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_17 = stdio-write.$(OBJEXT)
-@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_18 = stdio-consolesafe.$(OBJEXT)
-@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_19 = strncasecmp.$(OBJEXT)
-@GL_COND_OBJ_STRNDUP_TRUE@am__objects_20 = strndup.$(OBJEXT)
-@GL_COND_OBJ_STRNLEN_TRUE@am__objects_21 = strnlen.$(OBJEXT)
-@GL_COND_OBJ_STRPTIME_TRUE@am__objects_22 = strptime.$(OBJEXT)
-@GL_COND_OBJ_TIME_R_TRUE@am__objects_23 = time_r.$(OBJEXT)
-@GL_COND_OBJ_TZSANITIZE_TRUE@am__objects_24 = tzsanitize.$(OBJEXT)
-am_libgnu_a_OBJECTS = cloexec.$(OBJEXT) $(am__objects_1) \
-	$(am__objects_2) $(am__objects_3) fd-hook.$(OBJEXT) \
-	$(am__objects_4) $(am__objects_5) $(am__objects_6) \
-	$(am__objects_7) $(am__objects_8) $(am__objects_9) \
-	$(am__objects_10) $(am__objects_11) malloca.$(OBJEXT) \
-	$(am__objects_12) $(am__objects_13) $(am__objects_14) \
-	$(am__objects_15) stat-time.$(OBJEXT) $(am__objects_16) \
-	$(am__objects_17) $(am__objects_18) stdlib.$(OBJEXT) \
-	streq.$(OBJEXT) $(am__objects_19) $(am__objects_20) \
+@GL_COND_OBJ_OPEN_TRUE@am__objects_18 = open.$(OBJEXT)
+@GL_COND_OBJ_REALLOC_POSIX_TRUE@am__objects_19 = realloc.$(OBJEXT)
+@GL_COND_OBJ_STAT_TRUE@am__objects_20 = stat.$(OBJEXT)
+@GL_COND_OBJ_STDIO_READ_TRUE@am__objects_21 = stdio-read.$(OBJEXT)
+@GL_COND_OBJ_STDIO_WRITE_TRUE@am__objects_22 = stdio-write.$(OBJEXT)
+@GL_COND_OBJ_STDIO_CONSOLESAFE_TRUE@am__objects_23 = stdio-consolesafe.$(OBJEXT)
+@GL_COND_OBJ_STRDUP_TRUE@am__objects_24 = strdup.$(OBJEXT)
+@GL_COND_OBJ_STRNCASECMP_TRUE@am__objects_25 = strncasecmp.$(OBJEXT)
+@GL_COND_OBJ_STRNDUP_TRUE@am__objects_26 = strndup.$(OBJEXT)
+@GL_COND_OBJ_STRNLEN_TRUE@am__objects_27 = strnlen.$(OBJEXT)
+@GL_COND_OBJ_STRPTIME_TRUE@am__objects_28 = strptime.$(OBJEXT)
+@GL_COND_OBJ_TIME_R_TRUE@am__objects_29 = time_r.$(OBJEXT)
+@GL_COND_OBJ_TZSANITIZE_TRUE@am__objects_30 = tzsanitize.$(OBJEXT)
+am_libgnu_a_OBJECTS = basename-lgpl.$(OBJEXT) cloexec.$(OBJEXT) \
+	$(am__objects_1) $(am__objects_2) $(am__objects_3) \
+	$(am__objects_4) $(am__objects_5) fd-hook.$(OBJEXT) \
+	filenamecat-lgpl.$(OBJEXT) $(am__objects_6) $(am__objects_7) \
+	$(am__objects_8) $(am__objects_9) $(am__objects_10) \
+	$(am__objects_11) $(am__objects_12) $(am__objects_13) \
+	$(am__objects_14) $(am__objects_15) malloca.$(OBJEXT) \
+	$(am__objects_16) $(am__objects_17) $(am__objects_18) \
+	$(am__objects_19) $(am__objects_20) stat-time.$(OBJEXT) \
 	$(am__objects_21) $(am__objects_22) $(am__objects_23) \
-	$(am__objects_24) unistd.$(OBJEXT)
+	stdlib.$(OBJEXT) $(am__objects_24) streq.$(OBJEXT) \
+	$(am__objects_25) $(am__objects_26) $(am__objects_27) \
+	$(am__objects_28) $(am__objects_29) $(am__objects_30) \
+	unistd.$(OBJEXT)
 libgnu_a_OBJECTS = $(am_libgnu_a_OBJECTS)
 am__DEPENDENCIES_1 =
 AM_V_P = $(am__v_P_@AM_V@)
@@ -341,19 +360,24 @@ am__v_at_1 =
 DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir)
 depcomp = $(SHELL) $(top_srcdir)/build-aux/depcomp
 am__maybe_remake_depfiles = depfiles
-am__depfiles_remade = ./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
+am__depfiles_remade = ./$(DEPDIR)/basename-lgpl.Po \
+	./$(DEPDIR)/cloexec.Po ./$(DEPDIR)/close.Po \
+	./$(DEPDIR)/dirinfo-abstract.Po ./$(DEPDIR)/dirinfo-impl.Po \
 	./$(DEPDIR)/dup2.Po ./$(DEPDIR)/fcntl.Po \
-	./$(DEPDIR)/fd-hook.Po ./$(DEPDIR)/fopen.Po \
+	./$(DEPDIR)/fd-hook.Po ./$(DEPDIR)/filenamecat-lgpl.Po \
+	./$(DEPDIR)/fopen.Po ./$(DEPDIR)/free.Po \
 	./$(DEPDIR)/fseterr.Po ./$(DEPDIR)/fstat.Po \
-	./$(DEPDIR)/getdate.Po ./$(DEPDIR)/getdelim.Po \
-	./$(DEPDIR)/getdtablesize.Po ./$(DEPDIR)/getline.Po \
-	./$(DEPDIR)/localtime.Po ./$(DEPDIR)/lstat.Po \
+	./$(DEPDIR)/getcwd-lgpl.Po ./$(DEPDIR)/getdate.Po \
+	./$(DEPDIR)/getdelim.Po ./$(DEPDIR)/getdtablesize.Po \
+	./$(DEPDIR)/getline.Po ./$(DEPDIR)/localtime.Po \
+	./$(DEPDIR)/lstat.Po ./$(DEPDIR)/malloc.Po \
 	./$(DEPDIR)/malloca.Po ./$(DEPDIR)/mktime.Po \
 	./$(DEPDIR)/msvc-inval.Po ./$(DEPDIR)/msvc-nothrow.Po \
-	./$(DEPDIR)/open.Po ./$(DEPDIR)/stat-time.Po \
-	./$(DEPDIR)/stat-w32.Po ./$(DEPDIR)/stat.Po \
-	./$(DEPDIR)/stdio-consolesafe.Po ./$(DEPDIR)/stdio-read.Po \
-	./$(DEPDIR)/stdio-write.Po ./$(DEPDIR)/stdlib.Po \
+	./$(DEPDIR)/open.Po ./$(DEPDIR)/realloc.Po \
+	./$(DEPDIR)/stat-time.Po ./$(DEPDIR)/stat-w32.Po \
+	./$(DEPDIR)/stat.Po ./$(DEPDIR)/stdio-consolesafe.Po \
+	./$(DEPDIR)/stdio-read.Po ./$(DEPDIR)/stdio-write.Po \
+	./$(DEPDIR)/stdlib.Po ./$(DEPDIR)/strdup.Po \
 	./$(DEPDIR)/streq.Po ./$(DEPDIR)/strncasecmp.Po \
 	./$(DEPDIR)/strndup.Po ./$(DEPDIR)/strnlen.Po \
 	./$(DEPDIR)/strptime.Po ./$(DEPDIR)/time_r.Po \
@@ -2192,31 +2216,34 @@ noinst_HEADERS =
 noinst_LIBRARIES = libgnu.a
 noinst_LTLIBRARIES = 
 pkgdata_DATA = 
-EXTRA_DIST = alloca.in.h assert.in.h verify.h cloexec.h errno.in.h \
-	fcntl.in.h fd-hook.h filename.h fopen.c fopen.c fseterr.h \
-	stdio-impl.h stat-w32.c stat-w32.h intprops-internal.h \
-	intprops.h cdefs.h libc-config.h limits.in.h malloca.h \
-	mktime-internal.h mktime.c msvc-inval.h msvc-nothrow.h \
-	pathmax.h _Noreturn.h arg-nonnull.h c++defs.h warn-on-use.h \
-	stat-w32.c stat-w32.h stat-time.h intprops-internal.h \
-	stdckdint.in.h stdcountof.in.h stddef.in.h stdint.in.h \
-	stdio.in.h stdlib.in.h string.in.h strings.in.h sys_stat.in.h \
-	sys_time.in.h sys_types.in.h time.in.h tzsanitize.h \
-	unistd.in.h xalloc-oversized.h
-BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) $(ERRNO_H) fcntl.h $(LIMITS_H) \
-	$(STDCKDINT_H) $(STDCOUNTOF_H) $(STDDEF_H) $(STDINT_H) stdio.h \
-	stdlib.h string.h strings.h sys/stat.h sys/time.h sys/types.h \
-	time.h unistd.h
+EXTRA_DIST = alloca.in.h assert.in.h verify.h assure.h basename-lgpl.h \
+	cloexec.h dirinfo-abstract.h dirinfo-impl.h errno.in.h \
+	fcntl.in.h fd-hook.h filename.h filenamecat.h fopen.c fopen.c \
+	fseterr.h stdio-impl.h stat-w32.c stat-w32.h \
+	intprops-internal.h intprops.h inttypes.in.h cdefs.h \
+	libc-config.h limits.in.h malloc.c malloca.h mktime-internal.h \
+	mktime.c msvc-inval.h msvc-nothrow.h pathmax.h _Noreturn.h \
+	arg-nonnull.h c++defs.h warn-on-use.h stat-w32.c stat-w32.h \
+	stat-time.h intprops-internal.h stdckdint.in.h stdcountof.in.h \
+	stddef.in.h stdint.in.h stdio.in.h stdlib.in.h string.in.h \
+	strings.in.h sys_stat.in.h sys_time.in.h sys_types.in.h \
+	time.in.h tzsanitize.h unistd.in.h verify.h wchar.in.h \
+	xalloc-oversized.h
+BUILT_SOURCES = $(ALLOCA_H) $(ASSERT_H) $(ERRNO_H) fcntl.h inttypes.h \
+	$(LIMITS_H) $(STDCKDINT_H) $(STDCOUNTOF_H) $(STDDEF_H) \
+	$(STDINT_H) stdio.h stdlib.h string.h strings.h sys/stat.h \
+	sys/time.h sys/types.h time.h unistd.h wchar.h
 SUFFIXES = 
 MOSTLYCLEANFILES = core *.stackdump alloca.h alloca.h-t assert.h \
-	assert.h-t errno.h errno.h-t fcntl.h fcntl.h-t limits.h \
-	limits.h-t stdckdint.h stdckdint.h-t stdcountof.h \
-	stdcountof.h-t stddef.h stddef.h-t stdint.h stdint.h-t stdio.h \
-	stdio.h-t1 stdio.h-t2 stdio.h-t3 stdlib.h stdlib.h-t1 \
-	stdlib.h-t2 stdlib.h-t3 string.h string.h-t1 string.h-t2 \
-	strings.h strings.h-t sys/stat.h sys/stat.h-t sys/time.h \
-	sys/time.h-t sys/types.h sys/types.h-t time.h time.h-t \
-	unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 unistd.h-t4
+	assert.h-t errno.h errno.h-t fcntl.h fcntl.h-t inttypes.h \
+	inttypes.h-t limits.h limits.h-t stdckdint.h stdckdint.h-t \
+	stdcountof.h stdcountof.h-t stddef.h stddef.h-t stdint.h \
+	stdint.h-t stdio.h stdio.h-t1 stdio.h-t2 stdio.h-t3 stdlib.h \
+	stdlib.h-t1 stdlib.h-t2 stdlib.h-t3 string.h string.h-t1 \
+	string.h-t2 strings.h strings.h-t sys/stat.h sys/stat.h-t \
+	sys/time.h sys/time.h-t sys/types.h sys/types.h-t time.h \
+	time.h-t unistd.h unistd.h-t1 unistd.h-t2 unistd.h-t3 \
+	unistd.h-t4 wchar.h wchar.h-t1 wchar.h-t2 wchar.h-t3
 MOSTLYCLEANDIRS = sys sys sys
 CLEANFILES = 
 DISTCLEANFILES = 
@@ -2224,18 +2251,20 @@ MAINTAINERCLEANFILES =
 # No GNU Make output.
 AM_CPPFLAGS = -DGNULIB_STRICT_CHECKING=1
 AM_CFLAGS = 
-libgnu_a_SOURCES = cloexec.c $(am__append_1) $(am__append_2) \
-	$(am__append_3) fd-hook.c $(am__append_4) $(am__append_5) \
-	$(am__append_6) $(am__append_7) $(am__append_8) \
-	$(am__append_9) idx.h $(am__append_10) $(am__append_11) \
-	malloca.c $(am__append_12) $(am__append_13) $(am__append_14) \
-	$(am__append_15) stat-time.c $(am__append_16) $(am__append_17) \
-	$(am__append_18) stdlib.c streq.c $(am__append_19) \
-	$(am__append_20) $(am__append_21) $(am__append_22) \
-	$(am__append_23) $(am__append_24) unistd.c
+libgnu_a_SOURCES = basename-lgpl.c cloexec.c $(am__append_1) \
+	$(am__append_2) $(am__append_3) $(am__append_4) \
+	$(am__append_5) fd-hook.c filenamecat-lgpl.c $(am__append_6) \
+	$(am__append_7) $(am__append_8) $(am__append_9) \
+	$(am__append_10) $(am__append_11) $(am__append_12) \
+	$(am__append_13) idx.h $(am__append_14) $(am__append_15) \
+	malloca.c $(am__append_16) $(am__append_17) $(am__append_18) \
+	$(am__append_19) $(am__append_20) stat-time.c $(am__append_21) \
+	$(am__append_22) $(am__append_23) stdlib.c $(am__append_24) \
+	streq.c $(am__append_25) $(am__append_26) $(am__append_27) \
+	$(am__append_28) $(am__append_29) $(am__append_30) unistd.c
 libgnu_a_LIBADD = $(gl_LIBOBJS)
 libgnu_a_DEPENDENCIES = $(gl_LIBOBJS)
-EXTRA_libgnu_a_SOURCES = fopen.c fopen.c stat-w32.c mktime.c \
+EXTRA_libgnu_a_SOURCES = fopen.c fopen.c stat-w32.c malloc.c mktime.c \
 	stat-w32.c
 
 # Use this preprocessor expression to decide whether #include_next works.
@@ -2336,25 +2365,33 @@ mostlyclean-compile:
 distclean-compile:
 	-rm -f *.tab.c
 
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/basename-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/cloexec.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/close.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirinfo-abstract.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dirinfo-impl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/dup2.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fcntl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fd-hook.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/filenamecat-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fopen.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/free.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fseterr.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/fstat.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getcwd-lgpl.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdate.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdelim.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getdtablesize.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/getline.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/localtime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/lstat.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/malloca.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/mktime.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvc-inval.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/msvc-nothrow.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/open.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/realloc.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-time.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat-w32.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stat.Po@am__quote@ # am--include-marker
@@ -2362,6 +2399,7 @@ distclean-compile:
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-read.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdio-write.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/stdlib.Po@am__quote@ # am--include-marker
+@AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strdup.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/streq.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strncasecmp.Po@am__quote@ # am--include-marker
 @AMDEP_TRUE@@am__include@ @am__quote@./$(DEPDIR)/strndup.Po@am__quote@ # am--include-marker
@@ -2676,25 +2714,33 @@ clean-am: clean-generic clean-noinstLIBRARIES clean-noinstLTLIBRARIES \
 	mostlyclean-am
 
 distclean: distclean-recursive
+	-rm -f ./$(DEPDIR)/basename-lgpl.Po
 	-rm -f ./$(DEPDIR)/cloexec.Po
 	-rm -f ./$(DEPDIR)/close.Po
+	-rm -f ./$(DEPDIR)/dirinfo-abstract.Po
+	-rm -f ./$(DEPDIR)/dirinfo-impl.Po
 	-rm -f ./$(DEPDIR)/dup2.Po
 	-rm -f ./$(DEPDIR)/fcntl.Po
 	-rm -f ./$(DEPDIR)/fd-hook.Po
+	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/fopen.Po
+	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/fseterr.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
+	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getdate.Po
 	-rm -f ./$(DEPDIR)/getdelim.Po
 	-rm -f ./$(DEPDIR)/getdtablesize.Po
 	-rm -f ./$(DEPDIR)/getline.Po
 	-rm -f ./$(DEPDIR)/localtime.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
+	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
 	-rm -f ./$(DEPDIR)/mktime.Po
 	-rm -f ./$(DEPDIR)/msvc-inval.Po
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/open.Po
+	-rm -f ./$(DEPDIR)/realloc.Po
 	-rm -f ./$(DEPDIR)/stat-time.Po
 	-rm -f ./$(DEPDIR)/stat-w32.Po
 	-rm -f ./$(DEPDIR)/stat.Po
@@ -2702,6 +2748,7 @@ distclean: distclean-recursive
 	-rm -f ./$(DEPDIR)/stdio-read.Po
 	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strncasecmp.Po
 	-rm -f ./$(DEPDIR)/strndup.Po
@@ -2755,25 +2802,33 @@ install-ps-am:
 installcheck-am:
 
 maintainer-clean: maintainer-clean-recursive
+	-rm -f ./$(DEPDIR)/basename-lgpl.Po
 	-rm -f ./$(DEPDIR)/cloexec.Po
 	-rm -f ./$(DEPDIR)/close.Po
+	-rm -f ./$(DEPDIR)/dirinfo-abstract.Po
+	-rm -f ./$(DEPDIR)/dirinfo-impl.Po
 	-rm -f ./$(DEPDIR)/dup2.Po
 	-rm -f ./$(DEPDIR)/fcntl.Po
 	-rm -f ./$(DEPDIR)/fd-hook.Po
+	-rm -f ./$(DEPDIR)/filenamecat-lgpl.Po
 	-rm -f ./$(DEPDIR)/fopen.Po
+	-rm -f ./$(DEPDIR)/free.Po
 	-rm -f ./$(DEPDIR)/fseterr.Po
 	-rm -f ./$(DEPDIR)/fstat.Po
+	-rm -f ./$(DEPDIR)/getcwd-lgpl.Po
 	-rm -f ./$(DEPDIR)/getdate.Po
 	-rm -f ./$(DEPDIR)/getdelim.Po
 	-rm -f ./$(DEPDIR)/getdtablesize.Po
 	-rm -f ./$(DEPDIR)/getline.Po
 	-rm -f ./$(DEPDIR)/localtime.Po
 	-rm -f ./$(DEPDIR)/lstat.Po
+	-rm -f ./$(DEPDIR)/malloc.Po
 	-rm -f ./$(DEPDIR)/malloca.Po
 	-rm -f ./$(DEPDIR)/mktime.Po
 	-rm -f ./$(DEPDIR)/msvc-inval.Po
 	-rm -f ./$(DEPDIR)/msvc-nothrow.Po
 	-rm -f ./$(DEPDIR)/open.Po
+	-rm -f ./$(DEPDIR)/realloc.Po
 	-rm -f ./$(DEPDIR)/stat-time.Po
 	-rm -f ./$(DEPDIR)/stat-w32.Po
 	-rm -f ./$(DEPDIR)/stat.Po
@@ -2781,6 +2836,7 @@ maintainer-clean: maintainer-clean-recursive
 	-rm -f ./$(DEPDIR)/stdio-read.Po
 	-rm -f ./$(DEPDIR)/stdio-write.Po
 	-rm -f ./$(DEPDIR)/stdlib.Po
+	-rm -f ./$(DEPDIR)/strdup.Po
 	-rm -f ./$(DEPDIR)/streq.Po
 	-rm -f ./$(DEPDIR)/strncasecmp.Po
 	-rm -f ./$(DEPDIR)/strndup.Po
@@ -2902,6 +2958,40 @@ fcntl.h: fcntl.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) 
 	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
 	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
 	      $(srcdir)/fcntl.in.h > $@-t
+	$(AM_V_at)mv $@-t $@
+
+# We need the following in order to create <inttypes.h> when the system
+# doesn't have one that works with the given compiler.
+inttypes.h: inttypes.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(WARN_ON_USE_H) $(ARG_NONNULL_H)
+	$(gl_V_at)$(SED_HEADER_STDOUT) \
+	      -e 's/@''HAVE_INTTYPES_H''@/$(HAVE_INTTYPES_H)/g' \
+	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+	      -e 's|@''NEXT_INTTYPES_H''@|$(NEXT_INTTYPES_H)|g' \
+	      -e 's/@''APPLE_UNIVERSAL_BUILD''@/$(APPLE_UNIVERSAL_BUILD)/g' \
+	      -e 's/@''PRIPTR_PREFIX''@/$(PRIPTR_PREFIX)/g' \
+	      -e 's/@''GNULIB_IMAXABS''@/$(GL_GNULIB_IMAXABS)/g' \
+	      -e 's/@''GNULIB_IMAXDIV''@/$(GL_GNULIB_IMAXDIV)/g' \
+	      -e 's/@''GNULIB_STRTOIMAX''@/$(GL_GNULIB_STRTOIMAX)/g' \
+	      -e 's/@''GNULIB_STRTOUMAX''@/$(GL_GNULIB_STRTOUMAX)/g' \
+	      -e 's/@''HAVE_DECL_IMAXABS''@/$(HAVE_DECL_IMAXABS)/g' \
+	      -e 's/@''HAVE_DECL_IMAXDIV''@/$(HAVE_DECL_IMAXDIV)/g' \
+	      -e 's/@''HAVE_DECL_STRTOIMAX''@/$(HAVE_DECL_STRTOIMAX)/g' \
+	      -e 's/@''HAVE_DECL_STRTOUMAX''@/$(HAVE_DECL_STRTOUMAX)/g' \
+	      -e 's/@''HAVE_IMAXDIV_T''@/$(HAVE_IMAXDIV_T)/g' \
+	      -e 's/@''REPLACE_IMAXABS''@/$(REPLACE_IMAXABS)/g' \
+	      -e 's/@''REPLACE_IMAXDIV''@/$(REPLACE_IMAXDIV)/g' \
+	      -e 's/@''REPLACE_STRTOIMAX''@/$(REPLACE_STRTOIMAX)/g' \
+	      -e 's/@''REPLACE_STRTOUMAX''@/$(REPLACE_STRTOUMAX)/g' \
+	      -e 's/@''INT32_MAX_LT_INTMAX_MAX''@/$(INT32_MAX_LT_INTMAX_MAX)/g' \
+	      -e 's/@''INT64_MAX_EQ_LONG_MAX''@/$(INT64_MAX_EQ_LONG_MAX)/g' \
+	      -e 's/@''UINT32_MAX_LT_UINTMAX_MAX''@/$(UINT32_MAX_LT_UINTMAX_MAX)/g' \
+	      -e 's/@''UINT64_MAX_EQ_ULONG_MAX''@/$(UINT64_MAX_EQ_ULONG_MAX)/g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
+	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
+	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
+	      $(srcdir)/inttypes.in.h > $@-t
 	$(AM_V_at)mv $@-t $@
 
 # We need the following in order to create <limits.h> when the system
@@ -3846,6 +3936,140 @@ unistd.h: unistd.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H
 	      < $@-t3 > $@-t4
 	$(AM_V_at)rm -f $@-t1 $@-t2 $@-t3
 	$(AM_V_at)mv $@-t4 $@
+
+# We need the following in order to create <wchar.h> when the system
+# version does not work standalone.
+wchar.h: wchar.in.h $(top_builddir)/config.status $(CXXDEFS_H) $(ARG_NONNULL_H) $(WARN_ON_USE_H)
+	$(gl_V_at)$(SED_HEADER_STDOUT) \
+	      -e 's|@''GUARD_PREFIX''@|GL|g' \
+	      -e 's|@''INCLUDE_NEXT''@|$(INCLUDE_NEXT)|g' \
+	      -e 's|@''PRAGMA_SYSTEM_HEADER''@|@PRAGMA_SYSTEM_HEADER@|g' \
+	      -e 's|@''PRAGMA_COLUMNS''@|@PRAGMA_COLUMNS@|g' \
+	      -e 's|@''HAVE_FEATURES_H''@|$(HAVE_FEATURES_H)|g' \
+	      -e 's|@''NEXT_WCHAR_H''@|$(NEXT_WCHAR_H)|g' \
+	      -e 's|@''HAVE_WCHAR_H''@|$(HAVE_WCHAR_H)|g' \
+	      -e 's/@''HAVE_CRTDEFS_H''@/$(HAVE_CRTDEFS_H)/g' \
+	      -e 's/@''GNULIBHEADERS_OVERRIDE_WINT_T''@/$(GNULIBHEADERS_OVERRIDE_WINT_T)/g' \
+	      -e 's/@''GNULIB_BTOWC''@/$(GL_GNULIB_BTOWC)/g' \
+	      -e 's/@''GNULIB_WCTOB''@/$(GL_GNULIB_WCTOB)/g' \
+	      -e 's/@''GNULIB_MBSINIT''@/$(GL_GNULIB_MBSINIT)/g' \
+	      -e 's/@''GNULIB_MBSZERO''@/$(GL_GNULIB_MBSZERO)/g' \
+	      -e 's/@''GNULIB_MBRTOWC''@/$(GL_GNULIB_MBRTOWC)/g' \
+	      -e 's/@''GNULIB_MBRLEN''@/$(GL_GNULIB_MBRLEN)/g' \
+	      -e 's/@''GNULIB_MBSRTOWCS''@/$(GL_GNULIB_MBSRTOWCS)/g' \
+	      -e 's/@''GNULIB_MBSNRTOWCS''@/$(GL_GNULIB_MBSNRTOWCS)/g' \
+	      -e 's/@''GNULIB_WCRTOMB''@/$(GL_GNULIB_WCRTOMB)/g' \
+	      -e 's/@''GNULIB_WCSRTOMBS''@/$(GL_GNULIB_WCSRTOMBS)/g' \
+	      -e 's/@''GNULIB_WCSNRTOMBS''@/$(GL_GNULIB_WCSNRTOMBS)/g' \
+	      -e 's/@''GNULIB_WCWIDTH''@/$(GL_GNULIB_WCWIDTH)/g' \
+	      -e 's/@''GNULIB_WMEMCHR''@/$(GL_GNULIB_WMEMCHR)/g' \
+	      -e 's/@''GNULIB_WMEMCMP''@/$(GL_GNULIB_WMEMCMP)/g' \
+	      -e 's/@''GNULIB_WMEMCPY''@/$(GL_GNULIB_WMEMCPY)/g' \
+	      -e 's/@''GNULIB_WMEMMOVE''@/$(GL_GNULIB_WMEMMOVE)/g' \
+	      -e 's/@''GNULIB_WMEMPCPY''@/$(GL_GNULIB_WMEMPCPY)/g' \
+	      -e 's/@''GNULIB_WMEMSET''@/$(GL_GNULIB_WMEMSET)/g' \
+	      -e 's/@''GNULIB_WCSLEN''@/$(GL_GNULIB_WCSLEN)/g' \
+	      -e 's/@''GNULIB_WCSNLEN''@/$(GL_GNULIB_WCSNLEN)/g' \
+	      -e 's/@''GNULIB_WCSCPY''@/$(GL_GNULIB_WCSCPY)/g' \
+	      -e 's/@''GNULIB_WCPCPY''@/$(GL_GNULIB_WCPCPY)/g' \
+	      -e 's/@''GNULIB_WCSNCPY''@/$(GL_GNULIB_WCSNCPY)/g' \
+	      -e 's/@''GNULIB_WCPNCPY''@/$(GL_GNULIB_WCPNCPY)/g' \
+	      -e 's/@''GNULIB_WCSCAT''@/$(GL_GNULIB_WCSCAT)/g' \
+	      -e 's/@''GNULIB_WCSNCAT''@/$(GL_GNULIB_WCSNCAT)/g' \
+	      -e 's/@''GNULIB_WCSCMP''@/$(GL_GNULIB_WCSCMP)/g' \
+	      -e 's/@''GNULIB_WCSNCMP''@/$(GL_GNULIB_WCSNCMP)/g' \
+	      -e 's/@''GNULIB_WCSCASECMP''@/$(GL_GNULIB_WCSCASECMP)/g' \
+	      -e 's/@''GNULIB_WCSNCASECMP''@/$(GL_GNULIB_WCSNCASECMP)/g' \
+	      -e 's/@''GNULIB_WCSCOLL''@/$(GL_GNULIB_WCSCOLL)/g' \
+	      -e 's/@''GNULIB_WCSXFRM''@/$(GL_GNULIB_WCSXFRM)/g' \
+	      -e 's/@''GNULIB_WCSDUP''@/$(GL_GNULIB_WCSDUP)/g' \
+	      -e 's/@''GNULIB_WCSCHR''@/$(GL_GNULIB_WCSCHR)/g' \
+	      -e 's/@''GNULIB_WCSRCHR''@/$(GL_GNULIB_WCSRCHR)/g' \
+	      -e 's/@''GNULIB_WCSCSPN''@/$(GL_GNULIB_WCSCSPN)/g' \
+	      -e 's/@''GNULIB_WCSSPN''@/$(GL_GNULIB_WCSSPN)/g' \
+	      -e 's/@''GNULIB_WCSPBRK''@/$(GL_GNULIB_WCSPBRK)/g' \
+	      -e 's/@''GNULIB_WCSSTR''@/$(GL_GNULIB_WCSSTR)/g' \
+	      -e 's/@''GNULIB_WCSTOK''@/$(GL_GNULIB_WCSTOK)/g' \
+	      -e 's/@''GNULIB_WCSWIDTH''@/$(GL_GNULIB_WCSWIDTH)/g' \
+	      -e 's/@''GNULIB_WCSFTIME''@/$(GL_GNULIB_WCSFTIME)/g' \
+	      -e 's/@''GNULIB_WGETCWD''@/$(GL_GNULIB_WGETCWD)/g' \
+	      -e 's/@''GNULIB_MDA_WCSDUP''@/$(GL_GNULIB_MDA_WCSDUP)/g' \
+	      -e 's/@''GNULIB_FREE_POSIX''@/$(GL_GNULIB_FREE_POSIX)/g' \
+	      < $(srcdir)/wchar.in.h > $@-t1
+	$(AM_V_at)sed \
+	      -e 's|@''HAVE_WINT_T''@|$(HAVE_WINT_T)|g' \
+	      -e 's|@''HAVE_BTOWC''@|$(HAVE_BTOWC)|g' \
+	      -e 's|@''HAVE_MBSINIT''@|$(HAVE_MBSINIT)|g' \
+	      -e 's|@''HAVE_MBRTOWC''@|$(HAVE_MBRTOWC)|g' \
+	      -e 's|@''HAVE_MBRLEN''@|$(HAVE_MBRLEN)|g' \
+	      -e 's|@''HAVE_MBSRTOWCS''@|$(HAVE_MBSRTOWCS)|g' \
+	      -e 's|@''HAVE_MBSNRTOWCS''@|$(HAVE_MBSNRTOWCS)|g' \
+	      -e 's|@''HAVE_WCRTOMB''@|$(HAVE_WCRTOMB)|g' \
+	      -e 's|@''HAVE_WCSRTOMBS''@|$(HAVE_WCSRTOMBS)|g' \
+	      -e 's|@''HAVE_WCSNRTOMBS''@|$(HAVE_WCSNRTOMBS)|g' \
+	      -e 's|@''HAVE_WMEMCHR''@|$(HAVE_WMEMCHR)|g' \
+	      -e 's|@''HAVE_WMEMCMP''@|$(HAVE_WMEMCMP)|g' \
+	      -e 's|@''HAVE_WMEMCPY''@|$(HAVE_WMEMCPY)|g' \
+	      -e 's|@''HAVE_WMEMMOVE''@|$(HAVE_WMEMMOVE)|g' \
+	      -e 's|@''HAVE_WMEMPCPY''@|$(HAVE_WMEMPCPY)|g' \
+	      -e 's|@''HAVE_WMEMSET''@|$(HAVE_WMEMSET)|g' \
+	      -e 's|@''HAVE_WCSLEN''@|$(HAVE_WCSLEN)|g' \
+	      -e 's|@''HAVE_WCSNLEN''@|$(HAVE_WCSNLEN)|g' \
+	      -e 's|@''HAVE_WCSCPY''@|$(HAVE_WCSCPY)|g' \
+	      -e 's|@''HAVE_WCPCPY''@|$(HAVE_WCPCPY)|g' \
+	      -e 's|@''HAVE_WCSNCPY''@|$(HAVE_WCSNCPY)|g' \
+	      -e 's|@''HAVE_WCPNCPY''@|$(HAVE_WCPNCPY)|g' \
+	      -e 's|@''HAVE_WCSCAT''@|$(HAVE_WCSCAT)|g' \
+	      -e 's|@''HAVE_WCSNCAT''@|$(HAVE_WCSNCAT)|g' \
+	      -e 's|@''HAVE_WCSCMP''@|$(HAVE_WCSCMP)|g' \
+	      -e 's|@''HAVE_WCSNCMP''@|$(HAVE_WCSNCMP)|g' \
+	      -e 's|@''HAVE_WCSCASECMP''@|$(HAVE_WCSCASECMP)|g' \
+	      -e 's|@''HAVE_WCSNCASECMP''@|$(HAVE_WCSNCASECMP)|g' \
+	      -e 's|@''HAVE_WCSCOLL''@|$(HAVE_WCSCOLL)|g' \
+	      -e 's|@''HAVE_WCSXFRM''@|$(HAVE_WCSXFRM)|g' \
+	      -e 's|@''HAVE_WCSDUP''@|$(HAVE_WCSDUP)|g' \
+	      -e 's|@''HAVE_WCSCHR''@|$(HAVE_WCSCHR)|g' \
+	      -e 's|@''HAVE_WCSRCHR''@|$(HAVE_WCSRCHR)|g' \
+	      -e 's|@''HAVE_WCSCSPN''@|$(HAVE_WCSCSPN)|g' \
+	      -e 's|@''HAVE_WCSSPN''@|$(HAVE_WCSSPN)|g' \
+	      -e 's|@''HAVE_WCSPBRK''@|$(HAVE_WCSPBRK)|g' \
+	      -e 's|@''HAVE_WCSSTR''@|$(HAVE_WCSSTR)|g' \
+	      -e 's|@''HAVE_WCSTOK''@|$(HAVE_WCSTOK)|g' \
+	      -e 's|@''HAVE_WCSWIDTH''@|$(HAVE_WCSWIDTH)|g' \
+	      -e 's|@''HAVE_WCSFTIME''@|$(HAVE_WCSFTIME)|g' \
+	      -e 's|@''HAVE_WCTOB''@|$(HAVE_WCTOB)|g' \
+	      -e 's|@''HAVE_DECL_WCSDUP''@|$(HAVE_DECL_WCSDUP)|g' \
+	      -e 's|@''HAVE_DECL_WCWIDTH''@|$(HAVE_DECL_WCWIDTH)|g' \
+	      < $@-t1 > $@-t2
+	$(AM_V_at)sed \
+	      -e 's|@''REPLACE_MBSTATE_T''@|$(REPLACE_MBSTATE_T)|g' \
+	      -e 's|@''REPLACE_BTOWC''@|$(REPLACE_BTOWC)|g' \
+	      -e 's|@''REPLACE_WCTOB''@|$(REPLACE_WCTOB)|g' \
+	      -e 's|@''REPLACE_FREE''@|$(REPLACE_FREE)|g' \
+	      -e 's|@''REPLACE_MBSINIT''@|$(REPLACE_MBSINIT)|g' \
+	      -e 's|@''REPLACE_MBRTOWC''@|$(REPLACE_MBRTOWC)|g' \
+	      -e 's|@''REPLACE_MBRLEN''@|$(REPLACE_MBRLEN)|g' \
+	      -e 's|@''REPLACE_MBSRTOWCS''@|$(REPLACE_MBSRTOWCS)|g' \
+	      -e 's|@''REPLACE_MBSNRTOWCS''@|$(REPLACE_MBSNRTOWCS)|g' \
+	      -e 's|@''REPLACE_WCRTOMB''@|$(REPLACE_WCRTOMB)|g' \
+	      -e 's|@''REPLACE_WCSRTOMBS''@|$(REPLACE_WCSRTOMBS)|g' \
+	      -e 's|@''REPLACE_WCSNRTOMBS''@|$(REPLACE_WCSNRTOMBS)|g' \
+	      -e 's|@''REPLACE_WCWIDTH''@|$(REPLACE_WCWIDTH)|g' \
+	      -e 's|@''REPLACE_WCSWIDTH''@|$(REPLACE_WCSWIDTH)|g' \
+	      -e 's|@''REPLACE_WCSFTIME''@|$(REPLACE_WCSFTIME)|g' \
+	      -e 's|@''REPLACE_WCSCMP''@|$(REPLACE_WCSCMP)|g' \
+	      -e 's|@''REPLACE_WCSNCAT''@|$(REPLACE_WCSNCAT)|g' \
+	      -e 's|@''REPLACE_WCSNCMP''@|$(REPLACE_WCSNCMP)|g' \
+	      -e 's|@''REPLACE_WCSSTR''@|$(REPLACE_WCSSTR)|g' \
+	      -e 's|@''REPLACE_WCSTOK''@|$(REPLACE_WCSTOK)|g' \
+	      -e 's|@''REPLACE_WMEMCMP''@|$(REPLACE_WMEMCMP)|g' \
+	      -e 's|@''REPLACE_WMEMPCPY''@|$(REPLACE_WMEMPCPY)|g' \
+	      -e '/definitions of _GL_FUNCDECL_RPL/r $(CXXDEFS_H)' \
+	      -e '/definition of _GL_ARG_NONNULL/r $(ARG_NONNULL_H)' \
+	      -e '/definition of _GL_WARN_ON_USE/r $(WARN_ON_USE_H)' \
+	      < $@-t2 > $@-t3
+	$(AM_V_at)rm -f $@-t1 $@-t2
+	$(AM_V_at)mv $@-t3 $@
 
 mostlyclean-local: mostlyclean-generic
 	@for dir in '' $(MOSTLYCLEANDIRS); do \
