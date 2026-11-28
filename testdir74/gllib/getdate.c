@@ -318,10 +318,9 @@ __getdate_r (const char *string, struct tm *tp)
      call normalizes the struct tm.  But do not normalize *TP, because
      that could increment TP->tm_hour due to DST, and this is undesired
      here.  */
-  struct tm tmp;
   if ((!mday_ok && !check_mday (TM_YEAR_BASE + tp->tm_year, tp->tm_mon,
 				tp->tm_mday))
-      || (tmp = *tp, __mktime64 (&tmp) == (time_t) -1))
+      || (__mktime64 (tp) == (time_t) -1))
     return 8;
 
   return 0;
